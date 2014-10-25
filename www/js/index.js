@@ -19,6 +19,7 @@
 var networkStat;
 var app = {
     // Application Constructor
+    
     initialize: function() {
         this.bindEvents();
     },
@@ -27,6 +28,8 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
+        document.addEventListener("online", checkConnection, false);
+        document.addEventListener("offline", checkConnection, false);
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
@@ -34,9 +37,9 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        //app.receivedEvent('deviceready');
 		networkState = navigator.connection.type;
-		checkConnection();
+		checkConnection();           
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -46,7 +49,6 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-
         console.log('Received Event: ' + id);
     }
 };
@@ -61,9 +63,9 @@ function checkConnection() {
     states[Connection.CELL_4G]  = 'Cell 4G connection';
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
-
-    alert('Connection type: ' + states[networkState]);
+    //alert(states[networkState]);
     if(states[networkState]=='No network connection'){
         alert("Debe tener conexión a Internet!");
+        return false;
     }
 }
