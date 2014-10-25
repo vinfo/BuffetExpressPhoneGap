@@ -16,8 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var networkStat;
-var app = {
+ var networkStat;
+ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -36,7 +36,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        app.receivedEvent('deviceready');        
         checkConnection();
     },
     // Update DOM on a Received Event
@@ -53,6 +53,8 @@ var app = {
 };
 
 function checkConnection() {
+    navigator.notification.beep(2);
+    
     var networkState = navigator.connection.type;
 
     var states = {};
@@ -64,9 +66,13 @@ function checkConnection() {
     states[Connection.CELL_4G]  = 'Cell 4G connection';
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
-
-    navigator.notification.beep(2);
-    alert('Connection type: ' + states[networkState]);
+    
+    navigator.notification.alert(
+        states[networkState],
+        alertDismissed,
+        'Tipo de Conectividad',
+        'Cerrar'
+        );      
     
     if(states[networkState]=='No network connection'){
         navigator.notification.beep(1);
@@ -75,7 +81,7 @@ function checkConnection() {
             alertDismissed,
             'No existe conectividad',
             'Cerrar'
-        );        
+            );        
     }
 }
 function alertDismissed() {
