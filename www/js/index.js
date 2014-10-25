@@ -63,7 +63,8 @@ function checkConnection() {
     states[Connection.CELL_4G]  = 'Cell 4G connection';
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
-    //window.plugins.toast.show("Hola",  'long', 'center') ;
-
+    alert(1);
+    window.plugins.toast.showShortCenter("Hola") ;
+    alert(2);
     alert('Connection type: ' + states[networkState]);
 }
