@@ -1,9 +1,9 @@
 {
     "lib": {
         "www": {
-            "id": "com.vinfo.buffetexpress",
+            "id": "com.phonegap.helloworld",
             "version": "3.5.0",
-            "uri": "https://github.com/vinfo/BuffetExpress.git"
+            "uri": "https://github.com/phonegap/phonegap-app-hello-world/archive/3.5.0.tar.gz"
         }
     }
 }
