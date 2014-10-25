@@ -27,6 +27,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "www/js/index.js",
+			"settings":
+			{
+				"buffer_size": 2670,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -91,14 +99,19 @@
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
-		"/D/wamp/www/Realrisk-Noticias/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index_buffet.html",
+		"/C/Users/odc/Downloads/Demo-Network-Information-master/Demo-Network-Information-master/config.xml",
+		"/C/Users/odc/Downloads/Demo-Network-Information-master/Demo-Network-Information-master/spec.html",
+		"/C/Users/odc/Downloads/Demo-Network-Information-master/Demo-Network-Information-master/index.html",
+		"/C/Users/odc/Downloads/Demo-Network-Information-master/Demo-Network-Information-master/js/index.js",
+		"/D/wamp/www/Realrisk-Noticias/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/.cordova/config.json",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/assets/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/assets/www/cordova_plugins.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/android.json",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpress/www/index.html",
 		"/D/Movilidad/BuffetExpress/www/login.html",
 		"/D/Movilidad/BuffetExpress/www/entrada.html",
@@ -107,9 +120,7 @@
 		"/D/Movilidad/BuffetExpress/plugins/android.json",
 		"/D/Movilidad/BuffetExpress/.cordova/config.json",
 		"/D/Movilidad/BuffetExpress/www/config.xml",
-		"/C/Users/odc/Downloads/Demo-Network-Information-master/Demo-Network-Information-master/index.html",
 		"/D/Movilidad/my-app/www/index.html",
-		"/C/Users/odc/Downloads/Demo-Network-Information-master/Demo-Network-Information-master/js/index.js",
 		"/C/Users/odc/Downloads/pg-plugin-screen-orientation-master/pg-plugin-screen-orientation-master/plugin.xml",
 		"/C/Users/odc/Downloads/pg-plugin-screen-orientation-master/pg-plugin-screen-orientation-master/sample.html",
 		"/D/Movilidad/test/BuffetExpress/index.html",
@@ -226,8 +237,42 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "www/js/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2670,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								963,
+								963
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 630.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
