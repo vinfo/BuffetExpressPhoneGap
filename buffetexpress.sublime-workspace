@@ -83,11 +83,21 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/D/Movilidad/BuffetExpressPhoneGap",
+		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
+	],
 	"file_history":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/wamp/www/Realrisk-Noticias/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/.cordova/config.json",
+		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/assets/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/assets/www/cordova_plugins.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/plugins/android.json",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpress/www/index.html",
 		"/D/Movilidad/BuffetExpress/www/login.html",
@@ -188,6 +198,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"org.apache.cordova.network-information",
 			"nexus-7.0",
 			"login(",
 			"sendfile",
