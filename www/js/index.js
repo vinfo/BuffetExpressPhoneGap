@@ -53,9 +53,6 @@ var app = {
 };
 
 function checkConnection() {
-    alert(3);
-    toast.show('Hello!', 'long', 'center');
-    alert(4);
     var networkState = navigator.connection.type;
 
     var states = {};
@@ -68,5 +65,19 @@ function checkConnection() {
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
 
+    navigator.notification.beep(2);
     alert('Connection type: ' + states[networkState]);
+    
+    if(states[networkState]=='No network connection'){
+        navigator.notification.beep(1);
+        navigator.notification.alert(
+            'Internet es requerido!',
+            alertDismissed,
+            'No existe conectividad',
+            'Cerrar'
+        );        
+    }
+}
+function alertDismissed() {
+    return false;
 }
