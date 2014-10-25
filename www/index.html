@@ -28,6 +28,7 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
+            if (typeof jQuery === "undefined") { alert("Internet es requerido");return false; }
             jQuery(function($) { $.preload.images(document) });
             app.initialize();            
         </script>
