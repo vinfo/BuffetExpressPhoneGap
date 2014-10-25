@@ -1,0 +1,435 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"a",
+				"action	Attr"
+			],
+			[
+				"h",
+				"head	Tag"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"nmae",
+				"name_b"
+			],
+			[
+				"name",
+				"name_b"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "www/config.xml",
+			"settings":
+			{
+				"buffer_size": 5105,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/js/index.js",
+			"settings":
+			{
+				"buffer_size": 2664,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/index.html",
+			"settings":
+			{
+				"buffer_size": 1859,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 288.0,
+		"selected_items":
+		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: getAllVars"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: re",
+				"Snippet: readFolders"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 343.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/Movilidad/BuffetExpress/www",
+		"/D/Movilidad/BuffetExpress/www/js"
+	],
+	"file_history":
+	[
+		"/D/Movilidad/BuffetExpress/www/index.html",
+		"/D/Movilidad/BuffetExpress/www/login.html",
+		"/D/Movilidad/BuffetExpress/www/entrada.html",
+		"/D/wamp/www/Realrisk-Noticias/index.html",
+		"/D/Movilidad/BuffetExpress/www/js/index.js",
+		"/D/Movilidad/BuffetExpress/plugins/android.json",
+		"/D/Movilidad/BuffetExpress/.cordova/config.json",
+		"/D/Movilidad/BuffetExpress/www/config.xml",
+		"/C/Users/odc/Downloads/Demo-Network-Information-master/Demo-Network-Information-master/index.html",
+		"/D/Movilidad/my-app/www/index.html",
+		"/C/Users/odc/Downloads/Demo-Network-Information-master/Demo-Network-Information-master/js/index.js",
+		"/C/Users/odc/Downloads/pg-plugin-screen-orientation-master/pg-plugin-screen-orientation-master/plugin.xml",
+		"/C/Users/odc/Downloads/pg-plugin-screen-orientation-master/pg-plugin-screen-orientation-master/sample.html",
+		"/D/Movilidad/test/BuffetExpress/index.html",
+		"/D/Movilidad/test/BuffetExpress/css/style.css",
+		"/D/Movilidad/BuffetExpress/index.html",
+		"/D/Movilidad/BuffetExpress/www/spec.html",
+		"/D/Movilidad/BuffetExpress/test/www/index.html",
+		"/D/Movilidad/BuffetExpress/test/www/js/index.js",
+		"/D/Movilidad/BuffetExpress/test.html",
+		"/D/wamp/www/Realrisk-Noticias/config.xml",
+		"/D/Movilidad/BuffetExpress/css/style.css",
+		"/C/Users/odc/Downloads/buffe_expres(1)/index.html",
+		"/D/Movilidad/Phonegap/Demo-Network-Information-master/config.xml",
+		"/C/Users/odc/Downloads/source/assets/www/index.html",
+		"/D/Movilidad/BuffetExpress/pantalla3.html",
+		"/D/Movilidad/BuffetExpress/pantalla4.html",
+		"/D/Movilidad/BuffetExpress/pantalla5.html",
+		"/D/Movilidad/BuffetExpress/pantalla7.html",
+		"/D/Movilidad/BuffetExpress/pantalla6.html",
+		"/D/Movilidad/BuffetExpress/pantalla2.html",
+		"/D/Movilidad/buffetexpress/index.html",
+		"/D/wamp/www/buffetexpress/movil/buffet/www/index.html",
+		"/D/wamp/www/buffetexpress/movil/buffet/www/templates/menu.html",
+		"/D/wamp/www/buffetexpress/movil/buffet/www/js/app.js",
+		"/D/wamp/www/buffetexpress/movil/buffet/www/js/controllers.js",
+		"/D/wamp/www/buffetexpress/movil/buffet/config.xml",
+		"/D/wamp/www/buffetexpress/movil/buffet/platforms/android/AndroidManifest.xml",
+		"/D/wamp/www/Angular/angular-two-way-data-binding/README.md",
+		"/D/wamp/www/Angular/angular-two-way-data-binding/Server.js",
+		"/D/wamp/www/Angular/angular-two-way-data-binding/index.html",
+		"/D/wamp/www/Angular/angular-two-way-data-binding/node_modules/express/History.md",
+		"/D/wamp/www/Angular/angular-two-way-data-binding/angular/angular.js",
+		"/D/wamp/www/Angular/angular-two-way-data-binding/package.json",
+		"/D/wamp/www/Angular/angularUpdates/index.php",
+		"/D/wamp/www/Angular/angularUpdates/comments.php",
+		"/D/wamp/www/Angular/angularcode_grid/ajax/getCustomers.php",
+		"/D/wamp/www/Angular/angularcode_grid/index.html",
+		"/D/wamp/www/Angular/angularcode_grid/app/app.js",
+		"/D/wamp/www/Angular/angularcode_grid/includes/config.php",
+		"/D/Movilidad/Angular/js/app.js",
+		"/D/Movilidad/Angular/tutorial1.html",
+		"/D/Movilidad/Angular/css/bootstrap.min.css",
+		"/D/Movilidad/myApp/www/templates/search.html",
+		"/D/Movilidad/myApp/www/templates/playlists.html",
+		"/D/Movilidad/myApp/www/templates/playlist.html",
+		"/D/Movilidad/myApp/www/templates/menu.html",
+		"/D/Movilidad/myApp/www/templates/browse.html",
+		"/D/Movilidad/myApp/platforms/android/assets/www/js/app.js",
+		"/D/Movilidad/myApp/www/index.html",
+		"/D/Movilidad/myApp/www/js/app.js",
+		"/D/Movilidad/myApp/www/lib/ionic/js/angular-ui/angular-ui-router.js",
+		"/D/Movilidad/myApp/www/templates/login.html",
+		"/C/Users/odc/AppData/Roaming/Sublime Text 3/Packages/User/SFTP.sublime-settings",
+		"/C/Users/odc/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/D/wamp/www/conducimos/modules/views/service.php",
+		"/D/wamp/www/conducimos/pages.php",
+		"/D/wamp/www/conducimos/modules/views/bill.php",
+		"/D/wamp/www/conducimos/modules/views/client.php",
+		"/C/Users/odc/AppData/Roaming/Sublime Text 3/Packages/User/getAllVars.sublime-snippet",
+		"/D/wamp/www/conducimos/lib/ajax_services.php",
+		"/D/wamp/www/conducimos/modules/views/budget.php",
+		"/C/Users/odc/AppData/Roaming/Sublime Text 3/Packages/User/readFolders.sublime-snippet",
+		"/C/Users/odc/AppData/Roaming/Sublime Text 3/Packages/User/holamndo.sublime-snippet",
+		"/D/wamp/www/conducimos/sftp-config.json",
+		"/C/Users/odc/Documents/Sublime/sftp-config.json",
+		"/D/wamp/www/conducimos/plugins/sitemap/includes/classes/FileTreeManager.php",
+		"/D/wamp/www/conducimos/plugins/sitemap/includes/functions.php",
+		"/D/wamp/www/conducimos/scheduled.php",
+		"/C/Users/odc/AppData/Roaming/Sublime Text 3/php_build_system.sublime-build",
+		"/C/Users/odc/Documents/Sublime/Conducimos.sublime-project",
+		"/C/Users/odc/Sublime/php_config.sublime-build"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"nexus-7.0",
+			"login(",
+			"sendfile",
+			"starter",
+			"454",
+			"RsP",
+			"_RsP",
+			"app"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"RsG",
+			"_RsG"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "www/config.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5105,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2556,
+								2556
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 585.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "www/js/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2664,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2101,
+								2101
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 405.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "www/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1859,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 100.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 100.0
+	},
+	"project": "buffetexpress.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 294.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

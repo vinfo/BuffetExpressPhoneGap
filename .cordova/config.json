@@ -1,0 +1,9 @@
+{
+    "lib": {
+        "www": {
+            "id": "com.vinfo.buffetexpress",
+            "version": "3.5.0",
+            "uri": "https://github.com/vinfo/BuffetExpress.git"
+        }
+    }
+}
