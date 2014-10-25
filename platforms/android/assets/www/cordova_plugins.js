@@ -1,31 +1,10 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
-        "file": "plugins/com.boyvanderlaak.cordova.plugin.orientationchanger/www/orientationchanger.js",
-        "id": "com.boyvanderlaak.cordova.plugin.orientationchanger.OrientationChanger",
-        "clobbers": [
-            "window.plugins.orientationchanger"
-        ]
-    },
-    {
         "file": "plugins/com.phonegap.plugins.OrientationLock/www/orientationLock.js",
         "id": "com.phonegap.plugins.OrientationLock.OrientationLock",
         "clobbers": [
             "OrientationLock"
-        ]
-    },
-    {
-        "file": "plugins/com.tsukurusha.cordova.screenorientation/www/ScreenOrientation.js",
-        "id": "com.tsukurusha.cordova.screenorientation.screenOrientation",
-        "merges": [
-            "navigator.screenOrientation"
-        ]
-    },
-    {
-        "file": "plugins/nl.x-services.plugins.toast/www/Toast.js",
-        "id": "nl.x-services.plugins.toast.Toast",
-        "clobbers": [
-            "window.plugins.toast"
         ]
     },
     {
