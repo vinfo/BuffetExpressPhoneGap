@@ -16,10 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var networkStat;
-var app = {
+ var networkStat;
+ var app = {
     // Application Constructor
-    
     initialize: function() {
         this.bindEvents();
     },
@@ -28,27 +27,36 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
-        document.addEventListener("online", checkConnection, false);
-        document.addEventListener("offline", checkConnection, false);
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener("online", checkConnection, false);
+        document.addEventListener("offline", checkConnection, false);        
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-		networkState = navigator.connection.type;
+        app.receivedEvent('deviceready');        
         checkConnection();
-		          
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        checkConnection();
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
     }
 };
 
 function checkConnection() {
+    navigator.notification.beep(2);
+    
+    var networkState = navigator.connection.type;
+
     var states = {};
     states[Connection.UNKNOWN]  = 'Unknown connection';
     states[Connection.ETHERNET] = 'Ethernet connection';
@@ -59,9 +67,23 @@ function checkConnection() {
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
     
-    alert(states[networkState]."X");
+    navigator.notification.alert(
+        states[networkState],
+        alertDismissed,
+        'Tipo de Conectividad',
+        'Cerrar'
+        );      
+    
     if(states[networkState]=='No network connection'){
-        alert("Debe tener conexión a Internet!");
-        return false;
+        navigator.notification.beep(1);
+        navigator.notification.alert(
+            'Internet es requerido!',
+            alertDismissed,
+            'No existe conectividad',
+            'Cerrar'
+            );        
     }
+}
+function alertDismissed() {
+    return false;
 }
