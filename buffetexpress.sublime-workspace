@@ -27,30 +27,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "www/config.xml",
-			"settings":
-			{
-				"buffer_size": 5105,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "www/js/index.js",
-			"settings":
-			{
-				"buffer_size": 2664,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "www/index.html",
-			"settings":
-			{
-				"buffer_size": 1859,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -107,13 +83,12 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/D/Movilidad/BuffetExpress/www",
-		"/D/Movilidad/BuffetExpress/www/js"
-	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/wamp/www/Realrisk-Noticias/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpress/www/index.html",
 		"/D/Movilidad/BuffetExpress/www/login.html",
 		"/D/Movilidad/BuffetExpress/www/entrada.html",
@@ -134,7 +109,6 @@
 		"/D/Movilidad/BuffetExpress/test/www/index.html",
 		"/D/Movilidad/BuffetExpress/test/www/js/index.js",
 		"/D/Movilidad/BuffetExpress/test.html",
-		"/D/wamp/www/Realrisk-Noticias/config.xml",
 		"/D/Movilidad/BuffetExpress/css/style.css",
 		"/C/Users/odc/Downloads/buffe_expres(1)/index.html",
 		"/D/Movilidad/Phonegap/Demo-Network-Information-master/config.xml",
@@ -241,108 +215,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "www/config.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5105,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2556,
-								2556
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/XML/XML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 585.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "www/js/index.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2664,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2101,
-								2101
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 405.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "www/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1859,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],

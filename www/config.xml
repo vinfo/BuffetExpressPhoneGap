@@ -41,9 +41,6 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
-    <gap:plugin name="com.boyvanderlaak.cordova.plugin.orientationchanger" />
-    <gap:plugin name="nl.x-services.plugins.toast" />
-    <gap:plugin name="org.apache.cordova.network-information" version="0.2.7" />
 
     <icon src="icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
