@@ -37,7 +37,6 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        networkState = navigator.connection.type;
         checkConnection();
     },
     // Update DOM on a Received Event
@@ -54,6 +53,11 @@ var app = {
 };
 
 function checkConnection() {
+    alert(3);
+    toast.show('Hello!', 'long', 'center');
+    alert(4);
+    var networkState = navigator.connection.type;
+
     var states = {};
     states[Connection.UNKNOWN]  = 'Unknown connection';
     states[Connection.ETHERNET] = 'Ethernet connection';
@@ -63,8 +67,6 @@ function checkConnection() {
     states[Connection.CELL_4G]  = 'Cell 4G connection';
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
-    alert(1);
-    window.plugins.toast.showShortCenter("Hola") ;
-    alert(2);
+
     alert('Connection type: ' + states[networkState]);
 }

@@ -10,10 +10,6 @@
         <title>Buffet Expressss - Un sano y delicioso click</title>
     </head>
     <body>
-        <div id="deviceready" class="blink">
-        <p class="event listening">Conectando dispositivo...</p>
-            <p class="event received">Dispositivo listo</p>
-        </div>
         <div class="container">
             <div class="inicio">
                 <img src="img/logo.png" class="img1" alt="..." title="...">
@@ -27,10 +23,11 @@
         <script type="text/javascript" src="js/jquery.css3caching.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            if (typeof jQuery === "undefined") { alert("Internet es requerido");return false; }
+        <script type="text/javascript">            
+            if (typeof jQuery === "undefined") { alert("Internet es requerido");}
+            alert(1);
             jQuery(function($) { $.preload.images(document) });
-            app.initialize();            
+            app.initialize();           
         </script>
     </body>
     </html>
