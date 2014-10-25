@@ -19,7 +19,6 @@
 var networkStat;
 var app = {
     // Application Constructor
-    
     initialize: function() {
         this.bindEvents();
     },
@@ -28,9 +27,9 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
-        document.addEventListener("online", checkConnection, false);
-        document.addEventListener("offline", checkConnection, false);
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener("online", checkConnection, false);
+        document.addEventListener("offline", checkConnection, false);        
     },
     // deviceready Event Handler
     //
@@ -38,12 +37,19 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-		networkState = navigator.connection.type;
-		          
+        networkState = navigator.connection.type;
+        checkConnection();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        checkConnection();
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
     }
 };
 
@@ -57,10 +63,6 @@ function checkConnection() {
     states[Connection.CELL_4G]  = 'Cell 4G connection';
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
-    
-    alert(states[networkState]."X");
-    if(states[networkState]=='No network connection'){
-        alert("Debe tener conexión a Internet!");
-        return false;
-    }
+
+    alert('Connection type: ' + states[networkState]);
 }

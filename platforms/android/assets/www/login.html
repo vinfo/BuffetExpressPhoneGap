@@ -7,44 +7,46 @@
 	<link rel="stylesheet" type="text/css" href="http://buffetexpress.co/resources/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="http://buffetexpress.co/resources/owl-carousel/owl.carousel.css">
 	<link rel="stylesheet" type="text/css" href="http://buffetexpress.co/resources/css/style.css">
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="http://buffetexpress.co/resources/bootstrap/js/bootstrap.min.js"></script>
-	<script src="http://buffetexpress.co/resources/owl-carousel/owl.carousel.js"></script>
-	<script src="http://buffetexpress.co/resources/js/functions.js"></script>
-	<script src="http://buffetexpress.co/resources/js/md5.js"></script>
-	<script type="text/javascript">
-	$(function(){
-		$(".container").css({"height":$(document).height()});
-	})
-	</script>
 </head>
 <body>
 	
-		<div class="container">
+	<div class="container">
 		<!-- Cama de contenido inicio sesión -->
-			<div class="sesion">
-				<img src="http://buffetexpress.co/resources/images/logo.png" class="img1" alt="..." title="...">
-				<form role="form" id="frmlogin" class="formse" action="#">
-				  <div class="form-group">
-				    <span class="ico-usua"></span>
-				    <input type="email" class="form-control" id="email" placeholder="Ingresar email">
-				  </div>
-				  <div class="form-group">
-				    <span class="ico-contra"></span>
-				    <input type="password" class="form-control" id="pass" placeholder="Ingresar clave">
-				  </div>
-				  <div class="form-group">
-				  		 <button type="submit" id="login" class="btn btn-default">Iniciar sesión</button><button type="reset" class="btn btn-default">Crear cuenta</button>
-				  </div>
-				  <a href="" class="reccontra">¿ Recuperar contraseña ?</a>
+		<div class="sesion">
+			<img src="http://buffetexpress.co/resources/images/logo.png" class="img1" alt="..." title="...">
+			<form role="form" id="frmlogin" class="formse" action="#">
+				<div class="form-group">
+					<span class="ico-usua"></span>
+					<input type="email" class="form-control" id="email" placeholder="Ingresar email">
+				</div>
+				<div class="form-group">
+					<span class="ico-contra"></span>
+					<input type="password" class="form-control" id="pass" placeholder="Ingresar clave">
+				</div>
+				<div class="form-group">
+					<button type="submit" id="login" class="btn btn-default">Iniciar sesión</button><button id="cuenta" type="reset" class="btn btn-default">Crear cuenta</button>
+				</div>
+				<a href="#" id="recuperar" class="reccontra">¿ Recuperar contraseña ?</a>
 
-				  <div class="terminos">
-				  	ver <a href="">Terminos</a> y <a href="">Politicas de Privacidad</a>
-				  </div>
-				</form>
-			</div>
-		<!-- Fin capa de contenido inicio sesión -->
+				<div class="terminos">
+					<a href="#" id="terminos">Terminos y Politicas de Privacidad</a>
+				</div>
+			</form>
 		</div>
-<input id="page" name="page" type="hidden" value="2" />
+		<!-- Fin capa de contenido inicio sesión -->
+	</div>
+	<input id="page" name="page" type="hidden" value="2" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="http://buffetexpress.co/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script src="http://buffetexpress.co/resources/js/functions.js"></script>
+	<script src="http://buffetexpress.co/resources/js/md5.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".container").css({"height":$(document).height()});
+		});
+		app.initialize();
+	</script>
 </body>
 </html>
