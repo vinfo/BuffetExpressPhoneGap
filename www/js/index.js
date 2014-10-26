@@ -54,7 +54,6 @@
 
 function checkConnection() {    
     var networkState = navigator.connection.type;
-
     var states = {};
     states[Connection.UNKNOWN]  = 'Unknown connection';
     states[Connection.ETHERNET] = 'Ethernet connection';
@@ -72,8 +71,9 @@ function checkConnection() {
             alertDismissed,
             'No existe conectividad',
             'Cerrar'
-            );        
+            );                   
     }
+    return false;
 }
 function alertDismissed() {
     return false;
