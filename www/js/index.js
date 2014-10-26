@@ -36,7 +36,9 @@
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');        
+        app.receivedEvent('deviceready');
+        navigator.splashscreen.show();
+        clearCache();     
         checkConnection();
     },
     // Update DOM on a Received Event
@@ -81,6 +83,18 @@ function checkConnection() {
             'Cerrar'
             );        
     }
+}
+function clearCache()
+{
+        var success = function(status) {
+            alert('Message: ' + status);
+        }
+
+        var error = function(status) {
+            alert('Error: ' + status);
+        }
+
+        window.cache.clear( success, error );
 }
 function alertDismissed() {
     return false;

@@ -36,7 +36,9 @@
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');        
+        app.receivedEvent('deviceready');
+        navigator.splashscreen.show();
+        window.cache.clear( success, error );     
         checkConnection();
     },
     // Update DOM on a Received Event
@@ -52,9 +54,7 @@
     }
 };
 
-function checkConnection() {
-    navigator.notification.beep(2);
-    
+function checkConnection() {    
     var networkState = navigator.connection.type;
 
     var states = {};
@@ -67,12 +67,12 @@ function checkConnection() {
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
     
-    navigator.notification.alert(
+/*    navigator.notification.alert(
         states[networkState],
         alertDismissed,
         'Tipo de Conectividad',
         'Cerrar'
-        );      
+        );    */  
     
     if(states[networkState]=='No network connection'){
         navigator.notification.beep(1);

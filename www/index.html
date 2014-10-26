@@ -40,9 +40,11 @@
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <script src="http://buffetexpress.co/resources/js/functions.js"></script>
     <script src="http://buffetexpress.co/resources/js/md5.js"></script>
+    <script type="text/javascript" src="js/jquery.css3caching.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
+        jQuery(function($) { $.preload.images(document) });
         $(function(){
             $(".container").css({"height":$(document).height()});
         });
