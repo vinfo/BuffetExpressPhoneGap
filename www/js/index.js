@@ -28,7 +28,6 @@
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.addEventListener("online", checkConnection, false);
         document.addEventListener("offline", checkConnection, false);        
     },
     // deviceready Event Handler
