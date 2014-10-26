@@ -1,0 +1,896 @@
+a img
+{
+	border:0px;
+}
+.container
+{
+	/*max-width: 640px;
+	min-width: 600px;*/
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	background: url(../images/fondo.png);
+	position: fixed;
+	padding: 0px;
+	padding-bottom: 116px;
+	top: 0px;
+	left: 0px;
+	padding: 0px;
+	margin: 0px;
+	overflow: auto;
+	min-width: 317px;
+}
+.inicio
+{
+	margin-top: 20%;
+	text-align: center;
+}
+.img1
+{
+	width: 100%;
+	max-width: 526px;
+	top: 25%;
+}
+.inicio .img2
+{
+	width: 100%;
+	max-width: 604px;
+	margin-top: 10%;
+}
+.sesion
+{
+	text-align: center;
+	width: 100%;
+}
+.form-group 
+{
+	position: relative;
+	max-width: 576px;
+	margin: auto;
+	margin-top: 9px;
+}
+.sesion span
+{
+	background: url(../images/usuario.png);
+	width: 66px;
+	height: 65px;
+	display: inline-block;
+	position: absolute;
+	left: 10px;
+	top: -2px;
+
+}
+.sesion .img1
+{
+	width: 70%;
+}
+.sesion .ico-contra
+{
+	background: url(../images/contrasena.png);
+}
+.sesion input
+{
+	background: none;
+	background: url(../images/sombra.png);
+	border:0px;
+	border-radius: 40px;
+	font-size: 15px;
+	color: #FFFFFF;
+	height: 61px;
+	padding-left: 80px;
+	font-size: 22px;
+}
+.sesion .formse
+{
+	margin-top: 10%;
+}
+.sesion button
+{
+	background: url(../images/sombrav.png);
+	border:0px;
+	color: white;
+	border-radius: 20px;
+	width: 40%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 18px;
+}
+.sesion button[type=submit]
+{
+	background: url(../images/sombrav.png);
+	margin-right: 3%;
+}
+.sesion button[type=reset]
+{
+	background: url(../images/sombra_gra.png);
+}
+.sesion a.reccontra
+{
+	color: white;
+	text-decoration: underline;
+	margin-top: 5%;
+	display: inline-block;
+}
+.sesion .terminos
+{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	bottom: 2%;
+}
+.sesion .terminos a
+{
+	text-decoration: none;
+	color: white;
+}
+.menusup
+{
+	background: #057797;
+	/*min-width: 532px;*/
+	width: 100%;
+	position: fixed;
+	height: 70px;
+	z-index: 1000;
+	top: 0px;
+	left: 0px;
+}
+.menusup button
+{
+	padding: 18px;
+	background: none;
+	border:0px;
+	position: absolute;
+	z-index: 100;
+}
+.menusup button:hover
+{
+	background: #01425f;
+}
+.menusup button.active
+{
+	background: #01425f;
+}
+.menusup button.ico-menu
+{
+	left: 0px;
+	top:0px;
+}
+.menusup button.ico-menu span
+{
+	background: url(../images/linmenu.png);
+	width: 35px;
+	height: 29px;
+	display: inline-block;
+}
+.menusup button.ico-lupa
+{
+	top: 0px;
+	right: 0px;
+	padding: 15px;
+}
+.menusup button.ico-lupa span
+{
+	background: url(../images/lupa.png) no-repeat;
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+}
+.title
+{
+	width: 100%;
+	position: absolute;
+	height: 70px;
+	font-size: 40px;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 68px;
+	z-index: 1;
+}
+.buffet
+{
+	text-align: center;
+	padding-top: 100px;
+	position: relative;
+}
+.buffet span
+{
+	display: inline-block;
+	width: 90px;
+	height: 139px;
+	position: absolute;
+	top: 40%;
+	z-index: 500;
+	cursor: pointer;
+}
+.buffet span.flechaiz
+{
+	background: url(../images/slideizq.png);
+	left: 0px;
+}
+.buffet span.fledere
+{
+	background: url(../images/slideder.png);
+	right: 0px;
+}
+.buffet .owl-wrapper img
+{
+	width: 52%;
+}
+.buffet .owl-controls
+{
+	width: 100%;
+	position: relative;
+	margin-top: 1%;
+}
+.buffet .owl-controls .owl-page 
+{
+	display: inline-block;
+}
+.buffet .owl-controls .owl-page span
+{
+	background: url(../images/btn1sli.png);
+	width: 36px;
+	height: 41px;
+	position: relative;
+
+}
+.buffet .owl-controls .active span
+{
+	background: url(../images/btn2sli.png);
+	top: -2px;
+}
+.buffet .owl-controls  .owl-buttons
+{
+	display: none;
+}
+.buffet .imgcodigo
+{
+	width: 100%;
+	text-align: center;
+	margin-top: 5%;
+}
+.buffet .imgcodigo img
+{
+	width: 100%;
+	max-width: 574px;
+}
+.menupie
+{
+	background: #057797;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	z-index: 1000;
+	/*min-width: 532px;*/
+	width: 100%;
+	
+}
+.menupie ul
+{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+.menupie ul li
+{
+	float: left;
+	width: 25%;
+	text-align: center;
+	/*padding-bottom: 5px;*/
+	position: relative;
+	/*min-height: 126px;*/
+}
+.menupie ul li:hover
+{
+	background: #01425f;
+}
+.menupie ul li a img
+{
+	width: 100%;
+	max-width: 77px;
+}
+.menupie ul li.carrito a img
+{
+	max-width: 143px;
+}
+.menupie ul li.carrito span
+{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	border-radius: 20px;
+	background: #ff0000;
+	color: #FFFFFF;
+	font-size: 20px;
+	left: 53%;
+	top: 6px;
+}
+.menupie ul li.active
+{
+	background: #01425f;
+}
+.menuplato
+{
+	padding-top: 100px;
+	overflow: hidden;
+	position: relative;
+	padding-bottom: 83px;
+}
+.menuplato .col-md-6
+{
+	text-align: center;
+}
+.menuplato a img
+{
+	width: 70%;
+	margin-bottom: 21%;
+}
+.menuplato .col-md-6:nth-child(6)
+{
+	padding-left: 0px;
+}
+.menuplato a:nth-child(6) > img
+{
+	width: 100%;
+}
+.menuplato .opcio
+{
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	bottom: 45px;
+	left: 0px;
+	top: -23px;
+}
+.menuplato .opcio div:nth-child(1)
+{
+	background: #482810;
+	font-size: 30px;
+	width: 70%;
+	float: left;
+	padding: 14px;
+	color: #FFFFFF;
+	padding: 21px;
+	height: 97px;
+}
+.menuplato .opcio div:nth-child(1) > img
+{
+		width: 100%;
+		max-width: 15px;
+}
+.menuplato .opcio .opciones
+{
+	text-align: right;
+}
+.menuplato .opcio .opciones img
+{
+	width: 16%;
+	background: none;
+	max-width: 31px;
+	margin-left: 10px;
+}
+.menuplato .opcio div.numero
+{
+	width: 30%;
+	float: left;
+	background: #8d4a20;
+	color: #FFFFFF;
+	font-size: 68px;
+	text-align: center;
+	position: relative;
+}
+
+.menuplatolist
+{
+	margin-top: 70px;
+}
+.menuplatolist .col-md-12
+{
+	padding-left: 0px;
+	position: relative;
+}
+.menuplatolist .col-md-12 .title
+{
+	background: url(../images/sombramenulist.png);
+	height: 103px;
+	width: 100%;
+	padding-top: 19px;
+	text-align: left;
+	padding-left: 15%;
+	color: #414042;
+}
+.menuplatolist .col-md-12 .title img
+{
+	position: absolute;
+	top: 20%;
+	left: 3%;
+}
+.menuplatolist .col-md-12 .title span
+{
+	color: #138cb1;
+	position: absolute;
+	top: 16%;
+	right: 3%;
+	font-weight: bold;
+}
+.menuplatolist .col-md-12 .btnts
+{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	margin-top: 100px;
+}
+.menuplatolist .col-md-12 .btnts img
+{
+	cursor: pointer;
+}
+.menuplatolist .col-md-12 .detalle
+{
+	width: 100%;
+	max-width: 561px;
+	min-height: 229px;
+	height: auto;
+	background: url(../images/fondetallevme.png);
+	display: inline-block;
+}
+.menuplatolist .col-md-12 .detalle h1
+{
+	color: #414042;
+	text-align: left;
+	padding-left: 20px;
+	padding-top: 6px;
+	float: right;
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+	top: -6px;
+}
+.menuplatolist .col-md-12 .detalle p
+{
+	width: 100%;
+	text-align: left;
+	padding: 10px;
+	color: #414042;
+	float: left;
+	position: relative;
+	top: -10px;
+
+}
+.menuplatolist .col-md-12 .detalle h1 span
+{
+	background: url(../images/sonido.png);
+	width: 53px;
+	height: 53px;
+	display: inline-block;
+	float: right;
+	margin-right: 50px;
+}
+.menuplatolist .col-md-12 .detalle label
+{
+	font-size: 20px;
+	display: block;
+}
+.menuplatolist .col-md-12 .detalle label span
+{
+	color: #964f22;
+	margin-left: 20px;
+}
+.menuplatolist .col-md-12 .contimg
+{
+	width: 104%;
+	overflow: hidden;
+}
+.verplatoico
+{
+	width: 100%;
+	position: fixed;
+	bottom: 100px;
+	z-index: 100;
+	bottom: 67px;
+	text-align: center;
+}
+.verplatoico img{
+	width: 19%;
+}
+.verplatoico .img2{
+	display: none;
+}	
+.verplato
+{
+	position: fixed;
+	z-index: 99;
+	background: url(../images/sombra.png);
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	padding-top: 80px;
+	text-align: center;
+	padding-right: 10px;
+	display: none;
+}
+.verplato img
+{
+	margin-top: 56px;
+	max-width: 538px;
+	width: 100%;
+}
+.verplato .cerrves
+{
+	position: absolute;
+	right: 10px;
+	margin-top: 0px;
+	cursor: pointer;
+	width: auto;
+}
+.miscompras
+{
+	width: 100%;
+	padding-top: 70px;
+}
+.miscompras .comprasitem
+{
+	overflow: hidden;
+	background: #FFFFFF;
+}
+.miscompras .comprasitem .imgcont
+{
+	float: left;
+	margin-right: 10px;
+	width: 40%;
+	overflow: hidden;
+}
+.miscompras .comprasitem .imgcont img
+{
+	width: 100%;
+}
+.miscompras .comprasitem  .icodeli
+{
+	text-align: right;
+	padding-right: 20px;
+}
+.miscompras .comprasitem .contnn
+{
+	float: left;
+	width: 49%;
+}
+.miscompras .comprasitem .contnn h3
+{
+	margin-top: 0px;
+	width: 200px;
+	margin-bottom: 5px;
+}
+.miscompras .comprasitem .contnn p
+{
+	line-height: 15px;
+}
+.miscompras .comprasitem  .icodeli span
+{
+	display: inline-block;
+	position: relative;
+}
+.miscompras .comprasitem  .icodeli{
+	position: relative;
+	top: -7px;
+}
+.miscompras .comprasitem  .icodeli span.edita
+{
+	width: 69px;
+	height: 63px;
+	background: url(../images/nota_pedido.png);
+}
+.miscompras .comprasitem  .icodeli span.elimina
+{
+	width: 64px;
+	height: 63px;
+	background: url(../images/eliminar_pedido.png);
+}
+.miscompras .comprasitem  .icodeta
+{
+	width: 100%;
+	float: left;
+	background: #dcddde;
+}
+.miscompras .comprasitem  .icodeta div
+{
+	width: auto;
+	float: left;
+	text-align: center;
+	margin-left: 2%;
+	width: 12%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.miscompras .comprasitem  .icodeta div img
+{
+	margin: 0px;
+	width: 100%;
+	max-width: 68px;
+	min-width: inherit;
+	min-height: 43px;
+}
+.miscompras .comprasitem  .icodeta div span
+{
+	display: block;
+	color: #504f51;
+}
+.miscompras .comprasitem  .icodeta .subtt
+{
+	background: #b11116;
+	float: left;
+	width: 28%;
+	color: #FFFFFF;
+	height: 102px;
+	padding-top: 14px;
+}
+.miscompras .comprasitem  .icodeta .subtt span
+{
+	color: #FFFFFF;
+	font-size: 20px;
+}
+.miscompras .comprasitem  .icodeta .subtt label
+{
+	font-size: 156%;
+}
+.facturavir
+{
+	width: 100%;
+	text-align: center;
+}
+.facturavir .contf
+{
+	width: 80%;
+	border:3px solid #a61015;
+	border-top:0px;
+	display: inline-block;
+	background: #FFFFFF;
+	position: relative;
+}
+.facturavir .contf label.ttfac
+{
+	background: #414042;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 20px;
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.facturavir .contf .tr
+{
+	width: 100%;
+	overflow: hidden;
+}
+.facturavir .contf .brdto
+{
+	border-top: 1px dashed #414042;
+}
+.facturavir .contf .tr .td:nth-child(1)
+{
+	width: 60%;
+	border:0px;
+}
+.facturavir .contf .tr .td
+{
+	width: 40%;
+	float: left;
+	border-left: 1px dashed #414042;
+}
+.facturavir .contf .tr .td label
+{
+	display: block;
+	font-size: 20px;
+	text-align: left;
+	padding-left: 20%;
+}
+.facturavir .contf .ttl
+{
+	background: #dcddde;
+	padding-top: 10px;
+}
+.facturavir .contf .ttl .td label
+{
+	font-size: 25px;
+}
+.facturavir .contf .btnc 
+{
+	width: 100%;
+	text-align: center;
+	position: relative;
+	position: absolute;
+}
+.facturavir .contf .btnc button
+{
+	background: none;
+	background: url(../images/cntinuarpago.png);
+	height: 81px;
+	width: 368px;
+	border: 0px;
+}
+
+.latermenu
+{
+	background: url(../images/bg_menu_lateral.png);
+	position: absolute;
+	left: -412px;	
+	max-width: 412px;
+	width: 50%;
+	z-index: 500;
+}
+.latermenu .tr
+{
+	width: 100%;
+	overflow: hidden;
+}
+.latermenu .tr .td img
+{
+	width: 100%;
+	max-width: 135px;
+}
+.latermenu .tr .td
+{
+	float: left;
+	width: 50%;
+	text-align: center;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border-left: 1px solid #5c5454;
+	border-bottom: 1px solid #5c5454;
+}
+.latermenu .tr .td:hover
+{
+	background: url(../images/bg_menu_lateral_hover.png);
+}
+.latermenu .tr .active
+{
+	background: url(../images/bg_menu_lateral_hover.png);
+}
+.vermapa
+{
+	position: absolute;
+	width: 100%;
+	min-height: 1000px;
+	padding-top: 70px;
+}
+.vermapa label.title
+{
+	background: url(../images/sombramapa.png) no-repeat;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	font-size: 50px;
+	z-index: 100;
+	font-weight: normal;
+	color: white;
+	height: 231px;
+	padding-top: 20px;
+}
+.vermapa .lupabu
+{
+	position: absolute;
+	top: 308px;
+	width: 80%;
+	background: url(../images/sombra.png);
+	border-radius: 20px;
+	padding: 5px;
+	color: white;
+	left: 10%;
+}
+/*.vermapa .lupabu .ico
+{
+	float: left;
+	width: 75px;
+	height: 76px;
+	background: url(../images/lupa_mapa.png);
+	display: inline-block;
+	margin-right: 3%;
+	cursor: pointer;
+}*/
+.vermapa .lupabu label
+{
+	font-size: 25px;
+}
+.vermapa .lupabu p
+{
+	line-height: 15px;
+	font-size: 17px;
+}
+.vermapa .icomapa
+{
+	position: absolute;
+	top: 600px;
+	top: 455px;
+	left: 37%;
+}
+
+@media (max-width: 532px){
+		.menusup .title
+		{
+			font-size: 20px;
+		}
+		/*.miscompras .comprasitem
+		{
+			text-align: center;
+		}
+		.miscompras .comprasitem img
+		{
+			float: none;
+		}
+		.miscompras .comprasitem .contnn
+		{
+			width: 100%;
+			text-align: left;
+			padding: 5px;
+		}
+		.miscompras .comprasitem .contnn h3
+		{
+			width: 100%;
+		}*/
+		.facturavir .contf
+		{
+			width: 100%;
+		}
+		.menuplato .opcio div:nth-child(1)
+		{
+			font-size: 141%;
+		}
+		.menuplato .opcio div.numero
+		{
+			text-align: center;
+		}
+		.menuplatolist .col-md-12 .title
+		{
+			font-size: 140%;	
+			padding-left: 24%;		
+		}
+		.menuplatolist .col-md-12 .detalle
+		{
+			background-size: 100% 100%;
+		}
+		.menuplatolist .col-md-12 .detalle h1
+		{
+			font-size: 200%;
+		}
+		.menuplatolist .col-md-12 .btnts .vene .col-md-6
+		{
+			margin-top: -21px;
+		}
+		.menupie ul li:nth-child(1) a img
+		{
+			width: 50%;
+		}
+		.menupie ul li:nth-child(2) a img
+		{
+			width: 49%;
+		}
+		.menupie ul li:nth-child(4) a img
+		{
+			width: 60%;
+		}
+		.menupie ul li.carrito a img
+		{
+			width: 100%;
+		}
+		.menupie ul li
+		{
+			height: auto;
+			min-height: auto;
+		}
+		.menupie ul li.carrito span
+		{
+			width: 20px;
+			height: 20px;
+			font-size: 12px;
+		}
+}
+@media (max-width: 340px){
+	.miscompras .comprasitem .imgcont
+	{
+		width: 100%;
+	}
+	.miscompras .comprasitem .contnn
+	{
+		width: 100%;
+	}
+}
