@@ -38,8 +38,7 @@
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         navigator.splashscreen.show();
-        clearCache();     
-        checkConnection();
+        clearCache();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
