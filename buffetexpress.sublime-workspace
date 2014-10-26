@@ -87,32 +87,34 @@
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/res/screen/android"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/index.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/jquery.css3caching.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/res/xml/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/assets/www/config.xml",
+		"/D/wamp/www/Realrisk-Noticias/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/plugins/android.json",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/res/screen/android/screen-hdpi-landscape.png",
+		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/assets/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/index.css",
 		"/C/Users/odc/Downloads/Demo-Network-Information-master/Demo-Network-Information-master/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/index.js",
 		"/D/wamp/www/Realrisk-Noticias/index.html",
 		"/C/Users/odc/Downloads/Demo-Network-Information-master/Demo-Network-Information-master/index.html",
 		"/C/Users/odc/Downloads/Demo-Network-Information-master/Demo-Network-Information-master/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/jquery.css3caching.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/icon.png",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/img/logo.png",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index_buffet.html",
 		"/C/Users/odc/Downloads/Demo-Network-Information-master/Demo-Network-Information-master/spec.html",
-		"/D/wamp/www/Realrisk-Noticias/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/.cordova/config.json",
-		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/assets/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/assets/www/cordova_plugins.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/plugins/android.json",
 		"/D/Movilidad/BuffetExpress/www/index.html",
 		"/D/Movilidad/BuffetExpress/www/login.html",
 		"/D/Movilidad/BuffetExpress/www/entrada.html",
@@ -209,6 +211,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"src=\"www/",
+			"Tipo de",
+			"network-information",
 			"Expresssss",
 			"org.apache.cordova.network-information",
 			"nexus-7.0",
@@ -226,6 +231,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"src=\"",
 			"RsG",
 			"_RsG"
 		],
@@ -289,7 +295,7 @@
 	"project": "buffetexpress.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
