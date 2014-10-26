@@ -23,7 +23,7 @@
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
     <preference name="SplashScreen" value="splash" />
-    <preference name="SplashScreenDelay" value="10000" />
+    <preference name="SplashScreenDelay" value="1000" />
 
     <feature name="SplashScreen">
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />

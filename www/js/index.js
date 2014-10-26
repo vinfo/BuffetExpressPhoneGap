@@ -38,7 +38,7 @@
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         navigator.splashscreen.show();
-        clearCache();
+        window.cache.clear( alertDismissed, alertDismissed );
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -65,14 +65,7 @@ function checkConnection() {
     states[Connection.CELL_4G]  = 'Cell 4G connection';
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
-    
-/*    navigator.notification.alert(
-        states[networkState],
-        alertDismissed,
-        'Tipo de Conectividad',
-        'Cerrar'
-        );    */  
-    
+
     if(states[networkState]=='No network connection'){
         navigator.notification.beep(1);
         navigator.notification.alert(
@@ -82,18 +75,6 @@ function checkConnection() {
             'Cerrar'
             );        
     }
-}
-function clearCache()
-{
-        var success = function(status) {
-            alert('Message: ' + status);
-        }
-
-        var error = function(status) {
-            alert('Error: ' + status);
-        }
-
-        window.cache.clear( success, error );
 }
 function alertDismissed() {
     return false;

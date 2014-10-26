@@ -1,3 +1,5 @@
+/* Cacheo de imagenes por CSS */
+
 (function($) {
   function parseImagesFromCSS(doc) {
     var i, j,
