@@ -71,10 +71,9 @@ function checkConnection() {
             alertDismissed,
             'No existe conectividad',
             'Cerrar'
-            );                   
+            );                              
     }
-    return false;
 }
 function alertDismissed() {
-    return false;
+    throw new Error('Connection error');
 }
