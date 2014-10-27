@@ -65,8 +65,9 @@ function checkConnection() {
     states[Connection.NONE]     = 'No network connection';
 
     if(states[networkState]=='No network connection'){
-        navigator.notification.beep(1);
-        alert('Internet es requerido!');                              
+        //navigator.notification.beep(1);
+        alert('Internet es requerido!');
+        throw new Error('No Internet Connection.');                              
     }
     return false;
 }
