@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" >
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="owl-carousel/owl.carousel.js"></script>
+	<script type="text/javascript">
+			$(function(){
+				// Tamaño container
+				$(".container").css({"min-height":$(document).height()});
+				// Tamaño alto menu inferior
+				$(window).load(function(){ 
+						$(".menupie ul li").css({"height":$("li.carrito a img").height()}); 
+						$(".latermenu").css({"margin-top":$(".menusup").height()}); 
+					})
+				//fin tamaño container 
+				 
+				  // Menu lateral
+				  $(".verlatermenu").click(function(){
+				  		var position = $(".latermenu").position();
+				  		if(position.left==0){
+				  			$(".latermenu").animate({"left":-412},200);
+				  		}else{
+				  			$(".latermenu").animate({"left":0},500);
+				  		}
+				  })
+			})
+	</script>
+</head>
+<body>
+		<div class="container" style="background: url(images/fondoslide.png);">
+		<!-- Menu -->
+			<div class="menusup">
+				<button class="verlatermenu ico-menu"><span></span></button>
+				<div class="title">Buffet Express</div>
+				<button class="ico-lupa"><span></span></button>
+			</div>
+		<!-- Fin menu -->
+		<!-- Menu lateral -->
+		<div class="latermenu">
+			<div class="tr">
+				<div class="td">
+					 <a href=""><img src="images/mi_cuenta.png" alt="..." title="..."></a>
+				</div> 
+				<div class="td">
+					 <a href=""><img src="images/ordenar.png" alt="..." title="..."></a>
+				</div>
+			</div>
+			<div class="tr">
+				<div class="td">
+					 <a href=""><img src="images/nosotros.png" alt="..." title="..."></a>
+				</div> 
+				<div class="td">
+					 <a href=""><img src="images/felicitaciones_reclamos.png" alt="..." title="..."></a>
+				</div>
+			</div>
+			<div class="tr">
+				<div class="td">
+					 <a href=""><img src="images/califiquenos.png" alt="..." title="..."></a>
+				</div> 
+				<div class="td">
+					 <a href=""><img src="images/contactenos.png" alt="..." title="..."></a>
+				</div>
+			</div>
+			<div class="tr">
+				<div class="td">
+					 <a href=""><img src="images/redes_sociales.png" alt="..." title="..."></a>
+				</div> 
+				<div class="td">
+					 <a href=""><img src="images/guia_rapida.png" alt="..." title="..."></a>
+				</div>
+			</div>
+
+		</div>
+		<!-- fin menu lateral -->
+		<!-- Cotenido Mapa buffet -->
+		<div class="vermapa">
+			<label class="title">Ubicación pedido</label>
+			<div class="lupabu">				
+				<label>Parque Lleras - calle 10</label>
+				<p>Medellín - Antioquia, Colombia</p>
+			</div>
+			<div class="contemapa">
+				<img src="images/icono_mapa.png" class="
+				icomapa" alt="ico" title="ico">
+				<img src="images/imgmapa.png" alt="..." title="...">
+			</div>
+		</div>
+		<!-- fin contenido Mapa buffet -->		
+		<!-- Menu pie -->
+		<div class="menupie">
+			<ul>
+				<li><a href="entrada.html"><img src="images/buffet.png" alt="..." title="..."></a></li>
+				<li><a href=""><img src="images/menu.png" alt="..." title="..."></a></li>
+				<li class="carrito"><a href=""><img src="images/mis_compras.png" alt="..." title="..."></a><span>3</span></li>
+				<li class="active"><a href="mapa.html"><img src="images/rastrea_tu_orden.png" alt="..." title="..."></a></li>
+			</ul>
+		</div>
+		<!-- muestr -->
+		</div>
+
+</body>
+</html>

@@ -87,15 +87,32 @@
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/jquery.css3caching.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/entrada.html",
+		"/D/Movilidad/test/BuffetExpress/pantalla7.html",
+		"/D/Movilidad/Mapas/index.html",
+		"/D/Movilidad/test/BuffetExpress/pantalla8.html",
+		"/D/Movilidad/test/BuffetExpress/pantalla6.html",
+		"/D/Movilidad/test/BuffetExpress/pantalla3.html",
+		"/D/Movilidad/test/BuffetExpress/pantalla4.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/Angular/angular-routing-master/entrada.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/pages/slider.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/pages/menu.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/D/Movilidad/Angular/angular-routing-master/main.js",
+		"/D/Movilidad/Angular/angular-routing-master/index.html",
+		"/D/Movilidad/Angular/angular-routing-master/pages/home.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/pages/slider",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/mapa.html",
+		"/D/wamp/www/buffetexpress/codeigniter/resources/html/mapa.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/jquery.css3caching.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/res/xml/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/assets/www/config.xml",
 		"/D/wamp/www/Realrisk-Noticias/config.xml",
@@ -211,6 +228,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"cntinuarpago",
 			"src=\"www/",
 			"Tipo de",
 			"network-information",
