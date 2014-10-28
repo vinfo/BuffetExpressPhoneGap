@@ -4,12 +4,12 @@
 		"selected_items":
 		[
 			[
-				"a",
-				"action	Attr"
+				"h",
+				"href	Attr"
 			],
 			[
-				"h",
-				"head	Tag"
+				"a",
+				"action	Attr"
 			],
 			[
 				"op",
@@ -27,6 +27,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "www/templates/mapa.html",
+			"settings":
+			{
+				"buffer_size": 95,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -87,31 +95,39 @@
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates"
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/entrada.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/entrada.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/main.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
+		"/D/Movilidad/Angular/angular-routing-master/entrada.html",
+		"/D/Movilidad/Angular/angular-routing-master/pages/home.html",
+		"/D/Movilidad/Angular/angular-routing-master/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/spec.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/test/BuffetExpress/pantalla7.html",
 		"/D/Movilidad/Mapas/index.html",
 		"/D/Movilidad/test/BuffetExpress/pantalla8.html",
 		"/D/Movilidad/test/BuffetExpress/pantalla6.html",
 		"/D/Movilidad/test/BuffetExpress/pantalla3.html",
 		"/D/Movilidad/test/BuffetExpress/pantalla4.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
-		"/D/Movilidad/Angular/angular-routing-master/entrada.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/pages/slider.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/pages/menu.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
-		"/D/Movilidad/Angular/angular-routing-master/main.js",
 		"/D/Movilidad/Angular/angular-routing-master/index.html",
-		"/D/Movilidad/Angular/angular-routing-master/pages/home.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/pages/slider",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/mapa.html",
 		"/D/wamp/www/buffetexpress/codeigniter/resources/html/mapa.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/jquery.css3caching.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/res/xml/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/assets/www/config.xml",
@@ -119,7 +135,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/android.json",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/res/screen/android/screen-hdpi-landscape.png",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/assets/www/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/index.css",
 		"/C/Users/odc/Downloads/Demo-Network-Information-master/Demo-Network-Information-master/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/index.js",
@@ -228,6 +243,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"btn1sli",
+			"btn2sli",
+			"owlCarousel",
+			"></a>",
 			"cntinuarpago",
 			"src=\"www/",
 			"Tipo de",
@@ -249,6 +268,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"/></a>",
 			"src=\"",
 			"RsG",
 			"_RsG"
@@ -262,8 +282,40 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "www/templates/mapa.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 95,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

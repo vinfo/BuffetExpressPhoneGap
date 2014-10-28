@@ -221,7 +221,7 @@ a img
 	width: 100%;
 	position: relative;
 	margin-top: 1%;
-	z-index: -999;
+	z-index: 499;
 }
 .buffet .owl-controls .owl-page 
 {
@@ -230,14 +230,16 @@ a img
 .buffet .owl-controls .owl-page span
 {
 	background: url(../images/btn1sli.png);
-	width: 36px;
-	height: 41px;
+	background-repeat:no-repeat;
+	width: 22px;
+	height: 25px;
 	position: relative;
 
 }
 .buffet .owl-controls .active span
 {
 	background: url(../images/btn2sli.png);
+	background-repeat:no-repeat;
 	top: -2px;
 }
 .buffet .owl-controls  .owl-buttons
@@ -248,7 +250,7 @@ a img
 {
 	width: 100%;
 	text-align: center;
-	margin-top: 5%;
+	margin-top: 1%;
 }
 .buffet .imgcodigo img
 {
