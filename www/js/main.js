@@ -19,22 +19,45 @@ angularRoutingApp.config(function($routeProvider) {
 	.when('/mapa', {
 		templateUrl : 'templates/mapa.html',
 		controller 	: 'mapaController'
-	})		
+	})
+	.when('/cuenta', {
+		templateUrl : 'templates/cuenta.html',
+		controller 	: 'cuentaController'
+	})	
 	.otherwise({
 		redirectTo: '/'
 	});
 });
 
+angularRoutingApp.controller('mainController', function($scope) {
+	$scope.message = 'Esta es la página de "Slider"';
+});
+
 angularRoutingApp.controller('menuController', function($scope) {
-	$scope.message = 'Esta es la página "Acerca de"';
+	$scope.message = 'Esta es la página de "Menu"';
 });
 
 angularRoutingApp.controller('comprasController', function($scope) {
-	$scope.message = 'Esta es la página de "Contacto", aquí podemos poner un formulario';
+	$scope.message = 'Esta es la página de "Compras"';
 });
 
-angularRoutingApp.controller('mapaController', function($scope) {
-	$scope.message = 'Esta es la página de "Contacto", aquí podemos poner un formulario';
+angularRoutingApp.controller("mapaController", ["$scope", function mapaController($scope) {		
+	$scope.Adress = "6.270318, -75.595974";
+}]);
+
+angularRoutingApp.controller('cuentaController', function($scope) {
+	if(localStorage.cuenta!="" && localStorage.cuenta!=undefined){
+		$scope.message = 'Mí Cuenta';
+		var data= JSON.parse(localStorage.cuenta);		
+		$scope.email = data.email;
+		$scope.name = data.name;
+		$scope.lastname = data.lastname;
+		$scope.cellPhone = data.cellPhone;
+		$("#logout").hide();
+	}else{
+		$scope.message = 'Debe estar logueado para acceder a esta opción!';
+		$("#logueado").hide();
+	}	
 });
 
 angularRoutingApp.directive('wrapOwlcarousel', function () {
@@ -48,6 +71,3 @@ angularRoutingApp.directive('wrapOwlcarousel', function () {
 	};
 });
 
-angularRoutingApp.controller("mainController", ["$scope", function mainController($scope) {		
-	$scope.Adress = "6.270318, -75.595974";
-}]);

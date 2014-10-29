@@ -30,7 +30,7 @@
         <div class="latermenu">
             <div class="tr">
                 <div class="td">
-                    <a href=""><img src="images/mi_cuenta.png" alt="..." title="..."></a>
+                    <a href="#cuenta"><img src="images/mi_cuenta.png" alt="..." title="..."></a>
                 </div> 
                 <div class="td">
                     <a href=""><img src="images/ordenar.png" alt="..." title="..."></a>
@@ -77,7 +77,7 @@
         </div>
         <!-- fin Menu pie --> 
     </div>
-
+    <input id="page" name="page" type="hidden" value="0" />
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
@@ -89,8 +89,8 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
-       app.initialize();
-       $(function(){
+     app.initialize();
+     $(function(){
 
     // Tamaño container
     $(".container").css({"min-height":$(document).height()});

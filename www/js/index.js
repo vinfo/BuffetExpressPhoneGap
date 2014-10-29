@@ -28,7 +28,7 @@
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.addEventListener("offline", checkConnection, false);        
+        //document.addEventListener("offline", checkConnection, false);        
     },
     // deviceready Event Handler
     //
@@ -38,6 +38,7 @@
         app.receivedEvent('deviceready');
         navigator.splashscreen.show();
         window.cache.clear( alertDismissed, alertDismissed );
+        checkConnection();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
