@@ -11,18 +11,29 @@
             var latlng;
             var map;
             var marker;
-            var initialize = function () {
+            var initialize = function (pos) {
                 geocoder = new google.maps.Geocoder();
-                latlng = new google.maps.LatLng(-34.397, 150.644);
+                latlng = new google.maps.LatLng(6.270318, -75.595974);
                 var mapOptions = {
                     zoom: $scope.zoom,
                     center: latlng,
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
                 map = new google.maps.Map(document.getElementById('addressMap'), mapOptions);
+                markAdressToMap(pos);
             };
-            var markAdressToMap = function () {
-                geocoder.geocode({ 'address': $scope.address }, function (results, status) {
+            var getPosition= function(){
+                if(navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        lat= position.coords.latitude;
+                        lng= position.coords.longitude;  
+                        coord= lat+', '+lng;
+                        initialize(coord);
+                    });                    
+                }                
+            }
+            var markAdressToMap = function (coord) {                
+                geocoder.geocode({ 'address': coord }, function (results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         map.setCenter(results[0].geometry.location);
                         marker = new google.maps.Marker({
@@ -32,12 +43,7 @@
                     }
                 });
             };
-            $scope.$watch("address", function () {
-                if ($scope.address != undefined) {
-                    markAdressToMap();
-                }
-            });
-            initialize();
+            getPosition();
         },
     };
 });
