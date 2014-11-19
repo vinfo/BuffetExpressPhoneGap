@@ -83,8 +83,8 @@
 
     <script type="text/javascript">
      app.initialize();
-     var currentOrientation = window.plugins.orientationchanger.getOrientation();
-     alert(currentOrientation);
+     window.plugins.orientationchanger.lockOrientation('portrait');
+     
      $(function(){
     // Tamaño container
     $(".container").css({"min-height":$(document).height()});
