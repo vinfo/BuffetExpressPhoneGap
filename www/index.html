@@ -81,12 +81,14 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 
-    <script type="text/javascript">
-     screen.lockOrientation('portrait');
+    <script type="text/javascript">  
+
+     var so = cordova.plugins.screenorientation;
+     so.setOrientation(so.Orientation.PORTRAIT);
+     
      app.initialize();
    
      $(function(){
-
     // Tamaño container
     $(".container").css({"min-height":$(document).height()});
 

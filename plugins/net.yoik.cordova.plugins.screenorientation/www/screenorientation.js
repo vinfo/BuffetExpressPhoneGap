@@ -51,6 +51,7 @@ function addScreenOrientationApi(obj) {
     }
 
     obj.lockOrientation = function(orientation) {
+        alert(22);
         if (Orientations.indexOf(orientation) == -1) {
             console.log('INVALID ORIENTATION', orientation);
             return;
