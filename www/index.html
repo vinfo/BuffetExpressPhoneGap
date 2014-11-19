@@ -80,13 +80,11 @@
     <script src="js/directives.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/orientationLock.js"></script>
+
     <script type="text/javascript">
+     screen.lockOrientation('portrait');
      app.initialize();
-     window.plugins.orientationLock.lock("portrait");
-     window.addEventListener("orientationchange", function() {
-         alert(window.orientation);
-     });
+   
      $(function(){
 
     // Tamaño container
