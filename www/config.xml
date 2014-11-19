@@ -7,10 +7,10 @@
     <author email="victor.valencia@gmail.com" href="http://vinfoweb.com">
         Codigodinamico Team
     </author>
-
+    
     <preference name="phonegap-version" value="3.6.3" />
     <preference name="permissions" value="none" />
-    <preference name="Orientation" value="portrait" />
+    <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
@@ -29,6 +29,9 @@
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
     </feature>
 
+    <access origin="*"/>
+
+    <gap:plugin name="com.boyvanderlaak.cordova.plugin.orientationchanger" version="0.1.1" />
     <gap:plugin name="org.apache.cordova.media" version="0.2.8" />
     <gap:plugin name="org.apache.cordova.console" version="0.2.11" />
     <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
