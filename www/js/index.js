@@ -36,7 +36,7 @@
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        window.plugins.orientationchanger.lockOrientation('portrait');
+        screen.lockOrientation('portrait-primary');
         navigator.splashscreen.show();
         window.cache.clear( alertDismissed, alertDismissed );
         checkConnection();
