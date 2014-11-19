@@ -29,6 +29,7 @@
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
     </feature>
 
+    <gap:plugin name="com.boyvanderlaak.cordova.plugin.orientationchanger" version="0.1.1" />
     <gap:plugin name="org.apache.cordova.media" version="0.2.8" />
     <gap:plugin name="org.apache.cordova.console" version="0.2.11" />
     <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
@@ -43,7 +44,6 @@
     <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.3" />
     <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
     <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
-    <gap:plugin name="com.sharinglabs.cordova.plugin.cache" version="1.0.0" />
     
     <icon src="icon.png" gap:platform="android" gap:density="ldpi"/>
 
