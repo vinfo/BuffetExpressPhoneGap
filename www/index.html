@@ -7,15 +7,6 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="owl-carousel/owl.carousel.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-    <style>
-        #addressMap
-        {
-            height:611px;
-            width:100%;
-            margin:0;
-            padding:0;
-        }
-    </style>
 </head>
 <body ng-controller='mainController'>
     <div class="container" style="background: url(images/fondoslide.png);">
@@ -30,7 +21,7 @@
         <div class="latermenu">
             <div class="tr">
                 <div class="td">
-                    <a href="#cuenta"><img src="images/mi_cuenta.png" alt="..." title="..."></a>
+                    <a href="#mi_cuenta"><img src="images/mi_cuenta.png" alt="..." title="..."></a>
                 </div> 
                 <div class="td">
                     <a href=""><img src="images/ordenar.png" alt="..." title="..."></a>
@@ -64,7 +55,7 @@
         </div>
         <!-- fin menu lateral -->
         <!-- Aquí inyectamos las vistas -->        
-        <div ng-view></div>
+        <div ng-view ng-mouseover="hiddeMenu()"></div>
 
         <!-- Menu pie -->
         <div class="menupie">
@@ -80,7 +71,8 @@
     <input id="page" name="page" type="hidden" value="0" />
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <script src="http://buffetexpress.co/resources/js/functions.js"></script>
     <script src="owl-carousel/owl.carousel.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route.js"></script>
@@ -88,8 +80,13 @@
     <script src="js/directives.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/orientationLock.js"></script>
     <script type="text/javascript">
      app.initialize();
+     window.plugins.orientationLock.lock("portrait");
+     window.addEventListener("orientationchange", function() {
+         alert(window.orientation);
+     });
      $(function(){
 
     // Tamaño container
@@ -132,14 +129,20 @@
             $(".latermenu").animate({"left":0},400);
         }
     });
+    $(".menupie").hover(function(){
+        $(".latermenu").animate({"left":-412},200);
+    });    
 
     //Activar menus  
     $(".menupie li a").click(function(){
         $("li").removeClass("active");
         $(this).parent().addClass("active");
-    });
+    });   
 
 })
+function hiddeMenu(){
+    $(".latermenu").animate({"left":-412},200);
+}
 </script>
 </body>
 </html>

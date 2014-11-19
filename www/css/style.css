@@ -12,7 +12,7 @@ a img
 	background: url(../images/fondo.png);
 	position: fixed;
 	padding: 0px;
-	padding-bottom: 116px;
+	padding-bottom: 150px;
 	top: 0px;
 	left: 0px;
 	padding: 0px;
@@ -221,7 +221,6 @@ a img
 	width: 100%;
 	position: relative;
 	margin-top: 1%;
-	z-index: 499;
 }
 .buffet .owl-controls .owl-page 
 {
@@ -230,16 +229,16 @@ a img
 .buffet .owl-controls .owl-page span
 {
 	background: url(../images/btn1sli.png);
-	background-repeat:no-repeat;
-	width: 22px;
-	height: 25px;
+	background-repeat: no-repeat;
+	width: 36px;
+	height: 41px;
 	position: relative;
 
 }
 .buffet .owl-controls .active span
 {
 	background: url(../images/btn2sli.png);
-	background-repeat:no-repeat;
+	background-repeat: no-repeat;
 	top: -2px;
 }
 .buffet .owl-controls  .owl-buttons
@@ -250,7 +249,7 @@ a img
 {
 	width: 100%;
 	text-align: center;
-	margin-top: 1%;
+	margin-top: 5%;
 }
 .buffet .imgcodigo img
 {
@@ -636,6 +635,28 @@ a img
 {
 	font-size: 156%;
 }
+.miscompras .contpag
+{
+	width: 100%;
+	text-align: center;
+	position: fixed;
+	left: 0px;
+}
+.miscompras .contpag .cont
+{
+	display: inline-block;
+	padding: 5px;
+	background: #FDB813;
+	color: #000;
+	font-weight: bold;
+	font-size: 16px;
+	border:2px solid #FFFFFF;
+	border-bottom: 0px;
+	border-radius: 10px 10px 0px 0px;
+	padding-right: 20px;
+	padding-left: 20px;
+	cursor: pointer;
+}
 .facturavir
 {
 	width: 100%;
@@ -696,22 +717,175 @@ a img
 {
 	font-size: 25px;
 }
-.facturavir .contf .btnc 
+.facturavir .bondesc 
 {
+	font-size: 20px;
 	width: 100%;
+	max-width: 298px;
 	text-align: center;
 	position: relative;
-	position: absolute;
+	padding: 10px;
+	font-weight: bold;
+	background: #B11016;
+	color: #FFFFFF;
+	margin: auto;
+	margin-top: -2px;
+	border-radius: 0px 0px 20px 20px;
 }
-.facturavir .contf .btnc button
+.facturavir .bondesc input
 {
-	background: none;
-	background: url(../images/cntinuarpago.png);
-	height: 64px;
-	width: 300px;
-	border: 0px;
+	margin-top: 10px;
+	box-shadow: 1px 2px 3px #B0B0B0;
+	border:1px solid #B0B0B0;
+	width: 50%;
 }
-
+.facturavir .vrdirc
+{
+	width: 80%;
+	margin-top: 10px;
+	display: inline-block;
+	background: #FFFFFF;
+	position: relative;
+	padding: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+.facturavir .vrdirc label
+{
+	display: block;
+	font-size: 16px;
+	margin-top: 11px;
+	width: 100%;
+	text-align: left;
+}
+.facturavir .vrdirc input
+{
+	width: 100%;
+	box-shadow: 1px 2px 3px #B0B0B0;
+	border:1px solid #B0B0B0;
+	background: #7F7F7F;
+	color: #FFFFFF;
+	border-radius: 20px;
+	padding: 5px;
+	padding-left: 20px;
+}
+.facturavir .vrdirc .listdirecc
+{
+	list-style: none;
+	margin-left: 0px;
+	padding: 0px;
+}
+.facturavir .vrdirc .listdirecc li
+{
+	overflow: hidden;
+	border-bottom: 1px solid #784325;
+	padding: 3px;
+	text-align: left;
+	font-weight: normal;
+	color: #BEBABB;
+	font-size: 18px;
+}
+.facturavir .vrdirc .listdirecc li i
+{
+	float: right;
+	color: #ff0000;
+	cursor: pointer;
+}
+.facturavir .vrdirc .medipa
+{
+	widows: 100%;
+	font-size: 17px;
+	font-weight: bold;
+	text-align: left;
+	position: relative;
+}
+.facturavir .vrdirc .medipa .col-md-6
+{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.facturavir .vrdirc .medipa .col-md-6 img
+{
+	width: 100%;
+}
+.facturavir .vrdirc .medipa .un
+{
+	padding-top: 16%;
+	padding-left: 5%;
+	line-height: 21px;
+	font-size: 19px;
+}
+.facturavir .vrdirc .ds:hover > .formpago, .facturavir .vrdirc .ds:hover > .sombra
+{
+	display: inline;
+}
+.facturavir .vrdirc .formpago
+{
+	position: fixed;
+	width: 90%;
+	margin-left: 5%;
+	z-index: 10000;
+	left: 0px;
+	margin-top: -300px;
+	text-align: center;
+	display: none;
+}
+.facturavir .vrdirc .formpago ul
+{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+	border-radius: 20px;
+	background:#FFFFFF;
+	text-align: left;
+}
+.facturavir .vrdirc .formpago ul li .icobie
+{
+	display: none;
+	float: right;
+	margin-top: 10px;
+}
+.facturavir .vrdirc .formpago ul li
+{
+	padding: 10px;
+}
+.facturavir .vrdirc .formpago ul li img
+{
+	margin-right: 10px;
+}
+.facturavir .vrdirc .formpago ul li:hover
+{
+	background: #FDB813;
+}
+.facturavir .vrdirc .formpago ul li:hover > .icobie
+{
+	display: inline;
+}
+.facturavir .vrdirc .medipa .col-md-6 .formpago img
+{
+	width: initial;
+}
+.facturavir .vrdirc .formpago .aba
+{
+	margin-left: -107px;
+}
+.facturavir .vrdirc .ds .sombra:active, .facturavir .vrdirc .ds .sombra:active > .formpago
+{
+	display: none;
+}
+.sombra
+{
+	width: 100%;
+	position: fixed;
+	height: 100%;
+	z-index: 2000;
+	top: 0px;
+	left: 0px;
+	background: url(../images/sombra.png);
+	display: none;
+}
 .latermenu
 {
 	background: url(../images/bg_menu_lateral.png);
@@ -780,16 +954,6 @@ a img
 	color: white;
 	left: 10%;
 }
-/*.vermapa .lupabu .ico
-{
-	float: left;
-	width: 75px;
-	height: 76px;
-	background: url(../images/lupa_mapa.png);
-	display: inline-block;
-	margin-right: 3%;
-	cursor: pointer;
-}*/
 .vermapa .lupabu label
 {
 	font-size: 25px;
@@ -806,7 +970,102 @@ a img
 	top: 455px;
 	left: 37%;
 }
-
+.vermapa .pedidotar
+{
+	position: fixed;
+	width: 100%;
+	text-align: center;
+}
+.vermapa .pedidotar .cont
+{
+	background: #B72025;
+	padding: 5px;
+	color: #FFFFFF;
+	display: inline-block;
+	margin: auto;
+	font-size: 17px;
+	font-weight: bold;
+	width: 100%;
+	padding-left: 16%;
+	text-align: left;
+}
+.vermapa .pedidotar .cont span
+{
+	display: inline-block;
+	position: absolute;
+	background: white;
+	border-radius: 60px;
+	padding: 10px;
+	border:2px solid #B72025;
+	left: 0px;
+	top: -20px;
+	left: 20px;	
+	color: #000;
+}
+.crear_cuenta, .recupera_contra
+{
+	text-align: center;
+	width: 100%;
+	max-width: 576px;
+	margin: auto;
+}
+.crear_cuenta input,.recupera_contra input
+{
+	background: none;
+	background: url(../images/sombra.png);
+	border: 0px;
+	border-radius: 40px;
+	font-size: 15px;
+	color: #FFFFFF;
+	height: 61px;
+	padding-left: 30px;
+	font-size: 22px;
+}
+.crear_cuenta button,.recupera_contra button
+{
+	background: url(../images/sombra_gra.png);
+	border: 0px;
+	color: white;
+	border-radius: 20px;
+	width: 40%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 18px;
+}
+.crear_cuenta button#login,.recupera_contra button#recupera
+{
+	background: url(../images/sombrav.png);
+	margin-right: 3%;
+}
+.terminos
+{
+	padding: 10px;
+}
+.terminos .contt
+{
+	background: #FFFFFF;
+	padding: 10px;
+	border-radius: 10px;
+}
+.terminos .contt button
+{
+	background: url(../images/sombra_gra.png);
+	border: 0px;
+	color: white;
+	border-radius: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 18px;
+}
+.terminos .contt button#aceptotermi
+{
+	background: url(../images/sombrav.png);
+	margin-right: 3%;
+}
+.pagosdiv
+{
+	padding-top: 70px;
+}
 @media (max-width: 532px){
 		.menusup .title
 		{
@@ -830,10 +1089,11 @@ a img
 		{
 			width: 100%;
 		}*/
-		.facturavir .contf
+		.facturavir .contf,.facturavir .vrdirc
 		{
 			width: 100%;
 		}
+
 		.menuplato .opcio div:nth-child(1)
 		{
 			font-size: 141%;
@@ -885,6 +1145,10 @@ a img
 			width: 20px;
 			height: 20px;
 			font-size: 12px;
+		}
+		.vermapa .pedidotar .cont
+		{
+			padding-left: 22%;
 		}
 }
 @media (max-width: 340px){

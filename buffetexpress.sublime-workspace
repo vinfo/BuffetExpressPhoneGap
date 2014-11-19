@@ -4,12 +4,24 @@
 		"selected_items":
 		[
 			[
-				"h",
-				"href	Attr"
+				"de",
+				"detalle_"
 			],
 			[
 				"a",
-				"action	Attr"
+				"alert"
+			],
+			[
+				"termin",
+				"terminos"
+			],
+			[
+				"ba",
+				"background-repeat"
+			],
+			[
+				"h",
+				"href	Attr"
 			],
 			[
 				"op",
@@ -27,28 +39,20 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "www/templates/mapa.html",
-			"settings":
-			{
-				"buffer_size": 95,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 288.0,
+		"height": 392.0,
 		"selected_items":
 		[
 			[
-				"inst",
-				"Package Control: Install Package"
-			],
-			[
 				"Snippet: ",
 				"Snippet: getAllVars"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
 			],
 			[
 				"i",
@@ -71,7 +75,7 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 400.0
+		"width": 512.0
 	},
 	"console":
 	{
@@ -94,29 +98,60 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates"
+		"/D/Movilidad/BuffetExpressPhoneGap/www"
 	],
 	"file_history":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/C/Users/odc/Downloads/PhoneGap-OrientationLock-master/PhoneGap-OrientationLock-master/www/orientationLock.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/C/Users/odc/Downloads/audio5js-master/audio5js-master/demos/angular/ngAudio5.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/entrada.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/entrada.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/main.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/terminos.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/clave.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
+		"/C/Users/odc/Desktop/CEA.html",
+		"/C/Users/odc/Desktop/ConducimosHOy.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/directives.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-route.js",
+		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/pertho_admin_v1.3/login.html",
+		"/C/Users/odc/Downloads/videos virtuales/index2.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categorias.html",
+		"/C/Users/odc/AppData/Roaming/Sublime Text 3/Packages/User/getJSONStorage.sublime-snippet",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/wamp/www/realriskPhonegap/www/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/spec.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/contrasena.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/terminos.html",
+		"/C/Users/odc/Downloads/jquery.inputmask-3.x/jquery.inputmask-3.x/bower.json",
+		"/C/Users/odc/Desktop/Gloria Arango.html",
+		"/D/wamp/www/Realrisk-Noticias/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/entrada.js",
+		"/D/Movilidad/Angular/GoogleMap/js/app.js",
+		"/D/Movilidad/Angular/GoogleMap/index.html",
+		"/D/Movilidad/Angular/GoogleMap/templates/mapa.html",
+		"/D/Movilidad/Mapas/index.html",
+		"/D/Movilidad/Angular/GoogleMap/js/directives.js",
+		"/D/Movilidad/Angular/angular-routing-master/js/angular-route.js",
+		"/D/Movilidad/Angular/angular-routing-master/main.js",
+		"/D/Movilidad/Angular/GoogleMap/app.js",
+		"/D/Movilidad/Angular/GoogleMap/page/mapa.html",
+		"/D/Movilidad/Angular/GoogleMap/directives.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/entrada.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/main.html",
 		"/D/Movilidad/Angular/angular-routing-master/entrada.html",
 		"/D/Movilidad/Angular/angular-routing-master/pages/home.html",
-		"/D/Movilidad/Angular/angular-routing-master/main.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/spec.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/test/BuffetExpress/pantalla7.html",
-		"/D/Movilidad/Mapas/index.html",
 		"/D/Movilidad/test/BuffetExpress/pantalla8.html",
 		"/D/Movilidad/test/BuffetExpress/pantalla6.html",
 		"/D/Movilidad/test/BuffetExpress/pantalla3.html",
@@ -127,11 +162,9 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/pages/slider",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/mapa.html",
 		"/D/wamp/www/buffetexpress/codeigniter/resources/html/mapa.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/jquery.css3caching.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/res/xml/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/assets/www/config.xml",
-		"/D/wamp/www/Realrisk-Noticias/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/android.json",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/res/screen/android/screen-hdpi-landscape.png",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/assets/www/js/index.js",
@@ -196,35 +229,7 @@
 		"/D/Movilidad/Angular/js/app.js",
 		"/D/Movilidad/Angular/tutorial1.html",
 		"/D/Movilidad/Angular/css/bootstrap.min.css",
-		"/D/Movilidad/myApp/www/templates/search.html",
-		"/D/Movilidad/myApp/www/templates/playlists.html",
-		"/D/Movilidad/myApp/www/templates/playlist.html",
-		"/D/Movilidad/myApp/www/templates/menu.html",
-		"/D/Movilidad/myApp/www/templates/browse.html",
-		"/D/Movilidad/myApp/platforms/android/assets/www/js/app.js",
-		"/D/Movilidad/myApp/www/index.html",
-		"/D/Movilidad/myApp/www/js/app.js",
-		"/D/Movilidad/myApp/www/lib/ionic/js/angular-ui/angular-ui-router.js",
-		"/D/Movilidad/myApp/www/templates/login.html",
-		"/C/Users/odc/AppData/Roaming/Sublime Text 3/Packages/User/SFTP.sublime-settings",
-		"/C/Users/odc/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
-		"/D/wamp/www/conducimos/modules/views/service.php",
-		"/D/wamp/www/conducimos/pages.php",
-		"/D/wamp/www/conducimos/modules/views/bill.php",
-		"/D/wamp/www/conducimos/modules/views/client.php",
-		"/C/Users/odc/AppData/Roaming/Sublime Text 3/Packages/User/getAllVars.sublime-snippet",
-		"/D/wamp/www/conducimos/lib/ajax_services.php",
-		"/D/wamp/www/conducimos/modules/views/budget.php",
-		"/C/Users/odc/AppData/Roaming/Sublime Text 3/Packages/User/readFolders.sublime-snippet",
-		"/C/Users/odc/AppData/Roaming/Sublime Text 3/Packages/User/holamndo.sublime-snippet",
-		"/D/wamp/www/conducimos/sftp-config.json",
-		"/C/Users/odc/Documents/Sublime/sftp-config.json",
-		"/D/wamp/www/conducimos/plugins/sitemap/includes/classes/FileTreeManager.php",
-		"/D/wamp/www/conducimos/plugins/sitemap/includes/functions.php",
-		"/D/wamp/www/conducimos/scheduled.php",
-		"/C/Users/odc/AppData/Roaming/Sublime Text 3/php_build_system.sublime-build",
-		"/C/Users/odc/Documents/Sublime/Conducimos.sublime-project",
-		"/C/Users/odc/Sublime/php_config.sublime-build"
+		"/D/Movilidad/myApp/www/templates/search.html"
 	],
 	"find":
 	{
@@ -243,6 +248,28 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"options.goTo",
+			"idCat",
+			"menupie\"",
+			"/cuenta",
+			"/cuenta?",
+			"setAccount",
+			"doView(",
+			"categoriaController",
+			"ajaxrest.login",
+			"btn1sli",
+			"imgcodigo Cbuffet",
+			".terminos\"",
+			".terminos .contt",
+			"entrada.html",
+			"markAdressToMap",
+			"LatLng",
+			"setCenter",
+			"LatLng",
+			"addressMap",
+			"routeProvider",
+			"ng-view",
+			"title=\"...\">",
 			"btn1sli",
 			"btn2sli",
 			"owlCarousel",
@@ -268,6 +295,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"title=\"...\"/>",
 			"/></a>",
 			"src=\"",
 			"RsG",
@@ -282,46 +310,14 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "www/templates/mapa.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 95,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 22.0
 	},
 	"input":
 	{
@@ -365,7 +361,7 @@
 	"project": "buffetexpress.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 40.0
 	},
 	"save_all_on_build": true,
 	"select_file":
