@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"at",
+				"attr"
+			],
+			[
 				"de",
 				"detalle_"
 			],
@@ -104,10 +108,23 @@
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/ng-infinite-scroll.min.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/clave.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
+		"/D/Movilidad/mi_cuenta.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
+		"/D/Movilidad/mapa.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/terminos.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/Ionic/myApp/plugins/org.apache.cordova.device/www/device.js",
 		"/D/Movilidad/Ionic/myApp/www/js/services.js",
 		"/D/Movilidad/Ionic/myApp/config.xml",
@@ -121,20 +138,11 @@
 		"/D/Movilidad/Phonegap/my-app/plugins/org.apache.cordova.battery-status/www/battery.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/net.yoik.cordova.plugins.screenorientation/www/screenorientation.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/net.yoik.cordova.plugins.screenorientation/www/screenorientation.android.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/net.yoik.cordova.plugins.screenorientation/src/android/net/yoik/cordova/plugins/screenorientation/YoikScreenOrientation.java",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/screenorientation.js",
 		"/C/Users/odc/Downloads/PhoneGap-OrientationLock-master/PhoneGap-OrientationLock-master/www/orientationLock.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
 		"/C/Users/odc/Downloads/audio5js-master/audio5js-master/demos/angular/ngAudio5.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/terminos.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/clave.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
 		"/C/Users/odc/Desktop/CEA.html",
 		"/C/Users/odc/Desktop/ConducimosHOy.html",
@@ -144,7 +152,6 @@
 		"/C/Users/odc/Downloads/videos virtuales/index2.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categorias.html",
 		"/C/Users/odc/AppData/Roaming/Sublime Text 3/Packages/User/getJSONStorage.sublime-snippet",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/wamp/www/realriskPhonegap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/contrasena.html",
@@ -228,14 +235,11 @@
 		"/D/wamp/www/buffetexpress/movil/buffet/www/index.html",
 		"/D/wamp/www/buffetexpress/movil/buffet/www/templates/menu.html",
 		"/D/wamp/www/buffetexpress/movil/buffet/www/js/app.js",
-		"/D/wamp/www/buffetexpress/movil/buffet/www/js/controllers.js",
-		"/D/wamp/www/buffetexpress/movil/buffet/config.xml",
-		"/D/wamp/www/buffetexpress/movil/buffet/platforms/android/AndroidManifest.xml",
-		"/D/wamp/www/Angular/angular-two-way-data-binding/README.md"
+		"/D/wamp/www/buffetexpress/movil/buffet/www/js/controllers.js"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 21.0
 	},
 	"find_in_files":
 	{
@@ -250,6 +254,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"detailDish",
+			"localData['email']",
+			"localStorage",
+			"getdishes",
 			"options.goTo",
 			"idCat",
 			"menupie\"",
@@ -319,7 +327,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 22.0
+		"height": 21.0
 	},
 	"input":
 	{
@@ -363,7 +371,7 @@
 	"project": "buffetexpress.sublime-project",
 	"replace":
 	{
-		"height": 40.0
+		"height": 38.0
 	},
 	"save_all_on_build": true,
 	"select_file":

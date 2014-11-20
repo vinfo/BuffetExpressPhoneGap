@@ -22,7 +22,7 @@
 			<br>
 			<img title="..." alt="..." src="images/menu-menos.png" />
 			<img src="images/lupamenu.png" alt="..." title="..." class="masdetalle" ng-click="detailDish(dish)" />
-			<img src="images/masmenu.png" alt="..." title="..." />
+			<img src="images/masmenu.png" alt="..." title="..." ng-click="addDish(dish)" />
 		</div>
 		<div class="contimg"><img src="{{dish.images}}" alt="..." title="..." /></div>
 	</div>
@@ -30,8 +30,13 @@
 </div>
 
 <div class="verplato">
-	<img src="images/cerr_vpla.png" alt="..." alt="..." class="cerrves" />
-	<img src="images/verplagran.png" alt="..." title="..." />
+	<img src="images/cerr_vpla.png" alt="..." alt="..." class="cerrves" ng-click="closeDish()" />
+	<img ng-src="{{sopa}}" style="position:absolute;width:35%;z-index:9999;left:4%;top:18%;border:none"/>
+	<img ng-src="{{arroz}}" style="position:absolute;width:35%;z-index:9999;left:55%;top:40%" />
+	<img ng-src="{{carnes}}" style="position:absolute;width:22%;z-index:9999;left:40%;top:35%"/>
+	<img ng-src="{{guarnicion}}" style="position:absolute;width:25%;z-index:9999;left:55%;top:30%"/>
+	<img ng-src="{{bebidas}}" style="position:absolute;width:16.5%;z-index:9999;left:42.5%;top:16.5%"/>
+	<img ng-src="images/verplagran.png" alt="..." title="..." />
 </div>
 <div class="verplatoico"><img src="images/ver_plato.png" alt="..." title="..." class="img1" ng-click="fullDish()"/></div>
 <!-- fin contenido slider buffet -->
@@ -44,6 +49,5 @@
 				//fin tamaño container 
 
 				$(".detalle").hide();
-
 	})		
 </script>

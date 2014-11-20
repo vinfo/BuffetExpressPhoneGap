@@ -1,7 +1,7 @@
 	// Creación del módulo
 	var angularRoutingApp = angular.module('angularRoutingApp', ['ngRoute']);
 	var localData = JSON.parse(localStorage.getItem('cuenta'));
-
+	var num = localStorage.setItem("num",0);
 
 	// Configuración de las rutas
 	angularRoutingApp.config(function($routeProvider) {
@@ -66,9 +66,35 @@
 			$(".verplato").slideToggle();
 			$(".verplatoico .img1").toggle();
 		},
+		$scope.addDish = function (dish) {
+			if(dish.idCat==1){
+				localStorage.setItem("arroz", {code:dish.code, price:dish.price});
+				$scope.arroz="http://buffetexpress.co/resources/images/dish/"+dish.code+"_2.png";		
+			}
+			if(dish.idCat==2){
+				localStorage.setItem("bebidas", {code:dish.code, price:dish.price});
+				$scope.bebidas="http://buffetexpress.co/resources/images/dish/"+dish.code+"_2.png";		
+			}
+			if(dish.idCat==3){
+				localStorage.setItem("carnes", {code:dish.code, price:dish.price});
+				$scope.carnes="http://buffetexpress.co/resources/images/dish/"+dish.code+"_2.png";		
+			}
+			if(dish.idCat==4){
+				localStorage.setItem("guarnicion", {code:dish.code, price:dish.price});
+				$scope.guarnicion="http://buffetexpress.co/resources/images/dish/"+dish.code+"_2.png";		
+			}
+			if(dish.idCat==5){
+				localStorage.setItem("sopa", {code:dish.code, price:dish.price});
+				$scope.sopa="http://buffetexpress.co/resources/images/dish/"+dish.code+"_2.png";		
+			}		
+		},	
+		$scope.closeDish = function (dish) {
+			$(".verplato").slideToggle();
+			$(".verplatoico .img1").show();
+		},
 		$scope.playAudio = function () {
 			ajaxrest.playAudio();
-		}
+		}	
 	});
 
 	angularRoutingApp.controller('sliderController', function($scope) {
@@ -76,7 +102,6 @@
 	});
 
 	angularRoutingApp.controller('menuController', function($scope) {
-		$scope.message = 'Esta es la página de "Menu"';
 	});
 
 	angularRoutingApp.controller('comprasController', function($scope) {
@@ -96,14 +121,17 @@
 	    	$location.path(url);
 	    	$scope.$apply();
 	    }
-	};		
+	};
+	
 	if(localData!=null && localData!=""){
+		var data= ajaxrest.getUser("email="+localData['email']+"&token="+localStorage.token);	
+		var dat = angular.fromJson(data);
 		$scope.email = localData['email'];
-		$scope.name = localData['name'];
-		$scope.lastname = localData['lastname'];
-		$scope.cellPhone = localData['cellPhone'];
+		$scope.name = dat[0].name;
+		$scope.lastname = dat[0].lastname;
+		$scope.cellPhone = dat[0].cellPhone;
 	}else{
-		$scope.changeRoute('login.html#/cuenta');
+		$scope.changeRoute('login.html#/login');
 	}
 });
 
@@ -113,8 +141,10 @@
 
 	angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http) {
 		var cat=$routeParams.idCat;
-		var data= ajaxrest.getDishes("category="+cat+"&token="+localStorage.token);
+		
+		var data= ajaxrest.getDishes("category="+cat+"&token="+localStorage.token+"&dimension="+localStorage.dimension);
 		$scope.dishes=angular.fromJson(data);
+
 		$scope.imageCat="sopas_mini";
 		if(cat==1){
 			$scope.imageCat="arroz_mini";

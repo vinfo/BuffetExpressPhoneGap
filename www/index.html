@@ -68,7 +68,7 @@
         </div>
         <!-- fin Menu pie --> 
     </div>
-    <input id="page" name="page" type="hidden" value="0" />
+    <input id="page" name="page" type="hidden" value="1" />
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
@@ -82,9 +82,9 @@
     <script type="text/javascript" src="js/index.js"></script>
 
     <script type="text/javascript">
-     app.initialize();     
+       app.initialize();     
 
-     $(function(){
+       $(function(){
     // Tamaño container
     $(".container").css({"min-height":$(document).height()});
 
@@ -109,6 +109,7 @@
         $("#owl-demo").trigger('owl.prev');
     })
 
+
     // Menu lateral
     $(".latermenu").hover(function(){
     },function(){
@@ -127,7 +128,8 @@
     });
     $(".menupie").hover(function(){
         $(".latermenu").animate({"left":-412},200);
-    });    
+    });
+
 
     //Activar menus  
     $(".menupie li a").click(function(){
@@ -138,6 +140,18 @@
 })
 function hiddeMenu(){
     $(".latermenu").animate({"left":-412},200);
+}
+function addShop(action){
+    var num=$(".numero").html();
+    if(action=="mas"){
+        num++;
+    }
+    if(action=="menos"){
+       if(num>0)num--;
+    }    
+    localStorage.setItem("num",num);
+    $(".numero").html(num);
+    return false;
 }
 </script>
 </body>

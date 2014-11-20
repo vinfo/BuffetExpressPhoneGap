@@ -52,6 +52,12 @@ angularRoutingApp.controller('terminosController', function($scope) {
 	$scope.message = 'Esta es la página de "Terminos"';
 });
 
-angularRoutingApp.controller('claveController', function($scope) {
-	$scope.message = 'Esta es la página de "Recuperar contraseña"';
+angularRoutingApp.controller('claveController', function($scope) {			
+		$scope.getPass = function (email) {
+			var data= ajaxrest.getUser("email="+email+"&token="+localStorage.token);	
+			var dat= angular.fromJson(data);
+			if(dat[0].name!="" && dat[0].name!=""){
+				var data= ajaxrest.getPass("email="+email+"&identity="+dat[0].identity+"&token="+localStorage.token);
+			}
+		}
 });
