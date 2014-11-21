@@ -10,6 +10,8 @@ a img
 	height: 100%;
 	margin: auto;
 	background: url(../images/fondo.png);
+	background-repeat: no-repeat;
+	background-size: cover;
 	position: fixed;
 	padding: 0px;
 	padding-bottom: 150px;
@@ -41,23 +43,25 @@ a img
 {
 	text-align: center;
 	width: 100%;
+	padding-top: 30px;
 }
 .form-group 
 {
 	position: relative;
 	max-width: 576px;
 	margin: auto;
-	margin-top: 9px;
+	margin-top: 15px;
 }
 .sesion span
 {
-	background: url(../images/usuario.png);
-	width: 66px;
-	height: 65px;
-	display: inline-block;
-	position: absolute;
-	left: 10px;
-	top: -2px;
+background: url(../images/usuario.png) no-repeat;
+background-size: 50px 50px;
+width: 66px;
+height: 43px;
+display: inline-block;
+position: absolute;
+left: 30px;
+top: -4px;
 
 }
 .sesion .img1
@@ -66,19 +70,24 @@ a img
 }
 .sesion .ico-contra
 {
-	background: url(../images/contrasena.png);
+background: url(../images/contrasena.png) no-repeat;
+background-size: 50px 50px;
 }
 .sesion input
 {
-	background: none;
-	background: url(../images/sombra.png);
-	border:0px;
-	border-radius: 40px;
-	font-size: 15px;
-	color: #FFFFFF;
-	height: 61px;
-	padding-left: 80px;
-	font-size: 22px;
+background: none;
+background: url(../images/sombra.png);
+border: 0px;
+border-radius: 40px;
+font-size: 15px;
+color: #FFFFFF;
+margin: 0 auto;
+height: 40px;
+width: 90%;
+padding-left: 80px;
+}
+.sesion input:focus{
+	box-shadow: 0 0 0 0;
 }
 .sesion .formse
 {
@@ -87,13 +96,12 @@ a img
 .sesion button
 {
 	background: url(../images/sombrav.png);
-	border:0px;
+	border: 0px;
 	color: white;
 	border-radius: 20px;
-	width: 40%;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	font-size: 18px;
+	width: 30%;
+	padding: 7px 10px;
+	font-size: 15px;
 }
 .sesion button[type=submit]
 {
@@ -113,7 +121,6 @@ a img
 }
 .sesion .terminos
 {
-	position: absolute;
 	width: 100%;
 	text-align: center;
 	bottom: 2%;
@@ -129,18 +136,20 @@ a img
 	/*min-width: 532px;*/
 	width: 100%;
 	position: fixed;
-	height: 70px;
+	height: 38px;
 	z-index: 1000;
 	top: 0px;
 	left: 0px;
+	box-shadow: 0px 1px 6px 0px #000;
 }
 .menusup button
 {
-	padding: 18px;
+	padding: 0px 5px;
 	background: none;
 	border:0px;
 	position: absolute;
 	z-index: 100;
+	padding-top: 5px;
 }
 .menusup button:hover
 {
@@ -164,16 +173,17 @@ a img
 }
 .menusup button.ico-lupa
 {
-	top: 0px;
-	right: 0px;
-	padding: 15px;
+top: 0px;
+right: 0px;
+padding: 0px 5px;
 }
-
-.menusup button.ico-lupa span {
-    background: url("../images/redes_sociales.png") no-repeat scroll 0 0 / 38px auto rgba(0, 0, 0, 0);
-    display: inline-block;
-    height: 35px;
-    width: 35px;
+.menusup button.ico-lupa span
+{
+	background: url(../images/redes_sociales.png) no-repeat;
+	background-size: 38px;
+	width: 35px;
+	height: 35px;
+	display: inline-block;
 }
 
 .title
@@ -187,10 +197,14 @@ a img
 	line-height: 68px;
 	z-index: 1;
 }
+.menusup .title{
+font-size: 25px;
+line-height: 38px;
+}
 .buffet
 {
 	text-align: center;
-	padding-top: 100px;
+	padding-top: 55px;
 	position: relative;
 }
 .buffet span
@@ -230,21 +244,25 @@ a img
 .buffet .owl-controls .owl-page span
 {
 	background: url(../images/btn1sli.png);
-	background-repeat: no-repeat;
-	width: 36px;
-	height: 41px;
-	position: relative;
+background-size: 25px 25px;
+width: 25px;
+height: 25px;
+position: relative;
 
 }
 .buffet .owl-controls .active span
 {
 	background: url(../images/btn2sli.png);
-	background-repeat: no-repeat;
+	background-size: 25px 25px;
 	top: -2px;
 }
 .buffet .owl-controls  .owl-buttons
 {
 	display: none;
+}
+.presen .owl-controls  .owl-buttons
+{
+	display: block;
 }
 .buffet .imgcodigo
 {
@@ -254,8 +272,8 @@ a img
 }
 .buffet .imgcodigo img
 {
-	width: 100%;
-	max-width: 574px;
+width: 100%;
+max-width: 420px;
 }
 .menupie
 {
@@ -266,6 +284,7 @@ a img
 	z-index: 1000;
 	/*min-width: 532px;*/
 	width: 100%;
+	box-shadow: 0px 1px 6px 0px #000;
 	
 }
 .menupie ul
@@ -318,7 +337,7 @@ a img
 	padding-top: 100px;
 	overflow: hidden;
 	position: relative;
-	padding-bottom: 83px;
+	padding-bottom: 57px;
 }
 .menuplato .col-md-6
 {
@@ -386,7 +405,7 @@ a img
 
 .menuplatolist
 {
-	margin-top: 70px;
+	margin-top: 39px;
 }
 .menuplatolist .col-md-12
 {
@@ -396,43 +415,50 @@ a img
 .menuplatolist .col-md-12 .title
 {
 	background: url(../images/sombramenulist.png);
-	height: 103px;
+	background-size: 100% 100%;
+	height: 58px;
 	width: 100%;
-	padding-top: 19px;
+	padding-top: 10px;
 	text-align: left;
 	padding-left: 15%;
 	color: #414042;
 }
+
 .menuplatolist .col-md-12 .title img
 {
 	position: absolute;
-	top: 20%;
+	top: 12%;
 	left: 3%;
+	width: 15%;
+	max-width: 45px;
 }
 .menuplatolist .col-md-12 .title span
 {
-	color: #138cb1;
+	/*color: #138cb1;*/
 	position: absolute;
-	top: 16%;
-	right: 3%;
-	font-weight: bold;
+	top: 0%;
+	right: 0%;
+	/*font-weight: bold;*/
+	width: 80%;
+	text-align: left;
 }
 .menuplatolist .col-md-12 .btnts
 {
 	position: absolute;
 	width: 100%;
 	text-align: center;
-	margin-top: 100px;
+	margin-top: 40px;
 }
 .menuplatolist .col-md-12 .btnts img
 {
 	cursor: pointer;
+	width: 48px;
 }
 .menuplatolist .col-md-12 .detalle
 {
 	width: 100%;
 	max-width: 561px;
-	min-height: 229px;
+	min-height: 141px;
 	height: auto;
 	background: url(../images/fondetallevme.png);
 	display: inline-block;
@@ -458,20 +484,24 @@ a img
 	float: left;
 	position: relative;
 	top: -10px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	font-size: 11px;
 
 }
 .menuplatolist .col-md-12 .detalle h1 span
 {
-	background: url(../images/sonido.png);
-	width: 53px;
-	height: 53px;
+	background: url(../images/sonido.png) no-repeat;
+	background-size: 100% 100%;
+	width: 25px;
+	height: 25px;
 	display: inline-block;
 	float: right;
 	margin-right: 50px;
 }
 .menuplatolist .col-md-12 .detalle label
 {
-	font-size: 20px;
+	font-size: 13px;
 	display: block;
 }
 .menuplatolist .col-md-12 .detalle label span
@@ -481,9 +511,41 @@ a img
 }
 .menuplatolist .col-md-12 .contimg
 {
-	width: 104%;
-	overflow: hidden;
+	width: 106%;
 }
+.menuplatolist .col-md-12 .contimg img
+{
+	width: 100%;
+}
+.menuplato .food .fooda
+{
+top: 390px;
+right: 0;
+}
+.menuplato .food .fooda2
+{
+top: 330px;
+left: 60%;
+}
+.menuplato .food .fooda3
+{
+left: 72%;
+top: 380px;
+}
+.menuplato .food .fooda img
+{
+max-width: 80px;
+}
+.menuplato .food .fooda2 img
+{
+max-width: 50px;
+}
+.menuplato .food .fooda3 img
+{
+
+max-width: 100px;
+}
+
 .verplatoico
 {
 	width: 100%;
@@ -526,6 +588,7 @@ a img
 	margin-top: 0px;
 	cursor: pointer;
 	width: auto;
+	z-index: 2000;
 }
 .miscompras
 {
@@ -542,6 +605,7 @@ a img
 	float: left;
 	margin-right: 10px;
 	width: 40%;
+	max-height: 312px;
 	overflow: hidden;
 }
 .miscompras .comprasitem .imgcont img
@@ -658,6 +722,10 @@ a img
 	padding-left: 20px;
 	cursor: pointer;
 }
+.miscompras .fooda .ff2 img
+{
+	width: 98%;
+}
 .facturavir
 {
 	width: 100%;
@@ -739,6 +807,8 @@ a img
 	box-shadow: 1px 2px 3px #B0B0B0;
 	border:1px solid #B0B0B0;
 	width: 50%;
+	font-size: 14px;
+	padding-left: 9px;
 }
 .facturavir .vrdirc
 {
@@ -937,7 +1007,7 @@ a img
 	position: absolute;
 	width: 100%;
 	text-align: center;
-	font-size: 50px;
+	font-size: 40px;
 	z-index: 100;
 	font-weight: normal;
 	color: white;
@@ -948,21 +1018,33 @@ a img
 {
 	position: absolute;
 	top: 308px;
-	width: 80%;
+	width: 70%;
 	background: url(../images/sombra.png);
-	border-radius: 20px;
+	border-radius: 0 15px 15px 0;
 	padding: 5px;
 	color: white;
-	left: 10%;
+	left: 25%;
+}
+.vermapa .lpita{
+position: absolute;
+background: url('../images/lupa_mapa.png') no-repeat scroll 0% 0% transparent;
+background-size: 70px 70px;
+border-radius: 0px 15px 15px 0px;
+padding: 5px;
+color: #FFF;
+width: 30%;
+height: 75px;
+left: 7%;
+top: 307px;
 }
 .vermapa .lupabu label
 {
-	font-size: 25px;
+	font-size: 20px;
 }
 .vermapa .lupabu p
 {
 	line-height: 15px;
-	font-size: 17px;
+	font-size: 14px;
 }
 .vermapa .icomapa
 {
@@ -1018,7 +1100,9 @@ a img
 	border-radius: 40px;
 	font-size: 15px;
 	color: #FFFFFF;
-	height: 61px;
+	margin: 0 auto;
+	height: 55px;
+	width: 90%;
 	padding-left: 30px;
 	font-size: 22px;
 }
@@ -1031,6 +1115,7 @@ a img
 	width: 40%;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	margin-bottom: 12px;
 	font-size: 18px;
 }
 .crear_cuenta button#login,.recupera_contra button#recupera
@@ -1066,6 +1151,442 @@ a img
 .pagosdiv
 {
 	padding-top: 70px;
+	padding-bottom: 70px;
+}
+.formitaese{
+background: url('../images/sombra.png');
+position: fixed;
+top: 20%;
+width: 100%;
+margin: 0 auto;
+padding: 10px;
+box-shadow: 0px 0px 8px 1px #000;
+}
+.formitaese .form-group > input{
+box-shadow: 0px 1px 6px -1px #000 inset;
+border: 0px;
+}
+.formitaese .form-group > button{
+padding: 5px 25px;
+}
+.datos_perfil{
+position: relative;
+width: 90%;
+margin: 0 auto;
+}
+.datos_perfil .avt{
+color: #414042;
+font-weight: bold;
+padding-bottom: 20px;
+}
+.datos_perfil .avt > img{
+max-width: 105px;
+max-height: 100px;
+width: 100%;
+background: #FFF;
+border-radius: 100px;
+border: 2px solid;
+}
+.datos_perfil .avt > a{
+position: absolute;
+display: block;
+background: #D74444;
+border: 2px solid #FFF;
+border-radius: 5px;
+}
+.datos_perfil .avt > a > img{
+max-width: 30px;
+}
+.datos_perfil .detallesitos{
+background: #FFF;
+text-align: left;
+padding: 10px;
+padding-left: 50px;
+border-radius: 0 0 15px 15px;
+}
+.datos_perfil h1{
+background: #313131;
+color: #FFF;
+margin: 0;
+padding: 10px 0px;
+border-radius: 15px 15px 0 0;
+}
+.datos_perfil .detallesitos .gro{
+width: 100%;
+padding-bottom: 10px;
+padding-top: 10px;
+border-bottom: 2px solid #CBCBCB;
+}
+.datos_perfil .detallesitos .gro > img{
+max-width: 35px;
+}
+.datos_perfil .detallesitos img{
+display: inline-block;
+}
+.datos_perfil .detallesitos p{
+display: inline-block;
+color: #414042;
+}
+.datos_perfil .detallesitos .form-group{
+	text-align: center;
+}
+.felicitation{
+position: relative;
+width: 90%;
+margin: 0 auto;
+}
+.felicitation h1{
+background: #313131;
+color: #FFF;
+font-size: 30px;
+margin: 0;
+padding: 10px 0px;
+border-radius: 15px 15px 0 0;
+}
+.felicitation .feli_re{
+	background: #FFF;
+	padding: 10px;
+	border-radius: 0 0 15px 15px;
+}
+.felicitation .feli_re h3{
+margin: 0;
+}
+.felicitation .checkbox{
+vertical-align: text-bottom;
+color: #7C7C7C;
+padding: 0;
+margin-right: 10px;
+text-align: left;
+}
+.felicitation .checkbox input{
+float: right;
+}
+.felicitation textarea{
+outline: none;
+width: 100%;
+border: 1px solid #CCC;
+border-radius: 2px;
+color: #7E7E7E;
+box-shadow: 0px 3px 12px -8px #000 inset;
+}
+.felicitation .form-group{
+	text-align: right;
+}
+.felicitation .form-group .btn{
+padding: 10px 35px;
+border-radius: 50px;
+}
+.presen{
+	background: rgba(0, 0, 0, 0.76);
+	position: fixed;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10000;
+}
+.presen .n_close{
+	text-align: right;
+}
+.presen #present .item > h1,.presen #present .item > h4{
+color: #FFF;
+}
+.presen #present .item > h1{
+font-size: 60px;
+}
+.presen #present .item > h4{
+font-size: 30px;	
+}
+.presen .owl-next{
+background: url('../images/arrow_r.png');
+width: 80px;
+height: 80px;
+float: right;
+}
+.presen .owl-prev{
+background: url('../images/arrow_l.png');
+width: 80px;
+height: 80px;
+float: left;	
+}
+.reds{
+position: fixed;
+width: 100%;
+top: 0;
+padding-top: 70px;
+}
+.reds h1{
+background: url('../images/shad.png');
+margin: 0;
+padding: 15px;
+color: #FFF;
+font-size: 25px;
+box-shadow: 0px 3px 6px -2px #000 inset;
+
+}
+.reds .redesi{
+
+}
+.reds .redesi a{
+display: inline-block;
+margin: 40px;
+border-radius: 50%;
+border: 3px solid #FFF;
+}
+.reds .redesi .gp{
+background: url('../images/gp.png') #cc3731 no-repeat;
+background-size: 55px;
+background-position: 30px 20px;
+max-width: 110px;
+width: 100%;
+height: 108px;
+}
+.reds .redesi .in{
+background: url('../images/ins.png') #326699 no-repeat;
+background-size: 55px;
+background-position: 25px 20px;
+max-width: 110px;
+width: 100%;
+height: 108px;
+}
+.reds .redesi .tw{
+background: url('../images/tw.png') #55acee no-repeat;
+background-size: 62px;
+background-position: 20px 28px;
+max-width: 110px;
+width: 100%;
+height: 108px;
+}
+.reds .redesi .fb{
+background: url('../images/fb.png') #3b5998 no-repeat;
+background-size: 35px;
+background-position: 30px 12px;
+max-width: 110px;
+width: 100%;
+height: 108px;
+}
+.food{
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 20px;
+}
+.food .col-md-6{
+	position: relative;
+	min-height: 156px;
+}
+.food .col-md-12
+{
+	position: relative;
+}
+.food .fooda,.food .fooda2,.food .fooda3{
+	position: relative;
+	
+}
+.food .fooda img
+{
+	widows: 100%;
+	margin:auto;
+}
+.food .ff1{
+	right: -1%;
+	bottom: -7px;
+	position: absolute;
+	width: 100px;
+	height: 100px;
+}
+.food .ff2{
+	left: 0%;
+	bottom: 0px;
+	text-align: left;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+}
+.food .ff2 .fis2
+{
+	position: absolute;
+}
+.food .ff2 img
+{
+	max-width: 50px;
+}
+.food .ff3
+{
+	max-width: 200px;
+	margin: auto;
+	top: 0px;
+}
+
+/*.food .fooda2{
+left: 42%;
+}
+.food .fooda3{
+left: 50%;
+top: 100px;	
+}*/
+/*.food .fooda img{
+max-width: 150px;
+}
+.food .fooda2 img{
+max-width: 100px;
+}
+.food .fooda3 img{
+max-width: 200px;
+}*/
+.food .fis,.food .fis2,.food .fis3{
+	position: absolute;
+}
+.food .fis{
+
+}
+.food .fis2{
+width: 90%;
+right: 5%;
+top: 5%;
+}
+.food .fis3{
+width: 70%;
+left: 15%;
+top: 14%;
+}
+
+/* MAS FOOD */
+.fooda{
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 20px;
+}
+.fooda .col-md-6{
+	position: relative;
+	min-height: 156px;
+}
+.fooda .col-md-12
+{
+	position: relative;
+}
+.fooda .fooda,.fooda .fooda2,.fooda .fooda3{
+	position: relative;
+	
+}
+.fooda .fooda img
+{
+	widows: 100%;
+	margin:auto;
+}
+.fooda .ff1{
+right: -40%;
+bottom: 50px;
+position: absolute;
+width: 100px;
+height: 100px;
+}
+.fooda .ff2{
+left: 30%;
+bottom: 32px;
+text-align: left;
+width: 50px;
+height: 50px;
+position: absolute;
+}
+.fooda .ff2 .fis2
+{
+	position: absolute;
+}
+.fooda .ff2 img
+{
+	max-width: 50px;
+}
+.fooda .ff3
+{
+max-width: 200px;
+margin: auto;
+top: -40px;
+left: 0%;
+}
+
+.fooda .fis,.fooda .fis2,.fooda .fis3{
+	position: absolute;
+}
+.fooda .fis{
+
+}
+.fooda .fis2{
+width: 90%;
+right: 5%;
+top: 5%;
+}
+.fooda .fis3{
+width: 70% !important;
+left: 15%;
+top: 14%;
+}
+
+/* MAS FOOD */
+.foodi{
+	position: relative;
+	padding-bottom: 20px;
+}
+.foodi .col-md-6{
+	position: relative;
+	min-height: 156px;
+}
+.foodi .col-md-12
+{
+	position: relative;
+	height: 10px;
+}
+.foodi .fooda,.foodi .fooda2,.foodi .fooda3{
+	position: relative;
+	
+}
+.foodi .fooda img
+{
+width: 70%;
+margin: auto;
+}
+.foodi .ff1{
+right: -25%;
+bottom: 70px;
+position: absolute;
+width: 100px;
+height: 100px;
+}
+.foodi .ff2{
+text-align: left;
+width: 50px;
+height: 50px;
+position: absolute;
+}
+.foodi .ff2 .fis2
+{
+	position: absolute;
+}
+.foodi .ff2 img
+{
+	max-width: 50px;
+}
+.foodi .ff3
+{
+max-width: 200px;
+margin: auto;
+top: -115px;
+left: 20%;
+}
+
+.foodi .fis,.foodi .fis2,.foodi .fis3{
+	position: absolute;
+}
+.foodi .fis{
+
+}
+.foodi .fis2{
+width: 90%;
+right: 30%;
+top: 0%;
+}
+.foodi .fis3{
+width: 50% !important;
+left: 26%;
+top: 14%;
 }
 @media (max-width: 532px){
 		.menusup .title
@@ -1106,7 +1627,7 @@ a img
 		.menuplatolist .col-md-12 .title
 		{
 			font-size: 140%;	
-			padding-left: 24%;		
+			padding-left: 22%;		
 		}
 		.menuplatolist .col-md-12 .detalle
 		{
@@ -1114,7 +1635,7 @@ a img
 		}
 		.menuplatolist .col-md-12 .detalle h1
 		{
-			font-size: 200%;
+			font-size: 149%;
 		}
 		.menuplatolist .col-md-12 .btnts .vene .col-md-6
 		{
@@ -1161,9 +1682,4 @@ a img
 	{
 		width: 100%;
 	}
-}
-.micuenta
-{
-	width: 100%;
-	padding-top: 70px;
 }

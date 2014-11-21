@@ -108,23 +108,27 @@
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/phonegap-toast.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/Toast.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/directives.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/spec.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/ng-infinite-scroll.min.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/clave.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/mi_cuenta.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
 		"/D/Movilidad/mapa.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/terminos.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/Ionic/myApp/plugins/org.apache.cordova.device/www/device.js",
 		"/D/Movilidad/Ionic/myApp/www/js/services.js",
 		"/D/Movilidad/Ionic/myApp/config.xml",
@@ -146,14 +150,12 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
 		"/C/Users/odc/Desktop/CEA.html",
 		"/C/Users/odc/Desktop/ConducimosHOy.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/directives.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-route.js",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/pertho_admin_v1.3/login.html",
 		"/C/Users/odc/Downloads/videos virtuales/index2.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categorias.html",
 		"/C/Users/odc/AppData/Roaming/Sublime Text 3/Packages/User/getJSONStorage.sublime-snippet",
 		"/D/wamp/www/realriskPhonegap/www/index.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/spec.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/contrasena.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/terminos.html",
 		"/C/Users/odc/Downloads/jquery.inputmask-3.x/jquery.inputmask-3.x/bower.json",
@@ -233,13 +235,11 @@
 		"/D/Movilidad/BuffetExpress/pantalla2.html",
 		"/D/Movilidad/buffetexpress/index.html",
 		"/D/wamp/www/buffetexpress/movil/buffet/www/index.html",
-		"/D/wamp/www/buffetexpress/movil/buffet/www/templates/menu.html",
-		"/D/wamp/www/buffetexpress/movil/buffet/www/js/app.js",
-		"/D/wamp/www/buffetexpress/movil/buffet/www/js/controllers.js"
+		"/D/wamp/www/buffetexpress/movil/buffet/www/templates/menu.html"
 	],
 	"find":
 	{
-		"height": 21.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -254,6 +254,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ico-lupa",
 			"detailDish",
 			"localData['email']",
 			"localStorage",
