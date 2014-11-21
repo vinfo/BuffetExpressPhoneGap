@@ -124,12 +124,13 @@
 	};
 	
 	if(localData!=null && localData!=""){
-		var data= ajaxrest.getUser("email="+localData['email']+"&token="+localStorage.token);	
+		$scope.changeRoute('login.html#/login');
+/*		var data= ajaxrest.getUser("email="+localData['email']+"&token="+localStorage.token);	
 		var dat = angular.fromJson(data);
 		$scope.email = localData['email'];
 		$scope.name = dat[0].name;
 		$scope.lastname = dat[0].lastname;
-		$scope.cellPhone = dat[0].cellPhone;
+		$scope.cellPhone = dat[0].cellPhone;*/
 	}else{
 		$scope.changeRoute('login.html#/login');
 	}
