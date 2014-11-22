@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body ng-controller='mainController'>
-    <div class="container" style="background: url(images/fondoslide.png);">
+    <div class="container" style="{{setFondo()}}">
         <!-- Menu -->
         <div class="menusup">
             <button class="verlatermenu ico-menu"><span></span></button>
@@ -83,11 +83,15 @@
     <script type="text/javascript" src="js/index.js"></script>
 
     <script type="text/javascript">
-       app.initialize();     
+     app.initialize();     
 
-       $(function(){
+     $(function(){
     // Tamaño container
     $(".container").css({"min-height":$(document).height()});
+
+    $(window).load(function(){ $(".menupie ul li").css({"height":$("li.carrito a img").height()});
+        $(".contpag").css({"bottom":$("li.carrito a img").height()});
+    })    
 
     // Tamaño alto menu inferior
     $(window).load(function(){ 
@@ -148,11 +152,11 @@ function addShop(action){
         num++;
     }
     if(action=="menos"){
-       if(num>0)num--;
-    }    
-    localStorage.setItem("num",num);
-    $(".numero").html(num);
-    return false;
+     if(num>0)num--;
+ }    
+ localStorage.setItem("num",num);
+ $(".numero").html(num);
+ return false;
 }
 </script>
 </body>

@@ -99,7 +99,7 @@ padding-left: 80px;
 	border: 0px;
 	color: white;
 	border-radius: 20px;
-	width: 30%;
+	width: 33%;
 	padding: 7px 10px;
 	font-size: 15px;
 }
@@ -411,6 +411,8 @@ max-width: 420px;
 {
 	padding-left: 0px;
 	position: relative;
+	margin:0;
+	padding: 0;
 }
 .menuplatolist .col-md-12 .title
 {
@@ -511,7 +513,7 @@ max-width: 420px;
 }
 .menuplatolist .col-md-12 .contimg
 {
-	width: 106%;
+	width: 100%;
 }
 .menuplatolist .col-md-12 .contimg img
 {

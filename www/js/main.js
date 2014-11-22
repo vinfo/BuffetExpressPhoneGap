@@ -16,7 +16,7 @@
 		})
 		.when('/menu', {
 			templateUrl : 'templates/menu.html',
-			controller 	: 'menuController'
+			controller 	: 'mainController'
 		})
 		.when('/compras', {
 			templateUrl : 'templates/compras.html',
@@ -39,8 +39,19 @@
 		});
 	});
 
-	angularRoutingApp.controller('mainController', function($scope, $location){		 
-		 $scope.doLogin = function() {
+	angularRoutingApp.controller('mainController', function($scope, $location){		
+		$scope.setFondo = function() {
+		  var style1 = "background: url(images/fondo.png)";
+		  var style2 = "background: url(images/fondoslide.png)";
+		  if($location.url()=="/menu"){
+		    	 return style1;		  	
+			 }else{
+			 	return style2;
+			 }
+		}	
+		
+		
+		$scope.doLogin = function() {
 			ajaxrest.login();
 		},	
 		$scope.doCuenta = function (hash) { 
@@ -86,7 +97,8 @@
 			if(dish.idCat==5){
 				localStorage.setItem("sopa", {code:dish.code, price:dish.price});
 				$scope.sopa="http://buffetexpress.co/resources/images/dish/"+dish.code+"_2.png";		
-			}		
+			}
+			window.plugins.toast.showShortCenter('Adicionado!', function(b){alert('toast error: ' + b)});		
 		},	
 		$scope.closeDish = function (dish) {
 			$(".verplato").slideToggle();
@@ -99,9 +111,6 @@
 
 	angularRoutingApp.controller('sliderController', function($scope) {
 		$scope.message = 'Esta es la página de "Main"';
-	});
-
-	angularRoutingApp.controller('menuController', function($scope) {
 	});
 
 	angularRoutingApp.controller('comprasController', function($scope) {
@@ -123,14 +132,13 @@
 	    }
 	};
 	
-	if(localData!=null && localData!=""){
-		$scope.changeRoute('login.html#/login');
-/*		var data= ajaxrest.getUser("email="+localData['email']+"&token="+localStorage.token);	
+	if(localData!=null && localData!=""){		
+		var data= ajaxrest.getUser("email="+localData['email']+"&token="+localStorage.token);	
 		var dat = angular.fromJson(data);
 		$scope.email = localData['email'];
 		$scope.name = dat[0].name;
 		$scope.lastname = dat[0].lastname;
-		$scope.cellPhone = dat[0].cellPhone;*/
+		$scope.cellPhone = dat[0].cellPhone;
 	}else{
 		$scope.changeRoute('login.html#/login');
 	}
@@ -140,7 +148,7 @@
 		$scope.message = 'Esta es la página de "Terminos"';
 	});
 
-	angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http) {
+	angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http) {		
 		var cat=$routeParams.idCat;
 		
 		var data= ajaxrest.getDishes("category="+cat+"&token="+localStorage.token+"&dimension="+localStorage.dimension);

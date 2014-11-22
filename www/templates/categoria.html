@@ -1,9 +1,8 @@
 
 <!-- Cotenido slider buffet -->
 <div class="menuplatolist">
-
 	<div class="col-md-12" ng-repeat="dish in dishes">
-		<div class="title"><img src="images/{{imageCat}}.png" alt="..." title=".." />{{dish.name}} <span>{{dish.price | noFractionCurrency:0}}</span></div>
+		<div class="title"><img src="images/{{imageCat}}.png" alt="..." title=".." /><span>{{dish.name}}</span></div>
 		<div class="btnts">
 			<div id="detalle_{{dish.id}}" class="detalle" ng-dblclick="detailDish(dish)">
 				<h1>{{dish.name}} <span ng-if="dish.audio != null" ng-click="playAudio()"></span> </h1>
@@ -24,20 +23,35 @@
 			<img src="images/lupamenu.png" alt="..." title="..." class="masdetalle" ng-click="detailDish(dish)" />
 			<img src="images/masmenu.png" alt="..." title="..." ng-click="addDish(dish)" />
 		</div>
-		<div class="contimg"><img src="{{dish.images}}" alt="..." title="..." /></div>
+		<div class="contimg"><img src="{{dish.images}}" alt="..." title="..." width="60%" /></div>
 	</div>
 
 </div>
 
 <div class="verplato">
-	<img src="images/cerr_vpla.png" alt="..." alt="..." class="cerrves" ng-click="closeDish()" />
-	<img ng-src="{{sopa}}" style="position:absolute;width:35%;z-index:9999;left:4%;top:18%;border:none"/>
-	<img ng-src="{{arroz}}" style="position:absolute;width:35%;z-index:9999;left:55%;top:40%" />
-	<img ng-src="{{carnes}}" style="position:absolute;width:22%;z-index:9999;left:40%;top:35%"/>
-	<img ng-src="{{guarnicion}}" style="position:absolute;width:25%;z-index:9999;left:55%;top:30%"/>
-	<img ng-src="{{bebidas}}" style="position:absolute;width:16.5%;z-index:9999;left:42.5%;top:16.5%"/>
-	<img ng-src="images/verplagran.png" alt="..." title="..." />
+	<img src="images/cerr_vpla.png" alt="..." class="cerrves" ng-click="closeDish()">
+	<div class="food">
+		<div class="col-xs-6 col-md-6">
+			<div class="fooda ff1">
+				<img class="fis" ng-src="{{sopa}}"/>
+				<img src="images/plato_2.png"/>
+			</div>
+		</div>
+		<div class="col-xs-6 col-md-6">
+			<div class="fooda ff2">
+				<img class="fis2" ng-src="{{bebidas}}"/>
+				<img src="images/plato_3.png"/>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-12">
+			<div class="fooda ff3">
+				<img class="fis3" ng-src="{{arroz}}"/>
+				<img src="images/plato.png"/>
+			</div>
+		</div>
+	</div>
 </div>
+
 <div class="verplatoico"><img src="images/ver_plato.png" alt="..." title="..." class="img1" ng-click="fullDish()"/></div>
 <!-- fin contenido slider buffet -->
 <script type="text/javascript">
@@ -49,5 +63,5 @@
 				//fin tamaño container 
 
 				$(".detalle").hide();
-	})		
+			})		
 </script>
