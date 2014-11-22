@@ -98,7 +98,7 @@
 				localStorage.setItem("sopa", {code:dish.code, price:dish.price});
 				$scope.sopa="http://buffetexpress.co/resources/images/dish/"+dish.code+"_2.png";		
 			}
-			window.plugins.toast.showShortCenter('Adicionado!', function(b){alert('toast error: ' + b)});		
+			window.plugins.toast.showShortCenter('Producto Adicionado!', function(b){$location.path("index.html#/menu");});		
 		},	
 		$scope.closeDish = function (dish) {
 			$(".verplato").slideToggle();
