@@ -71,6 +71,7 @@
     <input id="page" name="page" type="hidden" value="1" />
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
     <script src="http://buffetexpress.co/resources/js/functions.js"></script>
     <script src="owl-carousel/owl.carousel.js"></script>
@@ -82,11 +83,20 @@
     <script type="text/javascript" src="js/index.js"></script>
 
     <script type="text/javascript">
-     app.initialize();     
+        app.initialize();
 
-     $(function(){
+        if (window.jQuery) {  
+         $(function(){
     // Tamaño container
     $(".container").css({"min-height":$(document).height()});
+
+    $.fn.inlineBlockToggle=function () {
+        if (this.css('display')==='inline-block') {
+            this.css('display', 'none');
+        } else {
+            this.css('display', 'inline-block');
+        }
+    };
 
     $(window).load(function(){ $(".menupie ul li").css({"height":$("li.carrito a img").height()});
         $(".contpag").css({"bottom":$("li.carrito a img").height()});
@@ -112,8 +122,7 @@
     $(".flechaiz").click(function(){
         $("#owl-demo").trigger('owl.prev');
     })
-
-
+    
     // Menu lateral
     $(".latermenu").hover(function(){
     },function(){
@@ -134,17 +143,20 @@
         $(".latermenu").animate({"left":-412},200);
     });
 
-
     //Activar menus  
     $(".menupie li a").click(function(){
         $("li").removeClass("active");
         $(this).parent().addClass("active");
-    });   
-
+    });
 })
+} else {
+    alert("Internet es requerido!");
+}      
+/* Funciones */    
 function hiddeMenu(){
     $(".latermenu").animate({"left":-412},200);
 }
+
 function addShop(action){
     var num=$(".numero").html();
     if(action=="mas"){
@@ -152,7 +164,7 @@ function addShop(action){
     }
     if(action=="menos"){
      if(num>0)num--;
- }    
+ } 
  localStorage.setItem("num",num);
  $(".numero").html(num);
  return false;

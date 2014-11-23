@@ -12,7 +12,7 @@
 		})	
 		.when('/slider', {
 			templateUrl	: 'templates/slider.html',
-			controller 	: 'sliderController'
+			controller 	: 'mainController'
 		})
 		.when('/menu', {
 			templateUrl : 'templates/menu.html',
@@ -39,17 +39,16 @@
 		});
 	});
 
-	angularRoutingApp.controller('mainController', function($scope, $location){		
-		$scope.setFondo = function() {
-		  var style1 = "background: url(images/fondo.png)";
-		  var style2 = "background: url(images/fondoslide.png)";
-		  if($location.url()=="/menu"){
-		    	 return style1;		  	
-			 }else{
-			 	return style2;
-			 }
-		}	
-		
+	angularRoutingApp.controller('mainController', function($scope, $location){			
+		 $scope.setFondo = function() {
+			var style1 = "background: url(images/fondo.png)";
+			var style2 = "background: url(images/fondoslide.png)";
+			if($location.url()=="/menu"){
+				return style1;		  	
+			}else{
+				return style2;
+			}
+		}			
 		
 		$scope.doLogin = function() {
 			ajaxrest.login();
@@ -69,14 +68,15 @@
 		},
 		$scope.hiddeMenu = function () {
 			hiddeMenu();
-		},
+		},		
 		$scope.detailDish = function (dish) {
-			$("#detalle_"+dish.id).slideToggle();
-		},
-		$scope.fullDish = function () {
+			$("#detalle_"+dish.id).slideToggle('fast', 'linear').inlineBlockToggle(); 
+		},		
+		$scope.fullDish = function (tipo) {
 			$(".verplato").slideToggle();
 			$(".verplatoico .img1").toggle();
-		},
+			return false;
+		},				
 		$scope.addDish = function (dish) {
 			if(dish.idCat==1){
 				localStorage.setItem("arroz", {code:dish.code, price:dish.price});
@@ -107,11 +107,11 @@
 		},
 		$scope.playAudio = function () {
 			ajaxrest.playAudio();
-		}	
-	});
-
-	angularRoutingApp.controller('sliderController', function($scope) {
-		$scope.message = 'Esta es la página de "Main"';
+		},
+		$scope.goMenu = function () {
+			$("li").removeClass("active");
+			$(".menupie ul li:nth-child(2)").addClass("active");
+		}
 	});
 
 	angularRoutingApp.controller('comprasController', function($scope) {
@@ -142,7 +142,7 @@
 		$scope.cellPhone = dat[0].cellPhone;
 	}else{
 		$scope.changeRoute('login.html#/login');
-	}
+	}	
 });
 
 	angularRoutingApp.controller('terminosController', function($scope) {
@@ -150,6 +150,7 @@
 	});
 
 	angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http) {		
+		$(".detalle").hide();
 		var cat=$routeParams.idCat;
 		
 		var data= ajaxrest.getDishes("category="+cat+"&token="+localStorage.token+"&dimension="+localStorage.dimension);

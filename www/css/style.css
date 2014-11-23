@@ -179,7 +179,7 @@ padding: 0px 5px;
 }
 .menusup button.ico-lupa span
 {
-	background: url(../images/redes_sociales.png) no-repeat;
+	background: url(../images/redes.png) no-repeat;
 	background-size: 38px;
 	width: 35px;
 	height: 35px;
@@ -191,7 +191,7 @@ padding: 0px 5px;
 	width: 100%;
 	position: absolute;
 	height: 70px;
-	font-size: 40px;
+	font-size: 20px;
 	color: #FFFFFF;
 	text-align: center;
 	line-height: 68px;
@@ -236,6 +236,7 @@ line-height: 38px;
 	width: 100%;
 	position: relative;
 	margin-top: 1%;
+	z-index: 99;
 }
 .buffet .owl-controls .owl-page 
 {
@@ -334,10 +335,10 @@ max-width: 420px;
 }
 .menuplato
 {
-	padding-top: 100px;
+	padding-top: 30px;
 	overflow: hidden;
 	position: relative;
-	padding-bottom: 57px;
+	padding-bottom: 17px;
 }
 .menuplato .col-md-6
 {
@@ -348,13 +349,17 @@ max-width: 420px;
 	width: 70%;
 	margin-bottom: 21%;
 }
-.menuplato .col-md-6:nth-child(6)
+.menuplato a:nth-child(6) > img
+{
+	width: 70%;
+}
+.menuplato .col-md-6:nth-child(7)
 {
 	padding-left: 0px;
 }
-.menuplato a:nth-child(6) > img
+.menuplato a:nth-child(7) > img
 {
-	width: 100%;
+	width: 60%;
 }
 .menuplato .opcio
 {
@@ -406,13 +411,14 @@ max-width: 420px;
 .menuplatolist
 {
 	margin-top: 39px;
+	padding-bottom: 60px;
 }
 .menuplatolist .col-md-12
 {
+	margin: 0;
+	padding:0;
 	padding-left: 0px;
 	position: relative;
-	margin:0;
-	padding: 0;
 }
 .menuplatolist .col-md-12 .title
 {
@@ -422,7 +428,7 @@ max-width: 420px;
 	width: 100%;
 	padding-top: 10px;
 	text-align: left;
-	padding-left: 15%;
+	padding-left: 12%;
 	color: #414042;
 }
 
@@ -437,12 +443,15 @@ max-width: 420px;
 .menuplatolist .col-md-12 .title span
 {
 	/*color: #138cb1;*/
-	position: absolute;
+	/*position: absolute;*/
 	top: 0%;
 	right: 0%;
 	/*font-weight: bold;*/
-	width: 80%;
+	width:82%;
 	text-align: left;
+	font-size: 18px;
+	position: absolute;
+	top: -10px;
 }
 .menuplatolist .col-md-12 .btnts
 {
@@ -462,8 +471,8 @@ max-width: 420px;
 	max-width: 561px;
 	min-height: 141px;
 	height: auto;
-	background: url(../images/fondetallevme.png);
-	display: inline-block;
+	background: url("../images/fondetallevme.png") repeat scroll center bottom rgba(0, 0, 0, 0);
+	display:none;
 }
 .menuplatolist .col-md-12 .detalle h1
 {
@@ -554,7 +563,7 @@ max-width: 100px;
 	position: fixed;
 	bottom: 100px;
 	z-index: 100;
-	bottom: 67px;
+	bottom: 11%;
 	text-align: center;
 }
 .verplatoico img{
@@ -595,7 +604,8 @@ max-width: 100px;
 .miscompras
 {
 	width: 100%;
-	padding-top: 70px;
+	padding-top: 40px;
+	padding-bottom:111px;
 }
 .miscompras .comprasitem
 {
@@ -606,13 +616,14 @@ max-width: 100px;
 {
 	float: left;
 	margin-right: 10px;
-	width: 40%;
-	max-height: 312px;
+	max-width: 45%;
+	max-height:60%;
 	overflow: hidden;
+	background: #482810;
 }
 .miscompras .comprasitem .imgcont img
 {
-	width: 100%;
+	width: 80%;
 }
 .miscompras .comprasitem  .icodeli
 {
@@ -622,13 +633,14 @@ max-width: 100px;
 .miscompras .comprasitem .contnn
 {
 	float: left;
-	width: 49%;
+	max-width: 50%;
 }
 .miscompras .comprasitem .contnn h3
 {
 	margin-top: 0px;
-	width: 200px;
+	max-width: 80%;
 	margin-bottom: 5px;
+	font-size: 18px;
 }
 .miscompras .comprasitem .contnn p
 {
@@ -651,8 +663,8 @@ max-width: 100px;
 }
 .miscompras .comprasitem  .icodeli span.elimina
 {
-	width: 64px;
-	height: 63px;
+	width: 60px;
+	height:58px;
 	background: url(../images/eliminar_pedido.png);
 }
 .miscompras .comprasitem  .icodeta
@@ -966,7 +978,7 @@ max-width: 100px;
 	left: -412px;	
 	max-width: 412px;
 	width: 50%;
-	z-index: 500;
+	z-index:999;
 }
 .latermenu .tr
 {
@@ -1096,34 +1108,18 @@ top: 307px;
 }
 .crear_cuenta input,.recupera_contra input
 {
-	background: none;
-	background: url(../images/sombra.png);
-	border: 0px;
-	border-radius: 40px;
-	font-size: 15px;
-	color: #FFFFFF;
-	margin: 0 auto;
-	height: 55px;
-	width: 90%;
-	padding-left: 30px;
-	font-size: 22px;
+	
+	padding-left: 20px;
 }
 .crear_cuenta button,.recupera_contra button
 {
-	background: url(../images/sombra_gra.png);
-	border: 0px;
-	color: white;
-	border-radius: 20px;
-	width: 40%;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	margin-bottom: 12px;
-	font-size: 18px;
+	background: url(../images/sombra_gra.png) !important;
 }
 .crear_cuenta button#login,.recupera_contra button#recupera
 {
-	background: url(../images/sombrav.png);
+	background: url(../images/sombrav.png) !important;
 	margin-right: 3%;
+	font-size: 13px;
 }
 .terminos
 {
@@ -1314,7 +1310,8 @@ float: left;
 position: fixed;
 width: 100%;
 top: 0;
-padding-top: 70px;
+padding-top: 38px;
+padding-bottom: 10px;
 }
 .reds h1{
 background: url('../images/shad.png');
@@ -1322,7 +1319,7 @@ margin: 0;
 padding: 15px;
 color: #FFF;
 font-size: 25px;
-box-shadow: 0px 3px 6px -2px #000 inset;
+text-align: center;
 
 }
 .reds .redesi{
@@ -1368,7 +1365,6 @@ height: 108px;
 }
 .food{
 	position: relative;
-	overflow: hidden;
 	padding-bottom: 20px;
 }
 .food .col-md-6{
@@ -1389,19 +1385,19 @@ height: 108px;
 	margin:auto;
 }
 .food .ff1{
-	right: -1%;
-	bottom: -7px;
-	position: absolute;
-	width: 100px;
-	height: 100px;
+right: 10%;
+bottom: -7px;
+position: absolute;
+width: 100px;
+height: 100px;
 }
 .food .ff2{
-	left: 0%;
-	bottom: 0px;
-	text-align: left;
-	width: 50px;
-	height: 50px;
-	position: absolute;
+left: -8%;
+bottom: 10%;
+text-align: left;
+width: 50px;
+height: 50px;
+position: absolute;
 }
 .food .ff2 .fis2
 {
@@ -1413,9 +1409,9 @@ height: 108px;
 }
 .food .ff3
 {
-	max-width: 200px;
-	margin: auto;
-	top: 0px;
+max-width: 200px;
+margin: auto;
+top: -5px;
 }
 
 /*.food .fooda2{
@@ -1434,7 +1430,7 @@ max-width: 100px;
 .food .fooda3 img{
 max-width: 200px;
 }*/
-.food .fis,.food .fis2,.food .fis3{
+.food .fis,.food .fis2,.food .fis3,.food .fis4,.food .fis5{
 	position: absolute;
 }
 .food .fis{
@@ -1446,9 +1442,23 @@ right: 5%;
 top: 5%;
 }
 .food .fis3{
-width: 70%;
-left: 15%;
-top: 14%;
+width: 32%;
+left: 56%;
+top: 18%;
+}
+
+.food .fis4{
+width: 32%;
+height: 70px;
+left: 20%;
+top: 5%;
+}
+
+.food .fis5{
+width: 32%;
+height: 70px;
+left: 20%;
+top: 35%;
 }
 
 /* MAS FOOD */
@@ -1464,6 +1474,7 @@ top: 14%;
 .fooda .col-md-12
 {
 	position: relative;
+	max-height: 80px;
 }
 .fooda .fooda,.fooda .fooda2,.fooda .fooda3{
 	position: relative;
@@ -1475,15 +1486,15 @@ top: 14%;
 	margin:auto;
 }
 .fooda .ff1{
-right: -40%;
+right: -25%;
 bottom: 50px;
 position: absolute;
 width: 100px;
 height: 100px;
 }
 .fooda .ff2{
-left: 30%;
-bottom: 32px;
+left: 10%;
+top: 9%;
 text-align: left;
 width: 50px;
 height: 50px;
@@ -1501,8 +1512,8 @@ position: absolute;
 {
 max-width: 200px;
 margin: auto;
-top: -40px;
-left: 0%;
+top: -90px;
+left: 25%;
 }
 
 .fooda .fis,.fooda .fis2,.fooda .fis3{
@@ -1518,8 +1529,8 @@ top: 5%;
 }
 .fooda .fis3{
 width: 70% !important;
-left: 15%;
-top: 14%;
+left: 6%;
+top: 8%;
 }
 
 /* MAS FOOD */
@@ -1589,6 +1600,24 @@ top: 0%;
 width: 50% !important;
 left: 26%;
 top: 14%;
+}
+.nosotros{
+margin-top: 39px;
+background-color: #FFF;
+}
+.nosotros h1{
+color: #414042;
+text-align: center;
+}
+.nosotros .col-md-12{
+	padding: 0;
+	margin: 0;
+}
+.nosotros .col-md-12 > img{
+	width: 100%;
+}
+.nosotros .col-md-12 p{
+padding:15px;
 }
 @media (max-width: 532px){
 		.menusup .title
@@ -1684,4 +1713,14 @@ top: 14%;
 	{
 		width: 100%;
 	}
+}
+
+/* Adicionales */
+.dishTitle{
+	text-align:center;
+	color: white;
+	font-size:18px;
+}
+.dishTitle h1{
+	font-size:20px;
 }
