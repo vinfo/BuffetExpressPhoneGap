@@ -34,6 +34,10 @@
 			templateUrl : 'templates/categoria.html',
 			controller 	: 'categoriaController'
 		})
+		.when('/redes', {
+			templateUrl : 'templates/redes.html',
+			controller 	: 'mainController'
+		})		
 		.otherwise({
 			redirectTo: '/'
 		});
