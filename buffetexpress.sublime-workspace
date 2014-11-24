@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"fon",
+				"font-size"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"cl",
+				"clear"
+			],
+			[
+				"va",
+				"vertical-align"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"on",
+				"onclick	Attr"
+			],
+			[
+				"t",
+				"title	Attr"
+			],
+			[
 				"at",
 				"attr"
 			],
@@ -44,43 +80,11 @@
 	"buffers":
 	[
 		{
-			"file": "www/js/main.js",
+			"file": "www/index.html~RFf59bcc1.TMP",
 			"settings":
 			{
-				"buffer_size": 6099,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "www/css/style.css",
-			"settings":
-			{
-				"buffer_size": 25629,
+				"buffer_size": 0,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "www/templates/menu.html",
-			"settings":
-			{
-				"buffer_size": 1196,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "www/index.html",
-			"settings":
-			{
-				"buffer_size": 5730,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "www/templates/slider.html",
-			"settings":
-			{
-				"buffer_size": 700,
-				"line_ending": "Unix"
 			}
 		}
 	],
@@ -143,27 +147,36 @@
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms",
-		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates"
+		"/D/Movilidad/BuffetExpressPhoneGap/www"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/red_socials.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/redes.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla6.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla4.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
+		"/D/wamp/www/familymarketing/modules/js/aproductos.js",
+		"/D/wamp/www/familymarketing/modules/js/login.js",
+		"/D/wamp/www/familymarketing/modules/js/compras.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/directives.js",
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/index.html",
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/pantalla4.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/pantalla6.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/phonegap-toast.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/Toast.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/directives.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
@@ -190,7 +203,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/screenorientation.js",
 		"/C/Users/odc/Downloads/PhoneGap-OrientationLock-master/PhoneGap-OrientationLock-master/www/orientationLock.js",
 		"/C/Users/odc/Downloads/audio5js-master/audio5js-master/demos/angular/ngAudio5.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
 		"/C/Users/odc/Desktop/CEA.html",
 		"/C/Users/odc/Desktop/ConducimosHOy.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-route.js",
@@ -266,16 +278,7 @@
 		"/D/Movilidad/BuffetExpress/test/www/js/index.js",
 		"/D/Movilidad/BuffetExpress/test.html",
 		"/D/Movilidad/BuffetExpress/css/style.css",
-		"/C/Users/odc/Downloads/buffe_expres(1)/index.html",
-		"/D/Movilidad/Phonegap/Demo-Network-Information-master/config.xml",
-		"/C/Users/odc/Downloads/source/assets/www/index.html",
-		"/D/Movilidad/BuffetExpress/pantalla3.html",
-		"/D/Movilidad/BuffetExpress/pantalla4.html",
-		"/D/Movilidad/BuffetExpress/pantalla5.html",
-		"/D/Movilidad/BuffetExpress/pantalla7.html",
-		"/D/Movilidad/BuffetExpress/pantalla6.html",
-		"/D/Movilidad/BuffetExpress/pantalla2.html",
-		"/D/Movilidad/buffetexpress/index.html"
+		"/C/Users/odc/Downloads/buffe_expres(1)/index.html"
 	],
 	"find":
 	{
@@ -294,6 +297,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".miscompras .comprasitem .icodeli span.elimina",
+			".menuplatolist .col-md-12 .title span",
+			".menuplatolist .col-md-12 .detalle",
+			"getDishes",
+			".menuplato",
+			"h3",
+			"fullDish(",
+			"active\"",
 			".title",
 			".col-md-12",
 			".buffet .imgcodigo",
@@ -365,80 +376,16 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "www/js/main.js",
-					"semi_transient": false,
+					"file": "www/index.html~RFf59bcc1.TMP",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 6099,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3043,
-								3043
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 975.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "www/css/style.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 25629,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2721,
-								2721
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 2153.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "www/templates/menu.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1196,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
@@ -454,73 +401,7 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "www/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5730,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2641,
-								2641
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 702.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "www/templates/slider.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 700,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								278,
-								278
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

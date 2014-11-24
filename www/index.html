@@ -86,7 +86,7 @@
         app.initialize();
 
         if (window.jQuery) {  
-         $(function(){
+           $(function(){
     // Tamaño container
     $(".container").css({"min-height":$(document).height()});
 
@@ -163,11 +163,11 @@ function addShop(action){
         num++;
     }
     if(action=="menos"){
-     if(num>0)num--;
- } 
- localStorage.setItem("num",num);
- $(".numero").html(num);
- return false;
+       if(num>0)num--;
+   } 
+   localStorage.setItem("num",num);
+   $(".numero").html(num);
+   return false;
 }
 </script>
 </body>
