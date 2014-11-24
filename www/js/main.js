@@ -158,7 +158,7 @@
 		var cat=$routeParams.idCat;
 		
 		var data= ajaxrest.getDishes("category="+cat+"&token="+localStorage.token+"&dimension="+localStorage.dimension);
-		$scope.dishes=angular.fromJson(data);
+		$scope.dishes=angular.fromJson(data);		
 
 		$scope.imageCat="sopas_mini";
 		if(cat==1){
