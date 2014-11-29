@@ -4,12 +4,48 @@
 		"selected_items":
 		[
 			[
-				"fon",
+				"t",
+				"text-top"
+			],
+			[
+				"p",
+				"padding-top"
+			],
+			[
+				"fo",
 				"font-size"
 			],
 			[
+				"te",
+				"text-align"
+			],
+			[
 				"pa",
-				"padding-bottom"
+				"padding-top"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"fon",
+				"font-size"
 			],
 			[
 				"max",
@@ -36,10 +72,6 @@
 				"onclick	Attr"
 			],
 			[
-				"t",
-				"title	Attr"
-			],
-			[
 				"at",
 				"attr"
 			],
@@ -54,10 +86,6 @@
 			[
 				"termin",
 				"terminos"
-			],
-			[
-				"ba",
-				"background-repeat"
 			],
 			[
 				"h",
@@ -79,14 +107,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "www/index.html~RFf59bcc1.TMP",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -147,31 +167,41 @@
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms",
-		"/D/Movilidad/BuffetExpressPhoneGap/www"
+		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla5.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
+		"/C/Users/odc/AppData/Local/Temp/Rar$EXa0.237/templates/menu.html",
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/css/style.css",
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla4.html",
+		"/C/Users/odc/AppData/Local/Temp/Rar$EXa0.755/index.html",
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla3.html",
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla2.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/pantalla5.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/scroll.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
+		"/D/wamp/www/conducimos/site/wp-content/plugins/motopress-content-editor/bootstrap/bootstrap-grid.min.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/red_socials.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/redes.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla6.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
-		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla4.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
 		"/D/wamp/www/familymarketing/modules/js/aproductos.js",
 		"/D/wamp/www/familymarketing/modules/js/login.js",
 		"/D/wamp/www/familymarketing/modules/js/compras.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/directives.js",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/index.html",
-		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/css/style.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/pantalla4.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/pantalla6.html",
@@ -270,15 +300,7 @@
 		"/D/Movilidad/my-app/www/index.html",
 		"/C/Users/odc/Downloads/pg-plugin-screen-orientation-master/pg-plugin-screen-orientation-master/plugin.xml",
 		"/C/Users/odc/Downloads/pg-plugin-screen-orientation-master/pg-plugin-screen-orientation-master/sample.html",
-		"/D/Movilidad/test/BuffetExpress/index.html",
-		"/D/Movilidad/test/BuffetExpress/css/style.css",
-		"/D/Movilidad/BuffetExpress/index.html",
-		"/D/Movilidad/BuffetExpress/www/spec.html",
-		"/D/Movilidad/BuffetExpress/test/www/index.html",
-		"/D/Movilidad/BuffetExpress/test/www/js/index.js",
-		"/D/Movilidad/BuffetExpress/test.html",
-		"/D/Movilidad/BuffetExpress/css/style.css",
-		"/C/Users/odc/Downloads/buffe_expres(1)/index.html"
+		"/D/Movilidad/test/BuffetExpress/index.html"
 	],
 	"find":
 	{
@@ -297,6 +319,47 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			" WIDTH=\"100%\" HEIGHT=\"100%\"",
+			".icodeli",
+			".miscompras",
+			" style=\"width:14.4%\"",
+			"style=\"width:14.4%\"",
+			".icodeta",
+			".subtt",
+			"subtt",
+			".icodeta",
+			"img",
+			"div img",
+			".icodeta div img",
+			".subtt",
+			" style=\"width:15%\"",
+			".menupie",
+			".icodeta",
+			"subtt",
+			".miscompras .comprasitem .icodeta div",
+			" .subtt",
+			".miscompras .comprasitem .icodeta .subtt",
+			".miscompras .comprasitem .icodeli span.elimina",
+			" style=\"left:40%\"",
+			" WIDTH=\"100%\" HEIGHT=\"100%\"",
+			".menuplato",
+			".botones",
+			".botones .b",
+			".botones .btn1, .botones .btn2",
+			"menupie",
+			".botones .btn1, .botones .btn2",
+			".botones",
+			"menuplato",
+			".botones .btn2 span",
+			".botones .btn1",
+			"\"style=\"width:100%;\"",
+			" WIDTH=\"100%\" HEIGHT=\"100%\"",
+			"padre",
+			"body",
+			"getPassword",
+			"api/",
+			"API/",
+			"buffetexpress.co",
 			".miscompras .comprasitem .icodeli span.elimina",
 			".menuplatolist .col-md-12 .title span",
 			".menuplatolist .col-md-12 .detalle",
@@ -361,6 +424,13 @@
 		"regex": false,
 		"replace_history":
 		[
+			" style=\"width:100%;\"",
+			"",
+			"style=\"width:10%\"",
+			"",
+			" style=\"width:100%;\"",
+			"\" style=\"width:100%;\"",
+			"style=\"width:100%;\"",
 			"title=\"...\"/>",
 			"/></a>",
 			"src=\"",
@@ -376,46 +446,14 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "www/index.html~RFf59bcc1.TMP",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 21.0
+		"height": 22.0
 	},
 	"input":
 	{
@@ -459,7 +497,7 @@
 	"project": "buffetexpress.sublime-project",
 	"replace":
 	{
-		"height": 38.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":

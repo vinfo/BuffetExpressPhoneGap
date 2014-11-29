@@ -157,7 +157,7 @@
 		$(".detalle").hide();
 		var cat=$routeParams.idCat;
 		
-		var data= ajaxrest.getDishes("category="+cat+"&token="+localStorage.token+"&dimension="+localStorage.dimension);
+		var data= ajaxrest.getDishes("category="+cat+"&prox=0&token="+localStorage.token+"&dimension="+localStorage.dimension);
 		$scope.dishes=angular.fromJson(data);		
 
 		$scope.imageCat="sopas_mini";
