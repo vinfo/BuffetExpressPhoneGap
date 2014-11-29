@@ -2,6 +2,7 @@
 	var angularRoutingApp = angular.module('angularRoutingApp', ['ngRoute']);
 	var localData = JSON.parse(localStorage.getItem('cuenta'));
 	var num = localStorage.setItem("num",0);
+	var base_url="http://buffetexpress.co/REST/";
 
 	// Configuración de las rutas
 	angularRoutingApp.config(function($routeProvider) {
@@ -37,6 +38,22 @@
 		.when('/redes', {
 			templateUrl : 'templates/redes.html',
 			controller 	: 'mainController'
+		})
+		.when('/nosotros', {
+			templateUrl : 'templates/nosotros.html',
+			controller 	: 'mainController'
+		})
+		.when('/felicitaciones', {
+			templateUrl : 'templates/felicitaciones.html',
+			controller 	: 'mainController'
+		})	
+		.when('/contactenos', {
+			templateUrl : 'templates/contactenos.html',
+			controller 	: 'mainController'
+		})
+		.when('/redes', {
+			templateUrl : 'templates/redes.html',
+			controller 	: 'mainController'
 		})		
 		.otherwise({
 			redirectTo: '/'
@@ -47,10 +64,10 @@
 		 $scope.setFondo = function() {
 			var style1 = "background: url(images/fondo.png)";
 			var style2 = "background: url(images/fondoslide.png)";
-			if($location.url()=="/menu"){
+			if($location.url()=="/" || $location.url()=="/menu"){
 				return style1;		  	
 			}else{
-				return style2;
+				return style2;				
 			}
 		}			
 		
@@ -84,23 +101,23 @@
 		$scope.addDish = function (dish) {
 			if(dish.idCat==1){
 				localStorage.setItem("arroz", {code:dish.code, price:dish.price});
-				$scope.arroz="http://buffetexpress.co/resources/images/dish/"+dish.code+"_2.png";		
+				$scope.arroz= base_url+"resources/images/dish/"+dish.code+"_2.png";		
 			}
 			if(dish.idCat==2){
 				localStorage.setItem("bebidas", {code:dish.code, price:dish.price});
-				$scope.bebidas="http://buffetexpress.co/resources/images/dish/"+dish.code+"_2.png";		
+				$scope.bebidas= base_url+ "resources/images/dish/"+dish.code+"_2.png";		
 			}
 			if(dish.idCat==3){
 				localStorage.setItem("carnes", {code:dish.code, price:dish.price});
-				$scope.carnes="http://buffetexpress.co/resources/images/dish/"+dish.code+"_2.png";		
+				$scope.carnes= base_url+ "resources/images/dish/"+dish.code+"_2.png";		
 			}
 			if(dish.idCat==4){
 				localStorage.setItem("guarnicion", {code:dish.code, price:dish.price});
-				$scope.guarnicion="http://buffetexpress.co/resources/images/dish/"+dish.code+"_2.png";		
+				$scope.guarnicion= base_url+ "resources/images/dish/"+dish.code+"_2.png";		
 			}
 			if(dish.idCat==5){
 				localStorage.setItem("sopa", {code:dish.code, price:dish.price});
-				$scope.sopa="http://buffetexpress.co/resources/images/dish/"+dish.code+"_2.png";		
+				$scope.sopa= base_url+ "resources/images/dish/"+dish.code+"_2.png";		
 			}
 			window.plugins.toast.showShortCenter('Producto Adicionado!');
 			$location.path("menu");	

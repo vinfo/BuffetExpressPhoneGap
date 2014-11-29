@@ -1,140 +1,101 @@
 
 <!-- Cotenido buffet -->
- <div class="menuplatolist">
-                <div class="col-md-12">
-                     <div class="title"><img src="images/certarroz.png" alt="..." title=".." ><span>Arroz Thai salteado</span></div>
-                     <div class="btnts">
-                     <div class="detalle">
-                        <h1>Arroz Aromas <span></span> </h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                        <div class="vene">
-                            <div class="col-xs-6 col-md-6">
-                                <label>Proteina <span>8%</span></label>
-                                <label>Proteina <span>8%</span></label>
-                            </div>
-                            <div class="col-xs-6 col-md-6">
-                                <label>Proteina <span>8%</span></label>
-                                <label>Proteina <span>8%</span></label>
-                            </div>
-                        </div>
-                     </div>
-                     <br>
-                        <img src="images/menu-menos.png" alt="..." title="..." class="masdetalle">
-                        <img src="images/lupamenu.png" alt="..." title="..." class="masdetalle" >
-                        <img src="images/masmenu.png" alt="..." title="..." class="vermasplato" >
-                     </div>
-                     <div class="contimg"><div class="numb">1</div><img src="images/menuliteje.png" alt="..." title="..." ></div>
+<div class="menuplatolist">
+
+    <div class="col-md-12" ng-repeat="dish in dishes">
+       <div class="title"><img src="images/{{imageCat}}.png" alt="..." title=".." ><span>{{dish.name}}</span></div>
+       <div class="btnts">
+           <div id="detalle_{{dish.id}}" class="detalle" ng-dblclick="detailDish(dish)">
+            <h1>Arroz Aromas <span ng-if="dish.audio != null" ng-click="playAudio()"></span> </h1>
+            <p>{{dish.description}}</p>
+            <div class="vene" ng-click="detailDish(dish)">
+                <div class="col-xs-6 col-md-6">
+                    <label>Grasas <span>{{dish.grease}}</span></label>
+                    <label>Proteina <span>{{dish.proteins}}</span></label>
                 </div>
-                <div class="col-md-12">
-                     <div class="title"><img src="images/certarroz.png" alt="..." title=".." > <span>Arroz Thai salteado</span></div>
-                     <div class="btnts">
-                     <div class="detalle">
-                        <h1>Arroz Aromas <span></span> </h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                        <div class="vene">
-                            <div class="col-xs-6 col-md-6">
-                                <label>Proteina <span>8%</span></label>
-                                <label>Proteina <span>8%</span></label>
-                            </div>
-                            <div class="col-xs-6 col-md-6">
-                                <label>Proteina <span>8%</span></label>
-                                <label>Proteina <span>8%</span></label>
-                            </div>
-                        </div>
-                     </div>
-                     <br>
-                        <img src="images/menu-menos.png" alt="..." title="..." class="masdetalle">
-                        <img src="images/lupamenu.png" alt="..." title="..." class="masdetalle" >
-                        <img src="images/masmenu.png" alt="..." title="..." class="vermasplato" >
-                     </div>
-                     <div class="contimg"><div class="numb">2</div><img src="images/menuliteje.png" alt="..." title="..." ></div>
-                </div>
-                <div class="col-md-12">
-                     <div class="title"><img src="images/certarroz.png" alt="..." title=".." > <span>Arroz Thai salteado</span></div>
-                     <div class="btnts">
-                         <div class="detalle">
-                            <h1>Arroz Aromas <span></span> </h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                            <div class="vene">
-                                <div class="col-xs-6 col-md-6">
-                                    <label>Proteina <span>8%</span></label>
-                                    <label>Proteina <span>8%</span></label>
-                                </div>
-                                <div class="col-xs-6 col-md-6">
-                                    <label>Proteina <span>8%</span></label>
-                                    <label>Proteina <span>8%</span></label>
-                                </div>
-                            </div>
-                         </div>
-                     <br>
-                        <img src="images/menu-menos.png" alt="..." title="..." class="masdetalle">
-                        <img src="images/lupamenu.png" alt="..." title="..." class="masdetalle" >
-                        <img src="images/masmenu.png" alt="..." title="..." class="vermasplato" >
-                     </div>
-                     <div class="contimg"><div class="numb">3</div><img src="images/menuliteje.png" alt="..." title="..." ></div>
-                </div>
-
-                
-            </div>
-            <div class="verplato">
-                <img src="images/cerr_vpla.png" alt="..." alt="..." class="cerrves">
-                <div class="padre">
-
-                     <div class = "derrap">
-
-                           <div class="contenedor">
-
-                                 <div class="sopa">
-                                        <img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/>
-
-                                        <div class="sopacont">
-                                        <img src="images/sopa.png" style="width:100%;" border="0" margin="0"/>
-                                        </div>
-
-                                </div>
-
-                <div class="vaso">
-                          <img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/>
-                  
-                     <div class="jugo">
-                     <img src="images/jugo.png" style="width:100%;" border="0" margin="0"/>
-                     </div>
-
-                </div>
-
-                <div class="plato">
-                     <img src="images/plato.png" style="width:100%;" border="0" margin="0"/>
-                    
-                    <div class="arroz">
-                    <img src="images/arroz_2.png" style="width:100%;" border="0" margin="0"/>
-                     </div>
-
-                     <div class="guarnicion">
-                    <img src="images/guarnicion_2.png" style="width:100%;" border="0" margin="0"/>
-                     </div>
-
-                     <div class="carne">
-                    <img src="images/c109_2.png" style="width:100%;" border="0" margin="0"/>
-                     </div>
-
-                          </div>
-
-                            </div>
-                    </div>
+                <div class="col-xs-6 col-md-6">
+                    <label>Carbohidratos <span>{{dish.carbohydrates}}</span></label>
+                    <label>Calorias <span>{{dish.calories}}</span></label>
                 </div>
             </div>
-            <div class="costoad">
-                    <div class="cont">
-                    <img src="images/cerr_vpla.png" alt="..." alt="..." class="cerrvess">
-                    <h1>Costo de adición <span>$4.500</span></h1>
-                    <p>Esta adición elevara el valor del plato por encima de los $9.400</p>
-                        <div class="ck">
-                            <label for="ck">No volver a ver este mensaje</label> <input type="checkbox" id="ck" />
-                        </div>  
-                    </div>
+        </div>
+        <br>
+        <img src="images/menu-menos.png" alt="..." title="..." class="masdetalle">
+        <img src="images/lupamenu.png" alt="..." title="..." class="masdetalle" ng-click="detailDish(dish)">
+        <img src="images/masmenu.png" alt="..." title="..." class="vermasplato" ng-click="addDish(dish)">
+    </div>
+    <div class="contimg"><div class="numb">1</div><img src="images/{{dish.images}}" alt="..." title="..." ></div>
+</div>             
+
+
+</div>
+<div class="verplato">
+    <img src="images/cerr_vpla.png" alt="..." alt="..." class="cerrves" ng-click="closeDish()">
+    <div class="padre">
+
+       <div class = "derrap">
+
+         <div class="contenedor">
+
+           <div class="sopa">
+            <img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/>
+
+            <div class="sopacont">
+                <img src="images/sopa.png" style="width:100%;" border="0" margin="0"/>
             </div>
-            <div class="verplatoico"> <img src="images/ver_plato.png" alt="..." title="..." class="img1"><img src="images/ver_plato2.png" alt="..." title="..." class="img2"> </div>
+
+        </div>
+
+        <div class="vaso">
+          <img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/>
+
+          <div class="jugo">
+           <img src="images/jugo.png" style="width:100%;" border="0" margin="0"/>
+       </div>
+
+   </div>
+
+   <div class="plato">
+       <img src="images/plato.png" style="width:100%;" border="0" margin="0"/>
+
+       <div class="arroz">
+        <img src="images/arroz_2.png" style="width:100%;" border="0" margin="0"/>
+    </div>
+
+    <div class="guarnicion">
+        <img src="images/guarnicion_2.png" style="width:100%;" border="0" margin="0"/>
+    </div>
+
+    <div class="carne">
+        <img src="images/c109_2.png" style="width:100%;" border="0" margin="0"/>
+    </div>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="costoad">
+    <div class="cont">
+        <img src="images/cerr_vpla.png" alt="..." alt="..." class="cerrvess">
+        <h1>Costo de adición <span>$4.500</span></h1>
+        <p>Esta adición elevara el valor del plato por encima de los $9.400</p>
+        <div class="ck">
+            <label for="ck">No volver a ver este mensaje</label> <input type="checkbox" id="ck" />
+        </div>  
+    </div>
+</div>
+<div class="verplatoico"><img src="images/ver_plato.png" alt="..." title="..." class="img1" ng-click="fullDish('buffet')" /></div>
 <!-- fin contenido buffet -->
+<script>
+    $( document ).ready(function() {
+        $(".container").scroll(function(){
+            if ($(this).scrollTop() > 100) {
+                $('.menupie').fadeOut();
+            } else {            
+                $('.menupie').fadeIn();
+            }
+        });
+    });
+</script>
