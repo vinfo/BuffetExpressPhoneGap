@@ -61,7 +61,8 @@
 	});
 
 	angularRoutingApp.controller('mainController', function($scope, $location){			
-		 $scope.setFondo = function() {
+		$('.menupie').fadeIn();
+		$scope.setFondo = function() {
 			var style1 = "background: url(images/fondo.png)";
 			var style2 = "background: url(images/fondoslide.png)";
 			if($location.url()=="/" || $location.url()=="/menu"){
@@ -91,7 +92,7 @@
 			hiddeMenu();
 		},		
 		$scope.detailDish = function (dish) {
-			$("#detalle_"+dish.id).slideToggle('fast', 'linear').inlineBlockToggle(); 
+			ajaxrest.detailDish(dish.id);
 		},		
 		$scope.fullDish = function (tipo) {
 			$(".verplato").slideToggle();
@@ -126,13 +127,13 @@
 			$(".verplato").slideToggle();
 			$(".verplatoico .img1").show();
 		},
-		$scope.playAudio = function () {
-			ajaxrest.playAudio();
+		$scope.playAudio = function (dish) {
+			ajaxrest.playAudio(dish.code);
 		},
 		$scope.goMenu = function () {
 			$("li").removeClass("active");
 			$(".menupie ul li:nth-child(2)").addClass("active");
-		}
+		}		
 	});
 
 	angularRoutingApp.controller('comprasController', function($scope) {
@@ -172,10 +173,9 @@
 
 	angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http) {		
 		$(".detalle").hide();
-		var cat=$routeParams.idCat;
-		
-		var data= ajaxrest.getDishes("category="+cat+"&prox=0&token="+localStorage.token+"&dimension="+localStorage.dimension);
-		$scope.dishes=angular.fromJson(data);		
+		var cat= $routeParams.idCat;
+		var data= ajaxrest.getDishes("category="+cat+"&prox=0&cant=2&token="+localStorage.token+"&dimension="+localStorage.dimension);
+		$scope.dishes = angular.fromJson(data);
 
 		$scope.imageCat="sopas_mini";
 		if(cat==1){
@@ -186,7 +186,8 @@
 			$scope.imageCat="carnes_mini";
 		}else if(cat==4){
 			$scope.imageCat="guarnicion_mini";
-		}	
+		}
+		$("#cat").val(cat+'|'+$scope.imageCat);
 	});
 
 	angularRoutingApp.controller("mapaController", ["$scope", function mapaController($scope) {		

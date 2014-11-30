@@ -5,13 +5,6 @@ if (window.jQuery) {
     // Tamaño container
     $(".container").css({"min-height":$(document).height()});
 
-    $.fn.inlineBlockToggle=function () {
-        if (this.css('display')==='inline-block') {
-            this.css('display', 'none');
-        } else {
-            this.css('display', 'inline-block');
-        }
-    };
 
     $(window).load(function(){ $(".menupie ul li").css({"height":$("li.carrito a img").height()});
         $(".contpag").css({"bottom":$("li.carrito a img").height()});

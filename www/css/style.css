@@ -457,6 +457,7 @@ a img
 	width: 100%;
 	text-align: center;
 	margin-top: 40px;
+	z-index: 2;
 }
 .menuplatolist .col-md-12 .btnts img
 {
@@ -470,7 +471,7 @@ a img
 	min-height: 141px;
 	height: auto;
 	background: url(../images/fondetallevme.png);
-	display: inline-block;
+	display:none;
 }
 .menuplatolist .col-md-12 .detalle h1
 {
@@ -535,6 +536,7 @@ a img
 	font-size: 45px;
 	margin: 0 auto;
 	text-align: center;
+	display: none;
 }
 
 

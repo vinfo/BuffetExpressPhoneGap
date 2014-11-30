@@ -2,100 +2,114 @@
 <!-- Cotenido buffet -->
 <div class="menuplatolist">
 
-    <div class="col-md-12" ng-repeat="dish in dishes">
-       <div class="title"><img src="images/{{imageCat}}.png" alt="..." title=".." ><span>{{dish.name}}</span></div>
-       <div class="btnts">
-           <div id="detalle_{{dish.id}}" class="detalle" ng-dblclick="detailDish(dish)">
-            <h1>Arroz Aromas <span ng-if="dish.audio != null" ng-click="playAudio()"></span> </h1>
-            <p>{{dish.description}}</p>
-            <div class="vene" ng-click="detailDish(dish)">
-                <div class="col-xs-6 col-md-6">
-                    <label>Grasas <span>{{dish.grease}}</span></label>
-                    <label>Proteina <span>{{dish.proteins}}</span></label>
-                </div>
-                <div class="col-xs-6 col-md-6">
-                    <label>Carbohidratos <span>{{dish.carbohydrates}}</span></label>
-                    <label>Calorias <span>{{dish.calories}}</span></label>
-                </div>
-            </div>
+  <div class="col-md-12" ng-repeat="dish in dishes">
+   <div class="title"><img src="images/{{imageCat}}.png" alt="..." title=".." /><span>{{dish.name}}</span></div>
+   <div class="btnts">
+     <div id="detalle_{{dish.id}}" class="detalle" ng-click="detailDish(dish)">
+      <h1>{{dish.name}} <span ng-if="dish.audio != null" ng-click="playAudio(dish)"></span> </h1>
+      <p>{{dish.description}}</p>
+      <div class="vene" ng-click="detailDish(dish)">
+        <div class="col-xs-6 col-md-6">
+          <label>Grasas <span>{{dish.grease}}</span></label>
+          <label>Proteina <span>{{dish.proteins}}</span></label>
         </div>
-        <br>
-        <img src="images/menu-menos.png" alt="..." title="..." class="masdetalle">
-        <img src="images/lupamenu.png" alt="..." title="..." class="masdetalle" ng-click="detailDish(dish)">
-        <img src="images/masmenu.png" alt="..." title="..." class="vermasplato" ng-click="addDish(dish)">
+        <div class="col-xs-6 col-md-6">
+          <label>Carbohidratos <span>{{dish.carbohydrates}}</span></label>
+          <label>Calorias <span>{{dish.calories}}</span></label>
+        </div>
+      </div>
     </div>
-    <div class="contimg"><div class="numb">1</div><img src="images/{{dish.images}}" alt="..." title="..." ></div>
+    <br>
+    <img src="images/menu-menos.png" alt="..." title="..." class="masdetalle" />
+    <img src="images/lupamenu.png" alt="..." title="..." class="masdetalle" ng-click="detailDish(dish)" />
+    <img src="images/masmenu.png" alt="..." title="..." class="vermasplato" ng-click="addDish(dish)" />
+  </div>
+  <div class="contimg"><div class="numb">1</div><img ng-src="{{dish.images}}" alt="..." title="..." /></div>
 </div>             
 
 
 </div>
 <div class="verplato">
-    <img src="images/cerr_vpla.png" alt="..." alt="..." class="cerrves" ng-click="closeDish()">
-    <div class="padre">
+  <img src="images/cerr_vpla.png" alt="..." alt="..." class="cerrves" ng-click="closeDish()">
+  <div class="padre">
 
-       <div class = "derrap">
+   <div class = "derrap">
 
-         <div class="contenedor">
+     <div class="contenedor">
 
-           <div class="sopa">
-            <img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/>
+       <div class="sopa">
+        <img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/>
 
-            <div class="sopacont">
-                <img src="images/sopa.png" style="width:100%;" border="0" margin="0"/>
-            </div>
-
+        <div class="sopacont">
+          <img src="images/sopa.png" style="width:100%;" border="0" margin="0"/>
         </div>
 
-        <div class="vaso">
-          <img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/>
+      </div>
 
-          <div class="jugo">
-           <img src="images/jugo.png" style="width:100%;" border="0" margin="0"/>
+      <div class="vaso">
+        <img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/>
+
+        <div class="jugo">
+         <img src="images/jugo.png" style="width:100%;" border="0" margin="0"/>
        </div>
 
-   </div>
+     </div>
 
-   <div class="plato">
+     <div class="plato">
        <img src="images/plato.png" style="width:100%;" border="0" margin="0"/>
 
        <div class="arroz">
         <img src="images/arroz_2.png" style="width:100%;" border="0" margin="0"/>
-    </div>
+      </div>
 
-    <div class="guarnicion">
+      <div class="guarnicion">
         <img src="images/guarnicion_2.png" style="width:100%;" border="0" margin="0"/>
-    </div>
+      </div>
 
-    <div class="carne">
+      <div class="carne">
         <img src="images/c109_2.png" style="width:100%;" border="0" margin="0"/>
+      </div>
+
     </div>
 
-</div>
-
-</div>
+  </div>
 </div>
 </div>
 </div>
 <div class="costoad">
-    <div class="cont">
-        <img src="images/cerr_vpla.png" alt="..." alt="..." class="cerrvess">
-        <h1>Costo de adición <span>$4.500</span></h1>
-        <p>Esta adición elevara el valor del plato por encima de los $9.400</p>
-        <div class="ck">
-            <label for="ck">No volver a ver este mensaje</label> <input type="checkbox" id="ck" />
-        </div>  
-    </div>
+  <div class="cont">
+    <img src="images/cerr_vpla.png" alt="..." alt="..." class="cerrvess">
+    <h1>Costo de adición <span>$4.500</span></h1>
+    <p>Esta adición elevara el valor del plato por encima de los $9.400</p>
+    <div class="ck">
+      <label for="ck">No volver a ver este mensaje</label> <input type="checkbox" id="ck" />
+    </div>  
+  </div>
 </div>
 <div class="verplatoico"><img src="images/ver_plato.png" alt="..." title="..." class="img1" ng-click="fullDish('buffet')" /></div>
+<input id="cont" name="cont" type="hidden" value="3" />
+<input id="cat" name="cat" type="hidden" value="" />
 <!-- fin contenido buffet -->
 <script>
-    $( document ).ready(function() {
-        $(".container").scroll(function(){
-            if ($(this).scrollTop() > 100) {
-                $('.menupie').fadeOut();
-            } else {            
-                $('.menupie').fadeIn();
-            }
-        });
-    });
+  $( document ).ready(function() {
+    $(".detalle").hide();
+    $('.menupie').fadeIn();
+    $(".container").scroll(function(){
+      var cat=$("#cat").val().split('|');
+     if($(this).scrollTop() + $(this).innerHeight() >= this.scrollHeight) {
+       var cont=$("#cont").val();
+       var data= ajaxrest.getDishes("category="+cat[0]+"&prox="+cont+"&cant=1&token="+localStorage.token+"&dimension="+localStorage.dimension);
+       var dat=angular.fromJson(data);
+       $("#cont").val(parseInt(cont) + 1);
+       var audio='';
+       if(dat[0].audio!=null)audio='<span onclick="ajaxrest.playAudio('+dat[0].code+');"></span>';
+       $( ".menuplatolist" ).append( '<div class="col-md-12"><div class="title"><img src="images/'+cat[1]+'.png" alt="..." title=".." > <span>'+dat[0].name+'</span></div><div class="btnts"><div id="detalle_'+dat[0].id+'" class="detalle"><h1>'+dat[0].name+' '+audio+'</h1><p>'+dat[0].description+'</p><div class="vene"><div class="col-xs-6 col-md-6"><label>Grasas <span>'+dat[0].grease+'</span></label><label>Proteina <span>'+dat[0].proteins+'</span></label></div><div class="col-xs-6 col-md-6"><label>Carbohidratos <span>'+dat[0].carbohydrates+'</span></label><label>Calorias <span>'+dat[0].calories+'</span></label></div></div></div><br><img src="images/menu-menos.png" alt="..." title="..." class="masdetalle"><img src="images/lupamenu.png" alt="..." title="..." class="masdetalle" onclick="ajaxrest.detailDish('+dat[0].id+');" ><img src="images/masmenu.png" alt="..." title="..." class="vermasplato" ></div><div class="contimg"><div class="numb">3</div><img src="'+dat[0].images+'" alt="..." title="..." ></div></div>' );  
+     }          
+     if ($(this).scrollTop() > 100) {
+      $('.menupie').fadeOut();
+    } else {            
+      $('.menupie').fadeIn();
+    }
+  });
+});
 </script>
