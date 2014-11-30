@@ -80,7 +80,7 @@
 		},
 		$scope.checkLogin = function (section) {		
 			if(localData['cellPhone']!=""){
-				$location.path("index.html#/menu");
+				$location.path("internal.html#/menu");
 			}else{
 				$location.path("/login.html");
 			}
@@ -133,7 +133,7 @@
 		$scope.goMenu = function () {
 			$("li").removeClass("active");
 			$(".menupie ul li:nth-child(2)").addClass("active");
-		}		
+		}
 	});
 
 	angularRoutingApp.controller('comprasController', function($scope) {
@@ -176,6 +176,7 @@
 		var cat= $routeParams.idCat;
 		var data= ajaxrest.getDishes("category="+cat+"&prox=0&cant=2&token="+localStorage.token+"&dimension="+localStorage.dimension);
 		$scope.dishes = angular.fromJson(data);
+		$scope.datos=data;
 
 		$scope.imageCat="sopas_mini";
 		if(cat==1){
@@ -187,7 +188,7 @@
 		}else if(cat==4){
 			$scope.imageCat="guarnicion_mini";
 		}
-		$("#cat").val(cat+'|'+$scope.imageCat);
+		$("#cat").val(cat+'|'+$scope.imageCat);		
 	});
 
 	angularRoutingApp.controller("mapaController", ["$scope", function mapaController($scope) {		

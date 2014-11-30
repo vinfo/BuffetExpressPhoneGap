@@ -526,7 +526,7 @@ a img
 }
 .menuplatolist .col-md-12 .contimg img
 {
-	width: 100%;
+	width: 100%;	
 }
 .menuplatolist .col-md-12 .contimg .numb{
 	position: absolute;
@@ -1638,6 +1638,9 @@ max-width:20%;*/
 	height: 100%;
 	margin:0;    
 	padding:0;
+}
+.btns{
+	display: none;
 }
 
 @media (max-width: 532px){

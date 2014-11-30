@@ -1,12 +1,11 @@
 
 <!-- Cotenido buffet -->
 <div class="menuplatolist">
-
   <div class="col-md-12" ng-repeat="dish in dishes">
    <div class="title"><img src="images/{{imageCat}}.png" alt="..." title=".." /><span>{{dish.name}}</span></div>
    <div class="btnts">
      <div id="detalle_{{dish.id}}" class="detalle" ng-click="detailDish(dish)">
-      <h1>{{dish.name}} <span ng-if="dish.audio != null" ng-click="playAudio(dish)"></span> </h1>
+      <h1>{{dish.fullname}} <span ng-if="dish.audio != null" ng-click="playAudio(dish)"></span> </h1>
       <p>{{dish.description}}</p>
       <div class="vene" ng-click="detailDish(dish)">
         <div class="col-xs-6 col-md-6">
@@ -20,13 +19,12 @@
       </div>
     </div>
     <br>
-    <img src="images/menu-menos.png" alt="..." title="..." class="masdetalle" />
-    <img src="images/lupamenu.png" alt="..." title="..." class="masdetalle" ng-click="detailDish(dish)" />
-    <img src="images/masmenu.png" alt="..." title="..." class="vermasplato" ng-click="addDish(dish)" />
+    <img src="images/menu-menos.png" alt="..." title="..." class="masdetalle btns" />
+    <img src="images/lupamenu.png" alt="..." title="..." class="masdetalle btns" ng-click="detailDish(dish)" />
+    <img src="images/masmenu.png" alt="..." title="..." class="vermasplato btns" ng-click="addDish(dish)" />
   </div>
-  <div class="contimg"><div class="numb">1</div><img ng-src="{{dish.images}}" alt="..." title="..." /></div>
-</div>             
-
+  <div class="contimg"><div class="numb">1</div><img id="image_{{dish.code}}" ng-src="{{dish.images}}" /></div>
+</div>
 
 </div>
 <div class="verplato">
@@ -87,29 +85,57 @@
   </div>
 </div>
 <div class="verplatoico"><img src="images/ver_plato.png" alt="..." title="..." class="img1" ng-click="fullDish('buffet')" /></div>
-<input id="cont" name="cont" type="hidden" value="3" />
-<input id="cat" name="cat" type="hidden" value="" />
+<input id="datos" name="datos" type="hidden" value="{{datos}}" />
 <!-- fin contenido buffet -->
 <script>
+  $.fn.isOnScreen = function(){    
+    var win = $(window);    
+    var viewport = {
+      top : win.scrollTop(),
+      left : win.scrollLeft()
+    };
+    viewport.right = viewport.left + win.width();
+    viewport.bottom = viewport.top + win.height();
+    
+    var bounds = this.offset();
+    bounds.right = bounds.left + this.outerWidth();
+    bounds.bottom = bounds.top + this.outerHeight();
+    
+    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+    
+  };
+  function checkLoad(image){
+    var load= $('#image_'+image).attr('src');
+    var img= 'http://buffetexpress.co/REST/resources/images/dish/'+image+'_1.jpg';
+    if(load!=img){
+      $('#image_'+image).fadeOut(50, function(){
+        $(this).attr('src',img).bind('onreadystatechange load', function(){
+          if (this.complete) $(this).fadeIn(300);
+       });
+      });    
+    }
+  }
+
   $( document ).ready(function() {
     $(".detalle").hide();
     $('.menupie').fadeIn();
-    $(".container").scroll(function(){
-      var cat=$("#cat").val().split('|');
-     if($(this).scrollTop() + $(this).innerHeight() >= this.scrollHeight) {
-       var cont=$("#cont").val();
-       var data= ajaxrest.getDishes("category="+cat[0]+"&prox="+cont+"&cant=1&token="+localStorage.token+"&dimension="+localStorage.dimension);
-       var dat=angular.fromJson(data);
-       $("#cont").val(parseInt(cont) + 1);
-       var audio='';
-       if(dat[0].audio!=null)audio='<span onclick="ajaxrest.playAudio('+dat[0].code+');"></span>';
-       $( ".menuplatolist" ).append( '<div class="col-md-12"><div class="title"><img src="images/'+cat[1]+'.png" alt="..." title=".." > <span>'+dat[0].name+'</span></div><div class="btnts"><div id="detalle_'+dat[0].id+'" class="detalle"><h1>'+dat[0].name+' '+audio+'</h1><p>'+dat[0].description+'</p><div class="vene"><div class="col-xs-6 col-md-6"><label>Grasas <span>'+dat[0].grease+'</span></label><label>Proteina <span>'+dat[0].proteins+'</span></label></div><div class="col-xs-6 col-md-6"><label>Carbohidratos <span>'+dat[0].carbohydrates+'</span></label><label>Calorias <span>'+dat[0].calories+'</span></label></div></div></div><br><img src="images/menu-menos.png" alt="..." title="..." class="masdetalle"><img src="images/lupamenu.png" alt="..." title="..." class="masdetalle" onclick="ajaxrest.detailDish('+dat[0].id+');" ><img src="images/masmenu.png" alt="..." title="..." class="vermasplato" ></div><div class="contimg"><div class="numb">3</div><img src="'+dat[0].images+'" alt="..." title="..." ></div></div>' );  
-     }          
-     if ($(this).scrollTop() > 100) {
+
+    $(".container").scroll(function(){ 
+     var str= $("#datos").val();
+     var data= jQuery.parseJSON(str);
+
+     if ($(this).scrollTop() > 250) {
       $('.menupie').fadeOut();
+      $.each(data, function(idx, obj) {
+        if($('#image_'+obj.code).isOnScreen()){
+          checkLoad(obj.code);
+          console.log(obj.code);
+        }        
+      });      
     } else {            
       $('.menupie').fadeIn();
     }
   });
-});
+  setTimeout(function(){$(".btns").fadeIn();}, 1500);
+  });
 </script>
