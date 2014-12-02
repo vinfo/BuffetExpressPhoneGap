@@ -2,18 +2,18 @@
 	var angularRoutingApp = angular.module('angularRoutingApp', ['ngRoute']);
 	var localData = JSON.parse(localStorage.getItem('cuenta'));
 	var num = localStorage.setItem("num",0);
-	var base_url="http://buffetexpress.co/REST/";
+	var base_url="http://buffetexpress.co/REST/";	
 
 	// Configuración de las rutas
 	angularRoutingApp.config(function($routeProvider) {
 		$routeProvider
 		.when('/', {
 			templateUrl : 'templates/slider.html',
-			controller 	: 'mainController'
+			controller 	: 'sliderController'
 		})	
 		.when('/slider', {
 			templateUrl	: 'templates/slider.html',
-			controller 	: 'mainController'
+			controller 	: 'sliderController'
 		})
 		.when('/menu', {
 			templateUrl : 'templates/menu.html',
@@ -62,6 +62,15 @@
 
 	angularRoutingApp.controller('mainController', function($scope, $location){			
 		$('.menupie').fadeIn();
+
+		if(localStorage.cuenta){
+			$scope.mi_cuenta="#mi_cuenta";
+		}else{
+			$scope.mi_cuenta="login.html";
+		}
+		
+
+		$scope.num_dish=localStorage.plato;
 		$scope.setFondo = function() {
 			var style1 = "background: url(images/fondo.png)";
 			var style2 = "background: url(images/fondoslide.png)";
@@ -88,8 +97,19 @@
 		$scope.setAccount = function () {
 			ajaxrest.setAccount('edit');
 		},
+		$scope.closeSession = function () {
+			localStorage.clear();
+			$location.path("internal.html");	
+		},		
 		$scope.hiddeMenu = function () {
 			hiddeMenu();
+		},
+		$scope.close = function (div) {
+			$("."+div).hide();
+		},
+		$scope.stop = function (div) {
+			localStorage.setItem("stop", 1);
+			$("."+div).hide();
 		},		
 		$scope.detailDish = function (dish) {
 			ajaxrest.detailDish(dish.id);
@@ -98,30 +118,49 @@
 			$(".verplato").slideToggle();
 			$(".verplatoico .img1").toggle();
 			return false;
-		},				
-		$scope.addDish = function (dish) {
-			if(dish.idCat==1){
-				localStorage.setItem("arroz", {code:dish.code, price:dish.price});
-				$scope.arroz= base_url+"resources/images/dish/"+dish.code+"_2.png";		
+		},
+		$scope.addDish = function () {
+			var items=0;
+			for (var i = 0; i < localStorage.length; i++){
+				var item=localStorage.key(i);
+				if(item.indexOf("item_1")>0)items++;
+			}
+			if(items<4)alert("Plato actual no esta completo!");
+		},						
+		$scope.setDish = function (dish,action) {
+			var num= parseInt($("#numb_"+dish.code).text());
+			var val= 0;
+			if(action=='add'){
+				val= num + 1;
+			}else{
+				if(num>0)val= num - 1;
+			}
+			localStorage.setItem("item_1_"+dish.idCat, dish.code);
+
+			if(dish.idCat==1){	
+				$scope.arroz= base_url+"resources/images/dish/"+localStorage.item_1_1+"_2.png";				
 			}
 			if(dish.idCat==2){
-				localStorage.setItem("bebidas", {code:dish.code, price:dish.price});
-				$scope.bebidas= base_url+ "resources/images/dish/"+dish.code+"_2.png";		
+				$scope.bebidas= base_url+ "resources/images/dish/"+localStorage.item_1_2+"_2.png";
 			}
 			if(dish.idCat==3){
-				localStorage.setItem("carnes", {code:dish.code, price:dish.price});
-				$scope.carnes= base_url+ "resources/images/dish/"+dish.code+"_2.png";		
+				$scope.carnes= base_url+ "resources/images/dish/"+localStorage.item_1_3+"_2.png";
 			}
 			if(dish.idCat==4){
-				localStorage.setItem("guarnicion", {code:dish.code, price:dish.price});
-				$scope.guarnicion= base_url+ "resources/images/dish/"+dish.code+"_2.png";		
+				$scope.guarnicion= base_url+ "resources/images/dish/"+localStorage.item_1_4+"_2.png";
 			}
 			if(dish.idCat==5){
-				localStorage.setItem("sopa", {code:dish.code, price:dish.price});
-				$scope.sopa= base_url+ "resources/images/dish/"+dish.code+"_2.png";		
-			}
-			window.plugins.toast.showShortCenter('Producto Adicionado!');
-			$location.path("menu");	
+				$scope.sopa= base_url+ "resources/images/dish/"+localStorage.item_1_5.code+"_2.png";	
+			}			
+
+			if(val>1){
+				localStorage.setItem("adicional_1_"+dish.idCat+"_"+dish.code, dish.code);
+				$scope.precio=dish.price;
+				if(!localStorage.getItem('stop'))$(".costoad").fadeIn();	
+			}        
+			$("#numb_"+dish.code).text(val).fadeIn('fast');
+			//window.plugins.toast.showShortCenter('Producto Adicionado!');
+			if(action="add")$location.path("menu");	
 		},	
 		$scope.closeDish = function (dish) {
 			$(".verplato").slideToggle();
@@ -142,6 +181,23 @@
 
 	angularRoutingApp.controller('loginController', function($scope) {
 		$scope.message = 'Esta es la página de "Login"';
+	});
+
+	angularRoutingApp.controller('loginController', function($scope) {
+		$scope.message = 'Esta es la página de "Login"';
+	});	
+
+	angularRoutingApp.controller('sliderController', function($scope) {
+		$scope.message = 'Esta es la página de "Login"';
+		var data= ajaxrest.getDishDay("token="+localStorage.token);
+		var dat = angular.fromJson(data);
+		for(var i=0;i<dat.length;i++){
+			if(dat[i].idCat==1)$scope.arroz= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
+			if(dat[i].idCat==2)$scope.bebidas= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
+			if(dat[i].idCat==3)$scope.carnes= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
+			if(dat[i].idCat==4)$scope.guarnicion= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
+			if(dat[i].idCat==5)$scope.sopas= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
+		}
 	});
 
 	angularRoutingApp.controller('mi_cuentaController', function($scope) {
@@ -173,11 +229,11 @@
 
 	angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http) {		
 		$(".detalle").hide();
+		$scope.plato= localStorage.plato;
 		var cat= $routeParams.idCat;
-		var data= ajaxrest.getDishes("category="+cat+"&prox=0&cant=2&token="+localStorage.token+"&dimension="+localStorage.dimension);
+		var data= ajaxrest.getDishes("category="+cat+"&token="+localStorage.token+"&dimension="+localStorage.dimension);
 		$scope.dishes = angular.fromJson(data);
 		$scope.datos=data;
-
 		$scope.imageCat="sopas_mini";
 		if(cat==1){
 			$scope.imageCat="arroz_mini";
@@ -188,8 +244,9 @@
 		}else if(cat==4){
 			$scope.imageCat="guarnicion_mini";
 		}
-		$("#cat").val(cat+'|'+$scope.imageCat);		
-	});
+		ajaxrest.setNumDishes(1,cat);			
+
+		});
 
 	angularRoutingApp.controller("mapaController", ["$scope", function mapaController($scope) {		
 		$scope.Adress = "6.270318, -75.595974";

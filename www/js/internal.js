@@ -5,8 +5,9 @@ if (window.jQuery) {
     // Tamaño container
     $(".container").css({"min-height":$(document).height()});
 
-
-    $(window).load(function(){ $(".menupie ul li").css({"height":$("li.carrito a img").height()});
+    $(window).load(function(){
+        $(".menupie ul li").css({"height":$("li.carrito a img").height()});
+        $(".pedidotar").css({"bottom":$("li.carrito a img").height()});
         $(".contpag").css({"bottom":$("li.carrito a img").height()});
     })    
 

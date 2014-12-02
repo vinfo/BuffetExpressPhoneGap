@@ -16,7 +16,7 @@
 						<img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/>
 
 						<div class="sopacont">
-							<img src="images/sopa.png" style="width:100%;" border="0" margin="0"/>
+							<img ng-src="{{sopa}}" style="width:100%;" border="0" margin="0"/>
 						</div>
 
 					</div>
@@ -25,7 +25,7 @@
 						<img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/>
 
 						<div class="jugo">
-							<img src="images/jugo.png" style="width:100%;" border="0" margin="0"/>
+							<img ng-src="{{bebidas}}" style="width:100%;" border="0" margin="0"/>
 						</div>
 
 					</div>
@@ -34,15 +34,15 @@
 						<img src="images/plato.png" style="width:100%;" border="0" margin="0"/>
 
 						<div class="arroz">
-							<img src="images/arroz_2.png" style="width:100%;" border="0" margin="0"/>
+							<img ng-src="{{arroz}}" style="width:100%;" border="0" margin="0"/>
 						</div>
 
 						<div class="guarnicion">
-							<img src="images/guarnicion_2.png" style="width:100%;" border="0" margin="0"/>
+							<img ng-src="{{guarnicion}}" style="width:100%;" border="0" margin="0"/>
 						</div>
 
 						<div class="carne">
-							<img src="images/c109_2.png" style="width:100%;" border="0" margin="0"/>
+							<img ng-src="{{carnes}}" style="width:100%;" border="0" margin="0"/>
 						</div>
 
 					</div>
@@ -54,18 +54,18 @@
 </div>
 <div class="botones">
 	<div class="btn1">
-		<a href="">    
+		<a href="#compras">    
 			<img src="images/check_bu.png">
 			<p>Finalizar orden</p>
 		</a>
 	</div>
 	<div class="btn2">
-		<a href="">
+		<a href="" ng-click="addDish()">
 			<img src="images/plus_bu.png">
 			<p>Agregar plato</p>            
 		</a>
 	</div>
 	<div class="btn3">
-		<span>1</span>
+		<span id="num_dish">{{num_dish}}</span>
 	</div>
 </div> 

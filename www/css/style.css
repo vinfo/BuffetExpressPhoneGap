@@ -471,6 +471,8 @@ a img
 	min-height: 141px;
 	height: auto;
 	background: url(../images/fondetallevme.png);
+	border: 1px solid #305E76;
+	margin-top: 15px;
 	display:none;
 }
 .menuplatolist .col-md-12 .detalle h1
@@ -498,7 +500,6 @@ a img
 	padding-top: 0px;
 	padding-bottom: 0px;
 	font-size: 11px;
-
 }
 .menuplatolist .col-md-12 .detalle h1 span
 {
@@ -513,27 +514,30 @@ a img
 .menuplatolist .col-md-12 .detalle label
 {
 	font-size: 13px;
+	text-align: left;
 	display: block;
 }
 .menuplatolist .col-md-12 .detalle label span
 {
 	color: #964f22;
-	margin-left: 20px;
+	margin-left: 10px;
 }
 .menuplatolist .col-md-12 .contimg
 {
 	width: 100%;
+	min-height: 240px;
 }
 .menuplatolist .col-md-12 .contimg img
 {
-	width: 100%;	
+	width: 100%;		
 }
 .menuplatolist .col-md-12 .contimg .numb{
 	position: absolute;
-	bottom: 25%;
+	top: 30%;
 	width: 100%;
 	color: #FFF;
-	font-size: 45px;
+	font-size:100px;
+	font-weight: bold;
 	margin: 0 auto;
 	text-align: center;
 	display: none;
@@ -625,6 +629,20 @@ a img
 	color: #5F5F5F;
 	font-size: 16px;
 }
+.costoad .cont > .ck span {
+	border: 1px solid blue;
+	padding:1px;
+}
+
+input[type=checkbox]:before {
+    content: @fa-var-square-o;
+    visibility: visible;
+    //font-size: 12px;
+}
+
+input[type=checkbox]:checked:before{
+    content: @fa-var-check-square-o;
+}
 .verplato img
 {
 	margin-top: 56px;
@@ -643,18 +661,17 @@ a img
 .miscompras
 {
 	width: 100%;
-	padding-top:19px;
+	padding-top:38px;
 }
 .miscompras .comprasitem
 {
 	overflow: hidden;
 	background: #FFFFFF;
-	padding-top: 18px;
+	width: 100%;
 }
 .miscompras .comprasitem .imgcont
 {
 	float: left;
-	margin-right: 10px;
 	width: 40%;
 	max-height: 312px;
 	overflow: hidden;
@@ -667,24 +684,26 @@ a img
 }
 .miscompras .comprasitem  .icodeli
 {
-	text-align: right;
-	padding-right: 20px;
+	text-align:center;
+	width: 100%;
 }
 .miscompras .comprasitem .contnn
 {
 	float: left;
-	width: 49%;
+	width: 60%;
 }
 .miscompras .comprasitem .contnn h3
 {
 	margin-top: 0px;
-	width: 200px;
 	margin-bottom: 5px;
+	padding-left: 15px;
 	float: left;
 }
 .miscompras .comprasitem .contnn p
 {
 	line-height: 15px;
+	padding-left: 15px;
+	clear: both;
 }
 .miscompras .comprasitem  .icodeli span
 {
@@ -694,6 +713,7 @@ a img
 .miscompras .comprasitem  .icodeli{
 	position: relative;
 	padding-top: 4px;
+	width: 100%;
 }
 .miscompras .comprasitem  .icodeli span.edita
 {
@@ -703,9 +723,28 @@ a img
 }
 .miscompras .comprasitem  .icodeli span.elimina
 {
-	width:53px;
-	height:53px;
-	background: url(../images/eliminar_pedido.png);
+	width:45px;
+	height:45px;
+	background: url(../images/restar_plato.png);
+}
+.miscompras .comprasitem  .icodeli span.suma
+{
+	width:45px;
+	height:45px;
+	background: url(../images/sumar_plato.png);
+}
+.miscompras .comprasitem  .icodeli span.contador
+{
+	width:45px;
+	height:45px;
+	background: url(../images/contador_pedido.png);
+	vertical-align:top;
+}
+.miscompras .comprasitem  .icodeli span.contador > label
+{
+	font-size:24px;
+	font-weight: bold;
+	padding-top: 5px;
 }
 .miscompras .comprasitem  .icodeta
 {
@@ -1691,6 +1730,9 @@ max-width:20%;*/
 			.menuplatolist .col-md-12 .btnts .vene .col-md-6
 			{
 				margin-top: -21px;
+			}
+			.vene .col-xs-6 {
+				text-align: left;
 			}
 			.menupie ul li:nth-child(1) a img
 			{

@@ -1,24 +1,29 @@
 <!-- Cama de contenido inicio sesión -->
-<div class="crear_cuenta" style="padding-top:80px;">  
-  <form role="form" id="frmlogin" class="formse" action="">    
-    <div class="form-group"> <span class="ico-usua"></span>    
-      <input type="email" class="form-control" id="email" placeholder="@ Ingresar email" value="{{email}}" readonly="readonly" />
-    </div> 
-    <div class="form-group"> <span class="ico-usua"></span>    
-      <input type="password" class="form-control" id="password" placeholder="Clave" value="{{password}}" />
-    </div>    
-    <div class="form-group"> <span class="ico-usua"></span>    
-      <input type="text" class="form-control" id="name" placeholder="Nombres" value="{{name}}" />
-    </div>
-    <div class="form-group"> <span class="ico-usua"></span>    
-      <input type="text" class="form-control" id="lastname" placeholder="Apellidos" value="{{lastname}}" />
-    </div>  
-    <div class="form-group"> <span class="ico-usua"></span>    
-      <input type="number" class="form-control" id="cellPhone" placeholder="Num. Celular" value="{{cellPhone}}" />
-    </div>   
-    <div class="form-group">
-            <button type="submit" id="login" class="btn btn-default" ng-click="setAccount('edit')">Actualizar datos</button>
-    </div>
-  </form>
-</div>
+<div class="buffet contenidogeneral">
+<!--        <span class="flechaiz"></span>
+        <span class="fledere"></span> -->
+        <div class="datos_perfil">
+          <h1>Mi informaci&oacute;n</h1>
+            <div class="detallesitos">
+            <div class="avt"><a href="#"><img src="images/camera.png"></a><img src="images/logo.png"> {{name}} {{lastname}}</div>
+              <div class="gro"> 
+                <img src="images/correo.png">
+                <p>{{email}}</p>
+              </div>
+              <div class="gro">
+                <img src="images/telefono.png">
+                <p><input type="number" class="form-control" id="cellPhone" placeholder="Num. Celular" value="{{cellPhone}}" /></p>
+              </div>
+              <div class="gro">
+                <img src="images/block.png">
+                <p><input type="password" class="form-control" id="password" placeholder="Clave" value="{{password}}" /></p>
+              </div>
+                <div class="form-group">
+                    <button class="btn" ng-click="setAccount('edit')">Editar</button>
+                    <button class="btn btn-danger" ng-click="closeSession()">Cerrar Sesi&oacute;n</button>
+                </div>
+            </div>
+        </div>
+      </div>
+      
     <!-- Fin capa de contenido inicio sesión -->

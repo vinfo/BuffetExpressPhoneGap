@@ -12,18 +12,18 @@
           <label>Grasas <span>{{dish.grease}}</span></label>
           <label>Proteina <span>{{dish.proteins}}</span></label>
         </div>
-        <div class="col-xs-6 col-md-6">
+        <div class="col-xs-6 col-md-6" style="padding:0";text-align:left;>
           <label>Carbohidratos <span>{{dish.carbohydrates}}</span></label>
           <label>Calorias <span>{{dish.calories}}</span></label>
         </div>
       </div>
     </div>
     <br>
-    <img src="images/menu-menos.png" alt="..." title="..." class="masdetalle btns" />
+    <img src="images/menu-menos.png" alt="..." title="..." class="masdetalle btns" ng-click="setDish(dish,'less')" />
     <img src="images/lupamenu.png" alt="..." title="..." class="masdetalle btns" ng-click="detailDish(dish)" />
-    <img src="images/masmenu.png" alt="..." title="..." class="vermasplato btns" ng-click="addDish(dish)" />
+    <img src="images/masmenu.png" alt="..." title="..." class="vermasplato btns" ng-click="setDish(dish,'add')" />
   </div>
-  <div class="contimg"><div class="numb">1</div><img id="image_{{dish.code}}" ng-src="{{dish.images}}" /></div>
+  <div class="contimg"><div id="numb_{{dish.code}}" class="numb">0</div><img id="image_{{dish.code}}" ng-src="{{dish.images}}" /></div>
 </div>
 
 </div>
@@ -39,7 +39,7 @@
         <img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/>
 
         <div class="sopacont">
-          <img src="images/sopa.png" style="width:100%;" border="0" margin="0"/>
+          <img ng-src="{{sopa}}" style="width:100%;" border="0" margin="0"/>
         </div>
 
       </div>
@@ -48,7 +48,7 @@
         <img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/>
 
         <div class="jugo">
-         <img src="images/jugo.png" style="width:100%;" border="0" margin="0"/>
+         <img ng-src="{{bebidas}}" style="width:100%;" border="0" margin="0"/>
        </div>
 
      </div>
@@ -57,15 +57,15 @@
        <img src="images/plato.png" style="width:100%;" border="0" margin="0"/>
 
        <div class="arroz">
-        <img src="images/arroz_2.png" style="width:100%;" border="0" margin="0"/>
+        <img ng-src="{{arroz}}" style="width:100%;" border="0" margin="0"/>
       </div>
 
       <div class="guarnicion">
-        <img src="images/guarnicion_2.png" style="width:100%;" border="0" margin="0"/>
+        <img ng-src="{{guarnicion}}" style="width:100%;" border="0" margin="0"/>
       </div>
 
       <div class="carne">
-        <img src="images/c109_2.png" style="width:100%;" border="0" margin="0"/>
+        <img ng-src="{{carnes}}" style="width:100%;" border="0" margin="0"/>
       </div>
 
     </div>
@@ -76,15 +76,16 @@
 </div>
 <div class="costoad">
   <div class="cont">
-    <img src="images/cerr_vpla.png" alt="..." alt="..." class="cerrvess">
-    <h1>Costo de adición <span>$4.500</span></h1>
+    <img src="images/cerr_vpla.png" alt="..." alt="..." class="cerrvess" ng-click="close('costoad')">
+    <h1>Costo de adición <span>${{precio}}</span></h1>
     <p>Esta adición elevara el valor del plato por encima de los $9.400</p>
     <div class="ck">
-      <label for="ck">No volver a ver este mensaje</label> <input type="checkbox" id="ck" />
+      <span><input type="checkbox" id="ck" ng-click="stop('costoad')" /></span> <label for="ck">No volver a ver este mensaje</label> 
     </div>  
   </div>
 </div>
 <div class="verplatoico"><img src="images/ver_plato.png" alt="..." title="..." class="img1" ng-click="fullDish('buffet')" /></div>
+<input id="plato" name="plato" type="hidden" value="{{plato}}" />
 <input id="datos" name="datos" type="hidden" value="{{datos}}" />
 <!-- fin contenido buffet -->
 <script>
@@ -105,14 +106,15 @@
     
   };
   function checkLoad(image){
-    var load= $('#image_'+image).attr('src');
+    var carg= $('#image_'+image).attr('src');
     var img= 'http://buffetexpress.co/REST/resources/images/dish/'+image+'_1.jpg';
-    if(load!=img){
-      $('#image_'+image).fadeOut(50, function(){
-        $(this).attr('src',img).bind('onreadystatechange load', function(){
-          if (this.complete) $(this).fadeIn(300);
-       });
-      });    
+    if(carg.length < img.length){
+        //console.log(img);
+        $('#image_'+image).fadeOut(50, function(){
+          $(this).attr('src',img).bind('onreadystatechange load', function(){
+            if (this.complete) $(this).fadeIn(300);
+         });
+        });
     }
   }
 
@@ -120,22 +122,32 @@
     $(".detalle").hide();
     $('.menupie').fadeIn();
 
+    var lastScrollTop = 0;
     $(".container").scroll(function(){ 
      var str= $("#datos").val();
      var data= jQuery.parseJSON(str);
+     var st = $(this).scrollTop();
+     if (st > lastScrollTop){
+        //console.log("bajando");        
+        $('.menupie').stop(true, true).animate({ bottom: "-12%" }, 3000);
+        $('.verplatoico').stop(true, true).animate({ bottom: "0%" }, 3000);
+     } else {
+         //console.log("subiendo");
+        $('.menupie').stop(true, true).animate({ bottom: "0%" }, 3000);
+        $('.verplatoico').stop(true, true).animate({ bottom: "11.5%" }, 3000);
+     }
+     lastScrollTop = st;
 
-     if ($(this).scrollTop() > 250) {
-      $('.menupie').fadeOut();
+     if ($(this).scrollTop() > 150) {      
       $.each(data, function(idx, obj) {
-        if($('#image_'+obj.code).isOnScreen()){
-          checkLoad(obj.code);
-          console.log(obj.code);
+        if($('#image_'+obj.code).isOnScreen()){          
+            checkLoad(obj.code);
         }        
       });      
-    } else {            
-      $('.menupie').fadeIn();
     }
+    return false;
   });
+
   setTimeout(function(){$(".btns").fadeIn();}, 1500);
   });
 </script>
