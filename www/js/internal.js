@@ -4,6 +4,7 @@ if (window.jQuery) {
  $(function(){
     // Tamaño container
     $(".container").css({"min-height":$(document).height()});
+    $("#totalDish").html(localStorage.plato);
 
     $(window).load(function(){
         $(".menupie ul li").css({"height":$("li.carrito a img").height()});

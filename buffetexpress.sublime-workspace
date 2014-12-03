@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"ge",
+				"getItems"
+			],
+			[
 				"bo",
 				"bottom"
 			],
@@ -175,19 +179,29 @@
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms",
-		"/D/Movilidad/BuffetExpressPhoneGap/www"
+		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/terminos.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
+		"/D/wamp/www/familymarketing/js/tools.js",
+		"/C/Users/odc/Downloads/jquery.formatCurrency-1.4.0/demo/format_as_you_type.html",
+		"/D/wamp/www/familymarketing/js/jquery.maskMoney.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
+		"/D/wamp/www/familymarketing/plugins/PHPMailer/examples/index.html",
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla8.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/perfil.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/terminos.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/nosotros.html",
@@ -223,7 +237,6 @@
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla3.html",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla2.html",
 		"/D/wamp/www/conducimos/site/wp-content/plugins/motopress-content-editor/bootstrap/bootstrap-grid.min.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
 		"/D/wamp/www/familymarketing/modules/js/aproductos.js",
 		"/D/wamp/www/familymarketing/modules/js/login.js",
 		"/D/wamp/www/familymarketing/modules/js/compras.js",
@@ -235,7 +248,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/phonegap-toast.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/Toast.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/ng-infinite-scroll.min.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/clave.html",
@@ -300,13 +312,7 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/res/xml/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/assets/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/android.json",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/res/screen/android/screen-hdpi-landscape.png",
-		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/assets/www/js/index.js",
-		"/C/Users/odc/Downloads/Demo-Network-Information-master/Demo-Network-Information-master/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/index.js",
-		"/D/wamp/www/Realrisk-Noticias/index.html",
-		"/C/Users/odc/Downloads/Demo-Network-Information-master/Demo-Network-Information-master/index.html",
-		"/C/Users/odc/Downloads/Demo-Network-Information-master/Demo-Network-Information-master/js/index.js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/res/screen/android/screen-hdpi-landscape.png"
 	],
 	"find":
 	{
@@ -325,6 +331,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"getDetail",
+			"noFractionCurrency",
+			"getDetail",
+			"angular.fromJson",
+			"getDetail",
+			"plato ac",
+			"Images",
+			"getImage",
+			"numb_",
+			"num_dish",
 			".icodeli",
 			".miscompras .comprasitem .icodeli",
 			".miscompras .comprasitem .contnn",
@@ -442,17 +458,7 @@
 			"setAccount",
 			"doView(",
 			"categoriaController",
-			"ajaxrest.login",
-			"btn1sli",
-			"imgcodigo Cbuffet",
-			".terminos\"",
-			".terminos .contt",
-			"entrada.html",
-			"markAdressToMap",
-			"LatLng",
-			"setCenter",
-			"LatLng",
-			"addressMap"
+			"ajaxrest.login"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -568,7 +574,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 294.0,
+	"side_bar_width": 332.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

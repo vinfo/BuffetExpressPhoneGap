@@ -1106,16 +1106,14 @@ max-width:20%;*/
 }
 .vermapa label.title
 {
-	background: url(../images/sombramapa.png) no-repeat;
 	position: absolute;
 	width: 100%;
 	text-align: center;
-	font-size: 40px;
+	font-size: 30px;
 	z-index: 100;
 	font-weight: normal;
-	color: white;
-	height: 231px;
-	padding-top: 20px;
+	color: #057797;
+	padding-top:10px;
 }
 .vermapa .lupabu
 {
