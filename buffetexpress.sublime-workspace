@@ -119,6 +119,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "www/js/main.js",
+			"settings":
+			{
+				"buffer_size": 15153,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -180,14 +188,15 @@
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms",
 		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css"
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
@@ -200,7 +209,6 @@
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla8.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/perfil.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/terminos.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
@@ -208,7 +216,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/scroll.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla5.html",
 		"/C/Users/odc/AppData/Local/Temp/Rar$EXa0.554/templates/categoria.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
@@ -331,6 +338,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"getNumDish",
 			"getDetail",
 			"noFractionCurrency",
 			"getDetail",
@@ -457,8 +465,7 @@
 			"/cuenta?",
 			"setAccount",
 			"doView(",
-			"categoriaController",
-			"ajaxrest.login"
+			"categoriaController"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -488,8 +495,41 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "www/js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15153,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1933,
+								1942
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 753.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

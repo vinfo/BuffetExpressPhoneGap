@@ -62,7 +62,8 @@
 
 	angularRoutingApp.controller('mainController', function($scope,$location,Images,Items){				
 		$scope.num_dish=localStorage.plato;
-		
+		var platos= Items.getNumDish();
+		localStorage.platos = platos;
 
 		if(localStorage.cuenta){
 			$scope.mi_cuenta="#mi_cuenta";
@@ -206,7 +207,7 @@
 		}
 	});
 
-	angularRoutingApp.controller('comprasController', function($scope,Items) {
+	angularRoutingApp.controller('comprasController', function($scope,Items) {		
 		var plato='';
 		for (var i = 1; i <= localStorage.plato; i++){
 			var items= Items.getItems(i);
@@ -385,6 +386,22 @@
 
 	angularRoutingApp.factory('Items', function () {
 		return {
+			getNumDish: function() {
+				var items=0;
+				var cont=[];
+				for (var i = 0; i < localStorage.length; i++){
+					var item= localStorage.key(i);
+					if(item.indexOf("item_")==0){
+						var dish=item.substring(item.lastIndexOf("item_"),item.lastIndexOf("_"));
+						cont.push(dish);
+						items++;
+					}
+				}
+				cont = $.grep(cont, function(v, k){
+				    return $.inArray(v ,cont) === k;
+				});				
+				return cont.length;
+			},			
 			getItems: function(Dish) {
 				var items=0;
 				for (var i = 0; i < localStorage.length; i++){
