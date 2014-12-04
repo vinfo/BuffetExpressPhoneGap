@@ -1,14 +1,14 @@
 body{
 	padding:0;
 	margin:0;
+	background-color: #482810;
 }
-body::before {
-	content:url(../images/fondo.png) display: none;
-}
-
 a img
 {
 	border:0px;
+}
+.container:after{
+   content: url(../images/fondo.png) display:none;
 }
 .container
 {
@@ -808,6 +808,7 @@ max-width:20%;*/
 	width: 100%;
 	text-align: center;
 	position: fixed;
+	bottom:11.6%;
 	left: 0px;
 }
 .miscompras .contpag .cont

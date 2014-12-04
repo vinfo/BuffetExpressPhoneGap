@@ -3,8 +3,7 @@ app.initialize();
 if (window.jQuery) {  
  $(function(){
     // Tamaño container
-    $(".container").css({"min-height":$(document).height()});
-    $("#totalDish").html(localStorage.plato);
+    $(".container").css({"min-height":$(document).height()});    
 
     $(window).load(function(){
         $(".menupie ul li").css({"height":$("li.carrito a img").height()});

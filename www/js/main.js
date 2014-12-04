@@ -54,16 +54,22 @@
 		.when('/redes', {
 			templateUrl : 'templates/redes.html',
 			controller 	: 'mainController'
-		})		
+		})
+		.when('/pago', {
+			templateUrl : 'templates/pago.html',
+			controller 	: 'pagoController'
+		})				
 		.otherwise({
 			redirectTo: '/'
 		});
 	});
 
-	angularRoutingApp.controller('mainController', function($scope,$location,Images,Items){				
-		$scope.num_dish=localStorage.plato;
-		var platos= Items.getNumDish();
-		localStorage.platos = platos;
+	angularRoutingApp.controller('mainController', function($scope,$location,Images,Items){
+		var platos= localStorage.plato;
+		if(jQuery.parseJSON(Items.getNumDish()).platos>0)platos=jQuery.parseJSON(Items.getNumDish()).platos;		
+		$scope.num_dish= platos;
+		
+		$("#totalDish").html(platos);
 
 		if(localStorage.cuenta){
 			$scope.mi_cuenta="#mi_cuenta";
@@ -73,12 +79,11 @@
 
 
 			//Validar imagenes plato existente
-			var actualDish= $scope.num_dish;
-			$scope.arroz= $scope.someText=Images.getImage(actualDish,1);
-			$scope.bebidas= $scope.someText=Images.getImage(actualDish,2);
-			$scope.carnes= $scope.someText=Images.getImage(actualDish,3);
-			$scope.guarnicion= $scope.someText=Images.getImage(actualDish,4);
-			$scope.sopa= $scope.someText=Images.getImage(actualDish,5);
+			$scope.arroz= $scope.someText=Images.getImage(platos,1);
+			$scope.bebidas= $scope.someText=Images.getImage(platos,2);
+			$scope.carnes= $scope.someText=Images.getImage(platos,3);
+			$scope.guarnicion= $scope.someText=Images.getImage(platos,4);
+			$scope.sopa= $scope.someText=Images.getImage(platos,5);
 
 
 
@@ -90,8 +95,7 @@
 				}else{
 					return style2;				
 				}
-			}			
-
+			},
 			$scope.doLogin = function() {
 				ajaxrest.login();
 			},	
@@ -131,7 +135,7 @@
 				return false;
 			},
 			$scope.addDish = function (action) {
-				var items=Items.getItems(localStorage.plato);
+				var items=Items.getItems(platos);
 				if(items<3){
 					if(action=="add"){
 						alert("Plato actual no esta completo!");
@@ -142,32 +146,39 @@
 					}					
 				}else{
 					if(action=="add"){
-					var ndish= parseInt(localStorage.plato) + 1;
-					$scope.num_dish= ndish;
-					localStorage.plato=ndish;
+						var ndish= parseInt(platos) + 1;
+						$scope.num_dish= ndish;
+						localStorage.plato=platos;
 
-					$scope.arroz= Images.getImage(ndish,1);
-					$scope.bebidas= Images.getImage(ndish,2);
-					$scope.carnes= Images.getImage(ndish,3);
-					$scope.guarnicion= Images.getImage(ndish,4);
-					$scope.sopa= Images.getImage(ndish,5);
+						$scope.arroz= Images.getImage(ndish,1);
+						$scope.bebidas= Images.getImage(ndish,2);
+						$scope.carnes= Images.getImage(ndish,3);
+						$scope.guarnicion= Images.getImage(ndish,4);
+						$scope.sopa= Images.getImage(ndish,5);
+						$("#totalDish").html(jQuery.parseJSON(Items.getNumDish()).platos);
 					}else{
 						$location.path("compras");
 					}
 				}
-			},						
+			},					
 			$scope.setDish = function (dish,action) {
 				var plato= localStorage.plato;
-				var num= parseInt($("#numb_"+dish.code).text());
-				var val= 0;
-				if(action=='add'){
-					val= num + 1;
-				}else{
-					if(num>0)val= num - 1;
-				}
 				var name= "item_"+plato+"_"+dish.idCat;
-				localStorage.setItem(name, dish.code);
+				var val= 0;
+				if(localStorage.getItem(name))val= 1;
 
+				var cnt=0;
+				if(localStorage.getItem("adicional_"+plato+"_"+dish.idCat+"_"+dish.code)){
+					cnt= jQuery.parseJSON(localStorage.getItem("adicional_"+plato+"_"+dish.idCat+"_"+dish.code));
+				}
+				var total= val + cnt;
+				if(action=='add'){
+					val= total + 1;
+				}else{
+					if(total>0)val= total - 1;
+				}
+				
+				if(!localStorage.getItem(name))localStorage.setItem(name, dish.code);
 
 				if(dish.idCat==1){	
 					$scope.arroz= base_url+"resources/images/dish/"+localStorage.getItem(name)+"_2.png";				
@@ -184,13 +195,25 @@
 				if(dish.idCat==5){
 					$scope.sopa= base_url+ "resources/images/dish/"+localStorage.getItem(name)+"_2.png";	
 				}			
-
+				
 				if(val>1){
-					localStorage.setItem("adicional_"+plato+"_"+dish.idCat, dish.code);
-					$scope.precio=dish.price;
-					if(!localStorage.getItem('stop'))$(".costoad").fadeIn();	
-				}        
-				$("#numb_"+dish.code).text(val).fadeIn('fast');
+					var op=cnt;
+					if(action=='add'){
+						op+=1;
+					}else{
+						op-=1;
+					}					
+					localStorage.setItem("adicional_"+plato+"_"+dish.idCat+"_"+dish.code, op);
+					$scope.precio= dish.price;
+					if(!localStorage.getItem('stop') && action=="add")$(".costoad").fadeIn();	
+				}else{
+					localStorage.removeItem("adicional_"+plato+"_"+dish.idCat); 
+				}
+
+				if(val==0){
+					localStorage.removeItem(name); 
+				}       
+				//$("#numb_"+dish.code).text(val).fadeIn('fast');
 			//window.plugins.toast.showShortCenter('Producto Adicionado!');
 			if(action="add")$location.path("menu");	
 		},	
@@ -207,12 +230,16 @@
 		}
 	});
 
-	angularRoutingApp.controller('comprasController', function($scope,Items) {		
+	angularRoutingApp.controller('comprasController', function($scope,Items,Currency) {
 		var plato='';
-		for (var i = 1; i <= localStorage.plato; i++){
-			var items= Items.getItems(i);
-			var details= Items.getDetail(i);
-			var aditionals= Items.getAditional(i);
+		var platos= jQuery.parseJSON(Items.getNumDish());
+		
+		for (var i = 0; i < platos.names.length; i++){
+			var item= platos.names[i].split('_');
+			var num= item[1];
+			var items= Items.getItems(num);
+			var details= Items.getDetail(num);
+			var aditionals= Items.getAditional(num);
 			
 			var opciones="";
 			var adicionales="";
@@ -228,7 +255,8 @@
 			var bebidasIco="images/bebidas_mini.png";
 			var carnesIco="images/carnes_mini.png";
 			var guarnicionIco="images/guarnicion_mini.png";
-			var sopaIco="images/sopas_mini.png";		
+			var sopaIco="images/sopas_mini.png";
+
 
 			for(var j=0;j<details.length;j++){
 				opciones+= "- "+details[j].name+"<br/>";
@@ -257,14 +285,15 @@
 			}
 
 			for(var h=0;h<aditionals.length;h++){
-				adicionales+= "Adicional: "+details[h].name+"<br/>";
-				total+= parseInt(details[h].price);
-			}			
-			
-			plato='<div class="comprasitem"><div class="imgcont" ><div class="padre"><div class = "derrap"><div class="contenedor"><div class="sopa"><img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/><div class="sopacont"><img src="'+sopa+'" style="width:100%;" border="0" margin="0"/></div></div><div class="vaso"><img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/><div class="jugo"><img src="'+bebidas+'" style="width:100%;" border="0" margin="0"/></div></div><div class="plato"><img src="images/plato.png" style="width:100%;" border="0" margin="0"/><div class="arroz"><img src="'+arroz+'" style="width:100%;" border="0" margin="0"/></div><div class="guarnicion"><img src="'+guarnicion+'" style="width:100%;" border="0" margin="0"/></div><div class="carne"><img src="'+carnes+'" style="width:100%;" border="0" margin="0"/></div></div></div></div></div></div><div class="contnn"><h3>Plato #'+i+'</h3><p>'+opciones+adicionales+'</p></p><div class="icodeli"><a href="" ng-click="lessDish"><span class="elimina"></span></a><span class="contador"><label>1</label></span><a href="" ng-click="lessDish"><span class="suma"></span></a></div></div><div class="icodeta"><div><img src="'+sopaIco+'" alt="..." title="..."></div><div><img src="'+arrozIco+'" alt="..." title="..."></div><div><img src="'+carnesIco+'" alt="..." title="..."></div><div><img src="'+guarnicionIco+'" alt="..." title="..."></div><div><img src="'+bebidasIco+'" alt="..." title="..."></div> <div class="subtt"><label class="currency">$'+total+'</label></div></div>';
+				var cant= localStorage.getItem("adicional_"+num+"_"+aditionals[h].idCat+"_"+aditionals[h].code);
+				adicionales+= "Adicional: "+aditionals[h].name+" X "+cant+"<br/>";
+				total+= parseInt(details[h].price)*cant;
+			}
+			plato+='<div class="comprasitem"><div class="imgcont" ><div class="padre"><div class = "derrap"><div class="contenedor"><div class="sopa"><img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/><div class="sopacont"><img src="'+sopa+'" style="width:100%;" border="0" margin="0" /></div></div><div class="vaso"><img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/><div class="jugo"><img src="'+bebidas+'" style="width:100%;" border="0" margin="0"/></div></div><div class="plato"><img src="images/plato.png" style="width:100%;" border="0" margin="0"/><div class="arroz"><img src="'+arroz+'" style="width:100%;" border="0" margin="0"/></div><div class="guarnicion"><img src="'+guarnicion+'" style="width:100%;" border="0" margin="0"/></div><div class="carne"><img src="'+carnes+'" style="width:100%;" border="0" margin="0"/></div></div></div></div></div></div><div class="contnn"><h3>Plato #'+(i+1)+'</h3><p>'+opciones+adicionales+'</p></p><div class="icodeli"><a href="" ng-click="lessDish"><span class="elimina"></span></a><span class="contador"><label>1</label></span><a href="" ng-click="lessDish"><span class="suma"></span></a></div></div><div class="icodeta"><div><img src="'+sopaIco+'" alt="..." title="..." onclick="editDish(5,\'sopas y cremas\','+num+')"></div><div><img src="'+arrozIco+'" alt="..." title="..." onclick="editDish(1,\'arroz\','+num+')"></div><div><img src="'+carnesIco+'" alt="..." title="..." onclick="editDish(3,\'carnes\','+num+')"></div><div><img src="'+guarnicionIco+'" alt="..." title="..." onclick="editDish(4,\'guarnición\','+num+')"></div><div><img src="'+bebidasIco+'" alt="..." title="..." onclick="editDish(2,\'bebidas\','+num+')"></div> <div class="subtt"><label class="currency">$'+Currency.getMoney(total, 0, ",", ".")+'</label></div></div>';
 		}
-		var contPago='<div class="contpag"><div class="cont">Continúe con el pago</div></div>';
+		var contPago='<div class="contpag"><div class="cont" onclick="doPay('+platos.platos+')">Continúe con el pago</div></div>';
 		$("#miscompras").html(plato+contPago);
+		$("#totalDish").html(platos.platos);
 	});
 
 	angularRoutingApp.controller('loginController', function($scope) {
@@ -275,8 +304,14 @@
 		$scope.message = 'Esta es la página de "Login"';
 	});	
 
-	angularRoutingApp.controller('sliderController', function($scope) {
-		$scope.message = 'Esta es la página de "Login"';
+	angularRoutingApp.controller('sliderController', function($scope,$location,Items) {
+		$scope.recomendado = function () {
+			var rec=confirm("Desea adicionar el Recomendado del Día al carro de compras?");
+			if(rec)localStorage.setItem("recomendado",1);
+			window.location = "internal.html#/compras";		
+		}		
+
+		$("#totalDish").html(jQuery.parseJSON(Items.getNumDish()).platos);
 		var data= ajaxrest.getDishDay("token="+localStorage.token);
 		var dat = angular.fromJson(data);
 		for(var i=0;i<dat.length;i++){
@@ -317,8 +352,8 @@
 
 	angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http,Images) {		
 		$(".detalle").hide();
-
-		$scope.plato= localStorage.plato;
+		var plato=localStorage.plato;
+		$scope.plato= plato;
 		var cat= $routeParams.idCat;
 		var data= ajaxrest.getDishes("category="+cat+"&token="+localStorage.token+"&dimension="+localStorage.dimension);
 		$scope.dishes = angular.fromJson(data);
@@ -332,19 +367,25 @@
 			$scope.imageCat="carnes_mini";
 		}else if(cat==4){
 			$scope.imageCat="guarnicion_mini";
-		}
-		ajaxrest.setNumDishes(localStorage.plato,cat);
+		}		
+		ajaxrest.setNumDishes(plato,cat);
 
-		$scope.arroz= $scope.someText=Images.getImage(localStorage.plato,1);
-		$scope.bebidas= $scope.someText=Images.getImage(localStorage.plato,2);
-		$scope.carnes= $scope.someText=Images.getImage(localStorage.plato,3);
-		$scope.guarnicion= $scope.someText=Images.getImage(localStorage.plato,4);
-		$scope.sopa= $scope.someText=Images.getImage(localStorage.plato,5);		
+		$scope.arroz= $scope.someText=Images.getImage(plato,1);
+		$scope.bebidas= $scope.someText=Images.getImage(plato,2);
+		$scope.carnes= $scope.someText=Images.getImage(plato,3);
+		$scope.guarnicion= $scope.someText=Images.getImage(plato,4);
+		$scope.sopa= $scope.someText=Images.getImage(plato,5);		
 	});
 
-	angularRoutingApp.controller("mapaController", ["$scope", function mapaController($scope) {		
+	angularRoutingApp.controller("mapaController", ["$scope", function mapaController($scope,Items) {		
 		$scope.Adress = "6.270318, -75.595974";
+		$("#totalDish").html(jQuery.parseJSON(Items.getNumDish()).platos);
 	}]);
+
+	angularRoutingApp.controller("pagoController", ["$scope", function mapaController($scope,Items) {		
+		$("#totalDish").html(jQuery.parseJSON(Items.getNumDish()).platos);
+	}]);
+	
 
 	angularRoutingApp.directive('wrapOwlcarousel', function () {
 		return {
@@ -384,10 +425,40 @@
 		};
 	});
 
+	angularRoutingApp.factory('Currency', function () {
+		return {
+			getMoney: function(numero, decimales, separador_decimal, separador_miles) {
+				numero=parseFloat(numero);
+				if(isNaN(numero)){
+					return "";
+				}
+
+				if(decimales!==undefined){
+			        // Redondeamos
+			        numero=numero.toFixed(decimales);
+			    }
+
+			    // Convertimos el punto en separador_decimal
+			    numero=numero.toString().replace(".", separador_decimal!==undefined ? separador_decimal : ",");
+
+			    if(separador_miles){
+			        // Añadimos los separadores de miles
+			        var miles=new RegExp("(-?[0-9]+)([0-9]{3})");
+			        while(miles.test(numero)) {
+			        	numero=numero.replace(miles, "$1" + separador_miles + "$2");
+			        }
+			    }
+
+			    return numero;
+			}
+		};
+	});	
+
 	angularRoutingApp.factory('Items', function () {
 		return {
 			getNumDish: function() {
 				var items=0;
+				var dishes=0;
 				var cont=[];
 				for (var i = 0; i < localStorage.length; i++){
 					var item= localStorage.key(i);
@@ -397,10 +468,19 @@
 						items++;
 					}
 				}
-				cont = $.grep(cont, function(v, k){
-				    return $.inArray(v ,cont) === k;
-				});				
-				return cont.length;
+
+				var farr= compressArray(cont);				
+				var arr=[];
+				for(var j=0;j<farr.length;j++){
+					if(farr[j].count>2)arr.push(farr[j].value);
+				}
+
+				arr = $.grep(arr, function(v, k){
+					return $.inArray(v ,arr) === k;
+				});		
+				if(arr.length>0)dishes=arr.length;
+				var data={"platos":dishes,"names":arr};
+				return JSON.stringify(data);
 			},			
 			getItems: function(Dish) {
 				var items=0;
@@ -421,9 +501,9 @@
 						codes+= localStorage.getItem(item)+',';
 					}				
 				}
-				if(codes.length>3){				
-				var data= ajaxrest.getItemsxDish("codes="+codes+"&token="+localStorage.token);
-				var dat = angular.fromJson(data);
+				if(codes.length>3){	
+					var data= ajaxrest.getItemsxDish("codes="+codes+"&token="+localStorage.token);
+					var dat = angular.fromJson(data);
 				}		
 				return dat;
 			},
@@ -433,14 +513,15 @@
 				for (var i = 0; i < localStorage.length; i++){
 					var item= localStorage.key(i);
 					if(item.indexOf("adicional_"+Dish)==0){
-						codes+= localStorage.getItem(item)+',';
+						var dish=item.split('_');
+						codes+= dish[3] +',';
 					}				
 				}
 				if(codes.length>3){				
-				var data= ajaxrest.getItemsxDish("codes="+codes+"&token="+localStorage.token);
-				var dat = angular.fromJson(data);
+					var data= ajaxrest.getItemsxDish("codes="+codes+"&token="+localStorage.token);
+					var dat = angular.fromJson(data);
 				}		
 				return dat;
-			}						
+			}								
 		};
 	});	

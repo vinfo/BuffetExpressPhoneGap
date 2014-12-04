@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"local",
+				"localStorage"
+			],
+			[
+				"pla",
+				"platos"
+			],
+			[
 				"ge",
 				"getItems"
 			],
@@ -119,14 +127,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "www/js/main.js",
-			"settings":
-			{
-				"buffer_size": 15153,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -186,39 +186,44 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/platforms",
-		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css"
+		"/D/Movilidad/BuffetExpressPhoneGap/platforms"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pagos.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
+		"/D/wamp/www/familymarketing/js/tools.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/wamp/www/familymarketing/js/jquery.currency.js",
+		"/D/wamp/www/familymarketing/modules/js/aproductos.js",
+		"/D/wamp/www/familymarketing/modules/js/compras.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/index.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/owl-carousel/owl.carousel.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
-		"/D/wamp/www/familymarketing/js/tools.js",
 		"/C/Users/odc/Downloads/jquery.formatCurrency-1.4.0/demo/format_as_you_type.html",
 		"/D/wamp/www/familymarketing/js/jquery.maskMoney.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
 		"/D/wamp/www/familymarketing/plugins/PHPMailer/examples/index.html",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla8.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/perfil.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/terminos.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/nosotros.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/scroll.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla5.html",
 		"/C/Users/odc/AppData/Local/Temp/Rar$EXa0.554/templates/categoria.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/pantalla5.html",
 		"/C/Users/odc/Downloads/jquery-data-load-while-scroll/js/jquery-ias.min.js",
 		"/C/Users/odc/AppData/Local/Temp/Rar$EXa0.990/templates/categoria.html",
@@ -231,12 +236,10 @@
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/nosotros.html",
 		"/C/Users/odc/AppData/Local/Temp/Rar$EXa0.800/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/owl-carousel/owl.carousel.min.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/owl-carousel/owl.carousel.js",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla7.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular.min.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular/angular.min.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/jquery.css3caching.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/index.css",
 		"/C/Users/odc/AppData/Local/Temp/Rar$EXa0.237/templates/menu.html",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/css/style.css",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla4.html",
@@ -244,9 +247,7 @@
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla3.html",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla2.html",
 		"/D/wamp/www/conducimos/site/wp-content/plugins/motopress-content-editor/bootstrap/bootstrap-grid.min.css",
-		"/D/wamp/www/familymarketing/modules/js/aproductos.js",
 		"/D/wamp/www/familymarketing/modules/js/login.js",
-		"/D/wamp/www/familymarketing/modules/js/compras.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/directives.js",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
@@ -316,10 +317,7 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/pages/slider",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/mapa.html",
 		"/D/wamp/www/buffetexpress/codeigniter/resources/html/mapa.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/res/xml/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/assets/www/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/plugins/android.json",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/res/screen/android/screen-hdpi-landscape.png"
+		"/D/Movilidad/BuffetExpressPhoneGap/platforms/android/res/xml/config.xml"
 	],
 	"find":
 	{
@@ -338,6 +336,42 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"getNumDish",
+			"doPay",
+			"$location",
+			"sliderController",
+			"getAditional",
+			"getCantAditional",
+			"getItemsxDish",
+			"setDish",
+			"setDish(",
+			"getAditional",
+			"alert(",
+			"getAditional",
+			"setNumDishes",
+			"+i+",
+			"getNumDish",
+			"getItems",
+			"getNumDish",
+			"JSON",
+			"getNumDish",
+			"getCantAditional",
+			"getAditional",
+			"JSON",
+			"getItemsxDish",
+			"getNumDish",
+			"#numb_",
+			"numb_",
+			"numb",
+			"\"numb",
+			"lessDish",
+			"ajaxrest.login",
+			"editDish",
+			".cont",
+			".contpag",
+			".miscompras .contpag",
+			"totalDish",
+			"index.css",
 			"getNumDish",
 			"getDetail",
 			"noFractionCurrency",
@@ -429,50 +463,15 @@
 			".botones .btn1, .botones .btn2",
 			"menupie",
 			".botones .btn1, .botones .btn2",
-			".botones",
-			"menuplato",
-			".botones .btn2 span",
-			".botones .btn1",
-			"\"style=\"width:100%;\"",
-			" WIDTH=\"100%\" HEIGHT=\"100%\"",
-			"padre",
-			"body",
-			"getPassword",
-			"api/",
-			"API/",
-			"buffetexpress.co",
-			".miscompras .comprasitem .icodeli span.elimina",
-			".menuplatolist .col-md-12 .title span",
-			".menuplatolist .col-md-12 .detalle",
-			"getDishes",
-			".menuplato",
-			"h3",
-			"fullDish(",
-			"active\"",
-			".title",
-			".col-md-12",
-			".buffet .imgcodigo",
-			".sesion button",
-			"ico-lupa",
-			"detailDish",
-			"localData['email']",
-			"localStorage",
-			"getdishes",
-			"options.goTo",
-			"idCat",
-			"menupie\"",
-			"/cuenta",
-			"/cuenta?",
-			"setAccount",
-			"doView(",
-			"categoriaController"
+			".botones"
 		],
-		"highlight": true,
+		"highlight": false,
 		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
 		[
+			"+num+",
 			" style=\"width:100%;\"",
 			"",
 			"style=\"width:10%\"",
@@ -495,41 +494,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "www/js/main.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 15153,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1933,
-								1942
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 753.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -614,7 +580,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 332.0,
+	"side_bar_width": 235.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
