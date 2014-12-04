@@ -377,14 +377,15 @@
 		$scope.sopa= $scope.someText=Images.getImage(plato,5);		
 	});
 
-	angularRoutingApp.controller("mapaController", ["$scope", function mapaController($scope,Items) {		
-		$scope.Adress = "6.270318, -75.595974";
+
+	angularRoutingApp.controller('pagoController', function($scope,Items) {
 		$("#totalDish").html(jQuery.parseJSON(Items.getNumDish()).platos);
+	});	
+
+	angularRoutingApp.controller("mapaController", ["$scope", function mapaController($scope) {		
+		$scope.Adress = "6.270318, -75.595974";
 	}]);
 
-	angularRoutingApp.controller("pagoController", ["$scope", function mapaController($scope,Items) {		
-		$("#totalDish").html(jQuery.parseJSON(Items.getNumDish()).platos);
-	}]);
 	
 
 	angularRoutingApp.directive('wrapOwlcarousel', function () {
