@@ -6,7 +6,7 @@ angularRoutingApp.config(function($routeProvider) {
 	$routeProvider
 	.when('/', {
 		templateUrl : 'templates/login.html',
-		controller 	: 'mainController'
+		controller 	: 'loginController'
 	})
 	.when('/cuenta', {
 		templateUrl : 'templates/cuenta.html',
@@ -29,17 +29,13 @@ angularRoutingApp.config(function($routeProvider) {
 	});
 });
 
-angularRoutingApp.controller('mainController', function($scope, $location){	
+angularRoutingApp.controller('loginController', function($scope, $routeParams) {
 	$scope.doLogin = function() {
 		ajaxrest.login();
 	},	
 	$scope.doView = function (hash) {
 		$location.path(hash);
 	}
-});
-
-angularRoutingApp.controller('loginController', function($scope, $routeParams) {
-	$scope.email = $routeParams.email;
 });
 
 angularRoutingApp.controller('cuentaController', function($scope) {

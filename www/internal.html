@@ -9,14 +9,15 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body ng-controller='mainController'>
-    <div class="container" style="{{setFondo()}}">
+    <div class="container">
         <!-- Menu -->
         <div class="menusup">
             <button class="verlatermenu ico-menu"><span></span></button>
             <div class="title">Buffet Express</div>
             <button onclick="window.plugins.socialsharing.share('Solicita tu almuerzo a domicilio - BuffetExpress.co', null, 'http://buffetexpress.co/REST/resources/images/logo.png', 'http://buffetexpress.co')" class="ico-lupa"><span></span></button>
         </div>
-        <!-- Fin menu -->                   
+        <!-- Fin menu --> 
+        
         <!-- Menu lateral -->
         <div class="latermenu">
             <div class="tr">
@@ -61,7 +62,7 @@
         <div class="menupie">
             <ul>
                 <li class="active"><a href="#"><img src="images/buffet.png" alt="..." title="..." /></a></li>
-                <li><a href="#menu"><img src="images/menu.png" alt="..." title="..." /></a></li>
+                <li><a href="#menu" ng-click="goMenu()"><img src="images/menu.png" alt="..." title="..." /></a></li>
                 <li class="carrito menu"><a href="#compras"><img src="images/mis_compras.png" alt="..." title="..." /></a><span id="totalDish">0</span></li>
                 <li><a href="#mapa"><img src="images/rastrea_tu_orden.png" alt="..." title="..." /></a></li>
             </ul>
@@ -77,6 +78,7 @@
     <script src="http://buffetexpress.co/REST/resources/js/functions.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route.js"></script>
+    <script src="js/angular-sanitize.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/directives.js"></script>
     <script type="text/javascript" src="phonegap.js"></script>

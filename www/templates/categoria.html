@@ -12,7 +12,7 @@
           <label>Grasas <span>{{dish.grease}}</span></label>
           <label>Proteina <span>{{dish.proteins}}</span></label>
         </div>
-        <div class="col-xs-6 col-md-6" style="padding:0";text-align:left;>
+        <div class="col-xs-6 col-md-6" style="padding:0;text-align:left;">
           <label>Carbohidratos <span>{{dish.carbohydrates}}</span></label>
           <label>Calorias <span>{{dish.calories}}</span></label>
         </div>
@@ -78,15 +78,15 @@
   <div class="cont">
     <img src="images/cerr_vpla.png" alt="..." alt="..." class="cerrvess" ng-click="close('costoad')">
     <h1>Costo de adición <span>${{precio}}</span></h1>
-    <p>Esta adición elevara el valor del plato por encima de los $9.400</p>
+    <p>Esta adición elevara el valor del plato por encima de los ${{precio_plato}}</p>
     <div class="ck">
       <span><input type="checkbox" id="ck" ng-click="stop('costoad')" /></span> <label for="ck">No volver a ver este mensaje</label> 
     </div>  
   </div>
 </div>
-<div class="verplatoico"><img src="images/ver_plato.png" alt="..." title="..." class="img1" ng-click="fullDish('buffet')" /></div>
+<div class="verplatoico" ng-click="viewDish()"><img src="images/ver_plato.png" alt="..." title="..." class="img1" ng-click="fullDish('buffet')" /></div>
 <input id="plato" name="plato" type="hidden" value="{{plato}}" />
-<input id="datos" name="datos" type="hidden" value="{{datos}}" />
+<input id="datos" name="datos" type="hidden" value="" />
 <!-- fin contenido buffet -->
 <script>
   $.fn.isOnScreen = function(){    
@@ -113,41 +113,52 @@
         $('#image_'+image).fadeOut(50, function(){
           $(this).attr('src',img).bind('onreadystatechange load', function(){
             if (this.complete) $(this).fadeIn(300);
-         });
+          });
         });
+      }
     }
-  }
 
-  $( document ).ready(function() {
-    $(".detalle").hide();
-    $('.menupie').fadeIn();
+    $( document ).ready(function() {
+      $(".detalle").hide();
+      setDisplayMenu();
 
-    var lastScrollTop = 0;
-    $(".container").scroll(function(){ 
-     var str= $("#datos").val();
-     var data= jQuery.parseJSON(str);
-     var st = $(this).scrollTop();
-     if (st > lastScrollTop){
-        //console.log("bajando");        
-        $('.menupie').stop(true, true).animate({ bottom: "-12%" }, 3000);
-        $('.verplatoico').stop(true, true).animate({ bottom: "0%" }, 3000);
-     } else {
-         //console.log("subiendo");
-        $('.menupie').stop(true, true).animate({ bottom: "0%" }, 3000);
-        $('.verplatoico').stop(true, true).animate({ bottom: "11.5%" }, 3000);
-     }
-     lastScrollTop = st;
+      var lastScrollTop = 0;            
+      $(".container").scroll(function(){   
+       var url= window.location.href;
+       
+       var st = $(this).scrollTop();
+       if (st > lastScrollTop){
+                //console.log("bajando");        
+                $('.menupie').stop(true, true).animate({ bottom: "-12%" }, 3000);
+                $('.verplatoico').stop(true, true).animate({ bottom: "0%" }, 3000);
+              } else {
+                 //console.log("subiendo");
+                 $('.menupie').stop(true, true).animate({ bottom: "0%" }, 3000);
+                 $('.verplatoico').stop(true, true).animate({ bottom: "11.5%" }, 3000);
+               }
+               lastScrollTop = st;
 
-     if ($(this).scrollTop() > 150) {      
-      $.each(data, function(idx, obj) {
-        if($('#image_'+obj.code).isOnScreen()){          
-            checkLoad(obj.code);
-        }        
-      });      
-    }
-    return false;
-  });
-
-  setTimeout(function(){$(".btns").fadeIn();}, 1500);
-  });
+               var datos= $("#datos").val();    
+               if($('#datos').length>0){               
+                //console.log(str);
+                if(url.indexOf("categoria/")>0){
+                  if ($(this).scrollTop() > 150) {
+                      var data;
+                      try {
+                        data= jQuery.parseJSON(datos);
+                       $.each(data, function(idx, obj) {
+                          if($('#image_'+obj.code).isOnScreen()){          
+                            checkLoad(obj.code);
+                          }        
+                        });                        
+                      } catch (e) {
+                        return;
+                      }  
+                 }
+               }
+             } 
+             return false;
+           });
+setTimeout(function(){$(".btns").fadeIn();}, 1500);
+});
 </script>
