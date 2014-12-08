@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"st",
+				"stringify"
+			],
+			[
 				"set",
 				"setItem"
 			],
@@ -220,10 +224,11 @@
 	"file_history":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
@@ -242,7 +247,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/index.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/owl-carousel/owl.carousel.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
@@ -365,6 +369,20 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"goMenu",
+			"cant_",
+			">1",
+			"getExtraDish",
+			"alert",
+			"setFinalOrder",
+			"Desea eliminar el plato",
+			"alert(",
+			"compressArray",
+			"totalDish",
+			"getNumDish",
+			"totalDish",
+			"getLastId",
+			"addDish",
 			"alert",
 			"Currenc",
 			"ng-bind-html",
@@ -478,21 +496,7 @@
 			"#totalDish",
 			"getNumDish",
 			"doPay",
-			"$location",
-			"sliderController",
-			"getAditional",
-			"getCantAditional",
-			"getItemsxDish",
-			"setDish",
-			"setDish(",
-			"getAditional",
-			"alert(",
-			"getAditional",
-			"setNumDishes",
-			"+i+",
-			"getNumDish",
-			"getItems",
-			"getNumDish"
+			"$location"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -500,6 +504,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			">=1",
+			"name+add+",
+			">=1",
 			"name+add+",
 			"",
 			"setImage",

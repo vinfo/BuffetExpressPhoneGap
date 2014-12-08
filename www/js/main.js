@@ -166,9 +166,10 @@
 						$scope.bebidas= Images.setImage(ndish,2);
 						$scope.carnes= Images.setImage(ndish,3);
 						$scope.guarnicion= Images.setImage(ndish,4);
-						$scope.sopa= Images.setImage(ndish,5);
-						$("#totalDish").html(ndish);
+						$scope.sopa= Images.setImage(ndish,5);						
 					}else{
+						$("li").removeClass("active");
+						$(".menupie ul li:nth-child(3)").addClass("active");						
 						$location.path("compras");
 					}
 					window.location = "internal.html#/menu";
@@ -177,8 +178,10 @@
 
 			//Agregar items a X categoria en plato					
 			$scope.setDish = function (dish,action) {
-				var plato= localStorage.getItem("plato");
 				var activity= localStorage.activity;
+				var plato= localStorage.getItem("plato");
+				if(activity=="add")plato=Items.getLastId();
+				
 				var name= "item_"+plato+"_"+dish.idCat+"_B_"+dish.code;
 				var cant=0;
 				var redir=false;
@@ -236,7 +239,8 @@
 				if(!localStorage.getItem('stop') && items>1 && action=="add"){
 					$scope.precio= Currency.setMoney(dish.price, 0, ",", ".");
 					$(".costoad").fadeIn();
-				}				
+				}
+				$("#totalDish").html(Items.getLastId());		
 				if(redir==true && activity=="ins")window.location = "internal.html#/menu";
 				if(redir==true && activity=="edit")window.location = "internal.html#/compras";
 			},	
@@ -256,8 +260,7 @@
 			}		
 		});
 
-	angularRoutingApp.controller('comprasController', function($scope,Items,Currency) {
-		var plato='';		
+	angularRoutingApp.controller('comprasController', function($scope,Items,Currency) {				
 		var dishes=[];
 		
 		for(var j=0;j<localStorage.length;j++){
@@ -266,10 +269,11 @@
 				var dish=item.split("_");
 				dishes.push(dish[1]);
 			}
-		}
-		var farr= compressArray(dishes).reverse();		
+		}		
+		var farr= compressArray(dishes.sort().reverse());
+		var plato='';	
 		var tipo="";
-		var nDish=farr.length;	
+		var nDish=farr.length;
 		for(var h=0;h<farr.length;h++){
 			var item= farr[h];
 			var dish=item.value;//Real ID plato
@@ -299,7 +303,8 @@
 			var guarnicionIco="images/guarnicion_mini.png";
 			var sopaIco="images/sopas_mini.png";
 			var total=0;
-			if(tipo=="B")total= parseInt(localStorage.valor_buffet);			
+			var total2=0;
+			if(tipo=="B")total= parseInt(localStorage.valor_buffet);
 			for(var m=0;m<dat.length;m++){
 				var code=dat[m].code;
 				var name=dat[m].name;
@@ -309,68 +314,95 @@
 				var image=base_url+"resources/images/dish/"+code+"_2.png";	
 
 				var vItem="item_"+dish+"_"+cat+"_"+tipo+"_"+code;
-				cant= Items.getExtraDish(vItem)-1;
+				cant= Items.getExtraDish(vItem);
 				var add="";
 				if(cant>0){
-					add=" (extra X "+cant+")";
 					total+= price * cant;						
 				}				
 				if(cat==1){					
 					if(c1==0){
-						ppal+="- "+name+add+"</br>";
+						var ad="";
+						if(cant>1)ad= "(extra X "+ (cant - 1)+")";
+						ppal+="- "+name+ad+"</br>";
 						arroz=image;
 						arrozIco="images/arroz_mini_ok.png";						
 					}else{
-						extra+="- "+name+add+"</br>";
+						var ad="";
+						if(cant>=1)ad= " (extra X "+ (cant)+")";							
+						extra+="- "+name+ad+"</br>";
 					}					
 					c1++;
 				}
 				if(cat==2){					
 					if(c2==0){
-						ppal+="- "+name+add+"</br>";
+						var ad="";
+						if(cant>1)ad= "(extra X "+ (cant - 1)+")";
+						ppal+="- "+name+ad+"</br>";
 						bebidas=image;
 						bebidasIco="images/bebidas_mini_ok.png";						
 					}else{						
-						extra+="- "+name+add+"</br>";
+						var ad="";
+						if(cant>=1)ad= " (extra X "+ (cant)+")";							
+						extra+="- "+name+ad+"</br>";
 					}
 					c2++;
 				}
 				if(cat==3){					
 					if(c3==0){
-						ppal+="- "+name+add+"</br>";
+						var ad="";
+						if(cant>1)ad= "(extra X "+ (cant - 1)+")";
+						ppal+="- "+name+ad+"</br>";
 						carnes=image;
 						carnesIco="images/carnes_mini_ok.png";						
 					}else{
-						extra+="- "+name+add+"</br>";						
+						var ad="";
+						if(cant>=1)ad= " (extra X "+ (cant)+")";							
+						extra+="- "+name+ad+"</br>";					
 					}
 					c3++;
 				}
 				if(cat==4){					
 					if(c4==0){
-						ppal+="- "+name+add+"</br>";
+						var ad="";
+						if(cant>1)ad= "(extra X "+ (cant - 1)+")";
+						ppal+="- "+name+ad+"</br>";
 						guarnicion=image;
 						guarnicionIco="images/guarnicion_mini_ok.png";						
 					}else{
-						extra+="- "+name+add+"</br>";
+						var ad="";
+						if(cant>=1)ad= " (extra X "+ (cant)+")";							
+						extra+="- "+name+ad+"</br>";
 					}
 					c4++;
 				}
 				if(cat==5){					
 					if(c5==0){
-						ppal+="- "+name+add+"</br>";
+						var ad="";
+						if(cant>1)ad= " (extra X "+ (cant - 1)+")";
+						ppal+="- "+name+ad+"</br>";
 						sopa=image;		
 						sopaIco="images/sopas_mini_ok.png";						
 					}else{
-						extra+="- "+name+add+"</br>";
+						var ad="";
+						if(cant>=1)ad= " (extra X "+ (cant)+")";						
+						extra+="- "+name+ad+"</br>";
 					}
 					c5++;
 				}																				
-			}			
-			plato+='<div class="comprasitem" id="dish_'+dish+'"><div class="imgcont" ><div class="padre"><div class = "derrap"><div class="contenedor"><div class="sopa"><img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/><div class="sopacont"><img src="'+sopa+'" style="width:100%;" border="0" margin="0" /></div></div><div class="vaso"><img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/><div class="jugo"><img src="'+bebidas+'" style="width:100%;" border="0" margin="0"/></div></div><div class="plato"><img src="images/plato.png" style="width:100%;" border="0" margin="0"/><div class="arroz"><img src="'+arroz+'" style="width:100%;" border="0" margin="0"/></div><div class="guarnicion"><img src="'+guarnicion+'" style="width:100%;" border="0" margin="0"/></div><div class="carne"><img src="'+carnes+'" style="width:100%;" border="0" margin="0"/></div></div></div></div></div></div><div class="contnn"><h3>Plato #'+(nDish)+'</h3><p>'+ppal+extra+'</p></p><div class="icodeli"><a href="#compras" onclick="setFinalOrder('+dish+',\'less\')"><span class="elimina"></span></a><span class="contador"><label id="cont_'+dish+'">1</label></span><a href="#compras" onclick="setFinalOrder('+dish+',\'add\')"><span class="suma"></span></a></div></div><div class="icodeta"><div><img src="'+sopaIco+'" alt="..." title="..." onclick="editDish(5,\'sopas y cremas\','+dish+')"></div><div><img src="'+arrozIco+'" alt="..." title="..." onclick="editDish(1,\'arroz\','+dish+')"></div><div><img src="'+carnesIco+'" alt="..." title="..." onclick="editDish(3,\'carnes\','+dish+')"></div><div><img src="'+guarnicionIco+'" alt="..." title="..." onclick="editDish(4,\'guarnición\','+dish+')"></div><div><img src="'+bebidasIco+'" alt="..." title="..." onclick="editDish(2,\'bebidas\','+dish+')"></div> <div class="subtt"><input type="hidden" name="price_'+dish+'" id="price_'+dish+'" value="'+total+'" /><label class="currency" id="lprice_'+dish+'">$'+Currency.setMoney(total, 0, ",", ".")+'</label></div></div>';
+			}
+			var cantDish=1;
+			if(localStorage.getItem("cant_"+dish)){				
+				cantDish=localStorage.getItem("cant_"+dish);
+				total2=total;
+				if(cantDish>0)total2=total*cantDish;
+			}
+
+			plato='<div class="comprasitem" id="dish_'+dish+'"><div class="imgcont" ><div class="padre"><div class = "derrap"><div class="contenedor"><div class="sopa"><img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/><div class="sopacont"><img src="'+sopa+'" style="width:100%;" border="0" margin="0" /></div></div><div class="vaso"><img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/><div class="jugo"><img src="'+bebidas+'" style="width:100%;" border="0" margin="0"/></div></div><div class="plato"><img src="images/plato.png" style="width:100%;" border="0" margin="0"/><div class="arroz"><img src="'+arroz+'" style="width:100%;" border="0" margin="0"/></div><div class="guarnicion"><img src="'+guarnicion+'" style="width:100%;" border="0" margin="0"/></div><div class="carne"><img src="'+carnes+'" style="width:100%;" border="0" margin="0"/></div></div></div></div></div></div><div class="contnn"><h3>Plato #'+(nDish)+'</h3><p>'+ppal+extra+'</p></p><div class="icodeli"><a href="#" onclick="return setFinalOrder('+dish+',\'less\')"><span class="elimina"></span></a><span class="contador"><label id="cont_'+dish+'">'+cantDish+'</label></span><a href="#" onclick="return setFinalOrder('+dish+',\'add\')"><span class="suma"></span></a></div></div><div class="icodeta"><div><img src="'+sopaIco+'" alt="..." title="..." onclick="editDish(5,\'sopas y cremas\','+dish+')"></div><div><img src="'+arrozIco+'" alt="..." title="..." onclick="editDish(1,\'arroz\','+dish+')"></div><div><img src="'+carnesIco+'" alt="..." title="..." onclick="editDish(3,\'carnes\','+dish+')"></div><div><img src="'+guarnicionIco+'" alt="..." title="..." onclick="editDish(4,\'guarnición\','+dish+')"></div><div><img src="'+bebidasIco+'" alt="..." title="..." onclick="editDish(2,\'bebidas\','+dish+')"></div> <div class="subtt"><input type="hidden" name="price_'+dish+'" id="price_'+dish+'" value="'+total+'" /><label class="currency" id="lprice_'+dish+'">$'+Currency.setMoney(total2, 0, ",", ".")+'</label></div></div>';
+			$("#miscompras").append(plato);
 			nDish--;
 		}
-		var contPago='<div class="contpag"><div class="cont">Continúe con el pago</div></div>';		
-		$("#miscompras").html(plato+contPago);
+		var contPago='<div class="contpag"><div class="cont">Continúe con el pago</div></div>';
+		$("#miscompras").append(contPago);		
 		if(plato=="")$(".costoad").fadeIn();	
 	});
 
@@ -564,8 +596,7 @@
 						items++;
 					}
 				}
-				var farr= compressArray(cont);
-				alert(JSON.stringify(farr));								
+				var farr= compressArray(cont);							
 				return 0;
 			},			
 			getNumDish: function() {
@@ -607,7 +638,7 @@
 				if(total.length>0){
 					last_element = total[total.length - 1].value;
 				}				
-				return last_element;
+				return parseInt(last_element);
 			},						
 			getItems: function(dish) {
 				var items=0;c1=0;c2=0;c3=0;c4=0;c5=0;
@@ -625,7 +656,7 @@
 				var cant=0;
 				for (var i = 0; i < localStorage.length; i++){
 					var item= localStorage.key(i);
-					if(item==value){
+					if(item == value){
 						cant+=parseInt(localStorage.getItem(item));
 					}
 				}
