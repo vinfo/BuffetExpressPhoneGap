@@ -149,6 +149,8 @@
 			$scope.addDish = function (action) {
 				var plato= Items.getLastId();
 				var items= Items.getItems(plato);
+				alert(plato);
+				if(!localStorage.getItem("cant_"+plato))localStorage.setItem("cant_"+plato,1);
 				if(items<3){
 					if(action=="add"){
 						alert("Plato actual no esta completo!");
@@ -177,7 +179,7 @@
 			},	
 
 			//Agregar items a X categoria en plato					
-			$scope.setDish = function (dish,action) {
+			$scope.setDish = function (dish,action) {				
 				var activity= localStorage.activity;
 				var plato= localStorage.getItem("plato");
 				if(activity=="add")plato=Items.getLastId();
@@ -304,7 +306,11 @@
 			var sopaIco="images/sopas_mini.png";
 			var total=0;
 			var total2=0;
-			if(tipo=="B")total= parseInt(localStorage.valor_buffet);
+			if(tipo=="B"){
+				total= parseInt(localStorage.valor_buffet);
+			}else{
+				total= parseInt(localStorage.valor_recomendado);
+			}
 			for(var m=0;m<dat.length;m++){
 				var code=dat[m].code;
 				var name=dat[m].name;
@@ -313,16 +319,18 @@
 				
 				var image=base_url+"resources/images/dish/"+code+"_2.png";	
 
-				var vItem="item_"+dish+"_"+cat+"_"+tipo+"_"+code;
+				var vItem= "item_"+dish+"_"+cat+"_"+tipo+"_"+code;
 				cant= Items.getExtraDish(vItem);
 				var add="";
-				if(cant>0){
-					total+= price * cant;						
-				}				
+
+
+				if(cant>1){
+					total+= price * (cant-1);						
+				}		
 				if(cat==1){					
 					if(c1==0){
 						var ad="";
-						if(cant>1)ad= "(extra X "+ (cant - 1)+")";
+						if(cant>1)ad= " (extra X "+ (cant - 1)+")";
 						ppal+="- "+name+ad+"</br>";
 						arroz=image;
 						arrozIco="images/arroz_mini_ok.png";						
@@ -330,13 +338,14 @@
 						var ad="";
 						if(cant>=1)ad= " (extra X "+ (cant)+")";							
 						extra+="- "+name+ad+"</br>";
+						total+= price * cant;	
 					}					
 					c1++;
 				}
 				if(cat==2){					
 					if(c2==0){
 						var ad="";
-						if(cant>1)ad= "(extra X "+ (cant - 1)+")";
+						if(cant>1)ad= " (extra X "+ (cant - 1)+")";
 						ppal+="- "+name+ad+"</br>";
 						bebidas=image;
 						bebidasIco="images/bebidas_mini_ok.png";						
@@ -344,27 +353,29 @@
 						var ad="";
 						if(cant>=1)ad= " (extra X "+ (cant)+")";							
 						extra+="- "+name+ad+"</br>";
+						total+= price * cant;
 					}
 					c2++;
 				}
 				if(cat==3){					
 					if(c3==0){
 						var ad="";
-						if(cant>1)ad= "(extra X "+ (cant - 1)+")";
+						if(cant>1)ad= " (extra X "+ (cant - 1)+")";
 						ppal+="- "+name+ad+"</br>";
 						carnes=image;
 						carnesIco="images/carnes_mini_ok.png";						
 					}else{
 						var ad="";
 						if(cant>=1)ad= " (extra X "+ (cant)+")";							
-						extra+="- "+name+ad+"</br>";					
+						extra+="- "+name+ad+"</br>";	
+						total+= price * cant;				
 					}
 					c3++;
 				}
 				if(cat==4){					
 					if(c4==0){
 						var ad="";
-						if(cant>1)ad= "(extra X "+ (cant - 1)+")";
+						if(cant>1)ad= " (extra X "+ (cant - 1)+")";
 						ppal+="- "+name+ad+"</br>";
 						guarnicion=image;
 						guarnicionIco="images/guarnicion_mini_ok.png";						
@@ -372,6 +383,7 @@
 						var ad="";
 						if(cant>=1)ad= " (extra X "+ (cant)+")";							
 						extra+="- "+name+ad+"</br>";
+						total+= price * cant;
 					}
 					c4++;
 				}
@@ -386,14 +398,15 @@
 						var ad="";
 						if(cant>=1)ad= " (extra X "+ (cant)+")";						
 						extra+="- "+name+ad+"</br>";
+						total+= price * cant;
 					}
 					c5++;
 				}																				
 			}
 			var cantDish=1;
+			total2=total;
 			if(localStorage.getItem("cant_"+dish)){				
-				cantDish=localStorage.getItem("cant_"+dish);
-				total2=total;
+				cantDish=localStorage.getItem("cant_"+dish);				
 				if(cantDish>0)total2=total*cantDish;
 			}
 
@@ -403,7 +416,10 @@
 		}
 		var contPago='<div class="contpag"><div class="cont">Continúe con el pago</div></div>';
 		$("#miscompras").append(contPago);		
-		if(plato=="")$(".costoad").fadeIn();	
+		if(plato==""){
+			Items.delAllCant();
+			$(".costoad").fadeIn();
+		}
 	});
 
 	angularRoutingApp.controller('loginController', function($scope) {
@@ -633,7 +649,7 @@
 					var dish= item.split("_");
 					if(item.indexOf("item_")==0)arr.push(dish[1]);
 				}
-				var total=compressArray(arr);
+				var total=compressArray(arr.sort());
 				var last_element=1;
 				if(total.length>0){
 					last_element = total[total.length - 1].value;
@@ -686,6 +702,15 @@
 					var dat = angular.fromJson(data);
 				}		
 				return dat;
-			}								
+			},
+			delAllCant: function() {
+				for (var i = 0; i < localStorage.length; i++){
+					var item= localStorage.key(i);
+					if(item.indexOf("cant_")==0){
+						localStorage.removeItem(item);
+					}
+				}
+				return true;
+			},												
 		};
 	});	

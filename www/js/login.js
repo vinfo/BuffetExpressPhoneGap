@@ -29,7 +29,7 @@ angularRoutingApp.config(function($routeProvider) {
 	});
 });
 
-angularRoutingApp.controller('loginController', function($scope, $routeParams) {
+angularRoutingApp.controller('loginController', function($scope, $location,$routeParams) {
 	$scope.doLogin = function() {
 		ajaxrest.login();
 	},	
