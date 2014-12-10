@@ -606,9 +606,10 @@ a img
 .costoad .cont > h1{
 	color: #414042;
 	width: 100%;
-	font-size: 25px;
+	font-size: 26px;
 	font-weight: bold;
 	margin-top: 50px;
+	clear: both;
 	text-align: center;
 }
 .costoad .cont > h1 > span{

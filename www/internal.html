@@ -12,11 +12,12 @@
     <div class="container">
         <!-- Menu -->
         <div class="menusup">
-            <button class="verlatermenu ico-menu"><span></span></button>
+            <button class="verlatermenu ico-menu" id="ico_menu"><span></span></button>
             <div class="title">Buffet Express</div>
-            <button onclick="window.plugins.socialsharing.share('Solicita tu almuerzo a domicilio - BuffetExpress.co', null, 'http://buffetexpress.co/REST/resources/images/logo.png', 'http://buffetexpress.co')" class="ico-lupa"><span></span></button>
+            <button onclick="window.plugins.socialsharing.share('Solicita tu Buffet a domicilio - BuffetExpress.co', null, 'http://buffetexpress.co/REST/resources/images/logo.png', 'http://buffetexpress.co')" class="ico-lupa"><span></span></button>
         </div>
-        <!-- Fin menu -->        
+        <!-- Fin menu -->    
+            
         <!-- Menu lateral -->
         <div class="latermenu">
             <div class="tr">
@@ -24,7 +25,7 @@
                     <a ng-href="{{mi_cuenta}}"><img src="images/mi_cuenta.png" alt="..." title="..." /></a>
                 </div> 
                 <div class="td">
-                    <a href="#"><img src="images/ordenar.png" alt="..." title="..." /></a>
+                    <a href="#" ng-click="goTo('slider')"><img src="images/ordenar.png" alt="..." title="..." /></a>
                 </div>
             </div>
             <div class="tr">
@@ -68,7 +69,7 @@
         </div>
         <!-- fin Menu pie --> 
     </div>
-    <input id="page" name="page" type="hidden" value="1" />
+    <input id="page" name="page" type="hidden" value="{{page}}" />
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>

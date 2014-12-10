@@ -28,7 +28,7 @@
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.addEventListener("offline", checkConnection, false);        
+        document.addEventListener("offline", checkConnection, false);
     },
     // deviceready Event Handler
     //
@@ -39,7 +39,8 @@
         screen.lockOrientation('portrait-primary');
         navigator.splashscreen.show();
         window.cache.clear( alertDismissed, alertDismissed );
-        checkConnection();
+        checkConnection;
+        GetGeoLocation;
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -73,3 +74,18 @@ function checkConnection() {
     }
     return false;
 }
+
+function  GetGeoLocation () {
+  var options =  { maximumAge: 3000, timeout: 3000, enableHighAccuracy: true };
+  navigator.geolocation.getCurrentPosition(ShowPosition, ShowError, options);
+}
+
+function ShowPosition(position) {
+    alert("Latitude: " + position.coords.latitude +
+          "Longitude: " + position.coords.longitude);
+}
+function ShowError(error) {
+   alert("Errorcode: "    + error.code    +
+         "Errormessage: "+ error.message );
+}
+

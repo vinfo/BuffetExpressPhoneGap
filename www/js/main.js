@@ -70,6 +70,8 @@
 
 	angularRoutingApp.controller('sliderController', function($scope,$location,Items) {		
 		//localStorage.clear();
+		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
+		$scope.page="slider";
 		setBackground("fondo","");
 		setDisplayMenu();
 
@@ -82,6 +84,7 @@
 	});	
 
 	angularRoutingApp.controller('mainController', function($scope,$location,Images,Items,Currency){
+		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
 		var plato= localStorage.plato;
 		setDisplayMenu();
 		if($location.url()=="/" || $location.url()=="/menu"){
@@ -146,11 +149,10 @@
 				return false;
 			},
 			//Adicionar nuevo plato
-			$scope.addDish = function (action) {
+			$scope.addDish = function (action,tipo) {
 				var plato= Items.getLastId();
 				var items= Items.getItems(plato);
-				alert(plato);
-				if(!localStorage.getItem("cant_"+plato))localStorage.setItem("cant_"+plato,1);
+				if(!localStorage.getItem("cant_"+tipo+"_"+plato))localStorage.setItem("cant_"+tipo+"_"+plato,1);
 				if(items<3){
 					if(action=="add"){
 						alert("Plato actual no esta completo!");
@@ -238,7 +240,7 @@
 					}					
 				}
 				var items=Items.getItemsxCat(plato,dish.idCat);
-				if(!localStorage.getItem('stop') && items>1 && action=="add"){
+				if(!localStorage.getItem('stop') && items>1){
 					$scope.precio= Currency.setMoney(dish.price, 0, ",", ".");
 					$(".costoad").fadeIn();
 				}
@@ -259,12 +261,22 @@
 				localStorage.plato=dish;
 				$("li").removeClass("active");
 				$(".menupie ul li:nth-child(2)").addClass("active");
-			}		
+			},
+			$scope.goTo = function (page) {
+				$location.path(page);
+				$("li").removeClass("active");
+				$(".menupie ul li:nth-child(1)").addClass("active");
+			}				
 		});
 
-	angularRoutingApp.controller('comprasController', function($scope,Items,Currency) {				
+	angularRoutingApp.controller('comprasController', function($scope,Items,Currency) {		
+		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");		
 		var dishes=[];
-		
+		setDisplayMenu();
+		setBackground("fondo","");
+		$("li").removeClass("active");
+		$(".menupie ul li:nth-child(3)").addClass("active");
+
 		for(var j=0;j<localStorage.length;j++){
 			var item= localStorage.key(j);
 			if(item.indexOf("item_")==0){
@@ -322,7 +334,6 @@
 				var vItem= "item_"+dish+"_"+cat+"_"+tipo+"_"+code;
 				cant= Items.getExtraDish(vItem);
 				var add="";
-
 
 				if(cant>1){
 					total+= price * (cant-1);						
@@ -405,21 +416,23 @@
 			}
 			var cantDish=1;
 			total2=total;
-			if(localStorage.getItem("cant_"+dish)){				
-				cantDish=localStorage.getItem("cant_"+dish);				
+			if(localStorage.getItem("cant_"+tipo+"_"+dish)){				
+				cantDish=localStorage.getItem("cant_"+tipo+"_"+dish);				
 				if(cantDish>0)total2=total*cantDish;
 			}
-
-			plato='<div class="comprasitem" id="dish_'+dish+'"><div class="imgcont" ><div class="padre"><div class = "derrap"><div class="contenedor"><div class="sopa"><img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/><div class="sopacont"><img src="'+sopa+'" style="width:100%;" border="0" margin="0" /></div></div><div class="vaso"><img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/><div class="jugo"><img src="'+bebidas+'" style="width:100%;" border="0" margin="0"/></div></div><div class="plato"><img src="images/plato.png" style="width:100%;" border="0" margin="0"/><div class="arroz"><img src="'+arroz+'" style="width:100%;" border="0" margin="0"/></div><div class="guarnicion"><img src="'+guarnicion+'" style="width:100%;" border="0" margin="0"/></div><div class="carne"><img src="'+carnes+'" style="width:100%;" border="0" margin="0"/></div></div></div></div></div></div><div class="contnn"><h3>Plato #'+(nDish)+'</h3><p>'+ppal+extra+'</p></p><div class="icodeli"><a href="#" onclick="return setFinalOrder('+dish+',\'less\')"><span class="elimina"></span></a><span class="contador"><label id="cont_'+dish+'">'+cantDish+'</label></span><a href="#" onclick="return setFinalOrder('+dish+',\'add\')"><span class="suma"></span></a></div></div><div class="icodeta"><div><img src="'+sopaIco+'" alt="..." title="..." onclick="editDish(5,\'sopas y cremas\','+dish+')"></div><div><img src="'+arrozIco+'" alt="..." title="..." onclick="editDish(1,\'arroz\','+dish+')"></div><div><img src="'+carnesIco+'" alt="..." title="..." onclick="editDish(3,\'carnes\','+dish+')"></div><div><img src="'+guarnicionIco+'" alt="..." title="..." onclick="editDish(4,\'guarnición\','+dish+')"></div><div><img src="'+bebidasIco+'" alt="..." title="..." onclick="editDish(2,\'bebidas\','+dish+')"></div> <div class="subtt"><input type="hidden" name="price_'+dish+'" id="price_'+dish+'" value="'+total+'" /><label class="currency" id="lprice_'+dish+'">$'+Currency.setMoney(total2, 0, ",", ".")+'</label></div></div>';
+			var nameDish="Plato #"+nDish;
+			if(tipo=="R")nameDish="Recomendado del Día";
+			plato='<div class="comprasitem" id="dish_'+dish+'"><div class="imgcont" ><div class="padre"><div class = "derrap"><div class="contenedor"><div class="sopa"><img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/><div class="sopacont"><img src="'+sopa+'" style="width:100%;" border="0" margin="0" /></div></div><div class="vaso"><img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/><div class="jugo"><img src="'+bebidas+'" style="width:100%;" border="0" margin="0"/></div></div><div class="plato"><img src="images/plato.png" style="width:100%;" border="0" margin="0"/><div class="arroz"><img src="'+arroz+'" style="width:100%;" border="0" margin="0"/></div><div class="guarnicion"><img src="'+guarnicion+'" style="width:100%;" border="0" margin="0"/></div><div class="carne"><img src="'+carnes+'" style="width:100%;" border="0" margin="0"/></div></div></div></div></div></div><div class="contnn"><h3>'+nameDish+'</h3><p>'+ppal+extra+'</p></p><div class="icodeli"><a href="#" onclick="return setFinalOrder('+dish+',\'less\',\''+tipo+'\')"><span class="elimina"></span></a><span class="contador"><label id="cont_'+dish+'">'+cantDish+'</label></span><a href="#" onclick="return setFinalOrder('+dish+',\'add\',\''+tipo+'\')"><span class="suma"></span></a></div></div><div class="icodeta"><div><img src="'+sopaIco+'" alt="..." title="..." onclick="editDish(5,\'sopas y cremas\','+dish+',\''+tipo+'\')"></div><div><img src="'+arrozIco+'" alt="..." title="..." onclick="editDish(1,\'arroz\','+dish+',\''+tipo+'\')"></div><div><img src="'+carnesIco+'" alt="..." title="..." onclick="editDish(3,\'carnes\','+dish+',\''+tipo+'\')"></div><div><img src="'+guarnicionIco+'" alt="..." title="..." onclick="editDish(4,\'guarnición\','+dish+',\''+tipo+'\')"></div><div><img src="'+bebidasIco+'" alt="..." title="..." onclick="editDish(2,\'bebidas\','+dish+',\''+tipo+'\')"></div> <div class="subtt"><input type="hidden" name="price_'+dish+'" id="price_'+dish+'" value="'+total+'" /><label class="currency" id="lprice_'+dish+'">$'+Currency.setMoney(total2, 0, ",", ".")+'</label></div></div>';
 			$("#miscompras").append(plato);
 			nDish--;
 		}
-		var contPago='<div class="contpag"><div class="cont">Continúe con el pago</div></div>';
+		var fDish= Items.getRealDish();
+		var contPago='<div class="contpag" onclick="doPay(\''+fDish+'\')"><div class="cont">Continúe con el pago</div></div>';
 		$("#miscompras").append(contPago);		
 		if(plato==""){
 			Items.delAllCant();
 			$(".costoad").fadeIn();
-		}
+		}		
 	});
 
 	angularRoutingApp.controller('loginController', function($scope) {
@@ -492,35 +505,209 @@
 		$scope.message = 'Esta es la página de "Terminos"';
 	});
 
-	angularRoutingApp.controller('recomendadoController', function($scope,$location,Currency) {
+	angularRoutingApp.controller('recomendadoController', function($scope,$location,Currency,Items) {
 		$(".menupie").css("bottom","-12%");
 		setBackground("fondo","");
 		var items="";
 		if(localStorage.token){
 			var data= ajaxrest.getDishDay("token="+localStorage.token);
 			var dat = angular.fromJson(data);
+			var dish=[];
 			if(dat.length>0){
-				for(var i=0;i<dat.length;i++){
+				for(var i=0;i<dat.length;i++){					
 					if(dat[i].idCat==1)$scope.arroz= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
 					if(dat[i].idCat==2)$scope.bebidas= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
 					if(dat[i].idCat==3)$scope.carnes= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
 					if(dat[i].idCat==4)$scope.guarnicion= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
 					if(dat[i].idCat==5)$scope.sopas= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
+					var item = {code:dat[i].code, cat:dat[i].idCat}; 
+					dish.push(item);					
 					items+="- "+dat[i].name+"<br/>";
 				}
+				localStorage.setItem("plato_dia",JSON.stringify(dish));
 			}
 		}
 		$scope.items = items;
 		$scope.price = Currency.setMoney(localStorage.valor_recomendado, 0, ",", ".");	
 		$scope.goTo = function (page) {
-			$location.path(page);	
-		}		
-	});		
+			$location.path(page);
+		},
+		$scope.goPay = function () {
+			var items= angular.fromJson(localStorage.getItem("plato_dia"));
+			var plato= Items.getLastId()+1;
+			for(var j=0;j<items.length;j++){
+				localStorage.setItem("item_"+plato+"_"+items[j].cat+"_R_"+items[j].code,1);
+			}			
+			$location.path("compras");	
+		}				
+	});	
 
-	angularRoutingApp.controller("mapaController", ["$scope", function mapaController($scope) {		
+	angularRoutingApp.controller('pagoController', function($scope,Items,Currency) {
+		$(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
+		var domicilio=0;
+		var dishes=[];
+		var tipo_pago="efectivo";
+		if(localStorage.getItem("tipo_pago")){
+			tipo_pago=localStorage.getItem("tipo_pago");
+			$("#"+tipo_pago).css("background","#FDB813");
+			$("#"+tipo_pago+" > img").css("display","inline");
+		}
+		
+		for(var j=0;j<localStorage.length;j++){
+			var item= localStorage.key(j);
+			if(item.indexOf("item_")==0){
+				var dish=item.split("_");
+				dishes.push(dish[1]);
+			}
+		}		
+		var farr= compressArray(dishes.sort().reverse());
+		var Ditem='';
+		var labels='';
+		var valores='';
+		var Gtotal=0;
+		var plato='';	
+		var tipo="";
+		var nDish=farr.length;
+		for(var h=0;h<farr.length;h++){
+			var item= farr[h];
+			var dish=item.value;//Real ID plato
+			var codes="";
+			for(var j=0;j<localStorage.length;j++){
+				var item= localStorage.key(j);
+				if(item.indexOf("item_"+dish)==0){
+					var cod=item.split("_");
+					codes+=cod[4]+",";
+					tipo=cod[3];
+				}
+			}
+			var data= ajaxrest.getItemsxDish("codes="+codes+"&token="+localStorage.token);
+			var dat = angular.fromJson(data);
+			var c1=0;c2=0;c3=0;c4=0;c5=0;			
+			var ppal="";
+			var extra="";
+			var total=0;
+			var total2=0;
+			if(tipo=="B"){
+				total= parseInt(localStorage.valor_buffet);
+			}else{
+				total= parseInt(localStorage.valor_recomendado);
+			}
+			for(var m=0;m<dat.length;m++){
+				var code=dat[m].code;
+				var name=dat[m].name;
+				var cat=dat[m].idCat;
+				var price=parseInt(dat[0].price);	
+
+				var vItem= "item_"+dish+"_"+cat+"_"+tipo+"_"+code;
+				cant= Items.getExtraDish(vItem);
+				var add="";
+
+				if(cant>1){
+					total+= price * (cant-1);						
+				}		
+				if(cat==1){					
+					if(c1==0){
+						var ad="";
+						if(cant>1)ad= " (extra X "+ (cant - 1)+")";
+						ppal+="- "+name+ad+"</br>";					
+					}else{
+						var ad="";
+						if(cant>=1)ad= " (extra X "+ (cant)+")";							
+						extra+="- "+name+ad+"</br>";
+						total+= price * cant;	
+					}					
+					c1++;
+				}
+				if(cat==2){					
+					if(c2==0){
+						var ad="";
+						if(cant>1)ad= " (extra X "+ (cant - 1)+")";
+						ppal+="- "+name+ad+"</br>";					
+					}else{						
+						var ad="";
+						if(cant>=1)ad= " (extra X "+ (cant)+")";							
+						extra+="- "+name+ad+"</br>";
+						total+= price * cant;
+					}
+					c2++;
+				}
+				if(cat==3){					
+					if(c3==0){
+						var ad="";
+						if(cant>1)ad= " (extra X "+ (cant - 1)+")";
+						ppal+="- "+name+ad+"</br>";						
+					}else{
+						var ad="";
+						if(cant>=1)ad= " (extra X "+ (cant)+")";							
+						extra+="- "+name+ad+"</br>";	
+						total+= price * cant;				
+					}
+					c3++;
+				}
+				if(cat==4){					
+					if(c4==0){
+						var ad="";
+						if(cant>1)ad= " (extra X "+ (cant - 1)+")";
+						ppal+="- "+name+ad+"</br>";					
+					}else{
+						var ad="";
+						if(cant>=1)ad= " (extra X "+ (cant)+")";							
+						extra+="- "+name+ad+"</br>";
+						total+= price * cant;
+					}
+					c4++;
+				}
+				if(cat==5){					
+					if(c5==0){
+						var ad="";
+						if(cant>1)ad= " (extra X "+ (cant - 1)+")";
+						ppal+="- "+name+ad+"</br>";					
+					}else{
+						var ad="";
+						if(cant>=1)ad= " (extra X "+ (cant)+")";						
+						extra+="- "+name+ad+"</br>";
+						total+= price * cant;
+					}
+					c5++;
+				}																				
+			}
+			var cantDish=1;
+			total2=total;
+			if(localStorage.getItem("cant_"+tipo+"_"+dish)){				
+				cantDish=localStorage.getItem("cant_"+tipo+"_"+dish);				
+				if(cantDish>0)total2=total*cantDish;
+			}
+			var nameDish="Plato #"+nDish;
+			if(tipo=="R")nameDish="Recomendado del Día";
+			labels+='<label>'+nameDish+'</label>';
+			Gtotal+=total2;
+			valores+='<label>$'+Currency.setMoney(total2, 0, ",", ".")+'</label>';
+			domicilio++;	
+			nDish--;
+		}
+		Ditem='<div class="td">'+labels+'</div><div class="td">'+valores+'</div>';
+		$scope.platos= Ditem;
+		var tDomicilio= localStorage.valor_domicilio * domicilio;
+		$scope.domicilio = Currency.setMoney(tDomicilio, 0, ",", ".");
+		$scope.total = Currency.setMoney(Gtotal + tDomicilio, 0, ",", ".");
+		$scope.valor_plato=Currency.setMoney(localStorage.valor_domicilio, 0, ",", ".");
+		$scope.setTypePay = function (type) {
+			localStorage.setItem("tipo_pago",type);
+			$(".formpago li").css("background","none");
+			$(".formpago .icobie").css("display","none");
+			$("#"+type).css("background","#FDB813");
+			$("#"+type+" > img").css("display","inline");
+			$(".sombra,.formpago").css("display","none");
+		},
+		$scope.viewTypePay = function () {
+			$(".sombra,.formpago").css("display","inline");
+		}				
+	});
+
+	angularRoutingApp.controller("mapaController", ["$scope", function mapaController($scope) {
+		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
 		$scope.Adress = "6.270318, -75.595974";
-	}]);
-	
+	}]);	
 
 	angularRoutingApp.directive('wrapOwlcarousel', function () {
 		return {
@@ -642,6 +829,37 @@
 				}								
 				return total.length;
 			},
+			getRealDish: function() {
+				var items=0;
+				var dishes=0;
+				var cont=[];
+				for (var i = 0; i < localStorage.length; i++){
+					var item= localStorage.key(i);
+					if(item.indexOf("item_")==0){
+						var dish=item.substring(item.lastIndexOf("item_"),item.lastIndexOf("_"));
+						cont.push(dish);
+						items++;
+					}
+				}
+				var farr= compressArray(cont);				
+				var arr=[];
+				for (var j = 0; j < farr.length; j++){					
+					var item=farr[j].value.split("_");
+					arr.push("item_"+item[1]);
+				}
+				var com= compressArray(arr);
+				var full=0;
+				var notfull=0;
+				var total=[];
+				for (var h = 0; h < com.length; h++){					
+					if(com[h].count<3){
+						notfull++;
+					}else{
+						full++;
+					}
+				}								
+				return full+"|"+notfull;
+			},			
 			getLastId: function() {
 				var arr=[];		
 				for (var i = 0; i < localStorage.length; i++){

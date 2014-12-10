@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"name",
+				"nameDish"
+			],
+			[
+				"ti",
+				"tipo"
+			],
+			[
+				"nam",
+				"nameDish"
+			],
+			[
+				"rem",
+				"removeItem"
+			],
+			[
 				"st",
 				"stringify"
 			],
@@ -150,20 +166,24 @@
 			[
 				"nmae",
 				"name_b"
-			],
-			[
-				"name",
-				"name_b"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/D/wamp/www/familymarketing/modules/js/registrados.js",
+			"file": "www/js/main.js",
 			"settings":
 			{
-				"buffer_size": 5785,
+				"buffer_size": 24739,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/templates/pago.html",
+			"settings":
+			{
+				"buffer_size": 2852,
 				"line_ending": "Unix"
 			}
 		}
@@ -227,37 +247,40 @@
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates"
 	],
 	"file_history":
 	[
-		"/D/wamp/www/familymarketing/modules/js/aproductos.js",
-		"/C/Users/odc/Downloads/jquery.formatCurrency-1.4.0/demo/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
+		"/D/Movilidad/login.html",
+		"/D/Movilidad/index.js",
+		"/D/wamp/www/familymarketing/modules/js/registrados.js",
+		"/D/wamp/www/familymarketing/modules/js/aproductos.js",
+		"/C/Users/odc/Downloads/jquery.formatCurrency-1.4.0/demo/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/directives.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla6.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular.min.js",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pagos.html",
 		"/D/wamp/www/familymarketing/js/tools.js",
 		"/D/wamp/www/familymarketing/js/jquery.currency.js",
 		"/D/wamp/www/familymarketing/modules/js/compras.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/index.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/owl-carousel/owl.carousel.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
 		"/C/Users/odc/Downloads/jquery.formatCurrency-1.4.0/demo/format_as_you_type.html",
 		"/D/wamp/www/familymarketing/js/jquery.maskMoney.js",
@@ -355,10 +378,7 @@
 		"/D/Movilidad/test/BuffetExpress/pantalla3.html",
 		"/D/Movilidad/test/BuffetExpress/pantalla4.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/pages/slider.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/pages/menu.html",
-		"/D/Movilidad/Angular/angular-routing-master/index.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/pages/slider",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/mapa.html"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/pages/menu.html"
 	],
 	"find":
 	{
@@ -377,6 +397,30 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"push",
+			"domicilio",
+			"pagoController",
+			",'+dish+')",
+			"json",
+			"goTo",
+			"$location",
+			".push",
+			"recomenda",
+			"pagoController",
+			"fDish",
+			"doPay",
+			"setFinalOrder",
+			"setFinalOrder(",
+			"addDish",
+			"cant_",
+			"alert",
+			"source",
+			"initialize",
+			"costoad",
+			"cant_",
+			"getExtraDish",
+			"alert(",
+			"getLastId",
 			"goMenu",
 			"cant_",
 			">1",
@@ -480,31 +524,7 @@
 			"datos\"",
 			"menu",
 			"getDishes",
-			"JSON.parse",
-			"setTimeout",
-			"time",
-			"setDisplayMenu",
-			"setDish",
-			"setDish(",
-			".shop",
-			"menuController",
-			"getDishes",
-			"detailDish",
-			"categoriaController",
-			"recomendadoController",
-			"categoriaController",
-			"subtt",
-			"recomendadoController",
-			"recomendado",
-			"getDishDay",
-			"setFondo",
-			".formpago",
-			"Desea",
-			"alert",
-			"#totalDish",
-			"getNumDish",
-			"doPay",
-			"$location"
+			"JSON.parse"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -512,6 +532,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			",'+dish+',\\''+tipo+'\\')",
 			">=1",
 			"name+add+",
 			">=1",
@@ -548,19 +569,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/D/wamp/www/familymarketing/modules/js/registrados.js",
+					"file": "www/js/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5785,
+						"buffer_size": 24739,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2758,
-								2482
+								14103,
+								14103
 							]
 						],
 						"settings":
@@ -572,10 +593,43 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 714.0,
+						"translation.y": 5569.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "www/templates/pago.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2852,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								407,
+								416
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

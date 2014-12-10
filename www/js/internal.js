@@ -28,15 +28,21 @@ if (window.jQuery) {
     //Mostrar menu lateral  
     $(".verlatermenu").click(function(event){
         event.preventDefault();
-        var position = $(".latermenu").position();
-        if(position.left==0){
-            $(".latermenu").animate({"left":-412},200);
+        var img= $(".menusup button.ico-menu span").css('background-image').split("flecha_atras");
+        if(img[1] && img[1].length>0){
+            $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
+            window.history.back();
         }else{
-            $(".latermenu").animate({"left":0},400);           
+            var position = $(".latermenu").position();
+            if(position.left==0){
+                $(".latermenu").animate({"left":-412},200);
+            }else{
+                $(".latermenu").animate({"left":0},400);           
+            }
+            $(".container").animate({
+               scrollTop:0
+           },"slow");             
         }
-        $(".container").animate({
-           scrollTop:0
-       },"slow");         
     });
     $(".td a").click(function(){
         $(".latermenu").animate({"left":-412},200);

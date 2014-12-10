@@ -2,12 +2,11 @@
     <div class="facturavir">
         <div class="contf">
             <label class="ttfac">FACTURA VIRTUAL</label>
-            <div class="tr">
-                
+            <div class="tr" ng-bind-html="platos">            
             </div>
             <div class="tr brdto">
                 <div class="td">
-                    <label>Valor domicilio</label>
+                    <label>Valor domicilio (${{valor_plato}} x plato)</label>
                 </div>
                 <div class="td">
                     <label>${{domicilio}}</label>
@@ -18,7 +17,7 @@
                     <label>TOTAL</label>
                 </div>
                 <div class="td">
-                    <label>$18.800</label>
+                    <label>${{total}}</label>
                 </div>
             </div>
             
@@ -26,7 +25,7 @@
         <div class="bondesc">
             Ingresar bono de descuento
             <br>
-            <input type="text">
+            <input id="bono" name="bono" type="text" maxlength="25">
         </div>
         <div class="vrdirc">
             <label>Verifica que esta si sea tu dirección</label>
@@ -35,7 +34,7 @@
             <input type="text">
             <label>Direcciones frecuentes</label>
             <ul class="listdirecc">
-                <li> Calle 38 numero <i class="glyphicon glyphicon-minus-sign"></i></li>
+                <li>N/A <i class="glyphicon glyphicon-minus-sign"></i></li>
             </ul>
             <div class="medipa">
                 <div class="col-xs-6 col-md-6">
@@ -45,14 +44,14 @@
                     <div class="col-xs-6 col-md-6 ds">
                         <div class="formpago">
                             <ul>
-                                <li><img src="images/icoforma.png" alt="..." title="..."> Efectivo <img src="images/pagoho.png" alt="..." title="..." class="icobie"></li>
-                                <li><img src="images/icoforma.png" alt="..." title="..."> Tarjeta <img src="images/pagoho.png" alt="..." title="..." class="icobie"></li>
-                                <li><img src="images/icoforma.png" alt="..." title="..."> Online <img src="images/pagoho.png" alt="..." title="..." class="icobie"></li>
+                                <li id="efectivo" ng-click="setTypePay('efectivo')"><img src="images/icoforma.png" alt="..." title="..."> Efectivo <img src="images/pagoho.png" alt="..." title="..." class="icobie"></li>
+                                <li id="tarjeta" ng-click="setTypePay('tarjeta')"><img src="images/icoforma.png" alt="..." title="..."> Tarjeta <img src="images/pagoho.png" alt="..." title="..." class="icobie"></li>
+                                <li id="online" ng-click="setTypePay('online')"><img src="images/icoforma.png" alt="..." title="..."> Online <img src="images/pagoho.png" alt="..." title="..." class="icobie"></li>
                             </ul>
                             <img src="images/abajo.png" alt="..." title="..." class="aba">
                         </div>
                         <div class="sombra"></div>
-                        <img src="images/icopa1.png" alt="..." title="...">
+                        <img src="images/icopa1.png" alt="..." title="..." ng-click="viewTypePay()">
                     </div>
                 </div>
                 <div class="col-xs-6 col-md-6">
