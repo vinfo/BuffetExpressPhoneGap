@@ -343,7 +343,8 @@ a img
 	padding-top:12.2%;
 	overflow: hidden;
 	position: relative;
-	padding-bottom: 57px;
+	/*padding-bottom: 57px;*/
+	width:100%;
 }
 .menuplato .col-md-6
 {
@@ -551,7 +552,7 @@ a img
 	position: fixed;
 	bottom: 100px;
 	z-index: 100;
-	bottom: 11%;
+	/*bottom: 11%;*/
 	text-align: center;
 }
 .verplatoico img{
@@ -828,13 +829,12 @@ max-width:20%;*/
 	width: 100%;
 	text-align: center;
 	position: fixed;
-	bottom:11.6%;
+	
 	left: 0px;
 }
 .miscompras .contpag .cont
 {
 	display: inline-block;
-	padding: 5px;
 	background: #FDB813;
 	color: #000;
 	font-weight: bold;
@@ -842,8 +842,7 @@ max-width:20%;*/
 	border:2px solid #FFFFFF;
 	border-bottom: 0px;
 	border-radius: 10px 10px 0px 0px;
-	padding-right: 20px;
-	padding-left: 20px;
+	padding:3px 20px 4px;
 	cursor: pointer;
 }
 .miscompras .fooda .ff2 img
@@ -897,9 +896,9 @@ max-width:20%;*/
 .facturavir .contf .tr .td label
 {
 	display: block;
-	font-size: 20px;
+	font-size:19px;
 	text-align: left;
-	padding-left: 20%;
+	padding-left:8%;
 }
 .facturavir .contf .ttl
 {
@@ -1506,13 +1505,16 @@ max-width:20%;*/
 }
 .botones{
 	position: fixed;
-	bottom: 11%;
+	/*bottom: 11%;*/
 	width: 100%;
 	overflow: hidden;
+	padding: 0;
+	margin: 0;
 }
 .botones .btn1,.botones .btn2,.botones .btn3{
 	float: left;
-	padding: 8px 0px;
+	padding: 4px 0px;
+	height:40px; 
 }
 .botones .btn1 a,.botones .btn2 a{
 	text-decoration: none;
@@ -1549,8 +1551,6 @@ max-width:20%;*/
 .botones .btn3{
 	background-color: #964f22;
 	width:13%;
-	min-height:49px;
-	padding-top:6px;
 	text-align: center;
 }
 .botones .btn3 span{

@@ -3,18 +3,14 @@ app.initialize();
 if (window.jQuery) {  
  $(function(){
     // Tamaño container
-    $(".container").css({"min-height":$(document).height()});    
+    $(".container").css({"min-height":$(document).height()});
 
     $(window).load(function(){
         $(".menupie ul li").css({"height":$("li.carrito a img").height()});
         $(".pedidotar").css({"bottom":$("li.carrito a img").height()});
         $(".contpag").css({"bottom":$("li.carrito a img").height()});
-    })    
-
-    // Tamaño alto menu inferior
-    $(window).load(function(){ 
-        $(".menupie ul li").css({"height":$("li.carrito a img").height()}); 
-        $(".latermenu").css({"margin-top":$(".menusup").height()}); 
+        $(".latermenu").css({"margin-top":$(".menusup").height()});
+        $(".botones").css({"bottom":$("li.carrito a img").height()+"px"});        
     });
     //fin tamaño container    
     

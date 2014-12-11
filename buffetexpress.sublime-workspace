@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"get",
+				"getPos"
+			],
+			[
+				"va",
+				"valor"
+			],
+			[
+				"nd",
+				"ndish"
+			],
+			[
+				"ge",
+				"getBuffetLastId"
+			],
+			[
+				"it",
+				"items"
+			],
+			[
+				"pa",
+				"padding-top"
+			],
+			[
+				"ma",
+				"max-height"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
 				"name",
 				"nameDish"
 			],
@@ -28,20 +60,8 @@
 				"setItem"
 			],
 			[
-				"dis",
-				"dish"
-			],
-			[
 				"dish",
 				"dishes"
-			],
-			[
-				"get",
-				"getItem"
-			],
-			[
-				"ge",
-				"getItem"
 			],
 			[
 				"plat",
@@ -66,10 +86,6 @@
 			[
 				"bo",
 				"bottom"
-			],
-			[
-				"pa",
-				"padding-top"
 			],
 			[
 				"fon",
@@ -112,10 +128,6 @@
 				"min-height"
 			],
 			[
-				"ma",
-				"margin-top"
-			],
-			[
 				"di",
 				"display"
 			],
@@ -130,10 +142,6 @@
 			[
 				"cl",
 				"clear"
-			],
-			[
-				"va",
-				"vertical-align"
 			],
 			[
 				"re",
@@ -171,22 +179,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "www/js/main.js",
-			"settings":
-			{
-				"buffer_size": 24739,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "www/templates/pago.html",
-			"settings":
-			{
-				"buffer_size": 2852,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -247,22 +239,30 @@
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/plugins/nl.x-services.plugins.socialsharing/src/android/nl/xservices/plugins/SocialSharing.java",
+		"/D/Movilidad/BuffetExpressPhoneGap/README.md",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
+		"/C/Users/odc/AppData/Local/Temp/Rar$DIa0.916/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/nosotros.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pagos.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/login.html",
 		"/D/Movilidad/index.js",
 		"/D/wamp/www/familymarketing/modules/js/registrados.js",
@@ -271,11 +271,8 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/directives.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla6.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular.min.js",
-		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pagos.html",
 		"/D/wamp/www/familymarketing/js/tools.js",
 		"/D/wamp/www/familymarketing/js/jquery.currency.js",
 		"/D/wamp/www/familymarketing/modules/js/compras.js",
@@ -289,7 +286,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/perfil.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/terminos.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/nosotros.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/scroll.html",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla5.html",
 		"/C/Users/odc/AppData/Local/Temp/Rar$EXa0.554/templates/categoria.html",
@@ -375,10 +371,7 @@
 		"/D/Movilidad/test/BuffetExpress/pantalla7.html",
 		"/D/Movilidad/test/BuffetExpress/pantalla8.html",
 		"/D/Movilidad/test/BuffetExpress/pantalla6.html",
-		"/D/Movilidad/test/BuffetExpress/pantalla3.html",
-		"/D/Movilidad/test/BuffetExpress/pantalla4.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/pages/slider.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/pages/menu.html"
+		"/D/Movilidad/test/BuffetExpress/pantalla3.html"
 	],
 	"find":
 	{
@@ -389,6 +382,8 @@
 		"height": 90.0,
 		"where_history":
 		[
+			"",
+			"getFullLastId",
 			""
 		]
 	},
@@ -397,6 +392,79 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"alert",
+			"getExtraDish",
+			"extra",
+			"alert",
+			"getItemsxCat",
+			"getPos",
+			"getCantAdicional",
+			"getItem(\"Item",
+			"(extra X \"+ (cant)+\")",
+			"(extra X \"+ (cant - 1)+\")",
+			"extra",
+			"getItems",
+			"$(\".botones,.contpag,.verplatoico\").css({\"bottom\":$(\"li.carrito a img\").height()+\"px\"});",
+			".verplatoico",
+			"num_dish",
+			"alert",
+			"num_dish",
+			"getItems",
+			"plato_dia",
+			"localStorage.getItem(\"plato\"",
+			"localStorage.setItem(\"plato\"",
+			"alert",
+			"getItems",
+			"alert",
+			"getLastId",
+			"num_dish",
+			"getNumDish",
+			"getLastId",
+			"alert",
+			"orden_final",
+			".miscompras .contpag .cont",
+			"Recomend",
+			".facturavir .contf .tr .td label",
+			"getRealDish",
+			"doPay",
+			"contpag",
+			"doPay",
+			"Debe s",
+			".miscompras .contpag .cont",
+			".miscompras .contpag",
+			".cont",
+			".miscompras .contpag .cont",
+			"cont",
+			"alert(",
+			".menuplato",
+			".btn3",
+			" .btn3",
+			".botones .btn1, .botones .btn2, .botones .btn3",
+			".botones",
+			"cont\"",
+			"cont",
+			".miscompras .contpag .cont",
+			"contpag",
+			"goPay",
+			"goPay()",
+			"getNumDish",
+			"totalDish",
+			"setFinalOrder",
+			"flecha",
+			"costoad",
+			"verlatermenu",
+			"page\"",
+			"page'",
+			"page\"",
+			"goT",
+			"Existen",
+			"setDisplayMenu",
+			"icopa1.png",
+			".sombra",
+			"formpago",
+			".costoad .cont > h1",
+			"ngSanitize",
+			"html",
 			"push",
 			"domicilio",
 			"pagoController",
@@ -451,80 +519,7 @@
 			"setNumDish",
 			"num_dish",
 			"totalDish",
-			"alert",
-			"name+",
-			" Adicional ",
-			" * cant",
-			"+add",
-			"getExtraDish",
-			"code",
-			"editDish",
-			"viewDish",
-			"getLastId",
-			"setDish",
-			"num_dish",
-			"apply",
-			"codes",
-			"angular.fromJson(data)",
-			"datos",
-			"\"datos",
-			"getItemsxDish",
-			"getDishes",
-			"alert(",
-			"comprasController",
-			"totalDish",
-			"Currency",
-			"getImage",
-			"getAditional",
-			"addDish",
-			"stop",
-			"setNumDishes",
-			"getImage",
-			"$scope.someText=",
-			"someText",
-			"getImage",
-			"indexof",
-			"setDish",
-			"editDish",
-			"$scope",
-			"doLogin",
-			"addDish",
-			"padding:0\";text-align:left;",
-			"$routeParams",
-			"categoriaController",
-			"$routeParams",
-			"setDish",
-			"localStorage.length",
-			"costoad",
-			"totalDish",
-			"alert",
-			"localStorage.plato",
-			"num_dish",
-			"localStorage.plato",
-			"precio",
-			"setMoney",
-			"getMoney",
-			"precio",
-			"Costo de",
-			"elevara",
-			"elevara el valor ",
-			"adicio",
-			"alert(",
-			"setNumDishes",
-			"indexof",
-			"setNumDishes",
-			"numb_",
-			"setDish",
-			"num_dish",
-			"alert(",
-			"num_dish",
-			"ndish",
-			"addDish",
-			".menupie",
-			"datos\"",
-			"menu",
-			"getDishes",
-			"JSON.parse"
+			"alert"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -532,6 +527,10 @@
 		"regex": false,
 		"replace_history":
 		[
+			"<b>(extra X \"+ (cant)+\")</b>",
+			"<b>(extra X \"+ (cant - 1)+\")</b>",
+			"$(\".botones,.contpag,.verplatoico,.pedidotar\").css({\"bottom\":$(\"li.carrito a img\").height()+\"px\"});",
+			"getFullLastId",
 			",'+dish+',\\''+tipo+'\\')",
 			">=1",
 			"name+add+",
@@ -564,74 +563,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "www/js/main.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 24739,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								14103,
-								14103
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 5569.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "www/templates/pago.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2852,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								407,
-								416
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
