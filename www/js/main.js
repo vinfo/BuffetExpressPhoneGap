@@ -41,19 +41,19 @@
 		})
 		.when('/nosotros', {
 			templateUrl : 'templates/nosotros.html',
-			controller 	: 'mainController'
+			controller 	: 'nosotrosController'
 		})
 		.when('/felicitaciones', {
 			templateUrl : 'templates/felicitaciones.html',
-			controller 	: 'mainController'
+			controller 	: 'felicitacionesController'
 		})	
 		.when('/contactenos', {
 			templateUrl : 'templates/contactenos.html',
-			controller 	: 'mainController'
+			controller 	: 'contactenosController'
 		})
 		.when('/redes', {
 			templateUrl : 'templates/redes.html',
-			controller 	: 'mainController'
+			controller 	: 'redesController'
 		})
 		.when('/recomendado', {
 			templateUrl : 'templates/recomendado.html',
@@ -86,7 +86,14 @@
 	angularRoutingApp.controller('mainController', function($scope,$location,Images,Items,Currency){
 		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":$("li.carrito a img").height()+"px"});
 		var plato= 1;
-		if(localStorage.plato)plato=localStorage.plato;		
+		if(localStorage.plato)plato=localStorage.plato;
+
+		var checkPlato= Items.getItems(plato);
+		var flag=false;
+		if(Items.getTypeDish(plato)=="R"){
+			plato= Items.getFullLastId()+1;
+			flag=true;
+		}		
 
 		setDisplayMenu();
 		if($location.url()=="/" || $location.url()=="/menu"){
@@ -100,12 +107,16 @@
 		}else{
 			$scope.mi_cuenta="login.html";
 		}
+		
+
 			//Validar imagenes plato existente
-			$scope.arroz= Images.setImage(plato,1);
-			$scope.bebidas= Images.setImage(plato,2);
-			$scope.carnes= Images.setImage(plato,3);
-			$scope.guarnicion= Images.setImage(plato,4);
-			$scope.sopa= Images.setImage(plato,5);
+			if(Items.getTypeDish(plato)=="B"){
+				$scope.arroz= Images.setImage(plato,1);
+				$scope.bebidas= Images.setImage(plato,2);
+				$scope.carnes= Images.setImage(plato,3);
+				$scope.guarnicion= Images.setImage(plato,4);
+				$scope.sopa= Images.setImage(plato,5);
+			}
 
 
 			$scope.num_dish= localStorage.plato;
@@ -140,8 +151,7 @@
 			},
 			$scope.stop = function (div) {
 				localStorage.setItem("stop", 1);
-				$("."+div).hide();
-				window.location = "internal.html#/menu";	
+				$("."+div).hide();	
 			},		
 			$scope.detailDish = function (dish) {
 				ajaxrest.detailDish(dish.id);
@@ -155,8 +165,16 @@
 			$scope.addDish = function (action,tipo) {
 				var plato= localStorage.plato;
 				var items= Items.getItems(plato);
+				var checkPlato= Items.getItems(plato);				
+				
+				var flag=false;
+				if(Items.getTypeDish(plato)=="R"){
+					plato= Items.getFullLastId()+1;
+					flag=true;
+				}
+
 				if(!localStorage.getItem("cant_"+tipo+"_"+plato))localStorage.setItem("cant_"+tipo+"_"+plato,1);
-				if(items<3){
+				if(items<3 || flag){
 					if(action=="add"){
 						alert("Plato actual no esta completo!");
 						return false;
@@ -173,7 +191,8 @@
 						$scope.carnes= Images.setImage(ndish,3);
 						$scope.guarnicion= Images.setImage(ndish,4);
 						$scope.sopa= Images.setImage(ndish,5);	
-						localStorage.setItem("plato",ndish);					
+						localStorage.setItem("plato",ndish);
+						alert(ndish);				
 					}else{
 						$("li").removeClass("active");
 						$(".menupie ul li:nth-child(3)").addClass("active");						
@@ -187,6 +206,14 @@
 			$scope.setDish = function (dish,action) {				
 				var activity= localStorage.activity;
 				var plato= localStorage.getItem("plato");
+				var checkPlato= Items.getItems(plato);				
+				
+				var flag=false;
+				if(Items.getTypeDish(plato)=="R"){
+					plato= Items.getFullLastId()+1;
+					flag=true;
+				}
+
 				var pos= Items.getPos();
 				
 				var name= "item_"+plato+"_"+dish.idCat+"_B_"+dish.code;
@@ -249,6 +276,7 @@
 				}else{
 					redir=true;
 				}
+				localStorage.setItem("plato",plato);
 				$("#totalDish").html(Items.getFullLastId());		
 				if(redir==true && activity=="ins")window.location = "internal.html#/menu";
 				if(redir==true && activity=="edit")window.location = "internal.html#/compras";
@@ -274,12 +302,13 @@
 			}				
 		});
 
-	angularRoutingApp.controller('comprasController', function($scope,Items,Currency) {		
+	angularRoutingApp.controller('comprasController', function($scope,Items,Currency) {
+		setBackground("","white");	
 		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");	
 		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":$("li.carrito a img").height()+"px"});
 		var dishes=[];
 		setDisplayMenu();
-		setBackground("fondo","");
+
 		$("li").removeClass("active");
 		$(".menupie ul li:nth-child(3)").addClass("active");
 
@@ -311,7 +340,7 @@
 
 			var Narray=[];
 			for(var m=0;m<dat.length;m++){
-				var valor= JSON.parse(localStorage.getItem("item_"+dish+"_"+dat[m].idCat+"_B_"+dat[m].code));
+				var valor= JSON.parse(localStorage.getItem("item_"+dish+"_"+dat[m].idCat+"_"+tipo+"_"+dat[m].code));
 				Narray.push({pos:valor.pos,data:dat[m]});
 			}
 
@@ -325,7 +354,7 @@
 				} 
 			}			
 
-			var datos= Narray.sort(sort_by('pos', true, parseInt));
+			var datos= Narray.sort(sort_by('pos', true, parseInt));		
 
 			var c1=0;c2=0;c3=0;c4=0;c5=0;
 			var ppal="";
@@ -469,6 +498,7 @@
 	});
 
 	angularRoutingApp.controller('mi_cuentaController', function($scope) {
+		setBackground("fondo","");
 		$scope.changeRoute = function(url, forceReload) {
 			$scope = $scope || angular.element(document).scope();
 	        if(forceReload || $scope.$$phase) { // that's right TWO dollar signs: $$phase
@@ -491,12 +521,19 @@
 	}	
 });
 
-	angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http,Images,Currency) {		
+	angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http,Images,Items,Currency) {		
 		setDisplayMenu();
 		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":$("li.carrito a img").height()+"px"});		
 		$(".detalle").hide();
 		$scope.precio_plato= Currency.setMoney(localStorage.valor_buffet, 0, ",", ".");
 		var plato= localStorage.plato;
+		var checkPlato= Items.getItems(plato);
+		var flag=false;
+		if(Items.getTypeDish(plato)=="R"){
+			plato= Items.getFullLastId()+1;
+			flag=true;
+		}
+
 		$scope.plato= plato;
 		var cat= $routeParams.idCat;
 		localStorage.activity=$routeParams.activity;
@@ -531,10 +568,6 @@
 		}		
 	});
 
-	angularRoutingApp.controller('terminosController', function($scope) {
-		$scope.message = 'Esta es la página de "Terminos"';
-	});
-
 	angularRoutingApp.controller('recomendadoController', function($scope,$location,Currency,Items) {
 		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":$("li.carrito a img").height()+"px"});
 		setBackground("fondo","");
@@ -567,8 +600,8 @@
 		$scope.goPay = function () {
 			var items= angular.fromJson(localStorage.getItem("plato_dia"));
 			var plato= Items.getFullLastId()+1;
-			for(var j=0;j<items.length;j++){
-				localStorage.setItem("item_"+plato+"_"+items[j].cat+"_R_"+items[j].code,1);
+			for(var j=0;j<items.length;j++){				
+				localStorage.setItem("item_"+plato+"_"+items[j].cat+"_R_"+items[j].code,JSON.stringify({cant:1,pos:j+1}));
 			}
 			localStorage.setItem("plato",Items.getFullLastId()+1);
 			$("#totalDish").html(Items.getNumDish());	
@@ -577,6 +610,7 @@
 	});	
 
 	angularRoutingApp.controller('pagoController', function($scope,Items,Currency) {
+		setBackground("","white");
 		$(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
 		var domicilio=0;
 		var dishes=[];
@@ -744,6 +778,20 @@
 			$(".sombra,.formpago").css("display","inline");
 		}				
 	});
+
+	angularRoutingApp.controller('nosotrosController', function($scope) {
+		setBackground("","white");
+	});	
+
+	angularRoutingApp.controller('felicitacionesController', function($scope) {
+		setBackground("fondo","");
+	});	
+	angularRoutingApp.controller('contactenosController', function($scope) {
+		setBackground("fondo","");
+	});
+	angularRoutingApp.controller('redesController', function($scope) {
+		setBackground("fondo","");
+	});			
 
 	angularRoutingApp.controller("mapaController", ["$scope", function mapaController($scope) {
 		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
@@ -941,7 +989,18 @@
 					}
 				}				
 				return parseInt(last_element);
-			},						
+			},
+			getTypeDish: function(dish) {
+				var type="";
+				for (var i = 0; i < localStorage.length; i++){
+					var item= localStorage.key(i);
+					if(item.indexOf("item_"+dish)==0){
+						var data=item.split("_");						
+						if(data[3])type=data[3];
+					}
+				}
+				return type;
+			},									
 			getItems: function(dish) {
 				var items=0;c1=0;c2=0;c3=0;c4=0;c5=0;
 				for (var i = 0; i < localStorage.length; i++){
