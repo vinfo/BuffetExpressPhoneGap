@@ -238,8 +238,6 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
@@ -392,6 +390,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"c5++;",
+			"alert",
+			"getExtraDish",
 			"alert",
 			"getExtraDish",
 			"extra",
@@ -516,10 +517,7 @@
 			"getNumDish",
 			"totalDish",
 			"goMenu",
-			"setNumDish",
-			"num_dish",
-			"totalDish",
-			"alert"
+			"setNumDish"
 		],
 		"highlight": false,
 		"in_selection": false,

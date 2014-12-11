@@ -310,19 +310,19 @@
 			var dat = angular.fromJson(data);
 
 			var Narray=[];
-			for(var h=0;h<dat.length;h++){
-				var valor= JSON.parse(localStorage.getItem("item_"+dish+"_"+dat[h].idCat+"_B_"+dat[h].code));
-				Narray.push({pos:valor.pos,data:dat[h]});
+			for(var m=0;m<dat.length;m++){
+				var valor= JSON.parse(localStorage.getItem("item_"+dish+"_"+dat[m].idCat+"_B_"+dat[m].code));
+				Narray.push({pos:valor.pos,data:dat[m]});
 			}
 
 			var sort_by = function(field, reverse, primer){
-			   var key = primer ? 
-			       function(x) {return primer(x[field])} : 
-			       function(x) {return x[field]};
-			   		reverse = [-1, 1][+!!reverse];
-			   return function (a, b) {
-			       return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
-			     } 
+				var key = primer ? 
+				function(x) {return primer(x[field])} : 
+				function(x) {return x[field]};
+				reverse = [-1, 1][+!!reverse];
+				return function (a, b) {
+					return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
+				} 
 			}			
 
 			var datos= Narray.sort(sort_by('pos', true, parseInt));
@@ -359,8 +359,8 @@
 
 				var vItem= "item_"+dish+"_"+cat+"_"+tipo+"_"+code;
 				cant= Items.getExtraDish(vItem);
+				
 				var add="";
-
 				if(cat==1){					
 					if(c1==0){
 						var ad="";
@@ -377,14 +377,14 @@
 					}					
 					c1++;
 				}
-				if(cat==2){					
+				if(cat==2){	
 					if(c2==0){
 						var ad="";
 						if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
 						ppal+="- "+name+ad+"</br>";
 						bebidas=image;
 						bebidasIco="images/bebidas_mini_ok.png";
-						total+= price * (cant-1);						
+						total+= price * (cant-1);		
 					}else{						
 						var ad="";
 						if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";
@@ -443,11 +443,12 @@
 				}																				
 			}
 			var cantDish=1;
-
+			htotal=total;
 			if(localStorage.getItem("cant_"+tipo+"_"+dish)){				
 				cantDish=localStorage.getItem("cant_"+tipo+"_"+dish);				
 				if(cantDish>0)total=htotal*cantDish;
-			}
+			}			
+			
 			var nameDish="Plato #"+nDish;
 			if(tipo=="R")nameDish="Recomendado Día";
 			plato='<div class="comprasitem" id="dish_'+dish+'"><div class="imgcont" ><div class="padre"><div class = "derrap"><div class="contenedor"><div class="sopa"><img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/><div class="sopacont"><img src="'+sopa+'" style="width:100%;" border="0" margin="0" /></div></div><div class="vaso"><img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/><div class="jugo"><img src="'+bebidas+'" style="width:100%;" border="0" margin="0"/></div></div><div class="plato"><img src="images/plato.png" style="width:100%;" border="0" margin="0"/><div class="arroz"><img src="'+arroz+'" style="width:100%;" border="0" margin="0"/></div><div class="guarnicion"><img src="'+guarnicion+'" style="width:100%;" border="0" margin="0"/></div><div class="carne"><img src="'+carnes+'" style="width:100%;" border="0" margin="0"/></div></div></div></div></div></div><div class="contnn"><h3>'+nameDish+'</h3><p>'+ppal+extra+'</p></p><div class="icodeli"><span class="elimina" onclick="setFinalOrder('+dish+',\'less\',\''+tipo+'\')"></span><span class="contador"><label id="cont_'+dish+'">'+cantDish+'</label></span><span class="suma" onclick="setFinalOrder('+dish+',\'add\',\''+tipo+'\')"></span></div></div><div class="icodeta"><div><img src="'+sopaIco+'" alt="..." title="..." onclick="editDish(5,\'sopas y cremas\','+dish+',\''+tipo+'\')"></div><div><img src="'+arrozIco+'" alt="..." title="..." onclick="editDish(1,\'arroz\','+dish+',\''+tipo+'\')"></div><div><img src="'+carnesIco+'" alt="..." title="..." onclick="editDish(3,\'carnes\','+dish+',\''+tipo+'\')"></div><div><img src="'+guarnicionIco+'" alt="..." title="..." onclick="editDish(4,\'guarnición\','+dish+',\''+tipo+'\')"></div><div><img src="'+bebidasIco+'" alt="..." title="..." onclick="editDish(2,\'bebidas\','+dish+',\''+tipo+'\')"></div> <div class="subtt"><input type="hidden" name="price_'+dish+'" id="price_'+dish+'" value="'+htotal+'" /><label class="currency" id="lprice_'+dish+'">$'+Currency.setMoney(total, 0, ",", ".")+'</label></div></div>';
@@ -491,7 +492,8 @@
 });
 
 	angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http,Images,Currency) {		
-		setDisplayMenu();		
+		setDisplayMenu();
+		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":$("li.carrito a img").height()+"px"});		
 		$(".detalle").hide();
 		$scope.precio_plato= Currency.setMoney(localStorage.valor_buffet, 0, ",", ".");
 		var plato= localStorage.plato;
@@ -600,123 +602,130 @@
 		var plato='';	
 		var tipo="";
 		var nDish=farr.length;
-		for(var h=0;h<farr.length;h++){
+		for(var h=0;h<farr.length;h++){			
 			var item= farr[h];
 			var dish=item.value;//Real ID plato
 			var codes="";
-			for(var j=0;j<localStorage.length;j++){
-				var item= localStorage.key(j);
-				if(item.indexOf("item_"+dish)==0){
-					var cod=item.split("_");
-					codes+=cod[4]+",";
-					tipo=cod[3];
+			var itemsDish=Items.getItems(dish);
+			if(itemsDish>2){
+				for(var j=0;j<localStorage.length;j++){
+					var item= localStorage.key(j);
+					if(item.indexOf("item_"+dish)==0){
+						var cod=item.split("_");
+						codes+=cod[4]+",";
+						tipo=cod[3];
+					}
 				}
-			}
-			var data= ajaxrest.getItemsxDish("codes="+codes+"&token="+localStorage.token);
-			var dat = angular.fromJson(data);
-			var c1=0;c2=0;c3=0;c4=0;c5=0;			
-			var ppal="";
-			var extra="";
-			var total=0;
-			var total2=0;
-			if(tipo=="B"){
-				total= parseInt(localStorage.valor_buffet);
-			}else{
-				total= parseInt(localStorage.valor_recomendado);
-			}
-			for(var m=0;m<dat.length;m++){
-				var code=dat[m].code;
-				var name=dat[m].name;
-				var cat=dat[m].idCat;
-				var price=parseInt(dat[0].price);	
+				var data= ajaxrest.getItemsxDish("codes="+codes+"&token="+localStorage.token);
+				var dat = angular.fromJson(data);
+				var c1=0;c2=0;c3=0;c4=0;c5=0;			
+				var ppal="";
+				var extra="";
+				var total=0;
+				var total2=0;
+				if(tipo=="B"){
+					total= parseInt(localStorage.valor_buffet);
+				}else{
+					total= parseInt(localStorage.valor_recomendado);
+				}
+				for(var m=0;m<dat.length;m++){
+					var code=dat[m].code;
+					var name=dat[m].name;
+					var cat=dat[m].idCat;
+					var price=parseInt(dat[m].price);	
 
-				var vItem= "item_"+dish+"_"+cat+"_"+tipo+"_"+code;
-				cant= Items.getExtraDish(vItem);
-				var add="";
+					var vItem= "item_"+dish+"_"+cat+"_"+tipo+"_"+code;
+					cant= Items.getExtraDish(vItem);
+					var add="";
 
-				if(cant>1){
-					total+= price * (cant-1);						
-				}		
-				if(cat==1){					
-					if(c1==0){
-						var ad="";
-						if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
-						ppal+="- "+name+ad+"</br>";					
-					}else{
-						var ad="";
-						if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";							
-						extra+="- "+name+ad+"</br>";
-						total+= price * cant;	
-					}					
-					c1++;
-				}
-				if(cat==2){					
-					if(c2==0){
-						var ad="";
-						if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
-						ppal+="- "+name+ad+"</br>";					
-					}else{						
-						var ad="";
-						if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";							
-						extra+="- "+name+ad+"</br>";
-						total+= price * cant;
+					if(cat==1){					
+						if(c1==0){
+							var ad="";
+							if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
+							ppal+="- "+name+ad+"</br>";		
+							total+= price * (cant-1);				
+						}else{
+							var ad="";
+							if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";							
+							extra+="- "+name+ad+"</br>";
+							total+= price * cant;	
+						}					
+						c1++;
 					}
-					c2++;
-				}
-				if(cat==3){					
-					if(c3==0){
-						var ad="";
-						if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
-						ppal+="- "+name+ad+"</br>";						
-					}else{
-						var ad="";
-						if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";							
-						extra+="- "+name+ad+"</br>";	
-						total+= price * cant;				
+					if(cat==2){					
+						if(c2==0){
+							var ad="";
+							if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
+							ppal+="- "+name+ad+"</br>";		
+							total+= price * (cant-1);				
+						}else{						
+							var ad="";
+							if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";							
+							extra+="- "+name+ad+"</br>";
+							total+= price * cant;
+						}
+						c2++;
 					}
-					c3++;
-				}
-				if(cat==4){					
-					if(c4==0){
-						var ad="";
-						if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
-						ppal+="- "+name+ad+"</br>";					
-					}else{
-						var ad="";
-						if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";							
-						extra+="- "+name+ad+"</br>";
-						total+= price * cant;
+					if(cat==3){					
+						if(c3==0){
+							var ad="";
+							if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
+							ppal+="- "+name+ad+"</br>";	
+							total+= price * (cant-1);						
+						}else{
+							var ad="";
+							if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";							
+							extra+="- "+name+ad+"</br>";	
+							total+= price * cant;				
+						}
+						c3++;
 					}
-					c4++;
-				}
-				if(cat==5){					
-					if(c5==0){
-						var ad="";
-						if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
-						ppal+="- "+name+ad+"</br>";					
-					}else{
-						var ad="";
-						if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";						
-						extra+="- "+name+ad+"</br>";
-						total+= price * cant;
+					if(cat==4){					
+						if(c4==0){
+							var ad="";
+							if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
+							ppal+="- "+name+ad+"</br>";		
+							total+= price * (cant-1);				
+						}else{
+							var ad="";
+							if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";							
+							extra+="- "+name+ad+"</br>";
+							total+= price * cant;
+						}
+						c4++;
 					}
-					c5++;
-				}																				
+					if(cat==5){					
+						if(c5==0){
+							var ad="";
+							if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
+							ppal+="- "+name+ad+"</br>";		
+							total+= price * (cant-1);				
+						}else{
+							var ad="";
+							if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";						
+							extra+="- "+name+ad+"</br>";
+							total+= price * cant;
+						}
+						c5++;
+					}																				
+				}
+				var cantDish=1;
+				total2=total;
+				if(localStorage.getItem("cant_"+tipo+"_"+dish)){				
+					cantDish=localStorage.getItem("cant_"+tipo+"_"+dish);				
+					if(cantDish>0)total2=total*cantDish;
+				}
+				var nameDish="Plato #"+nDish;
+				if(tipo=="R")nameDish="Recomendado Día";
+				labels+='<label>'+nameDish+'</label>';
+				Gtotal+=total2;
+				valores+='<label>$'+Currency.setMoney(total2, 0, ",", ".")+'</label>';
+				domicilio++;	
+				nDish--;
 			}
-			var cantDish=1;
-			total2=total;
-			if(localStorage.getItem("cant_"+tipo+"_"+dish)){				
-				cantDish=localStorage.getItem("cant_"+tipo+"_"+dish);				
-				if(cantDish>0)total2=total*cantDish;
-			}
-			var nameDish="Plato #"+nDish;
-			if(tipo=="R")nameDish="Recomendado Día";
-			labels+='<label>'+nameDish+'</label>';
-			Gtotal+=total2;
-			valores+='<label>$'+Currency.setMoney(total2, 0, ",", ".")+'</label>';
-			domicilio++;	
-			nDish--;
 		}
+
+
 		Ditem='<div class="td">'+labels+'</div><div class="td">'+valores+'</div>';
 		$scope.platos= Ditem;
 		var tDomicilio= localStorage.valor_domicilio * domicilio;
@@ -948,7 +957,7 @@
 			getExtraDish: function(value) {
 				var cant=0;
 				for (var i = 0; i < localStorage.length; i++){
-					var item= localStorage.key(i);
+					var item= localStorage.key(i);					
 					if(item == value){
 						var valor=JSON.parse(localStorage.getItem(item));
 						cant+=parseInt(valor.cant);
