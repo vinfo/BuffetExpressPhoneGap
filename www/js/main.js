@@ -83,8 +83,7 @@
 
 	});	
 
-	angularRoutingApp.controller('mainController', function($scope,$location,Images,Items,Currency){
-		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":$("li.carrito a img").height()+"px"});
+	angularRoutingApp.controller('mainController', function($scope,$location,Images,Items,Currency){		
 		var plato= 1;
 		if(localStorage.plato)plato=localStorage.plato;
 
@@ -116,6 +115,8 @@
 				$scope.carnes= Images.setImage(plato,3);
 				$scope.guarnicion= Images.setImage(plato,4);
 				$scope.sopa= Images.setImage(plato,5);
+			}else{
+
 			}
 
 
@@ -192,7 +193,6 @@
 						$scope.guarnicion= Images.setImage(ndish,4);
 						$scope.sopa= Images.setImage(ndish,5);	
 						localStorage.setItem("plato",ndish);
-						alert(ndish);				
 					}else{
 						$("li").removeClass("active");
 						$(".menupie ul li:nth-child(3)").addClass("active");						
@@ -299,13 +299,14 @@
 				$location.path(page);
 				$("li").removeClass("active");
 				$(".menupie ul li:nth-child(1)").addClass("active");
-			}				
+			}
+			$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});				
 		});
 
 	angularRoutingApp.controller('comprasController', function($scope,Items,Currency) {
-		setBackground("","white");	
-		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");	
-		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":$("li.carrito a img").height()+"px"});
+		setBackground("","white");
+		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
+		
 		var dishes=[];
 		setDisplayMenu();
 
@@ -490,7 +491,8 @@
 		if(plato==""){
 			Items.delAllCant();
 			$(".costoad").fadeIn();
-		}		
+		}
+		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});		
 	});
 
 	angularRoutingApp.controller('loginController', function($scope) {
@@ -522,8 +524,7 @@
 });
 
 	angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http,Images,Items,Currency) {		
-		setDisplayMenu();
-		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":$("li.carrito a img").height()+"px"});		
+		setDisplayMenu();				
 		$(".detalle").hide();
 		$scope.precio_plato= Currency.setMoney(localStorage.valor_buffet, 0, ",", ".");
 		var plato= localStorage.plato;
@@ -565,11 +566,11 @@
 			$scope.carnes= Images.setImage(plato,3);
 			$scope.guarnicion= Images.setImage(plato,4);
 			$scope.sopa= Images.setImage(plato,5);
-		}		
+		}	
+		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});	
 	});
 
-	angularRoutingApp.controller('recomendadoController', function($scope,$location,Currency,Items) {
-		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":$("li.carrito a img").height()+"px"});
+	angularRoutingApp.controller('recomendadoController', function($scope,$location,Currency,Items) {		
 		setBackground("fondo","");
 		var items="";
 		if(localStorage.token){
@@ -606,7 +607,8 @@
 			localStorage.setItem("plato",Items.getFullLastId()+1);
 			$("#totalDish").html(Items.getNumDish());	
 			$location.path("compras");
-		}				
+		}	
+		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});			
 	});	
 
 	angularRoutingApp.controller('pagoController', function($scope,Items,Currency) {
@@ -795,7 +797,7 @@
 
 	angularRoutingApp.controller("mapaController", ["$scope", function mapaController($scope) {
 		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
-		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":$("li.carrito a img").height()+"px"});
+		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});
 		$scope.Adress = "6.270318, -75.595974";
 	}]);	
 
@@ -833,7 +835,7 @@
 				var cont=0;
 				for (var i = 0; i < localStorage.length; i++){
 					var item= localStorage.key(i);
-					if(item.indexOf("item_"+dish+"_"+cat)==0){						
+					if(item.indexOf("item_"+dish+"_"+cat)==0){
 						if(item && cont==0){
 							var code=item.split("_");
 							image= base_url+"resources/images/dish/"+code[4]+"_2.png";
