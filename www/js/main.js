@@ -105,18 +105,15 @@
 			$scope.mi_cuenta="#mi_cuenta";
 		}else{
 			$scope.mi_cuenta="login.html";
-		}
-		
+		}		
 
-			//Validar imagenes plato existente
-			if(Items.getTypeDish(plato)=="B"){
+			//Validar imagenes plato existente			
+			if(Items.getTypeDish(plato)=="B" || Items.getItems(plato)==0){
 				$scope.arroz= Images.setImage(plato,1);
 				$scope.bebidas= Images.setImage(plato,2);
 				$scope.carnes= Images.setImage(plato,3);
 				$scope.guarnicion= Images.setImage(plato,4);
 				$scope.sopa= Images.setImage(plato,5);
-			}else{
-
 			}
 
 
