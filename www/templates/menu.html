@@ -68,4 +68,24 @@
 	<div class="btn3">
 		<span id="num_dish">{{num_dish}}</span>
 	</div>
-</div> 
+</div>
+<script>
+	$( document ).ready(function() {
+		var lastScrollTop = 0;
+        var mHeight= $("li.carrito a img").height();
+        $(".container").scroll(function(){ 
+         var st = $(this).scrollTop();
+         if (st > lastScrollTop){
+        //console.log("bajando");        
+        $('.menupie').stop(true, true).animate({ bottom: "-12%" }, 3000);
+        $('.botones').stop(true, true).animate({ bottom: "0" }, 3000);
+    } else {
+         //console.log("subiendo");
+         $('.menupie').stop(true, true).animate({ bottom: "0%" }, 3000);
+         $('.botones').stop(true, true).animate({ bottom: (mHeight-1)+"px" }, 3000);
+     }
+     lastScrollTop = st;
+     return false;
+ });
+    });
+</script>
