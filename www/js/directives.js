@@ -23,7 +23,7 @@
                 markAdressToMap(pos);
             };
             var getPosition= function(){
-                if(navigator.geolocation) {
+                if(navigator.geolocation) {                    
                     navigator.geolocation.getCurrentPosition(function(position) {
                         lat= position.coords.latitude;
                         lng= position.coords.longitude;  
