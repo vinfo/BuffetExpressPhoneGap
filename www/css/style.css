@@ -81,6 +81,17 @@ a img
 	background: url(../images/contrasena.png) no-repeat;
 	background-size: 50px 50px;
 }
+.sesion .ico-nombre_apellido
+{
+	background: url(../images/nombre_apellido.png) no-repeat;
+	background-size: 50px 50px;
+}
+.sesion .ico-num_celular
+{
+	background: url(../images/num_celular.png) no-repeat;
+	background-size: 50px 50px;
+}
+
 .sesion input
 {
 	background: none;
