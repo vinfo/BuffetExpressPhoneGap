@@ -6,7 +6,7 @@
             </div>
             <div class="tr brdto">
                 <div class="td">
-                    <label>Valor domicilio (${{valor_plato}} x plato)</label>
+                    <label>Valor domicilio ({{valor_plato}})</label>
                 </div>
                 <div class="td">
                     <label>${{domicilio}}</label>
@@ -51,7 +51,7 @@
                             <img src="images/abajo.png" alt="..." title="..." class="aba">
                         </div>
                         <div class="sombra"></div>
-                        <img src="images/icopa1.png" alt="..." title="..." ng-click="viewTypePay()">
+                        <img id="img_pago" src="images/boton_efectivo.png" alt="..." title="..." ng-click="viewTypePay()">
                     </div>
                 </div>
                 <div class="col-xs-6 col-md-6">
@@ -65,5 +65,5 @@
             </div>
         </div>
     </div>
-    
+   <div style="height:100px;"></div> 
 </div>

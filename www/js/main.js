@@ -10,10 +10,6 @@
 		.when('/', {
 			templateUrl : 'templates/slider.html',
 			controller 	: 'sliderController'
-		})	
-		.when('/slider', {
-			templateUrl	: 'templates/slider.html',
-			controller 	: 'sliderController'
 		})
 		.when('/menu', {
 			templateUrl : 'templates/menu.html',
@@ -83,7 +79,9 @@
 
 	});	
 
-	angularRoutingApp.controller('mainController', function($scope,$location,Images,Items,Currency){		
+	angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){
+		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
+		localStorage.activity=$routeParams.activity;
 		var plato= 1;
 		if(localStorage.plato)plato=localStorage.plato;
 
@@ -139,11 +137,15 @@
 			},
 			$scope.closeSession = function () {
 				localStorage.clear();
-				$location.path("internal.html");	
+				$scope.mi_cuenta="login.html";
+				$location.path("internal.html");
 			},		
 			$scope.hiddeMenu = function () {
 				hiddeMenu();
 			},
+			$scope.open = function (div) {
+				$("."+div).css("display","inline");
+			},			
 			$scope.close = function (div) {
 				$("."+div).hide();
 			},
@@ -215,7 +217,6 @@
 				
 				var name= "item_"+plato+"_"+dish.idCat+"_B_"+dish.code;
 				var cant=0;
-				var redir=false;
 				if(!localStorage.getItem(name)){
 					localStorage.setItem(name,JSON.stringify({cant:cant,pos:pos}));
 					var img=Images.setImage(plato,dish.idCat);
@@ -267,16 +268,17 @@
 					}					
 				}
 				var items=Items.getItemsxCat(plato,dish.idCat);
+				var redir=true;
 				if(!localStorage.getItem('stop') && items>1){
 					$scope.precio= Currency.setMoney(dish.price, 0, ",", ".");
 					if(action=="add")$(".costoad").fadeIn();
-				}else{
-					redir=true;
+					redir=false;
 				}
 				localStorage.setItem("plato",plato);
-				$("#totalDish").html(Items.getFullLastId());		
-				if(redir==true && activity=="ins")window.location = "internal.html#/menu";
-				if(redir==true && activity=="edit")window.location = "internal.html#/compras";
+				$("#totalDish").html(Items.getFullLastId());
+				if(activity=="ins" && action=="add" && cant!=0 && redir && items<=1)window.location = "internal.html#/menu";
+				//if(activity!="edit" && action=="add" && cant!=0 && redir)window.location = "internal.html#/compras";
+
 			},	
 			$scope.closeDish = function (dish) {
 				$(".verplato").slideToggle();
@@ -301,7 +303,7 @@
 		});
 
 	angularRoutingApp.controller('comprasController', function($scope,Items,Currency) {
-		setBackground("","white");
+		setBackground("fondo","");
 		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
 		
 		var dishes=[];
@@ -480,26 +482,33 @@
 			if(tipo=="R")nameDish="Recomendado Día";
 			plato='<div class="comprasitem" id="dish_'+dish+'"><div class="imgcont" ><div class="padre"><div class = "derrap"><div class="contenedor"><div class="sopa"><img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/><div class="sopacont"><img src="'+sopa+'" style="width:100%;" border="0" margin="0" /></div></div><div class="vaso"><img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/><div class="jugo"><img src="'+bebidas+'" style="width:100%;" border="0" margin="0"/></div></div><div class="plato"><img src="images/plato.png" style="width:100%;" border="0" margin="0"/><div class="arroz"><img src="'+arroz+'" style="width:100%;" border="0" margin="0"/></div><div class="guarnicion"><img src="'+guarnicion+'" style="width:100%;" border="0" margin="0"/></div><div class="carne"><img src="'+carnes+'" style="width:100%;" border="0" margin="0"/></div></div></div></div></div></div><div class="contnn"><h3>'+nameDish+'</h3><p>'+ppal+extra+'</p></p><div class="icodeli"><span class="elimina" onclick="setFinalOrder('+dish+',\'less\',\''+tipo+'\')"></span><span class="contador"><label id="cont_'+dish+'">'+cantDish+'</label></span><span class="suma" onclick="setFinalOrder('+dish+',\'add\',\''+tipo+'\')"></span></div></div><div class="icodeta"><div><img src="'+sopaIco+'" alt="..." title="..." onclick="editDish(5,\'sopas y cremas\','+dish+',\''+tipo+'\')"></div><div><img src="'+arrozIco+'" alt="..." title="..." onclick="editDish(1,\'arroz\','+dish+',\''+tipo+'\')"></div><div><img src="'+carnesIco+'" alt="..." title="..." onclick="editDish(3,\'carnes\','+dish+',\''+tipo+'\')"></div><div><img src="'+guarnicionIco+'" alt="..." title="..." onclick="editDish(4,\'guarnición\','+dish+',\''+tipo+'\')"></div><div><img src="'+bebidasIco+'" alt="..." title="..." onclick="editDish(2,\'bebidas\','+dish+',\''+tipo+'\')"></div> <div class="subtt"><input type="hidden" name="price_'+dish+'" id="price_'+dish+'" value="'+htotal+'" /><label class="currency" id="lprice_'+dish+'">$'+Currency.setMoney(total, 0, ",", ".")+'</label></div></div>';
 			$("#miscompras").append(plato);
+			var icodeta=$(".icodeta").height();
+			var padre=$(".comprasitem").height();
+			
+			if(localStorage.dimension>380){
+				$(".imgcont").css({"min-height":+(padre-icodeta)+"px"});	
+			}				
 			nDish--;
 		}
 		var fDish= Items.getRealDish();
 		var contPago='<div class="contpag" onclick="doPay(\''+fDish+'\')"><div class="cont">Continúe con el pago</div></div>';
-		$("#miscompras").append(contPago);		
+		$("#miscompras").append(contPago);
+		$("#miscompras").append('<div style="height:250px;">&nbsp;</div>');
 		if(plato==""){
 			Items.delAllCant();
 			$(".costoad").fadeIn();
 		}
-		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});		
+		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});			
 	});
 
-	angularRoutingApp.controller('loginController', function($scope) {
-		$scope.message = 'Esta es la página de "Login"';
-	});
+				angularRoutingApp.controller('loginController', function($scope) {
+					$scope.message = 'Esta es la página de "Login"';
+				});
 
-	angularRoutingApp.controller('mi_cuentaController', function($scope) {
-		setBackground("fondo","");
-		$scope.changeRoute = function(url, forceReload) {
-			$scope = $scope || angular.element(document).scope();
+				angularRoutingApp.controller('mi_cuentaController', function($scope) {
+					setBackground("fondo","");
+					$scope.changeRoute = function(url, forceReload) {
+						$scope = $scope || angular.element(document).scope();
 	        if(forceReload || $scope.$$phase) { // that's right TWO dollar signs: $$phase
 	        	window.location = url;
 	    } else {
@@ -520,52 +529,53 @@
 	}	
 });
 
-	angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http,Images,Items,Currency) {		
-		setDisplayMenu();				
-		$(".detalle").hide();
-		$scope.precio_plato= Currency.setMoney(localStorage.valor_buffet, 0, ",", ".");
-		var plato= localStorage.plato;
-		var checkPlato= Items.getItems(plato);
-		var flag=false;
-		if(Items.getTypeDish(plato)=="R"){
-			plato= Items.getFullLastId()+1;
-			flag=true;
-		}
+				angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http,Images,Items,Currency) {		
+					setDisplayMenu();
+					$(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");				
+					$(".detalle").hide();
+					$scope.precio_plato= Currency.setMoney(localStorage.valor_buffet, 0, ",", ".");
+					var plato= localStorage.plato;
+					var checkPlato= Items.getItems(plato);
+					var flag=false;
+					if(Items.getTypeDish(plato)=="R"){
+						plato= Items.getFullLastId()+1;
+						flag=true;
+					}
 
-		$scope.plato= plato;
-		var cat= $routeParams.idCat;
-		localStorage.activity=$routeParams.activity;
+					$scope.plato= plato;
+					var cat= $routeParams.idCat;
+					localStorage.activity=$routeParams.activity;
 
-		ajaxrest.getDishes("category="+cat+"&token="+localStorage.token+"&dimension="+localStorage.dimension);
-		var datos=$("#datos").val();
-		$scope.dishes = angular.fromJson(datos);		
+					ajaxrest.getDishes("category="+cat+"&token="+localStorage.token+"&dimension="+localStorage.dimension);
+					var datos=$("#datos").val();
+					$scope.dishes = angular.fromJson(datos);		
 
-		$scope.imageCat="sopas_mini";
-		if(cat==1){
-			$scope.imageCat="arroz_mini";
-		}else if(cat==2){
-			$scope.imageCat="bebidas_mini";
-		}else if(cat==3){
-			$scope.imageCat="carnes_mini";
-		}else if(cat==4){
-			$scope.imageCat="guarnicion_mini";
-		}		
-		ajaxrest.setNumDishes(plato,cat);
-		$scope.arroz= Images.setImage(plato,1);
-		$scope.bebidas= Images.setImage(plato,2);
-		$scope.carnes= Images.setImage(plato,3);
-		$scope.guarnicion= Images.setImage(plato,4);
-		$scope.sopa= Images.setImage(plato,5);
+					$scope.imageCat="sopas_mini";
+					if(cat==1){
+						$scope.imageCat="arroz_mini";
+					}else if(cat==2){
+						$scope.imageCat="bebidas_mini";
+					}else if(cat==3){
+						$scope.imageCat="carnes_mini";
+					}else if(cat==4){
+						$scope.imageCat="guarnicion_mini";
+					}		
+					ajaxrest.setNumDishes(plato,cat);
+					$scope.arroz= Images.setImage(plato,1);
+					$scope.bebidas= Images.setImage(plato,2);
+					$scope.carnes= Images.setImage(plato,3);
+					$scope.guarnicion= Images.setImage(plato,4);
+					$scope.sopa= Images.setImage(plato,5);
 
-		$scope.viewDish = function () {
-			$scope.arroz= Images.setImage(plato,1);
-			$scope.bebidas= Images.setImage(plato,2);
-			$scope.carnes= Images.setImage(plato,3);
-			$scope.guarnicion= Images.setImage(plato,4);
-			$scope.sopa= Images.setImage(plato,5);
-		}	
-		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});	
-	});
+					$scope.viewDish = function () {
+						$scope.arroz= Images.setImage(plato,1);
+						$scope.bebidas= Images.setImage(plato,2);
+						$scope.carnes= Images.setImage(plato,3);
+						$scope.guarnicion= Images.setImage(plato,4);
+						$scope.sopa= Images.setImage(plato,5);
+					}	
+					$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});	
+				});
 
 	angularRoutingApp.controller('recomendadoController', function($scope,$location,Currency,Items) {		
 		setBackground("fondo","");
@@ -598,10 +608,11 @@
 		$scope.goPay = function () {
 			var items= angular.fromJson(localStorage.getItem("plato_dia"));
 			var plato= Items.getFullLastId()+1;
-			for(var j=0;j<items.length;j++){				
+			for(var j=0;j<items.length;j++){	
 				localStorage.setItem("item_"+plato+"_"+items[j].cat+"_R_"+items[j].code,JSON.stringify({cant:1,pos:j+1}));
 			}
 			localStorage.setItem("plato",Items.getFullLastId()+1);
+			localStorage.setItem("cant_R_"+plato,1);
 			$("#totalDish").html(Items.getNumDish());	
 			$location.path("compras");
 		}	
@@ -748,30 +759,31 @@
 					cantDish=localStorage.getItem("cant_"+tipo+"_"+dish);				
 					if(cantDish>0)total2=total*cantDish;
 				}
-				var nameDish="Plato #"+nDish;
-				if(tipo=="R")nameDish="Recomendado Día";
+				var nameDish="Plato #"+nDish+" (Und x "+cantDish+")";
+				if(tipo=="R")nameDish="Recomendado (Und x "+cantDish+")";
 				labels+='<label>'+nameDish+'</label>';
 				Gtotal+=total2;
 				valores+='<label>$'+Currency.setMoney(total2, 0, ",", ".")+'</label>';
-				domicilio++;	
+				domicilio+= parseInt(cantDish);
 				nDish--;
 			}
 		}
-
-
+		
 		Ditem='<div class="td">'+labels+'</div><div class="td">'+valores+'</div>';
 		$scope.platos= Ditem;
 		var tDomicilio= localStorage.valor_domicilio * domicilio;
 		$scope.domicilio = Currency.setMoney(tDomicilio, 0, ",", ".");
 		$scope.total = Currency.setMoney(Gtotal + tDomicilio, 0, ",", ".");
-		$scope.valor_plato=Currency.setMoney(localStorage.valor_domicilio, 0, ",", ".");
-		$scope.setTypePay = function (type) {
+		$scope.valor_plato= " Und x "+domicilio;
+		setBackDefaultPay();
+		$scope.setTypePay = function (type) {			
 			localStorage.setItem("tipo_pago",type);
 			$(".formpago li").css("background","none");
 			$(".formpago .icobie").css("display","none");
 			$("#"+type).css("background","#FDB813");
 			$("#"+type+" > img").css("display","inline");
 			$(".sombra,.formpago").css("display","none");
+			$("#img_pago").attr("src","images/boton_"+type+".png");
 		},
 		$scope.viewTypePay = function () {
 			$(".sombra,.formpago").css("display","inline");
@@ -784,15 +796,22 @@
 
 	angularRoutingApp.controller('felicitacionesController', function($scope) {
 		setBackground("fondo","");
+		$scope.sendContact = function (type) {			
+			ajaxrest.sendContact(type);
+		}		
 	});	
 	angularRoutingApp.controller('contactenosController', function($scope) {
 		setBackground("fondo","");
+		$scope.sendContact = function (type) {			
+			ajaxrest.sendContact(type);
+		}
 	});
 	angularRoutingApp.controller('redesController', function($scope) {
-		setBackground("fondo","");
+		setBackground("fondo","");		
 	});			
 
 	angularRoutingApp.controller("mapaController", ["$scope", function mapaController($scope) {
+		setBackground("fondo","");
 		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
 		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});
 		$scope.Adress = "6.270318, -75.595974";

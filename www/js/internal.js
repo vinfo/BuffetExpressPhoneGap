@@ -1,7 +1,7 @@
 app.initialize();
 
 if (window.jQuery) {  
- $(function(){
+   $(function(){
     // Tamaño container
     $(".container").css({"min-height":$(document).height()});
 
@@ -25,9 +25,15 @@ if (window.jQuery) {
     $(".verlatermenu").click(function(event){
         event.preventDefault();
         var img= $(".menusup button.ico-menu span").css('background-image').split("flecha_atras");
+        var activity= localStorage.getItem("activity");
         if(img[1] && img[1].length>0){
             $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
-            window.history.back();
+            //window.history.back();
+            if(activity=="ins"){
+                window.location = "internal.html#/menu";
+            }else{
+               window.location = "internal.html#/compras"; 
+            }
         }else{
             var position = $(".latermenu").position();
             if(position.left==0){
@@ -36,8 +42,8 @@ if (window.jQuery) {
                 $(".latermenu").animate({"left":0},400);           
             }
             $(".container").animate({
-               scrollTop:0
-           },"slow");             
+             scrollTop:0
+         },"slow");             
         }
     });
     $(".td a").click(function(){
@@ -67,9 +73,9 @@ function addShop(action){
         num++;
     }
     if(action=="menos"){
-     if(num>0)num--;
- } 
- localStorage.setItem("num",num);
- $(".numero").html(num);
- return false;
+       if(num>0)num--;
+   } 
+   localStorage.setItem("num",num);
+   $(".numero").html(num);
+   return false;
 }

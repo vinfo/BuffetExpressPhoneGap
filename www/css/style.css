@@ -578,7 +578,7 @@ a img
 .costoad
 {
 	position: fixed;
-	z-index: 99;
+	z-index: 499;
 	background: url(../images/sombra.png);
 	width: 100%;
 	height: 100%;
@@ -633,7 +633,6 @@ a img
 	font-size: 16px;
 }
 .costoad .cont > .ck span {
-	border: 1px solid blue;
 	padding:1px;
 }
 
@@ -669,7 +668,7 @@ input[type=checkbox]:checked:before{
 .miscompras .comprasitem
 {
 	overflow: hidden;
-	background: #FFFFFF;
+	background: white;
 	width: 100%;
 }
 .miscompras .comprasitem .imgcont
@@ -693,6 +692,7 @@ input[type=checkbox]:checked:before{
 .miscompras .comprasitem .contnn
 {
 	float: left;
+	background-color: white;
 	width: 60%;
 }
 .miscompras .comprasitem .contnn h3
@@ -822,7 +822,7 @@ max-width:20%;*/
 }
 .miscompras .comprasitem  .icodeta .subtt label
 {
-	font-size: 150%;
+	font-size:16px;
 }
 .miscompras .contpag
 {
@@ -884,19 +884,19 @@ max-width:20%;*/
 }
 .facturavir .contf .tr .td:nth-child(1)
 {
-	width: 60%;
+	width: 70%;
 	border:0px;
 }
 .facturavir .contf .tr .td
 {
-	width: 40%;
+	width: 30%;
 	float: left;
 	border-left: 1px dashed #414042;
 }
 .facturavir .contf .tr .td label
 {
 	display: block;
-	font-size:19px;
+	font-size:16px;
 	text-align: left;
 	padding-left:8%;
 }
@@ -907,7 +907,7 @@ max-width:20%;*/
 }
 .facturavir .contf .ttl .td label
 {
-	font-size: 25px;
+	font-size:16px;
 }
 .facturavir .bondesc 
 {
@@ -1255,7 +1255,7 @@ max-width:20%;*/
 }
 .pagosdiv
 {
-	padding-top: 70px;
+	padding-top:40px;
 	padding-bottom: 70px;
 }
 .formitaese{
@@ -1363,10 +1363,24 @@ max-width:20%;*/
 	margin-right: 10px;
 	text-align: left;
 }
+.felicitation .text{
+	vertical-align: text-bottom;
+	color: #7C7C7C;
+	padding: 0;
+	padding-bottom: 10px;
+	margin-right: 10px;
+	text-align: left;
+}
 .felicitation .checkbox input{
 	float: right;
+	padding-bottom:5px;
+
 }
-.felicitation textarea{
+.felicitation .text input{
+	width
+	float: right;
+}
+.felicitation textarea,input{
 	outline: none;
 	width: 100%;
 	border: 1px solid #CCC;
@@ -1534,6 +1548,7 @@ max-width:20%;*/
 	display: inline-block;
 	color: #FFF;
 	font-weight: bold;
+	font-size: 13px;
 }
 .botones .btn2 p{
 	padding-right: 15px;
@@ -1699,6 +1714,14 @@ max-width:20%;*/
 }
 .btns{
 	display: none;
+}
+
+input[type=checkbox] {
+  /* All browsers except webkit*/
+  transform: scale(1.8);
+
+  /* Webkit browsers*/
+  -webkit-transform: scale(1.8);
 }
 
 @media (max-width: 532px){
