@@ -552,6 +552,8 @@ a img
 	position: fixed;
 	bottom: 100px;
 	z-index: 100;
+	padding: 0;
+	margin: 0;
 	/*bottom: 11%;*/
 	text-align: center;
 }
@@ -829,7 +831,8 @@ max-width:20%;*/
 	width: 100%;
 	text-align: center;
 	position: fixed;
-	
+	padding: 0;
+	margin: 0;	
 	left: 0px;
 }
 .miscompras .contpag .cont
@@ -1715,13 +1718,20 @@ max-width:20%;*/
 .btns{
 	display: none;
 }
+.confirmacion{
+	border: 2px solid #A61015;
+	padding: 20px;
+	margin: 10px;
+	width: 80%;
+	display: none;
+}
 
-input[type=checkbox] {
+input[type="radio"], input[type="checkbox"] {
   /* All browsers except webkit*/
-  transform: scale(1.8);
+  transform: scale(1.5);
 
   /* Webkit browsers*/
-  -webkit-transform: scale(1.8);
+  -webkit-transform: scale(1.5);
 }
 
 @media (max-width: 532px){

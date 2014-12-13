@@ -81,7 +81,7 @@
 
 	angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){
 		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
-		localStorage.activity=$routeParams.activity;
+		if($routeParams.activity)localStorage.activity=$routeParams.activity;
 		var plato= 1;
 		if(localStorage.plato)plato=localStorage.plato;
 
@@ -501,14 +501,14 @@
 		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});			
 	});
 
-				angularRoutingApp.controller('loginController', function($scope) {
-					$scope.message = 'Esta es la página de "Login"';
-				});
+	angularRoutingApp.controller('loginController', function($scope) {
+		$scope.message = 'Esta es la página de "Login"';
+	});
 
-				angularRoutingApp.controller('mi_cuentaController', function($scope) {
-					setBackground("fondo","");
-					$scope.changeRoute = function(url, forceReload) {
-						$scope = $scope || angular.element(document).scope();
+	angularRoutingApp.controller('mi_cuentaController', function($scope) {
+		setBackground("fondo","");
+		$scope.changeRoute = function(url, forceReload) {
+			$scope = $scope || angular.element(document).scope();
 	        if(forceReload || $scope.$$phase) { // that's right TWO dollar signs: $$phase
 	        	window.location = url;
 	    } else {
@@ -529,56 +529,57 @@
 	}	
 });
 
-				angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http,Images,Items,Currency) {		
-					setDisplayMenu();
-					$(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");				
-					$(".detalle").hide();
-					$scope.precio_plato= Currency.setMoney(localStorage.valor_buffet, 0, ",", ".");
-					var plato= localStorage.plato;
-					var checkPlato= Items.getItems(plato);
-					var flag=false;
-					if(Items.getTypeDish(plato)=="R"){
-						plato= Items.getFullLastId()+1;
-						flag=true;
-					}
+	angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http,Images,Items,Currency) {		
+		setDisplayMenu();
+		$(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");				
+		$(".detalle").hide();
+		$scope.precio_plato= Currency.setMoney(localStorage.valor_buffet, 0, ",", ".");
+		var plato= localStorage.plato;
+		var checkPlato= Items.getItems(plato);
+		var flag=false;
+		if(Items.getTypeDish(plato)=="R"){
+			plato= Items.getFullLastId()+1;
+			flag=true;
+		}
 
-					$scope.plato= plato;
-					var cat= $routeParams.idCat;
-					localStorage.activity=$routeParams.activity;
+		$scope.plato= plato;
+		var cat= $routeParams.idCat;
+		localStorage.activity=$routeParams.activity;
 
-					ajaxrest.getDishes("category="+cat+"&token="+localStorage.token+"&dimension="+localStorage.dimension);
-					var datos=$("#datos").val();
-					$scope.dishes = angular.fromJson(datos);		
+		ajaxrest.getDishes("category="+cat+"&token="+localStorage.token+"&dimension="+localStorage.dimension);
+		var datos=$("#datos").val();
+		$scope.dishes = angular.fromJson(datos);		
 
-					$scope.imageCat="sopas_mini";
-					if(cat==1){
-						$scope.imageCat="arroz_mini";
-					}else if(cat==2){
-						$scope.imageCat="bebidas_mini";
-					}else if(cat==3){
-						$scope.imageCat="carnes_mini";
-					}else if(cat==4){
-						$scope.imageCat="guarnicion_mini";
-					}		
-					ajaxrest.setNumDishes(plato,cat);
-					$scope.arroz= Images.setImage(plato,1);
-					$scope.bebidas= Images.setImage(plato,2);
-					$scope.carnes= Images.setImage(plato,3);
-					$scope.guarnicion= Images.setImage(plato,4);
-					$scope.sopa= Images.setImage(plato,5);
+		$scope.imageCat="sopas_mini";
+		if(cat==1){
+			$scope.imageCat="arroz_mini";
+		}else if(cat==2){
+			$scope.imageCat="bebidas_mini";
+		}else if(cat==3){
+			$scope.imageCat="carnes_mini";
+		}else if(cat==4){
+			$scope.imageCat="guarnicion_mini";
+		}		
+		ajaxrest.setNumDishes(plato,cat);
+		$scope.arroz= Images.setImage(plato,1);
+		$scope.bebidas= Images.setImage(plato,2);
+		$scope.carnes= Images.setImage(plato,3);
+		$scope.guarnicion= Images.setImage(plato,4);
+		$scope.sopa= Images.setImage(plato,5);
 
-					$scope.viewDish = function () {
-						$scope.arroz= Images.setImage(plato,1);
-						$scope.bebidas= Images.setImage(plato,2);
-						$scope.carnes= Images.setImage(plato,3);
-						$scope.guarnicion= Images.setImage(plato,4);
-						$scope.sopa= Images.setImage(plato,5);
-					}	
-					$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});	
-				});
+		$scope.viewDish = function () {
+			$scope.arroz= Images.setImage(plato,1);
+			$scope.bebidas= Images.setImage(plato,2);
+			$scope.carnes= Images.setImage(plato,3);
+			$scope.guarnicion= Images.setImage(plato,4);
+			$scope.sopa= Images.setImage(plato,5);
+		}	
+		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});	
+	});
 
 	angularRoutingApp.controller('recomendadoController', function($scope,$location,Currency,Items) {		
 		setBackground("fondo","");
+		$(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
 		var items="";
 		if(localStorage.token){
 			var data= ajaxrest.getDishDay("token="+localStorage.token);
@@ -787,7 +788,12 @@
 		},
 		$scope.viewTypePay = function () {
 			$(".sombra,.formpago").css("display","inline");
-		}				
+		},
+		$scope.SendPay = function () {
+			$(".vrdirc,.bondesc").css("display","none");
+			$(".confirmacion").css("display","inline-block");
+			cleanSession();
+		}						
 	});
 
 	angularRoutingApp.controller('nosotrosController', function($scope) {
@@ -1076,6 +1082,6 @@
 					}
 				}
 				return true;
-			},												
+			}																
 		};
-	});	
+	});

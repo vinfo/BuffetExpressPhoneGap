@@ -4,20 +4,40 @@
 		"selected_items":
 		[
 			[
+				"op",
+				"open"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"p",
+				"padding"
+			],
+			[
+				"di",
+				"dimension"
+			],
+			[
+				"ta",
+				"table-cell"
+			],
+			[
+				"ge",
+				"getFullLastId"
+			],
+			[
 				"fec",
 				"felicitaciones"
 			],
 			[
 				"al",
 				"alert"
-			],
-			[
-				"pa",
-				"padding-bottom"
-			],
-			[
-				"p",
-				"padding-bottom"
 			],
 			[
 				"get",
@@ -32,16 +52,8 @@
 				"ndish"
 			],
 			[
-				"ge",
-				"getBuffetLastId"
-			],
-			[
 				"it",
 				"items"
-			],
-			[
-				"ma",
-				"max-height"
 			],
 			[
 				"dis",
@@ -136,10 +148,6 @@
 				"min-height"
 			],
 			[
-				"di",
-				"display"
-			],
-			[
 				"ba",
 				"background-color"
 			],
@@ -176,10 +184,6 @@
 				"terminos"
 			],
 			[
-				"op",
-				"option	Tag"
-			],
-			[
 				"nmae",
 				"name_b"
 			]
@@ -187,14 +191,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "www/templates/slider.html",
-			"settings":
-			{
-				"buffer_size": 1171,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -254,23 +250,26 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www"
 	],
 	"file_history":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/contactenos.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/felicitaciones.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/wamp/www/familymarketing/eventos/eventos.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/offline.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/cache.manifest",
@@ -278,20 +277,17 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/nl.x-services.plugins.socialsharing/src/android/nl/xservices/plugins/SocialSharing.java",
 		"/D/Movilidad/BuffetExpressPhoneGap/README.md",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/C/Users/odc/AppData/Local/Temp/Rar$DIa0.916/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/nosotros.html",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pagos.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/login.html",
 		"/D/Movilidad/index.js",
 		"/D/wamp/www/familymarketing/modules/js/registrados.js",
 		"/D/wamp/www/familymarketing/modules/js/aproductos.js",
 		"/C/Users/odc/Downloads/jquery.formatCurrency-1.4.0/demo/index.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/directives.js",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla6.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular.min.js",
@@ -305,7 +301,6 @@
 		"/D/wamp/www/familymarketing/js/jquery.maskMoney.js",
 		"/D/wamp/www/familymarketing/plugins/PHPMailer/examples/index.html",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla8.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/perfil.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/terminos.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/scroll.html",
@@ -338,7 +333,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/phonegap-toast.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/Toast.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/ng-infinite-scroll.min.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/clave.html",
 		"/D/Movilidad/mi_cuenta.html",
@@ -408,6 +402,52 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"cleanSession",
+			"open",
+			"pagoController",
+			"input[type=\"checkbox\"]",
+			"activity",
+			"recomendadoController",
+			".verplatoico",
+			".miscompras .contpag",
+			"icopa1.png",
+			"comprasitem",
+			".miscompras .comprasitem",
+			".miscompras .comprasitem .contnn",
+			".miscompras .comprasitem .imgcont",
+			".miscompras .comprasitem .contnn",
+			".miscompras .comprasitem",
+			".miscompras .comprasitem .contnn",
+			".miscompras .comprasitem",
+			".miscompras .comprasitem .contnn",
+			".miscompras .comprasitem .imgcont",
+			".miscompras .comprasitem .contnn",
+			"comprasController",
+			"closeSession",
+			"mi_cuenta",
+			".costoad",
+			".subtt label",
+			".facturavir .contf .ttl .td label",
+			".subtt label",
+			".miscompras .comprasitem .icodeta .subtt label",
+			".facturavir .contf .ttl .td label",
+			".facturavir .contf .tr .td:nth-child(1)",
+			".facturavir .contf .tr .td label",
+			".facturavir .contf .tr .td:nth-child(1)",
+			".facturavir .contf .tr .td label",
+			".btn1 p",
+			".botones .btn2 p",
+			"pagoController",
+			".pagosdiv",
+			"activity",
+			".costoad .cont > .ck span",
+			"linmenu",
+			"alert",
+			"linmenu",
+			".menusup button.ico-menu span",
+			"flecha",
+			".menusup button.ico-menu span",
+			"flecha",
 			".costoad",
 			"costoad",
 			"flecha",
@@ -489,53 +529,7 @@
 			".btn3",
 			" .btn3",
 			".botones .btn1, .botones .btn2, .botones .btn3",
-			".botones",
-			"cont\"",
-			"cont",
-			".miscompras .contpag .cont",
-			"contpag",
-			"goPay",
-			"goPay()",
-			"getNumDish",
-			"totalDish",
-			"setFinalOrder",
-			"flecha",
-			"costoad",
-			"verlatermenu",
-			"page\"",
-			"page'",
-			"page\"",
-			"goT",
-			"Existen",
-			"setDisplayMenu",
-			"icopa1.png",
-			".sombra",
-			"formpago",
-			".costoad .cont > h1",
-			"ngSanitize",
-			"html",
-			"push",
-			"domicilio",
-			"pagoController",
-			",'+dish+')",
-			"json",
-			"goTo",
-			"$location",
-			".push",
-			"recomenda",
-			"pagoController",
-			"fDish",
-			"doPay",
-			"setFinalOrder",
-			"setFinalOrder(",
-			"addDish",
-			"cant_",
-			"alert",
-			"source",
-			"initialize",
-			"costoad",
-			"cant_",
-			"getExtraDish"
+			".botones"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -580,40 +574,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "www/templates/slider.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1171,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1109,
-								1109
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

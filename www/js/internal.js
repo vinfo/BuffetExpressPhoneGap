@@ -31,8 +31,10 @@ if (window.jQuery) {
             //window.history.back();
             if(activity=="ins"){
                 window.location = "internal.html#/menu";
-            }else{
+            }else if(activity=="edit"){
                window.location = "internal.html#/compras"; 
+            }else{
+                window.location = "internal.html#/slider";
             }
         }else{
             var position = $(".latermenu").position();
