@@ -498,7 +498,8 @@
 			Items.delAllCant();
 			$(".costoad").fadeIn();
 		}
-		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});			
+		var mheight= $("li.carrito a img").height();
+		$(".contpag").css({"bottom":+(mheight-1)+"px"});			
 	});
 
 	angularRoutingApp.controller('loginController', function($scope) {
@@ -547,8 +548,8 @@
 		localStorage.activity=$routeParams.activity;
 
 		ajaxrest.getDishes("category="+cat+"&token="+localStorage.token+"&dimension="+localStorage.dimension);
-		var datos=$("#datos").val();
-		$scope.dishes = angular.fromJson(datos);		
+		var datos= $("#datos").val();
+		$scope.dishes = angular.fromJson(datos);
 
 		$scope.imageCat="sopas_mini";
 		if(cat==1){
@@ -573,8 +574,9 @@
 			$scope.carnes= Images.setImage(plato,3);
 			$scope.guarnicion= Images.setImage(plato,4);
 			$scope.sopa= Images.setImage(plato,5);
-		}	
-		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});	
+		}
+		var mheight= $("li.carrito a img").height();	
+		$(".verplatoico").css({"bottom":+(mheight-1)+"px"});	
 	});
 
 	angularRoutingApp.controller('recomendadoController', function($scope,$location,Currency,Items) {		

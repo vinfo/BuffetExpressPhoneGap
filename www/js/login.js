@@ -30,6 +30,9 @@ angularRoutingApp.config(function($routeProvider) {
 });
 
 angularRoutingApp.controller('loginController', function($scope, $location,$routeParams) {
+	$scope.goInternal = function() {
+		window.location = "internal.html";	
+	},		
 	$scope.doLogin = function() {
 		ajaxrest.login();
 	},	

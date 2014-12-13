@@ -6,26 +6,27 @@
     <img src="images/cerr_vpla.png" alt="..." alt="..." class="cerrvess" ng-click="close('costoad')">
     <h1>Detalle carro de compras</h1>
     <p>No existen productos seleccionados</p>   
-  </div>
+</div>
 </div>
 </div>		
 <!-- fin contenido slider buffet -->
 <script>
 	$( document ).ready(function() {
 		var lastScrollTop = 0;
-		$(".container").scroll(function(){ 
-			var st = $(this).scrollTop();
-			if (st > lastScrollTop){
+        var mHeight= $("li.carrito a img").height();
+        $(".container").scroll(function(){ 
+         var st = $(this).scrollTop();
+         if (st > lastScrollTop){
         //console.log("bajando");        
         $('.menupie').stop(true, true).animate({ bottom: "-12%" }, 3000);
-        $('.contpag').stop(true, true).animate({ bottom: "-4.5%" }, 3000);
+        $('.contpag').stop(true, true).animate({ bottom: "0" }, 3000);
     } else {
          //console.log("subiendo");
          $('.menupie').stop(true, true).animate({ bottom: "0%" }, 3000);
-         $('.contpag').stop(true, true).animate({ bottom: "11.6%" }, 3000);
+         $('.contpag').stop(true, true).animate({ bottom: (mHeight-1)+"px" }, 3000);
      }
      lastScrollTop = st;
      return false;
  });
-	});
+    });
 </script>

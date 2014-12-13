@@ -127,6 +127,7 @@
        var url= window.location.href;
        
        var st = $(this).scrollTop();
+       var mHeight= $("li.carrito a img").height();
        if (st > lastScrollTop){
                 //console.log("bajando");        
                 $('.menupie').stop(true, true).animate({ bottom: "-12%" }, 3000);
@@ -134,7 +135,7 @@
               } else {
                  //console.log("subiendo");
                  $('.menupie').stop(true, true).animate({ bottom: "0%" }, 3000);
-                 $('.verplatoico').stop(true, true).animate({ bottom: "11.5%" }, 3000);
+                 $('.verplatoico').stop(true, true).animate({ bottom: (mHeight-1)+"px" }, 3000);
                }
                lastScrollTop = st;
 
@@ -143,22 +144,22 @@
                 //console.log(str);
                 if(url.indexOf("categoria/")>0){
                   if ($(this).scrollTop() > 150) {
-                      var data;
-                      try {
-                        data= jQuery.parseJSON(datos);
-                       $.each(data, function(idx, obj) {
-                          if($('#image_'+obj.code).isOnScreen()){          
-                            checkLoad(obj.code);
-                          }        
-                        });                        
-                      } catch (e) {
-                        return;
-                      }  
-                 }
-               }
-             } 
-             return false;
-           });
+                    var data;
+                    try {
+                      data= jQuery.parseJSON(datos);
+                      $.each(data, function(idx, obj) {
+                        if($('#image_'+obj.code).isOnScreen()){          
+                          checkLoad(obj.code);
+                        }        
+                      });                        
+                    } catch (e) {
+                      return;
+                    }  
+                  }
+                }
+              } 
+              return false;
+            });
 setTimeout(function(){$(".btns").fadeIn();}, 1500);
 });
 </script>
