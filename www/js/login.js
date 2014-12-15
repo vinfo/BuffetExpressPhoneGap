@@ -38,7 +38,10 @@ angularRoutingApp.controller('loginController', function($scope, $location,$rout
 	},	
 	$scope.doView = function (hash) {
 		$location.path(hash);
-	}
+	},
+	$scope.hiddeMenu = function () {
+		hiddeMenu();
+	}	
 });
 
 angularRoutingApp.controller('cuentaController', function($scope) {	

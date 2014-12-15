@@ -12,14 +12,7 @@ if (window.jQuery) {
         $(".latermenu").css({"margin-top":$(".menusup").height()});
         $(".botones").css({"bottom":$("li.carrito a img").height()+"px"});        
     });
-    //fin tamaño container    
-    
-    // Menu lateral
-/*    $(".latermenu").hover(function(){
-    },function(){
-        $(".latermenu").animate({"left":-412},200);
-        return false;
-    });*/             
+    //fin tamaño container      
     
     //Mostrar menu lateral  
     $(".verlatermenu").click(function(event){
