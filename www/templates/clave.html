@@ -1,14 +1,15 @@
-    <!-- Cama de contenido inicio sesión -->
-      <div class="recupera_contra">
-        <img src="images/logo.png" class="img1" alt="..." title="..." />
-        <form role="form" id="frmlogin" class="formse" action="">
-          <div class="form-group"> <span class="ico-usua"></span>    
-            <input type="email" class="form-control" id="email" name="email" value="" placeholder="@ Ingresar email" ng-model="email">
-          </div>
-          <div class="form-group">
-            <button type="submit" id="recupera" class="btn btn-default" ng-click="getPass(email)">Recuperar contraseña</button>
-            <button type="submit" id="cerrar" class="btn btn-default" ng-click="doView('login')">Cerrar</button>
-          </div>
-        </form>
-      </div>
+        <!-- Capa de contenido inicio sesión -->
+    <div class="sesion">
+      <img src="images/logo.png" class="img1" alt="..." title="..." />
+      <form role="frmlogin">
+        <div class="form-group">
+          <span class="ico-usua"></span>
+          <input id="email" name="email" type="email" class="form-control" maxlength="45" placeholder="Ingresar email" value="{{email}}" required ng-model="email" />
+        </div>
+        <div class="form-group">
+          <button type="submit" id="recupera" class="btn btn-default" ng-click="getPass()">Recuperar contraseña</button>
+          <button type="reset" id="cerrar" class="btn btn-default" ng-click="doView('login')">Cerrar</button>
+        </div>
+      </form>
+    </div>
     <!-- Fin capa de contenido inicio sesión -->

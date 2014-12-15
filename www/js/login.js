@@ -29,7 +29,12 @@ angularRoutingApp.config(function($routeProvider) {
 	});
 });
 
-angularRoutingApp.controller('loginController', function($scope, $location,$routeParams) {
+angularRoutingApp.controller('loginController', function($scope, $location,$routeParams) {	
+	if(localStorage.dimension<380){
+		$scope.logo="images/logo_pno.png";
+	}else{
+		$scope.logo="images/logo.png";
+	}
 	$scope.goInternal = function() {
 		window.location = "internal.html";	
 	},		
@@ -44,7 +49,12 @@ angularRoutingApp.controller('loginController', function($scope, $location,$rout
 	}	
 });
 
-angularRoutingApp.controller('cuentaController', function($scope) {	
+angularRoutingApp.controller('cuentaController', function($scope) {
+	if(localStorage.dimension<380){
+		$scope.logo="images/logo_pno.png";
+	}else{
+		$scope.logo="images/logo.png";
+	}	
 	$scope.setAccount = function () {
 		ajaxrest.setAccount('add');
 	}
@@ -54,12 +64,21 @@ angularRoutingApp.controller('terminosController', function($scope) {
 	$scope.message = 'Esta es la página de "Terminos"';
 });
 
-angularRoutingApp.controller('claveController', function($scope) {			
-	$scope.getPass = function (email) {
-		var data= ajaxrest.getUser("email="+email+"&token="+localStorage.token);	
-		var dat= angular.fromJson(data);
-		if(dat[0].name!="" && dat[0].name!=""){
-			var data= ajaxrest.getPass("email="+email+"&identity="+dat[0].identity+"&token="+localStorage.token);
+angularRoutingApp.controller('claveController', function($scope) {
+	$scope.getPass = function () {
+		var email= $("#email").val();		
+		if(email){
+			if(validateEmail(email)){
+				var data= ajaxrest.getUser("email="+email+"&token="+localStorage.token);	
+				var dat= angular.fromJson(data);
+				if(dat[0].name!="" && dat[0].name!=""){
+					var data= ajaxrest.getPass("email="+email+"&identity="+dat[0].identity+"&token="+localStorage.token);
+				}
+			}else{
+				alert("E-mail no valido!");
+			}
+		}else{
+			alert("E-mail requerido!");
 		}
 	}
 });

@@ -79,7 +79,7 @@
 
 	});	
 
-	angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){
+	angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){	
 		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
 		if($routeParams.activity)localStorage.activity=$routeParams.activity;
 		var plato= 1;
@@ -114,7 +114,6 @@
 				$scope.guarnicion= Images.setImage(plato,4);
 				$scope.sopa= Images.setImage(plato,5);
 			}
-
 
 			$scope.num_dish= localStorage.plato;
 

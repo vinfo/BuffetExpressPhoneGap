@@ -51,7 +51,7 @@ a img
 {
 	text-align: center;
 	width: 100%;
-	padding-top: 30px;
+	padding-top:25px;
 }
 .form-group 
 {
@@ -118,7 +118,7 @@ a img
 	border: 0px;
 	color: white;
 	border-radius: 20px;
-	width: 33%;
+	min-width: 33%;
 	padding: 7px 10px;
 	font-size: 15px;
 }
@@ -1247,7 +1247,7 @@ max-width:20%;*/
 }
 .terminos
 {
-	padding: 10px;
+	padding:10px;
 }
 .terminos .contt
 {
@@ -1295,6 +1295,8 @@ max-width:20%;*/
 	position: relative;
 	width: 90%;
 	margin: 0 auto;
+	margin-bottom:60px;
+	padding-bottom: 20px;
 }
 .datos_perfil .avt{
 	color: #414042;
@@ -1323,7 +1325,7 @@ max-width:20%;*/
 	background: #FFF;
 	text-align: left;
 	padding: 10px;
-	padding-left: 50px;
+	padding-left:20px;
 	border-radius: 0 0 15px 15px;
 }
 .datos_perfil h1{
@@ -1348,6 +1350,7 @@ max-width:20%;*/
 .datos_perfil .detallesitos p{
 	display: inline-block;
 	color: #414042;
+	width: 80%;
 }
 .datos_perfil .detallesitos .form-group{
 	text-align: center;
