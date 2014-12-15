@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"cu",
+				"cuenta"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
 				"wi",
 				"width"
 			],
@@ -261,30 +269,33 @@
 	},
 	"expanded_folders":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap"
+		"/D/Movilidad/BuffetExpressPhoneGap",
+		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/plugins/nl.x-services.plugins.socialsharing/src/ios/SocialSharing.m",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/generic_icons.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/directives.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/contactenos.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/felicitaciones.html",
 		"/D/wamp/www/familymarketing/eventos/eventos.js",
@@ -391,8 +402,7 @@
 		"/D/Movilidad/Angular/GoogleMap/page/mapa.html",
 		"/D/Movilidad/Angular/GoogleMap/directives.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/entrada.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/main.html",
-		"/D/Movilidad/Angular/angular-routing-master/entrada.html"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/main.html"
 	],
 	"find":
 	{
@@ -413,6 +423,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"SendPay",
+			"pagoController",
+			"hiddeMenu",
+			"verlatermenu",
+			"aba",
+			"comprasController",
+			"mapaController",
+			"cleanSession",
+			"clean",
+			"removeI",
+			"mapaController",
 			"plato_dia",
 			".vermapa label.title",
 			"verlatermenu",
@@ -529,18 +550,7 @@
 			"localStorage.getItem(\"plato\"",
 			"localStorage.setItem(\"plato\"",
 			"alert",
-			"getItems",
-			"alert",
-			"getLastId",
-			"num_dish",
-			"getNumDish",
-			"getLastId",
-			"alert",
-			"orden_final",
-			".miscompras .contpag .cont",
-			"Recomend",
-			".facturavir .contf .tr .td label",
-			"getRealDish"
+			"getItems"
 		],
 		"highlight": false,
 		"in_selection": false,

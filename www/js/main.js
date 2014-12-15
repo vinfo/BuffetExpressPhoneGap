@@ -794,10 +794,15 @@
 		$scope.viewTypePay = function () {
 			$(".sombra,.formpago").css("display","inline");
 		},
-		$scope.SendPay = function () {
-			$(".vrdirc,.bondesc").css("display","none");
-			$(".confirmacion").css("display","inline-block");
-			//cleanSession();
+		$scope.SendPay = function () {			
+			if(!localStorage.getItem("cuenta")){
+				alert("Debe estar logueado para terminar el pedido.");
+				window.location = "login.html";
+			}else{
+				$(".vrdirc,.bondesc").css("display","none");
+				$(".confirmacion").css("display","inline-block");				
+				cleanSession();
+			}
 		}						
 	});
 
