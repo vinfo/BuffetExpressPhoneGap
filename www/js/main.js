@@ -84,6 +84,7 @@
 		if($routeParams.activity)localStorage.activity=$routeParams.activity;
 		var plato= 1;
 		if(localStorage.plato)plato=localStorage.plato;
+		if(localStorage.getItem("dimension")==768)$(".menuplato").css("width","82%");	
 
 		var checkPlato= Items.getItems(plato);
 		var flag=false;
@@ -319,7 +320,7 @@
 				dishes.push(dish[1]);
 			}
 		}		
-		var farr= compressArray(dishes.sort().reverse());		
+		var farr= compressArray(dishes.sort(sortNumber).reverse());		
 		var plato='';
 		var tipo="";
 		var nDish= farr.length;
@@ -640,7 +641,7 @@
 				dishes.push(dish[1]);
 			}
 		}		
-		var farr= compressArray(dishes.sort().reverse());
+		var farr= compressArray(dishes.sort(sortNumber).reverse());
 		var Ditem='';
 		var labels='';
 		var valores='';
@@ -992,11 +993,11 @@
 					var dish= item.split("_");
 					if(item.indexOf("_B_")==0)arr.push(dish[1]);
 				}
-				var total=compressArray(arr.sort());
+				var total=compressArray(arr.sort(sortNumber));				
 				var last_element=1;
 				if(total.length>0){
 					last_element = total[total.length - 1].value;
-				}				
+				}			
 				return parseInt(last_element);
 			},						
 			getFullLastId: function() {
@@ -1008,11 +1009,11 @@
 					if(item.indexOf("item_")==0)arr.push(dish[1]);
 				}				
 				if(arr.length>0){
-					var total=compressArray(arr.sort());						
+					var total=compressArray(arr.sort(sortNumber));						
 					if(total.length>0){
 						last_element = total[total.length - 1].value;
 					}
-				}				
+				}		
 				return parseInt(last_element);
 			},
 			getTypeDish: function(dish) {

@@ -41,7 +41,7 @@ angularRoutingApp.controller('loginController', function($scope, $location,$rout
 	}
 });
 
-angularRoutingApp.controller('cuentaController', function($scope) {
+angularRoutingApp.controller('cuentaController', function($scope) {	
 	$scope.setAccount = function () {
 		ajaxrest.setAccount('add');
 	}

@@ -1,22 +1,43 @@
 localStorage.clear();
-getPosition();
+getLocation();
 
-function getPosition(){
-	if(navigator.geolocation) {                    
-		navigator.geolocation.getCurrentPosition(function(position) {
-			lat= position.coords.latitude;
-			lng= position.coords.longitude;  
-			coord= lat+', '+lng;			
-			var dist=getDistance({lat:lat,lng:lng},{lat:6.250756,lng:-75.568008});
-      window.setTimeout(function() {
-          window.location.href = 'internal.html';
-      }, 1800);      
-		});                    
-	}else{
-		alert("Dispositivo no tiene GPS");
-    window.location.href = 'internal.html';
-	}	
+function getLocation() {
+    if (navigator.geolocation) {
+       navigator.geolocation.getCurrentPosition(showPosition, showError);
+       window.setTimeout(function() {                
+              window.location.href = 'internal.html';
+       }, 1400);        
+    } else { 
+        alert("Geolocation is not supported by this browser.");
+    }    
 }
+
+function showPosition(position) {
+   //alert("Latitude: " + position.coords.latitude +",Longitude: " + position.coords.longitude);
+   localStorage.setItem("GPS",true);
+   lat= position.coords.latitude;
+   lng= position.coords.longitude;  
+   coord= lat+', '+lng;
+   var dist=getDistance({lat:lat,lng:lng},{lat:6.250756,lng:-75.568008});
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            alert("User denied the request for Geolocation.");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            alert("Location information is unavailable.");
+            break;
+        case error.TIMEOUT:
+            alert("The request to get user location timed out.");
+            break;
+        case error.UNKNOWN_ERROR:
+            alert("An unknown error occurred.");
+            break;
+    }
+}
+/* Calacular distancia */
 var rad = function(x) {
   return x * Math.PI / 180;
 };

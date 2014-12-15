@@ -24,18 +24,18 @@ if (window.jQuery) {
     //Mostrar menu lateral  
     $(".verlatermenu").click(function(event){
         event.preventDefault();
-        var img= $(".menusup button.ico-menu span").css('background-image').split("flecha_atras");
-        var activity= localStorage.getItem("activity");
+        var img= $(".menusup button.ico-menu span").css('background-image').split("flecha_atras");        
         if(img[1] && img[1].length>0){
             $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
             //window.history.back();
-            if(activity=="ins"){
-                window.location = "internal.html#/menu";
-            }else if(activity=="edit"){
-               window.location = "internal.html#/compras"; 
-            }else{
-                window.location = "internal.html#/slider";
-            }
+            var url= window.location.href.split('#/');
+            var data= url[1].split("/");
+
+            var redir="internal.html#/slider";            
+            if(data[1]=="ins")redir= "internal.html#/menu";
+            if(data[1]=="edit")redir= "internal.html#/compras";
+            if(url[1]=="pago")redir= "internal.html#/compras";            
+            window.location = redir;
         }else{
             var position = $(".latermenu").position();
             if(position.left==0){
@@ -80,4 +80,13 @@ function addShop(action){
    localStorage.setItem("num",num);
    $(".numero").html(num);
    return false;
+}
+$.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results==null){
+       return null;
+    }
+    else{
+       return results[1] || 0;
+    }
 }
