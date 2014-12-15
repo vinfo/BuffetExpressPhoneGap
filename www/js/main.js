@@ -339,10 +339,13 @@
 			var data= ajaxrest.getItemsxDish("codes="+codes+"&token="+localStorage.token);
 			var dat = angular.fromJson(data);
 
+
 			var Narray=[];
-			for(var m=0;m<dat.length;m++){
+			for(var m=0;m<dat.length;m++){			
 				var valor= JSON.parse(localStorage.getItem("item_"+dish+"_"+dat[m].idCat+"_"+tipo+"_"+dat[m].code));
-				Narray.push({pos:valor.pos,data:dat[m]});
+				if(valor){
+					Narray.push({pos:valor.pos,data:dat[m]});					
+				}				
 			}
 
 			var sort_by = function(field, reverse, primer){
@@ -794,7 +797,7 @@
 		$scope.SendPay = function () {
 			$(".vrdirc,.bondesc").css("display","none");
 			$(".confirmacion").css("display","inline-block");
-			cleanSession();
+			//cleanSession();
 		}						
 	});
 
@@ -819,6 +822,7 @@
 	});			
 
 	angularRoutingApp.controller("mapaController", ["$scope", function mapaController($scope) {
+		if(localStorage.getItem("GPS")=="false")alert("GPS no detectado!");
 		setBackground("fondo","");
 		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
 		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});

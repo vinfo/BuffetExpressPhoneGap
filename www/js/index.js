@@ -2,6 +2,7 @@ localStorage.clear();
 getLocation();
 
 function getLocation() {
+    localStorage.setItem("GPS",false);
     if (navigator.geolocation) {
        navigator.geolocation.getCurrentPosition(showPosition, showError);
        window.setTimeout(function() {                

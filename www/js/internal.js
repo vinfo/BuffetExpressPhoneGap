@@ -15,11 +15,11 @@ if (window.jQuery) {
     //fin tamaño container    
     
     // Menu lateral
-    $(".latermenu").hover(function(){
+/*    $(".latermenu").hover(function(){
     },function(){
         $(".latermenu").animate({"left":-412},200);
         return false;
-    });             
+    });*/             
     
     //Mostrar menu lateral  
     $(".verlatermenu").click(function(event){
