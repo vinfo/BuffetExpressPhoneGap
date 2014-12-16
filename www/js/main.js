@@ -205,7 +205,7 @@
 			$scope.setDish = function (dish,action) {				
 				var activity= localStorage.activity;
 				var plato= localStorage.getItem("plato");
-				var checkPlato= Items.getItems(plato);				
+				var checkPlato= Items.getItems(plato);			
 				
 				var flag=false;
 				if(Items.getTypeDish(plato)=="R"){
@@ -274,7 +274,7 @@
 					if(action=="add")$(".costoad").fadeIn();
 					redir=false;
 				}
-				localStorage.setItem("plato",plato);
+				localStorage.setItem("plato",plato);			
 				$("#totalDish").html(Items.getFullLastId());
 				if(activity=="ins" && action=="add" && cant!=0 && redir && items<=1)window.location = "internal.html#/menu";
 				//if(activity!="edit" && action=="add" && cant!=0 && redir)window.location = "internal.html#/compras";
@@ -320,8 +320,7 @@
 			}
 		}		
 		var farr= compressArray(dishes.sort(sortNumber).reverse());		
-		var plato='';
-		var tipo="";
+		var plato='';		
 		var nDish= farr.length;
 		for(var h=0;h<farr.length;h++){
 			var item= farr[h];
@@ -331,18 +330,18 @@
 				var item= localStorage.key(j);
 				if(item.indexOf("item_"+dish)==0){
 					var cod= item.split("_");
-					codes+=cod[4]+",";
-					tipo=cod[3];
+					codes+=cod[4]+",";				
 				}
 			}
 			var data= ajaxrest.getItemsxDish("codes="+codes+"&token="+localStorage.token);
 			var dat = angular.fromJson(data);
 
-
 			var Narray=[];
-			for(var m=0;m<dat.length;m++){			
+			var tipo="";
+			for(var m=0;m<dat.length;m++){				
+				tipo= Items.getCat(dish);
 				var valor= JSON.parse(localStorage.getItem("item_"+dish+"_"+dat[m].idCat+"_"+tipo+"_"+dat[m].code));
-				if(valor){
+				if(valor){					
 					Narray.push({pos:valor.pos,data:dat[m]});					
 				}				
 			}
@@ -356,7 +355,7 @@
 					return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
 				} 
 			}			
-
+			
 			var datos= Narray.sort(sort_by('pos', true, parseInt));		
 
 			var c1=0;c2=0;c3=0;c4=0;c5=0;
@@ -375,14 +374,15 @@
 			var sopaIco="images/sopas_mini.png";
 			var htotal=0;
 			var total=0;
-			for(var m=0;m<datos.length;m++){
-				if(tipo=="B"){
-					htotal= parseInt(localStorage.valor_buffet);				
-				}else{
-					htotal= parseInt(localStorage.valor_recomendado);
-				}
-				total=htotal;
 
+			tipo= Items.getCat(dish);
+			if(tipo=="B"){
+				htotal= parseInt(localStorage.valor_buffet);				
+			}else{
+				htotal= parseInt(localStorage.valor_recomendado);
+			}
+			total=htotal;
+			for(var m=0;m<datos.length;m++){
 				var code= datos[m].data.code;
 				var name= datos[m].data.name;
 				var cat= datos[m].data.idCat;
@@ -484,7 +484,8 @@
 			
 			var nameDish="Plato #"+nDish;
 			if(tipo=="R")nameDish="Recomendado Día";
-			plato='<div class="comprasitem" id="dish_'+dish+'"><div class="imgcont" id="img_'+dish+'"><div class="padre"><div class = "derrap"><div class="contenedor"><div class="sopa"><img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/><div class="sopacont"><img src="'+sopa+'" style="width:100%;" border="0" margin="0" /></div></div><div class="vaso"><img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/><div class="jugo"><img src="'+bebidas+'" style="width:100%;" border="0" margin="0"/></div></div><div class="plato"><img src="images/plato.png" style="width:100%;" border="0" margin="0"/><div class="arroz"><img src="'+arroz+'" style="width:100%;" border="0" margin="0"/></div><div class="guarnicion"><img src="'+guarnicion+'" style="width:100%;" border="0" margin="0"/></div><div class="carne"><img src="'+carnes+'" style="width:100%;" border="0" margin="0"/></div></div></div></div></div></div><div class="contnn"><h3>'+nameDish+'</h3><p>'+ppal+extra+'</p></p><div class="icodeli"><span class="elimina" onclick="setFinalOrder('+dish+',\'less\',\''+tipo+'\')"></span><span class="contador"><label id="cont_'+dish+'">'+cantDish+'</label></span><span class="suma" onclick="setFinalOrder('+dish+',\'add\',\''+tipo+'\')"></span></div></div><div class="icodeta"><div><img src="'+sopaIco+'" alt="..." title="..." onclick="editDish(5,\'sopas y cremas\','+dish+',\''+tipo+'\')"></div><div><img src="'+arrozIco+'" alt="..." title="..." onclick="editDish(1,\'arroz\','+dish+',\''+tipo+'\')"></div><div><img src="'+carnesIco+'" alt="..." title="..." onclick="editDish(3,\'carnes\','+dish+',\''+tipo+'\')"></div><div><img src="'+guarnicionIco+'" alt="..." title="..." onclick="editDish(4,\'guarnición\','+dish+',\''+tipo+'\')"></div><div><img src="'+bebidasIco+'" alt="..." title="..." onclick="editDish(2,\'bebidas\','+dish+',\''+tipo+'\')"></div> <div class="subtt"><input type="hidden" name="price_'+dish+'" id="price_'+dish+'" value="'+htotal+'" /><label class="currency" id="lprice_'+dish+'">$'+Currency.setMoney(total, 0, ",", ".")+'</label></div></div>';
+			plato='<div class="comprasitem" id="dish_'+dish+'"><div class="imgcont" id="img_'+dish+'"><div class="padre"><div class = "derrap"><div class="contenedor"><div class="sopa"><img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/><div class="sopacont"><img src="'+sopa+'" style="width:100%;" border="0" margin="0" /></div></div><div class="vaso"><img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/><div class="jugo"><img src="'+bebidas+'" style="width:100%;" border="0" margin="0"/></div></div><div class="plato"><img src="images/plato.png" style="width:100%;" border="0" margin="0"/><div class="arroz"><img src="'+arroz+'" style="width:100%;" border="0" margin="0"/></div><div class="guarnicion"><img src="'+guarnicion+'" style="width:100%;" border="0" margin="0"/></div><div class="carne"><img src="'+carnes+'" style="width:100%;" border="0" margin="0"/></div></div></div></div></div></div><div class="contnn"><h3>'+nameDish+'</h3><p>'+ppal+extra+'</p></p><div class="icodeli"><span class="elimina" onclick="setFinalOrder('+dish+',\'less\',\''+tipo+'\')"></span><span class="contador"><label id="cont_'+dish+'">'+cantDish+'</label></span><span class="suma" onclick="setFinalOrder('+dish+',\'add\',\''+tipo+'\')"></span></div></div><div class="icodeta"><div><img src="'+sopaIco+'" alt="..." title="..." onclick="editDish(5,\'sopas y cremas\','+dish+',\''+tipo+'\')"></div><div><img src="'+arrozIco+'" alt="..." title="..." onclick="editDish(1,\'arroz\','+dish+',\''+tipo+'\')"></div><div><img src="'+carnesIco+'" alt="..." title="..." onclick="editDish(3,\'carnes\','+dish+',\''+tipo+'\')"></div><div><img src="'+guarnicionIco+'" alt="..." title="..." onclick="editDish(4,\'guarnición\','+dish+',\''+tipo+'\')"></div><div><img src="'+bebidasIco+'" alt="..." title="..." onclick="editDish(2,\'bebidas\','+dish+',\''+tipo+'\')"></div> <div class="subtt"><input type="hidden" name="price_'+dish+'" id="price_'+dish+'" value="'+htotal+'" /><label class="currency" id="lprice_'+dish+'">$'+Currency.setMoney(total, 0, ",", ".")+'</label></div></div>';			
+			
 			$("#miscompras").append(plato);
 			var icodeta=$(".icodeta").height();
 			var padre=$("#dish_"+nDish).height();
@@ -494,6 +495,7 @@
 			nDish--;
 		}
 		var fDish= Items.getRealDish();
+
 		var contPago='<div class="contpag" onclick="doPay(\''+fDish+'\')"><div class="cont">Continúe con el pago</div></div>';
 		$("#miscompras").append(contPago);
 		$("#miscompras").append('<div style="height:250px;">&nbsp;</div>');
@@ -614,12 +616,14 @@
 		$scope.goPay = function () {
 			var items= angular.fromJson(localStorage.getItem("plato_dia"));
 			var plato= Items.getFullLastId()+1;
+			
 			for(var j=0;j<items.length;j++){	
 				localStorage.setItem("item_"+plato+"_"+items[j].cat+"_R_"+items[j].code,JSON.stringify({cant:1,pos:j+1}));
 			}
-			localStorage.setItem("plato",Items.getFullLastId()+1);
+
+			localStorage.setItem("plato",plato);
 			localStorage.setItem("cant_R_"+plato,1);
-			$("#totalDish").html(Items.getNumDish());	
+			$("#totalDish").html(Items.getNumDish());
 			$location.path("compras");
 		}	
 		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});			
@@ -663,7 +667,6 @@
 					if(item.indexOf("item_"+dish)==0){
 						var cod=item.split("_");
 						codes+=cod[4]+",";
-						tipo=cod[3];
 					}
 				}
 				var data= ajaxrest.getItemsxDish("codes="+codes+"&token="+localStorage.token);
@@ -672,15 +675,14 @@
 				var ppal="";
 				var extra="";
 				var total=0;
-				var total2=0;				
+				var total2=0;	
+				tipo= Items.getCat(dish);
+				if(tipo=="B"){
+					total= parseInt(localStorage.valor_buffet);
+				}else{
+					total= parseInt(localStorage.valor_recomendado);
+				}
 				for(var m=0;m<dat.length;m++){
-					if(tipo=="B"){
-						total= parseInt(localStorage.valor_buffet);
-					}else{
-						total= parseInt(localStorage.valor_recomendado);
-					}
-					//if(dish==1)alert("TOTAL1= "+total);
-
 					var code=dat[m].code;
 					var name=dat[m].name;
 					var cat=dat[m].idCat;
@@ -688,10 +690,8 @@
 
 					var vItem= "item_"+dish+"_"+cat+"_"+tipo+"_"+code;
 					cant= Items.getExtraDish(vItem);
-					var add="";
-
-					//if(dish==1)alert("Total2= "+total+ " - "+vItem +" - "+ JSON.stringify(dat));					
-
+					var add="";					
+					
 					if(cat==1){					
 						if(c1==0){
 							var ad="";
@@ -699,8 +699,7 @@
 								ad= " <b>(extra X "+ (cant - 1)+")</b>";
 								total+= price * (cant-1);
 							}
-							ppal+="- "+name+ad+"</br>";	
-							//if(dish==1)alert("C1 Precio="+price+" - Cant="+cant);			
+							ppal+="- "+name+ad+"</br>";			
 						}else{
 							var ad="";
 							if(cant>=1){
@@ -718,8 +717,7 @@
 								ad= " <b>(extra X "+ (cant - 1)+")</b>";
 								total+= price * (cant-1);
 							}
-							ppal+="- "+name+ad+"</br>";	
-							//if(dish==1)alert("C2 Precio="+price+" - Cant="+cant);			
+							ppal+="- "+name+ad+"</br>";			
 						}else{						
 							var ad="";
 							if(cant>=1){
@@ -737,8 +735,7 @@
 								ad= " <b>(extra X "+ (cant - 1)+")</b>";
 								total+= price * (cant-1);
 							}
-							ppal+="- "+name+ad+"</br>";							
-							//if(dish==1)alert("C3 Precio="+price+" - Cant="+cant);					
+							ppal+="- "+name+ad+"</br>";					
 						}else{
 							var ad="";
 							if(cant>=1){
@@ -756,8 +753,7 @@
 								ad= " <b>(extra X "+ (cant - 1)+")</b>";
 								total+= price * (cant-1);
 							}
-							ppal+="- "+name+ad+"</br>";	
-							//if(dish==1)alert("C4 Precio="+price+" - Cant="+cant);			
+							ppal+="- "+name+ad+"</br>";		
 						}else{
 							var ad="";
 							if(cant>=1){
@@ -775,8 +771,7 @@
 								ad= " <b>(extra X "+ (cant - 1)+")</b>";
 								total+= price * (cant-1);
 							}
-							ppal+="- "+name+ad+"</br>";	
-							//if(dish==1)alert("C5 Precio="+price+" - Cant="+cant);				
+							ppal+="- "+name+ad+"</br>";			
 						}else{
 							var ad="";
 							if(cant>=1){
@@ -786,11 +781,11 @@
 							extra+="- "+name+ad+"</br>";
 						}
 						c5++;
-					}
-					//if(dish==1)alert("TOTAL3= "+total);																				
+					}																	
 				}
 				var cantDish=1;
 				total2=total;
+
 				if(localStorage.getItem("cant_"+tipo+"_"+dish)){				
 					cantDish=localStorage.getItem("cant_"+tipo+"_"+dish);				
 					if(cantDish>0)total2=total*cantDish;
@@ -1100,7 +1095,18 @@
 					}
 				}
 				return items;
-			},			
+			},	
+			getCat: function(Dish) {
+				var cat="";
+				for (var i = 0; i < localStorage.length; i++){
+					var item= localStorage.key(i);
+					if(item.indexOf("item_"+Dish+"_")==0){
+						var valor= item.split("_");
+						cat= valor[3];
+					}
+				}
+				return cat;
+			},					
 			getDetail: function(Dish) {
 				var codes="";
 				var dat=[];
