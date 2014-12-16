@@ -211,6 +211,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "www/js/index.js",
+			"settings":
+			{
+				"buffer_size": 1780,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -269,17 +277,20 @@
 	},
 	"expanded_folders":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap"
+		"/D/Movilidad/BuffetExpressPhoneGap",
+		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
 	[
+		"/C/Users/odc/Desktop/CIA.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/clave.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/clave.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/terminos.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
@@ -399,8 +410,7 @@
 		"/D/Movilidad/Angular/GoogleMap/app.js",
 		"/D/Movilidad/Angular/GoogleMap/page/mapa.html",
 		"/D/Movilidad/Angular/GoogleMap/directives.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/entrada.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/main.html"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/entrada.html"
 	],
 	"find":
 	{
@@ -593,8 +603,42 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "www/js/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1780,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								319,
+								319
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

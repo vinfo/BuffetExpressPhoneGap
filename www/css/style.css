@@ -478,6 +478,7 @@ a img
 {
 	cursor: pointer;
 	width: 48px;
+	margin: 0 5px;
 }
 .menuplatolist .col-md-12 .detalle
 {
@@ -755,6 +756,7 @@ input[type=checkbox]:checked:before{
 {
 	width:45px;
 	height:45px;
+	margin: 0 5px;
 	background: url(../images/contador_pedido.png);
 	vertical-align:top;
 }

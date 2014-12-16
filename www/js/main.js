@@ -375,13 +375,14 @@
 			var sopaIco="images/sopas_mini.png";
 			var htotal=0;
 			var total=0;
-			if(tipo=="B"){
-				htotal= parseInt(localStorage.valor_buffet);				
-			}else{
-				htotal= parseInt(localStorage.valor_recomendado);
-			}
-			total=htotal;
 			for(var m=0;m<datos.length;m++){
+				if(tipo=="B"){
+					htotal= parseInt(localStorage.valor_buffet);				
+				}else{
+					htotal= parseInt(localStorage.valor_recomendado);
+				}
+				total=htotal;
+
 				var code= datos[m].data.code;
 				var name= datos[m].data.name;
 				var cat= datos[m].data.idCat;
@@ -651,7 +652,7 @@
 		var plato='';	
 		var tipo="";
 		var nDish=farr.length;
-		for(var h=0;h<farr.length;h++){			
+		for(var h=0;h<farr.length;h++){		
 			var item= farr[h];
 			var dish=item.value;//Real ID plato
 			var codes="";
@@ -671,13 +672,15 @@
 				var ppal="";
 				var extra="";
 				var total=0;
-				var total2=0;
-				if(tipo=="B"){
-					total= parseInt(localStorage.valor_buffet);
-				}else{
-					total= parseInt(localStorage.valor_recomendado);
-				}
+				var total2=0;				
 				for(var m=0;m<dat.length;m++){
+					if(tipo=="B"){
+						total= parseInt(localStorage.valor_buffet);
+					}else{
+						total= parseInt(localStorage.valor_recomendado);
+					}
+					//if(dish==1)alert("TOTAL1= "+total);
+
 					var code=dat[m].code;
 					var name=dat[m].name;
 					var cat=dat[m].idCat;
@@ -687,76 +690,104 @@
 					cant= Items.getExtraDish(vItem);
 					var add="";
 
+					//if(dish==1)alert("Total2= "+total+ " - "+vItem +" - "+ JSON.stringify(dat));					
+
 					if(cat==1){					
 						if(c1==0){
 							var ad="";
-							if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
-							ppal+="- "+name+ad+"</br>";		
-							total+= price * (cant-1);				
+							if(cant>1){
+								ad= " <b>(extra X "+ (cant - 1)+")</b>";
+								total+= price * (cant-1);
+							}
+							ppal+="- "+name+ad+"</br>";	
+							//if(dish==1)alert("C1 Precio="+price+" - Cant="+cant);			
 						}else{
 							var ad="";
-							if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";							
-							extra+="- "+name+ad+"</br>";
-							total+= price * cant;	
+							if(cant>=1){
+								ad= " <b>(extra X "+ (cant)+")</b>";
+								total+= price * cant;	
+							}						
+							extra+="- "+name+ad+"</br>";								
 						}					
 						c1++;
 					}
 					if(cat==2){					
 						if(c2==0){
 							var ad="";
-							if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
-							ppal+="- "+name+ad+"</br>";		
-							total+= price * (cant-1);				
+							if(cant>1){
+								ad= " <b>(extra X "+ (cant - 1)+")</b>";
+								total+= price * (cant-1);
+							}
+							ppal+="- "+name+ad+"</br>";	
+							//if(dish==1)alert("C2 Precio="+price+" - Cant="+cant);			
 						}else{						
 							var ad="";
-							if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";							
+							if(cant>=1){
+								ad= " <b>(extra X "+ (cant)+")</b>";
+								total+= price * cant;	
+							}						
 							extra+="- "+name+ad+"</br>";
-							total+= price * cant;
 						}
 						c2++;
 					}
 					if(cat==3){					
 						if(c3==0){
 							var ad="";
-							if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
-							ppal+="- "+name+ad+"</br>";	
-							total+= price * (cant-1);						
+							if(cant>1){
+								ad= " <b>(extra X "+ (cant - 1)+")</b>";
+								total+= price * (cant-1);
+							}
+							ppal+="- "+name+ad+"</br>";							
+							//if(dish==1)alert("C3 Precio="+price+" - Cant="+cant);					
 						}else{
 							var ad="";
-							if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";							
-							extra+="- "+name+ad+"</br>";	
-							total+= price * cant;				
+							if(cant>=1){
+								ad= " <b>(extra X "+ (cant)+")</b>";
+								total+= price * cant;	
+							}						
+							extra+="- "+name+ad+"</br>";			
 						}
 						c3++;
 					}
 					if(cat==4){					
 						if(c4==0){
 							var ad="";
-							if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
-							ppal+="- "+name+ad+"</br>";		
-							total+= price * (cant-1);				
+							if(cant>1){
+								ad= " <b>(extra X "+ (cant - 1)+")</b>";
+								total+= price * (cant-1);
+							}
+							ppal+="- "+name+ad+"</br>";	
+							//if(dish==1)alert("C4 Precio="+price+" - Cant="+cant);			
 						}else{
 							var ad="";
-							if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";							
+							if(cant>=1){
+								ad= " <b>(extra X "+ (cant)+")</b>";
+								total+= price * cant;	
+							}						
 							extra+="- "+name+ad+"</br>";
-							total+= price * cant;
 						}
 						c4++;
 					}
 					if(cat==5){					
 						if(c5==0){
 							var ad="";
-							if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
-							ppal+="- "+name+ad+"</br>";		
-							total+= price * (cant-1);				
+							if(cant>1){
+								ad= " <b>(extra X "+ (cant - 1)+")</b>";
+								total+= price * (cant-1);
+							}
+							ppal+="- "+name+ad+"</br>";	
+							//if(dish==1)alert("C5 Precio="+price+" - Cant="+cant);				
 						}else{
 							var ad="";
-							if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";						
+							if(cant>=1){
+								ad= " <b>(extra X "+ (cant)+")</b>";
+								total+= price * cant;	
+							}						
 							extra+="- "+name+ad+"</br>";
-							total+= price * cant;
 						}
 						c5++;
-					}																				
+					}
+					//if(dish==1)alert("TOTAL3= "+total);																				
 				}
 				var cantDish=1;
 				total2=total;
@@ -764,6 +795,7 @@
 					cantDish=localStorage.getItem("cant_"+tipo+"_"+dish);				
 					if(cantDish>0)total2=total*cantDish;
 				}
+
 				var nameDish="Plato #"+nDish+" (Und x "+cantDish+")";
 				if(tipo=="R")nameDish="Recomendado (Und x "+cantDish+")";
 				labels+='<label>'+nameDish+'</label>';

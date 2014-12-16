@@ -13,7 +13,7 @@ function getLocation() {
 }
 
 function showPosition(position) {
-   //alert("Latitude: " + position.coords.latitude +",Longitude: " + position.coords.longitude);
+   alert("Latitude: " + position.coords.latitude +",Longitude: " + position.coords.longitude);
    localStorage.setItem("GPS",true);
    lat= position.coords.latitude;
    lng= position.coords.longitude;  
