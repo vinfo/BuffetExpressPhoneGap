@@ -23,12 +23,14 @@
                 markAdressToMap(pos);
             };
             var getPosition= function(){
-                if(navigator.geolocation) {                    
+                if(navigator.geolocation) {      
+                    alert(1);              
                     navigator.geolocation.getCurrentPosition(function(position) {
                         lat= position.coords.latitude;
                         lng= position.coords.longitude;  
                         coord= lat+', '+lng;
                         initialize(coord);
+                        alert(2);
                     });                    
                 }                
             }

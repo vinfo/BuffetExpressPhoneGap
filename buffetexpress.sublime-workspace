@@ -4,8 +4,20 @@
 		"selected_items":
 		[
 			[
+				"na",
+				"Narray"
+			],
+			[
+				"dis",
+				"dish"
+			],
+			[
 				"ma",
-				"margin-bottom"
+				"margin"
+			],
+			[
+				"m",
+				"margin"
 			],
 			[
 				"p",
@@ -34,10 +46,6 @@
 			[
 				"t",
 				"table"
-			],
-			[
-				"m",
-				"margin-top"
 			],
 			[
 				"op",
@@ -78,10 +86,6 @@
 			[
 				"it",
 				"items"
-			],
-			[
-				"dis",
-				"display"
 			],
 			[
 				"name",
@@ -211,14 +215,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "www/js/index.js",
-			"settings":
-			{
-				"buffer_size": 1780,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -279,22 +275,24 @@
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/bootstrap",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates"
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/C/Users/odc/Desktop/CIA.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/clave.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/terminos.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
@@ -306,7 +304,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/directives.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/contactenos.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/felicitaciones.html",
 		"/D/wamp/www/familymarketing/eventos/eventos.js",
@@ -431,6 +428,24 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"pagoController",
+			"alert",
+			"tipo==\"B\"",
+			"alert",
+			"setDish",
+			"editDish",
+			"pagoController",
+			"tipo",
+			"getCat",
+			"alert",
+			"getCat",
+			"recomendadoController",
+			".sort",
+			"pagoController",
+			"comprasController",
+			"span.contador",
+			".miscompras .comprasitem .icodeli span.contador",
+			".menuplatolist .col-md-12 .btnts img",
 			"setAccount",
 			"hola",
 			"getPass ",
@@ -540,25 +555,7 @@
 			"alert",
 			"redesController",
 			"mi_cuentaController",
-			"felicitacionesController",
-			"nosotrosController",
-			"setBackground",
-			"nosotrosController",
-			"pagoController",
-			"stop",
-			"flag=true;",
-			"getTypeDish",
-			"getItemsxDish",
-			"c5++;",
-			"alert",
-			"getExtraDish",
-			"alert",
-			"getExtraDish",
-			"extra",
-			"alert",
-			"getItemsxCat",
-			"getPos",
-			"getCantAdicional"
+			"felicitacionesController"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -603,42 +600,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "www/js/index.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1780,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								319,
-								319
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
