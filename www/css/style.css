@@ -253,6 +253,7 @@ a img
 	width: 100%;
 	position: relative;
 	margin-top: 1%;
+	z-index: 100;
 }
 .buffet .owl-controls .owl-page 
 {
@@ -1747,10 +1748,10 @@ max-width:20%;*/
 
 input[type="radio"], input[type="checkbox"] {
   /* All browsers except webkit*/
-  transform: scale(1.5);
+  transform: scale("1.7");
 
   /* Webkit browsers*/
-  -webkit-transform: scale(1.5);
+  -webkit-transform: scale(1.7);
 }
 
 @media (max-width: 532px){

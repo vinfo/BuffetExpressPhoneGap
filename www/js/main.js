@@ -321,7 +321,7 @@
 				dishes.push(dish[1]);
 			}
 		}		
-		var farr= compressArray(dishes.sort(sortNumber).reverse());		
+		var farr= compressArray(dishes.sort(sortNumber).reverse());
 		var plato='';		
 		var nDish= farr.length;
 		for(var h=0;h<farr.length;h++){
@@ -330,7 +330,8 @@
 			var codes="";
 			for(var j=0;j<localStorage.length;j++){
 				var item= localStorage.key(j);
-				if(item.indexOf("item_"+dish)==0){
+				var parts= item.split('_');			
+				if(parts[1]==dish && item.indexOf("item_"+dish)==0){
 					var cod= item.split("_");
 					codes+=cod[4]+",";				
 				}
@@ -665,13 +666,14 @@
 		var nDish=farr.length;
 		for(var h=0;h<farr.length;h++){		
 			var item= farr[h];
-			var dish=item.value;//Real ID plato
+			var dish= item.value;//Real ID plato
 			var codes="";
-			var itemsDish=Items.getItems(dish);
+			var itemsDish= Items.getItems(dish);			
 			if(itemsDish>2){
 				for(var j=0;j<localStorage.length;j++){
-					var item= localStorage.key(j);
-					if(item.indexOf("item_"+dish)==0){
+					var item= localStorage.key(j);					
+					var parts= item.split('_');								
+					if(parts[1]==dish && item.indexOf("item_"+dish)==0){
 						var cod=item.split("_");
 						codes+=cod[4]+",";
 					}
@@ -689,6 +691,8 @@
 				}else{
 					total= parseInt(localStorage.valor_recomendado);
 				}
+
+				if(dish==1)total;
 				for(var m=0;m<dat.length;m++){
 					var code=dat[m].code;
 					var name=dat[m].name;
@@ -798,7 +802,7 @@
 					if(cantDish>0)total2=total*cantDish;
 				}
 
-				var nameDish="Plato #"+nDish+" (Und x "+cantDish+")";
+				var nameDish="Plato #"+dish+" (Und x "+cantDish+")";
 				if(tipo=="R")nameDish="Recomendado (Und x "+cantDish+")";
 				labels+='<label>'+nameDish+'</label>';
 				Gtotal+=total2;
@@ -831,7 +835,7 @@
 			if(!localStorage.getItem("cuenta")){
 				alert("Debe estar logueado para terminar el pedido.");
 				localStorage.setItem("orden","Pendiente");
-				window.location = "login.html";
+				window.location = "login.html#/cuenta";
 			}else{
 				if($("#direccion").val()!=""){
 					$(".vrdirc,.bondesc").css("display","none");
