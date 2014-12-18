@@ -640,6 +640,7 @@
 	angularRoutingApp.controller('pagoController', function($scope,Items,Currency) {
 		setBackground("","white");
 		$(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
+		if(localStorage.getItem("direccion"))$scope.direccion=localStorage.getItem("direccion");
 		var domicilio=0;
 		var dishes=[];
 		var tipo_pago="efectivo";
@@ -831,13 +832,15 @@
 		$scope.viewTypePay = function () {
 			$(".sombra,.formpago").css("display","inline");
 		},
-		$scope.SendPay = function () {			
+		$scope.SendPay = function () {	
+			var dir= $("#direccion").val();		
 			if(!localStorage.getItem("cuenta")){
 				alert("Debe estar logueado para terminar el pedido.");
 				localStorage.setItem("orden","Pendiente");
+				localStorage.setItem("direccion",dir);
 				window.location = "login.html#/cuenta";
 			}else{
-				if($("#direccion").val()!=""){
+				if(dir!=""){
 					$(".vrdirc,.bondesc").css("display","none");
 					$(".confirmacion").css("display","inline-block");
 					localStorage.removeItem("orden");			
