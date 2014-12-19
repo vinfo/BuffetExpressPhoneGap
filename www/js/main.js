@@ -640,7 +640,11 @@
 	angularRoutingApp.controller('pagoController', function($scope,Items,Currency) {
 		setBackground("","white");
 		$(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
-		if(localStorage.getItem("direccion"))$scope.direccion=localStorage.getItem("direccion");
+		if(localStorage.getItem("direccion")){
+			$scope.direccion=localStorage.getItem("direccion");
+			$scope.referencia=localStorage.getItem("referencia");
+		}
+		
 		var domicilio=0;
 		var dishes=[];
 		var tipo_pago="efectivo";
@@ -834,16 +838,20 @@
 		},
 		$scope.SendPay = function () {	
 			var dir= $("#direccion").val();		
+			var referencia= $("#referencia").val();
 			if(!localStorage.getItem("cuenta")){
 				alert("Debe estar logueado para terminar el pedido.");
 				localStorage.setItem("orden","Pendiente");
 				localStorage.setItem("direccion",dir);
+				localStorage.setItem("referencia",referencia);
 				window.location = "login.html#/cuenta";
 			}else{
 				if(dir!=""){
 					$(".vrdirc,.bondesc").css("display","none");
 					$(".confirmacion").css("display","inline-block");
-					localStorage.removeItem("orden");			
+					localStorage.removeItem("orden");
+					localStorage.removeItem("direccion");
+					localStorage.removeItem("referencia");
 					cleanSession();
 				}else{
 					alert("Dirección es requerida.");

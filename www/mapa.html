@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Geolocation</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-  </head>
-  <body>
-  <!-- https://angular-ui.github.io/angular-google-maps/#!/use -->
-    <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
-  </body>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>    
-    <script src="js/angular.min.js"></script>
-    <script src="js/angular-google-maps.min.js"></script>  
-    <script src="js/lodash.min.js"></script> 
+<html ng-app="app">
+
+<head>
+    <link rel="stylesheet" href="assets/stylesheets/example.css">
+    <script src="https://code.angularjs.org/1.3.3/angular.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.underscore.js"></script>
+    <script src="../dist/angular-google-maps_dev_mapped.js"></script>
+    <script src="assets/scripts/controllers/dragzoom.js"></script>
+    <title>Map</title>
+</head>
+
+<body>
+<div data-ng-controller="ctrl">
+    <ui-gmap-google-map id="map"
+                        center="map.center"
+                        pan="map.pan"
+                        zoom="map.zoom"
+                        draggable="true"
+                        refresh="map.refresh"
+                        options="map.options"
+                        events="map.events"
+                        bounds="map.bounds">
+
+
+        <ui-gmap-drag-zoom keyboardkey="'alt'"></ui-gmap-drag-zoom>
+        <!--<ui-gmap-drag-zoom options='map.dragZoom.options'></ui-gmap-drag-zoom>-->
+    </ui-gmap-google-map>
+</div>
+</body>
+
 </html>
