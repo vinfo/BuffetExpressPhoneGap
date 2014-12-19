@@ -794,10 +794,10 @@ max-width:20%;*/
 .miscompras .comprasitem  .icodeta div
 {
 	margin: 0;
-	padding: 0;
+	padding: 2px 0;
 	width: 15%;
 	height:100%;
-	min-height:52px;
+	min-height:40px;
 }
 .miscompras .comprasitem  .icodeta div span
 {
@@ -813,7 +813,8 @@ max-width:20%;*/
 	height:inherit;
 	padding-top: 14px;
 	height:100%;
-	min-height:52px;
+	min-height:40px;
+	padding: 10px 0;
 }
 .miscompras .comprasitem  .icodeta .back
 {
