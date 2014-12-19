@@ -640,6 +640,17 @@
 	angularRoutingApp.controller('pagoController', function($scope,Items,Currency) {
 		setBackground("","white");
 		$(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
+		var nombre_cliente="";
+		var datos= localStorage.getItem("cuenta");
+		if(datos!=null){
+			var data= JSON.parse(datos);
+			if(data.address){
+				$scope.direccion= data.address;
+				nombre_cliente= data.names;
+				$scope.direcciones_frecuentes='<li>'+data.address+'<i class="glyphicon glyphicon-minus-sign"></i></li>';
+			}			
+		}		
+
 		if(localStorage.getItem("direccion")){
 			$scope.direccion=localStorage.getItem("direccion");
 			$scope.referencia=localStorage.getItem("referencia");
@@ -839,22 +850,25 @@
 		$scope.SendPay = function () {	
 			var dir= $("#direccion").val();		
 			var referencia= $("#referencia").val();
-			if(!localStorage.getItem("cuenta")){
-				alert("Debe estar logueado para terminar el pedido.");
-				localStorage.setItem("orden","Pendiente");
-				localStorage.setItem("direccion",dir);
-				localStorage.setItem("referencia",referencia);
-				window.location = "login.html#/cuenta";
-			}else{
-				if(dir!=""){
-					$(".vrdirc,.bondesc").css("display","none");
-					$(".confirmacion").css("display","inline-block");
-					localStorage.removeItem("orden");
-					localStorage.removeItem("direccion");
-					localStorage.removeItem("referencia");
-					cleanSession();
+			if(Gtotal>0){
+				if(!localStorage.getItem("cuenta")){
+					alert("Debe estar logueado para terminar el pedido.");
+					localStorage.setItem("orden","Pendiente");
+					localStorage.setItem("direccion",dir);
+					localStorage.setItem("referencia",referencia);
+					window.location = "login.html#/cuenta";
 				}else{
-					alert("Dirección es requerida.");
+					if(dir!=""){
+						$scope.nombre_cliente= nombre_cliente;
+						$(".vrdirc,.bondesc").css("display","none");
+						$(".confirmacion").css("display","inline-block");
+						localStorage.removeItem("orden");
+						localStorage.removeItem("direccion");
+						localStorage.removeItem("referencia");
+						cleanSession();
+					}else{
+						alert("Dirección es requerida.");
+					}
 				}
 			}
 		}						

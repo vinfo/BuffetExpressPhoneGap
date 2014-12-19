@@ -23,10 +23,15 @@
             
         </div>
         <div class="confirmacion">
-            <label class="ttfac">CONFIRMACIÓN PEDIDO</label>
+            <label class="ttfac">CONFIRMACIÓN DE PEDIDO</label>
             <div class="tr">
-            <p>Su pedido ha sido enviado exitosamente.</p>
-                <p>Pronto estaremos en contacto.</p>
+                <p>Tu orden ha sido procesada exitosamente, en breve podras rastrear tu orden en el mapa.</p>
+                <p>Fue un placer servirte <b>{{nombre_cliente}}</b>.</p>
+                <p>Ayudanos a crecer queremos conocer un poco más de tí. completa tus datos en la web y gana un bono de descuento para tu siguiente orden.</p>
+                <div class="form-group">     
+                <a href="internal.html" class="btn btn-reset">En otra ocasión</a>  
+                <a href="http://buffetexpress.co/" target="_blank" class="btn btn-default">Si, Gracias</a>
+                </div>             
             </div>            
         </div>        
         <div class="bondesc">
@@ -37,12 +42,18 @@
         <div class="vrdirc">
             <label>Verifica que esta si sea tu dirección</label>
             <input id="direccion" name="direccion" value="{{direccion}}" type="text" maxlength="120">
+            <label>Tipo</label>
+            <select id="tipo" name="tipo">
+                <option value="1">1. Oficina</option>
+                <option value="2">2. Apartamento</option>
+                <option value="3">3. Casa</option>
+            </select> 
+            <label>Número</label>
+            <input id="numero" name="numero" value="" type="text" maxlength="4">          
             <label>Punto de referencia</label>
             <input id="referencia" name="referencia" value="{{referencia}}" type="text" maxlength="120">
-<!--            <label>Direcciones frecuentes</label>
-             <ul class="listdirecc">
-                <li>N/A <i class="glyphicon glyphicon-minus-sign"></i></li>
-            </ul> -->
+            <label>Direcciones frecuentes</label>
+            <ul class="listdirecc" ng-bind-html="direcciones_frecuentes"></ul>
             <div class="medipa">
                 <div class="col-xs-6 col-md-6">
                     <div class="col-xs-6 col-md-6 un">
@@ -70,13 +81,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="costoad">
-      <div class="cont">
-          <img src="images/cerr_vpla.png" alt="..." alt="..." class="cerrvess" ng-click="close('costoad')">
-          <h1>CODIGO DINAMICO S.A.S</h1>
-          <p>Código Dinámico Es una empresa creada con el fin de acompañar a  sus clientes en el proceso de creacion de su página web de una forma seria, segura, a corto tiempo y económica.</p>   
-      </div>
-  </div>    
-  <div style="height:100px;"></div> 
+    </div>   
+    <div style="height:100px;"></div> 
 </div>

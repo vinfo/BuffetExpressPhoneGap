@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"p",
+				"padding"
+			],
+			[
 				"pos",
 				"position"
 			],
@@ -24,10 +32,6 @@
 				"price"
 			],
 			[
-				"p",
-				"position"
-			],
-			[
 				"na",
 				"Narray"
 			],
@@ -42,10 +46,6 @@
 			[
 				"m",
 				"margin"
-			],
-			[
-				"pa",
-				"padding-bottom"
 			],
 			[
 				"cu",
@@ -281,10 +281,14 @@
 	},
 	"expanded_folders":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap"
+		"/D/Movilidad/BuffetExpressPhoneGap",
+		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css"
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/wamp/www/Premisas/modules/js/orden_compra.js",
 		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/mapa/dragzoom.html",
 		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/dragzoom.html",
@@ -298,7 +302,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/lodash.min.js",
 		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/two-maps.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/directives.js",
 		"/D/Movilidad/mapa.html",
@@ -312,7 +315,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/C/Users/odc/AppData/Local/Temp/Rar$DIa0.007/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
@@ -433,6 +435,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".menuplatolist .col-md-12 .title span",
+			".menuplatolist .col-md-12 .title",
+			".menuplatolist .col-md-12 .title span",
+			".menuplatolist .col-md-12 .title",
+			".menuplatolist .col-md-12 .title span",
+			".menuplatolist .col-md-12 .title",
+			".col-md-12 .title",
+			".col-md-12 .title img",
+			".col-md-12 .title",
+			".subtt",
+			".icodeta div",
+			".subtt",
+			".icodeta",
+			".subtt",
+			".icodeta div",
+			".miscompras .comprasitem .icodeta div",
+			"pagoController",
 			"nombre_prov",
 			"pagoController",
 			"http://buffetexpress.co/REST/",
@@ -543,24 +562,7 @@
 			"#datos",
 			"doView",
 			"cleanSession",
-			"open",
-			"pagoController",
-			"input[type=\"checkbox\"]",
-			"activity",
-			"recomendadoController",
-			".verplatoico",
-			".miscompras .contpag",
-			"icopa1.png",
-			"comprasitem",
-			".miscompras .comprasitem",
-			".miscompras .comprasitem .contnn",
-			".miscompras .comprasitem .imgcont",
-			".miscompras .comprasitem .contnn",
-			".miscompras .comprasitem",
-			".miscompras .comprasitem .contnn",
-			".miscompras .comprasitem",
-			".miscompras .comprasitem .contnn",
-			".miscompras .comprasitem .imgcont"
+			"open"
 		],
 		"highlight": false,
 		"in_selection": false,

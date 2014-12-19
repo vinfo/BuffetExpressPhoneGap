@@ -127,6 +127,13 @@ a img
 	background: url(../images/sombrav.png);
 	margin-right: 3%;
 }
+a.btn-default{
+	background: url(../images/sombrav.png);
+}
+a.btn-reset{
+	background: url(../images/sombra_gra.png);
+	color: white;
+}
 .sesion button[type=reset]
 {
 	background: url(../images/sombra_gra.png);
@@ -473,7 +480,7 @@ a img
 	position: absolute;
 	width: 100%;
 	text-align: center;
-	margin-top: 40px;
+	margin-top: 36px;
 	z-index: 2;
 }
 .menuplatolist .col-md-12 .btnts img
@@ -974,7 +981,7 @@ max-width:20%;*/
 	width: 100%;
 	text-align: left;
 }
-.facturavir .vrdirc input
+.facturavir .vrdirc input,select
 {
 	width: 100%;
 	box-shadow: 1px 2px 3px #B0B0B0;
@@ -1742,9 +1749,9 @@ max-width:20%;*/
 }
 .confirmacion{
 	border: 2px solid #A61015;
-	padding: 20px;
+	padding: 5px;
 	margin: 10px;
-	width: 80%;
+	width: 90%;
 	display: none;
 }
 
