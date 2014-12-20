@@ -1,4 +1,5 @@
-initialize();
+app.initialize();
+
 function initialize() {
   if(navigator.geolocation) {
     var lat1="";
