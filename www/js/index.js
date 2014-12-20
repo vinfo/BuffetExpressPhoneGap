@@ -2,17 +2,16 @@ GetGeoLocation();
 
 function  GetGeoLocation () {
   var options =  { maximumAge: 3000, timeout: 3000, enableHighAccuracy: true };
-  navigator.geolocation.getCurrentPosition(ShowPosition, ShowError, options);
-
-window.setTimeout(function() {
-        window.location.href = 'internal.html';  
-     }, 1400);  
+  navigator.geolocation.getCurrentPosition(ShowPosition, ShowError, options);  
 }
 
 function ShowPosition(position) {
 	  var dist=getDistance({lat:position.coords.latitude,lng:position.coords.longitude},{lat:6.250756,lng:-75.568008});
 	  alert(dist);    
     localStorage.setItem("position",position.coords.latitude+"|"+position.coords.longitude);
+	window.setTimeout(function() {
+	        window.location.href = 'internal.html';  
+	     }, 1400);    
 }
 function ShowError(error) {
    alert("Errorcode: "    + error.code    +
