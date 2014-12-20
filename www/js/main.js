@@ -901,7 +901,7 @@
             latitude: 6.270318,
             longitude: -75.595974
           },
-          pan: true,
+          pan: false,
           zoom: 16,
           refresh: false,
           events: {},
@@ -923,6 +923,15 @@
             }
           }
         });
+        //mas functions
+        setBackground("fondo","");
+        $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
+		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});		
+		if(localStorage.dimension>400){
+			$(".angular-google-map-container").css("height","1100px");
+		}else{
+			$(".angular-google-map-container").css("height","600px");
+		}
       }]);	
 
 	angularRoutingApp.directive('wrapOwlcarousel', function () {
