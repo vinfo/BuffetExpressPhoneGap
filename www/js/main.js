@@ -80,6 +80,7 @@
 	});	
 
 	angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){	
+		alert("Posicion: "+localStorage.position);
 		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
 		if($routeParams.activity)localStorage.activity=$routeParams.activity;
 		var plato= 1;

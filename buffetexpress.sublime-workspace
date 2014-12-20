@@ -232,11 +232,13 @@
 	"buffers":
 	[
 		{
-			"file": "/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/dragzoom.html",
+			"contents": "Searching 98 files for \"jugo.png\"\n\n0 matches across 0 files\n",
 			"settings":
 			{
-				"buffer_size": 1076,
-				"line_ending": "Windows"
+				"buffer_size": 60,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
 			}
 		}
 	],
@@ -302,6 +304,7 @@
 	],
 	"file_history":
 	[
+		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/dragzoom.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
 		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/issue-482-markers-animation.html",
@@ -330,7 +333,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
 		"/D/wamp/www/buffetexpress/codeigniter/resources/js/functions.js",
 		"/D/wamp/www/Premisas/modules/js/orden_compra.js",
-		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/dragzoom.html",
 		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/assets/stylesheets/example.css",
 		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/website_libs/dev_deps.js",
 		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/issue-755-ng-router.html",
@@ -450,6 +452,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"jugo.png",
+			"jugo",
+			"b510_2",
+			"codigodi",
+			"cntinuarpago",
+			"menuliteje",
+			"sopa.png",
+			"sopa",
+			"s304_2",
+			"nexus-7.0",
+			"icos-pedido",
+			"imgmapa",
+			"img_slider",
+			"img_detalle_pedido",
+			"arroz_2",
+			"c109_2.png",
+			"c109_2",
 			"mapaController",
 			"directives.js",
 			"mapaController",
@@ -560,24 +579,7 @@
 			"recomendadoController",
 			"num_dish",
 			"localStorage.clear",
-			"num_dish",
-			".datos_perfil .detallesitos p",
-			".datos_perfil .detallesitos",
-			"datos_perfil",
-			".datos_perfil",
-			".sesion",
-			".terminos",
-			".sesion button",
-			"SendPay",
-			"pagoController",
-			"hiddeMenu",
-			"verlatermenu",
-			"aba",
-			"comprasController",
-			"mapaController",
-			"cleanSession",
-			"clean",
-			"removeI"
+			"num_dish"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -628,25 +630,31 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/dragzoom.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1076,
+						"buffer_size": 60,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								170,
-								128
+								0,
+								0
 							]
 						],
 						"settings":
 						{
+							"detect_indentation": false,
 							"incomplete_sync": null,
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
