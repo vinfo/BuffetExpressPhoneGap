@@ -1,6 +1,7 @@
 app.initialize();
+startApp();
 
-function initialize() {
+function startApp() {
   if(navigator.geolocation) {
     var lat1="";
     var lng1="";    
