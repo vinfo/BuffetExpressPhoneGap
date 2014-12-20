@@ -1,19 +1,44 @@
-var map;
-
 function initialize() {
-  // Try HTML5 geolocation
   if(navigator.geolocation) {
+    var lat1="";
+    var lng1="";    
+    var zones= JSON.parse(getZone()); 
+    var distancias=[];
+    localStorage.setItem("zona",JSON.stringify({id:1,code:'cam001'})); 
+
     navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = new google.maps.LatLng(position.coords.latitude,
-                                       position.coords.longitude);
-      alert(pos);
+      lat1= position.coords.latitude;
+      lng1= position.coords.longitude;     
+      localStorage.setItem("position",JSON.stringify({lat:lat1,lng:lng1}));   
+      var distancia=[];
+      var datos=[];
+      for(var i=0;i<zones.length;i++){
+        var coord= zones[i].coordinates.split(',');
+        if(coord[1]){
+          var dist= getDistance({lat:lat1,lng:lng1},{lat:coord[0],lng:coord[1]});
+          var data= {id:zones[i].id,code:zones[i].code};
+          distancias.push(dist);
+          datos.push(data);
+        }
+      }
+      distancias.sort();
+      if(distancias.length>0){
+        localStorage.setItem("zona",JSON.stringify(datos[0])); 
+      }
+      redirect();
     }, function() {
+      redirect();
       handleNoGeolocation(true);
     });
   } else {
     // Browser doesn't support Geolocation
     handleNoGeolocation(false);
   }
+}
+function redirect(){
+    window.setTimeout(function() {
+            window.location.href = 'internal.html';  
+         }, 1200);   
 }
 
 function handleNoGeolocation(errorFlag) {
@@ -22,31 +47,27 @@ function handleNoGeolocation(errorFlag) {
   } else {
     var content = 'Error: Your browser doesn\'t support geolocation.';
   }
-
-  var options = {
-    map: map,
-    position: new google.maps.LatLng(60, 105),
-    content: content
-  };
-
-  var infowindow = new google.maps.InfoWindow(options);
-  alert(options.position);
 }
-
 google.maps.event.addDomListener(window, 'load', initialize);
 
-
-
-function disp(position) {
-	alert(22);
-/*	  var dist=getDistance({lat:position.coords.latitude,lng:position.coords.longitude},{lat:6.250756,lng:-75.568008});
-	  alert(dist);    
-    localStorage.setItem("position",position.coords.latitude+"|"+position.coords.longitude);
-	window.setTimeout(function() {
-	        window.location.href = 'internal.html';  
-	     }, 1400);   */ 
+function getZone(){
+    var data= "token="+localStorage.token;
+    var res="";
+    $.ajax({
+       type: 'GET',
+       url: localStorage.domain+'api/v1/getZones/',
+       crossDomain: true,
+       data: data,
+       dataType: 'json',
+       async: false, 
+       success: function(msg) {
+         res= JSON.stringify(msg);   
+       }
+     });
+     return res;
 }
-/* Calacular distancia */
+
+/* Calcular distancia */
 var rad = function(x) {
   return x * Math.PI / 180;
 };

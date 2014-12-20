@@ -79,8 +79,7 @@
 
 	});	
 
-	angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){	
-		alert("Posicion: "+localStorage.position);
+	angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){		
 		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
 		if($routeParams.activity)localStorage.activity=$routeParams.activity;
 		var plato= 1;
@@ -557,8 +556,11 @@
 		$scope.plato= plato;
 		var cat= $routeParams.idCat;
 		localStorage.activity=$routeParams.activity;
+		var zona= JSON.parse(localStorage.zona);
+		var id_zona=1;
+		if(zona.id)id_zona=zona.id;		
 
-		ajaxrest.getDishes("zone=1&category="+cat+"&token="+localStorage.token+"&dimension="+localStorage.dimension);
+		ajaxrest.getDishes("zone="+id_zona+"&category="+cat+"&token="+localStorage.token+"&dimension="+localStorage.dimension);
 		var datos= $("#datos").val();
 		$scope.dishes = angular.fromJson(datos);
 
@@ -597,8 +599,11 @@
 		setBackground("fondo","");
 		$(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
 		var items="";
+		var zona= JSON.parse(localStorage.zona);
+		var id_zona=1;
+		if(zona.id)id_zona=zona.id;
 		if(localStorage.token){
-			var data= ajaxrest.getDishDay("zone=1&token="+localStorage.token);
+			var data= ajaxrest.getDishDay("zone="+id_zona+"&token="+localStorage.token);
 			var dat = angular.fromJson(data);
 			var dish=[];
 			if(dat.length>0){
@@ -655,6 +660,7 @@
 		if(localStorage.getItem("direccion")){
 			$scope.direccion=localStorage.getItem("direccion");
 			$scope.referencia=localStorage.getItem("referencia");
+			$scope.numero=localStorage.getItem("numero");
 		}
 		
 		var domicilio=0;
@@ -851,12 +857,14 @@
 		$scope.SendPay = function () {	
 			var dir= $("#direccion").val();		
 			var referencia= $("#referencia").val();
+			var numero= $("#numero").val();
 			if(Gtotal>0){
 				if(!localStorage.getItem("cuenta")){
 					alert("Debe estar logueado para terminar el pedido.");
 					localStorage.setItem("orden","Pendiente");
 					localStorage.setItem("direccion",dir);
 					localStorage.setItem("referencia",referencia);
+					localStorage.setItem("numero",numero);
 					window.location = "login.html#/cuenta";
 				}else{
 					if(dir!=""){
@@ -866,6 +874,7 @@
 						localStorage.removeItem("orden");
 						localStorage.removeItem("direccion");
 						localStorage.removeItem("referencia");
+						localStorage.removeItem("numero");
 						cleanSession();
 					}else{
 						alert("Dirección es requerida.");
