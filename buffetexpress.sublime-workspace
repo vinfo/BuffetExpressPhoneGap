@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"ta",
+				"target	Attr"
+			],
+			[
+				"h",
+				"href	Attr"
+			],
+			[
+				"s",
+				"stringify"
+			],
+			[
 				"pa",
 				"padding-left"
 			],
@@ -68,16 +88,8 @@
 				"table"
 			],
 			[
-				"op",
-				"open"
-			],
-			[
 				"di",
 				"dimension"
-			],
-			[
-				"ta",
-				"table-cell"
 			],
 			[
 				"ge",
@@ -170,10 +182,6 @@
 			[
 				"in",
 				"input"
-			],
-			[
-				"h",
-				"height	Attr"
 			],
 			[
 				"fo",
@@ -282,47 +290,57 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css"
+		"/D/Movilidad/BuffetExpressPhoneGap/www"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
-		"/D/wamp/www/Premisas/modules/js/orden_compra.js",
 		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/mapa/dragzoom.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/dragzoom.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/directives.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/mapa.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/mapa.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/example.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
+		"/C/Users/odc/AppData/Local/Temp/Rar$EXa0.752/www/templates/mapa.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-google-maps_dev_mapped.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/angular-google-maps_dev_mapped.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/dragzoom.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/lodash.underscore.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/offline.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/felicitaciones.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/contactenos.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
+		"/D/wamp/www/buffetexpress/codeigniter/resources/js/functions.js",
+		"/D/wamp/www/Premisas/modules/js/orden_compra.js",
 		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/dragzoom.html",
 		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/assets/stylesheets/example.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/mapa.html",
 		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/website_libs/dev_deps.js",
 		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/issue-755-ng-router.html",
 		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/example.html",
 		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/geojson.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/lodash.min.js",
 		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/two-maps.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/directives.js",
 		"/D/Movilidad/mapa.html",
 		"/C/Users/odc/AppData/Local/Temp/Rar$EXa0.715/BuffetExpressPhoneGap/www/templates/mapa.html",
 		"/C/Users/odc/AppData/Local/Temp/Rar$EXa0.072/www/templates/mapa.html",
 		"/C/Users/odc/AppData/Local/Temp/Rar$EXa0.932/www/templates/mapa.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/nosotros.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/C/Users/odc/AppData/Local/Temp/Rar$DIa0.007/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/clave.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-google-maps.min.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/offline.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/getDishDay",
@@ -333,8 +351,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/terminos.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/nl.x-services.plugins.socialsharing/src/ios/SocialSharing.m",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/generic_icons.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/contactenos.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/felicitaciones.html",
 		"/D/wamp/www/familymarketing/eventos/eventos.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/cache.manifest",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/nl.x-services.plugins.socialsharing/src/android/nl/xservices/plugins/SocialSharing.java",
@@ -405,16 +421,7 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/net.yoik.cordova.plugins.screenorientation/www/screenorientation.android.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/net.yoik.cordova.plugins.screenorientation/src/android/net/yoik/cordova/plugins/screenorientation/YoikScreenOrientation.java",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/screenorientation.js",
-		"/C/Users/odc/Downloads/PhoneGap-OrientationLock-master/PhoneGap-OrientationLock-master/www/orientationLock.js",
-		"/C/Users/odc/Downloads/audio5js-master/audio5js-master/demos/angular/ngAudio5.js",
-		"/C/Users/odc/Desktop/CEA.html",
-		"/C/Users/odc/Desktop/ConducimosHOy.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-route.js",
-		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/pertho_admin_v1.3/login.html",
-		"/C/Users/odc/Downloads/videos virtuales/index2.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categorias.html",
-		"/C/Users/odc/AppData/Roaming/Sublime Text 3/Packages/User/getJSONStorage.sublime-snippet",
-		"/D/wamp/www/realriskPhonegap/www/index.html"
+		"/C/Users/odc/Downloads/PhoneGap-OrientationLock-master/PhoneGap-OrientationLock-master/www/orientationLock.js"
 	],
 	"find":
 	{
@@ -435,6 +442,24 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"mapaController",
+			"directives.js",
+			"mapaController",
+			".vermapa",
+			"mapaController",
+			"directives.js",
+			"mapaController",
+			".facturavir .vrdirc input",
+			"pagoController",
+			".confirmacion",
+			".sesion",
+			".sesion button[type=\"submit\"]",
+			"btn-default",
+			"sanitize",
+			"ngBind",
+			"mi_cuentaController",
+			".menuplatolist .col-md-12 .detalle",
+			".menuplatolist .col-md-12 .btnts",
 			".menuplatolist .col-md-12 .title span",
 			".menuplatolist .col-md-12 .title",
 			".menuplatolist .col-md-12 .title span",
@@ -544,25 +569,7 @@
 			"mapaController",
 			"cleanSession",
 			"clean",
-			"removeI",
-			"mapaController",
-			"plato_dia",
-			".vermapa label.title",
-			"verlatermenu",
-			".menuplato",
-			"alert(",
-			".sort",
-			"compressArray",
-			"getFullLastId",
-			"goPay",
-			".facturavir .vrdirc .medipa",
-			".sesion .ico-contra",
-			"comprasController",
-			"categoriaController",
-			"#datos",
-			"doView",
-			"cleanSession",
-			"open"
+			"removeI"
 		],
 		"highlight": false,
 		"in_selection": false,

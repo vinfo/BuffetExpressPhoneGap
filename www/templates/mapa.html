@@ -1,16 +1,18 @@
-    <style>
-        #addressMap
-        {
-            height:611px;
-            width:100%;
-            margin:0;
-            padding:0;
-        }
-    </style>        
-    <div class="vermapa">
+    <link rel="stylesheet" href="css/mapa.css">        
+    <div class="vermapa" data-ng-controller="mapaController">
         <label class="title">Ubicación pedido</label>            
-        <div address-based-google-map address="Adress" zoom="14"></div>
-        <div class="pedidotar">
-            <div class="cont"><span>10</span> Min. para tu entrega</div>
-        </div>
+        <ui-gmap-google-map id="map"
+        center="map.center"
+        pan="map.pan"
+        zoom="map.zoom"
+        draggable="true"
+        refresh="map.refresh"
+        options="map.options"
+        events="map.events"
+        bounds="map.bounds">
+        <ui-gmap-drag-zoom keyboardkey="'alt'"></ui-gmap-drag-zoom>
+    </ui-gmap-google-map>
+    <div class="pedidotar">
+        <div class="cont"><span>10</span> Min. para tu entrega</div>
     </div>
+</div>

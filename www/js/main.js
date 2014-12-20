@@ -1,5 +1,5 @@
 	// Creación del módulo
-	var angularRoutingApp = angular.module('angularRoutingApp', ["ngRoute","ngSanitize"]);
+	var angularRoutingApp = angular.module('angularRoutingApp', ["ngRoute","ngSanitize","uiGmapgoogle-maps"]);
 	var localData = JSON.parse(localStorage.getItem('cuenta'));
 	var num = localStorage.setItem("num",0);
 	var base_url="http://buffetexpress.co/REST/";	
@@ -894,12 +894,36 @@
 		setBackground("fondo","");		
 	});			
 
-	angularRoutingApp.controller("mapaController", ["$scope", function mapaController($scope) {
-		setBackground("fondo","");
-		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
-		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});
-		$scope.Adress = "6.270318, -75.595974";
-	}]);	
+	angularRoutingApp.controller("mapaController", ["$scope","uiGmapLogger", "uiGmapGoogleMapApi", function ($scope, $log, GoogleMapApi) {
+        $scope.map = {
+          dragZoom: {options: {}},
+          center: {
+            latitude: 6.270318,
+            longitude: -75.595974
+          },
+          pan: true,
+          zoom: 16,
+          refresh: false,
+          events: {},
+          bounds: {}
+        };
+        GoogleMapApi.then(function () {
+          $scope.map.dragZoom = {
+            options: {
+              visualEnabled: true,
+              visualPosition: google.maps.ControlPosition.LEFT,
+              visualPositionOffset: new google.maps.Size(35, 0),
+              visualPositionIndex: null,
+              visualSprite: "http://maps.gstatic.com/mapfiles/ftr/controls/dragzoom_btn.png",
+              visualSize: new google.maps.Size(20, 20),
+              visualTips: {
+                off: "Turn on",
+                on: "Turn off"
+              }
+            }
+          }
+        });
+      }]);	
 
 	angularRoutingApp.directive('wrapOwlcarousel', function () {
 		return {
