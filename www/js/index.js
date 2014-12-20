@@ -1,3 +1,4 @@
+initialize();
 function initialize() {
   if(navigator.geolocation) {
     var lat1="";
@@ -29,7 +30,7 @@ function initialize() {
     }, function() {
       redirect();
       handleNoGeolocation(true);
-    });
+    });;
   } else {
     // Browser doesn't support Geolocation
     handleNoGeolocation(false);
@@ -48,7 +49,6 @@ function handleNoGeolocation(errorFlag) {
     var content = 'Error: Your browser doesn\'t support geolocation.';
   }
 }
-google.maps.event.addDomListener(window, 'load', initialize);
 
 function getZone(){
     var data= "token="+localStorage.token;
