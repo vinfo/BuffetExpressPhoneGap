@@ -54,6 +54,7 @@ function checkConnection() {
     states[Connection.CELL_4G]  = 'Cell 4G connection';
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
+    alert("Check");
 
     if(states[networkState]=='No network connection'){
         //navigator.notification.beep(1);
