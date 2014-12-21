@@ -29,8 +29,10 @@ function startApp() {  ;
       if(distancias.length>0){
         localStorage.setItem("zona",JSON.stringify(datos[0])); 
       }
+      alert("GEO");
       redirect();
     }, function() {      
+      alert("NO GEO");
       redirect();
       //
     });;
