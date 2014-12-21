@@ -1,4 +1,3 @@
-app.initialize();
 startApp();
 
 function startApp() {  ;
@@ -30,9 +29,11 @@ function startApp() {  ;
         localStorage.setItem("zona",JSON.stringify(datos[0])); 
       }
       redirect();
-    }, function() {
-      redirect();
+      app.initialize();
+    }, function() {      
       handleNoGeolocation(true);
+      redirect();
+      app.initialize();
     });;
   } else {
     // Browser doesn't support Geolocation
