@@ -1,11 +1,12 @@
-app.initialize();
+//app.initialize();
 startApp();
 
 function startApp() {  
+  alert("startApp");
   var lat1="";
   var lng1="";    
   var zones= JSON.parse(getZone());  
-  localStorage.setItem("zona",JSON.stringify({id:1,code:'cam001'}));   
+  localStorage.setItem("zona",JSON.stringify({id:1,code:'cam001'}));
   if (navigator.geolocation) {
       alert("Init GEO");
       navigator.geolocation.getCurrentPosition(
@@ -40,6 +41,7 @@ function startApp() {
     redirect();
   }  
 }
+
 function redirect(){
     alert("Redirect..");
     window.setTimeout(function() {
