@@ -25,6 +25,7 @@ function redirect(){
 }
 
 function getZone(){
+    alert("Token "+localStorage.token);
     var data= "token="+localStorage.token;
     var res="";
     $.ajax({
