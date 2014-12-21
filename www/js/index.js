@@ -5,13 +5,11 @@ function startApp() {
   //alert("startApp");
   localStorage.domain = "http://buffetexpress.co/REST/";  
   localStorage.dimension = $(window).width();
-  alert(localStorage.dimension);  
   var lat1="";
   var lng1="";    
   var zones= JSON.parse(getZone());  
   localStorage.setItem("zona",JSON.stringify({id:1,code:'cam001'}));
   if (navigator.geolocation) {
-      //alert("Init GEO");
       navigator.geolocation.getCurrentPosition(
               function(position) {
                 lat1= position.coords.latitude;
@@ -31,12 +29,11 @@ function startApp() {
                 distancias.sort();
                 if(distancias.length>0){
                   localStorage.setItem("zona",JSON.stringify(datos[0])); 
-                }      
-                alert("GEO OK");
+                } 
                 redirect();
               },
               function(error) {
-                  alert("GEO ERROR");
+                  alert("Ubicación no disponible");
                   redirect();
               },
               {timeout: 30000, enableHighAccuracy: true, maximumAge: 75000}
@@ -48,7 +45,6 @@ function startApp() {
 }
 
 function redirect(){
-    //alert("Redirect..");
     window.setTimeout(function() {
             window.location.href = 'internal.html';  
          }, 1200);   
