@@ -337,7 +337,8 @@
 					codes+=cod[4]+",";				
 				}
 			}
-			var data= ajaxrest.getItemsxDish("codes="+codes+"&token="+localStorage.token);
+			//var data= ajaxrest.getItemsxDish("codes="+codes+"&token="+localStorage.token);
+			var data= Items.getItemsxDish(dish);
 			var dat = angular.fromJson(data);
 
 			var Narray=[];
@@ -633,7 +634,7 @@
 			var plato= Items.getFullLastId()+1;
 			
 			for(var j=0;j<items.length;j++){	
-				localStorage.setItem("item_"+plato+"_"+items[j].cat+"_R_"+items[j].code,JSON.stringify({cant:1,pos:j+1,code:items[j].code,cat:items[j].cat,fname:items[j].name,price:items[j].price}));
+				localStorage.setItem("item_"+plato+"_"+items[j].cat+"_R_"+items[j].code,JSON.stringify({cant:1,pos:j+1,code:items[j].code,cat:items[j].cat,fname:items[j].fname,price:items[j].price}));
 			}
 
 			localStorage.setItem("plato",plato);
@@ -1207,6 +1208,17 @@
 				}		
 				return dat;
 			},
+			getItemsxDish: function(dish) {
+				var plato=[];
+				for (var i = 0; i < localStorage.length; i++){					
+					var item= localStorage.key(i);
+					if(item.indexOf("item_"+dish)==0){
+						var dat= JSON.parse(localStorage.getItem(item));						
+						plato.push({code:dat.code,name:dat.fname,price:dat.price,idCat:dat.cat});
+					}					
+				}
+				return JSON.stringify(plato);
+			},			
 			delAllCant: function() {
 				for (var i = 0; i < localStorage.length; i++){
 					var item= localStorage.key(i);
