@@ -4,8 +4,11 @@ startApp();
 function startApp() {
     alert("Start");
     var lat1="";
-    var lng1="";    
-    var zones= JSON.parse(getZone());  
+    var lng1="";
+    alert("zones1");  
+    var zones= JSON.parse(getZone());
+    alert(JSON.stringify(zones));
+    alert("zones2");  
     localStorage.setItem("zona",JSON.stringify({id:1,code:'cam001'}));    
     if (navigator.geolocation) {
         alert("Geolocation");
