@@ -1,3 +1,4 @@
+//app.initialize();
 startApp();
 
 function startApp() {  ;
@@ -29,11 +30,9 @@ function startApp() {  ;
         localStorage.setItem("zona",JSON.stringify(datos[0])); 
       }
       redirect();
-      //app.initialize();
     }, function() {      
-      handleNoGeolocation(true);
       redirect();
-      //app.initialize();
+      //
     });;
   } else {
     // Browser doesn't support Geolocation
@@ -45,14 +44,6 @@ function redirect(){
     window.setTimeout(function() {
             window.location.href = 'internal.html';  
          }, 1200);   
-}
-
-function handleNoGeolocation(errorFlag) {
-  if (errorFlag) {
-    var content = 'Error: The Geolocation service failed.';
-  } else {
-    var content = 'Error: Your browser doesn\'t support geolocation.';
-  }
 }
 
 function getZone(){
