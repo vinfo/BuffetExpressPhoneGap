@@ -32,7 +32,7 @@ function getZone(){
     var res="";
     $.ajax({
        type: 'GET',
-       url: localStorage.domain+'api/v1/getZones/',
+       url: 'http://buffetexpress.co/REST/api/v1/getZones/',
        crossDomain: true,
        data: data,
        dataType: 'json',
@@ -40,10 +40,7 @@ function getZone(){
        success: function(msg) {         
          res= JSON.stringify(msg);  
          alert(res); 
-       },
-      error: function (request, status, error) {
-          alert(request.responseText);
-      }      
+       }     
      });
      return res;
 }
