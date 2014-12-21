@@ -1,5 +1,7 @@
-getLocation();
-function getLocation() {
+app.initialize();
+startApp();
+
+function startApp() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
