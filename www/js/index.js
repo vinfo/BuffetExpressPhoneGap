@@ -29,11 +29,11 @@ function startApp() {  ;
         localStorage.setItem("zona",JSON.stringify(datos[0])); 
       }
       redirect();
-      app.initialize();
+      //app.initialize();
     }, function() {      
       handleNoGeolocation(true);
       redirect();
-      app.initialize();
+      //app.initialize();
     });;
   } else {
     // Browser doesn't support Geolocation
