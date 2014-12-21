@@ -1,45 +1,41 @@
-//app.initialize();
+app.initialize();
 startApp();
 
-function startApp() {  ;
-  if(navigator.geolocation) {
-    alert("Init GEO");
-    var lat1="";
-    var lng1="";    
-    var zones= JSON.parse(getZone()); 
-    var distancias=[];
-    localStorage.setItem("zona",JSON.stringify({id:1,code:'cam001'})); 
-
-    navigator.geolocation.getCurrentPosition(function(position) {
-      lat1= position.coords.latitude;
-      lng1= position.coords.longitude;     
-      localStorage.setItem("position",JSON.stringify({lat:lat1,lng:lng1}));   
-      var distancia=[];
-      var datos=[];
-      for(var i=0;i<zones.length;i++){
-        var coord= zones[i].coordinates.split(',');
-        if(coord[1]){
-          var dist= getDistance({lat:lat1,lng:lng1},{lat:coord[0],lng:coord[1]});
-          var data= {id:zones[i].id,code:zones[i].code};
-          distancias.push(dist);
-          datos.push(data);
-        }
-      }
-      distancias.sort();
-      if(distancias.length>0){
-        localStorage.setItem("zona",JSON.stringify(datos[0])); 
-      }
-      alert("GEO");
-      redirect();
-    }, function() {      
-      alert("NO GEO");
-      redirect();
-      //
-    });;
-  } else {
-    // Browser doesn't support Geolocation
-    handleNoGeolocation(false);
-  }
+function startApp() {
+  alert("Init GEO");
+  var lat1="";
+  var lng1="";    
+  var zones= JSON.parse(getZone());  
+  localStorage.setItem("zona",JSON.stringify({id:1,code:'cam001'}));   
+  if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+              function(position) {
+                lat1= position.coords.latitude;
+                lng1= position.coords.longitude;     
+                localStorage.setItem("position",JSON.stringify({lat:lat1,lng:lng1})); 
+                var datos=[];
+                var distancias=[];               
+                for(var i=0;i<zones.length;i++){
+                  var coord= zones[i].coordinates.split(',');
+                  if(coord[1]){
+                    var dist= getDistance({lat:lat1,lng:lng1},{lat:coord[0],lng:coord[1]});
+                    var data= {id:zones[i].id,code:zones[i].code};
+                    distancias.push(dist);
+                    datos.push(data);
+                  }
+                }
+                distancias.sort();
+                if(distancias.length>0){
+                  localStorage.setItem("zona",JSON.stringify(datos[0])); 
+                }      
+                redirect();
+              },
+              function(error) {
+                  redirect();
+              },
+              {timeout: 30000, enableHighAccuracy: true, maximumAge: 75000}
+      );
+  }  
 }
 function redirect(){
     alert("Redirect..");

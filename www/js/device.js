@@ -39,11 +39,11 @@
         //app.receivedEvent('deviceready');
         screen.lockOrientation('portrait-primary');
         //navigator.splashscreen.show();
-        checkConnection;        
+        checkConnection();        
     }
 };
 
-function checkConnection() {    
+function checkConnection() {
     var networkState = navigator.connection.type;
     var states = {};
     states[Connection.UNKNOWN]  = 'Unknown connection';
@@ -53,14 +53,13 @@ function checkConnection() {
     states[Connection.CELL_3G]  = 'Cell 3G connection';
     states[Connection.CELL_4G]  = 'Cell 4G connection';
     states[Connection.CELL]     = 'Cell generic connection';
-    states[Connection.NONE]     = 'No network connection';
-    alert("Check");
-
+    states[Connection.NONE]     = 'No network connection'; 
+    
     if(states[networkState]=='No network connection'){
         //navigator.notification.beep(1);
         alert('Internet es requerido!');
         window.location.href = 'offline.html';
-        throw new Error('No Internet Connection.');                              
+        //throw new Error('No Internet Connection.');                              
     }
     return false;
 }
