@@ -1,8 +1,9 @@
 app.initialize();
 startApp();
 
-function startApp() {
+function startApp() {  ;
   if(navigator.geolocation) {
+    alert("Init GEO");
     var lat1="";
     var lng1="";    
     var zones= JSON.parse(getZone()); 
