@@ -1,4 +1,4 @@
-app.initialize();
+//app.initialize();
 startApp();
 
 function startApp() {
@@ -11,10 +11,12 @@ function startApp() {
         alert("Geolocation");
         redirect();
     } else {
-        alert("Geolocation is not supported by this browser.");
+        alert("Geolocalización no soportada en dispositivo");
+        redirect();
     }
     alert("End");
 }
+
 function redirect(){
     alert("Redirect..");
     window.setTimeout(function() {
