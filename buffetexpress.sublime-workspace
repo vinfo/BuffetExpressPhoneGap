@@ -294,24 +294,23 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/spec",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/lib",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/lib/jasmine-1.2.0"
+		"/D/Movilidad/BuffetExpressPhoneGap/www"
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BackupsBuffet/directives.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/helper.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-google-maps_dev_mapped.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/lodash.underscore.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/offline.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec.html",
@@ -426,9 +425,7 @@
 		"/D/Movilidad/Ionic/myApp/plugins/com.ionic.keyboard/www/keyboard.js",
 		"/D/Movilidad/Ionic/myApp/www/index.html",
 		"/D/Movilidad/Phonegap/my-app/www/index.html",
-		"/D/Movilidad/Phonegap/my-app/www/config.xml",
-		"/D/Movilidad/Ionic/myApp/www/js/app.js",
-		"/D/Movilidad/Ionic/myApp/www/js/controllers.js"
+		"/D/Movilidad/Phonegap/my-app/www/config.xml"
 	],
 	"find":
 	{

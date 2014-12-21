@@ -34,7 +34,7 @@ function startApp() {
               function(error) {
                   redirect();
               },
-              {timeout: 30000, enableHighAccuracy: false, maximumAge: 75000}
+              {timeout: 30000, enableHighAccuracy: true, maximumAge: 75000}
       );
   }else{
     alert("Geolocalización no soportada en dispositivo!");
