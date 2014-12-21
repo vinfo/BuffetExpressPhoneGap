@@ -1,13 +1,13 @@
 app.initialize();
 startApp();
 
-function startApp() {
-  alert("Init GEO");
+function startApp() {  
   var lat1="";
   var lng1="";    
   var zones= JSON.parse(getZone());  
   localStorage.setItem("zona",JSON.stringify({id:1,code:'cam001'}));   
   if (navigator.geolocation) {
+      alert("Init GEO");
       navigator.geolocation.getCurrentPosition(
               function(position) {
                 lat1= position.coords.latitude;
@@ -33,7 +33,7 @@ function startApp() {
               function(error) {
                   redirect();
               },
-              {timeout: 30000, enableHighAccuracy: true, maximumAge: 75000}
+              {timeout: 30000, enableHighAccuracy: false, maximumAge: 75000}
       );
   }  
 }
