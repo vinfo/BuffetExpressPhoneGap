@@ -37,9 +37,13 @@ function getZone(){
        data: data,
        dataType: 'json',
        async: false, 
-       success: function(msg) {
-         res= JSON.stringify(msg);   
-       }
+       success: function(msg) {         
+         res= JSON.stringify(msg);  
+         alert(res); 
+       },
+      error: function (request, status, error) {
+          alert(request.responseText);
+      }      
      });
      return res;
 }
