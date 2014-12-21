@@ -40,6 +40,7 @@ function startApp() {  ;
   }
 }
 function redirect(){
+    alert("Redirect..");
     window.setTimeout(function() {
             window.location.href = 'internal.html';  
          }, 1200);   
