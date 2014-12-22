@@ -1212,7 +1212,8 @@
 				var plato=[];
 				for (var i = 0; i < localStorage.length; i++){					
 					var item= localStorage.key(i);
-					if(item.indexOf("item_"+dish)==0){
+					var pl= item.split('_');			
+					if(pl[1]==dish && item.indexOf("item_"+dish)==0){
 						var dat= JSON.parse(localStorage.getItem(item));						
 						plato.push({code:dat.code,name:dat.fname,price:dat.price,idCat:dat.cat});
 					}					
