@@ -1,23 +1,9 @@
-    <link rel="stylesheet" href="css/mapa.css">        
-    <div class="vermapa" data-ng-controller="mapaController">
-        <label class="title">Ubicación pedido</label>            
-        <ui-gmap-google-map id="map"
-        center="map.center"
-        pan="map.pan"
-        zoom="map.zoom"
-        draggable="true"
-        refresh="map.refresh"
-        options="map.options"
-        events="map.events"
-        bounds="map.bounds">
-<ui-gmap-marker
-        idKey='1'
-        coords='6.270318,-75.595974'
-        icon='images/icono_mapa.png'
-        >
-</ui-gmap-marker>       
-    </ui-gmap-google-map>
+<div class="vermapa">
+    <label class="title">Ubicación pedido</label>            
+    <div ng-controller="mapaController">
+        <div area-based-google-map area="Area" zoom="6"></div>
+    </div>
     <div class="pedidotar">
-        <div class="cont"><span>10</span> Min. para tu entrega</div>
+        <div class="cont"><span>{{minutes}}</span> Min. para tu entrega</div>
     </div>
 </div>

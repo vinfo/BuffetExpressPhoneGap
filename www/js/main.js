@@ -1,5 +1,5 @@
 	// Creación del módulo
-	var angularRoutingApp = angular.module('angularRoutingApp', ["ngRoute","ngSanitize","uiGmapgoogle-maps"]);
+	var angularRoutingApp = angular.module('angularRoutingApp', ["ngRoute","ngSanitize"]);
 	var localData = JSON.parse(localStorage.getItem('cuenta'));
 	var num = localStorage.setItem("num",0);
 	var base_url="http://buffetexpress.co/REST/";	
@@ -565,7 +565,6 @@
 		ajaxrest.getDishes("zone="+id_zona+"&category="+cat+"&token="+localStorage.token+"&dimension="+localStorage.dimension);
 		var datos= $("#datos").val();
 		$scope.dishes = angular.fromJson(datos);
-
 		
 		$scope.imageCat="bebidas_mini";
 		if(cat==1){
@@ -583,8 +582,7 @@
 		$scope.arroz= Images.setImage(plato,2);		
 		$scope.carnes= Images.setImage(plato,3);
 		$scope.guarnicion= Images.setImage(plato,4);
-		$scope.bebidas= Images.setImage(plato,5);
-		
+		$scope.bebidas= Images.setImage(plato,5);		
 
 		$scope.viewDish = function () {
 			$scope.sopa= Images.setImage(plato,1);
@@ -703,7 +701,8 @@
 						codes+=cod[4]+",";
 					}
 				}
-				var data= ajaxrest.getItemsxDish("codes="+codes+"&token="+localStorage.token);
+				//var data= ajaxrest.getItemsxDish("codes="+codes+"&token="+localStorage.token);
+				var data= Items.getItemsxDish(dish);
 				var dat = angular.fromJson(data);
 				var c1=0;c2=0;c3=0;c4=0;c5=0;			
 				var ppal="";
@@ -877,6 +876,7 @@
 						localStorage.removeItem("direccion");
 						localStorage.removeItem("referencia");
 						localStorage.removeItem("numero");
+						$("#totalDish").html("0");
 						cleanSession();
 					}else{
 						alert("Dirección es requerida.");
@@ -904,47 +904,79 @@
 	});
 	angularRoutingApp.controller('redesController', function($scope) {
 		setBackground("fondo","");		
-	});			
+	});	
 
-	angularRoutingApp.controller("mapaController", ["$scope","uiGmapLogger", "uiGmapGoogleMapApi", function ($scope, $log, GoogleMapApi) {
-        $scope.map = {
-          dragZoom: {options: {}},
-          center: {
-            latitude: 6.270318,
-            longitude: -75.595974
-          },
-          pan: false,
-          zoom: 16,
-          refresh: false,
-          events: {},
-          bounds: {}
-        };
-        GoogleMapApi.then(function () {
-          $scope.map.dragZoom = {
-            options: {
-              visualEnabled: true,
-              visualPosition: google.maps.ControlPosition.LEFT,
-              visualPositionOffset: new google.maps.Size(35, 0),
-              visualPositionIndex: null,
-              visualSprite: "http://maps.gstatic.com/mapfiles/ftr/controls/dragzoom_btn.png",
-              visualSize: new google.maps.Size(20, 20),
-              visualTips: {
-                off: "Turn on",
-                on: "Turn off"
-              }
-            }
-          }
-        });
-        //mas functions
-        setBackground("fondo","");
-        $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
+	angularRoutingApp.controller("mapaController", ["$scope", function ($scope) {
+		$("li").removeClass("active");
+		$(".menupie ul li:nth-child(4)").addClass("active");
+		$scope.minutes="N/A";
+		var position= JSON.parse(localStorage.position);
+		$scope.Area = { Name: "Mi ubicación", Latitude: position.lat, Longitude: position.lng };
+
+		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
 		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});		
 		if(localStorage.dimension>400){
-			$(".angular-google-map-container").css("height","1100px");
+			$("#areaMap").css("height","1100px");
 		}else{
-			$(".angular-google-map-container").css("height","600px");
+			$("#areaMap").css("height","600px");
 		}
-      }]);	
+	}]);
+
+	/* Directivas */
+	angularRoutingApp.directive('areaBasedGoogleMap', function () {
+		return {
+			restrict: "A",
+			template: "<div id='areaMap'></div>",
+			scope: {           
+				area: "=",
+				zoom: "="
+			},
+			controller: function ($scope) {
+				var mapOptions;
+				var map;           
+				var marker;
+				var zone= JSON.parse(localStorage.zona);				
+
+				var initialize = function () {                                
+					mapOptions = {
+						zoom: $scope.zoom,
+						center: new google.maps.LatLng(6.230539, -75.570672),
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					};
+					map = new google.maps.Map(document.getElementById('areaMap'), mapOptions);
+				};
+
+				var createMarker = function (area) {
+					var position = new google.maps.LatLng(area.Latitude, area.Longitude);
+					map.setCenter(position);
+					marker = new google.maps.Marker({
+						map: map,
+						position: position,
+						title: area.Name,
+						icon: 'images/icono_mapa.png'
+					});               
+				};
+
+				var createKML = function (src) {
+					var kmlLayer = new google.maps.KmlLayer(src, {
+						suppressInfoWindows: true,
+						preserveViewport: false,
+						map: map
+					});             
+				};            
+
+				$scope.$watch("area", function (area) {
+					if (area != undefined) {
+						createMarker(area);
+						createKML(localStorage.getItem("domain")+'resources/kmls/zona_total.kml');
+						createKML(localStorage.getItem("domain")+'resources/kmls/'+zone.code+'.kml');
+					}
+				});
+				initialize();
+			},
+		};
+	});
+
 
 	angularRoutingApp.directive('wrapOwlcarousel', function () {
 		return {
@@ -956,6 +988,8 @@
 			}
 		};
 	});
+
+
 
 	//Use: <div>{{Price | noFractionCurrency}}</div>
 	angularRoutingApp.filter('noFractionCurrency',
