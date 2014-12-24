@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"m",
+				"margin-top"
+			],
+			[
 				"pla",
 				"plato"
 			],
@@ -73,10 +77,6 @@
 			],
 			[
 				"ma",
-				"margin"
-			],
-			[
-				"m",
 				"margin"
 			],
 			[
@@ -303,6 +303,8 @@
 	"file_history":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/C/Users/odc/Downloads/Rashim.RND.GoogleMap/Rashim.RND.GoogleMap/directives.js",
@@ -334,12 +336,10 @@
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/templates/info.html",
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/scripts/controllers/issue-432-markers-fit-clustering.js",
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/templates/issue-755-ng-router.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BackupsBuffet/directives.js",
@@ -450,6 +450,20 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"comprasController",
+			"recomendadoController",
+			".icodeta img",
+			"icodeta",
+			".vermapa label.title",
+			"getZone",
+			".vermapa label.title",
+			".menusup .title",
+			".vermapa label.title",
+			"controlDiv",
+			"setMyLocationEnabled",
+			"setMyLocationEnabled(",
+			"getZone(",
+			"mapaController",
 			"addClass(\"active\")",
 			"mapaController",
 			"active",
@@ -563,21 +577,7 @@
 			".buffet .owl-controls",
 			"pagoController",
 			" && item.",
-			"pagoController",
-			"getItemsxDish",
-			"pagoController",
-			"alert",
-			"SendPay",
-			"setDisplay",
-			"Debe estar",
-			"comprasController",
-			"setFinalOrder",
-			"eliminar",
-			"comprasController",
-			"localStorage.getItem(",
-			"getItemsxDish",
-			"comprasController",
-			"getdishes"
+			"pagoController"
 		],
 		"highlight": false,
 		"in_selection": false,

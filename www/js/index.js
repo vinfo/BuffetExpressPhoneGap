@@ -5,10 +5,14 @@ function startApp() {
   //alert("startApp");
   localStorage.domain = "http://buffetexpress.co/REST/";  
   localStorage.dimension = $(window).width();
+
+  var banner = JSON.stringify(ajaxrest.getSlider("token="+localStorage.token));
+  if(banner)localStorage.setItem("banner",banner); 
+  
   var lat1="";
   var lng1="";    
   var zones= JSON.parse(getZone());  
-  localStorage.setItem("zona",JSON.stringify({id:1,code:'cam001'}));
+  localStorage.setItem("zona",JSON.stringify({id:1,code:'cam001',show:0}));
   if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
               function(position) {
@@ -16,18 +20,20 @@ function startApp() {
                 lng1= position.coords.longitude;     
                 localStorage.setItem("position",JSON.stringify({lat:lat1,lng:lng1})); 
                 var datos=[];
-                var distancias=[];               
+                var distancias=[];
+                var totalZones=[];             
                 for(var i=0;i<zones.length;i++){
                   var coord= zones[i].coordinates.split(',');
                   if(coord[1]){
                     var dist= getDistance({lat:lat1,lng:lng1},{lat:coord[0],lng:coord[1]});
-                    var data= {id:zones[i].id,code:zones[i].code};
+                    var data= {id:zones[i].id,code:zones[i].code,show:zones[i].show_kml};
                     distancias.push(dist);
                     datos.push(data);
                   }
                 }
                 distancias.sort();
-                if(distancias.length>0){
+                localStorage.setItem("zonas",JSON.stringify(datos));
+                if(distancias.length>0){                   
                   localStorage.setItem("zona",JSON.stringify(datos[0])); 
                 } 
                 redirect();

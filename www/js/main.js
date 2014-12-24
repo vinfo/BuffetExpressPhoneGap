@@ -71,6 +71,13 @@
 		setBackground("fondo","");
 		setDisplayMenu();
 
+		var banner = JSON.parse(localStorage.banner);		
+		if(banner && banner[0].img_matrix){
+			image_banner= "http://buffetexpress.co/imagenes/publicidad/imagen1/"+banner[0].img_matrix;
+			$scope.image_banner= image_banner;
+			$scope.info_banner= banner[0].contenido_matrix;
+		}		
+
 		$scope.recomendado = function () {
 			window.location = "internal.html#/recomendado";	
 		}		
@@ -489,7 +496,11 @@
 			}			
 			
 			var nameDish="Plato #"+dish;
-			if(tipo=="R")nameDish="Recomendado Día";
+			if(tipo=="R"){
+				nameDish="Recomendado Día";
+				htotal= parseInt(localStorage.valor_recomendado);
+				total=htotal;
+			}
 			plato='<div class="comprasitem" id="dish_'+dish+'"><div class="imgcont" id="img_'+dish+'"><div class="padre"><div class = "derrap"><div class="contenedor"><div class="sopa"><img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/><div class="sopacont"><img src="'+sopa+'" style="width:100%;" border="0" margin="0" /></div></div><div class="vaso"><img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/><div class="jugo"><img src="'+bebidas+'" style="width:100%;" border="0" margin="0"/></div></div><div class="plato"><img src="images/plato.png" style="width:100%;" border="0" margin="0"/><div class="arroz"><img src="'+arroz+'" style="width:100%;" border="0" margin="0"/></div><div class="guarnicion"><img src="'+guarnicion+'" style="width:100%;" border="0" margin="0"/></div><div class="carne"><img src="'+carnes+'" style="width:100%;" border="0" margin="0"/></div></div></div></div></div></div><div class="contnn"><h3>'+nameDish+'</h3><p>'+ppal+extra+'</p></p><div class="icodeli"><span class="elimina" onclick="setFinalOrder('+dish+',\'less\',\''+tipo+'\')"></span><span class="contador"><label id="cont_'+dish+'">'+cantDish+'</label></span><span class="suma" onclick="setFinalOrder('+dish+',\'add\',\''+tipo+'\')"></span></div></div><div class="icodeta"><div><img src="'+sopaIco+'" alt="..." title="..." onclick="editDish(1,\'sopas y cremas\','+dish+',\''+tipo+'\')"></div><div><img src="'+arrozIco+'" alt="..." title="..." onclick="editDish(2,\'arroz\','+dish+',\''+tipo+'\')"></div><div><img src="'+carnesIco+'" alt="..." title="..." onclick="editDish(3,\'carnes\','+dish+',\''+tipo+'\')"></div><div><img src="'+guarnicionIco+'" alt="..." title="..." onclick="editDish(4,\'guarnición\','+dish+',\''+tipo+'\')"></div><div><img src="'+bebidasIco+'" alt="..." title="..." onclick="editDish(5,\'bebidas\','+dish+',\''+tipo+'\')"></div> <div class="subtt"><input type="hidden" name="price_'+dish+'" id="price_'+dish+'" value="'+htotal+'" /><label class="currency" id="lprice_'+dish+'">$'+Currency.setMoney(total, 0, ",", ".")+'</label></div></div>';			
 			
 			$("#miscompras").append(plato);
@@ -661,6 +672,10 @@
 			$scope.direccion=localStorage.getItem("direccion");
 			$scope.referencia=localStorage.getItem("referencia");
 			$scope.numero=localStorage.getItem("numero");
+
+			if(localStorage.getItem("tipo")=="1")$('#tipo1').attr("checked","checked");
+			if(localStorage.getItem("tipo")=="2")$('#tipo2').attr("checked","checked");
+			if(localStorage.getItem("tipo")=="3")$('#tipo3').attr("checked","checked");
 		}
 		
 		var domicilio=0;
@@ -827,7 +842,11 @@
 				}
 
 				var nameDish="Plato #"+dish+" (Und x "+cantDish+")";
-				if(tipo=="R")nameDish="Recomendado (Und x "+cantDish+")";
+				if(tipo=="R"){
+					nameDish="Recomendado (Und x "+cantDish+")";
+					total= parseInt(localStorage.valor_recomendado);
+					total2=total;
+				}				
 				labels+='<label>'+nameDish+'</label>';
 				Gtotal+=total2;
 				valores+='<label>$'+Currency.setMoney(total2, 0, ",", ".")+'</label>';
@@ -859,6 +878,7 @@
 			var dir= $("#direccion").val();		
 			var referencia= $("#referencia").val();
 			var numero= $("#numero").val();
+			var tipo= $('input[name=tipo]:checked').val();
 			if(Gtotal>0){
 				if(!localStorage.getItem("cuenta")){
 					alert("Debe estar logueado para terminar el pedido.");
@@ -866,6 +886,7 @@
 					localStorage.setItem("direccion",dir);
 					localStorage.setItem("referencia",referencia);
 					localStorage.setItem("numero",numero);
+					localStorage.setItem("tipo",tipo);
 					window.location = "login.html#/cuenta";
 				}else{
 					if(dir!=""){
@@ -876,6 +897,7 @@
 						localStorage.removeItem("direccion");
 						localStorage.removeItem("referencia");
 						localStorage.removeItem("numero");
+						localStorage.removeItem("tipo");
 						$("#totalDish").html("0");
 						cleanSession();
 					}else{
@@ -888,6 +910,8 @@
 
 	angularRoutingApp.controller('nosotrosController', function($scope) {
 		setBackground("","white");
+		var nosotros = ajaxrest.getContent("vista=vnosotros&token="+localStorage.token);
+		$scope.info_nosotros= nosotros[0].contenido_matrix;
 	});	
 
 	angularRoutingApp.controller('felicitacionesController', function($scope) {
@@ -910,8 +934,10 @@
 		$("li").removeClass("active");
 		$(".menupie ul li:nth-child(4)").addClass("active");
 		$scope.minutes="N/A";
-		var position= JSON.parse(localStorage.position);
-		$scope.Area = { Name: "Mi ubicación", Latitude: position.lat, Longitude: position.lng };
+		if(localStorage.position){
+			var position= JSON.parse(localStorage.position);
+			$scope.Area = { Name: "Mi ubicación", Latitude: position.lat, Longitude: position.lng };
+		}
 
 		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
 		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});		
@@ -935,15 +961,28 @@
 				var mapOptions;
 				var map;           
 				var marker;
-				var zone= JSON.parse(localStorage.zona);				
+				var zone= JSON.parse(localStorage.zona);
+				var position= JSON.parse(localStorage.position);				
+				var MyPosition = new google.maps.LatLng(position.lat, position.lng);				
 
-				var initialize = function () {                                
+				var initialize = function () {
+				var lat= 6.230539;
+				if(position.lat)lat= position.lat;
+				var lng= -75.570672;
+				if(position.lng)lng= position.lng;
+				
 					mapOptions = {
-						zoom: $scope.zoom,
-						center: new google.maps.LatLng(6.230539, -75.570672),
+						zoom: 16,
+						panControl: false,
+						center: new google.maps.LatLng(lat,lng),
 						mapTypeId: google.maps.MapTypeId.ROADMAP
 					};
 					map = new google.maps.Map(document.getElementById('areaMap'), mapOptions);
+					var homeControlDiv = document.createElement('div');
+					var homeControl = new HomeControl(homeControlDiv, map);
+
+					homeControlDiv.index = 9999;
+					map.controls[google.maps.ControlPosition.TOP_RIGHT].push(homeControlDiv);
 				};
 
 				var createMarker = function (area) {
@@ -953,7 +992,7 @@
 						map: map,
 						position: position,
 						title: area.Name,
-						icon: 'images/icono_mapa.png'
+						icon: 'images/rastreo_cliente.png'
 					});               
 				};
 
@@ -963,19 +1002,47 @@
 						preserveViewport: false,
 						map: map
 					});             
-				};            
+				};
+
+				var HomeControl = function (controlDiv, map) {
+					  controlDiv.style.padding = '5px';
+
+					  var controlUI = document.createElement('div');
+					  controlUI.style.backgroundColor = 'white';
+					  controlUI.style.borderStyle = 'solid';
+					  controlUI.style.borderWidth = '2px';
+					  controlUI.style.cursor = 'pointer';
+					  controlUI.style.textAlign = 'center';
+					  controlUI.title = 'Click para ir a Mí Ubicación';
+					  controlDiv.appendChild(controlUI);
+
+					  var controlText = document.createElement('div');
+					  controlText.style.fontFamily = 'Arial,sans-serif';
+					  controlText.style.fontSize = '12px';
+					  controlText.style.paddingLeft = '4px';
+					  controlText.style.paddingRight = '4px';
+					  controlText.innerHTML = '<b>Mí Ubicación</b>';
+					  controlUI.appendChild(controlText);
+
+					  google.maps.event.addDomListener(controlUI, 'click', function() {
+					  	map.setCenter(MyPosition)
+					  });
+				}; 				           
 
 				$scope.$watch("area", function (area) {
 					if (area != undefined) {
 						createMarker(area);
-						createKML(localStorage.getItem("domain")+'resources/kmls/zona_total.kml');
-						createKML(localStorage.getItem("domain")+'resources/kmls/'+zone.code+'.kml');
+						//createKML(localStorage.getItem("domain")+'resources/kmls/zona_total.kml');
+						var zona= JSON.parse(localStorage.getItem("zonas"));
+						for (var i = 0; i < zona.length; i++){
+							if(zona[i].show==1)createKML(localStorage.getItem("domain")+'resources/kmls/'+zona[i].code+'.kml');
+						}
 					}
 				});
 				initialize();
-			},
-		};
-	});
+		},
+	};
+});
 
 
 	angularRoutingApp.directive('wrapOwlcarousel', function () {

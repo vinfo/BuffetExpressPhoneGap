@@ -27,7 +27,7 @@ if (window.jQuery) {
             var redir="internal.html#/slider";            
             if(data[1]=="ins")redir= "internal.html#/menu";
             if(data[1]=="edit")redir= "internal.html#/compras";
-            if(url[1]=="pago")redir= "internal.html#/compras";            
+            if(url[1]=="pago#top")redir= "internal.html#/compras"; 
             window.location = redir;
         }else{
             var position = $(".latermenu").position();

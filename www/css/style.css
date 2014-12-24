@@ -223,7 +223,8 @@ a.btn-reset{
 }
 .menusup .title{
 	font-size: 25px;
-	line-height: 38px;
+	line-height:38px;
+	height: 38px;
 }
 .buffet
 {
@@ -799,6 +800,10 @@ input[type=checkbox]:checked:before{
 /*	width: 100%;
 max-width:20%;*/
 }
+.miscompras .icodeta div img
+{
+	height: 40px;
+}
 .miscompras .comprasitem  .icodeta div
 {
 	margin: 0;
@@ -1182,7 +1187,7 @@ max-width:20%;*/
 	z-index: 100;
 	font-weight: normal;
 	color: #000;
-	padding-top:10px;
+	top:60px;
 }
 .vermapa .lupabu
 {
@@ -1564,6 +1569,9 @@ max-width:20%;*/
 	margin: 0;
 }
 .nosotros .col-md-12 > img{
+	width: 100%;
+}
+.nosotros img{
 	width: 100%;
 }
 .nosotros .col-md-12 p{
