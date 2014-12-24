@@ -143,8 +143,8 @@
 			$scope.setAccount = function () {
 				ajaxrest.setAccount('edit');
 			},
-			$scope.closeSession = function () {
-				localStorage.clear();
+			$scope.closeSession = function () {				
+				localStorage.removeItem("cuenta");
 				$scope.mi_cuenta="login.html";
 				$location.path("internal.html");
 			},		
