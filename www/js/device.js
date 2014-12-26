@@ -28,7 +28,7 @@
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.addEventListener("offline", checkConnection, false);
+        document.addEventListener("offline", checkConnection, false);        
     },
     // deviceready Event Handler
     //
@@ -39,7 +39,8 @@
         //app.receivedEvent('deviceready');
         screen.lockOrientation('portrait-primary');
         //navigator.splashscreen.show();
-        checkConnection();        
+        checkConnection();
+        getDeviceProperty();      
     }
 };
 
@@ -63,3 +64,11 @@ function checkConnection() {
     }
     return false;
 }
+
+function getDeviceProperty()
+{
+     var deviceOS  = device.platform  ;  //fetch the device operating system
+     var deviceOSVersion = device.version ;  //fetch the device OS version
+          alert("Device OS: " + deviceOS); 
+          alert("Device OS Version: " + deviceOSVersion);             
+ }

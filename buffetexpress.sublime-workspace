@@ -298,17 +298,20 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www"
+		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/nosotros.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
@@ -344,7 +347,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BackupsBuffet/directives.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/helper.js",
@@ -391,7 +393,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/getDishDay",
 		"/C/Users/odc/Desktop/CIA.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/terminos.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/nl.x-services.plugins.socialsharing/src/ios/SocialSharing.m",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/generic_icons.html",
@@ -450,6 +451,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ajaxrest",
+			"pagoController",
+			"tipo_pago",
+			"orderxitems",
+			"ajaxrest",
+			"pagoController",
 			"closeSession",
 			"direccion",
 			"numero",
@@ -571,13 +578,7 @@
 			".menuplatolist .col-md-12 .title",
 			".menuplatolist .col-md-12 .title span",
 			".menuplatolist .col-md-12 .title",
-			".col-md-12 .title",
-			".col-md-12 .title img",
-			".col-md-12 .title",
-			".subtt",
-			".icodeta div",
-			".subtt",
-			".icodeta"
+			".col-md-12 .title"
 		],
 		"highlight": false,
 		"in_selection": false,
