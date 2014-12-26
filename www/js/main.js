@@ -72,8 +72,8 @@
 		setDisplayMenu();
 
 		var banner = JSON.parse(localStorage.banner);		
-		if(banner && banner[0].img_matrix){
-			image_banner= "http://buffetexpress.co/imagenes/publicidad/imagen1/"+banner[0].img_matrix;
+		if(banner[0] && banner[0].img_matrix!=""){
+			image_banner= '<img src="http://buffetexpress.co/imagenes/publicidad/imagen1/'+banner[0].img_matrix+'" alt="" title="" />';
 			$scope.image_banner= image_banner;
 			$scope.info_banner= banner[0].contenido_matrix;
 		}		
@@ -657,13 +657,17 @@
 	angularRoutingApp.controller('pagoController', function($scope,Items,Currency) {
 		setBackground("","white");
 		$(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
+		var id_cliente="";
 		var nombre_cliente="";
+		var cellPhone="";
 		var datos= localStorage.getItem("cuenta");
 		if(datos!=null){
 			var data= JSON.parse(datos);
 			if(data.address){
 				$scope.direccion= data.address;
+				id_cliente= data.id;
 				nombre_cliente= data.names;
+				cellPhone= data.cellPhone;
 				$scope.direcciones_frecuentes='<li>'+data.address+'<i class="glyphicon glyphicon-minus-sign"></i></li>';
 			}			
 		}		
@@ -683,6 +687,7 @@
 		var tipo_pago="efectivo";
 		if(localStorage.getItem("tipo_pago")){
 			tipo_pago=localStorage.getItem("tipo_pago");
+			$("#tipoPago").val(tipo_pago);
 			$("#"+tipo_pago).css("background","#FDB813");
 			$("#"+tipo_pago+" > img").css("display","inline");
 		}
@@ -702,11 +707,15 @@
 		var plato='';	
 		var tipo="";
 		var nDish=farr.length;
+		var order=[];
+		var orderdetail=[];
+		var orderxitems=[];
 		for(var h=0;h<farr.length;h++){		
 			var item= farr[h];
 			var dish= item.value;//Real ID plato
 			var codes="";
-			var itemsDish= Items.getItems(dish);			
+			var itemsDish= Items.getItems(dish);
+					
 			if(itemsDish>2){
 				for(var j=0;j<localStorage.length;j++){
 					var item= localStorage.key(j);					
@@ -741,6 +750,7 @@
 					var vItem= "item_"+dish+"_"+cat+"_"+tipo+"_"+code;
 					cant= Items.getExtraDish(vItem);
 					var add="";					
+					orderxitems.push({idDish:dish,qty:cant,price:price});								
 					
 					if(cat==1){					
 						if(c1==0){
@@ -842,11 +852,14 @@
 				}
 
 				var nameDish="Plato #"+dish+" (Und x "+cantDish+")";
+				var type=0;
 				if(tipo=="R"){
+					var type=1;
 					nameDish="Recomendado (Und x "+cantDish+")";
 					total= parseInt(localStorage.valor_recomendado);
 					total2=total;
 				}				
+				orderdetail.push({numDish:dish,qty:cantDish,price:total2,type:type});			
 				labels+='<label>'+nameDish+'</label>';
 				Gtotal+=total2;
 				valores+='<label>$'+Currency.setMoney(total2, 0, ",", ".")+'</label>';
@@ -856,14 +869,42 @@
 		}
 		
 		Ditem='<div class="td">'+labels+'</div><div class="td">'+valores+'</div>';
+
 		$scope.platos= Ditem;
 		var tDomicilio= localStorage.valor_domicilio * domicilio;
 		$scope.domicilio = Currency.setMoney(tDomicilio, 0, ",", ".");
 		$scope.total = Currency.setMoney(Gtotal + tDomicilio, 0, ",", ".");
 		$scope.valor_plato= " Und x "+domicilio;
 		setBackDefaultPay();
+
+		$scope.bonoChanged = function() {
+		   var bono= $scope.bono;
+		   if(bono!=""){
+			   var data= ajaxrest.getBono("bono="+bono+"&token="+localStorage.token);
+			   if(data!=""){
+			   	var valor=data[0].valor_bono;
+			   	var total=Gtotal + tDomicilio;
+			   	if(data[0].tipo_bono==84){
+			   		$scope.valor_bono= Currency.setMoney(valor, 0, ",", ".");
+			   		$scope.total= Currency.setMoney(total - valor, 0, ",", ".");
+			   	}else{
+			   		$scope.porc_bono= valor+"%";
+					$scope.valor_bono= Currency.setMoney(valor, 0, ",", ".");
+					var porc= total * (valor/100);
+					$scope.total= Currency.setMoney(total - porc, 0, ",", ".");
+			   	}
+			   	$("#hbono").val(data[0].id_bono);
+			   	$(".bono").css("display","inline");	   	
+			   }else{
+			   		$(".bono").css("display","none");
+			   		$("#hbono").val('');
+			   		alert("Código no disponible");
+			   }
+			}
+		},
 		$scope.setTypePay = function (type) {			
 			localStorage.setItem("tipo_pago",type);
+			$("#tipoPago").val(type);
 			$(".formpago li").css("background","none");
 			$(".formpago .icobie").css("display","none");
 			$("#"+type).css("background","#FDB813");
@@ -875,22 +916,32 @@
 			$(".sombra,.formpago").css("display","inline");
 		},
 		$scope.SendPay = function () {	
-			var dir= $("#direccion").val();		
+			var direccion= $("#direccion").val();		
 			var referencia= $("#referencia").val();
 			var numero= $("#numero").val();
 			var tipo= $('input[name=tipo]:checked').val();
+			var tipoPago= $("#tipoPago").val();		
+			
+			var bono= $('#hbono').val();
+			var order=[];
+
 			if(Gtotal>0){
 				if(!localStorage.getItem("cuenta")){
 					alert("Debe estar logueado para terminar el pedido.");
 					localStorage.setItem("orden","Pendiente");
-					localStorage.setItem("direccion",dir);
+					localStorage.setItem("direccion",direccion);
 					localStorage.setItem("referencia",referencia);
 					localStorage.setItem("numero",numero);
 					localStorage.setItem("tipo",tipo);
 					window.location = "login.html#/cuenta";
 				}else{
-					if(dir!=""){
+					if(direccion!=""){
 						$scope.nombre_cliente= nombre_cliente;
+						var zona= JSON.parse(localStorage.getItem("zona"));
+
+						order.push({idUser:id_cliente,idZone:zona.id,idCupon:bono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,cellPhone:cellPhone,typePay:tipo_pago,status:72});
+												
+						var process= ajaxrest.processOrder(order,orderdetail,orderxitems);
 						$(".vrdirc,.bondesc").css("display","none");
 						$(".confirmacion").css("display","inline-block");
 						localStorage.removeItem("orden");
