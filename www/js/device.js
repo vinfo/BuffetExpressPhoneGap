@@ -69,6 +69,8 @@ function getDeviceProperty()
 {
      var deviceOS  = device.platform  ;  //fetch the device operating system
      var deviceOSVersion = device.version ;  //fetch the device OS version
-          alert("Device OS: " + deviceOS); 
-          alert("Device OS Version: " + deviceOSVersion);             
+     localStorage.setItem("OS",deviceOS); 
+         /* alert("Device OS: " + deviceOS); 
+          alert("Device OS Version: " + deviceOSVersion);
+          */
  }
