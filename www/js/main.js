@@ -619,25 +619,33 @@
 		if(zona.id)id_zona=zona.id;
 		if(localStorage.token){
 			var data= ajaxrest.getDishDay("zone="+id_zona+"&token="+localStorage.token);
-			var dat = angular.fromJson(data);
-			var dish=[];
-			if(dat.length>0){
-				for(var i=0;i<dat.length;i++){					
-					if(dat[i].idCat==1)$scope.sopas= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
-					if(dat[i].idCat==2)$scope.arroz= base_url+"resources/images/dish/"+dat[i].code+"_2.png";					
-					if(dat[i].idCat==3)$scope.carnes= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
-					if(dat[i].idCat==4)$scope.guarnicion= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
-					if(dat[i].idCat==5)$scope.bebidas= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
-					var item = {code:dat[i].code, cat:dat[i].idCat,fname:dat[i].name,price:dat[i].price}; 
-					dish.push(item);					
-					items+="- "+dat[i].name+"<br/>";
+			if(data){
+				var dat = angular.fromJson(data);
+				var dish=[];
+				if(dat.length>0){
+					for(var i=0;i<dat.length;i++){					
+						if(dat[i].idCat==1)$scope.sopas= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
+						if(dat[i].idCat==2)$scope.arroz= base_url+"resources/images/dish/"+dat[i].code+"_2.png";					
+						if(dat[i].idCat==3)$scope.carnes= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
+						if(dat[i].idCat==4)$scope.guarnicion= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
+						if(dat[i].idCat==5)$scope.bebidas= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
+						var item = {code:dat[i].code, cat:dat[i].idCat,fname:dat[i].name,price:dat[i].price}; 
+						dish.push(item);					
+						items+="- "+dat[i].name+"<br/>";
+					}
+					localStorage.setItem("plato_dia",JSON.stringify(dish));
+
+					$scope.items = items;
+					$scope.price = Currency.setMoney(localStorage.valor_recomendado, 0, ",", ".");
+					$("#totalDish").html(Items.getNumDish());
+					$(".comprasitem").fadeIn();				
 				}
-				localStorage.setItem("plato_dia",JSON.stringify(dish));
+			}else{
+				$(".comprasitem").fadeOut();
+				$(".costoad").fadeIn();
 			}
 		}
-		$scope.items = items;
-		$scope.price = Currency.setMoney(localStorage.valor_recomendado, 0, ",", ".");
-		$("#totalDish").html(Items.getNumDish());
+
 
 		$scope.goTo = function (page) {
 			$location.path(page);
@@ -719,7 +727,7 @@
 			var dish= item.value;//Real ID plato
 			var codes="";
 			var itemsDish= Items.getItems(dish);
-					
+
 			if(itemsDish>2){
 				for(var j=0;j<localStorage.length;j++){
 					var item= localStorage.key(j);					
@@ -882,28 +890,28 @@
 		setBackDefaultPay();
 
 		$scope.bonoChanged = function() {
-		   var bono= $scope.bono;
-		   if(bono!=""){
-			   var data= ajaxrest.getBono("bono="+bono+"&token="+localStorage.token);
-			   if(data!=""){
-			   	var valor=data[0].valor_bono;
-			   	var total=Gtotal + tDomicilio;
-			   	if(data[0].tipo_bono==84){
-			   		$scope.valor_bono= Currency.setMoney(valor, 0, ",", ".");
-			   		$scope.total= Currency.setMoney(total - valor, 0, ",", ".");
-			   	}else{
-			   		$scope.porc_bono= valor+"%";
-					$scope.valor_bono= Currency.setMoney(valor, 0, ",", ".");
-					var porc= total * (valor/100);
-					$scope.total= Currency.setMoney(total - porc, 0, ",", ".");
-			   	}
-			   	$("#hbono").val(data[0].id_bono);
-			   	$(".bono").css("display","inline");	   	
-			   }else{
-			   		$(".bono").css("display","none");
-			   		$("#hbono").val('');
-			   		alert("Código no disponible");
-			   }
+			var bono= $scope.bono;
+			if(bono!=""){
+				var data= ajaxrest.getBono("bono="+bono+"&token="+localStorage.token);
+				if(data!=""){
+					var valor=data[0].valor_bono;
+					var total=Gtotal + tDomicilio;
+					if(data[0].tipo_bono==84){
+						$scope.valor_bono= Currency.setMoney(valor, 0, ",", ".");
+						$scope.total= Currency.setMoney(total - valor, 0, ",", ".");
+					}else{
+						$scope.porc_bono= valor+"%";
+						$scope.valor_bono= Currency.setMoney(valor, 0, ",", ".");
+						var porc= total * (valor/100);
+						$scope.total= Currency.setMoney(total - porc, 0, ",", ".");
+					}
+					$("#hbono").val(data[0].id_bono);
+					$(".bono").css("display","inline");	   	
+				}else{
+					$(".bono").css("display","none");
+					$("#hbono").val('');
+					alert("Código no disponible");
+				}
 			}
 		},
 		$scope.setTypePay = function (type) {			
@@ -944,7 +952,7 @@
 						var zona= JSON.parse(localStorage.getItem("zona"));
 
 						order.push({idUser:id_cliente,idZone:zona.id,idCupon:bono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,cellPhone:cellPhone,typePay:tipo_pago,status:72});
-												
+
 						var process= ajaxrest.processOrder(order,orderdetail,orderxitems);
 						$(".vrdirc,.bondesc").css("display","none");
 						$(".confirmacion").css("display","inline-block");
@@ -1024,11 +1032,11 @@
 				var MyPosition = new google.maps.LatLng(position.lat, position.lng);				
 
 				var initialize = function () {
-				var lat= 6.230539;
-				if(position.lat)lat= position.lat;
-				var lng= -75.570672;
-				if(position.lng)lng= position.lng;
-				
+					var lat= 6.230539;
+					if(position.lat)lat= position.lat;
+					var lng= -75.570672;
+					if(position.lng)lng= position.lng;
+
 					mapOptions = {
 						zoom: 16,
 						panControl: false,
@@ -1063,28 +1071,28 @@
 				};
 
 				var HomeControl = function (controlDiv, map) {
-					  controlDiv.style.padding = '5px';
+					controlDiv.style.padding = '5px';
 
-					  var controlUI = document.createElement('div');
-					  controlUI.style.backgroundColor = 'white';
-					  controlUI.style.borderStyle = 'solid';
-					  controlUI.style.borderWidth = '2px';
-					  controlUI.style.cursor = 'pointer';
-					  controlUI.style.textAlign = 'center';
-					  controlUI.title = 'Click para ir a Mí Ubicación';
-					  controlDiv.appendChild(controlUI);
+					var controlUI = document.createElement('div');
+					controlUI.style.backgroundColor = 'white';
+					controlUI.style.borderStyle = 'solid';
+					controlUI.style.borderWidth = '2px';
+					controlUI.style.cursor = 'pointer';
+					controlUI.style.textAlign = 'center';
+					controlUI.title = 'Click para ir a Mí Ubicación';
+					controlDiv.appendChild(controlUI);
 
-					  var controlText = document.createElement('div');
-					  controlText.style.fontFamily = 'Arial,sans-serif';
-					  controlText.style.fontSize = '12px';
-					  controlText.style.paddingLeft = '4px';
-					  controlText.style.paddingRight = '4px';
-					  controlText.innerHTML = '<b>Mí Ubicación</b>';
-					  controlUI.appendChild(controlText);
+					var controlText = document.createElement('div');
+					controlText.style.fontFamily = 'Arial,sans-serif';
+					controlText.style.fontSize = '12px';
+					controlText.style.paddingLeft = '4px';
+					controlText.style.paddingRight = '4px';
+					controlText.innerHTML = '<b>Mí Ubicación</b>';
+					controlUI.appendChild(controlText);
 
-					  google.maps.event.addDomListener(controlUI, 'click', function() {
-					  	map.setCenter(MyPosition)
-					  });
+					google.maps.event.addDomListener(controlUI, 'click', function() {
+						map.setCenter(MyPosition)
+					});
 				}; 				           
 
 				$scope.$watch("area", function (area) {
@@ -1098,9 +1106,9 @@
 					}
 				});
 				initialize();
-		},
-	};
-});
+			},
+		};
+	});
 
 
 	angularRoutingApp.directive('wrapOwlcarousel', function () {

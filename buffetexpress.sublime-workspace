@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"p",
+				"position"
+			],
+			[
 				"a",
 				"ajaxrest"
 			],
@@ -50,10 +54,6 @@
 			[
 				"pa",
 				"padding-left"
-			],
-			[
-				"p",
-				"padding"
 			],
 			[
 				"pos",
@@ -299,20 +299,26 @@
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/guia.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/presentacion.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/nosotros.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
 		"/C/Users/odc/Downloads/Rashim.RND.GoogleMap/Rashim.RND.GoogleMap/directives.js",
@@ -345,15 +351,12 @@
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/scripts/controllers/issue-432-markers-fit-clustering.js",
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/templates/issue-755-ng-router.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/Movilidad/BackupsBuffet/directives.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/helper.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-google-maps_dev_mapped.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/lodash.underscore.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/offline.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/felicitaciones.html",
@@ -387,7 +390,6 @@
 		"/C/Users/odc/AppData/Local/Temp/Rar$EXa0.072/www/templates/mapa.html",
 		"/C/Users/odc/AppData/Local/Temp/Rar$EXa0.932/www/templates/mapa.html",
 		"/C/Users/odc/AppData/Local/Temp/Rar$DIa0.007/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/clave.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-google-maps.min.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
@@ -428,9 +430,7 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/ionic.min.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/redes.html",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/red_socials.html",
-		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/feli_recla.html",
-		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/nosotros.html",
-		"/C/Users/odc/AppData/Local/Temp/Rar$EXa0.800/index.html"
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/feli_recla.html"
 	],
 	"find":
 	{
@@ -451,6 +451,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".costoad",
+			"recomendadoController",
+			"arrow_l.png",
+			"images",
+			"arrow_l.png",
+			"guiaController",
+			"ng-bind-html",
+			"nosotrosController",
+			"ng-bind-html",
+			"guiaController",
+			".presen #present .item > h4",
+			"goTo",
 			"ajaxrest",
 			"pagoController",
 			"tipo_pago",
@@ -566,19 +578,7 @@
 			".confirmacion",
 			".sesion",
 			".sesion button[type=\"submit\"]",
-			"btn-default",
-			"sanitize",
-			"ngBind",
-			"mi_cuentaController",
-			".menuplatolist .col-md-12 .detalle",
-			".menuplatolist .col-md-12 .btnts",
-			".menuplatolist .col-md-12 .title span",
-			".menuplatolist .col-md-12 .title",
-			".menuplatolist .col-md-12 .title span",
-			".menuplatolist .col-md-12 .title",
-			".menuplatolist .col-md-12 .title span",
-			".menuplatolist .col-md-12 .title",
-			".col-md-12 .title"
+			"btn-default"
 		],
 		"highlight": false,
 		"in_selection": false,
