@@ -1477,12 +1477,16 @@ max-width:20%;*/
 	width: 80px;
 	height: 80px;
 	float: right;
+	bottom: 150px;
+	position: relative;
 }
 .presen .owl-prev{
 	background: url('../images/arrow_l.png');
 	width: 80px;
 	height: 80px;
-	float: left;	
+	float: left;
+	bottom: 150px;
+	position: relative;
 }
 .reds{
 	/*position: fixed;*/

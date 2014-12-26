@@ -58,7 +58,11 @@
 		.when('/pago', {
 			templateUrl : 'templates/pago.html',
 			controller 	: 'pagoController'
-		})						
+		})
+		.when('/guia', {
+			templateUrl : 'templates/guia.html',
+			controller 	: 'guiaController'
+		})							
 		.otherwise({
 			redirectTo: '/'
 		});
@@ -979,6 +983,9 @@
 	});
 	angularRoutingApp.controller('redesController', function($scope) {
 		setBackground("fondo","");		
+	});	
+	angularRoutingApp.controller('guiaController', function($scope) {
+		setBackground("fondo","");
 	});	
 
 	angularRoutingApp.controller("mapaController", ["$scope", function ($scope) {
