@@ -256,6 +256,10 @@ a.btn-reset{
 {
 	width: 52%;
 }
+.buffet #present .owl-wrapper img
+{
+	width:90%;
+}
 .buffet .owl-controls
 {
 	width: 100%;

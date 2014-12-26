@@ -299,15 +299,16 @@
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates"
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/guia.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/guia.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/presentacion.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
@@ -451,6 +452,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".buffet .owl-wrapper img",
 			".costoad",
 			"recomendadoController",
 			"arrow_l.png",
@@ -577,8 +579,7 @@
 			"pagoController",
 			".confirmacion",
 			".sesion",
-			".sesion button[type=\"submit\"]",
-			"btn-default"
+			".sesion button[type=\"submit\"]"
 		],
 		"highlight": false,
 		"in_selection": false,
