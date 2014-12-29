@@ -6,16 +6,17 @@
       <h3>Que quieres hacer?</h3>
       <div class="checkbox">
         <label>
-          <input name="tipo" type="radio" value="Felicitaciones" checked="checked" /> Felicitaciones
+          <img id="chk_Felicitaciones" src="images/checkbox_ok.png" alt="..." alt="..." ng-click="setTipo('Felicitaciones')"> Felicitaciones
         </label>
       </div>
       <div class="checkbox">
         <label>
-          <input name="tipo" type="radio" value="Reclamo" /> Reclamos
+          <img id="chk_Reclamo" src="images/checkbox.png" alt="..." alt="..." ng-click="setTipo('Reclamo')"> Reclamos
         </label>
       </div>
       <div class="text">
       <input id="email" name="email" type="text" maxlength="55" value="{{email}}" placeholder="email@email.com">
+      <input type="hidden" name="tipo" id="tipo" value="Felicitaciones" />
       </div>       
       <div>
         <textarea id="comentarios" name="comentarios" rows="5" cols="50" placeholder="Comentarios">{{comentarios}}</textarea>

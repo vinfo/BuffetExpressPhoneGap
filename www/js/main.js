@@ -981,7 +981,18 @@
 		setBackground("fondo","");
 		$scope.sendContact = function (type) {			
 			ajaxrest.sendContact(type);
-		}		
+		},
+		$scope.setTipo = function (type) {			
+			if(type=="Felicitaciones"){
+				$("#chk_Felicitaciones").attr("src","images/checkbox_ok.png");
+				$("#chk_Reclamo").attr("src","images/checkbox.png");
+				$("#tipo").val('Felicitaciones');
+			}else{
+				$("#chk_Felicitaciones").attr("src","images/checkbox.png");
+				$("#chk_Reclamo").attr("src","images/checkbox_ok.png");
+				$("#tipo").val('Reclamo');
+			}
+		}			
 	});	
 	angularRoutingApp.controller('contactenosController', function($scope) {
 		setBackground("fondo","");
@@ -1098,11 +1109,11 @@
 				$scope.$watch("area", function (area) {
 					if (area != undefined) {
 						createMarker(area);
-						//createKML(localStorage.getItem("domain")+'resources/kmls/zona_total.kml');
-						var zona= JSON.parse(localStorage.getItem("zonas"));
+						createKML(localStorage.getItem("domain")+'resources/kmls/zona_total.kml');
+/*						var zona= JSON.parse(localStorage.getItem("zonas"));
 						for (var i = 0; i < zona.length; i++){
 							if(zona[i].show==1)createKML(localStorage.getItem("domain")+'resources/kmls/'+zona[i].code+'.kml');
-						}
+						}*/
 					}
 				});
 				initialize();

@@ -34,7 +34,8 @@ function startApp() {
                 distancias.sort();
                 localStorage.setItem("zonas",JSON.stringify(datos));
                 if(distancias.length>0){                   
-                  localStorage.setItem("zona",JSON.stringify(datos[0])); 
+                  localStorage.setItem("zona",JSON.stringify(datos[0]));
+                  getCoordinateJSON(datos[0]['code']);
                 } 
                 redirect();
               },
@@ -53,7 +54,7 @@ function startApp() {
 function redirect(){
     window.setTimeout(function() {
             window.location.href = 'internal.html';  
-         }, 1200);   
+         }, 1000);   
 }
 
 function getZone(){
@@ -71,6 +72,34 @@ function getZone(){
        }
      });
      return res;
+}
+
+function getCoordinateJSON(file){
+  var Coords = [];
+  var q='a';
+  for(var i=0;i<4;i++){
+    if(i==1)q='b';
+    if(i==2)q='c';
+    if(i==3)q='d';
+  var kml= "cam001";
+
+  var kmlLayer = new google.maps.KmlLayer(localStorage.getItem("domain")+'resources/kmls/'+kml+'.kml', {
+    suppressInfoWindows: true,
+    preserveViewport: false
+  });
+    
+    var process= ajaxrest.getCoordinateJSON(kml);
+    for(var i=0;i<process.length;i++){
+        Coords.push(new google.maps.LatLng(process[i][0],process[i][1]));
+    }
+
+    var zone = new google.maps.Polygon({
+        paths: Coords
+    });
+  var pos= localStorage.getItem("position");
+  var point = new google.maps.LatLng("6.230951594193816","-75.58729841171405");
+  //console.log(google.maps.geometry.poly.containsLocation(point, zone));
+  }
 }
 
 /* Calcular distancia */

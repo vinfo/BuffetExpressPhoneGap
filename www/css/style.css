@@ -294,6 +294,10 @@ a.btn-reset{
 {
 	display: block;
 }
+.presen .owl-controls  .owl-buttons
+{
+	display: block;
+}
 .buffet .imgcodigo
 {
 	width: 100%;
@@ -1468,29 +1472,25 @@ max-width:20%;*/
 	text-align: right;
 }
 .presen #present .item > h1,.presen #present .item > h4{
-	color: #FFF;
+color: #FFF;
 }
 .presen #present .item > h1{
-	font-size: 60px;
+font-size: 60px;
 }
 .presen #present .item > h4{
-	font-size: 30px;	
+font-size: 30px;	
 }
 .presen .owl-next{
-	background: url('../images/arrow_r.png');
-	width: 80px;
-	height: 80px;
-	float: right;
-	bottom: 150px;
-	position: relative;
+background: url('../images/arrow_r.png');
+width: 80px;
+height: 80px;
+float: right;
 }
 .presen .owl-prev{
-	background: url('../images/arrow_l.png');
-	width: 80px;
-	height: 80px;
-	float: left;
-	bottom: 150px;
-	position: relative;
+background: url('../images/arrow_l.png');
+width: 80px;
+height: 80px;
+float: left;	
 }
 .reds{
 	/*position: fixed;*/
