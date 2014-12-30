@@ -5,6 +5,7 @@ function startApp() {
   //alert("startApp");
   localStorage.domain = "http://buffetexpress.co/REST/";  
   localStorage.dimension = $(window).width();
+  localStorage.setItem("quadrant","");
 
   var banner = JSON.stringify(ajaxrest.getSlider("token="+localStorage.token));
   if(banner)localStorage.setItem("banner",banner); 
@@ -81,12 +82,11 @@ function getCoordinateJSON(file){
     if(i==1)q='b';
     if(i==2)q='c';
     if(i==3)q='d';
-  var kml= "cam001";
-
-  var kmlLayer = new google.maps.KmlLayer(localStorage.getItem("domain")+'resources/kmls/'+kml+'.kml', {
-    suppressInfoWindows: true,
-    preserveViewport: false
-  });
+    var kml= file+"_"+q;
+    var kmlLayer = new google.maps.KmlLayer(localStorage.getItem("domain")+'resources/kmls/'+kml+'.kml', {
+      suppressInfoWindows: true,
+      preserveViewport: false
+    });
     
     var process= ajaxrest.getCoordinateJSON(kml);
     for(var i=0;i<process.length;i++){
@@ -97,8 +97,11 @@ function getCoordinateJSON(file){
         paths: Coords
     });
   var pos= localStorage.getItem("position");
-  var point = new google.maps.LatLng("6.230951594193816","-75.58729841171405");
-  //console.log(google.maps.geometry.poly.containsLocation(point, zone));
+  var point = new google.maps.LatLng(pos[0],pos[1]);
+  console.log(google.maps.geometry.poly.containsLocation(point, zone));
+    if(google.maps.geometry.poly.containsLocation(point, zone)){
+      localStorage.setItem("quadrant",q);
+    }
   }
 }
 

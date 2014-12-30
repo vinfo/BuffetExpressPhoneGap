@@ -96,7 +96,12 @@
 		if($routeParams.activity)localStorage.activity=$routeParams.activity;
 		var plato= 1;
 		if(localStorage.plato)plato= parseInt(localStorage.plato);
-		if(localStorage.getItem("dimension")==768)$(".menuplato").css("width","82%");	
+		if(localStorage.getItem("dimension")==768)$(".menuplato").css("width","82%");
+
+		if(localStorage.getItem("quadrant")==""){
+			alert("Ubicación fuera de rango de despacho.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.");
+			localStorage.setItem("quadrant","n/a");
+		}
 
 		var checkPlato= Items.getItems(plato);
 		var flag=false;
@@ -225,7 +230,7 @@
 					flag=true;
 				}
 
-				var pos= Items.getPos();
+				var pos= Items.getPos(plato,dish.idCat);
 				var fcode= $("#code_"+dish.code).val().split('|');
 				var fname=fcode[2];
 				var price=fcode[3];
@@ -1049,7 +1054,7 @@
 					if(position.lng)lng= position.lng;
 
 					mapOptions = {
-						zoom: 16,
+						zoom: 4,
 						panControl: false,
 						center: new google.maps.LatLng(lat,lng),
 						mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -1110,10 +1115,19 @@
 					if (area != undefined) {
 						createMarker(area);
 						createKML(localStorage.getItem("domain")+'resources/kmls/zona_total.kml');
-/*						var zona= JSON.parse(localStorage.getItem("zonas"));
+						var zona= JSON.parse(localStorage.getItem("zonas"));
 						for (var i = 0; i < zona.length; i++){
-							if(zona[i].show==1)createKML(localStorage.getItem("domain")+'resources/kmls/'+zona[i].code+'.kml');
-						}*/
+							var zone= zona[i].code;
+							var show= zona[i].show;
+							if(show==1){
+								createKML(localStorage.getItem("domain")+'resources/kmls/'+zone+'.kml');
+/*								createKML(localStorage.getItem("domain")+'resources/kmls/'+zone+'_a.kml');
+								createKML(localStorage.getItem("domain")+'resources/kmls/'+zone+'_b.kml');
+								createKML(localStorage.getItem("domain")+'resources/kmls/'+zone+'_c.kml');
+								createKML(localStorage.getItem("domain")+'resources/kmls/'+zone+'_d.kml');*/
+							}				
+
+						}
 					}
 				});
 				initialize();
@@ -1202,14 +1216,18 @@
 
 	angularRoutingApp.factory('Items', function () {
 		return {
-			getPos: function() {
+			getPos: function(dish,cat) {
 				var pos=0;
+				var arr=[];
 				for (var i = 0; i < localStorage.length; i++){
 					var item= localStorage.key(i);
-					if(item.indexOf("item_")==0){
-						pos++;
+					if(item.indexOf("item_"+dish+"_"+cat)==0){
+						var dat= JSON.parse(localStorage.getItem(item));
+						arr.push(dat["pos"]);
 					}
 				}
+				arr.sort();
+				if(arr.length>0)pos= arr[arr.length-1] + 1;
 				return pos;
 			},			
 			getLabelDish: function() {
