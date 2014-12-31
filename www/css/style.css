@@ -1469,7 +1469,11 @@ max-width:20%;*/
 	z-index: 10000;
 }
 .presen .n_close{
-	text-align: right;
+text-align: right;
+position: fixed;
+z-index: 2;
+right: 0;
+top: 6%;
 }
 .presen #present .item > h1,.presen #present .item > h4{
 color: #FFF;
@@ -1863,10 +1867,10 @@ border: 0;
 }
 #present .owl-pagination
 {
-	bottom: 12%;
-	position: fixed;
-	text-align: center;
-	width: 108%;
+bottom: 16.6%;
+position: fixed;
+text-align: center;
+width: 108%;
 }
 #present .owl-pagination .owl-page
 {

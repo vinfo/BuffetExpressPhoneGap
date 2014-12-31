@@ -74,6 +74,7 @@
 		$scope.page="slider";
 		setBackground("fondo","");
 		setDisplayMenu();
+		localStorage.setItem("guia",JSON.stringify(ajaxrest.getGuia()));
 
 		var banner = JSON.parse(localStorage.banner);		
 		if(banner[0] && banner[0].img_matrix!=""){
@@ -87,7 +88,6 @@
 		}		
 
 		$("#totalDish").html(Items.getNumDish());
-
 	});	
 
 	angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){
@@ -102,7 +102,7 @@
 			alert("Ubicación fuera de rango de despacho.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.");
 			localStorage.setItem("quadrant","n/a");
 		}
-
+		
 		var checkPlato= Items.getItems(plato);
 		var flag=false;
 		if(Items.getTypeDish(plato)=="R"){
@@ -1009,7 +1009,7 @@
 		setBackground("fondo","");		
 	});	
 	angularRoutingApp.controller('guiaController', function($scope) {
-		setBackground("fondo","");
+		setBackground("fondo","");		
 	});	
 
 	angularRoutingApp.controller("mapaController", ["$scope", function ($scope) {
@@ -1169,17 +1169,22 @@
 		return {
 			setImage: function(dish,cat) {
 				var image="images/sp.gif";
-				var cont=0;
+				var arr =[];
 				for (var i = 0; i < localStorage.length; i++){
 					var item= localStorage.key(i);
 					if(item.indexOf("item_"+dish+"_"+cat)==0){
-						if(item && cont==0){
-							var code=item.split("_");
-							image= base_url+"resources/images/dish/"+code[4]+"_2.png";
-							cont++;
+						if(item){
+							var plato= JSON.parse(localStorage.getItem(item));
+							var dat=[];
+							dat.push(plato["pos"],plato["code"]);
+							arr.push(dat);
 						}
 					}
-				}			
+				}				
+			    arr.sort(function(a,b) {
+			        return a[0]-b[0]
+			    });				
+				if(arr[0])image= base_url+"resources/images/dish/"+arr[0][1]+"_2.png";
 				return image;
 			}
 		};

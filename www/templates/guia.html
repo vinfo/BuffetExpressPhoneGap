@@ -3,15 +3,16 @@
 <!--        <span class="flechaiz"></span>
         <span class="fledere"></span> -->
         <div class="n_close"><a href="#"><img src="images/m_close.png"></a></div>
-        <div id="present" class="owl-carousel owl-theme">
-          <div class="item"><img src="http://webmarket.com.co/buffet/images/captura.jpg" alt="..."></div>
-          <div class="item"><img src="http://webmarket.com.co/buffet/images/captura_2.jpg" alt="..." ></div>
-          <div class="item"><img src="http://webmarket.com.co/buffet/images/captura_3.jpg" alt="..."></div>
-        </div>
+        <div id="present" class="owl-carousel owl-theme"></div>
       </div>
     <!-- fin contenido buffet -->
   <script type="text/javascript">
       $(function(){
+    var guia= JSON.parse(localStorage.getItem("guia"));
+    for(var i=0;i<guia.length;i++){
+      $("#present").append('<div class="item"><img src="http://buffetexpress.co/imagenes/guia/imagen1/'+guia[i]["img_matrix"]+'" alt="..."></div>');
+    }    
+
         //fin tamaño container 
           $("#owl-demo").owlCarousel({
               navigation : true, // Show next and prev buttons
