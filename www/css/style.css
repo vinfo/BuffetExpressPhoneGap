@@ -1891,6 +1891,9 @@ input[type="radio"], input[type="checkbox"] {
   /* Webkit browsers*/
   -webkit-transform: scale(1.7);
 }
+img.btn:hover{
+    opacity: 0.7;
+}
 
 @media (max-width: 532px){
 	.menusup .title
