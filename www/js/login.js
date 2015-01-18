@@ -39,7 +39,7 @@ angularRoutingApp.controller('loginController', function($scope, $location,$rout
 		window.location = "internal.html";	
 	},		
 	$scope.doLogin = function() {
-		ajaxrest.login();
+		ajaxrest.login(82);
 	},	
 	$scope.doView = function (hash) {
 		$location.path(hash);
