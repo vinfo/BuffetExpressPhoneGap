@@ -23,7 +23,7 @@ angularRoutingApp.config(function($routeProvider) {
 	.when('/clave', {
 		templateUrl : 'templates/clave.html',
 		controller 	: 'claveController'
-	})
+	})	
 	.otherwise({
 		redirectTo: '/'
 	});
@@ -39,7 +39,7 @@ angularRoutingApp.controller('loginController', function($scope, $location,$rout
 		window.location = "internal.html";	
 	},		
 	$scope.doLogin = function() {
-		ajaxrest.login(82);
+		ajaxrest.login();
 	},	
 	$scope.doView = function (hash) {
 		$location.path(hash);

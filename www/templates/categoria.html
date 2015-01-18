@@ -19,9 +19,9 @@
       </div>
     </div>
     <br>
-    <img src="images/menu-menos.png" alt="..." title="..." class="masdetalle btn" ng-click="setDish(dish,'less')" />
-    <img src="images/lupamenu.png" alt="..." title="..." class="masdetalle btn" ng-click="detailDish(dish)" />
-    <img src="images/masmenu.png" alt="..." title="..." class="vermasplato btn" ng-click="setDish(dish,'add')" />
+    <img src="images/menu-menos.png" alt="..." title="..." class="masdetalle btns" ng-click="setDish(dish,'less')" />
+    <img src="images/lupamenu.png" alt="..." title="..." class="masdetalle btns" ng-click="detailDish(dish)" />
+    <img src="images/masmenu.png" alt="..." title="..." class="vermasplato btns" ng-click="setDish(dish,'add')" />
     <input id="code_{{dish.code}}" name="code_{{dish.code}}" type="hidden" value="{{dish.code}}|{{dish.idCat}}|{{dish.fullname}}|{{dish.price}}" />
   </div>
   <div class="contimg"><div id="numb_{{dish.code}}" class="numb">0</div><img id="image_{{dish.code}}" ng-src="{{dish.images}}" /></div>
@@ -29,7 +29,7 @@
 
 </div>
 <div class="verplato">
-  <img src="images/cerr_vpla.png" alt="..." class="cerrves btn" ng-click="closeDish()">
+  <img src="images/cerr_vpla.png" alt="..." class="cerrves" ng-click="closeDish()">
   <div class="padre">
 
    <div class = "derrap">
