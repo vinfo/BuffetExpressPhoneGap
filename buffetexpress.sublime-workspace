@@ -314,6 +314,7 @@
 	"file_history":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/felicitaciones.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/clave.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
@@ -439,8 +440,7 @@
 		"/D/wamp/www/familymarketing/js/jquery.maskMoney.js",
 		"/D/wamp/www/familymarketing/plugins/PHPMailer/examples/index.html",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla8.html",
-		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/perfil.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/scroll.html"
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/perfil.html"
 	],
 	"find":
 	{
@@ -461,6 +461,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"pagoController",
 			"SendPay",
 			"alert",
 			"fcode",
@@ -587,8 +588,7 @@
 			"controlDiv",
 			"setMyLocationEnabled",
 			"setMyLocationEnabled(",
-			"getZone(",
-			"mapaController"
+			"getZone("
 		],
 		"highlight": false,
 		"in_selection": false,

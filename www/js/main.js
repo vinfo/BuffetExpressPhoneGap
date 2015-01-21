@@ -730,6 +730,7 @@
 		var order=[];
 		var orderdetail=[];
 		var orderxitems=[];
+		
 		for(var h=0;h<farr.length;h++){		
 			var item= farr[h];
 			var dish= item.value;//Real ID plato
@@ -769,9 +770,10 @@
 					var price=parseInt(dat[m].price);	
 
 					var vItem= "item_"+dish+"_"+cat+"_"+tipo+"_"+code;
+
 					cant= Items.getExtraDish(vItem);
-					var add="";			
-					orderxitems.push({idDish:idD,qty:cant,price:price});								
+					var add="";	
+					orderxitems.push({idDish:dish,idItem:idD,qty:cant,price:price});										
 					
 					if(cat==1){					
 						if(c1==0){
@@ -880,7 +882,8 @@
 					total= parseInt(localStorage.valor_recomendado);
 					total2=total;
 				}				
-				orderdetail.push({numDish:dish,qty:cantDish,price:total2,type:type});			
+				orderdetail.push({numDish:dish,qty:cantDish,price:total2,type:type});
+
 				labels+='<label>'+nameDish+'</label>';
 				Gtotal+=total2;
 				valores+='<label>$'+Currency.setMoney(total2, 0, ",", ".")+'</label>';
@@ -888,6 +891,7 @@
 				nDish--;
 			}
 		}
+		
 		
 		Ditem='<div class="td">'+labels+'</div><div class="td">'+valores+'</div>';
 
@@ -948,7 +952,7 @@
 			var order=[];
 
 			if(Gtotal>0){
-				if(quadrant != "n/a" && quadrant != ""){
+				// if(quadrant != "n/a" && quadrant != ""){
 					if(!localStorage.getItem("cuenta")){
 						alert("Debe estar logueado para terminar el pedido.");
 						localStorage.setItem("orden","Pendiente");
@@ -963,7 +967,6 @@
 							var zona= JSON.parse(localStorage.getItem("zona"));						
 
 							order.push({idUser:id_cliente,idZone:zona.id,idCupon:bono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,cellPhone:cellPhone,typePay:tipo_pago,status:71});
-
 							var process= ajaxrest.processOrder(order,orderdetail,orderxitems);
 							$(".vrdirc,.bondesc").css("display","none");
 							$(".confirmacion").css("display","inline-block");
@@ -978,9 +981,9 @@
 							alert("Dirección es requerida.");
 						}
 					}
-				}else{
+/*				}else{
 					alert("Usuario fuera de cobertura.");
-				}
+				}*/
 
 			}
 		}						
