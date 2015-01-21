@@ -231,13 +231,16 @@
 				}
 
 				var pos= Items.getPos(plato,dish.idCat);
-				var fcode= $("#code_"+dish.code).val().split('|');
-				var fname=fcode[2];
-				var price=fcode[3];
+				var fcode= $("#code_"+dish.code).val().split('|');			
+
+				var fid= fcode[0];
+				var fname= fcode[3];
+				var price= fcode[4];
 				var name= "item_"+plato+"_"+dish.idCat+"_B_"+dish.code;
+
 				var cant=0;
 				if(!localStorage.getItem(name)){					
-					localStorage.setItem(name,JSON.stringify({cant:cant,pos:pos,code:dish.code,cat:dish.idCat,fname:fname,price:price}));
+					localStorage.setItem(name,JSON.stringify({id:fid,cant:cant,pos:pos,code:dish.code,cat:dish.idCat,fname:fname,price:price}));
 					var img=Images.setImage(plato,dish.idCat);
 					if(dish.idCat==1){	
 						$scope.sopa= img;			
@@ -264,7 +267,7 @@
 					if(cant>0)cant= cant - 1;										
 				}
 				if(cant>0){					
-					localStorage.setItem(name,JSON.stringify({cant:cant,pos:pos,code:dish.code,cat:dish.idCat,fname:fname,price:price}));
+					localStorage.setItem(name,JSON.stringify({id:fid,cant:cant,pos:pos,code:dish.code,cat:dish.idCat,fname:fname,price:price}));
 					$("#numb_"+dish.code).html(cant).fadeIn();
 				}else{
 					localStorage.removeItem(name);
@@ -759,6 +762,7 @@
 
 				if(dish==1)total;
 				for(var m=0;m<dat.length;m++){
+					var idD=dat[m].id;
 					var code=dat[m].code;
 					var name=dat[m].name;
 					var cat=dat[m].idCat;
@@ -766,8 +770,8 @@
 
 					var vItem= "item_"+dish+"_"+cat+"_"+tipo+"_"+code;
 					cant= Items.getExtraDish(vItem);
-					var add="";					
-					orderxitems.push({idDish:dish,qty:cant,price:price});								
+					var add="";			
+					orderxitems.push({idDish:idD,qty:cant,price:price});								
 					
 					if(cat==1){					
 						if(c1==0){
@@ -937,41 +941,47 @@
 			var referencia= $("#referencia").val();
 			var numero= $("#numero").val();
 			var tipo= $('input[name=tipo]:checked').val();
-			var tipoPago= $("#tipoPago").val();		
+			var tipoPago= $("#tipoPago").val();
+			var quadrant= localStorage.quadrant;	
 			
 			var bono= $('#hbono').val();
 			var order=[];
 
 			if(Gtotal>0){
-				if(!localStorage.getItem("cuenta")){
-					alert("Debe estar logueado para terminar el pedido.");
-					localStorage.setItem("orden","Pendiente");
-					localStorage.setItem("direccion",direccion);
-					localStorage.setItem("referencia",referencia);
-					localStorage.setItem("numero",numero);
-					localStorage.setItem("tipo",tipo);
-					window.location = "login.html#/cuenta";
-				}else{
-					if(direccion!=""){
-						$scope.nombre_cliente= nombre_cliente;
-						var zona= JSON.parse(localStorage.getItem("zona"));
-
-						order.push({idUser:id_cliente,idZone:zona.id,idCupon:bono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,cellPhone:cellPhone,typePay:tipo_pago,status:72});
-
-						var process= ajaxrest.processOrder(order,orderdetail,orderxitems);
-						$(".vrdirc,.bondesc").css("display","none");
-						$(".confirmacion").css("display","inline-block");
-						localStorage.removeItem("orden");
-						localStorage.removeItem("direccion");
-						localStorage.removeItem("referencia");
-						localStorage.removeItem("numero");
-						localStorage.removeItem("tipo");
-						$("#totalDish").html("0");
-						cleanSession();
+				if(quadrant != "n/a" && quadrant != ""){
+					if(!localStorage.getItem("cuenta")){
+						alert("Debe estar logueado para terminar el pedido.");
+						localStorage.setItem("orden","Pendiente");
+						localStorage.setItem("direccion",direccion);
+						localStorage.setItem("referencia",referencia);
+						localStorage.setItem("numero",numero);
+						localStorage.setItem("tipo",tipo);
+						window.location = "login.html#/cuenta";
 					}else{
-						alert("Dirección es requerida.");
+						if(direccion!=""){
+							$scope.nombre_cliente= nombre_cliente;
+							var zona= JSON.parse(localStorage.getItem("zona"));						
+
+							order.push({idUser:id_cliente,idZone:zona.id,idCupon:bono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,cellPhone:cellPhone,typePay:tipo_pago,status:71});
+
+							var process= ajaxrest.processOrder(order,orderdetail,orderxitems);
+							$(".vrdirc,.bondesc").css("display","none");
+							$(".confirmacion").css("display","inline-block");
+							localStorage.removeItem("orden");
+							localStorage.removeItem("direccion");
+							localStorage.removeItem("referencia");
+							localStorage.removeItem("numero");
+							localStorage.removeItem("tipo");
+							$("#totalDish").html("0");
+							cleanSession();
+						}else{
+							alert("Dirección es requerida.");
+						}
 					}
+				}else{
+					alert("Usuario fuera de cobertura.");
 				}
+
 			}
 		}						
 	});
@@ -1181,9 +1191,9 @@
 						}
 					}
 				}				
-			    arr.sort(function(a,b) {
-			        return a[0]-b[0]
-			    });				
+				arr.sort(function(a,b) {
+					return a[0]-b[0]
+				});				
 				if(arr[0])image= base_url+"resources/images/dish/"+arr[0][1]+"_2.png";
 				return image;
 			}
@@ -1415,8 +1425,8 @@
 					var item= localStorage.key(i);
 					var pl= item.split('_');			
 					if(pl[1]==dish && item.indexOf("item_"+dish)==0){
-						var dat= JSON.parse(localStorage.getItem(item));						
-						plato.push({code:dat.code,name:dat.fname,price:dat.price,idCat:dat.cat});
+						var dat= JSON.parse(localStorage.getItem(item));		
+						plato.push({id:dat.id,code:dat.code,name:dat.fname,price:dat.price,idCat:dat.cat});
 					}					
 				}
 				return JSON.stringify(plato);
