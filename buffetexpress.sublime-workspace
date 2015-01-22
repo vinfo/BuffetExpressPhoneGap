@@ -309,11 +309,16 @@
 	},
 	"expanded_folders":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap"
+		"/D/Movilidad/BuffetExpressPhoneGap",
+		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/felicitaciones.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/clave.html",
@@ -325,7 +330,6 @@
 		"/D/wamp/www/agendar/application/helpers/index.html",
 		"/D/wamp/www/Premisas/js/tools.js",
 		"/D/wamp/www/familymarketing/js/tools.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/test.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/test",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
@@ -343,7 +347,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/mapa.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/jquery-1.11.1.min.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
@@ -377,7 +380,6 @@
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/scripts/controllers/issue-432-markers-fit-clustering.js",
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/templates/issue-755-ng-router.html",
 		"/D/Movilidad/BackupsBuffet/directives.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/helper.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-google-maps_dev_mapped.js",
@@ -461,6 +463,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"coordinates",
+			"pagoController",
+			"position",
 			"pagoController",
 			"SendPay",
 			"alert",
@@ -585,10 +590,7 @@
 			".vermapa label.title",
 			".menusup .title",
 			".vermapa label.title",
-			"controlDiv",
-			"setMyLocationEnabled",
-			"setMyLocationEnabled(",
-			"getZone("
+			"controlDiv"
 		],
 		"highlight": false,
 		"in_selection": false,

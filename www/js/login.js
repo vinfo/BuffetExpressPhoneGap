@@ -56,7 +56,7 @@ angularRoutingApp.controller('cuentaController', function($scope) {
 		$scope.logo="images/logo.png";
 	}	
 	$scope.setAccount = function () {
-		ajaxrest.setAccount('add');
+		ajaxrest.setAccount('add','82');
 	}
 });
 

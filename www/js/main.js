@@ -964,9 +964,14 @@
 					}else{
 						if(direccion!=""){
 							$scope.nombre_cliente= nombre_cliente;
-							var zona= JSON.parse(localStorage.getItem("zona"));						
-
-							order.push({idUser:id_cliente,idZone:zona.id,idCupon:bono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,cellPhone:cellPhone,typePay:tipo_pago,status:71});
+							var zona= JSON.parse(localStorage.getItem("zona"));
+							var coords="";
+							if(localStorage.position){
+								coord= JSON.parse(localStorage.position);
+								coords= coord.lat+","+coord.lng;
+							}
+							
+							order.push({idUser:id_cliente,coordinates:coords,idZone:zona.id,idCupon:bono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,cellPhone:cellPhone,typePay:tipo_pago,status:71});
 							var process= ajaxrest.processOrder(order,orderdetail,orderxitems);
 							$(".vrdirc,.bondesc").css("display","none");
 							$(".confirmacion").css("display","inline-block");

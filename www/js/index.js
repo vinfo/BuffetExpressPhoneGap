@@ -18,8 +18,8 @@ function startApp() {
       navigator.geolocation.getCurrentPosition(
               function(position) {
                 lat1= position.coords.latitude;
-                lng1= position.coords.longitude;     
-                localStorage.setItem("position",JSON.stringify({lat:lat1,lng:lng1})); 
+                lng1= position.coords.longitude;    
+                localStorage.setItem("position",JSON.stringify({lat:lat1,lng:lng1}));
                 var datos=[];
                 var distancias=[];
                 var totalZones=[];             
