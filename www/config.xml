@@ -53,6 +53,10 @@
   <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
   <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
   
+  <gap:config-file platform="android" parent="/manifest">
+    <application android:theme="@android:style/Theme.NoTitleBar"></application>
+  </gap:config-file>  
+  
   <icon src="icon.png" gap:platform="android" gap:density="ldpi"/>
 
 <!--   <gap:splash src="res/screen/android/screen-ldpi-portrait.png" gap:platform="android" gap:qualifier="ldpi" />
