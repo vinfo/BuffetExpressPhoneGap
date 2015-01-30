@@ -34,6 +34,8 @@
     </feature>     -->
 
   <access origin="*"/>
+
+  <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" ></activity>
   
   <gap:plugin name="nl.x-services.plugins.socialsharing" />
   <gap:plugin name="nl.x-services.plugins.toast" version="2.0" />
