@@ -12,7 +12,7 @@
     <preference name="permissions" value="none" />
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
-    <preference name="fullscreen" value="true" />
+    <preference name="fullscreen" value="false" />
     <preference name="webviewbounce" value="true" />
     <preference name="prerendered-icon" value="true" />
     <preference name="stay-in-webview" value="false" />
@@ -52,10 +52,8 @@
   <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.3" />
   <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
   <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
-  
-  <gap:config-file platform="android" parent="/manifest">
-    <application android:theme="@android:style/Theme.NoTitleBar"></application>
-  </gap:config-file>  
+
+  <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" ></activity> 
   
   <icon src="icon.png" gap:platform="android" gap:density="ldpi"/>
 
