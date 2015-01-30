@@ -62,9 +62,9 @@
   <gap:splash src="res/screen/android/screen-xxhdpi-portrait.png" gap:platform="android" gap:qualifier="xxhdpi" /> -->
 
 
-  <gap:config-file platform="android" parent="/manifest/application">
-      <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" ></activity>  
-  </gap:config-file>
+<gap:config-file platform="android" parent="/manifest/application">
+    <activity android:launchMode="singleInstance" />
+</gap:config-file>
 
   <access origin="*" />
 </widget>
