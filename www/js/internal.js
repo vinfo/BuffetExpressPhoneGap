@@ -10,7 +10,7 @@ if (window.jQuery) {
         $(".pedidotar").css({"bottom":$("li.carrito a img").height()});
         $(".contpag").css({"bottom":$("li.carrito a img").height()});
         $(".latermenu").css({"margin-top":$(".menusup").height()});
-        $(".botones").css({"bottom":$("li.carrito a img").height()+"px"});        
+        $(".botones").css({"bottom":$("li.carrito a img").height()+"px"});
     });
     //fin tamaño container      
     
@@ -47,6 +47,13 @@ if (window.jQuery) {
     $(".menupie").hover(function(){
         $(".latermenu").animate({"left":-412},200);
     });
+	$(document).on("click", ".glyphicon-minus-sign", function() {
+	  $(this).parent().fadeOut();
+	});
+	$(document).on("click", ".close_guia", function() {
+	  localStorage.setItem("show_guia","1");
+	  window.location.href = 'internal.html';
+	});	
 
     //Activar menus  
     $(".menupie li a").click(function(){

@@ -37,7 +37,6 @@
     onDeviceReady: function() {
         //alert("Iniciando app..");
         //app.receivedEvent('deviceready');
-        navigator.splashscreen.hide();
         screen.lockOrientation('portrait-primary');
         //navigator.splashscreen.show();
         checkConnection();

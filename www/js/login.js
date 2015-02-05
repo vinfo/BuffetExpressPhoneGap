@@ -1,5 +1,5 @@
 // Creación del módulo
-var angularRoutingApp = angular.module('angularRoutingApp', ['ngRoute']);
+var angularRoutingApp = angular.module('angularRoutingApp', ["ngRoute","ngSanitize"]);
 
 // Configuración de las rutas
 angularRoutingApp.config(function($routeProvider) {
@@ -15,10 +15,14 @@ angularRoutingApp.config(function($routeProvider) {
 	.when('/login/:email', {
 		templateUrl : 'templates/login.html',
 		controller 	: 'loginController'
-	})	
+	})
 	.when('/terminos', {
 		templateUrl : 'templates/terminos.html',
 		controller 	: 'terminosController'
+	})	
+	.when('/politicas', {
+		templateUrl : 'templates/politicas.html',
+		controller 	: 'politicasController'
 	})	
 	.when('/clave', {
 		templateUrl : 'templates/clave.html',
@@ -56,12 +60,22 @@ angularRoutingApp.controller('cuentaController', function($scope) {
 		$scope.logo="images/logo.png";
 	}	
 	$scope.setAccount = function () {
-		ajaxrest.setAccount('add','82');
+		ajaxrest.setAccount('add');
 	}
 });
 
 angularRoutingApp.controller('terminosController', function($scope) {
-	$scope.message = 'Esta es la página de "Terminos"';
+		var data= ajaxrest.getContent("id=1355&token="+localStorage.token);	
+		var dat = angular.fromJson(data);
+		console.log(dat[0].contenido_matrix);
+		$scope.terminos = dat[0].contenido_matrix;
+});
+
+
+angularRoutingApp.controller('politicasController', function($scope) {
+		var data= ajaxrest.getContent("id=1356&token="+localStorage.token);	
+		var dat = angular.fromJson(data);
+		$scope.terminos = dat[0].contenido_matrix;
 });
 
 angularRoutingApp.controller('claveController', function($scope) {

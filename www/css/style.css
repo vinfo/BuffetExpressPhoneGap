@@ -150,6 +150,8 @@ a.btn-reset{
 	width: 100%;
 	text-align: center;
 	bottom: 2%;
+    margin-top: 20px;
+    padding: 20px 10px;		
 }
 .sesion .terminos a
 {
@@ -274,21 +276,23 @@ a.btn-reset{
 .buffet .owl-controls .owl-page span
 {
 	background: url(../images/btn1sli.png);
-	background-size: 25px 25px;
-	width: 25px;
-	height: 25px;
+	background-size: 15px 15px;
+	width: 15px;
+	height: 15px;
 	position: relative;
 
 }
 .buffet .owl-controls .active span
 {
 	background: url(../images/btn2sli.png);
-	background-size: 25px 25px;
+	background-size: 15px 15px;
 	top: -2px;
 }
 .buffet .owl-controls  .owl-buttons
 {
 	display: none;
+	height: 80px;
+	z-index: 999;
 }
 .presen .owl-controls  .owl-buttons
 {
@@ -1019,11 +1023,12 @@ max-width:20%;*/
 	width: 100%;
 	box-shadow: 1px 2px 3px #B0B0B0;
 	border:1px solid #B0B0B0;
-	background: #7F7F7F;
-	color: #FFFFFF;
+	background: #fcfcfc;
+	color: #000;
 	border-radius: 20px;
 	padding: 5px;
 	padding-left: 20px;
+	margin-bottom: 15px;
 }
 .facturavir .vrdirc .listdirecc
 {
@@ -1292,7 +1297,13 @@ max-width:20%;*/
 }
 .terminos
 {
-	padding:10px;
+	padding:40px 10px;
+}
+.terminos input
+{
+	width:10px;
+	height: 10px;
+	padding:4px;
 }
 .terminos .contt
 {
@@ -1867,10 +1878,14 @@ border: 0;
 }
 #present .owl-pagination
 {
-bottom: 16.6%;
-position: fixed;
-text-align: center;
-width: 108%;
+  position: fixed;
+  width:220px;
+  height:30px;
+  padding:8px;
+  margin: 5% auto;
+  left: 0;
+  right: 0;
+  z-index: -1;
 }
 #present .owl-pagination .owl-page
 {

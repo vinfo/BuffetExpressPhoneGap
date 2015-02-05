@@ -107,8 +107,11 @@
     
   };
   function checkLoad(image){
-    var carg= $('#image_'+image).attr('src');
-    var img= 'http://buffetexpress.co/REST/resources/images/dish/'+image+'_1.jpg';
+    var dimension=localStorage.dimension;
+  var carg= $('#image_'+image).attr('src');
+  var rand= Math.floor((Math.random() * 100) + 1); 
+    var img= 'http://buffetexpress.co/REST/resources/images/dish/'+image+'_1.jpg?rand='+rand;
+  if(dimension<=450)img= 'http://buffetexpress.co/REST/resources/images/dish/thumbs/'+image+'_1.jpg?rand='+rand;
     if(carg.length < img.length){
         //console.log(img);
         $('#image_'+image).fadeOut(50, function(){

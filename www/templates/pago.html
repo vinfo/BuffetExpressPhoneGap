@@ -45,21 +45,15 @@
         <div class="bondesc">
             Ingresar bono de descuento
             <br>
-            <input id="bono" name="bono" type="text" maxlength="25" ng-model="bono" onchange="angular.element(this).scope().bonoChanged()">
+            <input id="bono" name="bono" type="text" maxlength="25" ng-model="bono" onblur="angular.element(this).scope().bonoChanged()">
             <input id="hbono" name="hbono" type="hidden" value="" />
             <input id="tipoPago" name="tipoPago" type="hidden" value="efectivo" />
         </div>
         <div class="vrdirc">
-            <label>Verifica que esta si sea tu dirección</label>
-            <input id="direccion" name="direccion" value="{{direccion}}" type="text" maxlength="120">
-            <label>Tipo</label>
-            <label class="checkbox"><input name="tipo" id="tipo1" type="radio" value="Oficina" /> 1. Oficina</label>      
-            <label class="checkbox"><input name="tipo" id="tipo2" type="radio" value="Apartamento" /> 2. Apartamento</label> 
-            <label class="checkbox"><input name="tipo" id="tipo3" type="radio" value="Casa" /> 3. Casa</label>
-            <label>Número</label>
-            <input id="numero" name="numero" value="{{numero}}" type="text" maxlength="4">
-            <label>Punto de referencia</label>
-            <input id="referencia" name="referencia" value="{{referencia}}" type="text" maxlength="120">
+            <label>Datos de envío</label>
+            <input id="direccion" name="direccion" value="{{direccion}}" type="text" placeholder="Dirección" maxlength="120">
+            <input id="numero" name="numero" value="{{numero}}" type="text" placeholder="N° Apt/Ofic" maxlength="4">
+            <input id="referencia" name="referencia" value="{{referencia}}" type="text" placeholder="Punto de referencia/Edificio" maxlength="120">
             <label>Direcciones frecuentes</label>
             <ul class="listdirecc" ng-bind-html="direcciones_frecuentes"></ul>
             <div class="medipa">
@@ -71,7 +65,7 @@
                         <div class="formpago">
                             <ul>
                                 <li id="efectivo" ng-click="setTypePay('efectivo')"><img src="images/pago_efectivo.png" alt="..." title="..."> Efectivo <img src="images/pagoho.png" alt="..." title="..." class="icobie"></li>
-                                <li id="tarjeta" ng-click="setTypePay('tarjeta')"><img src="images/pago_tarjeta.png" alt="..." title="..."> Tarjeta <img src="images/pagoho.png" alt="..." title="..." class="icobie"></li>
+                                <li id="tarjeta" ng-click="setTypePay('tarjeta')"><img src="images/pago_tarjeta.png" alt="..." title="..."> Datáfono <img src="images/pagoho.png" alt="..." title="..." class="icobie"></li>
                                 <li id="online" ng-click="setTypePay('online')"><img src="images/pago_online.png" alt="..." title="..."> Online <img src="images/pagoho.png" alt="..." title="..." class="icobie"></li>
                             </ul>
                         </div>

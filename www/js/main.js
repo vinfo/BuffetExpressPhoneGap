@@ -2,7 +2,9 @@
 	var angularRoutingApp = angular.module('angularRoutingApp', ["ngRoute","ngSanitize"]);
 	var localData = JSON.parse(localStorage.getItem('cuenta'));
 	var num = localStorage.setItem("num",0);
-	var base_url="http://buffetexpress.co/REST/";	
+	var base_url="http://buffetexpress.co/REST/";
+	var base_site="http://buffetexpress.co/";
+	var rand= Math.floor((Math.random() * 999) + 1); 		
 
 	// Configuración de las rutas
 	angularRoutingApp.config(function($routeProvider) {
@@ -71,10 +73,14 @@
 	angularRoutingApp.controller('sliderController', function($scope,$location,Items) {		
 		//localStorage.clear();
 		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
+		$("#img1").attr("src", "http://buffetexpress.co/imagenes/recomendado/imagen1/buffet1295.jpg?timestamp=" + new Date().getTime());
+		$("#img2").attr("src", "http://buffetexpress.co/imagenes/recomendado/imagen1/recomendado-del-dia1296.jpg?timestamp=" + new Date().getTime());
 		$scope.page="slider";
 		setBackground("fondo","");
 		setDisplayMenu();
-		localStorage.setItem("guia",JSON.stringify(ajaxrest.getGuia()));
+		var data= ajaxrest.getGuia();
+		console.log(data);
+		localStorage.setItem("guia",JSON.stringify(data));
 
 		var banner = JSON.parse(localStorage.banner);		
 		if(banner[0] && banner[0].img_matrix!=""){
@@ -96,7 +102,7 @@
 		if($routeParams.activity)localStorage.activity=$routeParams.activity;
 		var plato= 1;
 		if(localStorage.plato)plato= parseInt(localStorage.plato);
-		if(localStorage.getItem("dimension")==768)$(".menuplato").css("width","82%");
+		if(localStorage.getItem("dimension")==768)$(".menuplato").css("width","82%");		
 
 		if(localStorage.getItem("quadrant")==""){
 			alert("Ubicación fuera de rango de despacho.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.");
@@ -413,8 +419,8 @@
 				var cat= datos[m].data.idCat;
 				var price= parseInt(datos[m].data.price);
 				
-				var image=base_url+"resources/images/dish/"+code+"_2.png";	
-
+				var image=base_url+"resources/images/dish/"+code+"_2.png?rand="+rand;	
+				
 				var vItem= "item_"+dish+"_"+cat+"_"+tipo+"_"+code;
 				cant= Items.getExtraDish(vItem);
 				
@@ -582,9 +588,9 @@
 		var cat= $routeParams.idCat;
 		localStorage.activity=$routeParams.activity;
 		var zona= JSON.parse(localStorage.zona);
-		var id_zona=1;
-		if(zona.id)id_zona=zona.id;		
-
+		var id_zona=2;
+		if(zona.id && localStorage.quadrant!="" && localStorage.quadrant!="n/a")id_zona=zona.id;		
+		//alert("Zona Actual: "+id_zona);
 		ajaxrest.getDishes("zone="+id_zona+"&category="+cat+"&token="+localStorage.token+"&dimension="+localStorage.dimension);
 		var datos= $("#datos").val();
 		$scope.dishes = angular.fromJson(datos);
@@ -623,8 +629,9 @@
 		$(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
 		var items="";
 		var zona= JSON.parse(localStorage.zona);
-		var id_zona=1;
-		if(zona.id)id_zona=zona.id;
+		var id_zona=2;
+		if(zona.id && localStorage.quadrant!="" && localStorage.quadrant!="n/a")id_zona=zona.id;		
+		
 		if(localStorage.token){
 			var data= ajaxrest.getDishDay("zone="+id_zona+"&token="+localStorage.token);
 			if(data){
@@ -632,12 +639,12 @@
 				var dish=[];
 				if(dat.length>0){
 					for(var i=0;i<dat.length;i++){					
-						if(dat[i].idCat==1)$scope.sopas= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
-						if(dat[i].idCat==2)$scope.arroz= base_url+"resources/images/dish/"+dat[i].code+"_2.png";					
-						if(dat[i].idCat==3)$scope.carnes= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
-						if(dat[i].idCat==4)$scope.guarnicion= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
-						if(dat[i].idCat==5)$scope.bebidas= base_url+"resources/images/dish/"+dat[i].code+"_2.png";
-						var item = {code:dat[i].code, cat:dat[i].idCat,fname:dat[i].name,price:dat[i].price}; 
+						if(dat[i].idCat==1)$scope.sopas= base_url+"resources/images/dish/"+dat[i].code+"_2.png?rand="+rand;
+						if(dat[i].idCat==2)$scope.arroz= base_url+"resources/images/dish/"+dat[i].code+"_2.png?rand="+rand;					
+						if(dat[i].idCat==3)$scope.carnes= base_url+"resources/images/dish/"+dat[i].code+"_2.png?rand="+rand;
+						if(dat[i].idCat==4)$scope.guarnicion= base_url+"resources/images/dish/"+dat[i].code+"_2.png?rand="+rand;
+						if(dat[i].idCat==5)$scope.bebidas= base_url+"resources/images/dish/"+dat[i].code+"_2.png?rand="+rand;
+						var item = {id:dat[i].id,code:dat[i].code, cat:dat[i].idCat,fname:dat[i].name,price:dat[i].price}; 
 						dish.push(item);					
 						items+="- "+dat[i].name+"<br/>";
 					}
@@ -663,7 +670,7 @@
 			var plato= Items.getFullLastId()+1;
 			
 			for(var j=0;j<items.length;j++){	
-				localStorage.setItem("item_"+plato+"_"+items[j].cat+"_R_"+items[j].code,JSON.stringify({cant:1,pos:j+1,code:items[j].code,cat:items[j].cat,fname:items[j].fname,price:items[j].price}));
+				localStorage.setItem("item_"+plato+"_"+items[j].cat+"_R_"+items[j].code,JSON.stringify({id:items[j].id,cant:1,pos:j+1,code:items[j].code,cat:items[j].cat,fname:items[j].fname,price:items[j].price}));
 			}
 
 			localStorage.setItem("plato",plato);
@@ -675,21 +682,29 @@
 	});	
 
 	angularRoutingApp.controller('pagoController', function($scope,Items,Currency) {
-		setBackground("","white");
+		setBackground("","white");			
 		$(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
 		var id_cliente="";
 		var nombre_cliente="";
 		var cellPhone="";
+		
 		var datos= localStorage.getItem("cuenta");
 		if(datos!=null){
 			var data= JSON.parse(datos);
-			if(data.address){
-				$scope.direccion= data.address;
-				id_cliente= data.id;
-				nombre_cliente= data.names;
-				cellPhone= data.cellPhone;
-				$scope.direcciones_frecuentes='<li>'+data.address+'<i class="glyphicon glyphicon-minus-sign"></i></li>';
-			}			
+			var direccion="";
+			if(data.address!="")direccion=data.address;
+			$scope.direccion= direccion;
+			id_cliente= data.id;
+			nombre_cliente= data.names;
+			cellPhone= data.cellPhone;
+			var direccion='<li>&nbsp;</li>';
+			var dir= ajaxrest.getLastAddress("user="+id_cliente+"&token="+localStorage.token);
+			if(dir!=""){
+				for(var j=0;j<dir.length;j++){
+					direccion+='<li>'+dir[j].address+'<i class="glyphicon glyphicon-minus-sign"></i></li>';
+				}
+			}
+			$scope.direcciones_frecuentes= direccion;
 		}		
 
 		if(localStorage.getItem("direccion")){
@@ -772,7 +787,7 @@
 					var vItem= "item_"+dish+"_"+cat+"_"+tipo+"_"+code;
 
 					cant= Items.getExtraDish(vItem);
-					var add="";	
+					var add="";
 					orderxitems.push({idDish:dish,idItem:idD,qty:cant,price:price});										
 					
 					if(cat==1){					
@@ -879,7 +894,7 @@
 				if(tipo=="R"){
 					var type=1;
 					nameDish="Recomendado (Und x "+cantDish+")";
-					total= parseInt(localStorage.valor_recomendado);
+					total= parseInt(localStorage.valor_recomendado * cantDish);
 					total2=total;
 				}				
 				orderdetail.push({numDish:dish,qty:cantDish,price:total2,type:type});
@@ -952,7 +967,7 @@
 			var order=[];
 
 			if(Gtotal>0){
-				// if(quadrant != "n/a" && quadrant != ""){
+				if(quadrant != "n/a" && quadrant != ""){
 					if(!localStorage.getItem("cuenta")){
 						alert("Debe estar logueado para terminar el pedido.");
 						localStorage.setItem("orden","Pendiente");
@@ -971,7 +986,7 @@
 								coords= coord.lat+","+coord.lng;
 							}
 							
-							order.push({idUser:id_cliente,coordinates:coords,idZone:zona.id,idCupon:bono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,cellPhone:cellPhone,typePay:tipo_pago,status:71});
+							order.push({idUser:id_cliente,coordinates:coords,quadrant:quadrant,idZone:zona.id,idCupon:bono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,cellPhone:cellPhone,typePay:tipo_pago,status:71});
 							var process= ajaxrest.processOrder(order,orderdetail,orderxitems);
 							$(".vrdirc,.bondesc").css("display","none");
 							$(".confirmacion").css("display","inline-block");
@@ -986,9 +1001,9 @@
 							alert("Dirección es requerida.");
 						}
 					}
-/*				}else{
+				}else{
 					alert("Usuario fuera de cobertura.");
-				}*/
+				}
 
 			}
 		}						
@@ -996,7 +1011,10 @@
 
 	angularRoutingApp.controller('nosotrosController', function($scope) {
 		setBackground("","white");
-		var nosotros = ajaxrest.getContent("vista=vnosotros&token="+localStorage.token);
+		var nosotros = ajaxrest.getContent("id=1322&token="+localStorage.token);
+		
+		$scope.imagen= base_site+"imagenes/nosotros/imagen1/"+nosotros[0].img_matrix+"?rand="+rand;
+		$scope.titulo= nosotros[0].nombre_matrix;
 		$scope.info_nosotros= nosotros[0].contenido_matrix;
 	});	
 
@@ -1044,7 +1062,7 @@
 		if(localStorage.dimension>400){
 			$("#areaMap").css("height","1100px");
 		}else{
-			$("#areaMap").css("height","600px");
+			$("#areaMap").css("height","400px");
 		}
 	}]);
 
@@ -1072,7 +1090,7 @@
 					if(position.lng)lng= position.lng;
 
 					mapOptions = {
-						zoom: 4,
+						zoom: 14,
 						panControl: false,
 						center: new google.maps.LatLng(lat,lng),
 						mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -1099,7 +1117,7 @@
 				var createKML = function (src) {
 					var kmlLayer = new google.maps.KmlLayer(src, {
 						suppressInfoWindows: true,
-						preserveViewport: false,
+						preserveViewport: true,
 						map: map
 					});             
 				};
@@ -1132,7 +1150,7 @@
 				$scope.$watch("area", function (area) {
 					if (area != undefined) {
 						createMarker(area);
-						createKML(localStorage.getItem("domain")+'resources/kmls/zona_total.kml');
+						/*createKML(localStorage.getItem("domain")+'resources/kmls/zona_total.kml');*/
 						var zona= JSON.parse(localStorage.getItem("zonas"));
 						for (var i = 0; i < zona.length; i++){
 							var zone= zona[i].code;
@@ -1202,7 +1220,7 @@
 				arr.sort(function(a,b) {
 					return a[0]-b[0]
 				});				
-				if(arr[0])image= base_url+"resources/images/dish/"+arr[0][1]+"_2.png";
+				if(arr[0])image= base_url+"resources/images/dish/"+arr[0][1]+"_2.png?rand="+rand;
 				return image;
 			}
 		};
@@ -1218,6 +1236,7 @@
 
 				if(decimales!==undefined){
 			        // Redondeamos
+
 			        numero=numero.toFixed(decimales);
 			    }
 

@@ -6,20 +6,20 @@ function startApp() {
   localStorage.domain = "http://buffetexpress.co/REST/";  
   localStorage.dimension = $(window).width();
   localStorage.setItem("quadrant","");
-
-  var banner = JSON.stringify(ajaxrest.getSlider("token="+localStorage.token));
+  localStorage.setItem("banner",""); 
+  var banner = JSON.stringify(ajaxrest.getBanners("token="+localStorage.token));
   if(banner)localStorage.setItem("banner",banner); 
   
   var lat1="";
   var lng1="";    
-  var zones= JSON.parse(getZone());  
+  var zones= JSON.parse(getZone());
   localStorage.setItem("zona",JSON.stringify({id:1,code:'cam001',show:0}));
   if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
               function(position) {
                 lat1= position.coords.latitude;
-                lng1= position.coords.longitude;    
-                localStorage.setItem("position",JSON.stringify({lat:lat1,lng:lng1}));
+                lng1= position.coords.longitude;     
+                localStorage.setItem("position",JSON.stringify({lat:lat1,lng:lng1})); 
                 var datos=[];
                 var distancias=[];
                 var totalZones=[];             
@@ -28,15 +28,27 @@ function startApp() {
                   if(coord[1]){
                     var dist= getDistance({lat:lat1,lng:lng1},{lat:coord[0],lng:coord[1]});
                     var data= {id:zones[i].id,code:zones[i].code,show:zones[i].show_kml};
-                    distancias.push(dist);
+					var final = {dist:dist, zone:data}; 
+                    distancias.push(final);
                     datos.push(data);
                   }
-                }
-                distancias.sort();
+                }       
+				
+				var equalGroup =  distancias.reduce(function(prev, curr, index, arr) {
+                       var num = curr["dist"];
+                       if (!prev[num]) {
+                           prev[num] = [];
+                       }
+                       prev[num].push({'dist':curr["dist"],zone:curr["zone"]});
+                       return prev;
+                       },{});
+					   
+				
                 localStorage.setItem("zonas",JSON.stringify(datos));
-                if(distancias.length>0){                   
-                  localStorage.setItem("zona",JSON.stringify(datos[0]));
-                  getCoordinateJSON(datos[0]['code']);
+				var cont=distancias.length;
+                if(cont>0){				
+				  localStorage.setItem("zona",JSON.stringify(distancias[cont-1].zone));
+                  get_CoordinateJSON(distancias[cont-1].zone.code);
                 } 
                 redirect();
               },
@@ -54,7 +66,11 @@ function startApp() {
 
 function redirect(){
     window.setTimeout(function() {
-            window.location.href = 'internal.html';  
+		if(!localStorage.show_guia){
+            window.location = "internal.html#/guia";
+		}else{
+			window.location.href = 'internal.html';
+		}              
          }, 1000);   
 }
 
@@ -75,20 +91,22 @@ function getZone(){
      return res;
 }
 
-function getCoordinateJSON(file){
-  var Coords = [];
-  var q='a';
-  for(var i=0;i<4;i++){
-    if(i==1)q='b';
-    if(i==2)q='c';
-    if(i==3)q='d';
-    var kml= file+"_"+q;
+function get_CoordinateJSON(file){
+	var a= getQuadrant(file,'a');
+	var b= getQuadrant(file,'b');
+	var c= getQuadrant(file,'c');
+	var d= getQuadrant(file,'d'); 
+}
+function getQuadrant(file,q){
+    var exists=false;
+	var Coords = [];
+	var kml= file+"_"+q;
     var kmlLayer = new google.maps.KmlLayer(localStorage.getItem("domain")+'resources/kmls/'+kml+'.kml', {
       suppressInfoWindows: true,
       preserveViewport: false
     });
     
-    var process= ajaxrest.getCoordinateJSON(kml);
+    var process= ajaxrest.getCoordinateJSON(kml);	
     for(var i=0;i<process.length;i++){
         Coords.push(new google.maps.LatLng(process[i][0],process[i][1]));
     }
@@ -96,13 +114,14 @@ function getCoordinateJSON(file){
     var zone = new google.maps.Polygon({
         paths: Coords
     });
-  var pos= localStorage.getItem("position");
-  var point = new google.maps.LatLng(pos[0],pos[1]);
-  console.log(google.maps.geometry.poly.containsLocation(point, zone));
+  var pos= JSON.parse(localStorage.getItem("position"));
+  var point = new google.maps.LatLng(pos.lat,pos.lng);//6.239124, -75.545917
+  console.log("Coordenadas en punto: "+google.maps.geometry.poly.containsLocation(point, zone)+" "+pos.lat+","+pos.lng);
     if(google.maps.geometry.poly.containsLocation(point, zone)){
-      localStorage.setItem("quadrant",q);
+	 localStorage.setItem("quadrant",q);
+	  exists=true;
     }
-  }
+	return exists;	
 }
 
 /* Calcular distancia */
