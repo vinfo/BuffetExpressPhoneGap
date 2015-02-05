@@ -1,17 +1,19 @@
 <!-- Cotenido buffet -->
-      <div class="buffet contenidogeneral presen">
-<!--        <span class="flechaiz"></span>
+
+<div class="buffet contenidogeneral presen"> 
+  <!--        <span class="flechaiz"></span>
         <span class="fledere"></span> -->
-        <div class="n_close"><a href="#" class="close_guia"><img src="images/m_close.png"></a></div>
-        <div id="present" class="owl-carousel owl-theme"></div>
-      </div>
-    <!-- fin contenido buffet -->
-  <script type="text/javascript">
+  <div class="n_close"><a href="#" class="close_guia"><img src="images/m_close.png"></a></div>
+  <div id="present" class="owl-carousel owl-theme"></div>
+</div>
+<!-- fin contenido buffet --> 
+<script type="text/javascript">
       $(function(){
-    var guia= JSON.parse(localStorage.getItem("guia"));
-    for(var i=0;i<guia.length;i++){
-      $("#present").append('<div class="item"><img src="http://buffetexpress.co/imagenes/guia/imagen1/'+guia[i]["img_matrix"]+'" alt="..."></div>');
-    }    
+		var data= ajaxrest.getGuia();
+		var guia= data;
+		for(var i=0;i<guia.length;i++){
+		  $("#present").append('<div class="item"><img src="http://buffetexpress.co/imagenes/guia/imagen1/'+guia[i]["img_matrix"]+'" alt="..."></div>');
+		}    
 
         //fin tamaño container 
           $("#owl-demo").owlCarousel({
@@ -42,4 +44,4 @@
           })
           $("#present").find("img").css({"height":$(document).height()});
       })
-</script>    
+</script> 

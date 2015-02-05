@@ -75,12 +75,13 @@
 		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
 		$("#img1").attr("src", "http://buffetexpress.co/imagenes/recomendado/imagen1/buffet1295.jpg?timestamp=" + new Date().getTime());
 		$("#img2").attr("src", "http://buffetexpress.co/imagenes/recomendado/imagen1/recomendado-del-dia1296.jpg?timestamp=" + new Date().getTime());
+		
+		var banner = JSON.stringify(ajaxrest.getBanners("token="+localStorage.token));
+		if(banner)localStorage.setItem("banner",banner);
+				
 		$scope.page="slider";
 		setBackground("fondo","");
 		setDisplayMenu();
-		var data= ajaxrest.getGuia();
-		console.log(data);
-		localStorage.setItem("guia",JSON.stringify(data));
 
 		var banner = JSON.parse(localStorage.banner);		
 		if(banner[0] && banner[0].img_matrix!=""){
@@ -99,7 +100,7 @@
 	angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){
 		//alert("Zona "+localStorage.zona);	
 		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
-		if($routeParams.activity)localStorage.activity=$routeParams.activity;
+		if($routeParams.activity)localStorage.activity=$routeParams.activity;		
 		var plato= 1;
 		if(localStorage.plato)plato= parseInt(localStorage.plato);
 		if(localStorage.getItem("dimension")==768)$(".menuplato").css("width","82%");		
@@ -225,7 +226,7 @@
 			},	
 
 			//Agregar items a X categoria en plato					
-			$scope.setDish = function (dish,action) {							
+			$scope.setDish = function (dish,action) {						
 				var activity= localStorage.activity;
 				var plato= localStorage.getItem("plato");
 				var checkPlato= Items.getItems(plato);			
@@ -311,9 +312,6 @@
 			$scope.closeDish = function (dish) {
 				$(".verplato").slideToggle();
 				$(".verplatoico .img1").show();
-			},
-			$scope.playAudio = function (dish) {
-				ajaxrest.playAudio(dish.code);
 			},
 			$scope.goMenu = function () {
 				var dish=1;
@@ -701,7 +699,8 @@
 			var dir= ajaxrest.getLastAddress("user="+id_cliente+"&token="+localStorage.token);
 			if(dir!=""){
 				for(var j=0;j<dir.length;j++){
-					direccion+='<li>'+dir[j].address+'<i class="glyphicon glyphicon-minus-sign"></i></li>';
+					var datos= dir[j].address+'|'+dir[j].num+'|'+dir[j].reference;
+					direccion+='<li>'+dir[j].address+'<i title="'+datos+'" class="glyphicon glyphicon-minus-sign"></i></li>';
 				}
 			}
 			$scope.direcciones_frecuentes= direccion;
@@ -913,7 +912,7 @@
 		$scope.platos= Ditem;
 		var tDomicilio= localStorage.valor_domicilio * domicilio;
 		$scope.domicilio = Currency.setMoney(tDomicilio, 0, ",", ".");
-		$scope.total = Currency.setMoney(Gtotal + tDomicilio, 0, ",", ".");
+		$("#total").html(Currency.setMoney(Gtotal + tDomicilio, 0, ",", "."));
 		$scope.valor_plato= " Und x "+domicilio;
 		setBackDefaultPay();
 
@@ -922,20 +921,26 @@
 			if(bono!=""){
 				var data= ajaxrest.getBono("bono="+bono+"&token="+localStorage.token);
 				if(data!=""){
-					var valor=data[0].valor_bono;
-					var total=Gtotal + tDomicilio;
+					var bono= data[0].id_bono;
+					var valor= data[0].valor_bono;
+					var total= Gtotal + tDomicilio;
+					var valorBono=0;
 					if(data[0].tipo_bono==84){
-						$scope.valor_bono= Currency.setMoney(valor, 0, ",", ".");
-						$scope.total= Currency.setMoney(total - valor, 0, ",", ".");
+						valorBono= valor;						
 					}else{
-						$scope.porc_bono= valor+"%";
-						$scope.valor_bono= Currency.setMoney(valor, 0, ",", ".");
+						$("#porc_bono").html(valor+"%");
+						valorBono= valor;
 						var porc= total * (valor/100);
-						$scope.total= Currency.setMoney(total - porc, 0, ",", ".");
 					}
-					$("#hbono").val(data[0].id_bono);
-					$(".bono").css("display","inline");	   	
+					
+					$("#total").html(Currency.setMoney(total - valor, 0, ",", "."));
+					$("#valor_bono").html(Currency.setMoney(valorBono, 0, ",", "."));
+					$("#hbono").val(bono);					
+					$(".bono").show(); 
+					$(".bono").css("display","inline");					 	
 				}else{
+					$("#total").html(Currency.setMoney(Gtotal + tDomicilio, 0, ",", "."));
+					$(".bono").hide(); 
 					$(".bono").css("display","none");
 					$("#hbono").val('');
 					alert("Código no disponible");
@@ -1045,7 +1050,7 @@
 		setBackground("fondo","");		
 	});	
 	angularRoutingApp.controller('guiaController', function($scope) {
-		setBackground("fondo","");		
+		setBackground("fondo","");			
 	});	
 
 	angularRoutingApp.controller("mapaController", ["$scope", function ($scope) {
@@ -1058,12 +1063,13 @@
 		}
 
 		$(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
-		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});		
-		if(localStorage.dimension>400){
-			$("#areaMap").css("height","1100px");
-		}else{
-			$("#areaMap").css("height","400px");
-		}
+		$(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});
+		
+		var cont=$(".container").height();
+		var menu=$(".menusup").height();
+		var pie=$(".menupie").height();
+		var alto= parseInt(cont) - (parseInt(menu) + parseInt(pie));
+		$("#areaMap").css("height",alto+"px");
 	}]);
 
 	/* Directivas */

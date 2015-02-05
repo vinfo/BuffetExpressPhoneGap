@@ -47,6 +47,12 @@ a img
 	max-width: 604px;
 	margin-top: 10%;
 }
+.audio_play{
+	background: url(../images/sonido.png) no-repeat;
+}
+.audio_stop{	
+	background: url(../images/sonido_stop.png) no-repeat;
+}
 .sesion
 {
 	text-align: center;
@@ -541,7 +547,7 @@ a.btn-reset{
 }
 .menuplatolist .col-md-12 .detalle h1 span
 {
-	background: url(../images/sonido.png) no-repeat;
+	cursor:pointer;	
 	background-size: 100% 100%;
 	width: 25px;
 	height: 25px;
@@ -1188,7 +1194,7 @@ max-width:20%;*/
 {
 	position: absolute;
 	width: 100%;
-	min-height: 1000px;
+	/*min-height: 1000px;*/
 	padding-top: 38px;
 }
 .vermapa label.title

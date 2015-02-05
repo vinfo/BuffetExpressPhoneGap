@@ -4,8 +4,11 @@
   <div class="col-md-12" ng-repeat="dish in dishes">
    <div class="title"><img src="images/{{imageCat}}.png" alt="..." title=".." /><span>{{dish.name}}</span></div>
    <div class="btnts">
-     <div id="detalle_{{dish.id}}" class="detalle" ng-click="detailDish(dish)">
-      <h1>{{dish.fullname}} <span ng-if="dish.audio != null" ng-click="playAudio(dish)"></span> </h1>
+     <div id="detalle_{{dish.id}}" class="detalle">
+      <h1>{{dish.fullname}}
+       <span class="audio_play" title="{{dish.code}}" ng-if="dish.audio != null"></span>
+       <audio id="audio_{{dish.code}}" src="http://buffetexpress.co/REST/resources/audio/default.mp3"></audio>
+       </h1>
       <p>{{dish.description}}</p>
       <div class="vene" ng-click="detailDish(dish)">
         <div class="col-xs-6 col-md-6">
@@ -109,7 +112,7 @@
   function checkLoad(image){
     var dimension=localStorage.dimension;
   var carg= $('#image_'+image).attr('src');
-  var rand= Math.floor((Math.random() * 100) + 1); 
+  var rand= Math.floor((Math.random() * 999) + 1); 
     var img= 'http://buffetexpress.co/REST/resources/images/dish/'+image+'_1.jpg?rand='+rand;
   if(dimension<=450)img= 'http://buffetexpress.co/REST/resources/images/dish/thumbs/'+image+'_1.jpg?rand='+rand;
     if(carg.length < img.length){

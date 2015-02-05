@@ -47,13 +47,34 @@ if (window.jQuery) {
     $(".menupie").hover(function(){
         $(".latermenu").animate({"left":-412},200);
     });
-	$(document).on("click", ".glyphicon-minus-sign", function() {
-	  $(this).parent().fadeOut();
-	});
-	$(document).on("click", ".close_guia", function() {
-	  localStorage.setItem("show_guia","1");
-	  window.location.href = 'internal.html';
-	});	
+    $(document).on("click", ".glyphicon-minus-sign", function() {
+      var dat= this.title.split('|');
+      if(dat.length>0){
+          $("#direccion").val(dat[0]);
+          $("#numero").val(dat[1]);
+          $("#referencia").val(dat[2]);
+          $(this).parent().fadeOut();         
+      }
+    });
+    $(document).on("click", ".close_guia", function() {
+      localStorage.setItem("show_guia","1");
+      window.location.href = 'internal.html';
+    });
+    $(document).on("click", ".audio_play", function(event) {
+        event.preventDefault();
+        var audio= this.title;
+        $("#audio_"+audio).attr("src",localStorage.domain+"resources/audio/"+audio+".mp3");     
+        $( this ).toggleClass( "audio_stop", 1000, "audio_play" );
+        if($( this ).attr("class")!='audio_play ng-scope')
+        {
+            $("#audio_"+audio).trigger('play');
+        }
+        else
+        {
+            $("#audio_"+audio).trigger('pause');
+        }       
+        return false;
+    }); 
 
     //Activar menus  
     $(".menupie li a").click(function(){

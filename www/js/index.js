@@ -6,9 +6,7 @@ function startApp() {
   localStorage.domain = "http://buffetexpress.co/REST/";  
   localStorage.dimension = $(window).width();
   localStorage.setItem("quadrant","");
-  localStorage.setItem("banner",""); 
-  var banner = JSON.stringify(ajaxrest.getBanners("token="+localStorage.token));
-  if(banner)localStorage.setItem("banner",banner); 
+  localStorage.setItem("banner","");
   
   var lat1="";
   var lng1="";    
@@ -28,13 +26,13 @@ function startApp() {
                   if(coord[1]){
                     var dist= getDistance({lat:lat1,lng:lng1},{lat:coord[0],lng:coord[1]});
                     var data= {id:zones[i].id,code:zones[i].code,show:zones[i].show_kml};
-					var final = {dist:dist, zone:data}; 
+          var final = {dist:dist, zone:data}; 
                     distancias.push(final);
                     datos.push(data);
                   }
                 }       
-				
-				var equalGroup =  distancias.reduce(function(prev, curr, index, arr) {
+        
+        var equalGroup =  distancias.reduce(function(prev, curr, index, arr) {
                        var num = curr["dist"];
                        if (!prev[num]) {
                            prev[num] = [];
@@ -42,12 +40,12 @@ function startApp() {
                        prev[num].push({'dist':curr["dist"],zone:curr["zone"]});
                        return prev;
                        },{});
-					   
-				
+             
+        
                 localStorage.setItem("zonas",JSON.stringify(datos));
-				var cont=distancias.length;
-                if(cont>0){				
-				  localStorage.setItem("zona",JSON.stringify(distancias[cont-1].zone));
+        var cont=distancias.length;
+                if(cont>0){       
+          localStorage.setItem("zona",JSON.stringify(distancias[cont-1].zone));
                   get_CoordinateJSON(distancias[cont-1].zone.code);
                 } 
                 redirect();
@@ -66,22 +64,19 @@ function startApp() {
 
 function redirect(){
     window.setTimeout(function() {
-		if(!localStorage.show_guia){
+    if(!localStorage.show_guia){
             window.location = "internal.html#/guia";
-		}else{
-			window.location.href = 'internal.html';
-		}              
+    }else{
+      window.location.href = 'internal.html';
+    }              
          }, 1000);   
 }
 
-function getZone(){
-    var data= "token=false";
-    var res="";
+function getZone(){    var res="";
     $.ajax({
        type: 'GET',
        url: localStorage.domain+'api/v1/getZones/',
        crossDomain: true,
-       data: data,
        dataType: 'json',
        async: false, 
        success: function(msg) {
@@ -92,21 +87,21 @@ function getZone(){
 }
 
 function get_CoordinateJSON(file){
-	var a= getQuadrant(file,'a');
-	var b= getQuadrant(file,'b');
-	var c= getQuadrant(file,'c');
-	var d= getQuadrant(file,'d'); 
+  var a= getQuadrant(file,'a');
+  var b= getQuadrant(file,'b');
+  var c= getQuadrant(file,'c');
+  var d= getQuadrant(file,'d'); 
 }
 function getQuadrant(file,q){
     var exists=false;
-	var Coords = [];
-	var kml= file+"_"+q;
+  var Coords = [];
+  var kml= file+"_"+q;
     var kmlLayer = new google.maps.KmlLayer(localStorage.getItem("domain")+'resources/kmls/'+kml+'.kml', {
       suppressInfoWindows: true,
       preserveViewport: false
     });
     
-    var process= ajaxrest.getCoordinateJSON(kml);	
+    var process= ajaxrest.getCoordinateJSON(kml); 
     for(var i=0;i<process.length;i++){
         Coords.push(new google.maps.LatLng(process[i][0],process[i][1]));
     }
@@ -116,12 +111,12 @@ function getQuadrant(file,q){
     });
   var pos= JSON.parse(localStorage.getItem("position"));
   var point = new google.maps.LatLng(pos.lat,pos.lng);//6.239124, -75.545917
-  console.log("Coordenadas en punto: "+google.maps.geometry.poly.containsLocation(point, zone)+" "+pos.lat+","+pos.lng);
+  //console.log("Coordenadas en punto: "+google.maps.geometry.poly.containsLocation(point, zone)+" "+pos.lat+","+pos.lng);
     if(google.maps.geometry.poly.containsLocation(point, zone)){
-	 localStorage.setItem("quadrant",q);
-	  exists=true;
+   localStorage.setItem("quadrant",q);
+    exists=true;
     }
-	return exists;	
+  return exists;  
 }
 
 /* Calcular distancia */
