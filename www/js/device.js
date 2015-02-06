@@ -60,8 +60,10 @@ function checkConnection() {
     var page=getNameURLWeb();
     if(states[networkState]=='No network connection'){
         //navigator.notification.beep(1);        
-        alert('Internet es requerido!');        
-        window.location.href = 'offline.html';
+        if(page!="offline.html"){
+            alert('Internet es requerido!');        
+            window.location.href = 'offline.html';
+        }
         //throw new Error('No Internet Connection.');  
         state=false;                            
     }else{
