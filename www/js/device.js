@@ -45,6 +45,7 @@
 };
 
 function checkConnection() {
+    var state=true;
     var networkState = navigator.connection.type;
     var states = {};
     states[Connection.UNKNOWN]  = 'Unknown connection';
@@ -59,10 +60,12 @@ function checkConnection() {
     if(states[networkState]=='No network connection'){
         //navigator.notification.beep(1);
         alert('Internet es requerido!');
+        alert(getNameURLWeb());
         window.location.href = 'offline.html';
-        //throw new Error('No Internet Connection.');                              
+        //throw new Error('No Internet Connection.');  
+        state=false;                            
     }
-    return false;
+    return state;
 }
 
 function getDeviceProperty()
@@ -74,3 +77,8 @@ function getDeviceProperty()
           alert("Device OS Version: " + deviceOSVersion);
           */
  }
+ function getNameURLWeb(){
+   var sPath = window.location.pathname;
+   var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+   return sPage;
+}
