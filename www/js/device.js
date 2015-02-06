@@ -58,6 +58,7 @@ function checkConnection() {
     states[Connection.NONE]     = 'No network connection'; 
     
     var page= getNameURLWeb();
+    alert("1) "+page);
     if(states[networkState]=='No network connection'){
         //navigator.notification.beep(1);        
         alert('Internet es requerido!');        
@@ -65,6 +66,7 @@ function checkConnection() {
         //throw new Error('No Internet Connection.');  
         state=false;                            
     }else{
+        alert(page);
         if(page=="offline.html")window.location.href = 'internal.html';
     }
     return state;
