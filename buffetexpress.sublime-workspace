@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"pa",
+				"padding"
+			],
+			[
 				"h",
 				"height"
 			],
@@ -74,10 +78,6 @@
 			[
 				"s",
 				"stringify"
-			],
-			[
-				"pa",
-				"padding-left"
 			],
 			[
 				"pos",
@@ -322,20 +322,25 @@
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/temp.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/offline.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/temp.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/offline.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
+		"/D/Movilidad/BuffetExpressMensajero/www/js/internal.js",
+		"/D/Movilidad/BuffetExpressMensajero/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/temp.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/wamp/www/buffetexpress/codeigniter/resources/js/functions2.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/maplace-0.1.3.js",
-		"/D/Movilidad/BuffetExpressMensajero/www/js/main.js",
-		"/D/wamp/www/buffetexpress/codeigniter/resources/js/functions2.js",
-		"/D/Movilidad/BuffetExpressMensajero/www/js/internal.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/guia.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/felicitaciones.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
@@ -348,7 +353,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/nosotros.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/politicas.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/index.js",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/login.html",
@@ -402,7 +406,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-google-maps_dev_mapped.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/lodash.underscore.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/offline.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/icon.png",
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/scripts/controllers/geojson.js",
@@ -446,10 +449,7 @@
 		"/D/Movilidad/index.js",
 		"/D/wamp/www/familymarketing/modules/js/registrados.js",
 		"/D/wamp/www/familymarketing/modules/js/aproductos.js",
-		"/C/Users/odc/Downloads/jquery.formatCurrency-1.4.0/demo/index.html",
-		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla6.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular.min.js",
-		"/D/wamp/www/familymarketing/js/jquery.currency.js"
+		"/C/Users/odc/Downloads/jquery.formatCurrency-1.4.0/demo/index.html"
 	],
 	"find":
 	{
@@ -470,6 +470,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"etDisplayMenu();",
+			"$.ajax",
+			"Internet es requerido",
+			"get_CoordinateJSON",
 			".Currency.setMoney",
 			"getBono",
 			"ajax.",
@@ -593,11 +597,7 @@
 			"guiaController",
 			"ng-bind-html",
 			"nosotrosController",
-			"ng-bind-html",
-			"guiaController",
-			".presen #present .item > h4",
-			"goTo",
-			"ajaxrest"
+			"ng-bind-html"
 		],
 		"highlight": false,
 		"in_selection": false,
