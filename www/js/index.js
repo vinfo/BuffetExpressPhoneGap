@@ -3,6 +3,6 @@ startApp();
 
 function startApp() {  
     window.setTimeout(function() {
-			window.location.href = 'internal.html';
+			window.location.href = 'temp.html';
     }, 1000);
 }

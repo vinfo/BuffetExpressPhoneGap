@@ -1904,6 +1904,18 @@ border: 0;
 	width: 90%;
 	display: none;
 }
+.loading_container{
+	width100%;
+	padding-top:200px;
+	color:#fff;
+}
+.loading{
+	text-align:center;	
+}
+.loading_msg{
+	margin: 10px;
+	padding: 10px;
+}
 
 input[type="radio"], input[type="checkbox"] {
   /* All browsers except webkit*/

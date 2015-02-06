@@ -322,10 +322,18 @@
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/temp.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressMensajero/www/js/maplace-0.1.3.js",
+		"/D/Movilidad/BuffetExpressMensajero/www/js/main.js",
+		"/D/wamp/www/buffetexpress/codeigniter/resources/js/functions2.js",
+		"/D/Movilidad/BuffetExpressMensajero/www/js/internal.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/guia.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/felicitaciones.html",
@@ -342,9 +350,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/politicas.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/index.js",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/clave.html",
@@ -444,12 +449,7 @@
 		"/C/Users/odc/Downloads/jquery.formatCurrency-1.4.0/demo/index.html",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pantalla6.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular.min.js",
-		"/D/wamp/www/familymarketing/js/jquery.currency.js",
-		"/D/wamp/www/familymarketing/modules/js/compras.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/index.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/owl-carousel/owl.carousel.js",
-		"/C/Users/odc/Downloads/jquery.formatCurrency-1.4.0/demo/format_as_you_type.html",
-		"/D/wamp/www/familymarketing/js/jquery.maskMoney.js"
+		"/D/wamp/www/familymarketing/js/jquery.currency.js"
 	],
 	"find":
 	{
