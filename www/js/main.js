@@ -700,7 +700,7 @@
 			if(dir!=""){
 				for(var j=0;j<dir.length;j++){
 					var datos= dir[j].address+'|'+dir[j].num+'|'+dir[j].reference;
-					direccion+='<li>'+dir[j].address+'<i title="'+datos+'" class="glyphicon glyphicon-minus-sign"></i></li>';
+					direccion+='<li class="dirs" title="'+datos+'">'+dir[j].address+'<i class="glyphicon glyphicon-minus-sign"></i></li>';
 				}
 			}
 			$scope.direcciones_frecuentes= direccion;
@@ -917,8 +917,8 @@
 		setBackDefaultPay();
 
 		$scope.bonoChanged = function() {
-			var bono= $scope.bono;
-			if(bono!=""){
+			var bono= $scope.bono.trim();
+			if(bono!="" && bono!=null){
 				var data= ajaxrest.getBono("bono="+bono+"&token="+localStorage.token);
 				if(data!=""){
 					var bono= data[0].id_bono;

@@ -259,6 +259,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "www/js/load.js",
+			"settings":
+			{
+				"buffer_size": 4554,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -318,7 +326,8 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www"
+		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
 	[
@@ -647,8 +656,42 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "www/js/load.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4554,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1177,
+								1177
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

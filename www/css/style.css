@@ -1044,6 +1044,7 @@ max-width:20%;*/
 }
 .facturavir .vrdirc .listdirecc li
 {
+	cursor: pointer;
 	overflow: hidden;
 	border-bottom: 1px solid #784325;
 	padding: 3px;
@@ -1056,7 +1057,6 @@ max-width:20%;*/
 {
 	float: right;
 	color: #ff0000;
-	cursor: pointer;
 }
 .facturavir .vrdirc .medipa
 {

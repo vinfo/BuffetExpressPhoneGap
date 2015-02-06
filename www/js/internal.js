@@ -47,13 +47,13 @@ if (window.jQuery) {
     $(".menupie").hover(function(){
         $(".latermenu").animate({"left":-412},200);
     });
-    $(document).on("click", ".glyphicon-minus-sign", function() {
+    $(document).on("click", ".dirs", function() {
       var dat= this.title.split('|');
       if(dat.length>0){
-          $("#direccion").val(dat[0]);
-          $("#numero").val(dat[1]);
-          $("#referencia").val(dat[2]);
-          $(this).parent().fadeOut();         
+          if(dat[0]!="")$("#direccion").val(dat[0]);
+          if(dat[1]!="")$("#numero").val(dat[1]);
+          if(dat[2]!="")$("#referencia").val(dat[2]);
+          $(this).fadeOut();         
       }
     });
     $(document).on("click", ".close_guia", function() {
