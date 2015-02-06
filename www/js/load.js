@@ -43,8 +43,7 @@ function startApp() {
 				
         localStorage.setItem("zonas",JSON.stringify(datos));
 				var cont=distancias.length;
-                if(cont>0){
-                  $(".loading_msg").html("Detectando zona de pedidos");
+                if(cont>0){                  
 				          localStorage.setItem("zona",JSON.stringify(distancias[cont-1].zone));
                   get_CoordinateJSON(distancias[cont-1].zone.code);
                 } 
@@ -63,7 +62,7 @@ function startApp() {
 }
 
 function redirect(){
-    $(".loading_msg").html("Redireccionando...");
+    $(".loading_msg").html("Detectando zona de pedidos");
     window.setTimeout(function() {
 		if(!localStorage.show_guia){
             window.location = "internal.html#/guia";

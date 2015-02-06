@@ -1,3 +1,3 @@
 setInterval(function () {	
-	checkConnection();
+	if(localStorage.OS)checkConnection();
 }, 5000);
