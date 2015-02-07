@@ -2,17 +2,16 @@
 <div id="miscompras" class="miscompras"></div>
 
 <div class="costoad">
-  <div class="cont">
-    <img src="images/cerr_vpla.png" alt="..." class="cerrvess" ng-click="close('costoad')">
+  <div class="cont">    
     <h1>Detalle carro de compras</h1>
-    <p>No existen productos seleccionados</p>   
+    <p class="sesion">No existen productos seleccionados</p>   
 </div>
 </div>
-</div>		
+</div>      
 <!-- fin contenido slider buffet -->
 <script>
-	$( document ).ready(function() {
-		var lastScrollTop = 0;
+    $( document ).ready(function() {
+        var lastScrollTop = 0;
         var mHeight= $("li.carrito a img").height();
         $(".container").scroll(function(){ 
          var st = $(this).scrollTop();
