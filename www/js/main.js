@@ -106,7 +106,8 @@
 		if(localStorage.getItem("dimension")==768)$(".menuplato").css("width","82%");		
 
 		if(localStorage.getItem("quadrant")==""){
-			alert("Ubicación fuera de rango de despacho.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.");
+			if(!localStorage.MsgZone)alert("Ubicación fuera de rango de despacho.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.");
+			localStorage.setItem("MsgZone",1);
 		}
 		
 		var checkPlato= Items.getItems(plato);
@@ -1058,7 +1059,7 @@
 		setBackground("fondo","");		
 	});	
 	angularRoutingApp.controller('guiaController', function($scope) {
-		setBackground("fondo","");		
+		setBackground("fondo","");			
 	});	
 
 	angularRoutingApp.controller("mapaController", ["$scope", function ($scope) {
@@ -1098,9 +1099,9 @@
 				var MyPosition = new google.maps.LatLng(position.lat, position.lng);				
 
 				var initialize = function () {
-					var lat= 6.230539;
+					var lat= 6.195603;
 					if(position.lat)lat= position.lat;
-					var lng= -75.570672;
+					var lng= -75.562061;
 					if(position.lng)lng= position.lng;
 
 					mapOptions = {
@@ -1117,14 +1118,14 @@
 					map.controls[google.maps.ControlPosition.TOP_RIGHT].push(homeControlDiv);
 				};
 
-				var createMarker = function (area) {
+				var createMarker = function (area,Name,image) {
 					var position = new google.maps.LatLng(area.Latitude, area.Longitude);
 					map.setCenter(position);
 					marker = new google.maps.Marker({
 						map: map,
 						position: position,
-						title: area.Name,
-						icon: 'images/rastreo_cliente.png'
+						title: Name,
+						icon: 'images/'+image+'.png'
 					});               
 				};
 
@@ -1163,12 +1164,12 @@
 
 				$scope.$watch("area", function (area) {
 					if (area != undefined) {
-						createMarker(area);
+						createMarker(area,'Mí ubicación','rastreo_cliente');
 						/*createKML(localStorage.getItem("domain")+'resources/kmls/zona_total.kml');*/
 						var zona= JSON.parse(localStorage.getItem("zonas"));
 						for (var i = 0; i < zona.length; i++){
 							var zone= zona[i].code;
-							var show= zona[i].show;
+							var show= zona[i].show_kml;
 							if(show==1){
 								createKML(localStorage.getItem("domain")+'resources/kmls/'+zone+'.kml');
 /*								createKML(localStorage.getItem("domain")+'resources/kmls/'+zone+'_a.kml');
