@@ -259,14 +259,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "www/js/load.js",
-			"settings":
-			{
-				"buffer_size": 4554,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -326,29 +318,32 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
+		"/D/Movilidad/BuffetExpressMensajero/www/js/index.js",
+		"/D/Movilidad/BuffetExpressMensajero/www/js/internal.js",
+		"/D/Movilidad/BuffetExpressMensajero/www/js/main.js",
+		"/D/Movilidad/BuffetExpressMensajero/www/js/login.js",
+		"/D/Movilidad/BuffetExpressMensajero/www/templates/ordenes.html",
+		"/D/Movilidad/BuffetExpressMensajero/www/js/maplace-0.1.3.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/offline.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/temp.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/offline.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
-		"/D/Movilidad/BuffetExpressMensajero/www/js/internal.js",
-		"/D/Movilidad/BuffetExpressMensajero/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/temp.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/wamp/www/buffetexpress/codeigniter/resources/js/functions2.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
-		"/D/Movilidad/BuffetExpressMensajero/www/js/maplace-0.1.3.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/guia.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/felicitaciones.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
@@ -454,11 +449,7 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/README.md",
 		"/C/Users/odc/AppData/Local/Temp/Rar$DIa0.916/style.css",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pagos.html",
-		"/D/Movilidad/login.html",
-		"/D/Movilidad/index.js",
-		"/D/wamp/www/familymarketing/modules/js/registrados.js",
-		"/D/wamp/www/familymarketing/modules/js/aproductos.js",
-		"/C/Users/odc/Downloads/jquery.formatCurrency-1.4.0/demo/index.html"
+		"/D/Movilidad/login.html"
 	],
 	"find":
 	{
@@ -479,6 +470,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"direcciones_frecuentes",
+			".facturavir .vrdirc .listdirecc li i",
+			".facturavir .vrdirc .listdirecc li",
+			"glyphicon-minus-sign",
+			"pagoController",
+			".setItem(\"zona\"",
+			"direcciones_frecuentes",
+			"referencia",
+			"pagoController",
+			"alert",
 			"etDisplayMenu();",
 			"$.ajax",
 			"Internet es requerido",
@@ -596,17 +597,7 @@
 			"createKML",
 			"getPosition",
 			"createKML",
-			".kml",
-			".buffet .owl-wrapper img",
-			".costoad",
-			"recomendadoController",
-			"arrow_l.png",
-			"images",
-			"arrow_l.png",
-			"guiaController",
-			"ng-bind-html",
-			"nosotrosController",
-			"ng-bind-html"
+			".kml"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -656,42 +647,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "www/js/load.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4554,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1177,
-								1177
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
