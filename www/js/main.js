@@ -107,7 +107,6 @@
 
 		if(localStorage.getItem("quadrant")==""){
 			alert("Ubicación fuera de rango de despacho.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.");
-			localStorage.setItem("quadrant","n/a");
 		}
 		
 		var checkPlato= Items.getItems(plato);
@@ -966,8 +965,18 @@
 			var numero= $("#numero").val();
 			var tipo= $('input[name=tipo]:checked').val();
 			var tipoPago= $("#tipoPago").val();
-			var quadrant= localStorage.quadrant;	
 			
+			var zona= JSON.parse(localStorage.getItem("zona"));
+			var coordA= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'a');
+			var coordB= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'b');
+			var coordC= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'c');
+			var coordD= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'d');
+			var a= checkQuadrant(coordA,'a');
+			var b= checkQuadrant(coordB,'b');
+			var c= checkQuadrant(coordC,'c');
+			var d= checkQuadrant(coordD,'d');
+			
+			var quadrant= localStorage.quadrant;
 			var bono= $('#hbono').val();
 			var order=[];
 
@@ -983,8 +992,7 @@
 						window.location = "login.html#/cuenta";
 					}else{
 						if(direccion!=""){
-							$scope.nombre_cliente= nombre_cliente;
-							var zona= JSON.parse(localStorage.getItem("zona"));
+							$scope.nombre_cliente= nombre_cliente;							
 							var coords="";
 							if(localStorage.position){
 								coord= JSON.parse(localStorage.position);
@@ -1050,7 +1058,7 @@
 		setBackground("fondo","");		
 	});	
 	angularRoutingApp.controller('guiaController', function($scope) {
-		setBackground("fondo","");			
+		setBackground("fondo","");		
 	});	
 
 	angularRoutingApp.controller("mapaController", ["$scope", function ($scope) {

@@ -1,7 +1,5 @@
 startApp();
-
 function startApp() {  
-  //alert("startApp");
   localStorage.domain = "http://buffetexpress.co/REST/";  
   localStorage.dimension = $(window).width();
   localStorage.setItem("quadrant","");
@@ -25,17 +23,17 @@ function startApp() {
         var zona= zones[i].id+"|"+zones[i].code;
         codes.push(zona);
       }
-      var process= ajaxrest.getCoordinatesJSON(codes);
-      var quadrant=0;
+      var process= ajaxrest.getCoordinatesJSON(codes,'');
+      var quadrant= 0;
       for(var i=0;i<process.length;i++){        
-        var Coords = process[i][3];
+        var Coords = process[i][2];
         var limits=[];
+        //console.log(process[i][1]);
         for(var j=0;j<Coords.length;j++){                 
           limits.push(new google.maps.LatLng(Coords[j][0],Coords[j][1]));  
         }
-        quadrant+= checkZonaxQuadrant(process[i][0],process[i][1],limits,process[i][2]);         
-      }     
-          if(quadrant==0)alert("Ubicación no tiene cobertura para realizar pedidos.\nSolo podrá revisar nuestra oferta de productos.");
+        quadrant += checkZona(process[i][0],process[i][1],limits);         
+      }           
           redirect();
         },
         function(error) {
@@ -84,7 +82,7 @@ function getZone(){
      });
      return res;
 }
-function checkZonaxQuadrant(id_zone,code,limits,quadrant){
+function checkZona(id_zone,code,limits){
   var exists=0;
     var zone = new google.maps.Polygon({
         paths: limits
@@ -93,9 +91,9 @@ function checkZonaxQuadrant(id_zone,code,limits,quadrant){
   var point = new google.maps.LatLng(pos.lat,pos.lng);//6.239124, -75.545917
   //console.log("Coordenadas en punto: "+google.maps.geometry.poly.containsLocation(point, zone)+" "+pos.lat+","+pos.lng);
     if(google.maps.geometry.poly.containsLocation(point, zone)){
-    //alert("Zona: "+id_zone+", Cuadrante: " + quadrant);
+    //alert("Zona: "+id_zone+", Code: " + code);
     localStorage.setItem("zona",JSON.stringify({id:id_zone,code:code}));
-      localStorage.setItem("quadrant",quadrant);
+    localStorage.setItem("quadrant","n/a");  
     exists=1;
     }
   return exists;
