@@ -1,4 +1,5 @@
 startApp();
+
 function startApp() {  
   localStorage.domain = "http://buffetexpress.co/REST/";  
   localStorage.dimension = $(window).width();

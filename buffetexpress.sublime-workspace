@@ -259,6 +259,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/D/wamp/www/buffetexpress/codeigniter/resources/js/functions.js",
+			"settings":
+			{
+				"buffer_size": 16617,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -322,26 +330,32 @@
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/guia.html",
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/red_socials.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressMensajero/www/js/main.js",
+		"/D/Movilidad/BuffetExpressMensajero/www/js/maplace-0.1.3.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/wamp/www/buffetexpress/codeigniter/resources/js/functions.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/leaflet.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/guia.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/index.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/internal.js",
-		"/D/Movilidad/BuffetExpressMensajero/www/js/main.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/login.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/templates/ordenes.html",
-		"/D/Movilidad/BuffetExpressMensajero/www/js/maplace-0.1.3.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/offline.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/temp.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/offline.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/temp.html",
 		"/D/wamp/www/buffetexpress/codeigniter/resources/js/functions2.js",
@@ -349,7 +363,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/owl-carousel/owl.carousel.min.js",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/nosotros.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/terminos.html",
@@ -367,12 +380,10 @@
 		"/D/wamp/www/familymarketing/js/tools.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/test.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/test",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/wamp/www/redes_prueba/modules/js/productos.js",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/css/style.css",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/secu_presentacion.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/guia.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/presentacion.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/mapa.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/jquery-1.11.1.min.js",
@@ -424,7 +435,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/dragzoom.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/contactenos.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
-		"/D/wamp/www/buffetexpress/codeigniter/resources/js/functions.js",
 		"/D/wamp/www/Premisas/modules/js/orden_compra.js",
 		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/assets/stylesheets/example.css",
 		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/website_libs/dev_deps.js",
@@ -447,9 +457,7 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/cache.manifest",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/nl.x-services.plugins.socialsharing/src/android/nl/xservices/plugins/SocialSharing.java",
 		"/D/Movilidad/BuffetExpressPhoneGap/README.md",
-		"/C/Users/odc/AppData/Local/Temp/Rar$DIa0.916/style.css",
-		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/pagos.html",
-		"/D/Movilidad/login.html"
+		"/C/Users/odc/AppData/Local/Temp/Rar$DIa0.916/style.css"
 	],
 	"find":
 	{
@@ -470,6 +478,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"position",
+			"marker",
+			"setinterval",
+			"interval",
+			"validateEmail(",
+			".costoad",
 			"html",
 			"guiaController",
 			"#present .owl-pagination",
@@ -591,13 +605,7 @@
 			".presen",
 			".felicitation .form-group .btn",
 			".presen",
-			"id=\"tipo",
-			"felicitacionesController",
-			"checkbox.png",
-			".kml",
-			"processOrder",
-			"ajax",
-			"createKML"
+			"id=\"tipo"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -647,8 +655,41 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/D/wamp/www/buffetexpress/codeigniter/resources/js/functions.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16617,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1692,
+								993
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 264.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

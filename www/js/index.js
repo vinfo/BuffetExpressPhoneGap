@@ -11,6 +11,6 @@ function startApp() {
 	localStorage.removeItem("zonas");
 	localStorage.removeItem("MsgZone");
     window.setTimeout(function() {
-			window.location.href = 'load.html';
+		window.location.href = 'load.html';
     }, 1000);
 }

@@ -85,7 +85,8 @@
 
 		var banner = JSON.parse(localStorage.banner);		
 		if(banner[0] && banner[0].img_matrix!=""){
-			image_banner= '<img src="http://buffetexpress.co/imagenes/publicidad/imagen1/'+banner[0].img_matrix+'" alt="" title="" />';
+			var rnd=Math.random();
+			image_banner= '<img src="http://buffetexpress.co/imagenes/publicidad/imagen1/'+banner[0].img_matrix+'?rnd='+rnd+'" alt="" title="" />';
 			$scope.image_banner= image_banner;
 			$scope.info_banner= banner[0].contenido_matrix;
 		}		
@@ -587,8 +588,7 @@
 		localStorage.activity=$routeParams.activity;
 		var zona= JSON.parse(localStorage.zona);
 		var id_zona=2;
-		if(zona.id && localStorage.quadrant!="" && localStorage.quadrant!="n/a")id_zona=zona.id;		
-		//alert("Zona Actual: "+id_zona);
+		if(zona.id)id_zona=zona.id;
 		ajaxrest.getDishes("zone="+id_zona+"&category="+cat+"&token="+localStorage.token+"&dimension="+localStorage.dimension);
 		var datos= $("#datos").val();
 		$scope.dishes = angular.fromJson(datos);
@@ -626,9 +626,9 @@
 		setBackground("fondo","");
 		$(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
 		var items="";
-		var zona= JSON.parse(localStorage.zona);
+		var zona= JSON.parse(localStorage.zona);		
 		var id_zona=2;
-		if(zona.id && localStorage.quadrant!="" && localStorage.quadrant!="n/a")id_zona=zona.id;		
+		if(zona.id)id_zona=zona.id;		
 		
 		if(localStorage.token){
 			var data= ajaxrest.getDishDay("zone="+id_zona+"&token="+localStorage.token);
@@ -968,16 +968,6 @@
 			var tipoPago= $("#tipoPago").val();
 			
 			var zona= JSON.parse(localStorage.getItem("zona"));
-			var coordA= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'a');
-			var coordB= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'b');
-			var coordC= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'c');
-			var coordD= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'d');
-			var a= checkQuadrant(coordA,'a');
-			var b= checkQuadrant(coordB,'b');
-			var c= checkQuadrant(coordC,'c');
-			var d= checkQuadrant(coordD,'d');
-			
-			var quadrant= localStorage.quadrant;
 			var bono= $('#hbono').val();
 			var order=[];
 
@@ -993,6 +983,17 @@
 						window.location = "login.html#/cuenta";
 					}else{
 						if(direccion!=""){
+							$("#SendPay").attr("src","images/loading.gif");
+							var coordA= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'a');
+							var coordB= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'b');
+							var coordC= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'c');
+							var coordD= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'d');
+							var a= checkQuadrant(coordA,'a');
+							var b= checkQuadrant(coordB,'b');
+							var c= checkQuadrant(coordC,'c');
+							var d= checkQuadrant(coordD,'d');						
+							var quadrant= localStorage.quadrant;							
+							
 							$scope.nombre_cliente= nombre_cliente;							
 							var coords="";
 							if(localStorage.position){
@@ -1011,6 +1012,9 @@
 							localStorage.removeItem("tipo");
 							$("#totalDish").html("0");
 							cleanSession();
+							$('.container').animate({
+								scrollTop: $("#topmobil").offset().top
+							}, 5);							
 						}else{
 							alert("Dirección es requerida.");
 						}
@@ -1033,30 +1037,41 @@
 	});	
 
 	angularRoutingApp.controller('felicitacionesController', function($scope) {
-		setBackground("fondo","");
+		setBackground("fondo","");	
+		var desde= JSON.parse(getVariables(252));
+		$("#desde").val(desde[0].valor_variable);				
 		$scope.sendContact = function (type) {			
 			ajaxrest.sendContact(type);
 		},
 		$scope.setTipo = function (type) {			
 			if(type=="Felicitaciones"){
+				desde= JSON.parse(getVariables(252));
 				$("#chk_Felicitaciones").attr("src","images/checkbox_ok.png");
 				$("#chk_Reclamo").attr("src","images/checkbox.png");
 				$("#tipo").val('Felicitaciones');
 			}else{
+				desde= JSON.parse(getVariables(253));
 				$("#chk_Felicitaciones").attr("src","images/checkbox.png");
 				$("#chk_Reclamo").attr("src","images/checkbox_ok.png");
 				$("#tipo").val('Reclamo');
 			}
+			$("#desde").val(desde[0].valor_variable);
 		}			
 	});	
 	angularRoutingApp.controller('contactenosController', function($scope) {
 		setBackground("fondo","");
-		$scope.sendContact = function (type) {			
+		var desde= JSON.parse(getVariables(169));	
+		$("#desde").val(desde[0].valor_variable);		
+		$scope.sendContact = function (type) {
 			ajaxrest.sendContact(type);
 		}
 	});
 	angularRoutingApp.controller('redesController', function($scope) {
-		setBackground("fondo","");		
+		setBackground("fondo","");
+		var data= JSON.parse(JSON.stringify(ajaxrest.getSocialNet()));		
+		for(var i=0;i<data.length;i++){	
+			$(".redesi").append('<a href="'+data[i].valor_variable+'" target="_blank" class="'+data[i].contenido_variable+'"></a>');
+		}
 	});	
 	angularRoutingApp.controller('guiaController', function($scope) {
 		setBackground("fondo","");			
@@ -1162,8 +1177,14 @@
 					});
 				}; 				           
 
-				$scope.$watch("area", function (area) {
-					if (area != undefined) {
+				$scope.$watch("area", function (area) {					
+					if (area != undefined) {						   
+/*						var timer = setInterval(function(){
+							var watchID = navigator.geolocation.watchPosition(function(position) {
+							  console.log(JSON.stringify(area));
+							  
+							});	
+						}, 1000);	*/			
 						createMarker(area,'Mí ubicación','rastreo_cliente');
 						/*createKML(localStorage.getItem("domain")+'resources/kmls/zona_total.kml');*/
 						var zona= JSON.parse(localStorage.getItem("zonas"));
