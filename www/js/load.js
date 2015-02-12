@@ -9,7 +9,7 @@ function startApp() {
   var lat1="";
   var lng1="";    
   var zones= JSON.parse(getZone());
-  localStorage.setItem("zona",JSON.stringify({id:1,code:'cam001'}));
+  localStorage.setItem("zona",JSON.stringify({id:2,code:'cam002'}));
   localStorage.setItem("zonas",JSON.stringify(zones)); 
   if(zones){
     if (navigator.geolocation) {    
@@ -94,6 +94,14 @@ function checkZona(id_zone,code,limits){
   //console.log("Coordenadas en punto: "+google.maps.geometry.poly.containsLocation(point, zone)+" "+pos.lat+","+pos.lng);
     if(google.maps.geometry.poly.containsLocation(point, zone)){
 	  //alert("Zona: "+id_zone+", Code: " + code);
+	  var zona= JSON.parse(localStorage.zona);
+	  //alert(id_zone +" - "+ zona.id);
+	 if(id_zone != zona.id){
+		ClearSomeLocalStorage("item_");
+		ClearSomeLocalStorage("cant_");
+		localStorage.setItem("num","0"); 
+		localStorage.setItem("plato","1"); 	
+	 }
 	  localStorage.setItem("zona",JSON.stringify({id:id_zone,code:code}));
 	  localStorage.setItem("quadrant","n/a");  
 	  exists=1;

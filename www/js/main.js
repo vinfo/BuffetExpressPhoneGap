@@ -914,7 +914,7 @@
 		$scope.domicilio = Currency.setMoney(tDomicilio, 0, ",", ".");
 		$("#total").html(Currency.setMoney(Gtotal + tDomicilio, 0, ",", "."));
 		$scope.valor_plato= " Und x "+domicilio;
-		setBackDefaultPay();
+		setBackDefaultPay();		
 
 		$scope.bonoChanged = function() {
 			var bono= $scope.bono.trim();
@@ -972,6 +972,17 @@
 			var order=[];
 
 			if(Gtotal>0){
+				$("#SendPay").attr("src","images/loading.gif");	
+				var coordA= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'a');
+				var coordB= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'b');
+				var coordC= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'c');
+				var coordD= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'d');
+				var a= checkQuadrant(coordA,'a');
+				var b= checkQuadrant(coordB,'b');
+				var c= checkQuadrant(coordC,'c');
+				var d= checkQuadrant(coordD,'d');			
+				
+				var quadrant= localStorage.quadrant;
 				if(quadrant != "n/a" && quadrant != ""){
 					if(!localStorage.getItem("cuenta")){
 						alert("Debe estar logueado para terminar el pedido.");
@@ -982,18 +993,7 @@
 						localStorage.setItem("tipo",tipo);
 						window.location = "login.html#/cuenta";
 					}else{
-						if(direccion!=""){
-							$("#SendPay").attr("src","images/loading.gif");
-							var coordA= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'a');
-							var coordB= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'b');
-							var coordC= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'c');
-							var coordD= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'d');
-							var a= checkQuadrant(coordA,'a');
-							var b= checkQuadrant(coordB,'b');
-							var c= checkQuadrant(coordC,'c');
-							var d= checkQuadrant(coordD,'d');						
-							var quadrant= localStorage.quadrant;							
-							
+						if(direccion!=""){							
 							$scope.nombre_cliente= nombre_cliente;							
 							var coords="";
 							if(localStorage.position){
@@ -1020,7 +1020,8 @@
 						}
 					}
 				}else{
-					alert("Usuario fuera de cobertura.");
+					$("#SendPay").attr("src","images/boton_pagar.png");	
+					alert("Usuario fuera de cobertura.\nNo se pueden realizar pedidos.");					
 				}
 
 			}
