@@ -682,6 +682,7 @@
 	angularRoutingApp.controller('pagoController', function($scope,Items,Currency) {
 		setBackground("","white");			
 		$(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
+		$scope.pagar="images/boton_pagar.png";
 		var id_cliente="";
 		var nombre_cliente="";
 		var cellPhone="";
@@ -960,7 +961,10 @@
 		$scope.viewTypePay = function () {
 			$(".sombra,.formpago").css("display","inline");
 		},
-		$scope.SendPay = function () {	
+		$scope.SendPay = function () {
+			document.getElementById("SendPay").src = "images/loading.gif";
+		    alert(1);
+
 			var direccion= $("#direccion").val();		
 			var referencia= $("#referencia").val();
 			var numero= $("#numero").val();
@@ -972,7 +976,6 @@
 			var order=[];
 
 			if(Gtotal>0){
-				$("#SendPay").attr("src","images/loading.gif");	
 				var coordA= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'a');
 				var coordB= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'b');
 				var coordC= ajaxrest.getCoordinatesJSON(zona.id+"|"+zona.code,'c');
@@ -1019,12 +1022,11 @@
 							alert("Dirección es requerida.");
 						}
 					}
-				}else{
-					$("#SendPay").attr("src","images/boton_pagar.png");	
+				}else{					
 					alert("Usuario fuera de cobertura.\nNo se pueden realizar pedidos.");					
 				}
-
 			}
+			document.getElementById("SendPay").src = "images/boton_pagar.png";
 		}						
 	});
 

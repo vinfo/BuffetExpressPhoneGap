@@ -259,46 +259,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/D/wamp/www/buffetexpress/codeigniter/resources/js/functions.js",
-			"settings":
-			{
-				"buffer_size": 16617,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/form_plugins.html",
-			"settings":
-			{
-				"buffer_size": 21102,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/form_elements.html",
-			"settings":
-			{
-				"buffer_size": 51763,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/js/datatables_init.js",
-			"settings":
-			{
-				"buffer_size": 4356,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/wamp/www/esevial/cea/modules/js/services.js",
-			"settings":
-			{
-				"buffer_size": 2249,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -358,18 +318,24 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www"
+		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates"
 	],
 	"file_history":
 	[
-		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/red_socials.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/wamp/www/buffetexpress/codeigniter/resources/js/functions.js",
+		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/form_plugins.html",
+		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/form_elements.html",
+		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/js/datatables_init.js",
+		"/D/wamp/www/esevial/cea/modules/js/services.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
+		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/red_socials.html",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/main.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/maplace-0.1.3.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
-		"/D/wamp/www/buffetexpress/codeigniter/resources/js/functions.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
@@ -377,7 +343,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/guia.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/index.js",
@@ -485,11 +450,7 @@
 		"/C/Users/odc/Desktop/CIA.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/nl.x-services.plugins.socialsharing/src/ios/SocialSharing.m",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/generic_icons.html",
-		"/D/wamp/www/familymarketing/eventos/eventos.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/cache.manifest",
-		"/D/Movilidad/BuffetExpressPhoneGap/plugins/nl.x-services.plugins.socialsharing/src/android/nl/xservices/plugins/SocialSharing.java",
-		"/D/Movilidad/BuffetExpressPhoneGap/README.md",
-		"/C/Users/odc/AppData/Local/Temp/Rar$DIa0.916/style.css"
+		"/D/wamp/www/familymarketing/eventos/eventos.js"
 	],
 	"find":
 	{
@@ -510,6 +471,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"pagoController",
 			"position",
 			"marker",
 			"setinterval",
@@ -636,8 +598,7 @@
 			"kml",
 			".presen",
 			".felicitation .form-group .btn",
-			".presen",
-			"id=\"tipo"
+			".presen"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -687,158 +648,8 @@
 	"groups":
 	[
 		{
-			"selected": 4,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/D/wamp/www/buffetexpress/codeigniter/resources/js/functions.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 16617,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1692,
-								993
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 264.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/form_plugins.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 21102,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/form_elements.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 51763,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/js/datatables_init.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4356,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								706,
-								534
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/D/wamp/www/esevial/cea/modules/js/services.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2249,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1557,
-								466
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 135.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
