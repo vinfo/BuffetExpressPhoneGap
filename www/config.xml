@@ -35,10 +35,10 @@
 
 <!--     <feature name="SplashScreen">
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
-    </feature>
+    </feature> -->
     <feature name="Toast">
       <param name="android-package" value="nl.xservices.plugins.Toast" />
-    </feature>     -->
+    </feature>    
 
     <access origin="*"/>
 
@@ -54,7 +54,7 @@
       </gap:config-file>
 
       <gap:plugin name="nl.x-services.plugins.socialsharing" />
-      <!-- <gap:plugin name="nl.x-services.plugins.toast" version="2.0" /> -->
+      <gap:plugin name="nl.x-services.plugins.toast" version="2.0" />
       <gap:plugin name="net.yoik.cordova.plugins.screenorientation" version="1.3.1" />
       <gap:plugin name="org.apache.cordova.media" version="0.2.8" />
       <gap:plugin name="org.apache.cordova.console" version="0.2.11" />

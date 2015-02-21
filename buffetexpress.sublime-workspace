@@ -317,14 +317,19 @@
 	},
 	"expanded_folders":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates"
+		"/D/Movilidad/BuffetExpressPhoneGap"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/wamp/www/buffetexpress/codeigniter/app/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
+		"/C/Users/odc/AppData/Local/Temp/Ftp buffetex@buffetexpress.co.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/wamp/www/buffetexpress/codeigniter/resources/js/functions.js",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/form_plugins.html",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/form_elements.html",
@@ -334,15 +339,11 @@
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/red_socials.html",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/main.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/maplace-0.1.3.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/leaflet.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/guia.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/index.js",
@@ -359,7 +360,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/felicitaciones.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/owl-carousel/owl.carousel.min.js",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/nosotros.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/terminos.html",
@@ -448,9 +448,7 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-google-maps.min.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/getDishDay",
 		"/C/Users/odc/Desktop/CIA.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/plugins/nl.x-services.plugins.socialsharing/src/ios/SocialSharing.m",
-		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/generic_icons.html",
-		"/D/wamp/www/familymarketing/eventos/eventos.js"
+		"/D/Movilidad/BuffetExpressPhoneGap/plugins/nl.x-services.plugins.socialsharing/src/ios/SocialSharing.m"
 	],
 	"find":
 	{
@@ -471,6 +469,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".icodeta .shop",
+			".miscompras .comprasitem .icodeta .shop",
+			"window.plugins.toast.",
+			"loading_msg",
+			"loading",
 			"pagoController",
 			"position",
 			"marker",
@@ -593,12 +596,7 @@
 			".carne",
 			".carousel-control",
 			"carousel-inner",
-			"images/",
-			"createKML",
-			"kml",
-			".presen",
-			".felicitation .form-group .btn",
-			".presen"
+			"images/"
 		],
 		"highlight": false,
 		"in_selection": false,

@@ -865,6 +865,11 @@ max-width:20%;*/
 	padding-top:2px;
 	font-size:18px;
 }
+.miscompras .comprasitem  .icodeta .shop span
+{
+	font-weight:bold;
+	color: #FFFFFF;
+}
 .miscompras .comprasitem  .icodeta .subtt span
 {
 	color: #FFFFFF;
@@ -1898,16 +1903,37 @@ border: 0;
 	display: inline-block;
 }
 .confirmacion{
-	border: 2px solid #A61015;
-	padding: 5px;
-	margin: 10px;
-	width: 90%;
-	display: none;
+    border: 2px solid #a61015;
+    display: none;
+    margin-top: 20px;
+    padding: 5px;
+    width: 98%;
 }
 .loading_container{
-	width100%;
+	width:100%;
 	padding-top:200px;
 	color:#fff;
+}
+.div_loading{
+    display: none;
+    opacity: 1;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;	
+	z-index: 1001;
+}
+.msg_div_loading{
+    position: absolute;
+    top: 50%;
+    left: 10%;	
+	width:75%;
+	margin: 0 auto;
+	border:2px double #999999;
+	background-color:#FFF;
+	padding:15px;
+	text-align:center;
 }
 .loading{
 	text-align:center;	

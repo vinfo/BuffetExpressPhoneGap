@@ -41,7 +41,7 @@ if (window.jQuery) {
              scrollTop:0
          },"slow");             
         }
-    });
+    });	
     $(".td a").click(function(){
         $(".latermenu").animate({"left":-412},200);
     });    

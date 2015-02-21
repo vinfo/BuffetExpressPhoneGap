@@ -2,7 +2,7 @@
 <!-- Cotenido buffet -->
 <div class="menuplatolist">
   <div class="col-md-12" ng-repeat="dish in dishes">
-   <div class="title"><img src="images/{{imageCat}}.png" alt="..." title=".." /><span>{{dish.name}}</span></div>
+   <div class="title"><img ng-src="images/{{imageCat}}.png" alt="..." title=".." /><span>{{dish.name}}</span></div>
    <div class="btnts">
      <div id="detalle_{{dish.id}}" class="detalle">
       <h1>{{dish.fullname}}
