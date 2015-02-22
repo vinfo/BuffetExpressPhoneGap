@@ -1194,7 +1194,12 @@
 					  var orden= ajaxrest.getLastOrden(dat.id);
 					  var route = [];
 					  if(orden){
-						  var or = angular.fromJson(orden);						  
+						  var or = angular.fromJson(orden);
+						  var mins=0;
+						  var rest=or[0].mins - or[0].mins_r;
+						  if(rest>0)mins=rest;
+						  $(".mins").html(mins);
+						  					  
 						  for(var i=0;i<or.length;i++){
 							  var coord= or[i].coordinates.split(',');
 							  var pos={Latitude:coord[0],Longitude:coord[1]};
@@ -1208,7 +1213,7 @@
 							strokeOpacity: 1.0,
 							strokeWeight: 2
 						  });
-						  routePath.setMap(map);						  						  
+						  routePath.setMap(map);						  					  						  
 					  }
 				  }
 				  var watchID = navigator.geolocation.watchPosition(function(position) {                
@@ -1222,7 +1227,7 @@
 				}else{
 					clearInterval(timer);	
 				}				  			  
-				}, 10000);
+				}, 8000);
 			
 
             /*createKML(localStorage.getItem("domain")+'resources/kmls/zona_total.kml');*/

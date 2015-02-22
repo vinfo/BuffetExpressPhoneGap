@@ -321,6 +321,7 @@
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/wamp/www/buffetexpress/codeigniter/app/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
@@ -359,7 +360,6 @@
 		"/D/wamp/www/buffetexpress/codeigniter/resources/js/functions2.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/felicitaciones.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/owl-carousel/owl.carousel.min.js",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/nosotros.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/terminos.html",
@@ -469,6 +469,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"pedidotar",
+			"class=\"btns\"",
 			".icodeta .shop",
 			".miscompras .comprasitem .icodeta .shop",
 			"window.plugins.toast.",
@@ -594,9 +596,7 @@
 			"Fecha y hora: 12/30/2014 11:11:50 AM\nError: atributo duplicado\nArchivo de origen: file:///D:/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html\nLínea: 13, columna: 47\nCódigo fuente:\nng-click=\"close('costoad')",
 			"Fecha y hora: 12/30/2014 11:11:50 AM\nError: atributo duplicado\nArchivo de origen: file:///D:/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html\nLínea: 13, columna: 47\nCódigo fuente:\n ng-click=\"close('costoad')\">",
 			".carne",
-			".carousel-control",
-			"carousel-inner",
-			"images/"
+			".carousel-control"
 		],
 		"highlight": false,
 		"in_selection": false,
