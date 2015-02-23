@@ -680,7 +680,7 @@
   }); 
 
   angularRoutingApp.controller('pagoController', function($scope,Items,Currency) {
-    setBackground("","white");      
+    setBackground("","white");	  
     $(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
     var id_cliente="";
     var nombre_cliente="";
@@ -693,6 +693,7 @@
       if(data.address!="")direccion=data.address;
       $scope.direccion= direccion;
       id_cliente= data.id;
+	  $scope.user_id= data.id+"&session="+localStorage.token;
       nombre_cliente= data.names;
       cellPhone= data.cellPhone;
       var direccion='<li>&nbsp;</li>';
