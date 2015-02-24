@@ -900,8 +900,10 @@
           nameDish="Recomendado (Und x "+cantDish+")";
           total= parseInt(localStorage.valor_recomendado * cantDish);
           total2=total;
-        }       
-        orderdetail.push({numDish:dish,qty:cantDish,price:total2,type:type});
+        }
+		
+		var shipping= localStorage.valor_domicilio;		      
+        orderdetail.push({numDish:dish,qty:cantDish,price:total2,shipping:shipping,type:type});
 
         labels+='<label>'+nameDish+'</label>';
         Gtotal+=total2;
@@ -931,14 +933,15 @@
           var total= Gtotal + tDomicilio;
           var valorBono=0;
           if(data[0].tipo_bono==84){
-            valorBono= valor;           
+            valorBono= valor;
+			$("#porc_bono").html("");         
           }else{
             $("#porc_bono").html(valor+"%");
-            valorBono= valor;
-            var porc= total * (valor/100);
+			var porc= total * (valor/100);
+            valorBono= porc;
           }
           
-          $("#total").html(Currency.setMoney(total - valor, 0, ",", "."));
+          $("#total").html(Currency.setMoney(total - valorBono, 0, ",", "."));
           $("#valor_bono").html(Currency.setMoney(valorBono, 0, ",", "."));
           $("#hbono").val(bono);          
           $(".bono").show(); 
