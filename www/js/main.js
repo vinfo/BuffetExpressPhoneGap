@@ -685,10 +685,11 @@
     var id_cliente="";
     var nombre_cliente="";
     var cellPhone="";
-    
+    $(".direcciones").hide();
     var datos= localStorage.getItem("cuenta");
     if(datos!=null){
       var data= JSON.parse(datos);
+	  var cont=0;
       var direccion="";
       if(data.address!="")direccion=data.address;
       $scope.direccion= direccion;
@@ -696,15 +697,17 @@
 	  $scope.user_id= data.id+"&session="+localStorage.token;
       nombre_cliente= data.names;
       cellPhone= data.cellPhone;
-      var direccion='<li>&nbsp;</li>';
+      direccion='<li>&nbsp;</li>';
       var dir= ajaxrest.getLastAddress("user="+id_cliente+"&token="+localStorage.token);
       if(dir!=""){
         for(var j=0;j<dir.length;j++){
-          var datos= dir[j].address+'|'+dir[j].num+'|'+dir[j].reference;
-          direccion+='<li class="dirs" title="'+datos+'">'+dir[j].address+'<i class="glyphicon glyphicon-minus-sign"></i></li>';
+		  cont++;
+          var datos= dir[j].id+'|'+dir[j].address+'|'+dir[j].num+'|'+dir[j].reference;
+          direccion+='<li><span class="dirs" title="'+datos+'">'+dir[j].address+'</span><i class="glyphicon glyphicon-minus-sign"></i></li>';
         }
       }
-      $scope.direcciones_frecuentes= direccion;
+	  if(cont!=0)$(".direcciones").show();
+      $scope.direcciones_frecuentes= direccion;	  
     }   
 
     if(localStorage.getItem("direccion")){
@@ -984,11 +987,11 @@
           localStorage.setItem("tipo",tipo);
           window.location = "login.html#/cuenta";         
         }else{
-			$(".div_loading").fadeIn();			
+			$(".div_loading").fadeIn();
+			setTimeout(function() {		
 			var data= ajaxrest.getUser("email="+localData['email']+"&token="+localStorage.token); 
 			var dat = angular.fromJson(data);			
-			if(dat[0].survey != "0")$("#encuesta").hide();	
-			setTimeout(function() {
+			if(dat[0].survey != "0")$("#encuesta").hide();			
 			  getQuadrant(zona.id,zona.code);         
 			  var quadrant= localStorage.quadrant;
 			  if(quadrant != "n/a" && quadrant != ""){
@@ -1019,10 +1022,10 @@
 				alert("Dirección es requerida.");               
 			  }
 			  }else{
-			  $(".div_loading").fadeOut();
-			  alert("Usuario fuera de cobertura.\nNo se pueden realizar pedidos.");         
-			  }
-			}, 200);		  
+				  $(".div_loading").fadeOut();
+				  alert("Usuario fuera de cobertura.\nNo se pueden realizar pedidos.");         
+			  }					 
+			}, 800); 
         }
       }else{
 		  alert("Carro de compras esta vacio."); 
