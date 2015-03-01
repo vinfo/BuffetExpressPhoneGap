@@ -1230,7 +1230,7 @@
 				}else{
 					clearInterval(timer);	
 				}				  			  
-				}, 5000);
+				}, 10000);
 			
 
             /*createKML(localStorage.getItem("domain")+'resources/kmls/zona_total.kml');*/
