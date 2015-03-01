@@ -546,7 +546,7 @@
   });
 
   angularRoutingApp.controller('mi_cuentaController', function($scope) {
-    setBackground("fondo","");
+    setBackground("fondo","");	
     $scope.changeRoute = function(url, forceReload) {
       $scope = $scope || angular.element(document).scope();
           if(forceReload || $scope.$$phase) { // that's right TWO dollar signs: $$phase
@@ -689,13 +689,14 @@
     var datos= localStorage.getItem("cuenta");
     if(datos!=null){
       var data= JSON.parse(datos);
-	  var cont=0;
+	    var cont=0;
       var direccion="";
       if(data.address!="")direccion=data.address;
       $scope.direccion= direccion;
       id_cliente= data.id;
-	  $scope.user_id= data.id+"&session="+localStorage.token;
+	    $scope.user_id= data.id+"&session="+localStorage.token;
       nombre_cliente= data.names;
+      $scope.nombre_cliente= nombre_cliente;
       cellPhone= data.cellPhone;
       direccion='<li>&nbsp;</li>';
       var dir= ajaxrest.getLastAddress("user="+id_cliente+"&token="+localStorage.token);
@@ -911,8 +912,7 @@
         domicilio+= parseInt(cantDish);
         nDish--;
       }
-    }
-    
+    }    
     
     Ditem='<div class="td">'+labels+'</div><div class="td">'+valores+'</div>';
 
@@ -990,7 +990,8 @@
           localStorage.setItem("tipo",tipo);
           window.location = "login.html#/cuenta";         
         }else{
-			$(".div_loading").fadeIn();
+			$scope.nombre_cliente= nombre_cliente; 
+      $(".div_loading").fadeIn();
 			setTimeout(function() {		
 			var data= ajaxrest.getUser("email="+localData['email']+"&token="+localStorage.token); 
 			var dat = angular.fromJson(data);			
@@ -999,7 +1000,7 @@
 			  var quadrant= localStorage.quadrant;
 			  if(quadrant != "n/a" && quadrant != ""){
 			  if(direccion!=""){              
-				$scope.nombre_cliente= nombre_cliente;              
+				             
 				var coords="";
 				if(localStorage.position){
 				  coord= JSON.parse(localStorage.position);
@@ -1121,8 +1122,8 @@
         var marker;
         var zone= JSON.parse(localStorage.zona);
         var position= JSON.parse(localStorage.position);        
-        var MyPosition = new google.maps.LatLng(position.lat, position.lng);
-        
+        var MyPosition = new google.maps.LatLng(position.lat, position.lng);	
+        var markers = {};
         var initialize = function () {
           var lat= 6.195603;
           if(position.lat)lat= position.lat;
@@ -1139,8 +1140,8 @@
           var homeControlDiv = document.createElement('div');
           var homeControl = new HomeControl(homeControlDiv, map);
           
-          var area={Latitude:lat,Longitude:lng};
-          createMarker(area,'Mí ubicación','rastreo_cliente');
+          var area={Latitude:lat,Longitude:lng};		  
+          createMarker(area,'Mí ubicación','rastreo_cliente');		  
           homeControlDiv.index = 9999;
           map.controls[google.maps.ControlPosition.TOP_RIGHT].push(homeControlDiv);
         };
@@ -1148,12 +1149,18 @@
         var createMarker = function (area,Name,image) {
           var position = new google.maps.LatLng(area.Latitude, area.Longitude);
           map.setCenter(position);
+		  //alert(Name+" - "+area.Latitude);
+		  if(markers[1]){
+			marker = markers[1]; 
+			marker.setMap(null);			  
+		  }
           marker = new google.maps.Marker({
             map: map,
             position: position,
             title: Name,
             icon: 'images/'+image+'.png'
-          });               
+          });
+		  if(Name=="Domiciliario")markers[1] = marker;    
         };
 
         var createKML = function (src) {
@@ -1190,7 +1197,7 @@
         };                   
 
         $scope.$watch("area", function (area) {
-		  var datos= localStorage.getItem("cuenta");		     
+		  var datos= localStorage.getItem("cuenta");
           if (area != undefined) {
 			var timer = setInterval(function(){
 				var page= $location.url(); 
@@ -1206,21 +1213,10 @@
 						  var rest=or[0].mins - or[0].mins_r;
 						  if(rest>0)mins=rest;
 						  $(".mins").html(mins);
-						  					  
-						  for(var i=0;i<or.length;i++){
-							  var coord= or[i].coordinates.split(',');
-							  var pos={Latitude:coord[0],Longitude:coord[1]};
-							  route.push(new google.maps.LatLng(coord[0],coord[1]));
-							  if(i == or.length -1)createMarker(pos,'Domiciliario','puntero_dom');							 
-						  }
-						  var routePath = new google.maps.Polyline({
-							path: route,
-							geodesic: true,
-							strokeColor: '#FF0000',
-							strokeOpacity: 1.0,
-							strokeWeight: 2
-						  });
-						  routePath.setMap(map);						  					  						  
+						  
+						  var coord= or[0].coordinates.split(',');
+						  var pos= {Latitude:coord[0],Longitude:coord[1]};
+						  createMarker(pos,'Domiciliario','rastreo_domiciliario');
 					  }
 				  }
 				  var watchID = navigator.geolocation.watchPosition(function(position) {                
@@ -1228,13 +1224,13 @@
 					if(pos != localStorage.position){
 					 localStorage.setItem("position",pos);
 					 createMarker(area,'Mí ubicación','rastreo_cliente');
-					 alert("Cambio posición: "+pos);  
+					 //alert("Cambio posición: "+pos);  
 					}      
 				  });
 				}else{
 					clearInterval(timer);	
 				}				  			  
-				}, 8000);
+				}, 5000);
 			
 
             /*createKML(localStorage.getItem("domain")+'resources/kmls/zona_total.kml');*/

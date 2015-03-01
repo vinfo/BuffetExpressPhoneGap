@@ -49,9 +49,9 @@ angularRoutingApp.controller('loginController', function($scope, $location,$rout
 		$location.path(hash);
 	},
 	$scope.doBack = function () {
-		  $('.container').animate({
+/*		  $('.container').animate({
 			  scrollTop: $("#topmobil").offset().top
-		  }, 5);		
+		  }, 5);*/		
 		 window.history.back();
 	},	
 	$scope.hiddeMenu = function () {
