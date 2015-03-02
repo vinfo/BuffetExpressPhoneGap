@@ -259,22 +259,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "www/js/main.js",
-			"settings":
-			{
-				"buffer_size": 57260,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/odc/Desktop/D&D.html",
-			"settings":
-			{
-				"buffer_size": 42,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -339,8 +323,10 @@
 	],
 	"file_history":
 	[
-		"/C/Users/odc/Desktop/Gloria Arango.html",
+		"/D/Movilidad/BuffetExpressMensajero/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/C/Users/odc/Desktop/D&D.html",
+		"/C/Users/odc/Desktop/Gloria Arango.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/politicas.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
@@ -361,7 +347,6 @@
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/js/datatables_init.js",
 		"/D/wamp/www/esevial/cea/modules/js/services.js",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/red_socials.html",
-		"/D/Movilidad/BuffetExpressMensajero/www/js/main.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/maplace-0.1.3.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
@@ -465,8 +450,7 @@
 		"/C/Users/odc/AppData/Local/Temp/Rar$EXa0.932/www/templates/mapa.html",
 		"/C/Users/odc/AppData/Local/Temp/Rar$DIa0.007/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-google-maps.min.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/getDishDay",
-		"/C/Users/odc/Desktop/CIA.html"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/getDishDay"
 	],
 	"find":
 	{
@@ -665,70 +649,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "www/js/main.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 57260,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								572,
-								572
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Users/odc/Desktop/D&D.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 42,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

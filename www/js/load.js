@@ -12,8 +12,8 @@ function startApp() {
   localStorage.setItem("zona",JSON.stringify({id:2,code:'cam002'}));
   localStorage.setItem("zonas",JSON.stringify(zones)); 
   if(zones){
-    if (navigator.geolocation) {    
-      navigator.geolocation.getCurrentPosition(
+    if (navigator.geolocation) { 	   
+      navigator.geolocation.getCurrentPosition(	  
         function(position) {
           lat1= position.coords.latitude;
           lng1= position.coords.longitude;
@@ -24,6 +24,7 @@ function startApp() {
 			  var zona= zones[i].id+"|"+zones[i].code;
 			  codes.push(zona);
 		  }
+		  
 		  var process= ajaxrest.getCoordinatesJSON(codes,'');
 		  var quadrant= 0;
 		  $(".loading_msg").html("Detectando zona de pedidos");
@@ -33,8 +34,8 @@ function startApp() {
 			  //console.log(process[i][1]);
 			  for(var j=0;j<Coords.length;j++){				  			  
 				  limits.push(new google.maps.LatLng(Coords[j][0],Coords[j][1]));  
-			  }
-			  quadrant += checkZona(process[i][0],process[i][1],limits);			   
+			  }			  
+			  quadrant += checkZona(process[i][0],process[i][1],limits);
 		  }      	    
           redirect();
         },
