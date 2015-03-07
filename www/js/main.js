@@ -990,8 +990,8 @@
           localStorage.setItem("tipo",tipo);
           window.location = "login.html#/cuenta";         
         }else{
-			$scope.nombre_cliente= nombre_cliente; 
-      $(".div_loading").fadeIn();
+			$scope.nombre_cliente= nombre_cliente; 			
+      		$(".div_loading").fadeIn();
 			setTimeout(function() {		
 			var data= ajaxrest.getUser("email="+localData['email']+"&token="+localStorage.token); 
 			var dat = angular.fromJson(data);			
@@ -1007,20 +1007,56 @@
 				  coords= coord.lat+","+coord.lng;
 				}              
 				order.push({idUser:id_cliente,coordinates:coords,quadrant:quadrant,idZone:zona.id,idCupon:bono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,cellPhone:cellPhone,typePay:tipo_pago,status:71});
-				var process= ajaxrest.processOrder(order,orderdetail,orderxitems);
-				$(".vrdirc,.bondesc").css("display","none");
-				$(".confirmacion").css("display","inline-block");
-				localStorage.removeItem("orden");
-				localStorage.removeItem("direccion");
-				localStorage.removeItem("referencia");
-				localStorage.removeItem("numero");
-				localStorage.removeItem("tipo");
-				$("#totalDish").html("0");
-				cleanSession();
-				$(".div_loading").fadeOut(); 
-				$('.container').animate({
-				  scrollTop: $("#topmobil").offset().top
-				}, 5);				             
+				
+				var checkInv= ajaxrest.checkInv(order,orderdetail,orderxitems);				
+				var contI=0;
+				var names=[];cants=[];
+				//alert(JSON.stringify(orderxitems));
+				for(var i=0;i<checkInv.length;i++){
+					var name= Object.keys(checkInv[i]);
+					var cant= String(checkInv[i][name]).split("/");					
+					var obj= String(name) + "|" + cant[0];
+												
+					if(cants[ obj ]){
+						cants[ obj ] = parseInt(cants[ obj ]) + parseInt(cant[1]);
+					}else{
+						cants[ obj ] = parseInt(cant[1]);
+					}
+					var cantF= parseInt(cant[0]) - parseInt(cants[ obj ]);		
+					
+					if(cantF<0){
+						contI++;
+						names.push( obj );
+					}					
+				}
+				
+				var final= sortUnique(names);
+				
+				if(contI==0){
+					ajaxrest.processOrder(order,orderdetail,orderxitems);
+					$(".vrdirc,.bondesc").css("display","none");
+					$(".confirmacion").css("display","inline-block");
+					localStorage.removeItem("orden");
+					localStorage.removeItem("direccion");
+					localStorage.removeItem("referencia");
+					localStorage.removeItem("numero");
+					localStorage.removeItem("tipo");
+					$("#totalDish").html("0");
+					cleanSession();
+					$(".div_loading").fadeOut(); 
+					$('.container').animate({
+					  scrollTop: $("#topmobil").offset().top
+					}, 5);										
+				}else{
+					$(".div_loading").fadeOut();
+					var inventario= "";
+					for(var j=0;j<final.length;j++){
+						var prod= final[j].split("|");
+						inventario+="- "+prod[0]+": Disponible ("+prod[1]+"), Solicitado ("+ cants[ final[j] ] +")\n";
+					}
+					alert("Algunos productos de su pedido ya estan agotados. Por favor retirarlos de su orden para poder continuar:\nINVENTARIO DE PRODUCTOS\n"+inventario);
+				}
+				             
 			  }else{
 				$(".div_loading").fadeOut();
 				alert("Dirección es requerida.");               
@@ -1131,7 +1167,7 @@
           if(position.lng)lng= position.lng;
 
           mapOptions = {
-            zoom: 14,
+            zoom: 13,
             panControl: false,
             center: new google.maps.LatLng(lat,lng),
             mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -1141,7 +1177,9 @@
           var homeControl = new HomeControl(homeControlDiv, map);
           
           var area={Latitude:lat,Longitude:lng};		  
-          createMarker(area,'Mí ubicación','rastreo_cliente');		  
+          createMarker(area,'Mí ubicación','rastreo_cliente');
+		  posDomiciliario();
+		  	  
           homeControlDiv.index = 9999;
           map.controls[google.maps.ControlPosition.TOP_RIGHT].push(homeControlDiv);
         };
@@ -1170,6 +1208,27 @@
             map: map
           });             
         };
+		
+        var posDomiciliario = function () {
+			  var datos= localStorage.getItem("cuenta");
+			  if(datos != null){
+				  var data= JSON.parse(datos);
+				  var dat = angular.fromJson(data);
+				  var orden= ajaxrest.getLastOrden(dat.id);				  			  
+				  var route = [];				  
+				  if(orden){
+					  var or = angular.fromJson(orden);
+					  var mins=0;
+					  var rest=or[0].mins - or[0].mins_r;
+					  if(rest>0)mins=rest;
+					  $(".mins").html(mins);
+					  
+					  var coord= or[0].coordinates.split(',');
+					  var pos= {Latitude:coord[0],Longitude:coord[1]};					  
+					  createMarker(pos,'Domiciliario','rastreo_domiciliario');
+				  }
+			  }           
+        };		
 
         var HomeControl = function (controlDiv, map) {
           controlDiv.style.padding = '5px';
@@ -1196,29 +1255,12 @@
           });
         };                   
 
-        $scope.$watch("area", function (area) {
-		  var datos= localStorage.getItem("cuenta");
+        $scope.$watch("area", function (area) {		  
           if (area != undefined) {
 			var timer = setInterval(function(){
 				var page= $location.url(); 
 				if(page=="/mapa"){
-				  if(datos != null){
-					  var data= JSON.parse(datos);
-					  var dat = angular.fromJson(data);
-					  var orden= ajaxrest.getLastOrden(dat.id);
-					  var route = [];
-					  if(orden){
-						  var or = angular.fromJson(orden);
-						  var mins=0;
-						  var rest=or[0].mins - or[0].mins_r;
-						  if(rest>0)mins=rest;
-						  $(".mins").html(mins);
-						  
-						  var coord= or[0].coordinates.split(',');
-						  var pos= {Latitude:coord[0],Longitude:coord[1]};
-						  createMarker(pos,'Domiciliario','rastreo_domiciliario');
-					  }
-				  }
+				  posDomiciliario();
 				  var watchID = navigator.geolocation.watchPosition(function(position) {                
 					var pos= JSON.stringify({lat:area.Latitude,lng:area.Longitude});
 					if(pos != localStorage.position){
@@ -1316,10 +1358,8 @@
         if(isNaN(numero)){
           return "";
         }
-
         if(decimales!==undefined){
               // Redondeamos
-
               numero=numero.toFixed(decimales);
           }
 

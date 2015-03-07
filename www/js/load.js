@@ -5,7 +5,6 @@ function startApp() {
   localStorage.dimension = $(window).width();
   localStorage.setItem("quadrant","");
   localStorage.setItem("banner","");
-  
   var lat1="";
   var lng1="";    
   var zones= JSON.parse(getZone());
@@ -13,13 +12,13 @@ function startApp() {
   localStorage.setItem("zonas",JSON.stringify(zones)); 
   if(zones){
     if (navigator.geolocation) { 	   
-      navigator.geolocation.getCurrentPosition(	  
+      navigator.geolocation.getCurrentPosition(		  
         function(position) {
           lat1= position.coords.latitude;
           lng1= position.coords.longitude;
 		  var pos= {lat:lat1,lng:lng1};
 		  var codes=[];
-          localStorage.setItem("position",JSON.stringify(pos));		  
+          localStorage.setItem("position",JSON.stringify(pos));			   
 		  for(var i=0;i<zones.length;i++){
 			  var zona= zones[i].id+"|"+zones[i].code;
 			  codes.push(zona);
@@ -40,8 +39,8 @@ function startApp() {
           redirect();
         },
         function(error) {
-          alert("Ubicación no disponible");
-          redirect();
+          $(".loading_msg").html("Tratando de registrar ubicación...");
+          window.location.href = 'index.html';
         },
         {timeout: 15000, enableHighAccuracy: true, maximumAge: 75000}
         );
@@ -91,7 +90,7 @@ function checkZona(id_zone,code,limits){
         paths: limits
     });
   var pos= JSON.parse(localStorage.getItem("position"));
-  var point = new google.maps.LatLng(pos.lat,pos.lng);//6.239124, -75.545917
+  var point = new google.maps.LatLng(pos.lat,pos.lng);//6.239124, -75.545917 
   //console.log("Coordenadas en punto: "+google.maps.geometry.poly.containsLocation(point, zone)+" "+pos.lat+","+pos.lng);
     if(google.maps.geometry.poly.containsLocation(point, zone)){
 	  //alert("Zona: "+id_zone+", Code: " + code);
