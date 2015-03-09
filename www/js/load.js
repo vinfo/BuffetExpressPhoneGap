@@ -7,7 +7,7 @@ function startApp() {
   localStorage.setItem("banner","");
   var lat1="";
   var lng1="";    
-  var zones= JSON.parse(getZone());
+  var zones= JSON.parse(getZones());
   localStorage.setItem("zona",JSON.stringify({id:2,code:'cam002'}));
   localStorage.setItem("zonas",JSON.stringify(zones)); 
   if(zones){
@@ -70,7 +70,7 @@ function redirect(){
          },500);   
 }
 
-function getZone(){
+function getZones(){
     var res="";
     $.ajax({
        type: 'GET',

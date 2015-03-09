@@ -685,16 +685,18 @@
     var id_cliente="";
     var nombre_cliente="";
     var cellPhone="";
+	var direccion="";
+	var idType="";
     $(".direcciones").hide();
     var datos= localStorage.getItem("cuenta");
     if(datos!=null){
       var data= JSON.parse(datos);
-	    var cont=0;
-      var direccion="";
+	  var cont=0;      
+      if(data.idType!="")idType=data.idType;      
       if(data.address!="")direccion=data.address;
       $scope.direccion= direccion;
       id_cliente= data.id;
-	    $scope.user_id= data.id+"&session="+localStorage.token;
+	  $scope.user_id= data.id+"&session="+localStorage.token;
       nombre_cliente= data.names;
       $scope.nombre_cliente= nombre_cliente;
       cellPhone= data.cellPhone;
@@ -990,6 +992,7 @@
           localStorage.setItem("tipo",tipo);
           window.location = "login.html#/cuenta";         
         }else{
+			if(idType==82){
 			$scope.nombre_cliente= nombre_cliente; 			
       		$(".div_loading").fadeIn();
 			setTimeout(function() {		
@@ -1065,7 +1068,11 @@
 				  $(".div_loading").fadeOut();
 				  alert("Usuario fuera de cobertura.\nNo se pueden realizar pedidos.");         
 			  }					 
-			}, 800); 
+			}, 800); 				
+			}else{
+				alert("Tipo de usuario no valido!");
+				window.location = "login.html#/login"; 
+			}
         }
       }else{
 		  alert("Carro de compras esta vacio."); 
@@ -1128,6 +1135,7 @@
     $("li").removeClass("active");
     $(".menupie ul li:nth-child(4)").addClass("active");
     $scope.minutes="N/A";
+	$(".txt_mapa").html("Min. para tu entrega");
     if(localStorage.position){
       var position= JSON.parse(localStorage.position);
       $scope.Area = { Name: "Mi ubicación", Latitude: position.lat, Longitude: position.lng };
@@ -1152,7 +1160,7 @@
         area: "=",
         zoom: "="
       },
-      controller: function ($scope,$location) {
+      controller: function ($scope,$location,$interval) {
         var mapOptions;
         var map;           
         var marker;
@@ -1198,7 +1206,7 @@
             title: Name,
             icon: 'images/'+image+'.png'
           });
-		  if(Name=="Domiciliario")markers[1] = marker;    
+		  if(Name=="Domiciliario" || Name=="Cocina")markers[1] = marker;    
         };
 
         var createKML = function (src) {
@@ -1218,14 +1226,23 @@
 				  var route = [];				  
 				  if(orden){
 					  var or = angular.fromJson(orden);
-					  var mins=0;
-					  var rest=or[0].mins - or[0].mins_r;
-					  if(rest>0)mins=rest;
-					  $(".mins").html(mins);
-					  
-					  var coord= or[0].coordinates.split(',');
-					  var pos= {Latitude:coord[0],Longitude:coord[1]};					  
-					  createMarker(pos,'Domiciliario','rastreo_domiciliario');
+					  if(or[0].coordinates && or[0].status==73){
+						  var mins=0;
+						  var rest=or[0].mins - or[0].mins_r;
+						  if(rest>0)mins=rest;
+						  $(".mins").html(mins);
+						  $(".txt_mapa").html("Min. para tu entrega");
+						  var coord= or[0].coordinates.split(',');
+						  var pos= {Latitude:coord[0],Longitude:coord[1]};						  				  
+						  createMarker(pos,'Domiciliario','rastreo_domiciliario');
+					  }else{
+						  var zona= JSON.parse(localStorage.zona);
+						  var code= ajaxrest.getZone(zona.code);
+						  var coord= code[0].coordinates.split(",");
+						  var pos= {Latitude:coord[0],Longitude:coord[1]};
+						  $(".txt_mapa").html("Orden en empaquetado");
+						  createMarker(pos,'Cocina','puntero_cocina');						  
+					  }
 				  }
 			  }           
         };		
@@ -1255,9 +1272,9 @@
           });
         };                   
 
-        $scope.$watch("area", function (area) {		  
-          if (area != undefined) {
-			var timer = setInterval(function(){
+        $scope.$watch("area", function (area) {			
+          if (area != undefined) {		  
+		  var timer= $interval(function(){
 				var page= $location.url(); 
 				if(page=="/mapa"){
 				  posDomiciliario();
@@ -1270,10 +1287,13 @@
 					}      
 				  });
 				}else{
-					clearInterval(timer);	
-				}				  			  
-				}, 10000);
-			
+					if(angular.isDefined(timer)){
+						$interval.cancel(timer);
+						timer=undefined;
+					}
+				}
+		  },10000);
+	
 
             /*createKML(localStorage.getItem("domain")+'resources/kmls/zona_total.kml');*/
             var zona= JSON.parse(localStorage.getItem("zonas"));
