@@ -970,6 +970,12 @@
     $scope.viewTypePay = function () {
       $(".sombra,.formpago").css("display","inline");
     },
+    $scope.goSurvey = function () {
+		window.open('http://buffetexpress.co/nuevo/?user='+id_cliente, '_blank');
+	  
+	  //window.location= 'http://buffetexpress.co/nuevo/?user='+id_cliente;
+	  return false;
+    },	
     $scope.SendPay = function () {
       var direccion= $("#direccion").val();   
       var referencia= $("#referencia").val();
@@ -991,8 +997,7 @@
           localStorage.setItem("numero",numero);
           localStorage.setItem("tipo",tipo);
           window.location = "login.html#/cuenta";         
-        }else{
-			if(idType==82){
+        }else{			
 			$scope.nombre_cliente= nombre_cliente; 			
       		$(".div_loading").fadeIn();
 			setTimeout(function() {		
@@ -1068,11 +1073,7 @@
 				  $(".div_loading").fadeOut();
 				  alert("Usuario fuera de cobertura.\nNo se pueden realizar pedidos.");         
 			  }					 
-			}, 800); 				
-			}else{
-				alert("Tipo de usuario no valido!");
-				window.location = "login.html#/login"; 
-			}
+			}, 800);
         }
       }else{
 		  alert("Carro de compras esta vacio."); 
@@ -1278,14 +1279,14 @@
 				var page= $location.url(); 
 				if(page=="/mapa"){
 				  posDomiciliario();
-				  var watchID = navigator.geolocation.watchPosition(function(position) {                
+				  //var watchID = navigator.geolocation.watchPosition(function(position) {                
 					var pos= JSON.stringify({lat:area.Latitude,lng:area.Longitude});
 					if(pos != localStorage.position){
 					 localStorage.setItem("position",pos);
 					 createMarker(area,'Mí ubicación','rastreo_cliente');
 					 //alert("Cambio posición: "+pos);  
 					}      
-				  });
+				  //});
 				}else{
 					if(angular.isDefined(timer)){
 						$interval.cancel(timer);

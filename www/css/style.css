@@ -40,6 +40,7 @@ a img
 	width: 100%;
 	max-width: 526px;
 	top: 25%;
+	cursor:pointer;
 }
 .inicio .img2
 {
@@ -76,7 +77,6 @@ a img
 	position: absolute;
 	left: 30px;
 	top: -4px;
-
 }
 .sesion .img1
 {
@@ -97,7 +97,6 @@ a img
 	background: url(../images/num_celular.png) no-repeat;
 	background-size: 50px 50px;
 }
-
 .sesion input
 {
 	background: none;
@@ -157,7 +156,7 @@ a.btn-reset{
 	text-align: center;
 	bottom: 2%;
     margin-top: 20px;
-    padding: 20px 10px;		
+    padding: 20px 10px;	
 }
 .sesion .terminos a
 {
@@ -217,7 +216,6 @@ a.btn-reset{
 	height: 29px;
 	display: inline-block;
 }
-
 .title
 {
 	width: 100%;
@@ -286,7 +284,6 @@ a.btn-reset{
 	width: 15px;
 	height: 15px;
 	position: relative;
-
 }
 .buffet .owl-controls .active span
 {
@@ -298,7 +295,7 @@ a.btn-reset{
 {
 	display: none;
 	height: 80px;
-	z-index: 999;
+	z-index: 999;	
 }
 .presen .owl-controls  .owl-buttons
 {
@@ -449,7 +446,6 @@ a.btn-reset{
 	text-align: center;
 	position: relative;
 }
-
 .menuplatolist
 {
 	margin-top: 39px;
@@ -546,8 +542,8 @@ a.btn-reset{
 	font-size: 11px;
 }
 .menuplatolist .col-md-12 .detalle h1 span
-{
-	cursor:pointer;	
+{	
+	cursor:pointer;
 	background-size: 100% 100%;
 	width: 25px;
 	height: 25px;
@@ -569,7 +565,6 @@ a.btn-reset{
 .menuplatolist .col-md-12 .contimg
 {
 	width: 100%;
-	min-height: 240px;
 }
 .menuplatolist .col-md-12 .contimg img
 {
@@ -586,8 +581,6 @@ a.btn-reset{
 	text-align: center;
 	display: none;
 }
-
-
 .verplatoico
 {
 	width: 100%;
@@ -618,7 +611,6 @@ a.btn-reset{
 	text-align: center;
 	display: none;
 }
-
 .costoad
 {
 	position: fixed;
@@ -679,13 +671,11 @@ a.btn-reset{
 .costoad .cont > .ck span {
 	padding:1px;
 }
-
 input[type=checkbox]:before {
     content: @fa-var-square-o;
     visibility: visible;
     //font-size: 12px;
 }
-
 input[type=checkbox]:checked:before{
     content: @fa-var-check-square-o;
 }
@@ -773,12 +763,14 @@ input[type=checkbox]:checked:before{
 	width:45px;
 	height:45px;
 	background: url(../images/restar_plato.png);
+	cursor:pointer;
 }
 .miscompras .comprasitem  .icodeli span.suma
 {
 	width:45px;
 	height:45px;
 	background: url(../images/sumar_plato.png);
+	cursor:pointer;
 }
 .miscompras .comprasitem  .icodeli span.contador
 {
@@ -799,6 +791,7 @@ input[type=checkbox]:checked:before{
 	width: 100%;
 	float: left;
 	background: #dcddde;
+	cursor:pointer;
 }
 .miscompras .comprasitem  .icodeta div
 {
@@ -863,7 +856,7 @@ max-width:20%;*/
 	width: 60%;
 	color: #FFFFFF;
 	padding-top:2px;
-	font-size:18px;
+	font-size:18px;	
 }
 .miscompras .comprasitem  .icodeta .shop span
 {
@@ -952,7 +945,7 @@ max-width:20%;*/
 .facturavir .contf .tr .td label
 {
 	display: block;
-	font-size:16px;
+	font-size:14px;
 	text-align: left;
 	padding-left:8%;
 }
@@ -1003,8 +996,9 @@ max-width:20%;*/
 }
 .facturavir .vrdirc label
 {
+
 	display: block;
-	font-size: 16px;
+	font-size: 14px;
 	margin-top: 11px;
 	width: 100%;
 	text-align: left;
@@ -1027,7 +1021,6 @@ max-width:20%;*/
 	background:none;
 	border: none;
 	box-shadow: none;
-
 }
 .facturavir .vrdirc input,select
 {
@@ -1035,7 +1028,7 @@ max-width:20%;*/
 	box-shadow: 1px 2px 3px #B0B0B0;
 	border:1px solid #B0B0B0;
 	background: #fcfcfc;
-	color: #000;
+	color: #000000;
 	border-radius: 20px;
 	padding: 5px;
 	padding-left: 20px;
@@ -1062,6 +1055,7 @@ max-width:20%;*/
 {
 	float: right;
 	color: #ff0000;
+	cursor: pointer;
 }
 .facturavir .vrdirc .medipa
 {
@@ -1080,6 +1074,7 @@ max-width:20%;*/
 .facturavir .vrdirc .medipa .col-md-6 img
 {
 	width: 100%;
+	cursor:pointer;
 }
 .facturavir .vrdirc .medipa .un
 {
@@ -1088,10 +1083,10 @@ max-width:20%;*/
 	line-height: 21px;
 	font-size: 19px;
 }
-.facturavir .vrdirc .ds:hover > .formpago, .facturavir .vrdirc .ds:hover > .sombra
+/*.facturavir .vrdirc .ds:hover > .formpago, .facturavir .vrdirc .ds:hover > .sombra
 {
 	display: inline;
-}
+}*/
 .facturavir .vrdirc .formpago
 {
 	position: fixed;
@@ -1143,10 +1138,10 @@ max-width:20%;*/
 {
 	margin-left: -107px;
 }
-.facturavir .vrdirc .ds .sombra:active, .facturavir .vrdirc .ds .sombra:active > .formpago
+/*.facturavir .vrdirc .ds .sombra:active, .facturavir .vrdirc .ds .sombra:active > .formpago
 {
 	display: none;
-}
+}*/
 .sombra
 {
 	width: 100%;
@@ -1461,7 +1456,6 @@ max-width:20%;*/
 .felicitation .checkbox input{
 	float: right;
 	padding-bottom:5px;
-
 }
 .felicitation .text input{
 	width
@@ -1530,10 +1524,8 @@ float: left;
 	color: #FFF;
 	font-size: 25px;
 	text-align: center;
-
 }
 .reds .redesi{
-
 }
 .reds .redesi a{
 	display: inline-block;
@@ -1589,7 +1581,6 @@ float: left;
 	width: 100%;
 	height: 88px;
 }
-
 .nosotros{
 	margin-top: 39px;
 	background-color: #FFF;
@@ -1642,7 +1633,7 @@ float: left;
 	display: inline-block;
 	color: #FFF;
 	font-weight: bold;
-	font-size: 13px;
+	font-size: 12px;
 }
 .botones .btn2 p{
 	padding-right: 15px;
@@ -1674,10 +1665,8 @@ float: left;
 .none{
 	display: none;
 }
-
 /* NUEVOS PLATOS */
 .padre {  
-
 	width: 100%;
 	max-width: 549px;
 	height: auto;
@@ -1688,7 +1677,6 @@ float: left;
 	margin-bottom: 0px;
 	margin-left: auto;
 }
-
 .derrap {
 	width: 100%;     
 	display: inline-block;
@@ -1700,14 +1688,12 @@ float: left;
 	margin-bottom: 0px;
 	margin-left: auto;
 }
-
 .derrap:after {
 	padding-top: 80.20%; 
 	margin:0%;
 	display: block;
 	content: '';
 }
-
 .contenedor {  
 	position: absolute;
 	top: 0; bottom: 0; right: 0; left: 0;
@@ -1720,10 +1706,7 @@ float: left;
 	margin-right: auto;
 	margin-bottom: 0px;
 	margin-left: auto;
-
 }
-
-
 .sopa {
 	position:relative;
 	float:left;
@@ -1732,7 +1715,6 @@ float: left;
 	margin:7.5% 0% 0% 0%; 
 	padding:0;
 }
-
 .sopacont{
 	position:absolute;
 	top:0%; 
@@ -1743,7 +1725,6 @@ float: left;
 	margin:0;    
 	padding:0;
 }
-
 .vaso {
 	position:relative;
 	float:left;
@@ -1752,7 +1733,6 @@ float: left;
 	margin:0; 
 	padding:0;
 }
-
 .jugo{
 	position:absolute;
 	top:0%; 
@@ -1763,8 +1743,6 @@ float: left;
 	margin:0;    
 	padding:0;
 }
-
-
 .plato{
 	position:relative;
 	float:right;
@@ -1773,7 +1751,6 @@ float: left;
 	margin:0;    
 	padding:0;
 }
-
 .arroz{
 	position:absolute;
 	top:0%; 
@@ -1784,7 +1761,6 @@ float: left;
 	margin:0;    
 	padding:0;
 }
-
 .guarnicion{
 	position:absolute;
 	top:54.5%; 
@@ -1795,7 +1771,6 @@ float: left;
 	margin:0;    
 	padding:0;
 }
-
 .carne{
 	position:absolute;
 	top:0%; 
@@ -1892,7 +1867,7 @@ border: 0;
   position: fixed;
   width:220px;
   height:30px;
-  padding:8px;
+  padding:12px;
   margin: 5% auto;
   left: 0;
   right: 0;
@@ -1932,8 +1907,12 @@ border: 0;
 	margin: 0 auto;
 	border:2px double #999999;
 	background-color:#FFF;
-	padding:15px;
+	padding:25px 5px;
 	text-align:center;
+	font-weight:bold;
+}
+.texto_load{
+	min-width:200px;
 }
 .loading{
 	text-align:center;	
@@ -1942,15 +1921,12 @@ border: 0;
 	margin: 10px;
 	padding: 10px;
 }
-
 input[type="radio"], input[type="checkbox"] {
   /* All browsers except webkit*/
   transform: scale("1.7");
-
   /* Webkit browsers*/
   -webkit-transform: scale(1.7);
 }
-
 @media (max-width: 532px){
 	.menusup .title
 	{
@@ -1978,7 +1954,6 @@ input[type="radio"], input[type="checkbox"] {
 			{
 				width: 100%;
 			}
-
 			.menuplato .opcio div:nth-child(1)
 			{
 				font-size: 141%;
@@ -2032,7 +2007,7 @@ input[type="radio"], input[type="checkbox"] {
 			}
 			.vermapa .pedidotar .cont
 			{
-				padding-left: 22%;
+				padding-left: 25%;
 			}
 		}
 		@media (max-width: 340px){
