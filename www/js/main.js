@@ -971,9 +971,7 @@
       $(".sombra,.formpago").css("display","inline");
     },
     $scope.goSurvey = function () {
-		window.open('http://buffetexpress.co/nuevo/?user='+id_cliente, '_blank');
-	  
-	  //window.location= 'http://buffetexpress.co/nuevo/?user='+id_cliente;
+	  window.open('http://buffetexpress.co/nuevo/?user='+id_cliente, 'Encuesta', 'height=420,width=480');
 	  return false;
     },	
     $scope.SendPay = function () {
@@ -1176,7 +1174,7 @@
           if(position.lng)lng= position.lng;
 
           mapOptions = {
-            zoom: 13,
+            zoom: 14,
             panControl: false,
             center: new google.maps.LatLng(lat,lng),
             mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -1293,7 +1291,7 @@
 						timer=undefined;
 					}
 				}
-		  },10000);
+		  },30000);
 	
 
             /*createKML(localStorage.getItem("domain")+'resources/kmls/zona_total.kml');*/
