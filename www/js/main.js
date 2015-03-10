@@ -1175,7 +1175,7 @@
 		  
 
           mapOptions = {
-            zoom: 14,
+            zoom: 18,
             panControl: false,
             center: new google.maps.LatLng(lat,lng),
             mapTypeId: google.maps.MapTypeId.ROADMAP
