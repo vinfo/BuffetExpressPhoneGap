@@ -1171,11 +1171,10 @@
           var lat= 6.195603;
           if(position.lat)lat= position.lat;
           var lng= -75.562061;
-          if(position.lng)lng= position.lng;
-		  
+          if(position.lng)lng= position.lng;		  
 
           mapOptions = {
-            zoom: 18,
+            zoom: 14,
             panControl: false,
             center: new google.maps.LatLng(lat,lng),
             mapTypeId: google.maps.MapTypeId.ROADMAP
