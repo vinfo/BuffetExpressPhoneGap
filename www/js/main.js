@@ -1171,7 +1171,7 @@
           var lat= 6.195603;
           if(position.lat)lat= position.lat;
           var lng= -75.562061;
-          if(position.lng)lng= position.lng;		  
+          if(position.lng)lng= position.lng;
 
           mapOptions = {
             zoom: 14,
@@ -1232,7 +1232,7 @@
 						  $(".mins").html(mins);
 						  $(".txt_mapa").html("Min. para tu entrega");
 						  var coord= or[0].coordinates.split(',');
-						  var pos= {Latitude:coord[0],Longitude:coord[1]};						  				  
+						  var pos= {Latitude:coord[0],Longitude:coord[1]};				  				  
 						  createMarker(pos,'Domiciliario','rastreo_domiciliario');
 					  }else{
 						  var zona= JSON.parse(localStorage.zona);
@@ -1291,7 +1291,7 @@
 						timer=undefined;
 					}
 				}
-		  },30000);
+		  },15000);
 	
 
             /*createKML(localStorage.getItem("domain")+'resources/kmls/zona_total.kml');*/
