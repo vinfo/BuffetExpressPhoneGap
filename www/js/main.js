@@ -1027,7 +1027,7 @@
           coord= JSON.parse(localStorage.position);
           coords= coord.lat+","+coord.lng;
         }              
-        order.push({idUser:id_cliente,coordinates:coords,quadrant:quadrant,idZone:zona.id,idCupon:bono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,cellPhone:cellPhone,typePay:tipo_pago,status:71});
+        order.push({idUser:id_cliente,coordinates:coords,quadrant:quadrant,idZone:zona.id,idCupon:Hbono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,cellPhone:cellPhone,typePay:tipo_pago,status:71});
         
         var checkInv= ajaxrest.checkInv(order,orderdetail,orderxitems);       
         var contI=0;

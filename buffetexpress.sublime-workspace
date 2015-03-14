@@ -259,6 +259,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "www/js/device.js",
+			"settings":
+			{
+				"buffer_size": 3316,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -317,19 +325,21 @@
 	},
 	"expanded_folders":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap"
+		"/D/Movilidad/BuffetExpressPhoneGap",
+		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/inappbrowser.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/wamp/www/buffetexpress/codeigniter/app/templates/redes.html",
 		"/D/wamp/www/buffetexpress/codeigniter/app/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/inappbrowser.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/org.apache.cordova.inappbrowser/README.md",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/org.apache.cordova.inappbrowser/plugin.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular.min.js",
@@ -647,8 +657,42 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "www/js/device.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3316,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2884,
+								2884
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 526.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
