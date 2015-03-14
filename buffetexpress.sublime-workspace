@@ -317,34 +317,42 @@
 	},
 	"expanded_folders":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www"
+		"/D/Movilidad/BuffetExpressPhoneGap"
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/wamp/www/buffetexpress/codeigniter/app/templates/redes.html",
+		"/D/wamp/www/buffetexpress/codeigniter/app/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/inappbrowser.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/plugins/org.apache.cordova.inappbrowser/README.md",
+		"/D/Movilidad/BuffetExpressPhoneGap/plugins/org.apache.cordova.inappbrowser/plugin.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular.min.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
+		"/C/Users/odc/Downloads/Ftp familyma@familymarketing.co.xml",
 		"/D/Movilidad/BuffetExpressMensajero/www/css/index.css",
 		"/D/Movilidad/BuffetExpressMensajero/www/css/style.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/internal.html",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/main.js",
 		"/D/wamp/www/rolformados_puertas/entrada.php",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/tables.html",
 		"/C/Users/odc/Desktop/D&D.html",
 		"/C/Users/odc/Desktop/Gloria Arango.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/politicas.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
 		"/D/wamp/www/buffetexpress/codeigniter/app/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/C/Users/odc/AppData/Local/Temp/Ftp buffetex@buffetexpress.co.xml",
 		"/D/wamp/www/buffetexpress/codeigniter/resources/js/functions.js",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/form_plugins.html",
@@ -358,8 +366,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/leaflet.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/guia.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/index.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/login.js",
@@ -442,14 +448,7 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/contactenos.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
 		"/D/wamp/www/Premisas/modules/js/orden_compra.js",
-		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/assets/stylesheets/example.css",
-		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/website_libs/dev_deps.js",
-		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/issue-755-ng-router.html",
-		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/example.html",
-		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/geojson.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/lodash.min.js",
-		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/two-maps.html",
-		"/D/Movilidad/mapa.html"
+		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/assets/stylesheets/example.css"
 	],
 	"find":
 	{
@@ -470,6 +469,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"getDeviceProperty",
+			"pagoController",
 			"zoom:",
 			"pagoController",
 			"nombre_cliente",
@@ -595,9 +596,7 @@
 			"#present .owl-wrapper-outer",
 			"getPos",
 			"setDish",
-			"getPos",
-			"pos:",
-			"localStorage.setItem(\"pos\""
+			"getPos"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -734,7 +733,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 243.0,
+	"side_bar_width": 246.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

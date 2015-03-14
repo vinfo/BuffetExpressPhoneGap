@@ -5,7 +5,7 @@
     <div class="facturavir">
         <div class="contf">
             <label class="ttfac">FACTURA VIRTUAL</label>
-            <div class="tr" ng-bind-html="platos">
+            <div class="tr" ng-bind-html="platos">            
             </div>
             <div class="tr brdto">
                 <div class="td">
@@ -22,7 +22,7 @@
                 <div class="td">
                     <label>$<span id="valor_bono"></span></label>
                 </div>
-            </div>
+            </div>            
             <div class="tr ttl">
                 <div class="td">
                     <label>TOTAL</label>
@@ -31,7 +31,7 @@
                     <label>$<span id="total"></span></label>
                 </div>
             </div>
-
+            
         </div>
         <div class="confirmacion">
             <label class="ttfac">CONFIRMACIÓN DE PEDIDO</label>
@@ -39,18 +39,18 @@
                 <p>Tu orden ha sido procesada exitosamente, en breve podras rastrear tu orden en el mapa.</p>
                 <p>Fue un placer servirte <b>{{nombre_cliente}}</b>.</p>
                 <div id="encuesta">
-                <p>Ayudanos a crecer queremos conocer un poco más de tí. Completa tus datos en la web y gana un bono de descuento para tu siguiente orden.</p>
-                <div class="form-group">
-                <a href="internal.html" class="btn btn-reset">En otra ocasión</a>
-                <a href="#" onclick="window.open('http://buffetexpress.co/nuevo/?user={{user_id}}', '_blank');" class="btn btn-default">Si, Gracias</a>
+                <p>Ayudanos a crecer queremos conocer un poco más de tí. Completa tus datos en la web.</p>
+                <div class="form-group">     
+                <a href="internal.html" class="btn btn-reset">En otra ocasión</a>  
+                <a href="#" onclick="openBrowser('http://buffetexpress.co/nuevo/?user=1','Encuesta');" class="btn btn-default">Si, Gracias</a>                
                 </div>
-                </div>
-            </div>
-        </div>
+                </div>            
+            </div>            
+        </div>        
         <div class="bondesc">
             Ingresar bono de descuento
             <br>
-            <input id="bono" name="bono" type="text" maxlength="25" ng-model="bono" onblur="angular.element(this).scope().bonoChanged()">
+            <input id="bono" name="bono" value="" type="text" maxlength="25" ng-model="bono" onblur="angular.element(this).scope().bonoChanged()">
             <input id="hbono" name="hbono" type="hidden" value="" />
             <input id="tipoPago" name="tipoPago" type="hidden" value="efectivo" />
         </div>
@@ -90,6 +90,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div style="height:100px;"></div>
+    </div>   
+    <div style="height:100px;"></div> 
 </div>

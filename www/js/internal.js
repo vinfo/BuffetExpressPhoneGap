@@ -51,16 +51,16 @@ if (window.jQuery) {
     $(document).on("click", ".dirs", function() {
       var dat= this.title.split('|');
       if(dat.length>0){
-          if(dat[1]!="")$("#direccion").val(dat[1]);
-          if(dat[2]!="")$("#numero").val(dat[2]);
-          if(dat[3]!="")$("#referencia").val(dat[3]);
+          if(dat[1]!="")$("#direccion").val(dat[0]);
+          if(dat[2]!="")$("#numero").val(dat[1]);
+          if(dat[3]!="")$("#referencia").val(dat[2]);
       }
     });
     $(document).on("click", ".glyphicon-minus-sign", function() {
       var dat= this.title.split('|');
       if(dat.length>0){
 		  var orden= $(this).prev().attr("title").split("|");
-		  ajaxrest.removeAddress(orden[0]);
+		  ajaxrest.removeAddress(encodeURIComponent(orden[0]),encodeURIComponent(orden[1]),encodeURIComponent(orden[2]));
 		  $(this).parents('li').remove();		        
       }
     });	
