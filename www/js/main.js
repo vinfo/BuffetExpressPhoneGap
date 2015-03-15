@@ -683,18 +683,18 @@
   }); 
 
   angularRoutingApp.controller('pagoController', function($scope,Items,Currency) {   
-    setBackground("","white");    
-    $(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
-    var id_cliente="";
-    var nombre_cliente="";
-    var cellPhone="";
-  var direccion="";
-  var idType="";
+	setBackground("","white");    
+	$(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
+	var id_cliente="";
+	var nombre_cliente="";
+	var cellPhone="";
+	var direccion="";
+	var idType="";
     $(".direcciones").hide();
     var datos= localStorage.getItem("cuenta");
     if(datos!=null){
       var data= JSON.parse(datos);
-    var cont=0;      
+      var cont=0;      
       if(data.idType!="")idType=data.idType;      
       if(data.address!="")direccion=data.address;
       $scope.direccion= direccion;
@@ -717,10 +717,10 @@
     }   
 
     if(localStorage.getItem("direccion")){
-      $scope.bono=localStorage.getItem("bono");
-    $scope.direccion=localStorage.getItem("direccion");
-      $scope.referencia=localStorage.getItem("referencia");
-      $scope.numero=localStorage.getItem("numero");
+	  $scope.bono=localStorage.getItem("bono");
+	  $scope.direccion=localStorage.getItem("direccion");
+	  $scope.referencia=localStorage.getItem("referencia");
+	  $scope.numero=localStorage.getItem("numero");
 
       if(localStorage.getItem("tipo")=="1")$('#tipo1').attr("checked","checked");
       if(localStorage.getItem("tipo")=="2")$('#tipo2').attr("checked","checked");
@@ -735,7 +735,6 @@
       $("#tipoPago").val(tipo_pago);
       $("#"+tipo_pago).css("background","#FDB813");
       $("#"+tipo_pago+" > img").css("display","inline");
-
     }
     
     for(var j=0;j<localStorage.length;j++){
@@ -909,7 +908,7 @@
           total2=total;
         }
     
-    var shipping= localStorage.valor_domicilio;         
+    	var shipping= localStorage.valor_domicilio;         
         orderdetail.push({numDish:dish,qty:cantDish,price:total2,shipping:shipping,type:type});
 
         labels+='<label>'+nameDish+'</label>';
@@ -926,41 +925,16 @@
     var tDomicilio= localStorage.valor_domicilio * domicilio;
     $scope.domicilio = Currency.setMoney(tDomicilio, 0, ",", ".");
     $("#total").html(Currency.setMoney(Gtotal + tDomicilio, 0, ",", "."));
-    $scope.valor_plato= " Und x "+domicilio;
-    setBackDefaultPay();    
-
+    $scope.valor_plato= " Und x "+domicilio;	
+	
+	if($scope.bono!=""){
+		getBonus($scope.bono,Gtotal,tDomicilio);
+	}
+    setBackDefaultPay();
 
     $scope.bonoChanged = function() {
       var bono= $scope.bono.trim();
-      if(bono!="" && bono!=null){
-        var data= ajaxrest.getBono("bono="+bono+"&token="+localStorage.token);
-        if(data!=""){
-          var bono= data[0].id_bono;
-          var valor= data[0].valor_bono;
-          var total= Gtotal + tDomicilio;
-          var valorBono=0;
-          if(data[0].tipo_bono==84){
-            valorBono= valor;
-      $("#porc_bono").html("");         
-          }else{
-            $("#porc_bono").html(valor+"%");
-      var porc= total * (valor/100);
-            valorBono= porc;
-          }
-          
-          $("#total").html(Currency.setMoney(total - valorBono, 0, ",", "."));
-          $("#valor_bono").html(Currency.setMoney(valorBono, 0, ",", "."));
-          $("#hbono").val(bono);          
-          $(".bono").show(); 
-          $(".bono").css("display","inline");           
-        }else{
-          $("#total").html(Currency.setMoney(Gtotal + tDomicilio, 0, ",", "."));
-          $(".bono").hide(); 
-          $(".bono").css("display","none");
-          $("#hbono").val('');
-          alert("Código no disponible");
-        }
-      }
+      getBonus(bono,Gtotal,tDomicilio);
     },
     $scope.setTypePay = function (type) {     
       localStorage.setItem("tipo_pago",type);
@@ -1027,7 +1001,7 @@
           coord= JSON.parse(localStorage.position);
           coords= coord.lat+","+coord.lng;
         }              
-        order.push({idUser:id_cliente,coordinates:coords,quadrant:quadrant,idZone:zona.id,idCupon:Hbono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,cellPhone:cellPhone,typePay:tipo_pago,status:71});
+        order.push({idUser:id_cliente,coordinates:coords,quadrant:quadrant,idZone:zona.id,idCupon:Hbono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,cellPhone:cellPhone,status:71});
         
         var checkInv= ajaxrest.checkInv(order,orderdetail,orderxitems);       
         var contI=0;
@@ -1099,7 +1073,7 @@
       alert("Carro de compras esta vacio."); 
       window.location = "internal.html"; 
     }
-    }           
+    }	
   });
 
   angularRoutingApp.controller('nosotrosController', function($scope) {
