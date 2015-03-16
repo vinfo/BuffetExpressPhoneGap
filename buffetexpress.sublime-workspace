@@ -260,10 +260,18 @@
 	"buffers":
 	[
 		{
-			"file": "www/js/device.js",
+			"file": "www/js/load.js",
 			"settings":
 			{
-				"buffer_size": 3316,
+				"buffer_size": 3384,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/config.xml",
+			"settings":
+			{
+				"buffer_size": 4079,
 				"line_ending": "Unix"
 			}
 		}
@@ -331,14 +339,15 @@
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/inappbrowser.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/wamp/www/buffetexpress/codeigniter/app/templates/redes.html",
 		"/D/wamp/www/buffetexpress/codeigniter/app/index.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/org.apache.cordova.inappbrowser/README.md",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/org.apache.cordova.inappbrowser/plugin.xml",
@@ -352,7 +361,6 @@
 		"/D/wamp/www/rolformados_puertas/entrada.php",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/tables.html",
 		"/C/Users/odc/Desktop/D&D.html",
@@ -479,6 +487,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Detectando",
 			"getDeviceProperty",
 			"pagoController",
 			"zoom:",
@@ -605,8 +614,7 @@
 			"#present",
 			"#present .owl-wrapper-outer",
 			"getPos",
-			"setDish",
-			"getPos"
+			"setDish"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -657,24 +665,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "www/js/device.js",
+					"file": "www/js/load.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3316,
+						"buffer_size": 3384,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2884,
-								2884
+								946,
+								946
 							]
 						],
 						"settings":
@@ -683,11 +691,44 @@
 							"remote_loading": false,
 							"synced": false,
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 526.0,
+						"translation.y": 45.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "www/config.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4079,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2142,
+								2142
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 675.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
