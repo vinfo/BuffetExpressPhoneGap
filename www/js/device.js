@@ -67,7 +67,6 @@ function checkConnection() {
         //throw new Error('No Internet Connection.');  
         state=false;                            
     }else{
-        alert(2);
         if(page=="offline.html")window.location.href = 'index.html';
     }
     return state;
