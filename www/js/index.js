@@ -1,27 +1,25 @@
-GetGeoLocation();
+app.initialize();
+startApp();
 
-function  GetGeoLocation () {
-	alert(2);
-	navigator.geolocation.getCurrentPosition(onSuccess, onError);
-	alert(5);
-}
-
-var onSuccess = function(position) {
-	alert(3);
-    alert('Latitude: '          + position.coords.latitude          + '\n' +
-          'Longitude: '         + position.coords.longitude         + '\n' +
-          'Altitude: '          + position.coords.altitude          + '\n' +
-          'Accuracy: '          + position.coords.accuracy          + '\n' +
-          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-          'Heading: '           + position.coords.heading           + '\n' +
-          'Speed: '             + position.coords.speed             + '\n' +
-          'Timestamp: '         + position.timestamp                + '\n');
-};
-
-// onError Callback receives a PositionError object
-//
-function onError(error) {
-    alert(4);
-    alert('code: '    + error.code    + '\n' +
-          'message: ' + error.message + '\n');
+function startApp() {	
+	localStorage.removeItem("position");
+	localStorage.removeItem("quadrant");
+	localStorage.removeItem("valor_buffet");
+	localStorage.removeItem("valor_domicilio");
+	localStorage.removeItem("valor_recomendado");
+	localStorage.removeItem("zonas");
+	localStorage.removeItem("MsgZone");	
+	
+	var dispositivo = navigator.userAgent.toLowerCase();
+	if( dispositivo.search(/android/) > -1 ){
+		localStorage.setItem("OS","android");
+	}else if( dispositivo.search(/iphone/) > -1 ){
+		localStorage.setItem("OS","iphone");
+	}else{
+		localStorage.setItem("OS","n/a");
+	}
+	
+    window.setTimeout(function() {
+		window.location.href = 'load.html';
+    }, 800);
 }
