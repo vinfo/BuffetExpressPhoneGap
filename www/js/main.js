@@ -695,9 +695,9 @@
     if(datos!=null){
       var data= JSON.parse(datos);
       var cont=0;      
-      if(data.idType!="")idType=data.idType;      
-      if(data.address!="")direccion=data.address;
-      $scope.direccion= direccion;
+      if(data.idType!="")idType= data.idType;      
+/*      if(data.address!="")direccion= data.address;
+      $scope.direccion= direccion;*/
       id_cliente= data.id;
       $scope.user_id= data.id+"&session="+localStorage.token;
       nombre_cliente= data.names;
@@ -717,10 +717,10 @@
     }   
 
     if(localStorage.getItem("direccion")){
-	  $scope.bono=localStorage.getItem("bono");
-	  $scope.direccion=localStorage.getItem("direccion");
-	  $scope.referencia=localStorage.getItem("referencia");
-	  $scope.numero=localStorage.getItem("numero");
+	  $scope.bono= localStorage.getItem("bono");
+	  $scope.direccion= localStorage.getItem("direccion");
+	  $scope.referencia= localStorage.getItem("referencia");
+	  $scope.numero= localStorage.getItem("numero");
 
       if(localStorage.getItem("tipo")=="1")$('#tipo1').attr("checked","checked");
       if(localStorage.getItem("tipo")=="2")$('#tipo2').attr("checked","checked");
@@ -951,7 +951,7 @@
     },
     $scope.SendPay = function () {
       var bono= $("#bono").val();
-    var direccion= $("#direccion").val();   
+      var direccion= $("#direccion").val();   
       var referencia= $("#referencia").val();
       var numero= $("#numero").val();
       var tipo= $('input[name=tipo]:checked').val();
@@ -966,7 +966,7 @@
           alert("Debe estar logueado para terminar el pedido.");
           localStorage.setItem("orden","Pendiente");
           localStorage.setItem("bono",bono);
-      localStorage.setItem("direccion",direccion);
+		  localStorage.setItem("direccion",direccion);
           localStorage.setItem("referencia",referencia);
           localStorage.setItem("numero",numero);
           localStorage.setItem("tipo",tipo);
@@ -978,15 +978,19 @@
         var bonus= ajaxrest.getBono("bono="+bono+"&token="+localStorage.token);		
 		if(!bonus){
             flag=false;
-            alert("Código no disponible!");
+			//Modificar $("#total").html(setMoney(Gtotal + tDomicilio, 0, '', '.'));
+			localStorage.removeItem("bono");
+			$(".bono").hide(); 
+			$(".bono").css("display","none");			
+            alert("Código no disponiblee");
 			$("#bono").val('');
-			$("#hbono").val('');
+			$("#hbono").val('');			
         }
       }
       
       if(flag){      
       $scope.nombre_cliente= nombre_cliente;      
-          $(".div_loading").fadeIn();
+      $(".div_loading").fadeIn();
       setTimeout(function() {   
       var data= ajaxrest.getUser("email="+localData['email']+"&token="+localStorage.token); 
       var dat = angular.fromJson(data);     
@@ -1005,8 +1009,7 @@
         
         var checkInv= ajaxrest.checkInv(order,orderdetail,orderxitems);       
         var contI=0;
-        var names=[];cants=[];
-        //alert(JSON.stringify(orderxitems));
+        var names=[];cants=[];        
         for(var i=0;i<checkInv.length;i++){
           var data= checkInv[i];
           var code= data.code;
@@ -1030,8 +1033,9 @@
         
         var final= sortUnique(names);
         
-        if(contI==0){
+        if(contI==0){		  
           ajaxrest.processOrder(order,orderdetail,orderxitems);
+		  //alert(JSON.stringify(orderxitems));
           $(".vrdirc,.bondesc").css("display","none");
           $(".confirmacion").css("display","inline-block");
           localStorage.removeItem("orden");
@@ -1041,6 +1045,7 @@
           localStorage.removeItem("tipo");
           $("#totalDish").html("0");
           cleanSession();
+		  localStorage.setItem("tipo_pago","efectivo");
           $(".div_loading").fadeOut(); 
           $('.container').animate({
             scrollTop: $("#topmobil").offset().top
@@ -1051,8 +1056,10 @@
           for(var j=0;j<final.length;j++){
             var prod= final[j].split("|");
             var rest= parseInt(cants[ final[j] ]) - prod[1];
-            inventario+="- "+prod[1]+": Disponible ("+prod[2]+"), Solicitado ("+ prod[3] +")\n";
-            descargarInv(prod[0],prod[1],prod[2],prod[3]);
+			var disp=0;
+			if(prod[2]>0)disp=prod[2];
+            inventario+="- "+prod[1]+": Disponible ("+disp+"), Solicitado ("+ prod[3] +")\n";
+            descargarInv(prod[0],prod[1],disp,prod[3]);
           }
           alert("Algunos productos de su pedido ya estan agotados. Estos serán retirados de su orden para poder continuar:\nINVENTARIO DE PRODUCTOS\n"+inventario);
            window.location = "internal.html#/compras"; 

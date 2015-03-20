@@ -321,6 +321,18 @@
 	],
 	"file_history":
 	[
+		"/D/wamp/www/buffetexpress/codeigniter/app/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/wamp/www/familymarketingOLD/modules/js/login.js",
+		"/C/Users/odc/Downloads/zerotype/zerotype/contact.html",
+		"/C/Users/odc/Downloads/zerotype/zerotype/index.html",
+		"/C/Users/odc/Downloads/zerotype/zerotype/post.html",
+		"/C/Users/odc/Downloads/zerotype/zerotype/about.html",
+		"/C/Users/odc/Downloads/zerotype/zerotype/news.html",
+		"/C/Users/odc/Downloads/zerotype/zerotype/features.html",
+		"/C/Users/odc/Downloads/Ftp fingerprint@ciaeducon2.com.xml",
+		"/D/wamp/www/rolformados_puertas/js/admin/jquery.js",
+		"/D/Movilidad/BuffetExpressMensajero/www/templates/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
@@ -343,7 +355,6 @@
 		"/D/Movilidad/BuffetExpressMensajero/www/js/main.js",
 		"/D/wamp/www/rolformados_puertas/entrada.php",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/index.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/tables.html",
 		"/C/Users/odc/Desktop/D&D.html",
 		"/C/Users/odc/Desktop/Gloria Arango.html",
@@ -351,7 +362,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
-		"/D/wamp/www/buffetexpress/codeigniter/app/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
 		"/C/Users/odc/AppData/Local/Temp/Ftp buffetex@buffetexpress.co.xml",
 		"/D/wamp/www/buffetexpress/codeigniter/resources/js/functions.js",
@@ -438,17 +448,7 @@
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/scripts/controllers/geojson.js",
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/geojson.html",
 		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/dragzoom.html",
-		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/issue-482-markers-animation.html",
-		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/mapa/dragzoom.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/dragzoom.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/example.css",
-		"/C/Users/odc/AppData/Local/Temp/Rar$EXa0.752/www/templates/mapa.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/angular-google-maps_dev_mapped.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/dragzoom.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/contactenos.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mi_cuenta.html",
-		"/D/wamp/www/Premisas/modules/js/orden_compra.js",
-		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/assets/stylesheets/example.css"
+		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/issue-482-markers-animation.html"
 	],
 	"find":
 	{
@@ -469,6 +469,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".facturavir .vrdirc .listdirecc li",
+			"min-wi",
+			"span",
 			"alert",
 			"Detectando",
 			"getDeviceProperty",
@@ -593,10 +596,7 @@
 			"#present .owl-wrapper-outer .item img",
 			".item img",
 			"#present .owl-wrapper-outer .item img",
-			".felicitation .form-group .btn",
-			"#present",
-			"#present .owl-wrapper-outer",
-			"getPos"
+			".felicitation .form-group .btn"
 		],
 		"highlight": false,
 		"in_selection": false,

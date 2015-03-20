@@ -1051,6 +1051,11 @@ max-width:20%;*/
 	color: #BEBABB;
 	font-size: 18px;
 }
+.facturavir .vrdirc .listdirecc li span.dirs
+{
+	min-width:180px;
+	display:inline-block;
+}
 .facturavir .vrdirc .listdirecc li i
 {
 	float: right;

@@ -42,7 +42,7 @@
                 <p>Ayudanos a crecer queremos conocer un poco más de tí. Completa tus datos en la web.</p>
                 <div class="form-group">     
                 <a href="internal.html" class="btn btn-reset">En otra ocasión</a>  
-                <a href="#" onclick="openBrowser('http://buffetexpress.co/nuevo/?user=1','Encuesta');" class="btn btn-default">Si, Gracias</a>                
+                <a href="#" onclick="openBrowser('http://buffetexpress.co/nuevo/?user=','Encuesta');" class="btn btn-default">Si, Gracias</a>                
                 </div>
                 </div>            
             </div>            
@@ -56,9 +56,9 @@
         </div>
         <div class="vrdirc">
             <label>Datos de envío</label>
-            <input id="direccion" name="direccion" value="" ng-model="direccion" type="text" placeholder="Dirección" maxlength="120">
-            <input id="numero" name="numero" value="" ng-model="numero" type="text" placeholder="N° Apt/Ofic" maxlength="10">
-            <input id="referencia" name="referencia" value="" ng-model="referencia" type="text" placeholder="Punto de referencia/Edificio" maxlength="120">
+            <input id="direccion" name="direccion" value="" ng-model="direccion" type="text" placeholder="Dirección" maxlength="100" class="address">
+            <input id="numero" name="numero" value="" ng-model="numero" type="text" placeholder="N° Apt/Ofic" maxlength="10" class="address">
+            <input id="referencia" name="referencia" value="" ng-model="referencia" type="text" placeholder="Punto de referencia/Edificio" maxlength="55" class="address">
             <div class="direcciones">
             <label>Direcciones frecuentes</label>
             <ul class="listdirecc" ng-bind-html="direcciones_frecuentes"></ul>

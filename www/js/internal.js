@@ -50,10 +50,11 @@ if (window.jQuery) {
     });
     $(document).on("click", ".dirs", function() {
       var dat= this.title.split('|');
+	  $(".address").val('');
       if(dat.length>0){
-          if(dat[1]!="")$("#direccion").val(dat[0]);
-          if(dat[2]!="")$("#numero").val(dat[1]);
-          if(dat[3]!="")$("#referencia").val(dat[2]);
+          if(dat[0]!="")$("#direccion").val(dat[0]);
+          if(dat[1]!="")$("#numero").val(dat[1]);
+          if(dat[2]!="")$("#referencia").val(dat[2]);
       }
     });
     $(document).on("click", ".glyphicon-minus-sign", function() {
