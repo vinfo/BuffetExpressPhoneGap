@@ -925,6 +925,8 @@
     var tDomicilio= localStorage.valor_domicilio * domicilio;
     $scope.domicilio = Currency.setMoney(tDomicilio, 0, ",", ".");
     $("#total").html(Currency.setMoney(Gtotal + tDomicilio, 0, ",", "."));
+	$("#Gtotal").val(Gtotal);
+	$("#tDomicilio").val(tDomicilio);
     $scope.valor_plato= " Und x "+domicilio;	
 	
 	if($scope.bono!=""){
@@ -977,14 +979,13 @@
       if(bono!=""){   
         var bonus= ajaxrest.getBono("bono="+bono+"&token="+localStorage.token);		
 		if(!bonus){
-            flag=false;
-			//Modificar $("#total").html(setMoney(Gtotal + tDomicilio, 0, '', '.'));
+            flag=false;					
 			localStorage.removeItem("bono");
 			$(".bono").hide(); 
-			$(".bono").css("display","none");			
-            alert("Código no disponiblee");
+			$(".bono").css("display","none");
 			$("#bono").val('');
-			$("#hbono").val('');			
+			$("#hbono").val('');
+			getBonus($("#bono").val(''),parseInt($("#Gtotal").val()),parseInt($("#tDomicilio").val()));			
         }
       }
       
