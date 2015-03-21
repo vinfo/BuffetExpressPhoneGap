@@ -2,8 +2,8 @@
   var angularRoutingApp = angular.module('angularRoutingApp', ["ngRoute","ngSanitize"]);
   var localData = JSON.parse(localStorage.getItem('cuenta'));
   var num = localStorage.setItem("num",0);
-  var base_url="http://buffetexpress.co/REST/";
-  var base_site="http://buffetexpress.co/";
+  var base_url="http://buffetexpress.com.co/REST/";
+  var base_site="http://buffetexpress.com.co/";
   var rand= Math.floor((Math.random() * 999) + 1);    
 
   // Configuración de las rutas
@@ -73,8 +73,8 @@
   angularRoutingApp.controller('sliderController', function($scope,$location,Items) {   
     //localStorage.clear();
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
-    $("#img1").attr("src", "http://buffetexpress.co/imagenes/recomendado/imagen1/buffet1295.jpg?timestamp=" + new Date().getTime());
-    $("#img2").attr("src", "http://buffetexpress.co/imagenes/recomendado/imagen1/recomendado-del-dia1296.jpg?timestamp=" + new Date().getTime());
+    $("#img1").attr("src", "http://buffetexpress.com.co/imagenes/recomendado/imagen1/buffet1295.jpg?timestamp=" + new Date().getTime());
+    $("#img2").attr("src", "http://buffetexpress.com.co/imagenes/recomendado/imagen1/recomendado-del-dia1296.jpg?timestamp=" + new Date().getTime());
     
     var banner = JSON.stringify(ajaxrest.getBanners("token="+localStorage.token));
     if(banner)localStorage.setItem("banner",banner);
@@ -86,7 +86,7 @@
     var banner = JSON.parse(localStorage.banner);   
     if(banner[0] && banner[0].img_matrix!=""){
       var rnd=Math.random();
-      image_banner= '<img src="http://buffetexpress.co/imagenes/publicidad/imagen1/'+banner[0].img_matrix+'?rnd='+rnd+'" alt="" title="" />';
+      image_banner= '<img src="http://buffetexpress.com.co/imagenes/publicidad/imagen1/'+banner[0].img_matrix+'?rnd='+rnd+'" alt="" title="" />';
       $scope.image_banner= image_banner;
       $scope.info_banner= banner[0].contenido_matrix;
     }   

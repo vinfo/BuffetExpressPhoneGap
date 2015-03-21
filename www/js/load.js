@@ -1,7 +1,7 @@
 startApp();
 
 function startApp() {  
-  localStorage.domain = "http://buffetexpress.co/REST/";  
+  localStorage.domain = "http://buffetexpress.com.co/REST/";  
   localStorage.dimension = $(window).width();
   localStorage.setItem("quadrant","");
   localStorage.setItem("banner","");
