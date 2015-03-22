@@ -1010,33 +1010,47 @@
         
         var checkInv= ajaxrest.checkInv(order,orderdetail,orderxitems);       
         var contI=0;
-        var names=[];cants=[];        
+        var datos=[];codes=[];names=[];cants=[];sols=[];disps=[];
         for(var i=0;i<checkInv.length;i++){
           var data= checkInv[i];
           var code= data.code;
           var name= data.name;
           var disp= data.disp;
-          var sol= data.sol;    
-          var obj= String(code)+"|"+String(name) + "|" + disp + "|" +sol;
-                        
-          if(cants[ obj ]){
-            cants[ obj ] = parseInt(disp) + parseInt(sol);
-          }else{
-            cants[ obj ] = parseInt(sol);
-          }
-          var cantF= parseInt(disp) - parseInt(sol);    
-          
-          if(cantF<0){
-            contI++;
-            names.push( obj );
-          }         
+          var sol= data.sol;
+		  sols[i]= parseInt(sol);
+		  disps[i]=  parseInt(disp);
+		  codes[i]= code;
+		  names[i]= name;
         }
+		var codigos=[];nombres=[];solicitados=[];disponibles=[];
+		for(var h=0;h<codes.length;h++){
+			var obj= String(codes[h]);
+			if(codigos[ obj ]){
+				codigos[ obj ]= codes[h];
+				nombres[ obj ]= names[h];
+				solicitados[ obj ]= solicitados[ obj ] + sols[h];
+			}else{
+				codigos[ obj ]= String(codes[h]);
+				nombres[ obj ]= names[h];				
+				solicitados[ obj ]= sols[h];
+				disponibles[ obj ]= disps[h]; 			
+			}
+		}
+		var cantF=0;
+		for (i in codigos) {
+			 var obj2= String(codigos[i])
+			 cantF= disponibles[ obj2 ] - solicitados[ obj2 ];
+			 var object= obj2 +"|"+ nombres[ obj2 ] + "|" + disponibles[ obj2 ] + "|" +solicitados[ obj2 ];
+			  if(cantF<0){
+				  contI++;
+				  datos.push( object );
+			  }	 
+		}
         
-        var final= sortUnique(names);
+        var final= sortUnique(datos);
         
         if(contI==0){		  
           ajaxrest.processOrder(order,orderdetail,orderxitems);
-		  //alert(JSON.stringify(orderxitems));
           $(".vrdirc,.bondesc").css("display","none");
           $(".confirmacion").css("display","inline-block");
           localStorage.removeItem("orden");
@@ -1061,8 +1075,10 @@
 			if(prod[2]>0)disp=prod[2];
             inventario+="- "+prod[1]+": Disponible ("+disp+"), Solicitado ("+ prod[3] +")\n";
             descargarInv(prod[0],prod[1],disp,prod[3]);
-          }
+          }		  
           alert("Algunos productos de su pedido ya estan agotados. Estos serán retirados de su orden para poder continuar:\nINVENTARIO DE PRODUCTOS\n"+inventario);
+		  var platos= getNumDish();
+		  if(platos==0)$("#totalDish").html("0");
            window.location = "internal.html#/compras"; 
         }
                      
