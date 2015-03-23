@@ -12,7 +12,7 @@
 <author email="victor.valencia@gmail.com" href="http://vinfoweb.com">
   Codigodinamico Team
 </author>
-
+<application android:debuggable="false" android:hardwareAccelerated="true" android:icon="@drawable/icon" android:label="@string/app_name">
 <preference name="phonegap-version" value="3.6.3" />
 <preference name="permissions" value="none" />
 <preference name="orientation" value="portrait" />
