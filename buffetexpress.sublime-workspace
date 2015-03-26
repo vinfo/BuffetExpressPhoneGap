@@ -259,14 +259,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "www/config.xml",
-			"settings":
-			{
-				"buffer_size": 4439,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -325,18 +317,19 @@
 	},
 	"expanded_folders":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www"
+		"/D/Movilidad/BuffetExpressPhoneGap"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
+		"/D/wamp/www/buffet/REST/resources/js/functions.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressMensajero/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/offline.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/guia.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
@@ -455,9 +448,7 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/icon.png",
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/scripts/controllers/geojson.js",
-		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/geojson.html",
-		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/dragzoom.html",
-		"/C/Users/odc/Downloads/angular-google-maps-master/angular-google-maps-master/example/issue-482-markers-animation.html"
+		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/geojson.html"
 	],
 	"find":
 	{
@@ -478,6 +469,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"es el primer restaurante",
+			"getCoordinatesJSON",
+			"checkZona(",
+			"quadrant",
 			"application",
 			"buffetexpress.co",
 			".facturavir .vrdirc .listdirecc li",
@@ -601,11 +596,7 @@
 			"alert(",
 			"sort",
 			"setImage",
-			"$scope.menu",
-			"menu",
-			".carousel-indicators li",
-			"#present .owl-wrapper-outer .item img",
-			".item img"
+			"$scope.menu"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -657,42 +648,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "www/config.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4439,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2198,
-								2198
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/XML/XML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 499.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
