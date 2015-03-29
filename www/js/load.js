@@ -5,13 +5,15 @@ function startApp() {
   localStorage.dimension = $(window).width();
   localStorage.setItem("quadrant","");
   localStorage.setItem("banner","");
+  var timer= new Date().getTime();
+  localStorage.setItem("timer",timer);  
   var lat1="";
   var lng1="";    
   var zones= JSON.parse(getZones());
   localStorage.setItem("zona",JSON.stringify({id:2,code:'cam002'}));
   localStorage.setItem("zonas",JSON.stringify(zones)); 
   if(zones){
-    if (navigator.geolocation) { 	   
+    if (navigator.geolocation) {	     
       navigator.geolocation.getCurrentPosition(		  
         function(position) {
           lat1= position.coords.latitude;

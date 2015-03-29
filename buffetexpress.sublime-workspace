@@ -259,6 +259,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "www/config.xml",
+			"settings":
+			{
+				"buffer_size": 4439,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/odc/AppData/Roaming/npm/node_modules/learnyounode/docs/bl.html",
+			"settings":
+			{
+				"buffer_size": 27432,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -321,11 +337,11 @@
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/wamp/www/buffet/REST/resources/js/functions.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressMensajero/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
@@ -648,8 +664,71 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "www/config.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4439,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								227,
+								204
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/odc/AppData/Roaming/npm/node_modules/learnyounode/docs/bl.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 27432,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

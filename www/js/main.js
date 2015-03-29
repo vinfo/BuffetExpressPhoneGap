@@ -4,7 +4,7 @@
   var num = localStorage.setItem("num",0);
   var base_url="http://buffetexpress.com.co/REST/";
   var base_site="http://buffetexpress.com.co/";
-  var rand= Math.floor((Math.random() * 999) + 1);    
+  var rand= Math.floor((Math.random() * 999) + 1);
 
   // Configuración de las rutas
   angularRoutingApp.config(function($routeProvider) {
@@ -71,7 +71,7 @@
   });
 
   angularRoutingApp.controller('sliderController', function($scope,$location,Items) {   
-    //localStorage.clear();
+    setTimer();	
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
     $("#img1").attr("src", "http://buffetexpress.com.co/imagenes/recomendado/imagen1/buffet1295.jpg?timestamp=" + new Date().getTime());
     $("#img2").attr("src", "http://buffetexpress.com.co/imagenes/recomendado/imagen1/recomendado-del-dia1296.jpg?timestamp=" + new Date().getTime());
@@ -99,7 +99,7 @@
   }); 
 
   angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){
-    //alert("Zona "+localStorage.zona); 
+	setTimer();
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
     if($routeParams.activity)localStorage.activity=$routeParams.activity;   
     var plato= 1;
@@ -330,7 +330,8 @@
     });
 
   angularRoutingApp.controller('comprasController', function($scope,Items,Currency) {
-    setBackground("fondo","");
+	setTimer();
+	setBackground("fondo","");
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
     
     var dishes=[];
@@ -545,11 +546,13 @@
   });
 
   angularRoutingApp.controller('loginController', function($scope) {
-    $scope.message = 'Esta es la página de "Login"';
+    setTimer();
+	$scope.message = 'Esta es la página de "Login"';
   });
 
   angularRoutingApp.controller('mi_cuentaController', function($scope) {
-    setBackground("fondo","");  
+	setTimer();
+	setBackground("fondo","");  
     $scope.changeRoute = function(url, forceReload) {
       $scope = $scope || angular.element(document).scope();
           if(forceReload || $scope.$$phase) { // that's right TWO dollar signs: $$phase
@@ -573,7 +576,8 @@
 });
 
   angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http,Images,Items,Currency) {   
-    setDisplayMenu();
+	setTimer();
+	setDisplayMenu();
     $(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");        
     $(".detalle").hide();
     $scope.precio_plato= Currency.setMoney(localStorage.valor_buffet, 0, ",", ".");
@@ -626,7 +630,8 @@
   });
 
   angularRoutingApp.controller('recomendadoController', function($scope,$location,Currency,Items) {   
-    setBackground("fondo","");
+	setTimer();
+	setBackground("fondo","");
     $(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
     var items="";
     var zona= JSON.parse(localStorage.zona);    
@@ -683,6 +688,7 @@
   }); 
 
   angularRoutingApp.controller('pagoController', function($scope,Items,Currency) {   
+	setTimer();
 	setBackground("","white");    
 	$(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
 	var id_cliente="";
@@ -988,6 +994,12 @@
 			getBonus($("#bono").val(''),parseInt($("#Gtotal").val()),parseInt($("#tDomicilio").val()));			
         }
       }
+	  
+	var statusZone= ajaxrest.getStatusZone("zona="+zona.id+"&token="+localStorage.token);
+    if(statusZone[0].status==0){
+	  flag=false;
+      alert("Lo sentimos la tienda esta cerrada en estos momentos.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.");
+    }	  
       
       if(flag){      
       $scope.nombre_cliente= nombre_cliente;      
@@ -1101,6 +1113,7 @@
   });
 
   angularRoutingApp.controller('nosotrosController', function($scope) {
+	setTimer();	  
     setBackground("","white");
     var nosotros = ajaxrest.getContent("id=1322&token="+localStorage.token);
     
@@ -1110,6 +1123,7 @@
   }); 
 
   angularRoutingApp.controller('felicitacionesController', function($scope) {
+	setTimer();	  
     setBackground("fondo","");  
     var desde= JSON.parse(getVariables(252));
     $("#desde").val(desde[0].valor_variable);       
@@ -1132,7 +1146,8 @@
     }     
   }); 
   angularRoutingApp.controller('contactenosController', function($scope) {
-    setBackground("fondo","");
+    setTimer();
+	setBackground("fondo","");
     var desde= JSON.parse(getVariables(169)); 
     $("#desde").val(desde[0].valor_variable);   
     $scope.sendContact = function (type) {
@@ -1140,18 +1155,21 @@
     }
   });
   angularRoutingApp.controller('redesController', function($scope) {
-    setBackground("fondo","");
+    setTimer();
+	setBackground("fondo","");
     var data= JSON.parse(JSON.stringify(ajaxrest.getSocialNet()));    
     for(var i=0;i<data.length;i++){ 
       $(".redesi").append('<a href="'+data[i].valor_variable+'" target="_blank" class="'+data[i].contenido_variable+'"></a>');
     }
   }); 
   angularRoutingApp.controller('guiaController', function($scope) {
-    setBackground("fondo","");      
+    setTimer();
+	setBackground("fondo","");      
   }); 
 
   angularRoutingApp.controller("mapaController", ["$scope", function ($scope) {
-    $("li").removeClass("active");
+    setTimer();
+	$("li").removeClass("active");
     $(".menupie ul li:nth-child(4)").addClass("active");
     $scope.minutes="N/A";
   $(".txt_mapa").html("Min. para tu entrega");
