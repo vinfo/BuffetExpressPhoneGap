@@ -3,8 +3,10 @@
  xmlns:gap= "http://phonegap.com/ns/1.0"
  xmlns:android = "http://schemas.android.com/apk/res/android"
  id          = "com.vinfo.buffetexpress"
- versionCode = "1.0.1"
- version     = "1.0.1" >
+ versionCode = "1.1"
+ version     = "1"
+ versionName = "1" >
+
  <name>Buffet Express</name>
  <description>
   Buffet Express - Un sano y delicioso click
