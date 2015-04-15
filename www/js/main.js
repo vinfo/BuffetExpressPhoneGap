@@ -1162,7 +1162,7 @@
 	setBackground("fondo","");
     var data= JSON.parse(JSON.stringify(ajaxrest.getSocialNet())); 
     for(var i=0;i<data.length;i++){ 
-      $(".redesi").append('<a href="http://buffetexpress.com.co/REST/app/internal.html#/redes" onclick="openRedes(\''+data[i].valor_variable+'\');" class="linkredes '+data[i].contenido_variable+'"></a>');
+      $(".redesi").append('<a href="internal.html#/redes" onclick="openRedes(\''+data[i].valor_variable+'\');" class="linkredes '+data[i].contenido_variable+'"></a>');
     }
   }); 
   angularRoutingApp.controller('guiaController', function($scope) {
