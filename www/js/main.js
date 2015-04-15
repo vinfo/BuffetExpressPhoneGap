@@ -72,6 +72,8 @@
 
   angularRoutingApp.controller('sliderController', function($scope,$location,Items) {   
     setTimer();	
+    $("li").removeClass("active");
+    $(".menupie ul li:nth-child(1)").addClass("active");
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
     $("#img1").attr("src", "http://buffetexpress.com.co/imagenes/recomendado/imagen1/buffet1295.jpg?timestamp=" + new Date().getTime());
     $("#img2").attr("src", "http://buffetexpress.com.co/imagenes/recomendado/imagen1/recomendado-del-dia1296.jpg?timestamp=" + new Date().getTime());
@@ -267,7 +269,7 @@
           }         
         }else{
           var valor=JSON.parse(localStorage.getItem(name));
-          cant= parseInt(valor.cant);
+          cant= parseInt(valor.KANGULO15X15);
         }
         if(action=='add'){
           cant= cant + 1;
@@ -520,7 +522,8 @@
       if(tipo=="R"){
         nameDish="Recomendado Día";
         htotal= parseInt(localStorage.valor_recomendado);
-        total=htotal;
+        cantDish=localStorage.getItem("cant_"+tipo+"_"+dish);       
+        if(cantDish>0)total=htotal*cantDish;
       }
       plato='<div class="comprasitem" id="dish_'+dish+'"><div class="imgcont" id="img_'+dish+'"><div class="padre"><div class = "derrap"><div class="contenedor"><div class="sopa"><img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/><div class="sopacont"><img src="'+sopa+'" style="width:100%;" border="0" margin="0" /></div></div><div class="vaso"><img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/><div class="jugo"><img src="'+bebidas+'" style="width:100%;" border="0" margin="0"/></div></div><div class="plato"><img src="images/plato.png" style="width:100%;" border="0" margin="0"/><div class="arroz"><img src="'+arroz+'" style="width:100%;" border="0" margin="0"/></div><div class="guarnicion"><img src="'+guarnicion+'" style="width:100%;" border="0" margin="0"/></div><div class="carne"><img src="'+carnes+'" style="width:100%;" border="0" margin="0"/></div></div></div></div></div></div><div class="contnn"><h3>'+nameDish+'</h3><p>'+ppal+extra+'</p></p><div class="icodeli"><span class="elimina" onclick="setFinalOrder('+dish+',\'less\',\''+tipo+'\')"></span><span class="contador"><label id="cont_'+dish+'">'+cantDish+'</label></span><span class="suma" onclick="setFinalOrder('+dish+',\'add\',\''+tipo+'\')"></span></div></div><div class="icodeta"><div><img src="'+sopaIco+'" alt="..." title="..." onclick="editDish(1,\'sopas y cremas\','+dish+',\''+tipo+'\')"></div><div><img src="'+arrozIco+'" alt="..." title="..." onclick="editDish(2,\'arroz\','+dish+',\''+tipo+'\')"></div><div><img src="'+carnesIco+'" alt="..." title="..." onclick="editDish(3,\'carnes\','+dish+',\''+tipo+'\')"></div><div><img src="'+guarnicionIco+'" alt="..." title="..." onclick="editDish(4,\'guarnición\','+dish+',\''+tipo+'\')"></div><div><img src="'+bebidasIco+'" alt="..." title="..." onclick="editDish(5,\'bebidas\','+dish+',\''+tipo+'\')"></div> <div class="subtt"><input type="hidden" name="price_'+dish+'" id="price_'+dish+'" value="'+htotal+'" /><label class="currency" id="lprice_'+dish+'">$'+Currency.setMoney(total, 0, ",", ".")+'</label></div></div>';     
       
@@ -1172,7 +1175,7 @@
 	$("li").removeClass("active");
     $(".menupie ul li:nth-child(4)").addClass("active");
     $scope.minutes="N/A";
-  $(".txt_mapa").html("Min. para tu entrega");
+    $(".txt_mapa").html("Min. para tu entrega");
     if(localStorage.position){
       var position= JSON.parse(localStorage.position);
       $scope.Area = { Name: "Mi ubicación", Latitude: position.lat, Longitude: position.lng };

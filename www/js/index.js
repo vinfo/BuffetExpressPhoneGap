@@ -2,6 +2,7 @@ app.initialize();
 startApp();
 
 function startApp() {	
+	localStorage.clear();
 	localStorage.removeItem("position");
 	localStorage.removeItem("quadrant");
 	localStorage.removeItem("valor_buffet");
