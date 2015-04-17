@@ -9,6 +9,7 @@ function startApp() {
 	localStorage.removeItem("valor_recomendado");
 	localStorage.removeItem("zonas");
 	localStorage.removeItem("MsgZone");	
+	localStorage.removeItem("timer");
 	
     window.setTimeout(function() {
 		window.location.href = 'load.html';
