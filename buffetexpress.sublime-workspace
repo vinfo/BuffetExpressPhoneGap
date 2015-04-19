@@ -259,11 +259,34 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "www/js/main.js",
+			"settings":
+			{
+				"buffer_size": 60009,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 102 files for \"markers\"\n\nD:\\Movilidad\\BuffetExpressPhoneGap\\www\\js\\main.js:\n 1208          var position= JSON.parse(localStorage.position);        \n 1209          var MyPosition = new google.maps.LatLng(position.lat, position.lng);  \n 1210:         var markers = {};\n 1211          var initialize = function () {\n 1212            var lat= 6.195603;\n ....\n 1237            map.setCenter(position);\n 1238        //alert(Name+\" - \"+area.Latitude);\n 1239:       if(markers[1]){\n 1240:       marker = markers[1]; \n 1241        marker.setMap(null);        \n 1242        }\n ....\n 1247              icon: 'images/'+image+'.png'\n 1248            });\n 1249:       if(Name==\"Domiciliario\" || Name==\"Cocina\")markers[1] = marker;    \n 1250          };\n 1251  \n\n4 matches in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 778,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		}
 	],
 	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
 	"command_palette":
 	{
 		"height": 392.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -317,7 +340,9 @@
 	},
 	"expanded_folders":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap"
+		"/D/Movilidad/BuffetExpressPhoneGap",
+		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
 	[
@@ -469,6 +494,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"markers",
+			"createMarker",
+			"setMap",
+			"mapaController",
+			"clea",
+			"clear",
 			"es el primer restaurante",
 			"getCoordinatesJSON",
 			"checkZona(",
@@ -590,13 +621,7 @@
 			"dishes",
 			"ng-repeat",
 			"guiaController",
-			".felicitation .form-group .btn",
-			".presen .n_close",
-			"#present .owl-pagination .owl-page",
-			"alert(",
-			"sort",
-			"setImage",
-			"$scope.menu"
+			".felicitation .form-group .btn"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -648,8 +673,101 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "www/js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 60009,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								45995,
+								46001
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 18331.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 778,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										263,
+										270
+									],
+									[
+										471,
+										478
+									],
+									[
+										506,
+										513
+									],
+									[
+										706,
+										713
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								510,
+								510
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"incomplete_sync": null,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -696,6 +814,7 @@
 	{
 		"height": 100.0
 	},
+	"pinned_build_system": "",
 	"project": "buffetexpress.sublime-project",
 	"replace":
 	{
@@ -705,6 +824,7 @@
 	"select_file":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
@@ -713,6 +833,7 @@
 	"select_project":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
@@ -721,6 +842,7 @@
 	"select_symbol":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
