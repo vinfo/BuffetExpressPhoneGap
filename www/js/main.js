@@ -269,7 +269,7 @@
           }         
         }else{
           var valor=JSON.parse(localStorage.getItem(name));
-          cant= parseInt(valor.KANGULO15X15);
+          cant= parseInt(valor.cant);
         }
         if(action=='add'){
           cant= cant + 1;
