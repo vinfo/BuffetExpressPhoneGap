@@ -19,7 +19,7 @@
 <preference name="permissions" value="none" />
 <preference name="orientation" value="portrait" />
 <preference name="target-device" value="universal" />
-<preference name="fullscreen" value="true" />
+<preference name="fullscreen" value="false" />
 <preference name="webviewbounce" value="true" />
 <preference name="prerendered-icon" value="true" />
 <preference name="stay-in-webview" value="false" />
@@ -33,17 +33,20 @@
 <preference name="SplashScreenDelay" value="0" />
 <!-- <preference name="SplashScreen" value="splash" /> -->
 <preference name="AutoHideSplashScreen" value="false" />
+<preference name="show-splash-screen-spinner" value="false" />
+<preference name="auto-hide-splash-screen" value="false" />
 
 
 <!--     <feature name="SplashScreen">
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
     </feature> -->
+<feature name="http://api.phonegap.com/1.0/device" />
 <feature name="Geolocation">
     <param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
 </feature>  
-    <feature name="Toast">
-      <param name="android-package" value="nl.xservices.plugins.Toast" />
-    </feature>   
+<feature name="Toast">
+  <param name="android-package" value="nl.xservices.plugins.Toast" />
+</feature>   
 
     <access origin="*"/>
 
@@ -82,7 +85,6 @@
     <icon src="res/icon/ios/icon-72.png"            gap:platform="ios"        width="72" height="72" />
     <icon src="res/icon/ios/icon-57-2x.png"         gap:platform="ios"        width="114" height="114" />
     <icon src="res/icon/ios/icon-72-2x.png"         gap:platform="ios"        width="144" height="144" />
-
 
 
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />

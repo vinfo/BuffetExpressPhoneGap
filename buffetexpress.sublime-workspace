@@ -259,22 +259,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "www/config.xml",
-			"settings":
-			{
-				"buffer_size": 4880,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/wamp/www/esevial/cea/modules/js/tramits.js",
-			"settings":
-			{
-				"buffer_size": 1397,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -339,11 +323,12 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/res/screen"
 	],
 	"file_history":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/wamp/www/esevial/cea/modules/js/tramits.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/device.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
@@ -469,8 +454,7 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/helper.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-google-maps_dev_mapped.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/lodash.underscore.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/spec.html"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/lodash.underscore.js"
 	],
 	"find":
 	{
@@ -670,67 +654,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "www/config.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4880,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3625,
-								3625
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"syntax": "Packages/XML/XML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 864.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/D/wamp/www/esevial/cea/modules/js/tramits.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1397,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1397,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
