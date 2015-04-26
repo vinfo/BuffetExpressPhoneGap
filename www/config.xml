@@ -88,7 +88,9 @@
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-      
+<platform name="ios">
+    <splash src="res/screen/ios/Default~iphone.png" width="320" height="480"/>
+</platform>
 
 <!--   <gap:splash src="res/screen/android/screen-ldpi-portrait.png" gap:platform="android" gap:qualifier="ldpi" />
   <gap:splash src="res/screen/android/screen-mdpi-portrait.png" gap:platform="android" gap:qualifier="mdpi" />
