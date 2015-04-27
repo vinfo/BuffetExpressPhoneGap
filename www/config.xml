@@ -3,9 +3,9 @@
  xmlns:gap= "http://phonegap.com/ns/1.0"
  xmlns:android = "http://schemas.android.com/apk/res/android"
  id          = "com.vinfo.buffetexpress"
- versionCode = "1.1.2"
+ versionCode = "2"
  version     = "1.1.2"
- versionName = "v1" >
+ versionName = "1.1.2" >
 
  <name>Buffet Express</name>
  <description>
