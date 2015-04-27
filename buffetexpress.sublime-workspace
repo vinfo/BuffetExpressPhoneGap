@@ -259,14 +259,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/aries-metro-style-admin-template/documentation/index.html",
-			"settings":
-			{
-				"buffer_size": 30065,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -336,6 +328,13 @@
 	"file_history":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/offline.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/index.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/aries-metro-style-admin-template/documentation/index.html",
 		"/D/wamp/www/realriskPhonegap/www/config.xml",
 		"/D/wamp/www/esevial/cea/modules/js/tramits.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/device.js",
@@ -347,15 +346,11 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/wamp/www/buffet/REST/resources/js/functions.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/offline.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/guia.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
 		"/D/wamp/www/buffetexpress/codeigniter/app/css/style.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/wamp/www/familymarketingOLD/modules/js/login.js",
 		"/C/Users/odc/Downloads/zerotype/zerotype/contact.html",
 		"/C/Users/odc/Downloads/zerotype/zerotype/index.html",
@@ -367,7 +362,6 @@
 		"/D/wamp/www/rolformados_puertas/js/admin/jquery.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/templates/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/inappbrowser.js",
 		"/D/wamp/www/buffetexpress/codeigniter/app/templates/redes.html",
 		"/D/wamp/www/buffetexpress/codeigniter/app/index.html",
@@ -460,9 +454,7 @@
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/scripts/controllers/issue-432-markers-fit-clustering.js",
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/templates/issue-755-ng-router.html",
 		"/D/Movilidad/BackupsBuffet/directives.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/helper.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-google-maps_dev_mapped.js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/helper.js"
 	],
 	"find":
 	{
@@ -483,6 +475,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".botones .btn1 img",
+			".vermapa .pedidotar .cont",
+			".vermapa .pedidotar .cont span",
+			".botones .btn1 p, .botones .btn2 p",
+			".botones .btn1",
+			".botones .btn3 span",
+			".menupie ul li.carrito span",
+			"menupie",
+			"960001",
+			".menusup",
+			"           gap:platform=\"ios\"        ",
+			"name=\"android\"",
+			"name=\"android\">",
+			"statusbar",
+			"ios-statusbarstyle",
+			"prerendered-icon",
+			"target-device",
 			"webviewbounce",
 			"\"auto-hide-splash-screen\"",
 			"\"show-splash-screen-spinner\"",
@@ -593,24 +602,7 @@
 			"SendPay",
 			"71",
 			"setDish",
-			"dishes",
-			"setDish",
-			"getItemsxDish(",
-			"71",
-			"getItemsxDish",
-			"getItem",
-			"getItemsxDish",
-			"orderxitems",
-			"72",
-			"comprasController",
-			"ajaxrest.login(",
-			".menuplatolist .col-md-12 .btnts img",
-			"pagoController",
-			"comprasController",
-			"class=\"icodeli\">",
-			" btns",
-			"comprasController",
-			"images/masmenu.png"
+			"dishes"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -618,6 +610,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			" ",
 			"buffetexpress.com.co",
 			"http://maps.googleapis.",
 			"",
@@ -662,37 +655,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/aries-metro-style-admin-template/documentation/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 30065,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
