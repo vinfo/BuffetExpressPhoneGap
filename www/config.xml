@@ -19,11 +19,11 @@
 <preference name="permissions" value="none" />
 <preference name="orientation" value="portrait" />
 <preference name="target-device" value="universal" />
-<preference name="fullscreen" value="false" />
+<preference name="fullscreen" value="true" />
 <preference name="webviewbounce" value="true" />
-<preference name="prerendered-icon" value="true" />
+<preference name="prerendered-icon" value="false" />
 <preference name="stay-in-webview" value="false" />
-<preference name="ios-statusbarstyle" value="black-opaque" />
+<preference name="ios-statusbarstyle" value="default" />
 <preference name="detect-data-types" value="true" />
 <preference name="exit-on-suspend" value="false" />
 <preference name="disable-cursor" value="false" />
@@ -35,6 +35,8 @@
 <preference name="AutoHideSplashScreen" value="false" />
 <preference name="show-splash-screen-spinner" value="false" />
 <preference name="auto-hide-splash-screen" value="false" />
+<preference name="StatusBarOverlaysWebView" value="false" />
+
 
 
 <!--     <feature name="SplashScreen">
@@ -79,6 +81,11 @@
       <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.3" />
       <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
       <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
+      <gap:plugin name="com.phonegap.plugin.statusbar" />
+
+<gap:config-file platform="ios" parent="UIStatusBarHidden">
+    <false/>
+</gap:config-file>
 
       <icon src="icon.png" gap:platform="android" gap:density="ldpi"/>
     <icon src="res/icon/ios/icon-57.png"            gap:platform="ios"        width="57" height="57" />

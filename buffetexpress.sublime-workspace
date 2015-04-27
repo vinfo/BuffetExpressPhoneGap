@@ -259,6 +259,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/aries-metro-style-admin-template/documentation/index.html",
+			"settings":
+			{
+				"buffer_size": 30065,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -323,11 +331,12 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/res/screen"
+		"/D/Movilidad/BuffetExpressPhoneGap/www"
 	],
 	"file_history":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/wamp/www/realriskPhonegap/www/config.xml",
 		"/D/wamp/www/esevial/cea/modules/js/tramits.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/device.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/config.xml",
@@ -453,8 +462,7 @@
 		"/D/Movilidad/BackupsBuffet/directives.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/helper.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-google-maps_dev_mapped.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/lodash.underscore.js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-google-maps_dev_mapped.js"
 	],
 	"find":
 	{
@@ -475,6 +483,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"webviewbounce",
+			"\"auto-hide-splash-screen\"",
+			"\"show-splash-screen-spinner\"",
+			"name=\"orientation\"",
+			"feature",
 			"markers",
 			"createMarker",
 			"setMap",
@@ -597,12 +610,7 @@
 			"class=\"icodeli\">",
 			" btns",
 			"comprasController",
-			"images/masmenu.png",
-			"guiaController",
-			"dishes",
-			"ng-repeat",
-			"guiaController",
-			".felicitation .form-group .btn"
+			"images/masmenu.png"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -654,8 +662,37 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/aries-metro-style-admin-template/documentation/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 30065,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -744,7 +781,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 418.0,
+	"side_bar_width": 312.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
