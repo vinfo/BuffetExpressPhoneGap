@@ -165,7 +165,7 @@ a.btn-reset{
 }
 .menusup
 {
-	background: #057797;
+	background: #960001;
 	/*min-width: 532px;*/
 	width: 100%;
 	position: fixed;
@@ -186,11 +186,11 @@ a.btn-reset{
 }
 .menusup button:hover
 {
-	background: #01425f;
+	background: #dd0616;
 }
 .menusup button.active
 {
-	background: #01425f;
+	background: #dd0616;
 }
 .menusup button.ico-menu
 {
@@ -318,7 +318,7 @@ a.btn-reset{
 }
 .menupie
 {
-	background: #057797;
+	background: #960001;
 	position: fixed;
 	bottom: 0px;
 	left: 0px;
@@ -346,7 +346,7 @@ a.btn-reset{
 }
 .menupie ul li:hover
 {
-	background: #01425f;
+	background: #dd0616;
 }
 .menupie ul li a img
 {
@@ -363,7 +363,7 @@ a.btn-reset{
 	width: 30px;
 	height: 30px;
 	border-radius: 20px;
-	background: #ff0000;
+	background: #2f2f2f;
 	color: #FFFFFF;
 	font-size: 20px;
 	left: 53%;
@@ -371,7 +371,7 @@ a.btn-reset{
 }
 .menupie ul li.active
 {
-	background: #01425f;
+	background: #dd0616;
 }
 .menuplato
 {
@@ -1261,7 +1261,7 @@ max-width:20%;*/
 }
 .vermapa .pedidotar .cont
 {
-	background: #B72025;
+	background:#2f2f2f;
 	padding: 5px;
 	color: #FFFFFF;
 	display: inline-block;
@@ -1279,7 +1279,7 @@ max-width:20%;*/
 	background: white;
 	border-radius: 60px;
 	padding: 10px;
-	border:2px solid #B72025;
+	border:2px solid #2f2f2f;
 	left: 0px;
 	top: -20px;
 	left: 20px;	
@@ -1625,9 +1625,9 @@ float: left;
 	text-decoration: none;
 }
 .botones .btn1 img{
-	background: #FFF;
+	background:#2f2f2f;
 	border-radius: 100px;
-	border: 1px solid #FFF;
+	border: 1px solid #2f2f2f;
 }
 .botones .btn1 img,.botones .btn2 img{
 	display: inline-block;
@@ -1637,7 +1637,7 @@ float: left;
 }
 .botones .btn1 p,.botones .btn2 p{
 	display: inline-block;
-	color: #FFF;
+	color:#2f2f2f;
 	font-weight: bold;
 	font-size: 12px;
 }
@@ -1645,23 +1645,23 @@ float: left;
 	padding-right: 15px;
 }
 .botones .btn1{
-	background-color: #482810;
+	background-color:#d5d5d5;
 	width: 43%;
 	text-align: center;
 }
 .botones .btn2{
-	background-color: #964f22;
+	background-color:#f4f4f4;
 	width:44%;
 	text-align: center;
 }
 .botones .btn3{
-	background-color: #964f22;
+	background-color:#f4f4f4;
 	width:13%;
 	text-align: center;
 }
 .botones .btn3 span{
-	background: #FFF;
-	color: #333;
+	background: #2f2f2f;
+	color: #fff;
 	padding:6px 12px;
 	border-radius:100px;
 	margin-top:2px;

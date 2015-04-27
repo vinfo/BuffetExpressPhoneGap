@@ -38,7 +38,6 @@
 <preference name="StatusBarOverlaysWebView" value="false" />
 
 
-
 <!--     <feature name="SplashScreen">
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
     </feature> -->
@@ -86,8 +85,6 @@
 <gap:config-file platform="ios" parent="UIStatusBarHidden">
     <false/>
 </gap:config-file>
-
-
 
 <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
