@@ -17,6 +17,7 @@
  * under the License.
  */
  var networkStat;
+ app.initialize();
  var app = {
     // Application Constructor
     initialize: function() {
@@ -38,7 +39,12 @@
         alert("Iniciando app..");
         //app.receivedEvent('deviceready');        
         //navigator.splashscreen.show();
-        navigator.geolocation.getCurrentPosition(onSuccess, onError);  
+        var options = {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 75000
+        };
+        navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
         checkConnection();
         getDeviceProperty();
         navigator.splashscreen.hide(); 
@@ -96,12 +102,12 @@ function getDeviceProperty()
         var pos= {lat:lat1,lng:lng1};
         alert("Detectando posicion"+lat1);
         localStorage.setItem("position",JSON.stringify(pos));
+        window.location.href = 'load.html';
     }
 
     // onError Callback receives a PositionError object
     //
     function onError(error) {
-        alert("Error ubicación");
         // navigator.notification.alert(
         //         'Es necesario permitir detectar tu ubicación para el funcionamiento de la aplicación\n' +
         //   'Ve a Ajustes, seleciona la aplicación y Permite acceso a ubicación\n',  // message
