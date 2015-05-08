@@ -1,42 +1,41 @@
 startApp();
 
-function startApp() {  
-  localStorage.domain = "http://buffetexpress.com.co/REST/";  
-  localStorage.dimension = $(window).width();
-  localStorage.setItem("quadrant","");
-  localStorage.setItem("banner","");
-  var timer= new Date().getTime();
-  localStorage.setItem("timer",timer);  
-  var lat1="";
-  var lng1="";    
-  var zones= JSON.parse(getZones());
-  localStorage.setItem("zona",JSON.stringify({id:2,code:'cam002'}));
-  localStorage.setItem("zonas",JSON.stringify(zones)); 
-  $(".loading_msg").html("Tratando de registrar ubicación...");
-if(zones){
-      var codes=[];                  
-      for(var i=0;i<zones.length;i++){
-        var zona= zones[i].id+"|"+zones[i].code;
-        codes.push(zona);
-      }      
-      var process= ajaxrest.getCoordinatesJSON(codes,'');
-      var quadrant= 0;
-      $(".loading_msg").html("Detectando zona de pedidos"); 
-      for(var i=0;i<process.length;i++){        
-        var Coords = process[i][2];
-        var limits=[];
-        //alert(process[i][1]);
-        for(var j=0;j<Coords.length;j++){          
-          limits.push(new google.maps.LatLng(Coords[j][0],Coords[j][1]));          
-        }
-        if(process[i][0]!="" && process[i][1]!="" && limits!=""){
-          quadrant += checkZona(process[i][0],process[i][1],limits);
-        }
-      }
-      redirect();  
-}else{
-  alert("Problemas de conectividad a Internet");
-}
+function startApp() {      
+      localStorage.domain = "http://buffetexpress.com.co/REST/";  
+      localStorage.dimension = $(window).width();
+      localStorage.setItem("quadrant","");
+      localStorage.setItem("banner","");
+      var timer= new Date().getTime();
+      localStorage.setItem("timer",timer);  
+      var lat1="";
+      var lng1="";    
+      var zones= JSON.parse(getZones());
+      localStorage.setItem("zona",JSON.stringify({id:2,code:'cam002'}));
+      localStorage.setItem("zonas",JSON.stringify(zones));  
+    if(zones){
+          var codes=[];                  
+          for(var i=0;i<zones.length;i++){
+            var zona= zones[i].id+"|"+zones[i].code;
+            codes.push(zona);
+          }      
+          var process= ajaxrest.getCoordinatesJSON(codes,'');
+          var quadrant= 0;
+          $(".loading_msg").html("Detectando zona de pedidos"); 
+          for(var i=0;i<process.length;i++){        
+            var Coords = process[i][2];
+            var limits=[];
+            //alert(process[i][1]);
+            for(var j=0;j<Coords.length;j++){          
+              limits.push(new google.maps.LatLng(Coords[j][0],Coords[j][1]));          
+            }
+            if(process[i][0]!="" && process[i][1]!="" && limits!=""){
+              quadrant += checkZona(process[i][0],process[i][1],limits);
+            }
+          }
+          redirect();  
+    }else{
+      alert("Problemas de conectividad a Internet");
+    } 
 }
 
 function sortByDist(a, b) {

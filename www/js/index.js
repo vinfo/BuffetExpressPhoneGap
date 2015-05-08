@@ -10,8 +10,10 @@ function startApp() {
 	localStorage.removeItem("zonas");
 	localStorage.removeItem("MsgZone");	
 	localStorage.removeItem("timer");
-	
-    window.setTimeout(function() {
-		window.location.href = 'load.html';
-    }, 800);
+
+	jQuery(window).load(function () {
+	    setTimeout(function () {
+	        window.location.href = 'load.html';
+	    }, 800);
+	});
 }
