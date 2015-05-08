@@ -1,4 +1,3 @@
-app.initialize();
 startApp();
 
 function startApp() {	
