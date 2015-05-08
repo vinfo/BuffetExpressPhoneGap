@@ -29,12 +29,13 @@ if(zones){
         for(var j=0;j<Coords.length;j++){          
           limits.push(new google.maps.LatLng(Coords[j][0],Coords[j][1]));          
         }
+        alert("entra");
         if(process[i][0]!="" && process[i][1]!="" && limits!=""){
           quadrant += checkZona(process[i][0],process[i][1],limits);
         }       
-        alert("sale1");
+        alert("sale");
       } 
-      alert("sale3"); 
+      alert("sale2"); 
       redirect();  
 }else{
   alert("Problemas de conectividad a Internet");
