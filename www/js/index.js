@@ -2,7 +2,6 @@ app.initialize();
 startApp();
 
 function startApp() {	
-	localStorage.removeItem("position");
 	localStorage.removeItem("quadrant");
 	localStorage.removeItem("valor_buffet");
 	localStorage.removeItem("valor_domicilio");
@@ -12,8 +11,8 @@ function startApp() {
 	localStorage.removeItem("timer");
 
 	jQuery(window).load(function () {
-	    setTimeout(function () {
-	        window.location.href = 'load.html';
-	    }, 800);
+		setTimeout(function () {
+			window.location.href = 'load.html';
+		}, 800);
 	});
 }

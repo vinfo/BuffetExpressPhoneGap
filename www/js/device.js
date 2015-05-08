@@ -92,12 +92,10 @@ function getDeviceProperty()
 // onSuccess Geolocation
     //
     function onSuccess(position) {
-        alert("Hola");
-        // lat1= position.coords.latitude;
-        // lng1= position.coords.longitude;   
-        // var pos= {lat:lat1,lng:lng1};
-        // alert(pos);
-        // localStorage.setItem("position",JSON.stringify(pos));
+        lat1= position.coords.latitude;
+        lng1= position.coords.longitude;   
+        var pos= {lat:lat1,lng:lng1};
+        localStorage.setItem("position",JSON.stringify(pos));
     }
 
     // onError Callback receives a PositionError object
