@@ -21,16 +21,20 @@ if(zones){
       }      
       var process= ajaxrest.getCoordinatesJSON(codes,'');
       var quadrant= 0;
-      $(".loading_msg").html("Detectando zona de pedidos");
+      $(".loading_msg").html("Detectando zona de pedidos"); 
       for(var i=0;i<process.length;i++){        
         var Coords = process[i][2];
         var limits=[];
-        //console.log(process[i][1]);
-        for(var j=0;j<Coords.length;j++){                 
-          limits.push(new google.maps.LatLng(Coords[j][0],Coords[j][1]));  
+        //alert(process[i][1]);
+        for(var j=0;j<Coords.length;j++){          
+          limits.push(new google.maps.LatLng(Coords[j][0],Coords[j][1]));          
+        }
+        if(process[i][0]!="" && process[i][1]!="" && limits!=""){
+          quadrant += checkZona(process[i][0],process[i][1],limits);
         }       
-        quadrant += checkZona(process[i][0],process[i][1],limits);
-      }           
+        alert("sale1");
+      } 
+      alert("sale3"); 
       redirect();  
 }else{
   alert("Problemas de conectividad a Internet");
@@ -70,25 +74,27 @@ function getZones(){
 }
 function checkZona(id_zone,code,limits){
 	var exists=0;
-    var zone = new google.maps.Polygon({
+  if(localStorage.getItem("position")!=null){
+      var zone = new google.maps.Polygon({
         paths: limits
-    });
-  var pos= JSON.parse(localStorage.getItem("position"));
-  var point = new google.maps.LatLng(pos.lat,pos.lng);//6.239124, -75.545917 
-  //console.log("Coordenadas en punto: "+google.maps.geometry.poly.containsLocation(point, zone)+" "+pos.lat+","+pos.lng);
+      });
+      var pos= JSON.parse(localStorage.getItem("position"));
+    var point = new google.maps.LatLng(pos.lat,pos.lng);//6.239124, -75.545917 
+    //console.log("Coordenadas en punto: "+google.maps.geometry.poly.containsLocation(point, zone)+" "+pos.lat+","+pos.lng);
     if(google.maps.geometry.poly.containsLocation(point, zone)){
-	  //alert("Zona: "+id_zone+", Code: " + code);
-	  var zona= JSON.parse(localStorage.zona);
-	  //alert(id_zone +" - "+ zona.id);
-	 if(id_zone != zona.id){
-		ClearSomeLocalStorage("item_");
-		ClearSomeLocalStorage("cant_");
-		localStorage.setItem("num","0"); 
-		localStorage.setItem("plato","1"); 	
-	 }
-	  localStorage.setItem("zona",JSON.stringify({id:id_zone,code:code}));
-	  localStorage.setItem("quadrant","n/a");  
-	  exists=1;
+      //alert("Zona: "+id_zone+", Code: " + code);
+      var zona= JSON.parse(localStorage.zona);
+      //alert(id_zone +" - "+ zona.id);
+      if(id_zone != zona.id){
+        ClearSomeLocalStorage("item_");
+        ClearSomeLocalStorage("cant_");
+        localStorage.setItem("num","0"); 
+        localStorage.setItem("plato","1");  
+      }
+      localStorage.setItem("zona",JSON.stringify({id:id_zone,code:code}));
+      localStorage.setItem("quadrant","n/a");  
+      exists=1;
     }
+  }    
 	return exists;
 }

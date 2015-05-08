@@ -71,7 +71,7 @@ function checkConnection() {
     }else{
         if(page=="offline.html")window.location.href = 'index.html';
     }
-    return state;
+    return state;    
 }
 
 function getDeviceProperty()
