@@ -17,7 +17,7 @@
  * under the License.
  */
  var networkStat;
- app.initialize();
+ 
  var app = {
     // Application Constructor
     initialize: function() {
@@ -97,6 +97,13 @@ function getDeviceProperty()
 // onSuccess Geolocation
     //
     function onSuccess(position) {
+        localStorage.removeItem("quadrant");
+        localStorage.removeItem("valor_buffet");
+        localStorage.removeItem("valor_domicilio");
+        localStorage.removeItem("valor_recomendado");
+        localStorage.removeItem("zonas");
+        localStorage.removeItem("MsgZone"); 
+        localStorage.removeItem("timer");        
         lat1= position.coords.latitude;
         lng1= position.coords.longitude;   
         var pos= {lat:lat1,lng:lng1};
