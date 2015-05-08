@@ -37,12 +37,13 @@
     onDeviceReady: function() {
         //alert("Iniciando app..");
         //app.receivedEvent('deviceready');
-        screen.lockOrientation('portrait-primary');
+        
         //navigator.splashscreen.show();
         navigator.geolocation.getCurrentPosition(onSuccess, onError);  
-        checkConnection();
-        getDeviceProperty();
-        navigator.splashscreen.hide();         
+        // checkConnection();
+        // getDeviceProperty();
+        // navigator.splashscreen.hide(); 
+        // screen.lockOrientation('portrait-primary');        
     }
 };
 
