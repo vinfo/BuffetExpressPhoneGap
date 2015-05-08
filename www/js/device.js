@@ -39,10 +39,10 @@
         //app.receivedEvent('deviceready');
         screen.lockOrientation('portrait-primary');
         //navigator.splashscreen.show();
-        //checkConnection();
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);  
+        checkConnection();
         getDeviceProperty();
-        navigator.splashscreen.hide();  
-        navigator.geolocation.getCurrentPosition(onSuccess, onError);   
+        navigator.splashscreen.hide();         
     }
 };
 
@@ -91,7 +91,11 @@ function getDeviceProperty()
 // onSuccess Geolocation
     //
     function onSuccess(position) {
-        alert('Latitude: '+position.coords.latitude + 'Longitude: ' + position.coords.longitude);
+        lat1= position.coords.latitude;
+        lng1= position.coords.longitude;   
+        var pos= {lat:lat1,lng:lng1};
+        localStorage.setItem("position",JSON.stringify(pos));
+        alert("Ubicación");  
     }
 
     // onError Callback receives a PositionError object

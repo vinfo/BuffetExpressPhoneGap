@@ -12,44 +12,26 @@ function startApp() {
   var zones= JSON.parse(getZones());
   localStorage.setItem("zona",JSON.stringify({id:2,code:'cam002'}));
   localStorage.setItem("zonas",JSON.stringify(zones)); 
+  $(".loading_msg").html("Tratando de registrar ubicación...");
 if(zones){
-    if (navigator.geolocation) {	     
-      navigator.geolocation.getCurrentPosition(		  
-        function(position) {
-          lat1= position.coords.latitude;
-          lng1= position.coords.longitude;
-		  var pos= {lat:lat1,lng:lng1};
-		  var codes=[];
-          localStorage.setItem("position",JSON.stringify(pos));			   
-		  for(var i=0;i<zones.length;i++){
-			  var zona= zones[i].id+"|"+zones[i].code;
-			  codes.push(zona);
-		  }
-		  
-		  var process= ajaxrest.getCoordinatesJSON(codes,'');
-		  var quadrant= 0;
-		  $(".loading_msg").html("Detectando zona de pedidos");
-		  for(var i=0;i<process.length;i++){			  
-			  var Coords = process[i][2];
-			  var limits=[];
-			  //console.log(process[i][1]);
-			  for(var j=0;j<Coords.length;j++){				  			  
-				  limits.push(new google.maps.LatLng(Coords[j][0],Coords[j][1]));  
-			  }			  
-			  quadrant += checkZona(process[i][0],process[i][1],limits);
-		  }      	    
-          redirect();
-        },
-        function(error) {
-          $(".loading_msg").html("Tratando de registrar ubicación...");
-          window.location.href = 'index.html';
-        },
-        {timeout: 15000, enableHighAccuracy: true, maximumAge: 75000}
-        );
-}else{
-  alert("Geolocalización no soportada en dispositivo!");
-  redirect();
-} 
+      var codes=[];                  
+      for(var i=0;i<zones.length;i++){
+        var zona= zones[i].id+"|"+zones[i].code;
+        codes.push(zona);
+      }      
+      var process= ajaxrest.getCoordinatesJSON(codes,'');
+      var quadrant= 0;
+      $(".loading_msg").html("Detectando zona de pedidos");
+      for(var i=0;i<process.length;i++){        
+        var Coords = process[i][2];
+        var limits=[];
+        //console.log(process[i][1]);
+        for(var j=0;j<Coords.length;j++){                 
+          limits.push(new google.maps.LatLng(Coords[j][0],Coords[j][1]));  
+        }       
+        quadrant += checkZona(process[i][0],process[i][1],limits);
+      }           
+      redirect();  
 }else{
   alert("Problemas de conectividad a Internet");
 }
