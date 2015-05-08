@@ -46,7 +46,6 @@ function sortByDist(a, b) {
 }
 
 function redirect(){
-    $(".loading_msg").html("Cargando productos disponibles");    
     if(!localStorage.show_guia){
       alert("ir a internal");
       window.location = "internal.html#/guia";
