@@ -39,7 +39,7 @@
         //app.receivedEvent('deviceready');
         screen.lockOrientation('portrait-primary');
         //navigator.splashscreen.show();
-        checkConnection();
+        //checkConnection();
         getDeviceProperty();
         navigator.splashscreen.hide();  
         navigator.geolocation.getCurrentPosition(onSuccess, onError);   
@@ -82,12 +82,12 @@ function getDeviceProperty()
          /* alert("Device OS: " + deviceOS); 
           alert("Device OS Version: " + deviceOSVersion);
           */
- }
- function getNameURLWeb(){
-   var sPath = window.location.pathname;
-   var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
-   return sPage;
-}
+      }
+      function getNameURLWeb(){
+         var sPath = window.location.pathname;
+         var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+         return sPage;
+     }
 // onSuccess Geolocation
     //
     function onSuccess(position) {
@@ -98,5 +98,5 @@ function getDeviceProperty()
     //
     function onError(error) {
         alert('code: '    + error.code    + '\n' +
-              'message: ' + error.message + '\n');
+          'message: ' + error.message + '\n');
     }
