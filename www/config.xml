@@ -44,6 +44,7 @@
 <feature name="http://api.phonegap.com/1.0/device" />
 <feature name="Geolocation">
     <param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
+    <param name="ios-package" value="CDVLocation" />
 </feature>  
 <feature name="Toast">
   <param name="android-package" value="nl.xservices.plugins.Toast" />
