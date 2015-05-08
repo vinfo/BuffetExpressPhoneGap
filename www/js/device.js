@@ -116,7 +116,7 @@ function getDeviceProperty()
     //
     function onError(error) {
         alert(2);
-        navigator.notification.alert('Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación\n');       
+        navigator.notification.alert('Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación\n');
     }
 function alertDismissed() {
     // do something

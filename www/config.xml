@@ -46,10 +46,10 @@
     <param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
     <param name="ios-package" value="CDVLocation" />
 </feature>  
-  <feature name="Notification">
-      <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
-      <param name="ios-package" value="CDVNotification" />
-  </feature>  
+<feature name="Notification">
+    <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    <param name="ios-package" value="CDVNotification" />
+</feature>  
 
     <access origin="*"/>
 
