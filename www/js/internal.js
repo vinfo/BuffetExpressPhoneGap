@@ -1,5 +1,3 @@
-app.initialize();
-
 if (window.jQuery) {  
    $(function(){
     // Tamaño container
