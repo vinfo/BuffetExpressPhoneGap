@@ -36,7 +36,7 @@
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        alert("Iniciando app..");
+        //alert("Iniciando app..");
         //app.receivedEvent('deviceready');        
         //navigator.splashscreen.show();
         var options = {
@@ -97,6 +97,7 @@ function getDeviceProperty()
 // onSuccess Geolocation
     //
     function onSuccess(position) {
+        localStorage.removeItem("position");
         localStorage.removeItem("quadrant");
         localStorage.removeItem("valor_buffet");
         localStorage.removeItem("valor_domicilio");
@@ -107,7 +108,6 @@ function getDeviceProperty()
         lat1= position.coords.latitude;
         lng1= position.coords.longitude;   
         var pos= {lat:lat1,lng:lng1};
-        alert("Detectando posicion"+lat1);
         localStorage.setItem("position",JSON.stringify(pos));
         window.location.href = 'load.html';
     }
@@ -115,13 +115,13 @@ function getDeviceProperty()
     // onError Callback receives a PositionError object
     //
     function onError(error) {
-        // navigator.notification.alert(
-        //         'Es necesario permitir detectar tu ubicación para el funcionamiento de la aplicación\n' +
-        //   'Ve a Ajustes, seleciona la aplicación y Permite acceso a ubicación\n',  // message
-        //         alertDismissed,// callback
-        //         'ubicación no disponible',// title
-        //         'Aceptar'// buttonName
-        //     );
+        navigator.notification.alert(
+                'Es necesario permitir detectar tu ubicación para el funcionamiento de la aplicación\n' +
+          'Ve a Ajustes, seleciona la aplicación y Permite acceso a ubicación\n',  // message
+                alertDismissed,// callback
+                'ubicación no disponible',// title
+                'Aceptar'// buttonName
+            );
     }
 function alertDismissed() {
     // do something

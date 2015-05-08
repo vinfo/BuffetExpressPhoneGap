@@ -12,7 +12,7 @@ function startApp() {
       var zones= JSON.parse(getZones());
       localStorage.setItem("zona",JSON.stringify({id:2,code:'cam002'}));
       localStorage.setItem("zonas",JSON.stringify(zones));
-      alert("Position= "+localStorage.getItem("position"));
+      //alert("Position= "+localStorage.getItem("position"));
     if(zones){
           var codes=[];                  
           for(var i=0;i<zones.length;i++){
