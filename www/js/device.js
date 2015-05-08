@@ -39,10 +39,10 @@
         //app.receivedEvent('deviceready');        
         //navigator.splashscreen.show();
         navigator.geolocation.getCurrentPosition(onSuccess, onError);  
-        // checkConnection();
-        // getDeviceProperty();
-        // navigator.splashscreen.hide(); 
-        // screen.lockOrientation('portrait-primary');        
+        checkConnection();
+        getDeviceProperty();
+        navigator.splashscreen.hide(); 
+        screen.lockOrientation('portrait-primary');        
     }
 };
 
@@ -101,13 +101,14 @@ function getDeviceProperty()
     // onError Callback receives a PositionError object
     //
     function onError(error) {
-        navigator.notification.alert(
-                'Es necesario permitir detectar tu ubicación para el funcionamiento de la aplicación\n' +
-          'Ve a Ajustes, seleciona la aplicación y Permite acceso a ubicación\n',  // message
-                alertDismissed,// callback
-                'ubicación no disponible',// title
-                'Aceptar'// buttonName
-            );
+        alert("Error ubicación");
+        // navigator.notification.alert(
+        //         'Es necesario permitir detectar tu ubicación para el funcionamiento de la aplicación\n' +
+        //   'Ve a Ajustes, seleciona la aplicación y Permite acceso a ubicación\n',  // message
+        //         alertDismissed,// callback
+        //         'ubicación no disponible',// title
+        //         'Aceptar'// buttonName
+        //     );
     }
 function alertDismissed() {
     // do something
