@@ -12,7 +12,7 @@ function startApp() {
       var zones= JSON.parse(getZones());
       localStorage.setItem("zona",JSON.stringify({id:2,code:'cam002'}));
       localStorage.setItem("zonas",JSON.stringify(zones));
-      //alert("Position= "+localStorage.getItem("position"));
+      alert("Position= "+localStorage.getItem("position"));
     if(zones){
           var codes=[];                  
           for(var i=0;i<zones.length;i++){
@@ -46,14 +46,13 @@ function sortByDist(a, b) {
 }
 
 function redirect(){
-    $(".loading_msg").html("Cargando productos disponibles");
-    window.setTimeout(function() {
-		if(!localStorage.show_guia){
-            window.location = "internal.html#/guia";
-		}else{
-			window.location.href = 'internal.html';
-		}              
-         },500);   
+    $(".loading_msg").html("Cargando productos disponibles");    
+    if(!localStorage.show_guia){
+      alert("ir a internal");
+      window.location = "internal.html#/guia";
+    }else{
+     window.location.href = 'internal.html';
+   }  
 }
 
 function getZones(){
