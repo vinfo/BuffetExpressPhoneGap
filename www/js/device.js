@@ -36,8 +36,7 @@
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         alert("Iniciando app..");
-        //app.receivedEvent('deviceready');
-        
+        //app.receivedEvent('deviceready');        
         //navigator.splashscreen.show();
         navigator.geolocation.getCurrentPosition(onSuccess, onError);  
         // checkConnection();
@@ -95,6 +94,7 @@ function getDeviceProperty()
         lat1= position.coords.latitude;
         lng1= position.coords.longitude;   
         var pos= {lat:lat1,lng:lng1};
+        alert("Detectando posicion"+lat1);
         localStorage.setItem("position",JSON.stringify(pos));
     }
 
