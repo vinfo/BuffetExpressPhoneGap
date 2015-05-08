@@ -94,9 +94,7 @@ function getDeviceProperty()
         lat1= position.coords.latitude;
         lng1= position.coords.longitude;   
         var pos= {lat:lat1,lng:lng1};
-        alert("Ubicación "+lat1); 
         localStorage.setItem("position",JSON.stringify(pos));
-        alert("Ubicación"+JSON.stringify(pos));  
     }
 
     // onError Callback receives a PositionError object
