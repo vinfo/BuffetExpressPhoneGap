@@ -327,6 +327,7 @@
 	],
 	"file_history":
 	[
+		"/D/wamp/www/realrisk_argos/composer.json",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
@@ -453,8 +454,7 @@
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/templates/info.html",
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/scripts/controllers/issue-432-markers-fit-clustering.js",
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/templates/issue-755-ng-router.html",
-		"/D/Movilidad/BackupsBuffet/directives.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/spec/helper.js"
+		"/D/Movilidad/BackupsBuffet/directives.js"
 	],
 	"find":
 	{
