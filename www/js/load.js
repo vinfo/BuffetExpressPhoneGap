@@ -47,7 +47,6 @@ function sortByDist(a, b) {
 
 function redirect(){
     if(!localStorage.show_guia){
-      alert("ir a internal");
       window.location = "internal.html#/guia";
     }else{
      window.location.href = 'internal.html';

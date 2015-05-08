@@ -115,13 +115,14 @@ function getDeviceProperty()
     // onError Callback receives a PositionError object
     //
     function onError(error) {
-        navigator.notification.alert(
-                'Es necesario permitir detectar tu ubicación para el funcionamiento de la aplicación\n' +
-          'Ve a Ajustes, seleciona la aplicación y Permite acceso a ubicación\n',  // message
-                alertDismissed,// callback
-                'ubicación no disponible',// title
-                'Aceptar'// buttonName
-            );
+        alert('Es necesario permitir detectar tu ubicación para el funcionamiento de la aplicación\nVe a Ajustes, selecciona la aplicación y Permite acceso a ubicación\n');
+        // navigator.notification.alert(
+        //         'Es necesario permitir detectar tu ubicación para el funcionamiento de la aplicación\n' +
+        //   'Ve a Ajustes, seleciona la aplicación y Permite acceso a ubicación\n',  // message
+        //         alertDismissed,// callback
+        //         'ubicación no disponible',// title
+        //         'Aceptar'// buttonName
+        //     );
     }
 function alertDismissed() {
     // do something
