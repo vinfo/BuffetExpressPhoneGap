@@ -12,7 +12,7 @@ function startApp() {
   var zones= JSON.parse(getZones());
   localStorage.setItem("zona",JSON.stringify({id:2,code:'cam002'}));
   localStorage.setItem("zonas",JSON.stringify(zones)); 
-  if(zones){
+if(zones){
     if (navigator.geolocation) {	     
       navigator.geolocation.getCurrentPosition(		  
         function(position) {
