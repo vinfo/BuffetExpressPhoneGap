@@ -449,6 +449,7 @@ a.btn-reset{
 .menuplatolist
 {
 	margin-top: 39px;
+	margin-bottom: 69px;
 }
 .menuplatolist .col-md-12
 {
@@ -2026,3 +2027,15 @@ input[type="radio"], input[type="checkbox"] {
 				width: 100%;
 			}
 		}
+		@media (max-width:460px) {
+			.menuplatolist .col-md-12 .contimg
+			{
+				min-height:220px;
+			}
+		}
+		@media (min-width:700px) {
+			.menuplatolist .col-md-12 .contimg
+			{
+				min-height:400px;
+			}
+		}		

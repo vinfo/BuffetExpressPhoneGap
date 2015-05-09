@@ -101,8 +101,17 @@
   }); 
 
   angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){
-	setTimer();
+	  setTimer();
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
+    $(".imgCat").click(function(){      
+      $("#img_load").hide();
+      var offset = $(this).offset();
+      var w= $(this).width()/3;
+      var left= offset.left+w;
+      var top= offset.top+w;
+      $("#img_load").css({'position':'absolute','left':left+'px','top':top+'px'}).show();
+    });
+
     if($routeParams.activity)localStorage.activity=$routeParams.activity;   
     var plato= 1;
     if(localStorage.plato)plato= parseInt(localStorage.plato);
