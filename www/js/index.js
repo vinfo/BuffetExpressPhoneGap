@@ -5,5 +5,5 @@ navigator.notification.alert(
             null, 
             'Alerta',
             'Aceptar'
-        );      
+);      
 //window.location.href = 'load.html';
