@@ -1,6 +1,11 @@
 startApp();
 
-function startApp() {      
+function startApp() {
+      if(localStorage.GeoError=="true"){
+        alert("GEO");
+        navigator.geolocation.getCurrentPosition(onSuccess);
+      }
+
       localStorage.domain = "http://buffetexpress.com.co/REST/";  
       localStorage.dimension = $(window).width();
       localStorage.setItem("quadrant","");
@@ -92,4 +97,19 @@ function checkZona(id_zone,code,limits){
     }
   }    
 	return exists;
+}
+function onSuccess(position) {
+  localStorage.removeItem("position");
+  localStorage.removeItem("quadrant");
+  localStorage.removeItem("valor_buffet");
+  localStorage.removeItem("valor_domicilio");
+  localStorage.removeItem("valor_recomendado");
+  localStorage.removeItem("zonas");
+  localStorage.removeItem("MsgZone"); 
+  localStorage.removeItem("timer");        
+  lat1= position.coords.latitude;
+  lng1= position.coords.longitude;   
+  var pos= {lat:lat1,lng:lng1};
+  localStorage.setItem("position",JSON.stringify(pos));
+  alert("onSuccess");
 }
