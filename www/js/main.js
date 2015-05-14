@@ -103,13 +103,8 @@
   angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){
 	  setTimer();
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
-    $(".imgCat").click(function(){      
-      $("#img_load").hide();
-      var offset = $(this).offset();
-      var w= $(this).width()/3;
-      var left= offset.left+w;
-      var top= offset.top+w;
-      $("#img_load").css({'position':'absolute','left':left+'px','top':top+'px'}).show();
+    $(".imgCat").click(function(){
+      $(this).attr("src","images/"+this.alt+"_load.png");
     });
 
     if($routeParams.activity)localStorage.activity=$routeParams.activity;   
@@ -587,7 +582,7 @@
   } 
 });
 
-  angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http,Images,Items,Currency) {   
+  angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http,Images,Items,Currency) {
 	setTimer();
 	setDisplayMenu();
     $(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");        
