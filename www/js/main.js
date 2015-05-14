@@ -113,7 +113,14 @@
     if(localStorage.getItem("dimension")==768)$(".menuplato").css("width","82%");   
 
     if(localStorage.getItem("quadrant")==""){
-      if(!localStorage.MsgZone)alert("Ubicación fuera de rango de despacho.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.");
+      if(!localStorage.MsgZone){
+        navigator.notification.alert(
+            'Ubicación fuera de rango de despacho.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.',
+            alertDismissed, 
+            'Alerta',
+            'Aceptar'
+        );        
+      }
       localStorage.setItem("MsgZone",1);
     }
     
