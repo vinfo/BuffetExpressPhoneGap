@@ -115,12 +115,16 @@ function onSuccess(position) {
 // onError Callback receives a PositionError object
 //
 function onError(error) {
-    alert(localStorage.OS);
     navigator.notification.alert(
-        'Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación\n',
-        null, 
-        'Alerta',
-        'Aceptar'
+        "Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación\n",
+        "Alerta",
+        "No",
+        "Aceptar",
+        {
+            onClose: function(buttonIndex) {
+                    return true;
+            }
+        }
     );
     window.location.href = 'load.html';
 }

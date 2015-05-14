@@ -1,9 +1,2 @@
-app.initialize();
-alert(222);
-navigator.notification.alert(
-            'Prueba',
-            null, 
-            'Alerta',
-            'Aceptar'
-);      
+app.initialize();    
 //window.location.href = 'load.html';
