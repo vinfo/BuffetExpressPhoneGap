@@ -108,19 +108,7 @@ function onSuccess(position) {
     lat1= position.coords.latitude;
     lng1= position.coords.longitude;   
     var pos= {lat:lat1,lng:lng1};
-    localStorage.setItem("position",JSON.stringify(pos));
-    navigator.notification.alert(
-        "There was an error connecting to the Internet. Would you like to retry?.",
-        "No Internet connection",
-        "No",
-        "Yes",
-        {
-            onClose: function(buttonIndex) {
-                if (buttonIndex == 1)
-                    retryConnection();
-            }
-        }
-    );    
+    localStorage.setItem("position",JSON.stringify(pos));   
     window.location.href = 'load.html';
 }
 
