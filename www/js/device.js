@@ -39,16 +39,16 @@
         //alert("Iniciando app..");
         //app.receivedEvent('deviceready');        
         //navigator.splashscreen.show();
+        checkConnection();
+        getDeviceProperty();
+        navigator.splashscreen.hide(); 
+        screen.lockOrientation('portrait-primary');
         var options = {
           enableHighAccuracy: true,
           timeout: 10000,
           maximumAge: 75000
         };
         navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
-        checkConnection();
-        getDeviceProperty();
-        navigator.splashscreen.hide(); 
-        screen.lockOrientation('portrait-primary');        
     }
 };
 
