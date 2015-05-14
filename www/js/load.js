@@ -7,6 +7,19 @@ var onSuccess = function(position) {
           'Heading: '           + position.coords.heading           + '\n' +
           'Speed: '             + position.coords.speed             + '\n' +
           'Timestamp: '         + position.timestamp                + '\n');
+
+    localStorage.removeItem("position");
+    localStorage.removeItem("quadrant");
+    localStorage.removeItem("valor_buffet");
+    localStorage.removeItem("valor_domicilio");
+    localStorage.removeItem("valor_recomendado");
+    localStorage.removeItem("zonas");
+    localStorage.removeItem("MsgZone"); 
+    localStorage.removeItem("timer");        
+    lat1= position.coords.latitude;
+    lng1= position.coords.longitude;   
+    var pos= {lat:lat1,lng:lng1};
+    localStorage.setItem("position",JSON.stringify(pos));    
     startApp();    
 };
 
@@ -19,6 +32,7 @@ function onError(error) {
 }
 
 if(localStorage.GeoError=="true"){
+  alert("Load GEO");
   navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }else{
   startApp();
@@ -116,19 +130,4 @@ function checkZona(id_zone,code,limits){
     }
   }    
 	return exists;
-}
-function onSuccess(position) {
-  localStorage.removeItem("position");
-  localStorage.removeItem("quadrant");
-  localStorage.removeItem("valor_buffet");
-  localStorage.removeItem("valor_domicilio");
-  localStorage.removeItem("valor_recomendado");
-  localStorage.removeItem("zonas");
-  localStorage.removeItem("MsgZone"); 
-  localStorage.removeItem("timer");        
-  lat1= position.coords.latitude;
-  lng1= position.coords.longitude;   
-  var pos= {lat:lat1,lng:lng1};
-  localStorage.setItem("position",JSON.stringify(pos));
-  alert("onSuccess");
 }
