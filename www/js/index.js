@@ -1,4 +1,5 @@
 app.initialize();
+alert(222);
 navigator.notification.alert(
             'Prueba',
             alertDismissed, 
@@ -7,5 +8,6 @@ navigator.notification.alert(
         );
 function alertDismissed() {
     // do something
-}        
+} 
+alert(33);       
 //window.location.href = 'load.html';
