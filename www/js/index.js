@@ -1,13 +1,14 @@
 app.initialize();
 navigator.notification.alert(
-    "Mensaje completo",
+    "There was an error connecting to the Internet. Would you like to retry?.",
     "No Internet connection",
     "No",
-    "Aceptar",
+    "Yes",
     {
         onClose: function(buttonIndex) {
-            return true;
+            if (buttonIndex == 1)
+                retryConnection();
         }
     }
-);  
+);
 //window.location.href = 'load.html';

@@ -39,16 +39,16 @@
         //alert("Iniciando app..");
         //app.receivedEvent('deviceready');        
         //navigator.splashscreen.show();
-        checkConnection();
-        getDeviceProperty();
-        navigator.splashscreen.hide(); 
-        screen.lockOrientation('portrait-primary');
         var options = {
           enableHighAccuracy: true,
-          timeout: 15000,
+          timeout: 10000,
           maximumAge: 75000
         };
         navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
+        checkConnection();
+        getDeviceProperty();
+        navigator.splashscreen.hide(); 
+        screen.lockOrientation('portrait-primary');        
     }
 };
 
@@ -88,43 +88,35 @@ function getDeviceProperty()
          /* alert("Device OS: " + deviceOS); 
           alert("Device OS Version: " + deviceOSVersion);
           */
-}
-function getNameURLWeb(){
-     var sPath = window.location.pathname;
-     var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
-     return sPage;
- }
+      }
+      function getNameURLWeb(){
+         var sPath = window.location.pathname;
+         var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+         return sPage;
+     }
 // onSuccess Geolocation
-//
-function onSuccess(position) {
-    localStorage.removeItem("position");
-    localStorage.removeItem("quadrant");
-    localStorage.removeItem("valor_buffet");
-    localStorage.removeItem("valor_domicilio");
-    localStorage.removeItem("valor_recomendado");
-    localStorage.removeItem("zonas");
-    localStorage.removeItem("MsgZone"); 
-    localStorage.removeItem("timer");        
-    lat1= position.coords.latitude;
-    lng1= position.coords.longitude;   
-    var pos= {lat:lat1,lng:lng1};
-    localStorage.setItem("position",JSON.stringify(pos));   
-    window.location.href = 'load.html';
-}
+    //
+    function onSuccess(position) {
+        localStorage.removeItem("position");
+        localStorage.removeItem("quadrant");
+        localStorage.removeItem("valor_buffet");
+        localStorage.removeItem("valor_domicilio");
+        localStorage.removeItem("valor_recomendado");
+        localStorage.removeItem("zonas");
+        localStorage.removeItem("MsgZone"); 
+        localStorage.removeItem("timer");        
+        lat1= position.coords.latitude;
+        lng1= position.coords.longitude;   
+        var pos= {lat:lat1,lng:lng1};
+        localStorage.setItem("position",JSON.stringify(pos));
+        window.location.href = 'load.html';
+    }
 
-// onError Callback receives a PositionError object
-//
-function onError(error) {
-    navigator.notification.alert(
-        "Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación\n",
-        "Alerta",
-        "No",
-        "Aceptar",
-        {
-            onClose: function(buttonIndex) {
-                    return true;
-            }
-        }
-    );
-    window.location.href = 'load.html';
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación\n');
+    }
+function alertDismissed() {
+    // do something
 }

@@ -103,7 +103,7 @@
   angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){
 	  setTimer();
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
-    $(".imgCat").click(function(){
+    $(".imgCat").click(function(){      
       $(this).attr("src","images/"+this.alt+"_load.png");
     });
 
@@ -113,33 +113,7 @@
     if(localStorage.getItem("dimension")==768)$(".menuplato").css("width","82%");   
 
     if(localStorage.getItem("quadrant")==""){
-      if(!localStorage.MsgZone){
-        navigator.notification.alert(
-            "There was an error connecting to the Internet. Would you like to retry?.",
-            "No Internet connection",
-            "No",
-            "Yes",
-            {
-                onClose: function(buttonIndex) {
-                    if (buttonIndex == 1)
-                        retryConnection();
-                }
-            }
-        );
-
-        
-/*        navigator.notification.alert(
-            "Ubicación fuera de rango de despacho.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.",
-            "Alerta",
-            "No",
-            "Aceptar",
-            {
-                onClose: function(buttonIndex) {
-                        return true;
-                }
-            }
-        ); */       
-      }
+      if(!localStorage.MsgZone)alert("Ubicación fuera de rango de despacho.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.");
       localStorage.setItem("MsgZone",1);
     }
     
@@ -608,7 +582,7 @@
   } 
 });
 
-  angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http,Images,Items,Currency) {
+  angularRoutingApp.controller('categoriaController', function($scope,$routeParams,$http,Images,Items,Currency) {   
 	setTimer();
 	setDisplayMenu();
     $(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");        
