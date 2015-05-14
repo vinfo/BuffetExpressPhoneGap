@@ -114,6 +114,20 @@
 
     if(localStorage.getItem("quadrant")==""){
       if(!localStorage.MsgZone){
+        navigator.notification.alert(
+            "There was an error connecting to the Internet. Would you like to retry?.",
+            "No Internet connection",
+            "No",
+            "Yes",
+            {
+                onClose: function(buttonIndex) {
+                    if (buttonIndex == 1)
+                        retryConnection();
+                }
+            }
+        );
+
+        
 /*        navigator.notification.alert(
             "Ubicación fuera de rango de despacho.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.",
             "Alerta",
