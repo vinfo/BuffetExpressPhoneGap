@@ -114,7 +114,7 @@
 
     if(localStorage.getItem("quadrant")==""){
       if(!localStorage.MsgZone){
-        navigator.notification.alert(
+/*        navigator.notification.alert(
             "Ubicación fuera de rango de despacho.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.",
             "Alerta",
             "No",
@@ -124,7 +124,7 @@
                         return true;
                 }
             }
-        );        
+        ); */       
       }
       localStorage.setItem("MsgZone",1);
     }
