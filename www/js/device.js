@@ -109,6 +109,18 @@ function onSuccess(position) {
     lng1= position.coords.longitude;   
     var pos= {lat:lat1,lng:lng1};
     localStorage.setItem("position",JSON.stringify(pos));
+    navigator.notification.alert(
+        "There was an error connecting to the Internet. Would you like to retry?.",
+        "No Internet connection",
+        "No",
+        "Yes",
+        {
+            onClose: function(buttonIndex) {
+                if (buttonIndex == 1)
+                    retryConnection();
+            }
+        }
+    );    
     window.location.href = 'load.html';
 }
 
@@ -118,12 +130,9 @@ function onError(error) {
     alert(localStorage.OS);
     navigator.notification.alert(
         'Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación\n',
-        alertDismissed, 
+        null, 
         'Alerta',
         'Aceptar'
     );
     window.location.href = 'load.html';
-}
-function alertDismissed() {
-    // do something
 }
