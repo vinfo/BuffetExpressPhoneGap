@@ -7,7 +7,7 @@ navigator.notification.alert(
     {
         onClose: function(buttonIndex) {
             if (buttonIndex == 1)
-                retryConnection();
+               // retryConnection();
         }
     }
 );
