@@ -45,7 +45,7 @@
         screen.lockOrientation('portrait-primary');
         var options = {
           enableHighAccuracy: true,
-          timeout: 30000,
+          timeout: 15000,
           maximumAge: 75000
         };
         navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
@@ -109,7 +109,7 @@ function getDeviceProperty()
         lng1= position.coords.longitude;   
         var pos= {lat:lat1,lng:lng1};
         localStorage.setItem("position",JSON.stringify(pos));
-        window.location.href = 'load.html';
+        //window.location.href = 'load.html';
     }
 
     // onError Callback receives a PositionError object
@@ -118,8 +118,5 @@ function getDeviceProperty()
         //alert('Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación\n');
         localStorage.setItem("GeoError","true");
         alert("GeoError");
-        window.location.href = 'load.html';
+        //window.location.href = 'load.html';
     }
-function alertDismissed() {
-    // do something
-}

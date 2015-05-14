@@ -1,6 +1,6 @@
 var options = {
   enableHighAccuracy: true,
-  timeout: 30000,
+  timeout: 15000,
   maximumAge: 75000
 };
 var onSuccess = function(position) {

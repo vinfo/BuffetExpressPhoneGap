@@ -49,7 +49,11 @@
 <feature name="Notification">
     <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
     <param name="ios-package" value="CDVNotification" />
-</feature>  
+</feature>
+ <feature name="Toast">
+  <param name="android-package" value="nl.xservices.plugins.Toast" />
+  <param name="ios-package" value="Toast" />
+</feature>
 
     <access origin="*"/>
 
@@ -83,6 +87,7 @@
       <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
       <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
       <gap:plugin name="com.phonegap.plugin.statusbar" />
+      <gap:plugin name="nl.x-services.plugins.toast" />
     
 
 <gap:config-file platform="ios" parent="UIStatusBarHidden">
