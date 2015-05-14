@@ -17,14 +17,14 @@ function onError(error) {
           'message: ' + error.message + '\n');
     startApp();
 }
-navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
+if(localStorage.GeoError=="true"){
+  navigator.geolocation.getCurrentPosition(onSuccess, onError);
+}else{
+  startApp();
+}
 
 function startApp() {
-      if(localStorage.GeoError=="true"){
-        alert("GEO");
-        navigator.geolocation.getCurrentPosition(onSuccess);
-      }
-
       localStorage.domain = "http://buffetexpress.com.co/REST/";  
       localStorage.dimension = $(window).width();
       localStorage.setItem("quadrant","");
