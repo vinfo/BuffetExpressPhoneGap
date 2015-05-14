@@ -45,7 +45,7 @@
         screen.lockOrientation('portrait-primary');
         var options = {
           enableHighAccuracy: true,
-          timeout: 15000,
+          timeout: 30000,
           maximumAge: 75000
         };
         navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
