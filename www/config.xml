@@ -51,6 +51,9 @@
      <param name="ios-package" value="CDVNotification" />
      <param name="wp-package" value="Notification"/>
 </feature>  
+<feature name="Vibration">
+    <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
+</feature>
 
   <access origin="*"/>
 
@@ -120,6 +123,8 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
 
 <!--   <gap:splash src="res/screen/android/screen-ldpi-portrait.png" gap:platform="android" gap:qualifier="ldpi" />
   <gap:splash src="res/screen/android/screen-mdpi-portrait.png" gap:platform="android" gap:qualifier="mdpi" />
