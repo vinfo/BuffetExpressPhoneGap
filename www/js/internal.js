@@ -1,6 +1,5 @@
 if (window.jQuery) {  
    $(function(){
-    toast.showShortCenter('Bienvenida');
     // Tamaño container
     $(".container").css({"min-height":$(document).height()});
 

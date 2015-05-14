@@ -115,6 +115,16 @@ function getDeviceProperty()
     // onError Callback receives a PositionError object
     //
     function onError(error) {
-        toast.showShortCenter('Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación\n');
+        alert(localStorage.OS);
+        navigator.notification.alert(
+            'Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación\n',
+            alertDismissed, 
+            'Alerta',
+            'Aceptar'
+        );
+
         window.location.href = 'load.html';
+    }
+    function alertDismissed() {
+        // do something
     }
