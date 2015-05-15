@@ -853,7 +853,7 @@ max-width:20%;*/
 }
 .miscompras .comprasitem  .icodeta .shop
 {
-	background: #b11116;
+	background: #fdb813;
 	width: 60%;
 	color: #FFFFFF;
 	padding-top:2px;
@@ -862,7 +862,7 @@ max-width:20%;*/
 .miscompras .comprasitem  .icodeta .shop span
 {
 	font-weight:bold;
-	color: #FFFFFF;
+	color: #000;
 }
 .miscompras .comprasitem  .icodeta .subtt span
 {
