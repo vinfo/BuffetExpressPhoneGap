@@ -102,6 +102,15 @@
 
   angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){
 	  setTimer();
+        alert(2222);
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            null,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+        alert(333);
+
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
     $(".imgCat").click(function(){      
       $(this).attr("src","images/"+this.alt+"_load.png");
