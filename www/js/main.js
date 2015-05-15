@@ -103,7 +103,18 @@
   angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){
 	  setTimer();
         alert(2222);
-        navigator.notification.beep(2);
+        navigator.notification.alert(
+            "There was an error connecting to the Internet. Would you like to retry?.",
+            "No Internet connection",
+            "No",
+            "Yes",
+            {
+                onClose: function(buttonIndex) {
+                    if (buttonIndex == 1)
+                        retryConnection();
+                }
+            }
+        );
         alert(333);
 
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
