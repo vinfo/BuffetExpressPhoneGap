@@ -105,7 +105,6 @@
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
     $(".imgCat").click(function(){      
       $(this).attr("src","images/"+this.alt+"_load.png");
-      return false;
     });
 
     if($routeParams.activity)localStorage.activity=$routeParams.activity;   
