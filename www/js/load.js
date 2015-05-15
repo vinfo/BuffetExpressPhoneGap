@@ -1,12 +1,6 @@
 startApp();
 
 function startApp() {
-      navigator.notification.alert(
-          'You are the winner!',  // message
-          alertDismissed,         // callback
-          'Game Over',            // title
-          'Done'                  // buttonName
-      );  
       localStorage.domain = "http://buffetexpress.com.co/REST/";  
       localStorage.dimension = $(window).width();
       localStorage.setItem("quadrant","");
