@@ -1,3 +1,13 @@
+var init = function init() {
+   // Wait for Cordova to load
+   document.addEventListener("deviceready", onDeviceReady, false);
+   // Cordova is ready
+   function onDeviceReady() {
+    alert("cargado");
+   }
+ };
+ window.onload = init;
+
 if (window.jQuery) {  
    $(function(){
     // Tamaño container
