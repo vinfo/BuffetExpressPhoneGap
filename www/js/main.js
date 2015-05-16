@@ -128,7 +128,7 @@
     if(localStorage.getItem("dimension")==768)$(".menuplato").css("width","82%");   
 
     if(localStorage.getItem("quadrant")==""){
-      if(!localStorage.MsgZone)alert("Ubicación fuera de rango de despacho.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.");
+      if(!localStorage.MsgZone)navigator.notification.alert('Ubicación fuera de rango de despacho.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.', null, 'Alerta', 'Aceptar');
       localStorage.setItem("MsgZone",1);
     }
     
@@ -1122,13 +1122,13 @@
         }
         }else{
           $(".div_loading").fadeOut();
-          alert("Usuario fuera de cobertura.\nNo se pueden realizar pedidos.");         
+          navigator.notification.alert('Usuario fuera de cobertura.\nNo se pueden realizar pedidos.', null, 'Alerta', 'Aceptar');
         }          
       }, 800);
         }
       }
       }else{
-      alert("Carro de compras esta vacio."); 
+      navigator.notification.alert('Usuario fuera de cobertura.\nNo se pueden realizar pedidos.', null, 'Alerta', 'Aceptar');alert("Carro de compras esta vacio."); 
       window.location = "internal.html"; 
     }
     }	
