@@ -109,18 +109,14 @@ function getDeviceProperty()
         lng1= position.coords.longitude;   
         var pos= {lat:lat1,lng:lng1};
         localStorage.setItem("position",JSON.stringify(pos));
-        messageAlert('Prueba de mensaje I');      
         window.location.href = 'load.html';
     }
 
     // onError Callback receives a PositionError object
     //
     function onError(error) {
-        navigator.notification.alert('Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación\n', null, 'Alerta', 'Aceptar');
+        navigator.notification.alert('Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación', null, 'Alerta', 'Aceptar');
         var pos= {lat:6.250909,lng:-75.565608};
         localStorage.setItem("position",JSON.stringify(pos));
         window.location.href = 'load.html';
-    }
-    function messageAlert(message){
-        navigator.notification.alert(message, null, 'Alerta', 'Aceptar');
     }
