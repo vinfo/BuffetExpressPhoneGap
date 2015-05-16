@@ -223,10 +223,10 @@
         if(!localStorage.getItem("cant_"+tipo+"_"+plato))localStorage.setItem("cant_"+tipo+"_"+plato,1);
         if(items<3 || flag){
           if(action=="add"){
-            NotificationService.alert('Plato actual no esta completo!', "Alerta", "Aceptar", null);
+            alert("Plato actual no esta completo!");
             return false;
           }else{
-            var conf= confirm("El plato actual no esta completo.\nDesea continuar?");
+            var conf=confirm("El plato actual no esta completo.\nDesea continuar?");
             if(conf)$location.path("compras");  
           }         
         }else{
@@ -994,7 +994,7 @@
       if(Gtotal>0){       
         if(!localStorage.getItem("cuenta")){
           $(".div_loading").fadeOut();
-          NotificationService.alert('Debe estar logueado para terminar el pedido.', "Alerta", "Aceptar", null);
+          alert("Debe estar logueado para terminar el pedido.");
           localStorage.setItem("orden","Pendiente");
           localStorage.setItem("bono",bono);
 		  localStorage.setItem("direccion",direccion);
@@ -1021,7 +1021,7 @@
 	var statusZone= ajaxrest.getStatusZone("zona="+zona.id+"&token="+localStorage.token);
     if(statusZone[0].status==0){
 	  flag=false;
-      NotificationService.alert('Lo sentimos la tienda esta cerrada en estos momentos.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.', "Alerta", "Aceptar", null);
+      alert("Lo sentimos la tienda esta cerrada en estos momentos.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.");
     }	  
       
       if(flag){      
@@ -1111,7 +1111,7 @@
             inventario+="- "+prod[1]+": Disponible ("+disp+"), Solicitado ("+ prod[3] +")\n";
             descargarInv(prod[0],prod[1],disp,prod[3]);
           }		  
-          NotificationService.alert("Algunos productos de su pedido ya estan agotados. Estos serán retirados de su orden para poder continuar:\nINVENTARIO DE PRODUCTOS\n"+inventario, "Alerta", "Aceptar", null);         
+          alert("Algunos productos de su pedido ya estan agotados. Estos serán retirados de su orden para poder continuar:\nINVENTARIO DE PRODUCTOS\n"+inventario);
 		  var platos= getNumDish();
 		  if(platos==0)$("#totalDish").html("0");
            window.location = "internal.html#/compras"; 
@@ -1119,11 +1119,11 @@
                      
         }else{
         $(".div_loading").fadeOut();
-        NotificationService.alert("Dirección es requerida.", "Alerta", "Aceptar", null);            
+        alert("Dirección es requerida.");               
         }
         }else{
           $(".div_loading").fadeOut();
-          NotificationService.alert("Usuario fuera de cobertura.\nNo se pueden realizar pedidos.", "Alerta", "Aceptar", null); 
+          alert('Usuario fuera de cobertura.\nNo se pueden realizar pedidos.');
         }          
       }, 800);
         }
