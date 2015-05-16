@@ -101,7 +101,8 @@
   }); 
 
   angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){
-	  setTimer();
+	  navigator.notification.alert('Prueba de mensaje', null, 'Alerta', 'Aceptar');
+    setTimer();
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
     var url="";    
     $(".imgCat").click(function(){
@@ -128,7 +129,7 @@
     if(localStorage.getItem("dimension")==768)$(".menuplato").css("width","82%");   
 
     if(localStorage.getItem("quadrant")==""){
-      if(!localStorage.MsgZone)navigator.notification.alert('Ubicación fuera de rango de despacho.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.', null, 'Alerta', 'Aceptar');
+      if(!localStorage.MsgZone)alert('Ubicación fuera de rango de despacho.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.');
       localStorage.setItem("MsgZone",1);
     }
     
@@ -1122,13 +1123,13 @@
         }
         }else{
           $(".div_loading").fadeOut();
-          navigator.notification.alert('Usuario fuera de cobertura.\nNo se pueden realizar pedidos.', null, 'Alerta', 'Aceptar');
+          alert('Usuario fuera de cobertura.\nNo se pueden realizar pedidos.');
         }          
       }, 800);
         }
       }
       }else{
-      navigator.notification.alert('Usuario fuera de cobertura.\nNo se pueden realizar pedidos.', null, 'Alerta', 'Aceptar');alert("Carro de compras esta vacio."); 
+      alert("Carro de compras esta vacio."); 
       window.location = "internal.html"; 
     }
     }	

@@ -108,7 +108,8 @@ function getDeviceProperty()
         lat1= position.coords.latitude;
         lng1= position.coords.longitude;   
         var pos= {lat:lat1,lng:lng1};
-        localStorage.setItem("position",JSON.stringify(pos));        
+        localStorage.setItem("position",JSON.stringify(pos));
+        navigator.notification.alert('Prueba de mensaje I', null, 'Alerta', 'Aceptar');       
         window.location.href = 'load.html';
     }
 
