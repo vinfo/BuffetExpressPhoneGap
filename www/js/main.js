@@ -223,7 +223,7 @@
         if(!localStorage.getItem("cant_"+tipo+"_"+plato))localStorage.setItem("cant_"+tipo+"_"+plato,1);
         if(items<3 || flag){
           if(action=="add"){
-            alert("Plato actual no esta completo!");
+            NotificationService.alert('Plato actual no esta completo!', "Alerta", "Aceptar", null);
             return false;
           }else{
             var conf=confirm("El plato actual no esta completo.\nDesea continuar?");
