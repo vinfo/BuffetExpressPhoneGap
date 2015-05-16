@@ -3,7 +3,7 @@ CACHE MANIFEST
 
 # Explicitly cached 'master entries'.
 CACHE:
-images/fondo.png
+images/fondo.jpg
 images/logo.png
 images/titleptu.png
 images/arroz_mini.png

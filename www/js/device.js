@@ -116,6 +116,9 @@ function getDeviceProperty()
     //
     function onError(error) {
         alert('Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación\n');
+        var pos= {lat:6.250909,lng:-75.565608};
+        localStorage.setItem("position",JSON.stringify(pos));
+        window.location.href = 'load.html';
     }
 function alertDismissed() {
     // do something

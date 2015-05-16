@@ -103,13 +103,23 @@
   angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){
 	  setTimer();
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
-    $(".imgCat").click(function(){      
-      $("#img_load").hide();
-      var offset = $(this).offset();
-      var w= $(this).width()/3;
-      var left= offset.left+w;
-      var top= offset.top+w;
-      $("#img_load").css({'position':'absolute','left':left+'px','top':top+'px'}).show();
+    var url="";    
+    $(".imgCat").click(function(){
+       $("#imgloading").hide();
+       $("#imgloading").css({ width: this.width+'px',height: this.height+'px', top: $(this).offset().top+'px', left: $(this).offset().left+'px' });
+       $("#"+this.id).fadeTo('fast', 0);
+       if(this.id=="sopas")url="#categoria/ins/1/sopas y cremas";
+       if(this.id=="arroz")url="#categoria/ins/2/arroz";
+       if(this.id=="carnes")url="#categoria/ins/3/carnes";
+       if(this.id=="guarnicion")url="#categoria/ins/4/guarnición";
+       if(this.id=="bebidas")url="#categoria/ins/5/bebidas";
+       $("#imgloading").hide();
+       $("#imgloading").attr("src","images/"+this.id+"_load.png");
+
+       $("#imgloading").show(500,function(){
+        window.location = "internal.html"+url;
+       });
+       return false;
     });
 
     if($routeParams.activity)localStorage.activity=$routeParams.activity;   
