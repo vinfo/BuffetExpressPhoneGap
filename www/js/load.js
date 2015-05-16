@@ -1,6 +1,7 @@
 startApp();
 
 function startApp() {      
+      messageAlert('Prueba de mensaje III'); 
       localStorage.domain = "http://buffetexpress.com.co/REST/";  
       localStorage.dimension = $(window).width();
       localStorage.setItem("quadrant","");

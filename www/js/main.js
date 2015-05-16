@@ -101,7 +101,7 @@
   }); 
 
   angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){
-	  navigator.notification.alert('Prueba de mensaje', null, 'Alerta', 'Aceptar');
+	  messageAlert('Prueba de mensaje IV'); 
     setTimer();
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
     var url="";    
