@@ -1,8 +1,4 @@
 startApp();
-document.addEventListener("deviceready", onDeviceReady, true);
-function onDeviceReady() {
-  navigator.notification.alert('Prueba Mensaje', null, 'Alerta', 'Aceptar');
-} 
 function startApp() {      
       localStorage.domain = "http://buffetexpress.com.co/REST/";  
       localStorage.dimension = $(window).width();

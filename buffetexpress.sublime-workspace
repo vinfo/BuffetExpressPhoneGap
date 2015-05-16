@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"fade",
+				"fadeOut"
+			],
+			[
+				"fa",
+				"fadeOut"
+			],
+			[
+				"l",
+				"left"
+			],
+			[
+				"sopa",
+				"sopas"
+			],
+			[
 				"AL",
 				"alt	Attr"
 			],
@@ -188,10 +204,6 @@
 				"plato"
 			],
 			[
-				"fade",
-				"fadeIn"
-			],
-			[
 				"le",
 				"length"
 			],
@@ -206,10 +218,6 @@
 			[
 				"fon",
 				"font-weight"
-			],
-			[
-				"fa",
-				"fadeIn"
 			],
 			[
 				"font",
@@ -263,6 +271,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "www/js/main.js",
+			"settings":
+			{
+				"buffer_size": 60813,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -327,34 +343,43 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/plugins",
 		"/D/Movilidad/BuffetExpressPhoneGap/www",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
+		"/C/Users/odc/Downloads/AngularGap-945adcc640a2745d39a01d0dd8706fe3ceffc60a/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
+		"/C/Users/odc/Downloads/AngularGap-945adcc640a2745d39a01d0dd8706fe3ceffc60a/www/js/Controllers/NotificationsController.js",
+		"/C/Users/odc/Downloads/AngularGap-945adcc640a2745d39a01d0dd8706fe3ceffc60a/www/js/Services/NotificationService.js",
+		"/C/Users/odc/Downloads/AngularGap-945adcc640a2745d39a01d0dd8706fe3ceffc60a/www/spec.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
+		"/D/Movilidad/versionIconosBuffetExpressPhoneGap/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/images/fondoslide.jpg",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/cache.manifest",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/index.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
+		"/D/Movilidad/versionIconosBuffetExpressPhoneGap/templates/menu.html",
+		"/D/Movilidad/versionIconosBuffetExpressPhoneGap/css/style.css",
+		"/D/Movilidad/versionIconosBuffetExpressPhoneGap/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/org.apache.cordova.dialogs/doc/de/index.md",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/images/arroz_load.png",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
 		"/C/Users/odc/Downloads/BuffetExpressPhoneGap-54d757bed2927ff622cd05673ba5ebdd24d8f25d/BuffetExpressPhoneGap-54d757bed2927ff622cd05673ba5ebdd24d8f25d/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/Toast.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
 		"/D/wamp/www/certificarautomotores/modules/js/bills.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular.min.js",
 		"/D/wamp/www/realrisk_argos/composer.json",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/offline.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/index.css",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/aries-metro-style-admin-template/documentation/index.html",
 		"/D/wamp/www/realriskPhonegap/www/config.xml",
 		"/D/wamp/www/esevial/cea/modules/js/tramits.js",
@@ -450,17 +475,7 @@
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/scripts/controllers/many-polygons.js",
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/json/many_polygons.json",
 		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/scripts/controllers/issue-755-ng-router.js",
-		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/issue-755-ng-router.html",
-		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/scripts/controllers/issue-992-marker-disappear.js",
-		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/issue-992-marker-disappear.html",
-		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/scripts/controllers/search-box.js",
-		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/js/angular.min.js",
-		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/scripts/controllers/issue-621-owl.js",
-		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/issue-621-owl.html",
-		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/scripts/controllers/issue-1027-markers-clustering-ngif.js",
-		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/issue-484-markers-self.html",
-		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/assets/scripts/controllers/issue-484-markers-self.js",
-		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/example.html"
+		"/C/Mi Informacion/Programacion/Angular/angular-google-maps-master/example/issue-755-ng-router.html"
 	],
 	"find":
 	{
@@ -481,6 +496,30 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"mainController",
+			"fuera de",
+			"navigator.notification.alert",
+			"fuera de",
+			"setBackground",
+			"mainController",
+			"setBackground",
+			"fondo",
+			"fondo.png",
+			"fondoslide.png",
+			"fondo.png",
+			"fondoslide.png",
+			"mainController",
+			"loading",
+			"imgloading",
+			"mainController",
+			".icodeta .shop span",
+			"=\"+",
+			"#/",
+			"imgCat",
+			"mainController",
+			".icodeta .shop",
+			".icodeta .shop span",
+			"mainController",
 			"navigator.notification.alert",
 			"navigator.notification",
 			"mainController",
@@ -584,31 +623,7 @@
 			"class=\"btns\"",
 			".icodeta .shop",
 			".miscompras .comprasitem .icodeta .shop",
-			"window.plugins.toast.",
-			"loading_msg",
-			"loading",
-			"pagoController",
-			"position",
-			"marker",
-			"setinterval",
-			"interval",
-			"validateEmail(",
-			".costoad",
-			"html",
-			"guiaController",
-			"#present .owl-pagination",
-			"loading",
-			".facturavir .vrdirc .listdirecc li i",
-			"direcciones_frecuentes",
-			".facturavir .vrdirc .listdirecc li i",
-			".facturavir .vrdirc .listdirecc li",
-			"glyphicon-minus-sign",
-			"pagoController",
-			".setItem(\"zona\"",
-			"direcciones_frecuentes",
-			"referencia",
-			"pagoController",
-			"alert"
+			"window.plugins.toast."
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -616,6 +631,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"fondo.jpg",
 			" ",
 			"buffetexpress.com.co",
 			"http://maps.googleapis.",
@@ -661,8 +677,42 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "www/js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 60813,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 21659.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -751,7 +801,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 247.0,
+	"side_bar_width": 235.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
