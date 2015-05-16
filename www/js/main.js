@@ -103,10 +103,21 @@
   angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){
 	  setTimer();
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
-    $(".imgCat").click(function(){      
-      $(this).attr("src","images/"+this.alt+"_load.png");
+    var url="";    
+    $(".imgCat").click(function(){
+       if(this.id=="sopas")url="#categoria/ins/1/sopas y cremas";
+       if(this.id=="arroz")url="#categoria/ins/2/arroz";
+       if(this.id=="carnes")url="#categoria/ins/3/carnes";
+       if(this.id=="guarnicion")url="#categoria/ins/4/guarnición";
+       if(this.id=="bebidas")url="#categoria/ins/5/bebidas";
+       $("#imgloading").hide();
+       $("#imgloading").attr("src","images/"+this.id+"_load.png");
+       $("#imgloading").css({ width: this.width+'px',height: this.height+'px', top: $(this).offset().top+'px', left: $(this).offset().left+'px' });
+       $("#imgloading").show(500,function(){
+        window.location = "internal.html"+url; 
+       });
     });
-
+    
     if($routeParams.activity)localStorage.activity=$routeParams.activity;   
     var plato= 1;
     if(localStorage.plato)plato= parseInt(localStorage.plato);

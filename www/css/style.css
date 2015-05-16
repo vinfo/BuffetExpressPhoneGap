@@ -1928,6 +1928,10 @@ border: 0;
 	margin: 10px;
 	padding: 10px;
 }
+#imgloading{
+	position: absolute;
+	display: none;
+}
 input[type="radio"], input[type="checkbox"] {
   /* All browsers except webkit*/
   transform: scale("1.7");
