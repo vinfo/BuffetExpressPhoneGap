@@ -102,9 +102,7 @@
 
   angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency,NotificationService){
 	  setTimer();    
-    NotificationService.alert("You caused an alert.", "Alert", "Ok", function () {
-            $scope.message = "You clicked it!"
-    });
+    NotificationService.alert("Prueba", "Alerta", "Aceptar", null);
 
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
     var url="";    
@@ -1438,9 +1436,9 @@
       return {
           alert: function (message, title, buttonText, buttonAction) {
             if(navigator.notification){
-              navigator.notification.alert('Hola Navigator', null, 'Alerta', 'Aceptar');
+              navigator.notification.alert(message, null, title, buttonText);
             }else{
-              alert("Hola Normal");
+              alert(message);
             }            
           }
       }

@@ -109,7 +109,7 @@ function getDeviceProperty()
         lng1= position.coords.longitude;   
         var pos= {lat:lat1,lng:lng1};
         localStorage.setItem("position",JSON.stringify(pos));
-        window.location.href = 'test.html';
+        window.location.href = 'load.html';
     }
 
     // onError Callback receives a PositionError object
