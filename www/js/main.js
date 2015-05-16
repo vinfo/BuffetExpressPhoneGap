@@ -100,12 +100,12 @@
     $("#totalDish").html(Items.getNumDish());
   }); 
 
-  angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){
+  angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency,NotificationService){
 	  setTimer();    
-     document.addEventListener('deviceready', function() {
-      NotificationService.alert(" has been selected", "City Selector", "Ok", function () {
-      })
-     }, false);
+    NotificationService.alert("You caused an alert.", "Alert", "Ok", function () {
+            $scope.message = "You clicked it!"
+    });
+
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
     var url="";    
     $(".imgCat").click(function(){
@@ -1434,16 +1434,17 @@
     };
   });
 
-angularRoutingApp.factory("NotificationService", function () {
-    return {
-        alert: function (message, title, buttonText, buttonAction) {
-            navigator.notification.alert(message,
-                buttonAction,
-                title,
-                buttonText);
-        }
-    }
-});
+  angularRoutingApp.factory("NotificationService", function () {
+      return {
+          alert: function (message, title, buttonText, buttonAction) {
+            if(navigator.notification){
+              navigator.notification.alert('Hola Navigator', null, 'Alerta', 'Aceptar');
+            }else{
+              alert("Hola Normal");
+            }            
+          }
+      }
+  });
 
   angularRoutingApp.factory('Currency', function () {
     return {
