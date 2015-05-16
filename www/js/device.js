@@ -67,6 +67,7 @@ function checkConnection() {
     
     var page=getNameURLWeb();
     if(states[networkState]=='No network connection'){
+        //navigator.notification.beep(1);        
         if(page!="offline.html"){
             alert('Internet es requerido!');        
             window.location.href = 'offline.html';
@@ -107,7 +108,7 @@ function getDeviceProperty()
         lat1= position.coords.latitude;
         lng1= position.coords.longitude;   
         var pos= {lat:lat1,lng:lng1};
-        localStorage.setItem("position",JSON.stringify(pos));       
+        localStorage.setItem("position",JSON.stringify(pos));
         window.location.href = 'load.html';
     }
 
@@ -116,3 +117,6 @@ function getDeviceProperty()
     function onError(error) {
         alert('Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación\n');
     }
+function alertDismissed() {
+    // do something
+}

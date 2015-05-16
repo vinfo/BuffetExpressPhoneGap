@@ -1,6 +1,6 @@
 startApp();
 
-function startApp() {
+function startApp() {      
       localStorage.domain = "http://buffetexpress.com.co/REST/";  
       localStorage.dimension = $(window).width();
       localStorage.setItem("quadrant","");
@@ -93,6 +93,3 @@ function checkZona(id_zone,code,limits){
   }    
 	return exists;
 }
-      function alertDismissed() {
-          // do something
-      }

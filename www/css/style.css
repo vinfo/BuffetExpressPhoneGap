@@ -449,7 +449,6 @@ a.btn-reset{
 .menuplatolist
 {
 	margin-top: 39px;
-	margin-bottom: 69px;
 }
 .menuplatolist .col-md-12
 {
@@ -853,7 +852,7 @@ max-width:20%;*/
 }
 .miscompras .comprasitem  .icodeta .shop
 {
-	background: #fdb813;
+	background: #b11116;
 	width: 60%;
 	color: #FFFFFF;
 	padding-top:2px;
@@ -862,7 +861,7 @@ max-width:20%;*/
 .miscompras .comprasitem  .icodeta .shop span
 {
 	font-weight:bold;
-	color: #000;
+	color: #FFFFFF;
 }
 .miscompras .comprasitem  .icodeta .subtt span
 {
@@ -1928,10 +1927,6 @@ border: 0;
 	margin: 10px;
 	padding: 10px;
 }
-#imgloading{
-	position: absolute;
-	display: none;
-}
 input[type="radio"], input[type="checkbox"] {
   /* All browsers except webkit*/
   transform: scale("1.7");
@@ -2031,15 +2026,3 @@ input[type="radio"], input[type="checkbox"] {
 				width: 100%;
 			}
 		}
-		@media (max-width:460px) {
-			.menuplatolist .col-md-12 .contimg
-			{
-				min-height:220px;
-			}
-		}
-		@media (min-width:700px) {
-			.menuplatolist .col-md-12 .contimg
-			{
-				min-height:400px;
-			}
-		}		
