@@ -109,7 +109,7 @@ function getDeviceProperty()
         lng1= position.coords.longitude;   
         var pos= {lat:lat1,lng:lng1};
         localStorage.setItem("position",JSON.stringify(pos));
-        navigator.notification.alert('Prueba COmpleta', null, 'Alerta', 'Aceptar');
+        navigator.notification.alert('Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación\n', null, 'Alerta', 'Aceptar');
         //window.location.href = 'load.html';
     }
 
