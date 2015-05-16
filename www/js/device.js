@@ -109,7 +109,7 @@ function getDeviceProperty()
         lng1= position.coords.longitude;   
         var pos= {lat:lat1,lng:lng1};
         localStorage.setItem("position",JSON.stringify(pos));
-        navigator.notification.alert('Prueba', alertDismissed, 'Alerta', 'Aceptar');
+        navigator.notification.alert('Prueba COmpleta', null, 'Alerta', 'Aceptar');
         //window.location.href = 'load.html';
     }
 
@@ -121,6 +121,3 @@ function getDeviceProperty()
         localStorage.setItem("position",JSON.stringify(pos));
         window.location.href = 'load.html';
     }
-function alertDismissed() {
-    // do something
-}
