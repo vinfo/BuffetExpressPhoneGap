@@ -46,6 +46,8 @@
         screen.lockOrientation('portrait-primary');
         window.analytics.startTrackerWithId('UA-62739338-1');
         window.analytics.trackView('/index');
+        window.analytics.trackView('/internal');
+        window.analytics.trackView('/login');
         window.analytics.debugMode();//Debug   
     }
 };
