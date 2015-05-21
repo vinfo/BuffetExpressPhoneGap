@@ -12,7 +12,7 @@ if (navigator.geolocation) {
 	alert('Geolocation not supported');
 }
 
-fucntion detectGEO(){
+function detectGEO(){
   alert("GEO");
   navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 }
