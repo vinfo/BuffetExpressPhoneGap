@@ -44,7 +44,8 @@
         getDeviceProperty();
         navigator.splashscreen.hide(); 
         screen.lockOrientation('portrait-primary');
-        window.analytics.startTrackerWithId('UA-62739338-1');     
+        window.analytics.startTrackerWithId('UA-62739338-1');
+        window.analytics.debugMode();//Debug   
     }
 };
 
