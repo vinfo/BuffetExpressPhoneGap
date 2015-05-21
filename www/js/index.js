@@ -1,7 +1,7 @@
 app.initialize();
 
 var options = {
-  enableHighAccuracy: false,
+  enableHighAccuracy: true,
   timeout: 15000,
   maximumAge: 75000
 };
