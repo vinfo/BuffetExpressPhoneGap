@@ -7,9 +7,14 @@ var options = {
 };
 if (navigator.geolocation) {
 	alert("Detectar");
-	navigator.geolocation.getCurrentPosition(onSuccess, onError, options); 
+  document.addEventListener("deviceready", detectGEO, false);	 
 } else {
 	alert('Geolocation not supported');
+}
+
+fucntion detectGEO(){
+  alert("GEO");
+  navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 }
 
 // onSuccess Geolocation    //
