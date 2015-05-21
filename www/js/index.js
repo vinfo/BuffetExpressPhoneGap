@@ -32,8 +32,8 @@ function onSuccess(position) {
 
 // onError Callback receives a PositionError object    //
 function onError(error) {
-  alert('Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación');
-  var pos= {lat:6.250909,lng:-75.565608};
-  localStorage.setItem("position",JSON.stringify(pos));
-  window.location.href = 'load.html';
+  alert('Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación ó activa tu GPS.');
+  // var pos= {lat:6.250909,lng:-75.565608};
+  // localStorage.setItem("position",JSON.stringify(pos));
+  // window.location.href = 'load.html';
 }
