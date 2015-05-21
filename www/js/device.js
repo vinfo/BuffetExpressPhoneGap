@@ -17,6 +17,7 @@
  * under the License.
  */
  var networkStat;
+ var gaPlugin;
  
  var app = {
     // Application Constructor
@@ -43,6 +44,8 @@
         getDeviceProperty();
         navigator.splashscreen.hide(); 
         screen.lockOrientation('portrait-primary');
+        gaPlugin = window.plugins.gaPlugin;
+        gaPlugin.init(successHandler, errorHandler, "UA-62739338-1", 10);        
     }
 };
 
@@ -87,4 +90,10 @@ function getNameURLWeb(){
  var sPath = window.location.pathname;
  var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
  return sPage;
+}
+function successHandler(){
+    alert("Analitycs OK");
+}
+function errorHandler(){
+    alert("Analitycs Problem");
 }
