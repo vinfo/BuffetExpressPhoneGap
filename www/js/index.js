@@ -1,13 +1,20 @@
 app.initialize();
+
 var options = {
   enableHighAccuracy: true,
   timeout: 10000,
   maximumAge: 75000
 };
-navigator.geolocation.getCurrentPosition(onSuccess, onError, options); 
+if (navigator.geolocation) {
+	alert("Detectar");
+	navigator.geolocation.getCurrentPosition(onSuccess, onError, options); 
+} else {
+	alert('not supported');
+}
 
 // onSuccess Geolocation    //
 function onSuccess(position) {
+  alert("Ok");
   localStorage.removeItem("position");
   localStorage.removeItem("quadrant");
   localStorage.removeItem("valor_buffet");
@@ -25,7 +32,7 @@ function onSuccess(position) {
 
 // onError Callback receives a PositionError object    //
 function onError(error) {
-  navigator.notification.alert('Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación', null, 'Alerta', 'Aceptar');
+  alert('Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación');
   var pos= {lat:6.250909,lng:-75.565608};
   localStorage.setItem("position",JSON.stringify(pos));
   window.location.href = 'load.html';
