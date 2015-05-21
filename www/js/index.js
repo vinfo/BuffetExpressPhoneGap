@@ -1,8 +1,8 @@
 app.initialize();
 
 var options = {
-  enableHighAccuracy: true,
-  timeout: 10000,
+  enableHighAccuracy: false,
+  timeout: 15000,
   maximumAge: 75000
 };
 if (navigator.geolocation) {
