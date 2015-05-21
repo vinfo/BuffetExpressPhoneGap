@@ -1,0 +1,10 @@
+{
+    "com.adobe.plugins.GAPlugin": {
+        "source": {
+            "type": "local",
+            "path": "plugins\\com.adobe.plugins.GAPlugin"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}
