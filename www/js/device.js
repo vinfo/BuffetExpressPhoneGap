@@ -43,9 +43,7 @@
         checkConnection();
         getDeviceProperty();
         navigator.splashscreen.hide(); 
-        screen.lockOrientation('portrait-primary');
-        gaPlugin = window.plugins.gaPlugin;
-        gaPlugin.init(successHandler, errorHandler, "UA-62739338-1", 10);        
+        screen.lockOrientation('portrait-primary');       
     }
 };
 
