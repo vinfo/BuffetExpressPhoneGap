@@ -71,7 +71,6 @@
   });
 
   angularRoutingApp.controller('sliderController', function($scope,$location,Items) {   
-    window.analytics.trackView('SliderView');
     setTimer();	
     $("li").removeClass("active");
     $(".menupie ul li:nth-child(1)").addClass("active");
