@@ -271,6 +271,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/D/wamp/www/esevial/cea/plugins/fullcalendar/fullcalendar.js",
+			"settings":
+			{
+				"buffer_size": 310818,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -340,8 +348,9 @@
 	"file_history":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/C/Users/odc/Downloads/GAPlugin-master/GAPlugin-master/plugin.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
@@ -350,7 +359,6 @@
 		"/D/wamp/www/dyd/application/js/clientes.js",
 		"/C/Users/odc/Downloads/battatech_excelexport-master/battatech_excelexport-master/src/exampletable.html",
 		"/D/wamp/www/rolformados/docs/Plantilla-  Office_Structure_Site_Template/vinumo/css/style.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/test.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/cordova-2.2.0.js",
@@ -668,8 +676,40 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/D/wamp/www/esevial/cea/plugins/fullcalendar/fullcalendar.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 310818,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
