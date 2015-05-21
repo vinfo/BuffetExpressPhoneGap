@@ -6,20 +6,19 @@ var options = {
   maximumAge: 75000
 };
 if (navigator.geolocation) {
-	alert("Detectar");
+	//alert("Detectar");
   document.addEventListener("deviceready", detectGEO, false);	 
 } else {
 	alert('Geolocation not supported');
 }
 
 function detectGEO(){
-  alert("GEO");
+  //alert("GEO");
   navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 }
 
 // onSuccess Geolocation    //
 function onSuccess(position) {
-  alert("Ok");
   localStorage.removeItem("position");
   localStorage.removeItem("quadrant");
   localStorage.removeItem("valor_buffet");
@@ -32,14 +31,13 @@ function onSuccess(position) {
   lng1= position.coords.longitude;   
   var pos= {lat:lat1,lng:lng1};
   localStorage.setItem("position",JSON.stringify(pos));
-  alert(lat1);
   window.location.href = 'load.html';
 }
 
 // onError Callback receives a PositionError object    //
 function onError(error) {
   alert('Para utilizar esta APP debes permitir tu ubicación\nVe a Ajustes, selecciona la aplicación Buffet Express y permite el acceso a tu ubicación ó activa tu GPS.');
-  // var pos= {lat:6.250909,lng:-75.565608};
-  // localStorage.setItem("position",JSON.stringify(pos));
-  // window.location.href = 'load.html';
+  var pos= {lat:6.250909,lng:-75.565608};
+  localStorage.setItem("position",JSON.stringify(pos));
+  window.location.href = 'load.html';
 }
