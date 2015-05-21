@@ -9,7 +9,7 @@ if (navigator.geolocation) {
 	alert("Detectar");
 	navigator.geolocation.getCurrentPosition(onSuccess, onError, options); 
 } else {
-	alert('not supported');
+	alert('Geolocation not supported');
 }
 
 // onSuccess Geolocation    //
@@ -27,6 +27,7 @@ function onSuccess(position) {
   lng1= position.coords.longitude;   
   var pos= {lat:lat1,lng:lng1};
   localStorage.setItem("position",JSON.stringify(pos));
+  alert(lat1);
   window.location.href = 'load.html';
 }
 
