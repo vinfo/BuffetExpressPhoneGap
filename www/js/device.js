@@ -93,7 +93,9 @@ function getNameURLWeb(){
 }
 function successHandler(){
     alert("Analitycs OK");
+    return true
 }
 function errorHandler(){
     alert("Analitycs Problem");
+    return true;
 }
