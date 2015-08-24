@@ -2,10 +2,10 @@
 <widget xmlns= "http://www.w3.org/ns/widgets"
  xmlns:gap= "http://phonegap.com/ns/1.0"
  xmlns:android = "http://schemas.android.com/apk/res/android"
- id          = "com.vinfo.buffetexpressv2"
+ id          = "com.vinfo.buffetexpress"
  versionCode = "1"
- version     = "1.1.0"
- versionName = "1.1.0" >
+ version     = "1.1.4"
+ versionName = "1.1.4" >
 
  <name>Buffet Express</name>
  <description>
