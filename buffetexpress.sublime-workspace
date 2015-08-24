@@ -271,16 +271,6 @@
 	},
 	"buffers":
 	[
-		{
-			"contents": "Searching 216 files for \"GAP\" (case sensitive)\n\nD:\\Movilidad\\BuffetExpressPhoneGap\\cordova\\plugins\\fetch.json:\n    1  {\n    2:     \"com.adobe.plugins.GAPlugin\": {\n    3          \"source\": {\n    4              \"type\": \"local\",\n    5:             \"path\": \"plugins\\\\com.adobe.plugins.GAPlugin\"\n    6          },\n    7          \"is_top_level\": true,\n\nD:\\Movilidad\\BuffetExpressPhoneGap\\cordova\\plugins\\com.adobe.plugins.GAPlugin\\plugin.xml:\n    2  <plugin xmlns=\"http://www.phonegap.com/ns/plugins/1.0\"\n    3      xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    4:     id=\"com.adobe.plugins.GAPlugin\"\n    5      version=\"2.4.0\">\n    6  \n    7:     <name>GAPlugin</name>\n    8    <author>Bob Easterday</author>\n    9  \n   ..\n   14    <license>MIT</license>\n   15  \n   16:   <js-module src=\"www/GAPlugin.js\" name=\"GAPlugin\">\n   17:       <clobbers target=\"GAPlugin\" />\n   18    </js-module>\n   19  \n   ..\n   24      <platform name=\"android\">\n   25          <config-file target=\"res/xml/config.xml\" parent=\"/*\">\n   26:       <feature name=\"GAPlugin\" >\n   27:         <param name=\"android-package\" value=\"com.adobe.plugins.GAPlugin\"/>\n   28        </feature>\n   29          </config-file>\n   30  \n   31:         <source-file src=\"src/android/GAPlugin.java\"\n   32                  target-dir=\"src/com/adobe/plugins\" />\n   33          <source-file src=\"src/android/libGoogleAnalyticsV2.jar\"\n   ..\n   37      <platform name=\"ios\">\n   38          <config-file target=\"config.xml\" parent=\"/*\">\n   39:           <feature name=\"GAPlugin\">\n   40:             <param name=\"ios-package\" value=\"GAPlugin\"/>\n   41            </feature>\n   42          </config-file>\n   43  \n   44:         <source-file src=\"src/ios/GAPlugin.m\" />\n   45          <source-file src=\"src/ios/libGoogleAnalyticsServices.a\" framework=\"true\" />\n   46  \n   ..\n   51          <header-file src=\"src/ios/GAITrackedViewController.h\" />\n   52          <header-file src=\"src/ios/GAITracker.h\" />\n   53:         <header-file src=\"src/ios/GAPlugin.h\" />\n   54  \n   55          <framework src=\"libsqlite3.dylib\" />\n\nD:\\Movilidad\\BuffetExpressPhoneGap\\cordova\\plugins\\com.adobe.plugins.GAPlugin\\README.md:\n    1: # GAPlugin\n    2  \n    3  > Google Analytics plugin for iOS and Android. This allows you to post usage information to your Google Analytics account.\n    .\n   12  Add the following feature tag in your config.xml\n   13  \n   14: 	<feature name=\"GAPlugin\" >\n   15: 		< param name=\"android-package\" value=\"com.adobe.plugins.GAPlugin\"/>\n   16  	</feature>\n   17  \n   ..\n   92  ####Important:\n   93  Variable values are assigned to what Google calls Custom Dimensions in the dashboard. Prior to calling setVariable() in your client for a particular index, you need to create a slot in the GA dashboard. When you do so, you will be able to assign a name for the dimension, its index, and its scope. More info on creating Custom Dimensions can be found [here](https://support.google.com/analytics/answer/2709829?hl=en&ref_topic=2709827).	\n   94: The next event or page view you send after setVariable will contain your variable at Custom Dimension specified by the index value you passed in the setVariable call. This [Example](https://github.com/phonegap-build/GAPlugin/blob/master/Example/index.html) app shows how you might use that next event to specify a label for the variable you just set.\n   95  	\n   96  In addition to events and variables, you can also log page visits with trackPage(). Unlike variables, however, page hits do not require a subsequent call to trackEvent() as they are considered unique events in and of themselves.\n   ..\n  119  ## More Info\n  120  	\n  121: GAPlugin includes libraries from Google Analytics SDK for iOS and for Android.\n  122  Use of those libraries is subject to [Google Analytics Terms of Service](http://www.google.com/analytics/terms/us.html)\n  123  	\n\nD:\\Movilidad\\BuffetExpressPhoneGap\\cordova\\plugins\\com.adobe.plugins.GAPlugin\\src\\android\\GAPlugin.java:\n    9  import com.google.analytics.tracking.android.Tracker;\n   10  \n   11: public class GAPlugin extends CordovaPlugin {\n   12  	@Override\n   13  	public boolean execute(String action, JSONArray args, CallbackContext callback) {\n\nD:\\Movilidad\\BuffetExpressPhoneGap\\cordova\\plugins\\com.adobe.plugins.GAPlugin\\src\\ios\\GAPlugin.h:\n    1  //\n    2: //  GAPlugin.h\n    3  //  GoSocial\n    4  //\n    .\n   10  #import \"GAI.h\"\n   11  \n   12: @interface GAPlugin : CDVPlugin\n   13  {\n   14      BOOL    inited;\n\nD:\\Movilidad\\BuffetExpressPhoneGap\\cordova\\plugins\\com.adobe.plugins.GAPlugin\\src\\ios\\GAPlugin.m:\n    1: #import \"GAPlugin.h\"\n    2  #import \"AppDelegate.h\"\n    3  #import \"GAIDictionaryBuilder.h\"\n    4  #import \"GAIFields.h\"\n    5  \n    6: @implementation GAPlugin\n    7  \n    8  - (void) initGA:(CDVInvokedUrlCommand*)command\n\nD:\\Movilidad\\BuffetExpressPhoneGap\\cordova\\plugins\\com.adobe.plugins.GAPlugin\\www\\GAPlugin.js:\n    2      var cordovaRef = window.PhoneGap || window.cordova || window.Cordova;\n    3  \n    4:     function GAPlugin() { }\n    5  \n    6      // initialize google analytics with an account ID and the min number of seconds between posting\n    .\n    8      // id = the GA account ID of the form 'UA-00000000-0'\n    9      // period = the minimum interval for transmitting tracking events if any exist in the queue\n   10:     GAPlugin.prototype.init = function(success, fail, id, period) {\n   11:         return cordovaRef.exec(success, fail, 'GAPlugin', 'initGA', [id, period]);\n   12      };\n   13  \n   ..\n   18      // eventLabel = The event label. This parameter may be a blank string to indicate no label.\n   19      // eventValue = The event value. This parameter may be -1 to indicate no value.\n   20:     GAPlugin.prototype.trackEvent = function(success, fail, category, eventAction, eventLabel, eventValue) {\n   21:         return cordovaRef.exec(success, fail, 'GAPlugin', 'trackEvent', [category, eventAction, eventLabel, eventValue]);\n   22      };\n   23  \n   ..\n   26      //\n   27      // pageURL = the URL of the page view\n   28:     GAPlugin.prototype.trackPage = function(success, fail, pageURL) {\n   29:         return cordovaRef.exec(success, fail, 'GAPlugin', 'trackPage', [pageURL]);\n   30      };\n   31  \n   ..\n   37      // index = the numerical index of the dimension to which this variable will be assigned (1 - 20)\n   38      //  Standard accounts support up to 20 custom dimensions.\n   39:     GAPlugin.prototype.setVariable = function(success, fail, index, value) {\n   40:         return cordovaRef.exec(success, fail, 'GAPlugin', 'setVariable', [index, value]);\n   41      };\n   42      \n   43:     GAPlugin.prototype.exit = function(success, fail) {\n   44:         return cordovaRef.exec(success, fail, 'GAPlugin', 'exitGA', []);\n   45      };\n   46   \n   ..\n   57          }\n   58          if(!window.plugins.gaPlugin) {\n   59:             window.plugins.gaPlugin = new GAPlugin();\n   60          }\n   61      }\n   62  \n   63      if (typeof module != 'undefined' && module.exports) {\n   64:         module.exports = new GAPlugin();\n   65      }\n   66  })(); /* End of Temporary Scope. */\n\n37 matches across 7 files\n",
-			"settings":
-			{
-				"buffer_size": 7142,
-				"line_ending": "Windows",
-				"name": "Find Results",
-				"scratch": true
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -345,14 +335,32 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/cordova"
+		"/D/Movilidad/BuffetExpressPhoneGap/platforms"
 	],
 	"file_history":
 	[
+		"/C/wamp/www/certificarautomotores/modules/js/certifieds.js",
+		"/C/wamp/www/certificarautomotores/modules/js/tramits.js",
+		"/C/wamp/www/bluehotels/insetur.com/admin/modules/js/reserves.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/nodejs/workshop/learnyounode/httpclient.js",
+		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/aries-metro-style-admin-template/HTML/validation.html",
+		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/Dandelion/grids.html",
+		"/D/nodejs/workshop/learnyounode/readfileasync.js",
+		"/D/nodejs/workshop/learnyounode/getmodule.js",
+		"/D/nodejs/workshop/learnyounode/readfolder.js",
+		"/D/nodejs/workshop/learnyounode/module.js",
+		"/C/Users/odc/Desktop/Nueva carpeta/archivo3.js",
+		"/D/nodejs/workshop/learnyounode/readfilesync.js",
+		"/D/nodejs/workshop/learnyounode/readfile.js",
+		"/D/nodejs/workshop/learnyounode/readfile.txt",
+		"/C/Users/odc/Desktop/Nueva carpeta/archivo.js",
+		"/C/Users/odc/Desktop/Nueva carpeta/sumas.js",
+		"/D/nodejs/workshop/learnyounode/sum.js",
+		"/C/wamp/www/esevial/cea/plugins/fullcalendar/demos/agenda-views.html",
+		"/C/wamp/www/bluehotels/admin/plugins/fullcalendar/demos/json/events.json",
 		"/D/Movilidad/BuffetExpressPhoneGap/cordova/plugins/fetch.json",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/fetch.json",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/cordova-plugin-google-analytics/plugin.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/cordova-plugin-google-analytics/README.md",
@@ -458,26 +466,7 @@
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/js/datatables_init.js",
 		"/D/wamp/www/esevial/cea/modules/js/services.js",
 		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/red_socials.html",
-		"/D/Movilidad/BuffetExpressMensajero/www/js/maplace-0.1.3.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/leaflet.css",
-		"/D/Movilidad/BuffetExpressMensajero/www/js/index.js",
-		"/D/Movilidad/BuffetExpressMensajero/www/js/internal.js",
-		"/D/Movilidad/BuffetExpressMensajero/www/js/login.js",
-		"/D/Movilidad/BuffetExpressMensajero/www/templates/ordenes.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/offline.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/temp.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/temp.html",
-		"/D/wamp/www/buffetexpress/codeigniter/resources/js/functions2.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/felicitaciones.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/owl-carousel/owl.carousel.min.js",
-		"/D/wamp/www/buffetexpress/docs/Humberto/buffet/nosotros.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/terminos.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/nosotros.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/index.js"
+		"/D/Movilidad/BuffetExpressMensajero/www/js/maplace-0.1.3.js"
 	],
 	"find":
 	{
@@ -498,6 +487,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"Cocina",
+			"Tienda",
 			"GAP",
 			"setItem(\"position",
 			"Ha superado",
@@ -623,9 +614,7 @@
 			"createMarker",
 			"setMap",
 			"mapaController",
-			"clea",
-			"clear",
-			"es el primer restaurante"
+			"clea"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -679,200 +668,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7142,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										150,
-										153
-									],
-									[
-										281,
-										284
-									],
-									[
-										602,
-										605
-									],
-									[
-										665,
-										668
-									],
-									[
-										804,
-										807
-									],
-									[
-										823,
-										826
-									],
-									[
-										865,
-										868
-									],
-									[
-										1048,
-										1051
-									],
-									[
-										1130,
-										1133
-									],
-									[
-										1249,
-										1252
-									],
-									[
-										1528,
-										1531
-									],
-									[
-										1591,
-										1594
-									],
-									[
-										1710,
-										1713
-									],
-									[
-										2001,
-										2004
-									],
-									[
-										2175,
-										2178
-									],
-									[
-										2415,
-										2418
-									],
-									[
-										2492,
-										2495
-									],
-									[
-										3226,
-										3229
-									],
-									[
-										3648,
-										3651
-									],
-									[
-										4058,
-										4061
-									],
-									[
-										4319,
-										4322
-									],
-									[
-										4415,
-										4418
-									],
-									[
-										4587,
-										4590
-									],
-									[
-										4730,
-										4733
-									],
-									[
-										5006,
-										5009
-									],
-									[
-										5321,
-										5324
-									],
-									[
-										5439,
-										5442
-									],
-									[
-										5708,
-										5711
-									],
-									[
-										5867,
-										5870
-									],
-									[
-										6044,
-										6047
-									],
-									[
-										6164,
-										6167
-									],
-									[
-										6416,
-										6419
-									],
-									[
-										6543,
-										6546
-									],
-									[
-										6623,
-										6626
-									],
-									[
-										6729,
-										6732
-									],
-									[
-										6896,
-										6899
-									],
-									[
-										7047,
-										7050
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"incomplete_sync": null,
-							"line_numbers": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -961,7 +758,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 370.0,
+	"side_bar_width": 246.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
