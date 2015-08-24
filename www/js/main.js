@@ -72,7 +72,6 @@
 
   angularRoutingApp.controller('sliderController', function($scope,$location,Items) {   
     setTimer();
-  alert($location.path());
   if($location.path()=="/")checkOpenZone(); 
     $("li").removeClass("active");
     $(".menupie ul li:nth-child(1)").addClass("active");
