@@ -335,14 +335,18 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/platforms"
+		"/D/Movilidad/BuffetExpressPhoneGap/platforms",
+		"/D/Movilidad/BuffetExpressPhoneGap/www"
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/C/wamp/www/certificarautomotores/modules/js/certifieds.js",
 		"/C/wamp/www/certificarautomotores/modules/js/tramits.js",
 		"/C/wamp/www/bluehotels/insetur.com/admin/modules/js/reserves.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/nodejs/workshop/learnyounode/httpclient.js",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/aries-metro-style-admin-template/HTML/validation.html",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/Dandelion/grids.html",
@@ -375,12 +379,9 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/cordova-plugin-google-analytics/ios/GAITracker.h",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/cordova-plugin-google-analytics/ios/UniversalAnalyticsPlugin.m",
 		"/D/wamp/www/esevial/cea/plugins/fullcalendar/fullcalendar.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/C/Users/odc/Downloads/GAPlugin-master/GAPlugin-master/plugin.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/cordova.js",
 		"/D/wamp/www/dyd/application/js/clientes.js",
 		"/C/Users/odc/Downloads/battatech_excelexport-master/battatech_excelexport-master/src/exampletable.html",
@@ -470,11 +471,11 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
-		"height": 90.0,
+		"height": 93.0,
 		"where_history":
 		[
 			"",
@@ -487,6 +488,11 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"com.vinfo.buffetexpress",
+			"$scope.SendPay",
+			"sliderController",
+			"$scope.SendPay ",
+			"Para utilizar esta APP",
 			"Cocina",
 			"Tienda",
 			"GAP",
@@ -609,12 +615,7 @@
 			"\"auto-hide-splash-screen\"",
 			"\"show-splash-screen-spinner\"",
 			"name=\"orientation\"",
-			"feature",
-			"markers",
-			"createMarker",
-			"setMap",
-			"mapaController",
-			"clea"
+			"feature"
 		],
 		"highlight": false,
 		"in_selection": false,
