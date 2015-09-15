@@ -999,7 +999,7 @@
       if(Gtotal>0){       
         if(!localStorage.getItem("cuenta")){
           $(".div_loading").fadeOut();
-          alert("Debe estar logueado para terminar el pedido.");
+          alert("Para poder darle click a enviar tu orden debes registrar tus datos.");
           localStorage.setItem("orden","Pendiente");
           localStorage.setItem("bono",bono);
       localStorage.setItem("direccion",direccion);
