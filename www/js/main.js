@@ -999,7 +999,7 @@
       if(Gtotal>0){       
         if(!localStorage.getItem("cuenta")){
           $(".div_loading").fadeOut();
-          alert("Para poder darle click a enviar tu orden debes registrar tus datos.");
+          alert("Para poder darle click a enviar tu orden debes registrar tus datos o iniciar tu sesión.");
           localStorage.setItem("orden","Pendiente");
           localStorage.setItem("bono",bono);
       localStorage.setItem("direccion",direccion);
