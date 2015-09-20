@@ -341,13 +341,18 @@
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-route.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/C/wamp/www/cercolamb/admin/application/js/usuarios.js",
 		"/C/wamp/www/agendar/plugins/fullcalendar/fullcalendar.min.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/C/wamp/www/certificarautomotores/modules/js/certifieds.js",
 		"/C/wamp/www/certificarautomotores/modules/js/tramits.js",
 		"/C/wamp/www/bluehotels/insetur.com/admin/modules/js/reserves.js",
@@ -383,7 +388,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/cordova-plugin-google-analytics/ios/UniversalAnalyticsPlugin.m",
 		"/D/wamp/www/esevial/cea/plugins/fullcalendar/fullcalendar.js",
 		"/C/Users/odc/Downloads/GAPlugin-master/GAPlugin-master/plugin.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/cordova.js",
 		"/D/wamp/www/dyd/application/js/clientes.js",
@@ -392,7 +396,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/test.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/cordova-2.2.0.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/Notification/www/js/index.js",
 		"/D/Movilidad/Notification/www/index.html",
 		"/D/Movilidad/Notification/www/js/app.js",
@@ -409,7 +412,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/cache.manifest",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/index.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
 		"/D/Movilidad/versionIconosBuffetExpressPhoneGap/templates/menu.html",
 		"/D/Movilidad/versionIconosBuffetExpressPhoneGap/css/style.css",
 		"/D/Movilidad/versionIconosBuffetExpressPhoneGap/js/main.js",
@@ -461,18 +463,16 @@
 		"/C/Users/odc/Desktop/D&D.html",
 		"/C/Users/odc/Desktop/Gloria Arango.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/politicas.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
 		"/C/Users/odc/AppData/Local/Temp/Ftp buffetex@buffetexpress.co.xml",
 		"/D/wamp/www/buffetexpress/codeigniter/resources/js/functions.js",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/form_plugins.html",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/form_elements.html",
-		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/js/datatables_init.js",
-		"/D/wamp/www/esevial/cea/modules/js/services.js"
+		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/DulceAdmin/HTML/js/datatables_init.js"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 36.0
 	},
 	"find_in_files":
 	{
@@ -489,6 +489,14 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"Para poder",
+			"alert(",
+			"Para poder",
+			"registrad",
+			"exitosamente",
+			"Datos registrados",
+			"Datos registrados ",
+			"Debe estar logu",
 			"62739338",
 			"google",
 			"com.vinfo.buffetexpress",
@@ -608,15 +616,7 @@
 			"960001",
 			".menusup",
 			"           gap:platform=\"ios\"        ",
-			"name=\"android\"",
-			"name=\"android\">",
-			"statusbar",
-			"ios-statusbarstyle",
-			"prerendered-icon",
-			"target-device",
-			"webviewbounce",
-			"\"auto-hide-splash-screen\"",
-			"\"show-splash-screen-spinner\""
+			"name=\"android\""
 		],
 		"highlight": false,
 		"in_selection": false,
