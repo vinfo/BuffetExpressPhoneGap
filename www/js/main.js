@@ -108,6 +108,8 @@
   angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency){
   setTimer();
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
+  $("li").removeClass("active");
+  $(".menupie ul li:nth-child(1)").addClass("active");  
     if($routeParams.activity)localStorage.activity=$routeParams.activity;   
     var plato= 1;
     if(localStorage.plato)plato= parseInt(localStorage.plato);
