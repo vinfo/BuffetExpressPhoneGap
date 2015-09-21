@@ -350,8 +350,8 @@ a.btn-reset{
 }
 .menupie ul li a img
 {
-    max-width: 77px;
-    width: 60%;
+	width: 100%;
+	max-width: 77px;
 }
 .menupie ul li.carrito a img
 {
@@ -1999,7 +1999,7 @@ input[type="radio"], input[type="checkbox"] {
 			}
 			.menupie ul li:nth-child(4) a img
 			{
-				width: 51%;
+				width: 60%;
 			}
 			.menupie ul li.carrito a img
 			{

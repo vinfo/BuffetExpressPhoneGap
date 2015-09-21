@@ -43,8 +43,7 @@ function onError(error) {
   localStorage.removeItem("valor_recomendado");
   localStorage.removeItem("zonas");
   localStorage.removeItem("MsgZone"); 
-  localStorage.removeItem("timer");
-  localStorage.removeItem("orden");
+  localStorage.removeItem("timer");  
   alert('Tu GPS está inhabilitado\nVe a "Configuración" > "Privacidad" > "Servicios de ubicación"´para conceder acceso.\nSi continua el error revisa la velocidad de tu conexión de datos.');
   var pos= {lat:6.267791,lng:-75.581744};
   localStorage.setItem("position",JSON.stringify(pos));
