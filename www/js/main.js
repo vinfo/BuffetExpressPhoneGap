@@ -10,8 +10,8 @@
   angularRoutingApp.config(function($routeProvider) {
     $routeProvider
     .when('/', {
-      templateUrl : 'templates/slider.html',
-      controller  : 'sliderController'
+      templateUrl : 'templates/menu.html',
+      controller  : 'mainController'
     })
     .when('/menu', {
       templateUrl : 'templates/menu.html',
