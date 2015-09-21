@@ -350,8 +350,8 @@ a.btn-reset{
 }
 .menupie ul li a img
 {
-	width: 100%;
-	max-width: 77px;
+    max-width: 77px;
+    width: 60%;
 }
 .menupie ul li.carrito a img
 {
