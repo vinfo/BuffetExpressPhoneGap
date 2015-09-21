@@ -271,6 +271,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "www/js/main.js",
+			"settings":
+			{
+				"buffer_size": 62279,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/templates/pago.html",
+			"settings":
+			{
+				"buffer_size": 6056,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -337,7 +353,7 @@
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms",
 		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates"
 	],
 	"file_history":
 	[
@@ -489,6 +505,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"$scope.SendPay",
+			"comprasController",
 			"Para poder",
 			"alert(",
 			"Para poder",
@@ -614,9 +632,7 @@
 			".menupie ul li.carrito span",
 			"menupie",
 			"960001",
-			".menusup",
-			"           gap:platform=\"ios\"        ",
-			"name=\"android\""
+			".menusup"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -670,8 +686,71 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "www/js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 62279,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12924,
+								12924
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 6983.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "www/templates/pago.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6056,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3551,
+								3551
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1040.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

@@ -59,13 +59,15 @@
 <div class="vrdirc register">
             <label>Datos de registro</label>            
             <input type="text" class="form-control" id="name" maxlength="35" placeholder="Nombre" />
-            <input id="lastname" name="lastname" type="hidden" value="213" />
-            <input type="text" class="form-control" id="cellPhone" maxlength="15" placeholder="Num. Celular" />
+            <input id="lastname" name="lastname" type="hidden" value="" />
+            <input id="password" name="password" type="hidden" value=""/>
+            <input id="password2" name="password2" type="hidden" value="" />            
+            <input type="text" class="form-control" id="cellPhone" maxlength="15" placeholder="Celular (Contraseña temporal)"/>
             <input type="email" class="form-control" id="email" maxlength="45" placeholder="Correo electrónico" />
             <div style="float:left; width:30px;">
             <input id="chk_terminos" name="chk_terminos" type="checkbox" value="1" checked="checked" /></div>
-            <div style="float:left;"><a href="login.html#/terminos">Terminos</a> y <a href="login.html#/politicas">Politicas de Privacidad</a> </div>
-        </div>        
+            <div style="float:left;"><a href="login.html#/terminos">Términos</a> y <a href="login.html#/politicas">Políticas de Privacidad</a> </div>
+        </div>       
         <div class="vrdirc">
             <label>Datos de envío</label>
             <input id="direccion" name="direccion" value="" ng-model="direccion" type="text" placeholder="Dirección" maxlength="100" class="address">
