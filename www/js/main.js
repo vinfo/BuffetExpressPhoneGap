@@ -1037,25 +1037,34 @@
           
           if(!localStorage.getItem("cuenta")){
             localStorage.setItem("pedido",true);
-            if($("#name").val()!="" && $("#cellPhone").val()!="" && $("#email").val()!=""){
+            if($("#name").val()!="" && $("#cellPhone").val()!="" && $("#email").val()!="" && $("#direccion").val()!=""){
+             flag=false;
              nombre_cliente=$("#name").val();
              $scope.nombre_cliente= nombre_cliente;                      
              var data= ajaxrest.getUser("email="+$("#email").val()+"&token="+localStorage.token);
              if(!data){
-               ajaxrest.setAccount('add',82);
-               var data1= ajaxrest.getUser("email="+$("#email").val()+"&token="+localStorage.token);
-               var array= JSON.parse(JSON.stringify(data1));
-               var final= JSON.parse(array);
-               localStorage.cuenta = JSON.stringify(final[0]);               
-               flag=true;
+               var create= ajaxrest.setAccount('add',82);
+               if(create){               
+                 var data1= ajaxrest.getUser("email="+$("#email").val()+"&token="+localStorage.token);
+                 var array= JSON.parse(JSON.stringify(data1));
+                 var final= JSON.parse(array);
+                 localStorage.cuenta = JSON.stringify(final[0]);               
+                 flag=true;
+               }
              }else{
-               var array= JSON.parse(JSON.stringify(data));
-               var final= JSON.parse(array);
-               localStorage.cuenta = JSON.stringify(final[0]);             
-               flag=true;
+               if($('#chk_terminos').prop('checked')){
+                 var array= JSON.parse(JSON.stringify(data));
+                 var final= JSON.parse(array);
+                 localStorage.cuenta = JSON.stringify(final[0]);             
+                 flag=true;
+               }else{
+                 alert("Debe aceptar los términos y condiciones!");
+                 flag=false;
+               }
              }             
             }else{
               alert("Campos de registro son requeridos");
+              flag=false;
               $('.container').animate({
               scrollTop: $("#topmobil").offset().top
               }, 5);
