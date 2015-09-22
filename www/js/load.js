@@ -46,11 +46,11 @@ function sortByDist(a, b) {
 }
 
 function redirect(){
-    if(!localStorage.show_guia){
-      window.location = "internal.html#/guia";
-    }else{
+    // if(!localStorage.show_guia){
+    //   window.location = "internal.html#/guia";
+    // }else{
      window.location.href = 'internal.html';
-   }  
+   // }  
 }
 
 function getZones(){
