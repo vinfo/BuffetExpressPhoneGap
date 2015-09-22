@@ -1002,7 +1002,8 @@
       $(".sombra,.formpago").css("display","inline");
     },
     $scope.SendPay = function () {
-    /*Start cierre tienda*/    
+    /*Start cierre tienda*/
+    alert("Procesando");
     var cierre= localStorage.getItem("status");
     checkOpenZone();
       if(cierre!="cerrada"){
@@ -1180,7 +1181,7 @@
     }
     /*End cierre tienda */
   });
-  
+
   angularRoutingApp.controller('nosotrosController', function($scope) {
   setTimer();   
     setBackground("","white");
