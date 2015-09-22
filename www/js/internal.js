@@ -21,8 +21,11 @@ if (window.jQuery) {
             //window.history.back();
             var url= window.location.href.split('#/');
             var data= url[1].split("/");
+            if(localStorage.cuenta){
+              $(".mi_cuenta").attr("href","internal.html#/mi_cuenta");
+            }            
 
-            var redir="internal.html#/slider";          
+            var redir="internal.html#/menu";          
             if(data[1]=="ins")redir= "internal.html#/menu";
             if(data[1]=="edit")redir= "internal.html#/compras";
             if(url[1]=="pago#topmobil")redir= "internal.html#/compras";

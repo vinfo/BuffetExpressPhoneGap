@@ -153,7 +153,7 @@
     }
 
     if(localStorage.cuenta){
-      $scope.mi_cuenta="#mi_cuenta";
+      $scope.mi_cuenta="internal.html#/mi_cuenta";
     }else{
       $scope.mi_cuenta="login.html";
     }   
@@ -719,7 +719,7 @@
   setTimer();
   setBackground("","white");
     if(localStorage.cuenta){
-      $scope.mi_cuenta="#mi_cuenta";
+      $scope.mi_cuenta="internal.html#/mi_cuenta";
     }else{
       $scope.mi_cuenta="login.html";
     }
