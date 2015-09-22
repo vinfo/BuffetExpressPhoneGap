@@ -272,10 +272,10 @@
 	"buffers":
 	[
 		{
-			"file": "www/config.xml",
+			"file": "www/js/index.js",
 			"settings":
 			{
-				"buffer_size": 6785,
+				"buffer_size": 1720,
 				"line_ending": "Unix"
 			}
 		}
@@ -345,10 +345,12 @@
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms",
 		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/ayuda.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
@@ -360,8 +362,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-route.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
@@ -683,11 +683,11 @@
 			[
 				{
 					"buffer": 0,
-					"file": "www/config.xml",
+					"file": "www/js/index.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6785,
+						"buffer_size": 1720,
 						"regions":
 						{
 						},
@@ -700,10 +700,15 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/XML/XML.tmLanguage"
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 439.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

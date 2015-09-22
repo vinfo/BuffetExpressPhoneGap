@@ -26,7 +26,8 @@ function onSuccess(position) {
   localStorage.removeItem("valor_recomendado");
   localStorage.removeItem("zonas");
   localStorage.removeItem("MsgZone"); 
-  localStorage.removeItem("timer");        
+  localStorage.removeItem("timer");
+  localStorage.removeItem("pedido");       
   lat1= position.coords.latitude;
   lng1= position.coords.longitude;   
   var pos= {lat:lat1,lng:lng1};
