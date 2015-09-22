@@ -1003,7 +1003,6 @@
     },
     $scope.SendPay = function () {
     /*Start cierre tienda*/
-    alert("Procesando");
     var cierre= localStorage.getItem("status");
     checkOpenZone();
       if(cierre!="cerrada"){
