@@ -362,12 +362,11 @@
   setTimer();
   setBackground("fondo","");
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
+    $("li").removeClass("active");
+    $(".menupie ul li:nth-child(2)").addClass("active");    
     
     var dishes=[];
     setDisplayMenu();
-
-    $("li").removeClass("active");
-    $(".menupie ul li:nth-child(3)").addClass("active");
 
     for(var j=0;j<localStorage.length;j++){
       var item= localStorage.key(j);
@@ -720,6 +719,9 @@
   angularRoutingApp.controller('pagoController', function($scope,Items,Currency) {   
   setTimer();
   setBackground("","white");
+  $(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
+  $("li").removeClass("active");
+  $(".menupie ul li:nth-child(2)").addClass("active");  
     if(localStorage.cuenta){
       $scope.mi_cuenta="internal.html#/mi_cuenta";
     }else{
@@ -735,7 +737,6 @@
     alert("Lo sentimos la tienda esta cerrada en estos momentos.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.");
   }   
   
-  $(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
   var id_cliente="";
   var nombre_cliente="";
   var cellPhone="";
