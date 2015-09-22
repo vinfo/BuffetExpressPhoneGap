@@ -715,7 +715,7 @@
     $(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});      
   }); 
 
-    angularRoutingApp.controller('pagoController', function($scope,Items,Currency) {   
+  angularRoutingApp.controller('pagoController', function($scope,Items,Currency) {   
   setTimer();
   setBackground("","white");
     if(localStorage.cuenta){
