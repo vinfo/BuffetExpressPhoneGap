@@ -109,6 +109,8 @@
     setTimer(); 
 
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
+    $("li").removeClass("active");
+    $(".menupie ul li:nth-child(1)").addClass("active");
     var url="";    
     $(".imgCat").click(function(){
        $("#imgloading").hide();
@@ -346,7 +348,7 @@
         if(Items.getNumDish()>0)dish=Items.getNumDish();
         localStorage.plato=dish;
         $("li").removeClass("active");
-        $(".menupie ul li:nth-child(2)").addClass("active");
+        $(".menupie ul li:nth-child(1)").addClass("active");
       },
       $scope.goTo = function (page) {
         $location.path(page);
@@ -1191,6 +1193,16 @@
     $scope.info_nosotros= nosotros[0].contenido_matrix;
   }); 
 
+  angularRoutingApp.controller('ayudaController', function($scope) {
+  setTimer();   
+    setBackground("","white");
+    $("li").removeClass("active");
+    $(".menupie ul li:nth-child(4)").addClass("active");  
+    var ayuda = ajaxrest.getContent("id=1322&token="+localStorage.token);
+    $scope.titulo= ayuda[0].nombre_matrix;
+    $scope.info_nosotros= ayuda[0].contenido_matrix;
+  });   
+
   angularRoutingApp.controller('felicitacionesController', function($scope) {
   setTimer();   
     setBackground("fondo","");  
@@ -1239,7 +1251,7 @@
   angularRoutingApp.controller("mapaController", ["$scope", function ($scope) {
     setTimer();
   $("li").removeClass("active");
-    $(".menupie ul li:nth-child(4)").addClass("active");
+    $(".menupie ul li:nth-child(3)").addClass("active");
     $scope.minutes="N/A";
     $(".txt_mapa").html("Min. para tu entrega");
     if(localStorage.position){
