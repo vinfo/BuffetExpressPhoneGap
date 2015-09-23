@@ -1216,9 +1216,9 @@
     setBackground("","white");
     $("li").removeClass("active");
     $(".menupie ul li:nth-child(4)").addClass("active");  
-    var ayuda = ajaxrest.getContent("id=1322&token="+localStorage.token);
+    var ayuda = ajaxrest.getContent("id=1360&token="+localStorage.token);
     $scope.titulo= ayuda[0].nombre_matrix;
-    $scope.info_nosotros= ayuda[0].contenido_matrix;
+    $scope.info_ayuda= ayuda[0].contenido_matrix;
   });   
 
   angularRoutingApp.controller('felicitacionesController', function($scope) {
