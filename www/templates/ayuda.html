@@ -25,8 +25,10 @@
 </div>
 <script>
 $(document).ready(function(){
-	$('body').on('click', '#accordion h3', function() {
+	$('body').on('click', '#accordion h3', function(event) {
+		event.preventDefault();
 		$(this).next('div').slideToggle();
+		return false;
 	});	
 });
 </script>
