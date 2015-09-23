@@ -1004,193 +1004,201 @@
     $scope.viewTypePay = function () {
       $(".sombra,.formpago").css("display","inline");
     },
+  /*Start SendPay*/
     $scope.SendPay = function () {
-    /*Start cierre tienda*/
+    var chk_terminos=document.getElementById("chk_terminos").checked;
+    var direccion= $("#direccion").val();  
     var cierre= localStorage.getItem("status");
-    checkOpenZone();
-      if(cierre!="cerrada"){
-        var bono= $("#bono").val();
-        var direccion= $("#direccion").val();   
-        var referencia= $("#referencia").val();
-        var numero= $("#numero").val();
-        var tipo= $('input[name=tipo]:checked').val();
-        var tipoPago= $("#tipoPago").val();
-        var zona= JSON.parse(localStorage.getItem("zona"));
-        var Hbono= $('#hbono').val();
-        var order=[];   
-        
-        if(Gtotal>0){
-          var flag=true;
-          var bono=$("#bono").val();
-          if(bono!=""){   
-          var bonus= ajaxrest.getBono("bono="+bono+"&token="+localStorage.token);   
-          if(!bonus){
-            flag=false;         
-            localStorage.removeItem("bono");
-            $(".bono").hide(); 
-            $(".bono").css("display","none");
-            $("#bono").val('');
-            $("#hbono").val('');
-            getBonus($("#bono").val(''),parseInt($("#Gtotal").val()),parseInt($("#tDomicilio").val()));     
-          }
-          }
-          
-          if(!localStorage.getItem("cuenta")){
-            localStorage.setItem("pedido",true);
-            if($("#name").val()!="" && $("#cellPhone").val()!="" && $("#email").val()!="" && $("#direccion").val()!=""){
-             flag=false;
-             nombre_cliente=$("#name").val();
-             $scope.nombre_cliente= nombre_cliente;                      
-             var data= ajaxrest.getUser("email="+$("#email").val()+"&token="+localStorage.token);
-             if(!data){
-               var create= ajaxrest.setAccount('add',82);
-               if(create){               
-                 var data1= ajaxrest.getUser("email="+$("#email").val()+"&token="+localStorage.token);
-                 var array= JSON.parse(JSON.stringify(data1));
-                 var final= JSON.parse(array);
-                 localStorage.cuenta = JSON.stringify(final[0]);               
-                 flag=true;
-               }
-             }else{
-               if($('#chk_terminos').prop('checked')){
-                 var array= JSON.parse(JSON.stringify(data));
-                 var final= JSON.parse(array);
-                 localStorage.cuenta = JSON.stringify(final[0]);             
-                 flag=true;
-               }else{
-                 alert("Debe aceptar los términos y condiciones!");
-                 flag=false;
-               }
+    if(chk_terminos){
+      /*Start direccion*/
+      if(direccion!=""){
+        checkOpenZone();
+        /*Start cierre tienda*/ 
+        if(cierre!="cerrada"){
+            var bono= $("#bono").val();              
+            var referencia= $("#referencia").val();
+            var numero= $("#numero").val();
+            var tipo= $('input[name=tipo]:checked').val();
+            var tipoPago= $("#tipoPago").val();
+            var zona= JSON.parse(localStorage.getItem("zona"));
+            var Hbono= $('#hbono').val();
+            var order=[];      
+            
+            if(Gtotal>0){
+              var flag=true;
+              /*Start validar bono*/  
+              var bono=$("#bono").val();
+              if(bono!=""){   
+              var bonus= ajaxrest.getBono("bono="+bono+"&token="+localStorage.token);   
+              if(!bonus){
+                flag=false;         
+                localStorage.removeItem("bono");
+                $(".bono").hide(); 
+                $(".bono").css("display","none");
+                $("#bono").val('');
+                $("#hbono").val('');
+                getBonus($("#bono").val(''),parseInt($("#Gtotal").val()),parseInt($("#tDomicilio").val()));     
+              }
+              }           
+              /*End validar bono*/  
+            /*Start validar cierre de tienda*/    
+            var statusZone= ajaxrest.getStatusZone("zona="+zona.id+"&token="+localStorage.token);
+            if(statusZone[0].closez==0){
+            flag=false;
+            alert("Lo sentimos la tienda esta cerrada en estos momentos.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.");
+            }               
+            /*End validar cierre de tienda*/
+            /*Start validar usuario registrado*/
+            if(flag){
+              if(!localStorage.getItem("cuenta")){
+                localStorage.setItem("pedido",true);
+                if($("#name").val()!="" && $("#cellPhone").val()!="" && $("#email").val()!=""){
+                 nombre_cliente=$("#name").val();
+                 $scope.nombre_cliente= nombre_cliente;
+                 var data= ajaxrest.getUser("email="+$("#email").val()+"&token="+localStorage.token);
+                 if(!data){
+                   ajaxrest.setAccount('add',82);        
+                   var data1= ajaxrest.getUser("email="+$("#email").val()+"&token="+localStorage.token);
+                   var array= JSON.parse(JSON.stringify(data1));
+                   var final= JSON.parse(array);
+                   localStorage.cuenta = JSON.stringify(final[0]);
+                 }else{
+                   var array= JSON.parse(JSON.stringify(data));
+                   var final= JSON.parse(array);
+                   localStorage.cuenta = JSON.stringify(final[0]);
+                 }             
+                }else{
+                  alert("Campos de registro son requeridos");
+                  flag=false;
+                  $('.container').animate({
+                  scrollTop: $("#topmobil").offset().top
+                  }, 5);
+                }
+                localData = JSON.parse(localStorage.getItem('cuenta'));
+              }             
+             /*End validar usuario registrado*/
+             
+             /*Start procesar pedido*/
+             if(flag){
+                $scope.nombre_cliente= nombre_cliente;
+                var id_cliente= localData['id'];   
+                $(".div_loading").fadeIn();
+                setTimeout(function() {   
+                  var data= ajaxrest.getUser("email="+localData['email']+"&token="+localStorage.token); 
+                  var dat = angular.fromJson(data);
+                  if(dat[0].survey != "0")$("#encuesta").hide();      
+                  getQuadrant(zona.id,zona.code);         
+                  var quadrant= localStorage.quadrant;
+                  if(quadrant != "n/a" && quadrant != ""){
+                    var coords="";
+                    if(localStorage.position){
+                      coord= JSON.parse(localStorage.position);
+                      coords= coord.lat+","+coord.lng;
+                    }              
+                    order.push({idUser:id_cliente,coordinates:coords,quadrant:quadrant,idZone:zona.id,idCupon:Hbono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,cellPhone:cellPhone,status:71});
+                    
+                    var checkInv= ajaxrest.checkInv(order,orderdetail,orderxitems);       
+                    var contI=0;
+                    var datos=[];codes=[];names=[];cants=[];sols=[];disps=[];
+                    for(var i=0;i<checkInv.length;i++){
+                      var data= checkInv[i];
+                      var code= data.code;
+                      var name= data.name;
+                      var disp= data.disp;
+                      var sol= data.sol;
+                      sols[i]= parseInt(sol);
+                      disps[i]=  parseInt(disp);
+                      codes[i]= code;
+                      names[i]= name;
+                    }
+                    var codigos=[];nombres=[];solicitados=[];disponibles=[];
+                    for(var h=0;h<codes.length;h++){
+                      var obj= String(codes[h]);
+                      if(codigos[ obj ]){
+                        codigos[ obj ]= codes[h];
+                        nombres[ obj ]= names[h];
+                        solicitados[ obj ]= solicitados[ obj ] + sols[h];
+                      }else{
+                        codigos[ obj ]= String(codes[h]);
+                        nombres[ obj ]= names[h];       
+                        solicitados[ obj ]= sols[h];
+                        disponibles[ obj ]= disps[h];       
+                      }
+                    }
+                    var cantF=0;
+                    for (i in codigos) {
+                       var obj2= String(codigos[i])
+                       cantF= disponibles[ obj2 ] - solicitados[ obj2 ];
+                       var object= obj2 +"|"+ nombres[ obj2 ] + "|" + disponibles[ obj2 ] + "|" +solicitados[ obj2 ];
+                        if(cantF<0){
+                          contI++;
+                          datos.push( object );
+                        }  
+                    }
+                        
+                    var final= sortUnique(datos);                       
+                    if(contI==0){     
+                      ajaxrest.processOrder(order,orderdetail,orderxitems);
+                      $(".vrdirc,.bondesc").css("display","none");
+                      $(".confirmacion").css("display","inline-block");
+                      localStorage.removeItem("orden");
+                      localStorage.removeItem("direccion");
+                      localStorage.removeItem("referencia");
+                      localStorage.removeItem("numero");
+                      localStorage.removeItem("tipo");          
+                      $("#totalDish").html("0");
+                      cleanSession();
+                      localStorage.setItem("plato",1);
+                      localStorage.setItem("tipo_pago","efectivo");
+                      $(".div_loading").fadeOut(); 
+                      $('.container').animate({
+                      scrollTop: $("#topmobil").offset().top
+                      }, 5);                    
+                    }else{
+                      $(".div_loading").fadeOut();
+                      var inventario= "";
+                      for(var j=0;j<final.length;j++){
+                      var prod= final[j].split("|");
+                      var rest= parseInt(cants[ final[j] ]) - prod[1];
+                      var disp=0;
+                      if(prod[2]>0)disp=prod[2];
+                      inventario+="- "+prod[1]+": Disponible ("+disp+"), Solicitado ("+ prod[3] +")\n";
+                      descargarInv(prod[0],prod[1],disp,prod[3]);
+                      }     
+                      alert("Algunos productos de su pedido ya estan agotados. Estos serán retirados de su orden para poder continuar:\nINVENTARIO DE PRODUCTOS\n"+inventario);
+                      var platos= getNumDish();
+                      if(platos==0)$("#totalDish").html("0");
+                      $scope.mi_cuenta="#mi_cuenta";
+                      $(".mi_cuenta").attr("href","internal.html#/menu");
+                      window.location = "internal.html#/compras"; 
+                    }               
+                    }else{
+                      $(".div_loading").fadeOut();
+                      alert("Usuario fuera de cobertura.\nNo se pueden realizar pedidos.");         
+                    }          
+                    }, 800);                  
+                               
              }             
-            }else{
-              alert("Campos de registro son requeridos");
-              flag=false;
-              $('.container').animate({
-              scrollTop: $("#topmobil").offset().top
-              }, 5);
+             /*End procesar pedido*/
+             
             }
-            localData = JSON.parse(localStorage.getItem('cuenta'));
-          } 
-          
-          var statusZone= ajaxrest.getStatusZone("zona="+zona.id+"&token="+localStorage.token);
-          if(statusZone[0].closez==0){
-          flag=false;
-          alert("Lo sentimos la tienda esta cerrada en estos momentos.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.");
-          }               
-        
-       if(flag){  //Start Flag       
-        $scope.nombre_cliente= nombre_cliente;
-        var id_cliente= localData['id'];   
-        $(".div_loading").fadeIn();
-        setTimeout(function() {   
-        var data= ajaxrest.getUser("email="+localData['email']+"&token="+localStorage.token); 
-        var dat = angular.fromJson(data);     
-        if(dat[0].survey != "0")$("#encuesta").hide();      
-        getQuadrant(zona.id,zona.code);         
-        var quadrant= localStorage.quadrant;
-        if(quadrant != "n/a" && quadrant != ""){
-        if(direccion!=""){
-               
-        var coords="";
-        if(localStorage.position){
-          coord= JSON.parse(localStorage.position);
-          coords= coord.lat+","+coord.lng;
-        }              
-        order.push({idUser:id_cliente,coordinates:coords,quadrant:quadrant,idZone:zona.id,idCupon:Hbono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,cellPhone:cellPhone,status:71});
-        
-        var checkInv= ajaxrest.checkInv(order,orderdetail,orderxitems);       
-        var contI=0;
-        var datos=[];codes=[];names=[];cants=[];sols=[];disps=[];
-        for(var i=0;i<checkInv.length;i++){
-          var data= checkInv[i];
-          var code= data.code;
-          var name= data.name;
-          var disp= data.disp;
-          var sol= data.sol;
-          sols[i]= parseInt(sol);
-          disps[i]=  parseInt(disp);
-          codes[i]= code;
-          names[i]= name;
-        }
-        var codigos=[];nombres=[];solicitados=[];disponibles=[];
-        for(var h=0;h<codes.length;h++){
-          var obj= String(codes[h]);
-          if(codigos[ obj ]){
-            codigos[ obj ]= codes[h];
-            nombres[ obj ]= names[h];
-            solicitados[ obj ]= solicitados[ obj ] + sols[h];
-          }else{
-            codigos[ obj ]= String(codes[h]);
-            nombres[ obj ]= names[h];       
-            solicitados[ obj ]= sols[h];
-            disponibles[ obj ]= disps[h];       
-          }
-        }
-        var cantF=0;
-        for (i in codigos) {
-           var obj2= String(codigos[i])
-           cantF= disponibles[ obj2 ] - solicitados[ obj2 ];
-           var object= obj2 +"|"+ nombres[ obj2 ] + "|" + disponibles[ obj2 ] + "|" +solicitados[ obj2 ];
-            if(cantF<0){
-              contI++;
-              datos.push( object );
-            }  
-        }
-        
-        var final= sortUnique(datos);
-        
-        if(contI==0){     
-          ajaxrest.processOrder(order,orderdetail,orderxitems);
-          $(".vrdirc,.bondesc").css("display","none");
-          $(".confirmacion").css("display","inline-block");
-          localStorage.removeItem("orden");
-          localStorage.removeItem("direccion");
-          localStorage.removeItem("referencia");
-          localStorage.removeItem("numero");
-          localStorage.removeItem("tipo");
-          $("#totalDish").html("0");
-          cleanSession();
-          localStorage.setItem("tipo_pago","efectivo");
-          $(".div_loading").fadeOut(); 
-          $('.container').animate({
-          scrollTop: $("#topmobil").offset().top
-          }, 5);                    
-        }else{
-          $(".div_loading").fadeOut();
-          var inventario= "";
-          for(var j=0;j<final.length;j++){
-          var prod= final[j].split("|");
-          var rest= parseInt(cants[ final[j] ]) - prod[1];
-          var disp=0;
-          if(prod[2]>0)disp=prod[2];
-          inventario+="- "+prod[1]+": Disponible ("+disp+"), Solicitado ("+ prod[3] +")\n";
-          descargarInv(prod[0],prod[1],disp,prod[3]);
-          }     
-          alert("Algunos productos de su pedido ya estan agotados. Estos serán retirados de su orden para poder continuar:\nINVENTARIO DE PRODUCTOS\n"+inventario);
-          var platos= getNumDish();
-          if(platos==0)$("#totalDish").html("0");
-          $scope.mi_cuenta="#mi_cuenta";
-          $(".mi_cuenta").attr("href","internal.html#/menu");
-          window.location = "internal.html#/compras"; 
-        }
-               
-        }else{
+              
+            }else{
+              alert("Carro de compras esta vacio."); 
+              window.location = "internal.html"; 
+            }     
+        }     
+         /*End cierre tienda */
+      }else{
         $(".div_loading").fadeOut();
         alert("Dirección es requerida.");               
-        }
-        }else{
-          $(".div_loading").fadeOut();
-          alert("Usuario fuera de cobertura.\nNo se pueden realizar pedidos.");         
-        }          
-        }, 800);
-        }//End Flag
-        }
-        }else{
-        alert("Carro de compras esta vacio."); 
-        window.location = "internal.html"; 
-      }     
-    }
-    /*End cierre tienda */
+      }
+      /*End direccion*/
+    }else{
+      alert("Debe aceptar los términos y condiciones!");
+    }  
+  }
+  /*End SendPay*/
   });
 
   angularRoutingApp.controller('nosotrosController', function($scope) {
