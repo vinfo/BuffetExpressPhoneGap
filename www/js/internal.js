@@ -2,6 +2,11 @@ if (window.jQuery) {
    $(function(){
     // Tamaño container
     $(".container").css({"min-height":$(document).height()});
+    $('body').on('click', '#accordion h3', function(event) {
+      event.preventDefault();
+      $(this).next('div').slideToggle();
+      return false;
+    });     
 
     $(window).load(function(){
         $(".menupie ul li").css({"height":$("li.carrito a img").height()});
