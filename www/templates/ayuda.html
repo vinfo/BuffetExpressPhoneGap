@@ -1,10 +1,33 @@
 <!-- Capa de contenido ayuda sesión -->
+<style>
+#accordion h3{
+	font-size:16px;
+	font-weight:bold;
+	border-bottom:1px solid #666;
+	background-color:#CCC;
+	height:26px;
+	padding:2px 6px;
+	vertical-align:middle;
+	cursor:pointer;
+}
+#accordion div{
+	display:none;
+}
+#accordion div p{
+	padding:2px;
+}
+</style>
 <div class="nosotros">
-  <div class="col-md-12">
-    <h1>Preguntas Frecuentes</h1>
-     <div class="col-md-12" style="padding:6px">
-     <div ng-bind-html="info_ayuda"></div>
-     </div>
+  <div class="col-md-12" style="padding:6px">
+    <h1>{{titulo}}</h1>
+    <div id="accordion" ng-bind-html="info_ayuda"></div>
   </div>
 </div>
+<script>
+$(document).ready(function(){
+	$('body').on('click', '#accordion h3', function() {
+		$(this).next('div').slideToggle();
+	});	
+});
+</script>
 <!-- Fin capa de contenido ayuda sesión -->
