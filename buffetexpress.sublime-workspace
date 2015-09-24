@@ -271,14 +271,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "www/js/main.js",
-			"settings":
-			{
-				"buffer_size": 66283,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -345,15 +337,14 @@
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms",
 		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/ayuda.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/ayuda.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/nosotros.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
@@ -499,6 +490,8 @@
 		"find_history":
 		[
 			"SendPay",
+			"localData",
+			"SendPay",
 			"info_nosotros",
 			"facturavir",
 			".miscompras .contpag .cont",
@@ -623,9 +616,7 @@
 			"\"dimension\"",
 			"getItem(\"dimension\")",
 			"rand=",
-			".menuplatolist .col-md-12 .contimg",
-			".menuplatolist",
-			"mainController"
+			".menuplatolist .col-md-12 .contimg"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -679,38 +670,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "www/js/main.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 66283,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								39803,
-								39623
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 20981.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
