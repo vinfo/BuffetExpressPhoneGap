@@ -2,7 +2,7 @@ app.initialize();
 
 var options = {
   enableHighAccuracy: true,
-  timeout: 10000,
+  timeout: 5000,
   maximumAge: 75000
 };
 if (navigator.geolocation) {
