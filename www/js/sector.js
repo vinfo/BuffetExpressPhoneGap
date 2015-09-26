@@ -22,7 +22,6 @@ if (window.jQuery) {
       localStorage.setItem("quadrant","");
       if(data[1]==0){
       	localStorage.setItem("zona",JSON.stringify({id:2,code:data[0]}));
-      	alert("Usuario fuera de cobertura.\n(Puedes ver nuestro menú pero no podrás ordenar)");
       	window.location.href = 'internal.html';
       }else{
 		localStorage.setItem("quadrant","d");
