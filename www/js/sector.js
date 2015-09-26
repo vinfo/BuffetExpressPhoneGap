@@ -10,24 +10,28 @@ if (window.jQuery) {
 				}));
 			}
 		}
-			$('#zonas').append($('<option>', { 
-					value: "cam002|0",
-					text : "Me encuentro en otro sector"
-				}));		
+		$('#zonas').append($('<option>', { 
+			value: "cam002|0",
+			text : "Me encuentro en otro sector"
+		}));		
 	}
-    $(document).on("change", "select", function() {
-      var data= this.value.split("|");
-      var timer= new Date().getTime();
-      localStorage.setItem("timer",timer);       
-      localStorage.setItem("quadrant","");
-      if(data[1]==0){
-      	localStorage.setItem("zona",JSON.stringify({id:2,code:data[0]}));
-      	window.location.href = 'internal.html';
-      }else{
-		localStorage.setItem("quadrant","d");
-		localStorage.setItem("MsgZone",1);
-		localStorage.setItem("zona",JSON.stringify({id:data[1],code:data[0]}));
+	$(document).on("change", "select", function() {
+		var data= this.value.split("|");     
+		cleanSession();
+		if(data[1]==0){
+			localStorage.setItem("plato",1);
+			localStorage.setItem("tipo_pago","efectivo");  
+			localStorage.setItem("quadrant","");    	
+			localStorage.setItem("zona",JSON.stringify({id:2,code:data[0]}));      	
+		}else{		
+			localStorage.setItem("plato",1);
+			localStorage.setItem("tipo_pago","efectivo");      	
+			localStorage.setItem("quadrant","d");
+			localStorage.setItem("MsgZone",1);
+			localStorage.setItem("zona",JSON.stringify({id:data[1],code:data[0]}));
+		}
+		var timer= new Date().getTime();
+		localStorage.setItem("timer",timer); 
 		window.location.href = 'internal.html';
-      }     
-    });	
+	});	
 }
