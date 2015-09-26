@@ -25,6 +25,8 @@ if (window.jQuery) {
       	alert("Usuario fuera de cobertura.\n(Puedes ver nuestro menú pero no podrás ordenar)");
       	window.location.href = 'internal.html';
       }else{
+		localStorage.setItem("quadrant","d");
+		localStorage.setItem("MsgZone",1);
 		localStorage.setItem("zona",JSON.stringify({id:data[1],code:data[0]}));
 		window.location.href = 'internal.html';
       }     
