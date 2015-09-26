@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"co",
+				"color"
+			],
+			[
+				"st",
+				"style	Tag"
+			],
+			[
 				"fade",
 				"fadeOut"
 			],
@@ -38,10 +46,6 @@
 			[
 				"mar",
 				"margin-bottom"
-			],
-			[
-				"co",
-				"coord"
 			],
 			[
 				"it",
@@ -188,10 +192,6 @@
 				"removeItem"
 			],
 			[
-				"st",
-				"stringify"
-			],
-			[
 				"set",
 				"setItem"
 			],
@@ -271,6 +271,30 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "www/sector.html",
+			"settings":
+			{
+				"buffer_size": 1425,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/js/sector.js",
+			"settings":
+			{
+				"buffer_size": 1057,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/js/index.js",
+			"settings":
+			{
+				"buffer_size": 1803,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -336,28 +360,28 @@
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms",
-		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www"
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/ayuda.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/nosotros.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/angular-route.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/C/wamp/www/cercolamb/admin/application/js/usuarios.js",
 		"/C/wamp/www/agendar/plugins/fullcalendar/fullcalendar.min.js",
 		"/C/wamp/www/certificarautomotores/modules/js/certifieds.js",
@@ -395,7 +419,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/cordova-plugin-google-analytics/ios/UniversalAnalyticsPlugin.m",
 		"/D/wamp/www/esevial/cea/plugins/fullcalendar/fullcalendar.js",
 		"/C/Users/odc/Downloads/GAPlugin-master/GAPlugin-master/plugin.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/cordova.js",
 		"/D/wamp/www/dyd/application/js/clientes.js",
 		"/C/Users/odc/Downloads/battatech_excelexport-master/battatech_excelexport-master/src/exampletable.html",
@@ -489,6 +512,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"deviceready",
+			"loading_msg",
+			"Cargando productos di",
 			"SendPay",
 			"localData",
 			"SendPay",
@@ -613,10 +639,7 @@
 			"@media",
 			".menuplatolist .col-md-12 .contimg",
 			"@media",
-			"\"dimension\"",
-			"getItem(\"dimension\")",
-			"rand=",
-			".menuplatolist .col-md-12 .contimg"
+			"\"dimension\""
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -670,8 +693,106 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "www/sector.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1425,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								796,
+								796
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 300.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "www/js/sector.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1057,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								667,
+								667
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 120.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "www/js/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1803,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1666,
+								1666
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 540.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

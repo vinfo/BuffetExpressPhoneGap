@@ -2,14 +2,15 @@ app.initialize();
 
 var options = {
   enableHighAccuracy: true,
-  timeout: 15000,
+  timeout: 10000,
   maximumAge: 75000
 };
 if (navigator.geolocation) {
 	//alert("Detectar");
   document.addEventListener("deviceready", detectGEO, false);	 
 } else {
-	alert('Geolocation not supported');
+	alert('Geolocalización no soportada');
+  window.location.href = 'sector.html';
 }
 
 function detectGEO(){
@@ -45,8 +46,8 @@ function onError(error) {
   localStorage.removeItem("zonas");
   localStorage.removeItem("MsgZone"); 
   localStorage.removeItem("timer");  
-  alert('Tu GPS está inhabilitado\nVe a "Configuración" > "Privacidad" > "Servicios de ubicación"´para conceder acceso.\nSi continua el error revisa la velocidad de tu conexión de datos.');
+  //alert('Tu GPS está inhabilitado\nVe a "Configuración" > "Privacidad" > "Servicios de ubicación"´para conceder acceso.\nSi continua el error revisa la velocidad de tu conexión de datos.');
   var pos= {lat:6.267791,lng:-75.581744};
   localStorage.setItem("position",JSON.stringify(pos));
-  window.location.href = 'load.html';
+  window.location.href = 'sector.html';
 }
