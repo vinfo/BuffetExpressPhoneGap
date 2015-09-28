@@ -5,7 +5,7 @@ if (window.jQuery) {
 		for (var i=0; i < zonas.length; i++){
 			if(zonas[i].closez==1){
 				$('#zonas').append($('<option>', { 
-					value: zonas[i].code+"|"+zonas[i].id+"|"+zonas[i].coordinates,
+					value: zonas[i].code+"|"+zonas[i].id+"|"+zonas[i].coordinates+"|"+zonas[i].ciudad,
 					text : zonas[i].name
 				}));
 			}
@@ -22,13 +22,13 @@ if (window.jQuery) {
 			localStorage.setItem("plato",1);
 			localStorage.setItem("tipo_pago","efectivo");  
 			localStorage.setItem("quadrant","");    	
-			localStorage.setItem("zona",JSON.stringify({id:2,code:data[0],coords:data[2]}));      	
+			localStorage.setItem("zona",JSON.stringify({id:2,code:data[0],coords:data[2],ciudad:data[3]}));
 		}else{		
 			localStorage.setItem("plato",1);
 			localStorage.setItem("tipo_pago","efectivo");      	
 			localStorage.setItem("quadrant","d");
 			localStorage.setItem("MsgZone",1);
-			localStorage.setItem("zona",JSON.stringify({id:data[1],code:data[0],coords:data[2]}));
+			localStorage.setItem("zona",JSON.stringify({id:data[1],code:data[0],coords:data[2],ciudad:data[3]}));
 		}
 		var timer= new Date().getTime();
 		localStorage.setItem("timer",timer);
