@@ -1,4 +1,5 @@
 if (window.jQuery) {  
+	localStorage.domain = "http://buffetexpress.com.co/REST/"; 
 	var zonas= ajaxrest.getZones();
 	if(zonas.length>0){
 		localStorage.setItem("zonas",JSON.stringify(zonas));
