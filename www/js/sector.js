@@ -31,7 +31,8 @@ if (window.jQuery) {
 			localStorage.setItem("zona",JSON.stringify({id:data[1],code:data[0],coords:data[2]}));
 		}
 		var timer= new Date().getTime();
-		localStorage.setItem("timer",timer); 
+		localStorage.setItem("timer",timer);
+		localStorage.setItem("GPS","false"); 
 		window.location.href = 'internal.html';
 	});	
 }

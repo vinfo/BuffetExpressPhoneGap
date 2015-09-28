@@ -49,6 +49,7 @@ function redirect(){
     // if(!localStorage.show_guia){
     //   window.location = "internal.html#/guia";
     // }else{
+      localStorage.setItem("GPS","true");
      window.location.href = 'internal.html';
    // }  
 }
