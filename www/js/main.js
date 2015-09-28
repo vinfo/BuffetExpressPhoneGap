@@ -106,7 +106,12 @@
   }); 
 
   angularRoutingApp.controller('mainController', function($scope,$location,$routeParams,Images,Items,Currency,NotificationService){
-    setTimer(); 
+    setTimer();
+    if(localStorage.cuenta){
+      $scope.mi_cuenta="internal.html#/mi_cuenta";
+    }else{
+      $scope.mi_cuenta="login.html";
+    }      
 
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
     $("li").removeClass("active");
@@ -154,11 +159,7 @@
       setBackground("fondoslide","");
     }
 
-    if(localStorage.cuenta){
-      $scope.mi_cuenta="internal.html#/mi_cuenta";
-    }else{
-      $scope.mi_cuenta="login.html";
-    }   
+ 
 
       //Validar imagenes plato existente      
       if(Items.getTypeDish(plato)=="B" || Items.getItems(plato)==0){
