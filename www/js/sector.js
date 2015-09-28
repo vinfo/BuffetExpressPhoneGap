@@ -1,5 +1,6 @@
 if (window.jQuery) {  
 	var zonas= ajaxrest.getZones();
+	alert(zonas.length);
 	if(zonas.length>0){
 		localStorage.setItem("zonas",JSON.stringify(zonas));
 		for (var i=0; i < zonas.length; i++){
