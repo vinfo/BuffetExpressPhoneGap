@@ -271,30 +271,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "www/sector.html",
-			"settings":
-			{
-				"buffer_size": 1425,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "www/js/sector.js",
-			"settings":
-			{
-				"buffer_size": 1057,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "www/js/index.js",
-			"settings":
-			{
-				"buffer_size": 1803,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -360,19 +336,24 @@
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/platforms",
-		"/D/Movilidad/BuffetExpressPhoneGap/www"
+		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/index.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/sector.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/sector.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/ayuda.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/nosotros.html",
@@ -439,7 +420,6 @@
 		"/D/Movilidad/versionIconosBuffetExpressPhoneGap/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/images/fondoslide.jpg",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/cache.manifest",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/index.css",
 		"/D/Movilidad/versionIconosBuffetExpressPhoneGap/templates/menu.html",
 		"/D/Movilidad/versionIconosBuffetExpressPhoneGap/css/style.css",
 		"/D/Movilidad/versionIconosBuffetExpressPhoneGap/js/main.js",
@@ -489,9 +469,7 @@
 		"/C/Users/odc/Desktop/D&D.html",
 		"/C/Users/odc/Desktop/Gloria Arango.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/politicas.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html",
-		"/C/Users/odc/AppData/Local/Temp/Ftp buffetex@buffetexpress.co.xml",
-		"/D/wamp/www/buffetexpress/codeigniter/resources/js/functions.js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/mapa.html"
 	],
 	"find":
 	{
@@ -512,6 +490,11 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"Pay",
+			"sendPay",
+			"setPay",
+			"quadrant",
+			"fuera de rango de",
 			"deviceready",
 			"loading_msg",
 			"Cargando productos di",
@@ -634,12 +617,7 @@
 			"setTimer",
 			"categoriaController",
 			"loading",
-			"categoriaController",
-			".menuplatolist .col-md-12 .contimg",
-			"@media",
-			".menuplatolist .col-md-12 .contimg",
-			"@media",
-			"\"dimension\""
+			"categoriaController"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -693,106 +671,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "www/sector.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1425,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								796,
-								796
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 300.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "www/js/sector.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1057,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								667,
-								667
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": -0.0,
-						"translation.y": 120.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "www/js/index.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1803,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1666,
-								1666
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 540.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

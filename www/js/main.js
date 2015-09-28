@@ -763,8 +763,15 @@ var dir= ajaxrest.getLastAddress("user="+id_cliente+"&token="+localStorage.token
 if(dir!=""){
   for(var j=0;j<dir.length;j++){
     cont++;
-    var datos= dir[j].address+'|'+dir[j].num+'|'+dir[j].reference;
-    direccion+='<li><span class="dirs" title="'+datos+'">'+dir[j].address+'</span><i class="glyphicon glyphicon-minus-sign"></i></li>';
+    var dirFull=dir[j].address.split("|");
+    var dirData='';
+    if(dirFull[0]!=null && dirFull[0]!="")dirData+= dirFull[0]+' ';
+    if(dirFull[1]!=null && dirFull[1]!="")dirData+= dirFull[1]+' ';
+    if(dirFull[2]!=null && dirFull[2]!="")dirData+= ' # '+dirFull[2]+' ';
+    if(dirFull[3]!=null && dirFull[3]!="")dirData+= ' - '+dirFull[3]+' ';
+    
+    var datos= dir[j].address+'~'+dir[j].num+'~'+dir[j].reference;
+    direccion+='<li><span class="dirs" title="'+datos+'">'+dirData+'</span><i class="glyphicon glyphicon-minus-sign"></i></li>';
   }
 }
 if(cont!=0)$(".direcciones").show();
