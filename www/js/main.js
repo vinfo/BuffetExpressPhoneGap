@@ -1013,7 +1013,7 @@ for(var h=0;h<farr.length;h++){
     $scope.viewTypePay = function () {
       $(".sombra,.formpago").css("display","inline");
     },
-    /*Start SendPay*/
+      /*Start SendPay*/
     $scope.SendPay = function () {    
     var chk_terminos= document.getElementById("chk_terminos").checked;
     var direccion= $("#dir1").val()+"|"+$("#dir2").val()+"|"+$("#dir3").val()+"|"+$("#dir4").val();      
@@ -1101,25 +1101,18 @@ for(var h=0;h<farr.length;h++){
                   var quadrant= localStorage.quadrant;
                   if(quadrant != "n/a" && quadrant != ""){
                     var coords="";
+                    var flagCoord=false;
                     if(localStorage.position){
                       coord= JSON.parse(localStorage.position);
                       coords= coord.lat+","+coord.lng;
                     }                     
                                       
                     if(localStorage.GPS=="false"){
-                    var address= $("#dir1").val()+" "+$("#dir2").val()+" #"+$("#dir3").val()+"-"+$("#dir4").val()+","+zona.ciudad; 
-                     var geocoder = new google.maps.Geocoder();
-                    geocoder.geocode({'address': address}, function(results, status) {
-                      if (status == google.maps.GeocoderStatus.OK) {
-                      if (results[0]) {
-                        var coord =results[0].geometry.location;
-                        coords= coord.lat+","+coord.lng;
-                      }
-                      }
-                    });
-                    }
+                    var address= $("#dir1").val()+" "+$("#dir2").val()+" #"+$("#dir3").val()+"-"+$("#dir4").val()+","+zona.ciudad;                    
                     
-                                 
+                    var coord= JSON.parse(localStorage.coordAddress);
+                    if(coord.lat!=null && coord.lat!="")coords=coord.lat+","+coord.lng;
+                    }                   
                     order.push({idUser:id_cliente,coordinates:coords,quadrant:quadrant,idZone:zona.id,idCupon:Hbono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,cellPhone:cellPhone,status:71});
                     
                     var checkInv= ajaxrest.checkInv(order,orderdetail,orderxitems);       
@@ -1196,7 +1189,7 @@ for(var h=0;h<farr.length;h++){
                       $scope.mi_cuenta="#mi_cuenta";
                       $(".mi_cuenta").attr("href","internal.html#/menu");
                       window.location = "internal.html#/compras"; 
-                    }               
+                    } 
                     }else{
                       $(".div_loading").fadeOut();
                       alert("Usuario fuera de cobertura.\nNo se pueden realizar pedidos.");         

@@ -3,6 +3,7 @@ if (window.jQuery) {
 	if(zonas.length>0){
 		localStorage.setItem("zonas",JSON.stringify(zonas));
 		for (var i=0; i < zonas.length; i++){
+			alert(zonas[i].ciudad);
 			if(zonas[i].closez==1){
 				$('#zonas').append($('<option>', { 
 					value: zonas[i].code+"|"+zonas[i].id+"|"+zonas[i].coordinates+"|"+zonas[i].ciudad,

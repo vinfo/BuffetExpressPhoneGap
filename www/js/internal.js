@@ -63,12 +63,16 @@ if (window.jQuery) {
         if(dirFull[0]!=null && dirFull[0]!=""){$("#dir1 option[value='"+dirFull[0]+"']").prop('selected', true);}else{$("#dir1 option[value='Calle']").prop('selected', true);}
         if(dirFull[1]!=null && dirFull[1]!=""){$("#dir2").val(dirFull[1]);}else{$("#dir2").val('');}
         if(dirFull[2]!=null && dirFull[2]!=""){$("#dir3").val(dirFull[2]);}else{$("#dir3").val('');}
-        if(dirFull[3]!=null && dirFull[3]!=""){$("#dir4").val(dirFull[3]);}else{$("#dir4").val('');}      
+        if(dirFull[3]!=null && dirFull[3]!=""){$("#dir4").val(dirFull[3]);}else{$("#dir4").val('');}
+        codeAddress();      
       }     
       if(dat[1]!="")$("#numero").val(dat[1]);
       if(dat[2]!="")$("#referencia").val(dat[2]);
     }
   });
+  $(document).on("change", ".vrdirc input,select", function() {
+    codeAddress();
+  }); 
   $(document).on("click", ".glyphicon-minus-sign", function() {
     var dat= this.title.split('|');
     if(dat.length>0){
