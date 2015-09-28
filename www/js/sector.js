@@ -22,7 +22,7 @@ if (window.jQuery) {
 			localStorage.setItem("plato",1);
 			localStorage.setItem("tipo_pago","efectivo");  
 			localStorage.setItem("quadrant","");    	
-			localStorage.setItem("zona",JSON.stringify({id:2,code:data[0],coords:data[2],ciudad:data[3]}));
+			localStorage.setItem("zona",JSON.stringify({id:2,code:data[0],coords:data[2],ciudad:data[3]}));      	
 		}else{		
 			localStorage.setItem("plato",1);
 			localStorage.setItem("tipo_pago","efectivo");      	
@@ -32,7 +32,7 @@ if (window.jQuery) {
 		}
 		var timer= new Date().getTime();
 		localStorage.setItem("timer",timer);
-		localStorage.setItem("GPS","false"); 
+		localStorage.setItem("GPS","false");
 		window.location.href = 'internal.html';
 	});	
 }
