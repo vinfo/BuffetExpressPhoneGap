@@ -1100,22 +1100,19 @@ for(var h=0;h<farr.length;h++){
                 var GPS= localStorage.GPS;
                 $(".div_loading").fadeIn();
                 setTimeout(function() {
-                  if(GPS=="false"){
                   var address= $("#dir1").val()+" "+$("#dir2").val()+" #"+$("#dir3").val()+"-"+$("#dir4").val()+","+zona.ciudad;            
                   var coord= JSON.parse(localStorage.coordAddress);
                   if(coord.lat!=null && coord.lat!=""){
                     coords=coord.lat+","+coord.lng;
                     var pos= JSON.stringify({lat:coord.lat,lng:coord.lng});
-                    localStorage.setItem("position",pos);               
-                  }
+                    localStorage.setItem("position",pos);         
                   }                   
                   var data= ajaxrest.getUser("email="+cuenta.email+"&token="+localStorage.token); 
                   var dat = angular.fromJson(data);
                   if(dat[0].survey != "0")$("#encuesta").hide();
-                  localStorage.setItem("quadrant","");                  
-                  getQuadrant(zona.id,zona.code);     
+                  getQuadrant(zona.id,zona.code);
                   var quadrant= localStorage.quadrant;
-                  if(quadrant != "n/a" && quadrant != ""){
+                  if(quadrant != ""){
                     var coords="";
                     var flagCoord=false;
                     if(localStorage.position){

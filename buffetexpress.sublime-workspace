@@ -278,6 +278,14 @@
 				"buffer_size": 6785,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "www/js/main.js",
+			"settings":
+			{
+				"buffer_size": 68065,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -497,6 +505,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"SendPay",
 			"var coord= JSON.parse(localStorage.coordAddress);",
 			"$(\".div_loading\").fadeIn();",
 			"referencia",
@@ -623,8 +632,7 @@
 			"There was",
 			"fuera de",
 			"<feature name=\"Notification\">",
-			"toast",
-			"fuera de"
+			"toast"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -679,7 +687,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -710,6 +718,39 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "www/js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 68065,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								48472,
+								48472
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 153.0,
+						"translation.y": 24581.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
