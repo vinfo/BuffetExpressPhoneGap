@@ -1117,6 +1117,7 @@ for(var h=0;h<farr.length;h++){
                 
                 var coord= JSON.parse(localStorage.coordAddress);
                 if(coord.lat!=null && coord.lat!="")coords=coord.lat+","+coord.lng;
+                quadrant="D";
               }                   
               order.push({idUser:id_cliente,coordinates:coords,quadrant:quadrant,idZone:zona.id,idCupon:Hbono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,reservacion:reservacion,gps:GPS,cellPhone:cellPhone,status:71});
               
