@@ -38,7 +38,6 @@ function startApp() {
               quadrant += checkZona(process[i][0],process[i][1],limits);
             }
           }
-          alert("sale");
           redirect();  
         }else{
           alert("Problemas de conectividad a Internet");
