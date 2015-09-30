@@ -17,7 +17,7 @@ function startApp() {
   var zones= JSON.parse(getZones());
   localStorage.setItem("zona",JSON.stringify({id:2,code:'cam002',ciudad:'Medellín'}));
   localStorage.setItem("zonas",JSON.stringify(zones));
-      //alert("Position= "+localStorage.getItem("position"));
+      alert("Position= "+localStorage.getItem("position"));
       if(zones){
         var codes=[];                  
         for(var i=0;i<zones.length;i++){
@@ -26,7 +26,8 @@ function startApp() {
         }      
         var process= ajaxrest.getCoordinatesJSON(codes,'');
         var quadrant= 0;
-        $(".loading_msg").html("Detectando zona de pedidos"); 
+        $(".loading_msg").html("Detectando zona de pedidos");
+        alert(localStorage.token +" - "+process.length);
         for(var i=0;i<process.length;i++){        
           var Coords = process[i][2];
           var limits=[];
@@ -38,6 +39,7 @@ function startApp() {
               quadrant += checkZona(process[i][0],process[i][1],limits);
             }
           }
+          alert("sale");
           redirect();  
         }else{
           alert("Problemas de conectividad a Internet");
