@@ -565,7 +565,7 @@
     }
     var fDish= Items.getRealDish();
 
-    var contPago='<div class="contpag" onclick="doPay(\''+fDish+'\')"><div class="cont">Continúe con el pago</div></div>';
+    var contPago='<div class="contpag" onclick="doPay(\''+fDish+'\')"><div class="cont">Confirmar pedido</div></div>';
     $("#miscompras").append(contPago);
     $("#miscompras").append('<div style="height:250px;">&nbsp;</div>');
     if(plato==""){
@@ -1028,6 +1028,7 @@ for(var h=0;h<farr.length;h++){
             var bono= $("#bono").val();              
             var referencia= $("#referencia").val();
             var numero= $("#numero").val();
+            var reservacion= $("#reservacion").val();
             var tipo= $('input[name=tipo]:checked').val();
             var tipoPago= $("#tipoPago").val();
             var zona= JSON.parse(localStorage.getItem("zona"));
@@ -1093,8 +1094,9 @@ for(var h=0;h<farr.length;h++){
         if(flag){
           $(".loading").show();
           var cuenta= JSON.parse(localStorage.cuenta);
-          $scope.nombre_cliente= nombre_cliente;
-          var id_cliente= cuenta.id;   
+          if(nombre_cliente==null || nombre_cliente=="")nombre_cliente=cuenta.name+" "+cuenta.lastname;          
+          var id_cliente= cuenta.id;  
+          var GPS= localStorage.GPS; 
           $(".div_loading").fadeIn();
           setTimeout(function() {   
             var data= ajaxrest.getUser("email="+cuenta.email+"&token="+localStorage.token); 
@@ -1110,13 +1112,13 @@ for(var h=0;h<farr.length;h++){
                 coords= coord.lat+","+coord.lng;
               }                     
               
-              if(localStorage.GPS=="false"){
+              if(GPS=="false"){
                 var address= $("#dir1").val()+" "+$("#dir2").val()+" #"+$("#dir3").val()+"-"+$("#dir4").val()+","+zona.ciudad;                    
                 
                 var coord= JSON.parse(localStorage.coordAddress);
                 if(coord.lat!=null && coord.lat!="")coords=coord.lat+","+coord.lng;
               }                   
-              order.push({idUser:id_cliente,coordinates:coords,quadrant:quadrant,idZone:zona.id,idCupon:Hbono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,cellPhone:cellPhone,status:71});
+              order.push({idUser:id_cliente,coordinates:coords,quadrant:quadrant,idZone:zona.id,idCupon:Hbono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,reservacion:reservacion,gps:GPS,cellPhone:cellPhone,status:71});
               
               var checkInv= ajaxrest.checkInv(order,orderdetail,orderxitems);       
               var contI=0;
@@ -1161,6 +1163,7 @@ for(var h=0;h<farr.length;h++){
             if(contI==0){     
               ajaxrest.processOrder(order,orderdetail,orderxitems);
               $(".vrdirc,.bondesc").css("display","none");
+              $scope.nombre_cliente= nombre_cliente;
               $(".confirmacion").css("display","inline-block");
               localStorage.removeItem("orden");
               localStorage.removeItem("direccion");
