@@ -340,12 +340,13 @@
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/sector.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/ayuda.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/sector.html",
@@ -354,7 +355,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/index.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/nosotros.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
@@ -488,6 +488,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"v1/authenticate/",
+			"token",
+			"Detectando zona",
 			"nombre_cliente",
 			"SendPay",
 			"var coord= JSON.parse(localStorage.coordAddress);",
@@ -612,10 +615,7 @@
 			"navigator.notification",
 			"mainController",
 			"avigator.notification.alert",
-			"mainController",
-			"There was",
-			"fuera de",
-			"<feature name=\"Notification\">"
+			"mainController"
 		],
 		"highlight": false,
 		"in_selection": false,
