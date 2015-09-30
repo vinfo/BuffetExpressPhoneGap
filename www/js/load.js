@@ -8,10 +8,6 @@ function startApp() {
   var timer= new Date().getTime();
   localStorage.setItem("timer",timer);
 
-  if(!localStorage.token){
-    var credentials= "oauthId=326615832446388&oauthSecret=5af5f7e15ccbddfd350a921bc6f13444&contentType=application/json; charset=UTF-8";  
-    ajaxrest.autenticar(localStorage.domain +"api/v1/authenticate/",credentials);   
-  } 
   var lat1="";
   var lng1="";    
   var zones= JSON.parse(getZones());
