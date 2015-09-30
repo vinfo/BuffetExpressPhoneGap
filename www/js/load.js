@@ -8,12 +8,9 @@ function startApp() {
   var timer= new Date().getTime();
   localStorage.setItem("timer",timer);
 
-  alert(localStorage.token);
   if(localStorage.token==null){
-    alert("Crear token");
     var credentials= "oauthId=326615832446388&oauthSecret=5af5f7e15ccbddfd350a921bc6f13444&contentType=application/json; charset=UTF-8";  
     ajaxrest.autenticar(localStorage.domain +"api/v1/authenticate/",credentials);
-    alert("Creado token");
   }  
 
   var lat1="";
@@ -21,7 +18,6 @@ function startApp() {
   var zones= JSON.parse(getZones());
   localStorage.setItem("zona",JSON.stringify({id:2,code:'cam002',ciudad:'Medellín'}));
   localStorage.setItem("zonas",JSON.stringify(zones));
-  alert("Position= "+localStorage.getItem("position"));
   if(zones){
     var codes=[];                  
     for(var i=0;i<zones.length;i++){
@@ -31,7 +27,6 @@ function startApp() {
     var process= ajaxrest.getCoordinatesJSON(codes,'');
     var quadrant= 0;
     $(".loading_msg").html("Detectando zona de pedidos");
-    alert(localStorage.token +" - "+process.length);
     for(var i=0;i<process.length;i++){        
       var Coords = process[i][2];
       var limits=[];
