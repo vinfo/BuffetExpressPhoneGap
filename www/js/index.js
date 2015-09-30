@@ -32,13 +32,7 @@ function onSuccess(position) {
   lat1= position.coords.latitude;
   lng1= position.coords.longitude;   
   var pos= {lat:lat1,lng:lng1};
-  localStorage.setItem("position",JSON.stringify(pos));
-  alert(localStorage.token);
-  if(localStorage.token==null){
-    var credentials= "oauthId=326615832446388&oauthSecret=5af5f7e15ccbddfd350a921bc6f13444&contentType=application/json; charset=UTF-8";  
-    ajaxrest.autenticar(localStorage.domain +"api/v1/authenticate/",credentials);
-    alert("Crear token");
-  }   
+  localStorage.setItem("position",JSON.stringify(pos));     
   window.location.href = 'load.html';
 }
 
