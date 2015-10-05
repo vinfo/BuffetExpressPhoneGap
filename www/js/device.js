@@ -19,8 +19,8 @@
  var networkStat;
  var gaPlugin;
  var Puship=null;
-var watchId=null;
-var currentdeviceid=null;
+ var watchId=null;
+ var currentdeviceid=null;
  
  var app = {
     // Application Constructor
@@ -53,10 +53,23 @@ var currentdeviceid=null;
         window.analytics.trackView('/login');
         window.analytics.trackView('/templates/guia');
         window.analytics.trackView('/templates/contactenos');
-        // window.analytics.debugMode();//Debug   
-    },
+        // window.analytics.debugMode();//Debug  
+        Puship = window.plugins.puship;
+        Puship.PushipAppId = "QBD27t5Fhjg13cO"; // an example of puship_id might be: "h1mCVGaP9dtGnwG"
+        var GCMCode = "746109479988"; // this is the senderID provided by google. example: "28654934133"        
+
+        Puship.GCM.Register(GCMCode,
+        {
+            successCallback: function (pushipresult){
+                navigator.notification.alert("device registered" + pushipresult.DeviceId);
+            },
+            failCallback: function (pushipresult){
+                navigator.notification.alert("error during registration: "+ JSON.stringify(pushipresult));
+            }
+        });        
+},
 // Update DOM on a Received Event
-    receivedEvent: function(id) {
+receivedEvent: function(id) {
         // var parentElement = document.getElementById(id);
         // var listeningElement = parentElement.querySelector('.listening');
         // var receivedElement = parentElement.querySelector('.received');
@@ -149,7 +162,7 @@ var currentdeviceid=null;
     },
     getPushByCurrentPosition: function(){
         Puship.Common.GetPushMessages(
-            {
+        {
             //limit: 10, //max limit is 50 default is 20
             //offset: 100,
             byCurrentPosition: true,
@@ -171,7 +184,7 @@ var currentdeviceid=null;
     },
     getPush: function(){
         Puship.Common.GetPushMessages(
-            {
+        {
             //limit: 10, //max limit is 50 default is 20
             //offset: 100,
             successCallback: function (regresult){
@@ -192,7 +205,7 @@ var currentdeviceid=null;
     },
     getPushByLibra: function(){
         Puship.Common.GetPushMessages(
-            {
+        {
             //limit: 10, //max limit is 50 default is 20
             //offset: 100,
             tag: "Libra",
@@ -214,7 +227,7 @@ var currentdeviceid=null;
     },
     getPushByDevice: function(){
         Puship.Common.GetPushMessagesByDevice(
-            {
+        {
             //limit: 10, //max limit is 50 default is 20
             //offset: 100,
             successCallback: function (regresult){
@@ -291,7 +304,7 @@ var currentdeviceid=null;
     },
     getFilters: function(){
         Puship.Common.GetTagFilters(
-            {
+        {
             successCallback: function (regresult){
                 console.log("GetTagFilters done");
                 
@@ -346,13 +359,13 @@ function getDeviceProperty()
          /* alert("Device OS: " + deviceOS); 
           alert("Device OS Version: " + deviceOSVersion);
           */
-}
-function getNameURLWeb(){
- var sPath = window.location.pathname;
- var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
- return sPage;
-}
-function successHandler(){
+      }
+      function getNameURLWeb(){
+       var sPath = window.location.pathname;
+       var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+       return sPage;
+   }
+   function successHandler(){
     alert("Analitycs OK");
     return true
 }
