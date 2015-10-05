@@ -58,7 +58,7 @@
         Puship.PushipAppId = "QBD27t5Fhjg13cO"; // an example of puship_id might be: "h1mCVGaP9dtGnwG"
         var GCMCode = "746109479988"; // this is the senderID provided by google. example: "28654934133"        
 
-        alert("registrar");
+        alert("Registrar");
         Puship.GCM.Register(GCMCode,
         {
             successCallback: function (pushipresult){
