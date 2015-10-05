@@ -43,7 +43,7 @@
         //alert("Iniciando app..");
         //app.receivedEvent('deviceready');        
         //navigator.splashscreen.show();
-        checkConnection();
+        //checkConnection();
         getDeviceProperty();
         navigator.splashscreen.hide(); 
         screen.lockOrientation('portrait-primary');
