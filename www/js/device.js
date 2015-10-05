@@ -69,7 +69,7 @@ var currentdeviceid=null;
         Puship = window.plugins.puship;
         Puship.EnableLog = true;
         Puship.EnableHtmlLog = true;
-        Puship.PushipAppId = "J8imgDWJV9kOvuV"; // I.E.: puship_id = "h1mCVGaP9dtGnwG"
+        Puship.PushipAppId = "QBD27t5Fhjg13cO"; // I.E.: puship_id = "h1mCVGaP9dtGnwG"
         Puship.Common.Log("device uuid: " + device.uuid);
         
         Puship.Common.OnPushReceived(function(event) {
