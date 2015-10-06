@@ -80,6 +80,7 @@ function onPushwooshAndroidInitialized(pushToken)
 		function(token) {
 			console.warn('Pushwoosh HWID: ' + token);
 			alert('Pushwoosh HWID: ' + token);
+			return true;
 		}
 	);
 	
