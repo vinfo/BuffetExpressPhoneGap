@@ -62,9 +62,6 @@ function registerPushwooshAndroid() {
 
 function onPushwooshAndroidInitialized(pushToken)
 {
-	//output the token to the console
-	console.warn('push token: ' + pushToken);
-
 	var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
 	
 	//if you need push token at a later time you can always get it from Pushwoosh plugin
@@ -94,26 +91,11 @@ function onPushwooshAndroidInitialized(pushToken)
 			console.warn('get tags error: ' + JSON.stringify(error));
 		}
 	);
-	 
-
-	//set multi notificaiton mode
-	//pushNotification.setMultiNotificationMode();
-	//pushNotification.setEnableLED(true);
-	
-	//set single notification mode
-	//pushNotification.setSingleNotificationMode();
-	
-	//disable sound and vibration
-	//pushNotification.setSoundType(1);
-	//pushNotification.setVibrateType(1);
 	
 	pushNotification.setLightScreenOnNotification(true);
 	
-	//setting list tags
-	//pushNotification.setTags({"MyTag":["hello", "world"]});
-	
 	//settings tags
-	pushNotification.setTags({deviceName:"hello", deviceId:10},
+	pushNotification.setTags({deviceName:"BuffetExpress", deviceId:10},
 		function(status) {
 			console.warn('setTags success');
 		},
@@ -121,7 +103,4 @@ function onPushwooshAndroidInitialized(pushToken)
 			console.warn('setTags failed');
 		}
 	);
-
-	//Pushwoosh Android specific method that cares for the battery
-	//pushNotification.startGeoPushes();
 }
