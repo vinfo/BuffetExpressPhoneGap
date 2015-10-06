@@ -41,7 +41,7 @@
         //app.receivedEvent('deviceready');        
         //navigator.splashscreen.show();
         alert(1);
-        initPushwoosh();
+        var reg= initPushwoosh();
         alert(2);
         checkConnection();
         getDeviceProperty();        

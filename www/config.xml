@@ -1,23 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
+<widget xmlns= "http://www.w3.org/ns/widgets"
+ xmlns:gap= "http://phonegap.com/ns/1.0"
+ xmlns:android = "http://schemas.android.com/apk/res/android"
+ id          = "com.vinfo.buffetexpress"
+ versionCode = "9"
+ version     = "1.1.8"
+ versionName = "1.1.8" >
 
-<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
-<widget xmlns     = "http://www.w3.org/ns/widgets"
-        xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.hello-world"
-        version   = "1.0.0">
-
-    <name>Hello World</name>
-
-    <description>
-        Hello World sample application with Pushwoosh Phonegap push notifications plugin integrated
-    </description>
-
-    <author href="http://pushwoosh.com" email="support@pushwoosh.com">
-        Pushwoosh
-    </author>
+ <name>Buffet Express</name>
+ <description>
+  Buffet Express - Un delicioso click
+</description>
+<author email="victor.valencia@gmail.com" href="http://vinfoweb.com">
+  Codigodinamico Team
+</author>
 
     <!-- Customize your app and platform with the preference element. -->
-    <preference name="phonegap-version"           value="3.7.0" />          <!-- all: current version of PhoneGap -->
+    <preference name="phonegap-version"           value="5.2.0" />          <!-- all: current version of PhoneGap -->
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
