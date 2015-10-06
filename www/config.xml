@@ -52,7 +52,6 @@
 </feature>
 
     <access origin="*"/>
-    <access origin="http://puship.cloudapp.net" />
 
     <gap:config-file platform="android" parent="/manifest">
       <supports-screens
@@ -83,7 +82,7 @@
       <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
       <gap:plugin name="com.phonegap.plugin.statusbar" />
       <gap:plugin name="com.danielcwilson.plugins.googleanalytics" version="0.6.1" /> 
-      <gap:plugin name="com.phonegap.plugins.puship" source="plugins.cordova.io" />
+      <gap:plugin name="pushwoosh-pgb-plugin" source="npm" />
 
     <gap:config-file platform="ios" parent="UIStatusBarHidden">
         <false/>

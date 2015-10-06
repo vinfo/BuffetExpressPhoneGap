@@ -42,6 +42,7 @@
         //navigator.splashscreen.show();
         checkConnection();
         getDeviceProperty();
+        initPushwoosh();
         navigator.splashscreen.hide(); 
         screen.lockOrientation('portrait-primary');
         window.analytics.startTrackerWithId('UA-62739338-1');
@@ -103,4 +104,16 @@ function getDeviceProperty()
 function errorHandler(){
     alert("Analitycs Problem");
     return true;
+}
+function initPushwoosh() {
+    var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
+    if(device.platform == "Android")
+    {
+        registerPushwooshAndroid();
+    }
+
+    if(device.platform == "iPhone" || device.platform == "iOS")
+    {
+        registerPushwooshIOS();
+    }
 }
