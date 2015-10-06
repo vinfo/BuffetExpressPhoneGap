@@ -40,11 +40,8 @@
         //alert("Iniciando app..");
         //app.receivedEvent('deviceready');        
         //navigator.splashscreen.show();
-        alert(1);
-        var reg= initPushwoosh();
-        alert(2);
         checkConnection();
-        getDeviceProperty();        
+        getDeviceProperty();
         navigator.splashscreen.hide(); 
         screen.lockOrientation('portrait-primary');
         window.analytics.startTrackerWithId('UA-62739338-1');
@@ -53,8 +50,8 @@
         window.analytics.trackView('/login');
         window.analytics.trackView('/templates/guia');
         window.analytics.trackView('/templates/contactenos');
-        // window.analytics.debugMode();//Debug               
-    }    
+        // window.analytics.debugMode();//Debug   
+    }
 };
 
 function checkConnection() {
@@ -93,29 +90,17 @@ function getDeviceProperty()
          /* alert("Device OS: " + deviceOS); 
           alert("Device OS Version: " + deviceOSVersion);
           */
-      }
-      function getNameURLWeb(){
-       var sPath = window.location.pathname;
-       var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
-       return sPage;
-   }
-   function successHandler(){
+}
+function getNameURLWeb(){
+ var sPath = window.location.pathname;
+ var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+ return sPage;
+}
+function successHandler(){
     alert("Analitycs OK");
     return true
 }
 function errorHandler(){
     alert("Analitycs Problem");
     return true;
-}
-function initPushwoosh() {
-    var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
-    if(device.platform == "Android")
-    {
-        return registerPushwooshAndroid();
-    }
-
-    if(device.platform == "iPhone" || device.platform == "iOS")
-    {
-        return registerPushwooshIOS();
-    }
 }
