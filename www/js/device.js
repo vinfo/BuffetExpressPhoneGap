@@ -40,7 +40,9 @@
         //alert("Iniciando app..");
         //app.receivedEvent('deviceready');        
         //navigator.splashscreen.show();
+        alert(1);
         initPushwoosh();
+        alert(2);
         checkConnection();
         getDeviceProperty();        
         navigator.splashscreen.hide(); 
