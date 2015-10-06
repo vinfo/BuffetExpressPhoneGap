@@ -82,7 +82,7 @@
       <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
       <gap:plugin name="com.phonegap.plugin.statusbar" />
       <gap:plugin name="com.danielcwilson.plugins.googleanalytics" version="0.6.1" /> 
-      <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.4.1" />
+      <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.4.2" />
 
     <gap:config-file platform="ios" parent="UIStatusBarHidden">
         <false/>
