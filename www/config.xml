@@ -84,9 +84,6 @@
       <gap:plugin name="com.phonegap.plugin.statusbar" />
       <gap:plugin name="com.danielcwilson.plugins.googleanalytics" version="0.6.1" />
 
-      <!-- Pushwoosh plugin -->
-      <gap:plugin name="pushwoosh-pgb-plugin" source="npm" /> 
-
     <gap:config-file platform="ios" parent="UIStatusBarHidden">
         <false/>
     </gap:config-file>
