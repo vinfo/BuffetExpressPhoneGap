@@ -15,7 +15,7 @@ function registerPushwooshAndroid() {
 			}
 
 			//and show alert
-			alert("Notificacion: "+title);
+			alert(title);
 		}
 	);
 
