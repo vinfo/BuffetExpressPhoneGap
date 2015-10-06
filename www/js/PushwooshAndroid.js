@@ -13,9 +13,6 @@ function registerPushwooshAndroid() {
             if(typeof(userData) != "undefined") {
 				console.warn('user data: ' + JSON.stringify(userData));
 			}
-
-			//and show alert
-			alert(title);
 		}
 	);
 
@@ -25,14 +22,11 @@ function registerPushwooshAndroid() {
 	pushNotification.registerDevice(
 		function(token)
 		{
-			alert("Token "+token);
-			//callback when pushwoosh is ready
 			onPushwooshAndroidInitialized(token);
 		},
 		function(status)
 		{
-			alert("failed to register: " +  status);
-		    console.warn(JSON.stringify(['failed to register ', status]));
+			console.warn(JSON.stringify(['failed to register ', status]));
 		}
 	);
 }
@@ -40,8 +34,6 @@ function registerPushwooshAndroid() {
 function onPushwooshAndroidInitialized(pushToken)
 {
 	var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
-	
-	//if you need push token at a later time you can always get it from Pushwoosh plugin
 	pushNotification.getPushToken(
 		function(token)
 		{
@@ -52,9 +44,8 @@ function onPushwooshAndroidInitialized(pushToken)
 	//and HWID if you want to communicate with Pushwoosh API
 	pushNotification.getPushwooshHWID(
 		function(token) {
-			console.warn('Pushwoosh HWID: ' + token);
-			alert('Pushwoosh HWID: ' + token);
-			return true;
+			console.warn('Pushwoosh HWID: ' + token);			
 		}
 	);
+	return true;
 }
