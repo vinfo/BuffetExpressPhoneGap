@@ -40,9 +40,9 @@
         //alert("Iniciando app..");
         //app.receivedEvent('deviceready');        
         //navigator.splashscreen.show();
-        checkConnection();
-        getDeviceProperty();
         initPushwoosh();
+        checkConnection();
+        getDeviceProperty();        
         navigator.splashscreen.hide(); 
         screen.lockOrientation('portrait-primary');
         window.analytics.startTrackerWithId('UA-62739338-1');
@@ -109,11 +109,11 @@ function initPushwoosh() {
     var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
     if(device.platform == "Android")
     {
-        registerPushwooshAndroid();
+        return registerPushwooshAndroid();
     }
 
     if(device.platform == "iPhone" || device.platform == "iOS")
     {
-        registerPushwooshIOS();
+        return registerPushwooshIOS();
     }
 }
