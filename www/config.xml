@@ -82,7 +82,7 @@
       <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
       <gap:plugin name="com.phonegap.plugin.statusbar" />
       <gap:plugin name="com.danielcwilson.plugins.googleanalytics" version="0.6.1" /> 
-      <gap:plugin name="pushwoosh-pgb-plugin" source="npm" />
+      <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.0.2" />
 
     <gap:config-file platform="ios" parent="UIStatusBarHidden">
         <false/>
@@ -119,6 +119,9 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
  
 </widget>
