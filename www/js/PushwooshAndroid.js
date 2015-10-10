@@ -37,7 +37,7 @@ function onPushwooshAndroidInitialized(pushToken)
 	pushNotification.getPushToken(
 		function(token)
 		{
-			console.warn('push token: ' + token);
+			alert('push token: ' + token);
 		}
 	);
 

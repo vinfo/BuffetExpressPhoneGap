@@ -39,8 +39,7 @@
     onDeviceReady: function() {
         //alert("Iniciando app..");
         //app.receivedEvent('deviceready');        
-        //navigator.splashscreen.show();
-        checkConnection();
+        //navigator.splashscreen.show();        
         getDeviceProperty();
         navigator.splashscreen.hide(); 
         screen.lockOrientation('portrait-primary');
@@ -50,7 +49,7 @@
         window.analytics.trackView('/login');
         window.analytics.trackView('/templates/guia');
         window.analytics.trackView('/templates/contactenos');
-        // window.analytics.debugMode();//Debug   
+        checkConnection(); 
     }
 };
 
@@ -103,4 +102,15 @@ function successHandler(){
 function errorHandler(){
     alert("Analitycs Problem");
     return true;
+}
+function initPushwoosh() {
+    var pushNotification = window.plugins.pushNotification;
+    if(device.platform == "Android")
+    {
+        alert("Android");
+        registerPushwooshAndroid();
+    }else if(device.platform == "iPhone" || device.platform == "iOS")
+    {
+        registerPushwooshIOS();
+    }
 }
