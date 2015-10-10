@@ -49,5 +49,4 @@ function onPushwooshAndroidInitialized(pushToken)
 		}
 	);
 	alert("Sale Push");
-	return true;
 }
