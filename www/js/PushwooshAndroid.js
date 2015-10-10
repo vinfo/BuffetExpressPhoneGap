@@ -23,7 +23,6 @@ function registerPushwooshAndroid() {
 		function(token)
 		{
 			onPushwooshAndroidInitialized(token);
-			alert("Registrando");
 		},
 		function(status)
 		{
