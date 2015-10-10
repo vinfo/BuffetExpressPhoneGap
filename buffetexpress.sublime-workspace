@@ -275,7 +275,7 @@
 			"file": "www/js/device.js",
 			"settings":
 			{
-				"buffer_size": 4210,
+				"buffer_size": 4021,
 				"line_ending": "Unix"
 			}
 		},
@@ -283,24 +283,8 @@
 			"file": "www/js/PushwooshAndroid.js",
 			"settings":
 			{
-				"buffer_size": 1256,
+				"buffer_size": 1264,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "www/config.xml",
-			"settings":
-			{
-				"buffer_size": 6853,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "www/index.html",
-			"settings":
-			{
-				"buffer_size": 997,
-				"line_ending": "Unix"
 			}
 		}
 	],
@@ -372,17 +356,17 @@
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshAndroid.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshAndroid.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/C/wamp/www/angelaboteropoeta/application/js/ordenes.js",
 		"/C/Users/odc/Downloads/datepicker/datepicker/js/bootstrap-datepicker.js",
 		"/C/Users/odc/Downloads/BuffetExpressPhoneGap-06d666385283dbb50d0730ac17948de1841bc4cd/BuffetExpressPhoneGap-06d666385283dbb50d0730ac17948de1841bc4cd/www/config.xml",
 		"/D/Movilidad/PushMessages/www/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/Puship/www/config.xml",
 		"/D/Movilidad/Puship/assets/www/config.xml",
 		"/D/Movilidad/Puship/assets/www/PushipNotification.js",
@@ -520,6 +504,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"getNameURLWeb",
+			"successHandler",
+			"errorHandler",
 			"registerPushwooshAndroid",
 			"PushwooshAndroid",
 			"getTags",
@@ -644,10 +631,7 @@
 			"imgloading",
 			"mainController",
 			".icodeta .shop span",
-			"=\"+",
-			"#/",
-			"imgCat",
-			"mainController"
+			"=\"+"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -702,7 +686,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -711,15 +695,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4210,
+						"buffer_size": 4021,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2171,
-								2171
+								2157,
+								2157
 							]
 						],
 						"settings":
@@ -731,11 +715,11 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 551.0,
+						"translation.x": -0.0,
+						"translation.y": 608.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -744,15 +728,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1256,
+						"buffer_size": 1264,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1253,
-								1253
+								1251,
+								1211
 							]
 						],
 						"settings":
@@ -763,77 +747,11 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": -0.0,
+						"translation.y": 620.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "www/config.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6853,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2732,
-								2732
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/XML/XML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 660.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "www/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 997,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								833,
-								833
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]

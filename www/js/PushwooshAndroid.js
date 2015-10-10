@@ -38,14 +38,14 @@ function onPushwooshAndroidInitialized(pushToken)
 		function(token)
 		{
 			//alert('push token: ' + token);
+			localStorage.setItem("Pushwoosh",token);
 		}
 	);
 
 	//and HWID if you want to communicate with Pushwoosh API
 	pushNotification.getPushwooshHWID(
 		function(token) {
-			//alert('Pushwoosh HWID: ' + token);
-			localStorage.setItem("Pushwoosh",token);		
+			//alert('Pushwoosh HWID: ' + token);		
 		}
 	);
 }
