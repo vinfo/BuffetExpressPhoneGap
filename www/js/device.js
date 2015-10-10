@@ -41,6 +41,7 @@
         //app.receivedEvent('deviceready');        
         //navigator.splashscreen.show();        
         getDeviceProperty();
+        initPushwoosh();
         navigator.splashscreen.hide(); 
         screen.lockOrientation('portrait-primary');
         window.analytics.startTrackerWithId('UA-62739338-1');
@@ -49,7 +50,6 @@
         window.analytics.trackView('/login');
         window.analytics.trackView('/templates/guia');
         window.analytics.trackView('/templates/contactenos');
-        initPushwoosh();
         checkConnection(); 
     }
 };
