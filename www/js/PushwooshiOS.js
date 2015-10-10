@@ -28,7 +28,7 @@ function registerPushwooshIOS() {
 			var notification = event.notification;
 
 			//display alert to the user for example
-			alert(notification.aps.alert);
+			//alert(notification.aps.alert);
 			
 			//to view full push payload
 			//alert(JSON.stringify(notification));
@@ -39,7 +39,7 @@ function registerPushwooshIOS() {
 	);
 
 	//initialize the plugin
-    pushNotification.onDeviceReady({pw_appid:"539E9-AB8AE"});
+    pushNotification.onDeviceReady({pw_appid:"825C3-92C11"});
 
 	//register for pushes
 	pushNotification.registerDevice(
@@ -78,6 +78,7 @@ function onPushwooshiOSInitialized(pushToken)
 		function(token)
 		{
 			console.warn('push token device: ' + token);
+			localStorage.setItem("pushtoken",token);
 		}
 	);
 

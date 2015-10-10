@@ -38,7 +38,7 @@ function onPushwooshAndroidInitialized(pushToken)
 		function(token)
 		{
 			//alert('push token: ' + token);
-			localStorage.setItem("Pushwoosh",token);
+			localStorage.setItem("pushtoken",token);
 		}
 	);
 

@@ -1118,9 +1118,12 @@ for(var h=0;h<farr.length;h++){
                     if(localStorage.position){
                       coord= JSON.parse(localStorage.position);
                       coords= coord.lat+","+coord.lng;
-                    }             
+                    }
 
-                    order.push({idUser:id_cliente,coordinates:coords,quadrant:quadrant,idZone:zona.id,idCupon:Hbono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,reservacion:reservacion,gps:GPS,exit_quadrant:localStorage.exit_quadrant,cellPhone:cellPhone,status:71});
+                    var pushtoken="";
+                    if(localStorage.pushtoken)pushtoken=localStorage.pushtoken;          
+
+                    order.push({idUser:id_cliente,coordinates:coords,quadrant:quadrant,idZone:zona.id,idCupon:Hbono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,reservacion:reservacion,gps:GPS,exit_quadrant:localStorage.exit_quadrant,cellPhone:cellPhone,status:71,pushtoken:pushtoken});
                     
                     var checkInv= ajaxrest.checkInv(order,orderdetail,orderxitems);       
                     var contI=0;
