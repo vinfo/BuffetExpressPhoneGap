@@ -40,8 +40,7 @@
         //alert("Iniciando app..");
         //app.receivedEvent('deviceready');        
         //navigator.splashscreen.show();        
-        getDeviceProperty();
-        
+        getDeviceProperty();        
         initPushwoosh();
         navigator.splashscreen.hide(); 
         screen.lockOrientation('portrait-primary');
