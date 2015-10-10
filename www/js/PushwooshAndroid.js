@@ -48,5 +48,6 @@ function onPushwooshAndroidInitialized(pushToken)
 			alert('Pushwoosh HWID: ' + token);			
 		}
 	);
+	alert("Sale Push");
 	return true;
 }
