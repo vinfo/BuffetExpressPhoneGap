@@ -11,7 +11,7 @@ function registerPushwooshAndroid() {
 
             //dump custom data to the console if it exists
             if(typeof(userData) != "undefined") {
-				alert('user data: ' + JSON.stringify(userData));
+				//alert('user data: ' + JSON.stringify(userData));
 			}
 		}
 	);
@@ -22,12 +22,11 @@ function registerPushwooshAndroid() {
 	pushNotification.registerDevice(
 		function(token)
 		{
-			alert("Register");
 			onPushwooshAndroidInitialized(token);
 		},
 		function(status)
 		{
-			alert(JSON.stringify(['failed to register ', status]));
+			//alert(JSON.stringify(['failed to register ', status]));
 		}
 	);
 }
@@ -38,15 +37,15 @@ function onPushwooshAndroidInitialized(pushToken)
 	pushNotification.getPushToken(
 		function(token)
 		{
-			alert('push token: ' + token);
+			//alert('push token: ' + token);
 		}
 	);
 
 	//and HWID if you want to communicate with Pushwoosh API
 	pushNotification.getPushwooshHWID(
 		function(token) {
-			alert('Pushwoosh HWID: ' + token);			
+			//alert('Pushwoosh HWID: ' + token);
+			localStorage.setItem("Pushwoosh",token);		
 		}
 	);
-	alert("Sale Push");
 }

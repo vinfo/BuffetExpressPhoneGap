@@ -43,7 +43,6 @@
         getDeviceProperty();
         checkConnection(); 
         initPushwoosh();
-        alert("Sale");
         navigator.splashscreen.hide(); 
         screen.lockOrientation('portrait-primary');
         window.analytics.startTrackerWithId('UA-62739338-1');
@@ -97,19 +96,10 @@ function getNameURLWeb(){
  var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
  return sPage;
 }
-function successHandler(){
-    alert("Analitycs OK");
-    return true
-}
-function errorHandler(){
-    alert("Analitycs Problem");
-    return true;
-}
 function initPushwoosh() {
     var pushNotification = window.plugins.pushNotification;
     if(device.platform == "Android")
     {
-        alert("Android");
         registerPushwooshAndroid();
     }else if(device.platform == "iPhone" || device.platform == "iOS")
     {
