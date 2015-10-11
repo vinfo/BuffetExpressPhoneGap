@@ -26,7 +26,7 @@ function registerPushwooshAndroid() {
 		},
 		function(status)
 		{
-			alert(JSON.stringify(['failed to register ', status]));			
+			console.warn(JSON.stringify(['failed to register ', status]));			
 		}
 	);
 }
@@ -39,6 +39,7 @@ function onPushwooshAndroidInitialized(pushToken)
 		{
 			//alert('push token: ' + token);
 			//alert("Register Android");
+			console.warn('push token device: ' + token);
 			localStorage.setItem("pushtoken",token);
 		}
 	);
