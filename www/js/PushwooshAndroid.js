@@ -23,10 +23,12 @@ function registerPushwooshAndroid() {
 		function(token)
 		{
 			onPushwooshAndroidInitialized(token);
+			checkConnection();
 		},
 		function(status)
 		{
-			//alert(JSON.stringify(['failed to register ', status]));
+			alert(JSON.stringify(['failed to register ', status]));
+			checkConnection();
 		}
 	);
 }

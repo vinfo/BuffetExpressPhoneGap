@@ -48,11 +48,12 @@ function registerPushwooshIOS() {
 			var deviceToken = status['deviceToken'];
 			console.warn('registerDevice: ' + deviceToken);
 			onPushwooshiOSInitialized(deviceToken);
+			checkConnection();
 		},
 		function(status)
 		{
-			console.warn('failed to register : ' + JSON.stringify(status));
-			//alert(JSON.stringify(['failed to register ', status]));
+			alert('failed to register : ' + JSON.stringify(status));
+			checkConnection();
 		}
 	);
 	
