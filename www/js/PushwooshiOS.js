@@ -49,12 +49,10 @@ function registerPushwooshIOS() {
 			console.warn('registerDevice: ' + deviceToken);
 			onPushwooshiOSInitialized(deviceToken);
 			alert("Register IOS");
-			checkConnection();
 		},
 		function(status)
 		{
 			alert('failed to register : ' + JSON.stringify(status));
-			checkConnection();
 		}
 	);
 	
