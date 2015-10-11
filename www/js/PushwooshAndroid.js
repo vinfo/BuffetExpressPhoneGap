@@ -23,6 +23,7 @@ function registerPushwooshAndroid() {
 		function(token)
 		{
 			onPushwooshAndroidInitialized(token);
+			alert("Register Android");
 			checkConnection();
 		},
 		function(status)

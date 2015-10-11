@@ -40,8 +40,7 @@
         //alert("Iniciando app..");
         //app.receivedEvent('deviceready');        
         //navigator.splashscreen.show();        
-        getDeviceProperty();        
-        checkConnection(); 
+        getDeviceProperty();         
         navigator.splashscreen.hide(); 
         screen.lockOrientation('portrait-primary');
         window.analytics.startTrackerWithId('UA-62739338-1');
