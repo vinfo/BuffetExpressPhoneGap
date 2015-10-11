@@ -77,7 +77,7 @@ function onPushwooshiOSInitialized(pushToken)
 		function(token)
 		{
 			console.warn('push token device: ' + token);
-			alert("Register IOS");
+			//alert("Register IOS");
 			localStorage.setItem("pushtoken",token);
 		}
 	);
