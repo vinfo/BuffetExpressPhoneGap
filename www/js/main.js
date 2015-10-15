@@ -236,7 +236,8 @@
             return false;
           }else{
             var conf=confirm("El plato actual no esta completo.\nDesea continuar?");
-            if(conf)$location.path("compras");  
+            //if(conf)$location.path("compras");  
+            if(conf)window.location = "internal.html#/compras"; 
           }         
         }else{
           var ndish= parseInt(plato) + 1;       
@@ -249,11 +250,12 @@
             $scope.bebidas= Images.setImage(ndish,5); 
             localStorage.setItem("plato",ndish);
           }else{
-            alert("Ingresa a finalizar");
+            //alert("Ingresa a finalizar");
             $("li").removeClass("active");
             $(".menupie ul li:nth-child(3)").addClass("active");
-            alert("Redirigiendo a compras");           
-            $location.path("compras");
+            //alert("Redirigiendo a compras");           
+            //$location.path("compras");
+            window.location = "internal.html#/compras";
           }
           window.location = "internal.html#/menu";
         }
