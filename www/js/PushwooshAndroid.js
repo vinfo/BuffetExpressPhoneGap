@@ -9,6 +9,12 @@ function registerPushwooshAndroid() {
             var title = event.notification.title;
             var userData = event.notification.userdata;
 
+            var notification = event.notification;
+            alert(notification.aps.alert);
+                               
+            //clear the app badge
+            pushNotification.setApplicationIconBadgeNumber(0);            
+
             //dump custom data to the console if it exists
             if(typeof(userData) != "undefined") {
 				//alert('user data: ' + JSON.stringify(userData));
