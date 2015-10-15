@@ -249,8 +249,10 @@
             $scope.bebidas= Images.setImage(ndish,5); 
             localStorage.setItem("plato",ndish);
           }else{
+            alert("Ingresa a finalizar");
             $("li").removeClass("active");
-            $(".menupie ul li:nth-child(3)").addClass("active");            
+            $(".menupie ul li:nth-child(3)").addClass("active");
+            alert("Redirigiendo a compras");           
             $location.path("compras");
           }
           window.location = "internal.html#/menu";
@@ -1182,7 +1184,8 @@ for(var h=0;h<farr.length;h++){
                       $(".div_loading").fadeOut(); 
                       $('.container').animate({
                       scrollTop: $("#topmobil").offset().top
-                      }, 5);                    
+                      }, 5);
+                      window.analytics.trackEvent('Ordenes', 'Ordenar', 'Enviar_Orden', 1);                 
                     }else{
                       $(".div_loading").fadeOut();
                       var inventario= "";
