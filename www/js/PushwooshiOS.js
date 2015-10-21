@@ -46,12 +46,13 @@ function registerPushwooshIOS() {
 		function(status)
 		{
 			var deviceToken = status['deviceToken'];
-			console.warn('registerDevice: ' + deviceToken);
-			onPushwooshiOSInitialized(deviceToken);			
+			alert('registerDevice: ' + deviceToken);
+			onPushwooshiOSInitialized(deviceToken);
 		},
 		function(status)
 		{
 			alert('failed to register : ' + JSON.stringify(status));
+			//alert(JSON.stringify(['failed to register ', status]));
 		}
 	);
 	
@@ -65,10 +66,10 @@ function onPushwooshiOSInitialized(pushToken)
 	//retrieve the tags for the device
 	pushNotification.getTags(
 		function(tags) {
-			console.warn('tags for the device: ' + JSON.stringify(tags));
+			alert('tags for the device: ' + JSON.stringify(tags));
 		},
 		function(error) {
-			console.warn('get tags error: ' + JSON.stringify(error));
+			alert('get tags error: ' + JSON.stringify(error));
 		}
 	);
 
@@ -76,16 +77,14 @@ function onPushwooshiOSInitialized(pushToken)
 	pushNotification.getPushToken(
 		function(token)
 		{
-			console.warn('push token device: ' + token);
-			//alert("Register IOS");
-			localStorage.setItem("pushtoken",token);
+			alert('push token device: ' + token);
 		}
 	);
 
 	//example how to get Pushwoosh HWID to communicate with Pushwoosh API
 	pushNotification.getPushwooshHWID(
 		function(token) {
-			console.warn('Pushwoosh HWID: ' + token);
+			alert('Pushwoosh HWID: ' + token);
 		}
 	);
 
