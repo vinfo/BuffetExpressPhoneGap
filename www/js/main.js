@@ -230,13 +230,13 @@
         }
 
         if(!localStorage.getItem("cant_"+tipo+"_"+plato))localStorage.setItem("cant_"+tipo+"_"+plato,1);
-        if(items<3 || flag){
+        if(items<3 || flag){          
           if(action=="add"){
-            NotificationService.alert('Plato actual no esta completo!', "Alerta", "Aceptar", null);
+            //NotificationService.alert('Plato actual no esta completo!', "Alerta", "Aceptar", null);
+            window.location = "internal.html#/compras"; 
             return false;
           }else{
-            var conf=confirm("El plato actual no esta completo.\nDesea continuar?");
-            alert("Entra");
+            var conf=confirm("El plato actual no esta completo.\nDesea continuar?");            
             //if(conf)$location.path("compras");  
             if(conf)window.location = "internal.html#/compras"; 
           }         
