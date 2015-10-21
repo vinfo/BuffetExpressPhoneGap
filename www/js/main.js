@@ -236,6 +236,7 @@
             return false;
           }else{
             var conf=confirm("El plato actual no esta completo.\nDesea continuar?");
+            alert("Entra");
             //if(conf)$location.path("compras");  
             if(conf)window.location = "internal.html#/compras"; 
           }         
