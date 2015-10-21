@@ -46,12 +46,12 @@ function registerPushwooshIOS() {
 		function(status)
 		{
 			var deviceToken = status['deviceToken'];
-			alert('registerDevice: ' + deviceToken);
+			//alert('registerDevice: ' + deviceToken);
 			onPushwooshiOSInitialized(deviceToken);
 		},
 		function(status)
 		{
-			alert('failed to register : ' + JSON.stringify(status));
+			//alert('failed to register : ' + JSON.stringify(status));
 			//alert(JSON.stringify(['failed to register ', status]));
 		}
 	);
@@ -66,10 +66,10 @@ function onPushwooshiOSInitialized(pushToken)
 	//retrieve the tags for the device
 	pushNotification.getTags(
 		function(tags) {
-			alert('tags for the device: ' + JSON.stringify(tags));
+			//alert('tags for the device: ' + JSON.stringify(tags));
 		},
 		function(error) {
-			alert('get tags error: ' + JSON.stringify(error));
+			//alert('get tags error: ' + JSON.stringify(error));
 		}
 	);
 
@@ -78,13 +78,15 @@ function onPushwooshiOSInitialized(pushToken)
 		function(token)
 		{
 			alert('push token device: ' + token);
+			console.warn('push token device: ' + token);
+			localStorage.setItem("pushtoken",token);
 		}
 	);
 
 	//example how to get Pushwoosh HWID to communicate with Pushwoosh API
 	pushNotification.getPushwooshHWID(
 		function(token) {
-			alert('Pushwoosh HWID: ' + token);
+			//alert('Pushwoosh HWID: ' + token);
 		}
 	);
 
