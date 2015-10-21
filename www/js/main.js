@@ -252,15 +252,15 @@
             $scope.guarnicion= Images.setImage(ndish,4);
             $scope.bebidas= Images.setImage(ndish,5); 
             localStorage.setItem("plato",ndish);
+            window.location = "internal.html#/menu";
           }else{
             //alert("Ingresa a finalizar");
             $("li").removeClass("active");
             $(".menupie ul li:nth-child(2)").addClass("active");
             alert("Redirigiendo a compras");           
-            $location.path("compras");
+            //$location.path("compras");
             window.location = "internal.html#/compras";
-          }
-          window.location = "internal.html#/menu";
+          }          
         }
       },  
 
