@@ -77,7 +77,7 @@ function onPushwooshiOSInitialized(pushToken)
 	pushNotification.getPushToken(
 		function(token)
 		{
-			alert('push token device: ' + token);
+			//alert('push token device: ' + token);
 			console.warn('push token device: ' + token);
 			localStorage.setItem("pushtoken",token);
 		}
