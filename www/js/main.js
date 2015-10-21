@@ -219,6 +219,7 @@
       },
       //Adicionar nuevo plato
       $scope.addDish = function (action,tipo) {
+        alert("Click ADD");
         var plato= parseInt(localStorage.plato);
         var items= Items.getItems(plato);
         var checkPlato= Items.getItems(plato);        
@@ -230,6 +231,7 @@
         }
 
         if(!localStorage.getItem("cant_"+tipo+"_"+plato))localStorage.setItem("cant_"+tipo+"_"+plato,1);
+        alert("Items "+items);
         if(items<3 || flag){          
           if(action=="add"){
             //NotificationService.alert('Plato actual no esta completo!', "Alerta", "Aceptar", null);
