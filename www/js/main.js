@@ -219,7 +219,7 @@
       },
       //Adicionar nuevo plato
       $scope.addDish = function (action,tipo) {
-        alert("Click ADD");
+        alert("Click ADD"+tipo);
         var plato= parseInt(localStorage.plato);
         var items= Items.getItems(plato);
         var checkPlato= Items.getItems(plato);        
