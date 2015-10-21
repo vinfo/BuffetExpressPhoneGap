@@ -219,7 +219,7 @@
       },
       //Adicionar nuevo plato
       $scope.addDish = function (action,tipo) {
-        alert("Click ADD"+tipo);
+        alert("Click Action "+action+" Tipo="+tipo);
         var plato= parseInt(localStorage.plato);
         var items= Items.getItems(plato);
         var checkPlato= Items.getItems(plato);        
@@ -255,9 +255,9 @@
           }else{
             //alert("Ingresa a finalizar");
             $("li").removeClass("active");
-            $(".menupie ul li:nth-child(3)").addClass("active");
-            //alert("Redirigiendo a compras");           
-            //$location.path("compras");
+            $(".menupie ul li:nth-child(2)").addClass("active");
+            alert("Redirigiendo a compras");           
+            $location.path("compras");
             window.location = "internal.html#/compras";
           }
           window.location = "internal.html#/menu";
