@@ -219,7 +219,6 @@
       },
       //Adicionar nuevo plato
       $scope.addDish = function (action,tipo) {
-        alert("Click Action "+action+" Tipo="+tipo);
         var plato= parseInt(localStorage.plato);
         var items= Items.getItems(plato);
         var checkPlato= Items.getItems(plato);        
@@ -231,7 +230,6 @@
         }
 
         if(!localStorage.getItem("cant_"+tipo+"_"+plato))localStorage.setItem("cant_"+tipo+"_"+plato,1);
-        alert("Items "+items);
         if(items<3 || flag){          
           if(action=="add"){
             //NotificationService.alert('Plato actual no esta completo!', "Alerta", "Aceptar", null);
@@ -256,7 +254,7 @@
             //alert("Ingresa a finalizar");
             $("li").removeClass("active");
             $(".menupie ul li:nth-child(2)").addClass("active");
-            alert("Redirigiendo a compras");           
+            //alert("Redirigiendo a compras");           
             //$location.path("compras");
             window.location = "internal.html#/compras";
           }
