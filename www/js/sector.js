@@ -36,6 +36,6 @@ if (window.jQuery) {
 		var timer= new Date().getTime();
 		localStorage.setItem("timer",timer);
 		localStorage.setItem("GPS","false");
-		window.location.href = 'internal.html';
+		window.location.href = 'internal.html#/carta';
 	});	
 }
