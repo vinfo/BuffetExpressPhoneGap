@@ -30,7 +30,7 @@ if (window.jQuery) {
               $(".mi_cuenta").attr("href","internal.html#/mi_cuenta");
             }            
 
-            var redir="internal.html#/menu";          
+            var redir="internal.html#/carta";          
             if(data[1]=="ins")redir= "internal.html#/menu";
             if(data[1]=="edit")redir= "internal.html#/compras";
             if(url[1]=="pago#topmobil")redir= "internal.html#/compras";
@@ -83,7 +83,7 @@ if (window.jQuery) {
   });	
   $(document).on("click", ".close_guia", function() {
     localStorage.setItem("show_guia","1");
-    window.location.href = 'internal.html';
+    window.location.href = 'internal.html#/carta';
   });
   $(document).on("click", ".audio_play", function(event) {
     event.preventDefault();

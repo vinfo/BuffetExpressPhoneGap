@@ -55,7 +55,7 @@ function startApp() {
     //   window.location = "internal.html#/guia";
     // }else{
       localStorage.setItem("GPS","true");
-      window.location.href = 'internal.html';
+      window.location.href = 'internal.html#/carta';
    // }  
  }
 
