@@ -339,6 +339,7 @@
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshiOS.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshAndroid.js",
@@ -358,7 +359,6 @@
 		"/D/Movilidad/Puship/assets/www/config.xml",
 		"/D/Movilidad/Puship/assets/www/PushipNotification.js",
 		"/D/Movilidad/Puship/assets/www/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/sector.html",
 		"/D/Movilidad/Puship/www/js/index.js",
@@ -487,6 +487,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"Acabo de descargar",
 			"console.warn",
 			"addDish",
 			"El plato ac",
@@ -613,8 +614,7 @@
 			"InAppBrowser.open",
 			"NotificationService",
 			"mainController",
-			"fuera de",
-			"navigator.notification.alert"
+			"fuera de"
 		],
 		"highlight": false,
 		"in_selection": false,
