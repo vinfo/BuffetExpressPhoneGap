@@ -179,13 +179,7 @@
     }else{
       $(".menupie ul li:nth-child(2)").addClass("active");
     }
-
-    if(localStorage.cuenta){
-      $scope.mi_cuenta="internal.html#/mi_cuenta";
-    }else{
-      $scope.mi_cuenta="login.html";
-    }      
-
+    if($routeParams.activity)localStorage.activity=$routeParams.activity; 
 
     var url="";    
     $(".imgCat").click(function(){
@@ -206,7 +200,7 @@
      return false;
    });
 
-    if($routeParams.activity)localStorage.activity=$routeParams.activity;   
+      
     var plato= 1;
     if(localStorage.plato)plato= parseInt(localStorage.plato);
     if(localStorage.getItem("dimension")==768)$(".menuplato").css("width","82%");   
@@ -230,7 +224,11 @@
       setBackground("fondoslide","");
     }
 
-    
+    if(localStorage.cuenta){
+      $scope.mi_cuenta="internal.html#/mi_cuenta";
+    }else{
+      $scope.mi_cuenta="login.html";
+    } 
 
       //Validar imagenes plato existente      
       if(Items.getTypeDish(plato)=="B" || Items.getItems(plato)==0){
@@ -322,14 +320,11 @@
             $scope.bebidas= Images.setImage(ndish,5); 
             localStorage.setItem("plato",ndish);
           }else{
-            //alert("Ingresa a finalizar");
             $("li").removeClass("active");
-            $(".menupie ul li:nth-child(2)").addClass("active");
-            //alert("Redirigiendo a compras");           
-            //$location.path("compras");
-            window.location = "internal.html#/compras";
+            $(".menupie ul li:nth-child(3)").addClass("active");
+            $location.path("compras");
           }
-          //window.location = "internal.html#/menu";
+          window.location = "internal.html#/menu";
         }
       },  
 
@@ -346,7 +341,12 @@
         }
 
         var pos= Items.getPos(plato,dish.idCat);
-        var fcode= $("#code_"+dish.code).val().split('|');      
+        var fcode= $("#code_"+dish.code).val().split('|');
+
+        if(dish.idCat==5){
+          localStorage.setItem("bebida",1);
+          localStorage.removeItem("paso2");
+        }         
 
         var fid= fcode[0];
         var fname= fcode[3];
@@ -412,11 +412,42 @@
           redir=false;
         }
         localStorage.setItem("plato",plato);      
-        $("#totalDish").html(Items.getFullLastId());
+        $("#totalDish").html(Items.getFullLastId() + Items.getNumDishE());
         if(activity=="ins" && action=="add" && cant!=0 && redir && items<=1)window.location = "internal.html#/menu";
         //if(activity!="edit" && action=="add" && cant!=0 && redir)window.location = "internal.html#/compras";
 
-      },  
+      },
+      $scope.setSpecial = function (dish,action) {
+        var fcode= $("#code_"+dish.code).val().split('|');
+        var fid= fcode[0];
+        var fname= fcode[3];
+        var price= fcode[4];        
+    var cant= parseInt($("#numbE_"+dish.idCat+"_"+dish.code).html());
+    var name= "itemE_"+dish.idCat+"_E_"+dish.code;
+    if(!localStorage.platoE)localStorage.setItem("platoE",0);
+    if(action=="add"){
+      cant=cant+1;
+      localStorage.setItem("platoE",parseInt(localStorage.platoE)+1);
+    }else{
+      if(cant>0)cant= cant - 1;
+      localStorage.setItem("platoE",parseInt(localStorage.platoE)-1);
+    }
+    
+        if(!localStorage.getItem(name)){
+          localStorage.setItem(name,JSON.stringify({id:fid,cant:cant,pos:0,code:dish.code,cat:dish.idCat,fname:fname,price:price}));
+    }
+        if(cant>0){         
+          localStorage.setItem(name,JSON.stringify({id:fid,cant:cant,pos:0,code:dish.code,cat:dish.idCat,fname:fname,price:price}));
+      $("#numbE_"+dish.idCat+"_"+dish.code).html(cant).fadeIn();
+  if(cant>0)$(".cart_shop").css({"bottom":+($("li.carrito a img").height()+8)+"px","left":+($(".menupie").width()-80)+"px"}).fadeIn();      
+    }else{
+      localStorage.removeItem(name);
+      $("#numbE_"+dish.idCat+"_"+dish.code).html('0').fadeOut();
+    }
+    var NumDishE= Items.getNumDishE();
+    if(NumDishE==0)$(".cart_shop").fadeOut();
+        $("#totalDish").html(Items.getNumDish() + NumDishE);        
+      },       
       $scope.closeDish = function (dish) {
         $(".verplato").slideToggle();
         $(".verplatoico .img1").show();
@@ -437,22 +468,39 @@
     });
 
   angularRoutingApp.controller('comprasController', function($scope,Items,Currency) {
-    setTimer();
-    setBackground("fondo","");
+  setTimer();
+  setBackground("fondo","");
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
-    $("li").removeClass("active");
-    $(".menupie ul li:nth-child(2)").addClass("active");    
+  $("li").removeClass("active");
+    $(".menupie ul li:nth-child(3)").addClass("active");  
+  
+    if(localStorage.cuenta){
+      $scope.mi_cuenta="internal.html#/mi_cuenta";
+    }else{
+      $scope.mi_cuenta="login.html";
+    } 
     
     var dishes=[];
     setDisplayMenu();
-
+  var cantBuffet=0;
+  var specials='';
     for(var j=0;j<localStorage.length;j++){
       var item= localStorage.key(j);
-      if(item.indexOf("item_")==0){
+      if(item.indexOf("item_")==0 || item.indexOf("itemE_")==0){
         var dish=item.split("_");
         dishes.push(dish[1]);
+    if(dish[3]=="B"){
+      cantBuffet++;
+    }
+    if(dish[2]=="E"){
+      var special= JSON.parse(localStorage.getItem(item));
+      var rand= Math.random();
+      specials+='<div id="dish_'+dish[3]+'" class="comprasitem"><div id="img_'+dish[3]+'" class="imgcont" style="background:none;padding:0;"><img src="http://buffetexpress.com.co/REST/resources/images/dish/'+dish[3]+'_1.jpg?rand='+rand+'" style="width:100%"/></div><div class="contnn"><h3>'+special.fname+'</h3><p></p><div class="icodeli"><span class="elimina" onclick="setFinalOrderE(\''+dish[3]+'\',\'less\',\''+dish[2]+'\')"></span><span class="contador"><label id="cont_'+dish[3]+'">'+special.cant+'</label></span><span class="suma" onclick="setFinalOrderE(\''+dish[3]+'\',\'add\',\''+dish[2]+'\')"></span></div></div><div class="icodeta catE"> <div class="subtt"><input type="hidden" value="'+special.price+'" id="price_'+dish[3]+'" name="price_'+dish[3]+'"><label id="lprice_'+dish[3]+'" class="currency">$'+Currency.setMoney(special.price, 0, ",", ".")+'</label></div></div></div>';     
+    }
       }
-    }   
+    }
+  
+    
     var farr= compressArray(dishes.sort(sortNumber).reverse());
     var plato='';   
     var nDish= farr.length;
@@ -532,88 +580,88 @@
         cant= Items.getExtraDish(vItem);
         
         var add="";
-        if(cant>0){
-          if(cat==1){         
-            if(c1==0){
-              var ad="";
-              if(cant>1)ad= " <b><b>(extra X "+ (cant - 1)+")</b></b>";
-              ppal+="- "+name+ad+"</br>";
-              sopa=image;   
-              sopaIco="images/sopas_mini_ok.png";
-              total+= price * (cant-1);       
-            }else{
-              var ad="";
-              if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";             
-              extra+="- "+name+ad+"</br>";
-              total+= price * cant;
-            }         
-            c1++;
-          }
-          if(cat==2){ 
-            if(c2==0){
-              var ad="";
-              if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
-              ppal+="- "+name+ad+"</br>";
-              arroz=image;
-              arrozIco="images/arroz_mini_ok.png";
-              total+= price * (cant-1);   
-            }else{            
-              var ad="";
-              if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";
-              extra+="- "+name+ad+"</br>";
-              total+= price * cant;
-            }
-            c2++;
-          }
-          if(cat==3){         
-            if(c3==0){
-              var ad="";
-              if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
-              ppal+="- "+name+ad+"</br>";
-              carnes=image;
-              carnesIco="images/carnes_mini_ok.png";  
-              total+= price * (cant-1);         
-            }else{
-              var ad="";
-              if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";             
-              extra+="- "+name+ad+"</br>";  
-              total+= price * cant;       
-            }
-            c3++;
-          }
-          if(cat==4){         
-            if(c4==0){
-              var ad="";
-              if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
-              ppal+="- "+name+ad+"</br>";
-              guarnicion=image;
-              guarnicionIco="images/guarnicion_mini_ok.png";  
-              total+= price * (cant-1);         
-            }else{
-              var ad="";
-              if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";             
-              extra+="- "+name+ad+"</br>";
-              total+= price * cant;
-            }
-            c4++;
-          }
-          if(cat==5){         
-            if(c5==0){
-              var ad="";
-              if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
-              ppal+="- "+name+ad+"</br>";
-              bebidas=image;
-              bebidasIco="images/bebidas_mini_ok.png";
-              total+= price * (cant-1);         
-            }else{
-              var ad="";
-              if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";           
-              extra+="- "+name+ad+"</br>";
-              total+= price * cant;
-            }
-            c5++;
-          }
+    if(cant>0){
+      if(cat==1){         
+        if(c1==0){
+        var ad="";
+        if(cant>1)ad= " <b><b>(extra X "+ (cant - 1)+")</b></b>";
+        ppal+="- "+name+ad+"</br>";
+        sopa=image;   
+        sopaIco="images/sopas_mini_ok.png";
+        total+= price * (cant-1);       
+        }else{
+        var ad="";
+        if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";             
+        extra+="- "+name+ad+"</br>";
+        total+= price * cant;
+        }         
+        c1++;
+      }
+      if(cat==2){ 
+        if(c2==0){
+        var ad="";
+        if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
+        ppal+="- "+name+ad+"</br>";
+        arroz=image;
+        arrozIco="images/arroz_mini_ok.png";
+        total+= price * (cant-1);   
+        }else{            
+        var ad="";
+        if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";
+        extra+="- "+name+ad+"</br>";
+        total+= price * cant;
         }
+        c2++;
+      }
+      if(cat==3){         
+        if(c3==0){
+        var ad="";
+        if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
+        ppal+="- "+name+ad+"</br>";
+        carnes=image;
+        carnesIco="images/carnes_mini_ok.png";  
+        total+= price * (cant-1);         
+        }else{
+        var ad="";
+        if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";             
+        extra+="- "+name+ad+"</br>";  
+        total+= price * cant;       
+        }
+        c3++;
+      }
+      if(cat==4){         
+        if(c4==0){
+        var ad="";
+        if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
+        ppal+="- "+name+ad+"</br>";
+        guarnicion=image;
+        guarnicionIco="images/guarnicion_mini_ok.png";  
+        total+= price * (cant-1);         
+        }else{
+        var ad="";
+        if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";             
+        extra+="- "+name+ad+"</br>";
+        total+= price * cant;
+        }
+        c4++;
+      }
+      if(cat==5){         
+        if(c5==0){
+        var ad="";
+        if(cant>1)ad= " <b>(extra X "+ (cant - 1)+")</b>";
+        ppal+="- "+name+ad+"</br>";
+        bebidas=image;
+        bebidasIco="images/bebidas_mini_ok.png";
+        total+= price * (cant-1);         
+        }else{
+        var ad="";
+        if(cant>=1)ad= " <b>(extra X "+ (cant)+")</b>";           
+        extra+="- "+name+ad+"</br>";
+        total+= price * cant;
+        }
+        c5++;
+      }
+    }
       }
       var cantDish=1;
       htotal=total;
@@ -631,7 +679,7 @@
       }
       plato='<div class="comprasitem" id="dish_'+dish+'"><div class="imgcont" id="img_'+dish+'"><div class="padre"><div class = "derrap"><div class="contenedor"><div class="sopa"><img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/><div class="sopacont"><img src="'+sopa+'" style="width:100%;" border="0" margin="0" /></div></div><div class="vaso"><img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/><div class="jugo"><img src="'+bebidas+'" style="width:100%;" border="0" margin="0"/></div></div><div class="plato"><img src="images/plato.png" style="width:100%;" border="0" margin="0"/><div class="arroz"><img src="'+arroz+'" style="width:100%;" border="0" margin="0"/></div><div class="guarnicion"><img src="'+guarnicion+'" style="width:100%;" border="0" margin="0"/></div><div class="carne"><img src="'+carnes+'" style="width:100%;" border="0" margin="0"/></div></div></div></div></div></div><div class="contnn"><h3>'+nameDish+'</h3><p>'+ppal+extra+'</p></p><div class="icodeli"><span class="elimina" onclick="setFinalOrder('+dish+',\'less\',\''+tipo+'\')"></span><span class="contador"><label id="cont_'+dish+'">'+cantDish+'</label></span><span class="suma" onclick="setFinalOrder('+dish+',\'add\',\''+tipo+'\')"></span></div></div><div class="icodeta"><div><img src="'+sopaIco+'" alt="..." title="..." onclick="editDish(1,\'sopas y cremas\','+dish+',\''+tipo+'\')"></div><div><img src="'+arrozIco+'" alt="..." title="..." onclick="editDish(2,\'arroz\','+dish+',\''+tipo+'\')"></div><div><img src="'+carnesIco+'" alt="..." title="..." onclick="editDish(3,\'carnes\','+dish+',\''+tipo+'\')"></div><div><img src="'+guarnicionIco+'" alt="..." title="..." onclick="editDish(4,\'guarnición\','+dish+',\''+tipo+'\')"></div><div><img src="'+bebidasIco+'" alt="..." title="..." onclick="editDish(5,\'bebidas\','+dish+',\''+tipo+'\')"></div> <div class="subtt"><input type="hidden" name="price_'+dish+'" id="price_'+dish+'" value="'+htotal+'" /><label class="currency" id="lprice_'+dish+'">$'+Currency.setMoney(total, 0, ",", ".")+'</label></div></div>';     
       
-      $("#miscompras").append(plato);
+    if(Items.getNumDish()>0 && (tipo=="B" || tipo=="R"))$("#miscompras").append(plato);   
       var icodeta=$(".icodeta").height();
       var padre=$("#dish_"+nDish).height();
       if(localStorage.dimension>380){
@@ -642,6 +690,7 @@
     var fDish= Items.getRealDish();
 
     var contPago='<div class="contpag" onclick="doPay(\''+fDish+'\')"><div class="cont">Confirmar pedido</div></div>';
+  if(specials!="")$("#miscompras").append(specials);
     $("#miscompras").append(contPago);
     $("#miscompras").append('<div style="height:250px;">&nbsp;</div>');
     if(plato==""){
@@ -649,7 +698,7 @@
       $(".costoad").fadeIn();
     }
     var mheight= $("li.carrito a img").height();
-    $(".contpag").css({"bottom":+(mheight-1)+"px"});      
+    $(".contpag").css({"bottom":+(mheight-1)+"px"}); 
   });
 
   angularRoutingApp.controller('loginController', function($scope) {

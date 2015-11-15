@@ -29,7 +29,8 @@ function onSuccess(position) {
   localStorage.removeItem("MsgZone"); 
   localStorage.removeItem("timer");
   localStorage.removeItem("pedido"); 
-  localStorage.removeItem("horario");      
+  localStorage.removeItem("horario");
+  localStorage.removeItem("bebida");     
   lat1= position.coords.latitude;
   lng1= position.coords.longitude;   
   var pos= {lat:lat1,lng:lng1};
