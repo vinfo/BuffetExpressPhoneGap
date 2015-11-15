@@ -1493,8 +1493,16 @@ for(var h=0;h<farr.length;h++){
     }
   }); 
   angularRoutingApp.controller('guiaController', function($scope) {
-    setTimer();
-    setBackground("fondo","");      
+    //setTimer();
+    //setBackground("fondo","");
+    localStorage.removeItem("paso1");
+    localStorage.removeItem("paso2");
+    localStorage.removeItem("paso3");
+    localStorage.removeItem("paso3B");
+    localStorage.removeItem("paso4");
+    localStorage.removeItem("paso5");
+    localStorage.removeItem("bebida");
+    window.location = "internal.html#/carta";     
   }); 
 
   angularRoutingApp.controller("mapaController", ["$scope", function ($scope) {
@@ -1842,11 +1850,11 @@ for(var h=0;h<farr.length;h++){
           var item= localStorage.key(i);
           if(item.indexOf("itemE_")==0){        
             var dish= JSON.parse(localStorage.getItem(item));
-      var cant= dish.cant;
+            var cant= dish.cant;
             dishes+=cant;
           }
         }
-    localStorage.setItem("platoE",dishes);           
+        localStorage.setItem("platoE",dishes);           
         return parseInt(dishes);
       },      
       getRealDish: function() {
