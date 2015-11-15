@@ -335,22 +335,27 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www"
+		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/carta.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/sector.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshiOS.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshAndroid.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/C/wamp/www/angelaboteropoeta/application/js/ordenes.js",
 		"/C/Users/odc/Downloads/datepicker/datepicker/js/bootstrap-datepicker.js",
 		"/C/Users/odc/Downloads/BuffetExpressPhoneGap-06d666385283dbb50d0730ac17948de1841bc4cd/BuffetExpressPhoneGap-06d666385283dbb50d0730ac17948de1841bc4cd/www/config.xml",
@@ -362,10 +367,7 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/sector.html",
 		"/D/Movilidad/Puship/www/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/sector.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/ayuda.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/index.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/nosotros.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
@@ -465,12 +467,11 @@
 		"/D/wamp/www/buffetexpress/codeigniter/app/templates/redes.html",
 		"/D/wamp/www/buffetexpress/codeigniter/app/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/org.apache.cordova.inappbrowser/README.md",
-		"/D/Movilidad/BuffetExpressPhoneGap/plugins/org.apache.cordova.inappbrowser/plugin.xml",
-		"/C/Users/odc/Downloads/Ftp familyma@familymarketing.co.xml"
+		"/D/Movilidad/BuffetExpressPhoneGap/plugins/org.apache.cordova.inappbrowser/plugin.xml"
 	],
 	"find":
 	{
-		"height": 36.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -487,6 +488,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			".menupie ul li:nth-child(2) a img",
 			"Acabo de descargar",
 			"console.warn",
 			"addDish",
@@ -613,8 +615,7 @@
 			"mainController",
 			"InAppBrowser.open",
 			"NotificationService",
-			"mainController",
-			"fuera de"
+			"mainController"
 		],
 		"highlight": false,
 		"in_selection": false,

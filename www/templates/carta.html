@@ -18,7 +18,7 @@ h1, .h1 {
 $(function(){
 	accionA();   
 })
-function openQtip(hidde,msg,pos){
+function openQtip(hidde,msg){
 	if(hidde!="")$("."+hidde).qtip('hide');
 	var autom=true;
 	if(localStorage.paso1)autom=false;	
@@ -63,9 +63,11 @@ function closeQtip(div){
 	$(".msg").qtip('hide');
 }
 function accionA(){
+	$(".msg").css({"position": "absolute","top": "30%","left": "10%"});	
 	openQtip('','Bienvenido a <strong>BUFFET EXPRESS</strong> el primer restaurante online tipo buffet del mundo, a continuación te guiaremos en un paso a paso. <div class="btons right"> <button class="btn" onclick="accionB();">Siguiente</button></div>'); 	
 }
 function accionB(){	
+	$(".msg").css({"position": "absolute","top": "30%","left": "10%"});
 	openQtip('msg','En nuestra <strong>Carta</strong> encontrarás la opción que mejor se adapte a tus hábitos alimentario.<br/>Haz clic en la opción de tu preferencia!  <div class="btons right"><button class="btn" onclick="accionA();">Anterior</button> <button class="btn" onclick="closeQtip();">Entendido</button></div>');	
 }
 </script>
