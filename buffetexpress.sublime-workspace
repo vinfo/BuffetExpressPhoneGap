@@ -336,14 +336,16 @@
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/carta.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/especiales.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/sector.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
@@ -466,8 +468,7 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/inappbrowser.js",
 		"/D/wamp/www/buffetexpress/codeigniter/app/templates/redes.html",
 		"/D/wamp/www/buffetexpress/codeigniter/app/index.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/plugins/org.apache.cordova.inappbrowser/README.md",
-		"/D/Movilidad/BuffetExpressPhoneGap/plugins/org.apache.cordova.inappbrowser/plugin.xml"
+		"/D/Movilidad/BuffetExpressPhoneGap/plugins/org.apache.cordova.inappbrowser/README.md"
 	],
 	"find":
 	{
@@ -488,6 +489,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"cartaController",
+			".menupie ul li:nth-child(4) a img",
+			"cartaController",
 			".menupie ul li:nth-child(2) a img",
 			"Acabo de descargar",
 			"console.warn",
@@ -611,9 +615,6 @@
 			"mainController",
 			"NotificationService",
 			"mainController",
-			"NotificationService",
-			"mainController",
-			"InAppBrowser.open",
 			"NotificationService",
 			"mainController"
 		],

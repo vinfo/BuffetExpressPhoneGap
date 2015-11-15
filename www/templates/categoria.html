@@ -1,4 +1,5 @@
 <!-- Cotenido buffet -->
+<div class="msg"></div>
 <div class="menuplatolist">
   <div class="col-md-12" ng-repeat="dish in dishes">
    <div class="title"><img ng-src="images/{{imageCat}}.png" alt="..." title=".." /><span>{{dish.name}}</span></div>
@@ -168,4 +169,61 @@
             });
 //setTimeout(function(){$(".btns").fadeIn();}, 1500);
 });
+</script>
+<script type="text/javascript">
+$(function(){
+  accionA();   
+})
+function openQtip(hidde,msg){
+  if(hidde!="")$("."+hidde).qtip('hide');
+  var autom=true;
+  if(localStorage.paso3)autom=false;  
+  $('.msg').qtip({
+    content: {
+      text: function(event, api) { 
+        var con = msg;                      
+        return con;
+      },
+      button: true
+    },      
+        show: {
+      event: 'click',
+            when: false, // Don't specify a show event
+            ready: autom // Show the tooltip when ready
+        },    
+    hide: {
+      event: false
+    },
+    events: {
+      hidden : function(event, api) {
+        localStorage.setItem("paso3",1);
+      },
+    },
+    style: {
+      classes: '', // No additional classes added to .qtip element
+      widget: false, // Not a jQuery UI widget
+      width:'80%', // No set width
+      height: false, // No set height
+      tip: { // Requires Tips plugin
+        corner: false, // Use position.my by default
+        mimic: false, // Don't mimic a particular corner
+        width: 20, 
+        height: 20,
+        border: true, // Detect border from tooltip style
+        offset: 0 // Do not apply an offset from corner
+      }
+    }   
+  });
+}
+function closeQtip(div){
+  $(".msg").qtip('hide');
+}
+function accionA(){
+  $(".msg").css({"position": "absolute","top": "30%","left": "10%"});   
+  openQtip('','Para conocer los ingredientes de cada preparación y sus contenidos nutricionales haz clic en el botón del medio <strong>info</strong>. <div class="btons right"> <button class="btn" onclick="accionB();">Siguiente</button></div>');  
+}
+function accionB(){
+  $(".msg").css({"position": "absolute","top": "30%","left": "10%"});   
+  openQtip('msg','Para agregar una preparación a tu plato haz clic en el botón derecho <strong class="mas">+</strong>.  <div class="btons right"><button class="btn" onclick="accionA();">Anterior</button> <button class="btn" onclick="closeQtip();">Entendido</button></div>');  
+}
 </script>

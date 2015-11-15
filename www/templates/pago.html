@@ -1,3 +1,4 @@
+<div class="msg"></div>
 <div class="div_loading">
     <div class="msg_div_loading"><img src="images/loading.gif" width="41" height="39" /><span class="texto_load">Verificando inventario...</span></div>
 </div>
@@ -73,10 +74,10 @@
           <p>
           <select id="reservacion" name="reservacion">
                 <option value="0">En este momento</option>
-                <option value="1">De 11:30 a.m. a 12:30 p.m.</option>
-                <option value="2">De 12:30 p.m. a 1:30 p.m.</option>
-                <option value="3">De 1:30 p.m. a 2:30 p.m.</option>
-                <option value="4">De 2:30 p.m. a 3:30 p.m.</option>
+                <option value="1">De 11:45 a.m. a 12:30 p.m.</option>
+                <option value="2">De 12:45 p.m. a 1:30 p.m.</option>
+                <option value="3">De 1:45 p.m. a 2:30 p.m.</option>
+                <option value="4">De 2:45 p.m. a 3:30 p.m.</option>
             </select>
             </p>             
                 <label>Datos de envío</label>
@@ -131,3 +132,72 @@
         </div>   
         <div style="height:240px;"></div> 
     </div>
+<script type="text/javascript">
+$(function(){
+    accionA();
+})
+function openQtip(hidde,msg){
+    if(hidde!="")$("."+hidde).qtip('hide');
+    var autom=true;
+    if(localStorage.paso5)autom=false;  
+    $('.msg').qtip({
+        content: {
+            text: function(event, api) { 
+              var con = msg;                      
+              return con;
+            },
+            button: true
+        },          
+        show: {
+            event: 'click',
+            when: false, // Don't specify a show event
+            ready: autom // Show the tooltip when ready
+        },
+      hide: {
+        event: false
+      },
+      events: {
+          hidden : function(event, api) {
+              localStorage.setItem("paso5",1);
+          },
+      },
+        style: {
+            classes: '', // No additional classes added to .qtip element
+            widget: false, // Not a jQuery UI widget
+            width:'80%', // No set width
+            height: false, // No set height
+            tip: { // Requires Tips plugin
+                corner: false, // Use position.my by default
+                mimic: false, // Don't mimic a particular corner
+                width: 20, 
+                height: 20,
+                border: true, // Detect border from tooltip style
+                offset: 0 // Do not apply an offset from corner
+            }
+        }       
+    });
+}
+function closeQtip(div){
+    $(".msg").qtip('hide');
+}
+function accionA(){
+    $(".msg").css({"position": "absolute","top": "30%","left": "10%"});
+    openQtip('','Si tienes un bono de descuento ingrésalo en el campo ubicado debajo de la factura, recuerda ingresarlo diferenciando mayúsculas de minúsculas. (Haz clic en otro campo para ver que se haga efectivo) <div class="btons right"> <button class="btn" onclick="accionB();">Siguiente</button></div>');   
+}
+function accionB(){
+    $(".msg").css({"position": "absolute","top": "30%","left": "10%"});
+    openQtip('msg','Ingresa tus datos de registro, de envío y la hora en que deseas recibir tu orden. <div class="btons right"><button class="btn" onclick="accionA();">Anterior</button> <button class="btn" onclick="accionC();">Siguiente</button></div>');      
+}
+function accionC(){
+    $(".msg").css({"position": "absolute","top": "30%","left": "10%"});
+    openQtip('msg','Al finalizar de llenar tus datos escoge el medio de pago y haz clic en el botón <strong>enviar orden</strong> para finalizar tu pedido.  <div class="btons right"><button class="btn" onclick="accionB();">Anterior</button> <button class="btn" onclick="closeQtip();">Entendido</button></div>');
+}
+function accionD(){
+    $(".msg").css({"position": "absolute","top": "30%","left": "10%"});
+    openQtip('msg','Recuerda que al darle clic al botón <strong>Rastrea tu orden</strong> puedes conocer la ubicación de tu pedido y el tiempo que tardará en llegar. <div class="btons right"> <button class="btn" onclick="accionE();">Siguiente</button></div>');    
+}
+function accionE(){
+    $(".msg").css({"position": "absolute","top": "30%","left": "10%"});
+    openQtip('msg','Si crees que a tu amigo le encantaría vivir esta experiencia invítalo hacer parte de ella dándole clic al botón <strong>compartir</strong> ubicado en la esquina superior derecha. <div class="btons right"><button class="btn" onclick="accionD();">Anterior</button> <button class="btn" onclick="closeQtip();">Entendido</button></div>');   
+}
+</script>    

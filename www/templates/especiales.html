@@ -178,10 +178,10 @@ function closeQtip(div){
 }
 function accionA(){
   $(".msg").css({"position": "absolute","top": "30%","left": "10%"});   
-  openQtip('','Para conocer los ingredientes de cada preparación y sus contenidos nutricionales haz clic en info. <div class="btons right"> <button class="btn" onclick="accionB();">Siguiente</button></div>');  
+  openQtip('','Para conocer los ingredientes de cada preparación y sus contenidos nutricionales haz clic en el botón del medio <strong>info</strong>. <div class="btons right"> <button class="btn" onclick="accionB();">Siguiente</button></div>');  
 }
 function accionB(){
   $(".msg").css({"position": "absolute","top": "30%","left": "10%"});   
-  openQtip('msg','Para agregar una preparación a tu plato haz clic en <strong class="mas">+</strong>.  <div class="btons right"><button class="btn" onclick="accionA();">Anterior</button> <button class="btn" onclick="closeQtip();">Entendido</button></div>'); 
+  openQtip('msg','Para agregar una preparación a tu plato haz clic en el botón derecho <strong class="mas">+</strong>.  <div class="btons right"><button class="btn" onclick="accionA();">Anterior</button> <button class="btn" onclick="closeQtip();">Entendido</button></div>');  
 }
 </script>

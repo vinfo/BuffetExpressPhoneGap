@@ -134,7 +134,7 @@
     $(".container").css("background-image","url(images/fondo_carta.jpg)");
     var zona= JSON.parse(localStorage.getItem("zona"));
     if(zona.id=="1" && !localStorage.horario){    
-      alert("Apreciado cliente usted se encuentra por fuera de cobertura de nuestras cocinas, con todo el gusto te atenderemos tomando tu pedido hasta "+zona.hasta+", recuerda que si haces varias ordenes desde un mismo pedido todas llegaran al mismo tiempo y pagaras menos por tu domicilio.\nRecomienda tu zona al final de tu compra; así estaremos mas cerca de ti y no pagaras domicilio.");
+      //alert("Apreciado cliente usted se encuentra por fuera de cobertura de nuestras cocinas, con todo el gusto te atenderemos tomando tu pedido hasta "+zona.hasta+", recuerda que si haces varias ordenes desde un mismo pedido todas llegaran al mismo tiempo y pagaras menos por tu domicilio.\nRecomienda tu zona al final de tu compra; así estaremos mas cerca de ti y no pagaras domicilio.");
       localStorage.setItem("horario","1");
     }
   });  
