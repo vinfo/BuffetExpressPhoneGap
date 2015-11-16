@@ -485,6 +485,7 @@
     setDisplayMenu();
     var cantBuffet=0;
     var specials='';
+    var rand= Math.random();
     for(var j=0;j<localStorage.length;j++){
       var item= localStorage.key(j);
       if(item.indexOf("item_")==0 || item.indexOf("itemE_")==0){
@@ -494,13 +495,11 @@
           cantBuffet++;
         }
         if(dish[2]=="E"){
-          var special= JSON.parse(localStorage.getItem(item));
-          var rand= Math.random();
+          var special= JSON.parse(localStorage.getItem(item));      
           specials+='<div id="dish_'+dish[3]+'" class="comprasitem"><div id="img_'+dish[3]+'" class="imgcont" style="background:none;padding:0;"><img src="http://buffetexpress.com.co/REST/resources/images/dish/'+dish[3]+'_1.jpg?rand='+rand+'" style="width:100%"/></div><div class="contnn"><h3>'+special.fname+'</h3><p></p><div class="icodeli"><span class="elimina" onclick="setFinalOrderE(\''+dish[3]+'\',\'less\',\''+dish[2]+'\')"></span><span class="contador"><label id="cont_'+dish[3]+'">'+special.cant+'</label></span><span class="suma" onclick="setFinalOrderE(\''+dish[3]+'\',\'add\',\''+dish[2]+'\')"></span></div></div><div class="icodeta catE"> <div class="subtt"><input type="hidden" value="'+special.price+'" id="price_'+dish[3]+'" name="price_'+dish[3]+'"><label id="lprice_'+dish[3]+'" class="currency">$'+Currency.setMoney(special.price, 0, ",", ".")+'</label></div></div></div>';     
         }
       }
     }
-    
     
     var farr= compressArray(dishes.sort(sortNumber).reverse());
     var plato='';   
@@ -693,15 +692,15 @@
     var contPago='<div class="contpag" onclick="doPay(\''+fDish+'\')"><div class="cont">Confirmar pedido</div></div>';
     if(specials!="")$("#miscompras").append(specials);
     $("#miscompras").append(contPago);
-    $("#miscompras").append('<div style="height:250px;">&nbsp;</div>');
-
+    $("#miscompras").append('<div style="height:250px;">&nbsp;</div>'); 
+    
     var totPlatos= Items.getNumDish() + Items.getNumDishE();
     if(totPlatos==0){
       Items.delAllCant();
       $(".costoad").fadeIn();
     }
     var mheight= $("li.carrito a img").height();
-    $(".contpag").css({"bottom":+(mheight-1)+"px"}); 
+    $(".contpag").css({"bottom":+(mheight-1)+"px"});      
   });
 
   angularRoutingApp.controller('loginController', function($scope) {
@@ -1839,23 +1838,23 @@ for(var h=0;h<farr.length;h++){
             items++;
           }
         }
-    
+        
         var farr= compressArray(cont);        
         var arr=[];
-    var cont=0;
+        var cont=0;
         for (var j = 0; j < farr.length; j++){          
           var item=farr[j].value.split("_");
           arr.push("item_"+item[1]);
-      cont++;
+          cont++;
         }
-    var totales=0;    
+        var totales=0;    
         var com= compressArray(arr);
         var total=[];
         for (var h = 0; h < com.length; h++){         
           var value= com[h].count;
           total.push(com[h].value);
         }
-    if(cont>2)totales=total.length;             
+        if(cont>2)totales=total.length;             
         return totales;
       },
       getNumDishE: function() {

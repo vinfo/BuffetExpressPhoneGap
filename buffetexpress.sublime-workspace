@@ -271,6 +271,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "www/js/main.js",
+			"settings":
+			{
+				"buffer_size": 78063,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -336,25 +344,29 @@
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/carta.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/especiales.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/sector.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/css/libs.min.css",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/carta.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/guia.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/especiales.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/ayuda.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshiOS.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshAndroid.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
@@ -369,7 +381,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/sector.html",
 		"/D/Movilidad/Puship/www/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/ayuda.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/index.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/nosotros.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
@@ -435,7 +446,6 @@
 		"/D/Movilidad/versionIconosBuffetExpressPhoneGap/templates/menu.html",
 		"/D/Movilidad/versionIconosBuffetExpressPhoneGap/css/style.css",
 		"/D/Movilidad/versionIconosBuffetExpressPhoneGap/js/main.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/org.apache.cordova.dialogs/doc/de/index.md",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/images/arroz_load.png",
 		"/C/Users/odc/Downloads/BuffetExpressPhoneGap-54d757bed2927ff622cd05673ba5ebdd24d8f25d/BuffetExpressPhoneGap-54d757bed2927ff622cd05673ba5ebdd24d8f25d/www/config.xml",
@@ -452,7 +462,6 @@
 		"/C/Users/odc/AppData/Roaming/npm/node_modules/learnyounode/docs/bl.html",
 		"/D/wamp/www/buffet/REST/domi/js/main.js",
 		"/D/wamp/www/buffet/REST/resources/js/functions.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/guia.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
 		"/D/wamp/www/buffetexpress/codeigniter/app/css/style.css",
 		"/D/wamp/www/familymarketingOLD/modules/js/login.js",
@@ -466,9 +475,7 @@
 		"/D/wamp/www/rolformados_puertas/js/admin/jquery.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/templates/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/inappbrowser.js",
-		"/D/wamp/www/buffetexpress/codeigniter/app/templates/redes.html",
-		"/D/wamp/www/buffetexpress/codeigniter/app/index.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/plugins/org.apache.cordova.inappbrowser/README.md"
+		"/D/wamp/www/buffetexpress/codeigniter/app/templates/redes.html"
 	],
 	"find":
 	{
@@ -489,6 +496,36 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"getNumDish:",
+			"getNumDish",
+			"$(\"#miscompras\").append('<div style=\"height:250px;\">&nbsp;</div>');",
+			"if(especials.length>0){",
+			"var nameDish=\"Plato #\"+dish+\" (Und x \"+cantDish+\")\";",
+			"totPlatos",
+			"Items.delAllCant();",
+			"localStorage.setItem(\"zona\"",
+			"\"zona\"",
+			"valor_domicilio",
+			"pagoController",
+			"ayudaController",
+			"planesController",
+			"getRealDish",
+			"comprasController",
+			"mapaController",
+			"Debe solicitar al",
+			".latermenu .tr .td img",
+			"guiaController",
+			"\"bebida\"",
+			"\"bebida",
+			"bebida",
+			"/menu",
+			"getRealDish",
+			"getNumDishE",
+			"setDish",
+			"totalDish",
+			"setDish",
+			"setDish(",
+			"sopas_load",
 			"cartaController",
 			".menupie ul li:nth-child(4) a img",
 			"cartaController",
@@ -586,37 +623,7 @@
 			"registrad",
 			"exitosamente",
 			"Datos registrados",
-			"Datos registrados ",
-			"Debe estar logu",
-			"62739338",
-			"google",
-			"com.vinfo.buffetexpress",
-			"$scope.SendPay",
-			"sliderController",
-			"$scope.SendPay ",
-			"Para utilizar esta APP",
-			"Cocina",
-			"Tienda",
-			"GAP",
-			"setItem(\"position",
-			"Ha superado",
-			"tiempo",
-			".menuBar li ul",
-			".menuBar li a",
-			".navbar-default .navbar-nav>li>a",
-			"NotificationService",
-			"Existen",
-			"Plato actual no esta",
-			"confirm",
-			"Existen p",
-			"mainController",
-			"alert",
-			"NotificationService",
-			"mainController",
-			"NotificationService",
-			"mainController",
-			"NotificationService",
-			"mainController"
+			"Datos registrados "
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -672,8 +679,42 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "www/js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 78063,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								72200,
+								72200
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 34990.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
