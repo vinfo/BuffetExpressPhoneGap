@@ -94,7 +94,7 @@ function checkZona(id_zone,code,limits){
         localStorage.setItem("platoE","0");  
       }
       var ciudad_zona= ajaxrest.getZone(code);
-      localStorage.setItem("zona",JSON.stringify({id:id_zone,code:code,ciudad:ciudad_zona[0].ciudad}));
+      localStorage.setItem("zona",JSON.stringify({id:id_zone,code:code,ciudad:ciudad_zona[0].ciudad,domicilio:ciudad_zona[0].domicilio,desde:ciudad_zona[0].hora_desde,hasta:ciudad_zona[0].hora_hasta}));
       localStorage.setItem("quadrant","n/a");  
       exists=1;
     }
