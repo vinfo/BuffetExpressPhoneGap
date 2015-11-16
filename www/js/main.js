@@ -131,6 +131,7 @@
     setTimer();
     $("li").removeClass("active");
     $(".menupie ul li:nth-child(1)").addClass("active");
+    $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
     $(".container").css("background-image","url(images/fondo_carta.jpg)");
     var zona= JSON.parse(localStorage.getItem("zona"));
     if(zona.id=="1" && !localStorage.horario){    
@@ -473,7 +474,7 @@
     $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
     $("li").removeClass("active");
     $(".menupie ul li:nth-child(3)").addClass("active");  
-
+    
     if(localStorage.cuenta){
       $scope.mi_cuenta="internal.html#/mi_cuenta";
     }else{
@@ -499,7 +500,7 @@
         }
       }
     }
-
+    
     
     var farr= compressArray(dishes.sort(sortNumber).reverse());
     var plato='';   
@@ -1508,7 +1509,7 @@ for(var h=0;h<farr.length;h++){
   angularRoutingApp.controller("mapaController", ["$scope", function ($scope) {
     setTimer();
     $("li").removeClass("active");
-    $(".menupie ul li:nth-child(3)").addClass("active");
+    $(".menupie ul li:nth-child(4)").addClass("active");
     $scope.minutes="N/A";
     $(".txt_mapa").html("Min. para tu entrega");
     if(localStorage.position){
