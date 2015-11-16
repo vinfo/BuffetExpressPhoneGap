@@ -16,7 +16,7 @@ function startApp() {
   var lat1="";
   var lng1="";    
   var zones= JSON.parse(getZones());
-  localStorage.setItem("zona",JSON.stringify({id:2,code:'cam002',ciudad:'Medellín'}));
+  localStorage.setItem("zona",JSON.stringify({id:2,code:'cam002',ciudad:'Medellín',domicilio:'0',desde:'',hasta:''}));
   localStorage.setItem("zonas",JSON.stringify(zones));
   if(zones){
     var codes=[];                  
@@ -90,7 +90,8 @@ function checkZona(id_zone,code,limits){
         ClearSomeLocalStorage("item_");
         ClearSomeLocalStorage("cant_");
         localStorage.setItem("num","0"); 
-        localStorage.setItem("plato","1");  
+        localStorage.setItem("plato","1");
+        localStorage.setItem("platoE","0");  
       }
       var ciudad_zona= ajaxrest.getZone(code);
       localStorage.setItem("zona",JSON.stringify({id:id_zone,code:code,ciudad:ciudad_zona[0].ciudad}));

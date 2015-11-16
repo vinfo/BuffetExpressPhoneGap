@@ -23,14 +23,18 @@ function onSuccess(position) {
   localStorage.removeItem("position");
   localStorage.removeItem("quadrant");
   localStorage.removeItem("valor_buffet");
+  localStorage.removeItem("valor_tipico");
+  localStorage.removeItem("valor_premium");
   localStorage.removeItem("valor_domicilio");
   localStorage.removeItem("valor_recomendado");
   localStorage.removeItem("zonas");
-  localStorage.removeItem("MsgZone"); 
+  localStorage.removeItem("MsgZone");
   localStorage.removeItem("timer");
-  localStorage.removeItem("pedido"); 
+  localStorage.removeItem("orden");
+  localStorage.removeItem("pedido");
   localStorage.removeItem("horario");
-  localStorage.removeItem("bebida");     
+  localStorage.removeItem("bebida");
+      
   lat1= position.coords.latitude;
   lng1= position.coords.longitude;   
   var pos= {lat:lat1,lng:lng1};
