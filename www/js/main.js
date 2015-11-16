@@ -1862,6 +1862,7 @@ for(var h=0;h<farr.length;h++){
         var items=0;
         var dishes=0;
         var cont=[];
+    var contE=0;
         for (var i = 0; i < localStorage.length; i++){
           var item= localStorage.key(i);
           if(item.indexOf("item_")==0){
@@ -1869,6 +1870,7 @@ for(var h=0;h<farr.length;h++){
             cont.push(dish);
             items++;
           }
+      if(item.indexOf("itemE_")==0)contE++;
         }
         var farr= compressArray(cont);        
         var arr=[];
@@ -1887,7 +1889,7 @@ for(var h=0;h<farr.length;h++){
             full++;
           }
         }               
-        return full+"|"+notfull;//Platos completos y no completos
+        return full+"|"+notfull+"|"+contE;//Platos completos,no completos y especiales
       },
       getBuffetLastId: function() {
         var arr=[];   
