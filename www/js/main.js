@@ -1000,7 +1000,6 @@ var order=[];
 var orderdetail=[];
 var orderxitems=[];
 var shipping= localStorage.valor_domicilio;
-alert("valor_domicilio: "+localStorage.valor_domicilio);
 
 var totPlatos= Items.getNumDish() + Items.getNumDishE();
 if(totPlatos > 1)shipping=0;  
