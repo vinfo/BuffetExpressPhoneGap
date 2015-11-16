@@ -853,7 +853,7 @@
     $(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});      
   }); 
 
-  angularRoutingApp.controller('pagoController', function($scope,Items,Currency) {   
+  angularRoutingApp.controller('pagoController', function($scope,Items,Currency) {    
     setTimer();
     setBackground("","white");
   //var hora= ajaxrest.getHour("token="+localStorage.token);
@@ -878,7 +878,7 @@
     flag=false;
     alert("Lo sentimos la tienda esta cerrada en estos momentos.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.");
   }
-
+  
   var h_desde= zona.desde;
   var h_hasta= zona.hasta;
   var currentDate = new Date();
@@ -900,7 +900,7 @@
     $("#reservacion option[value=1],option[value=2],option[value=3]").hide();
     $("#reservacion option[value=4]").prop("selected",true);
   }
-
+  
   if(h_desde!=null && h_desde!="" && h_hasta!=null && h_hasta!=""){
     var d= h_desde.split(":");
     var h= h_hasta.split(":");    
@@ -942,7 +942,7 @@ if(dir!=""){
     if(dirFull[1]!=null && dirFull[1]!="")dirData+= dirFull[1]+' ';
     if(dirFull[2]!=null && dirFull[2]!="")dirData+= ' # '+dirFull[2]+' ';
     if(dirFull[3]!=null && dirFull[3]!="")dirData+= ' - '+dirFull[3]+' ';
-
+    
     var datos= dir[j].address+'~'+dir[j].num+'~'+dir[j].reference;
     direccion+='<li><span class="dirs" title="'+datos+'">'+dirData+'</span><i class="glyphicon glyphicon-minus-sign"></i></li>';
   }
@@ -1147,7 +1147,7 @@ for(var h=0;h<farr.length;h++){
           cantDish=localStorage.getItem("cant_"+tipo+"_"+dish);       
           if(cantDish>0)total2=total*cantDish;
         }
-
+        
         var nameDish="Plato #"+dish+" (Und x "+cantDish+")";
         platos= dish;
         var type=0;
@@ -1166,7 +1166,7 @@ for(var h=0;h<farr.length;h++){
         nDish--;    
       }
     }
-
+    
   //Establecer datos Especiales
   if(especials.length>0){
     var dish= platos;
@@ -1184,7 +1184,7 @@ for(var h=0;h<farr.length;h++){
       Gtotal+= price;
     }
   }
-
+  
   Ditem='<div class="td">'+labels+'</div><div class="td">'+valores+'</div>';
 
   $scope.platos= Ditem;
@@ -1196,7 +1196,7 @@ for(var h=0;h<farr.length;h++){
     $("#Gtotal").val(Gtotal);
     $("#tDomicilio").val(tDomicilio);
     //$scope.valor_plato= " Und x "+domicilio;  
-
+    
     if($scope.bono!=""){
       getBonus($scope.bono,Gtotal,tDomicilio);
     }
@@ -1295,7 +1295,7 @@ for(var h=0;h<farr.length;h++){
           }               
         }             
         /*End validar usuario registrado*/
-
+        
         /*Start procesar pedido*/  
         if(flag){
           $(".loading").show();
@@ -1326,7 +1326,7 @@ for(var h=0;h<farr.length;h++){
               }             
 
               order.push({idUser:id_cliente,coordinates:coords,quadrant:quadrant,idZone:zona.id,idCupon:Hbono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,reservacion:reservacion,gps:GPS,exit_quadrant:localStorage.exit_quadrant,cellPhone:cellPhone,status:71});
-
+              
               var checkInv= ajaxrest.checkInv(order,orderdetail,orderxitems);       
               var contI=0;
               var datos=[];codes=[];names=[];cants=[];sols=[];disps=[];
@@ -1365,7 +1365,7 @@ for(var h=0;h<farr.length;h++){
                 datos.push( object );
               }  
             }
-
+            
             var final= sortUnique(datos);                       
             if(contI==0){     
               ajaxrest.processOrder(order,orderdetail,orderxitems);
@@ -1444,7 +1444,7 @@ for(var h=0;h<farr.length;h++){
   }); 
 
   angularRoutingApp.controller('ayudaController', function($scope) {
-  setTimer();   
+    setTimer();   
     setBackground("","white");
     $("li").removeClass("active");
     $(".menupie ul li:nth-child(4)").addClass("active");  
@@ -1454,7 +1454,7 @@ for(var h=0;h<farr.length;h++){
   });
   
   angularRoutingApp.controller('planesController', function($scope) {
-  setTimer();   
+    setTimer();   
     setBackground("","white");
     $("li").removeClass("active");
   });   
@@ -1868,7 +1868,7 @@ for(var h=0;h<farr.length;h++){
         var items=0;
         var dishes=0;
         var cont=[];
-    var contE=0;
+        var contE=0;
         for (var i = 0; i < localStorage.length; i++){
           var item= localStorage.key(i);
           if(item.indexOf("item_")==0){
@@ -1876,7 +1876,7 @@ for(var h=0;h<farr.length;h++){
             cont.push(dish);
             items++;
           }
-      if(item.indexOf("itemE_")==0)contE++;
+          if(item.indexOf("itemE_")==0)contE++;
         }
         var farr= compressArray(cont);        
         var arr=[];
