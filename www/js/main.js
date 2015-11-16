@@ -694,7 +694,9 @@
     if(specials!="")$("#miscompras").append(specials);
     $("#miscompras").append(contPago);
     $("#miscompras").append('<div style="height:250px;">&nbsp;</div>');
-    if(plato==""){
+
+    var totPlatos= Items.getNumDish() + Items.getNumDishE();
+    if(totPlatos==0){
       Items.delAllCant();
       $(".costoad").fadeIn();
     }
@@ -999,7 +1001,7 @@ var order=[];
 var orderdetail=[];
 var orderxitems=[];
 var shipping= localStorage.valor_domicilio;
-var totPlatos= getNumDish("B") + getNumDish("E");
+var totPlatos= Items.getNumDish() + Items.getNumDishE();
 if(totPlatos > 1)shipping=0;  
 
 for(var h=0;h<farr.length;h++){   
@@ -1149,6 +1151,7 @@ for(var h=0;h<farr.length;h++){
         }
         
         var nameDish="Plato #"+dish+" (Und x "+cantDish+")";
+        if(cantDish>1)totPlatos+= (cantDish-1);
         platos= dish;
         var type=0;
         if(tipo=="R"){
@@ -1175,7 +1178,7 @@ for(var h=0;h<farr.length;h++){
       var data= JSON.parse(localStorage.getItem(especials[i]));
       var idD=data.id;
       var nameDish= data.fname;
-      if(data.cant>1)nameDish+= " (Und x "+data.cant+")";
+      if(data.cant>1){nameDish+= " (Und x "+data.cant+")";totPlatos+=(data.cant-1)}
       var price= parseInt(data.price) * parseInt(data.cant);
       labels+='<label>'+nameDish+'</label>';      
       valores+='<label>$'+Currency.setMoney(price, 0, ",", ".")+'</label>';
@@ -1827,29 +1830,33 @@ for(var h=0;h<farr.length;h++){
       getNumDish: function() {
         var items=0;
         var dishes=0;
-        var cont=[];
+        var cont=[];    
         for (var i = 0; i < localStorage.length; i++){
           var item= localStorage.key(i);
-          if(item.indexOf("item_")==0){
-            var dish=item.substring(item.lastIndexOf("item_"),item.lastIndexOf("_"));
+          if(item.indexOf("item_")==0){       
+            var dish= item.substring(item.lastIndexOf("item_"),item.lastIndexOf("_"));
             cont.push(dish);
             items++;
           }
         }
-
+    
         var farr= compressArray(cont);        
         var arr=[];
+    var cont=0;
         for (var j = 0; j < farr.length; j++){          
           var item=farr[j].value.split("_");
           arr.push("item_"+item[1]);
+      cont++;
         }
+    var totales=0;    
         var com= compressArray(arr);
         var total=[];
         for (var h = 0; h < com.length; h++){         
           var value= com[h].count;
           total.push(com[h].value);
-        }               
-        return total.length;
+        }
+    if(cont>2)totales=total.length;             
+        return totales;
       },
       getNumDishE: function() {
         var dishes=0;   
