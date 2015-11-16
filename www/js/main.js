@@ -1444,13 +1444,19 @@ for(var h=0;h<farr.length;h++){
   }); 
 
   angularRoutingApp.controller('ayudaController', function($scope) {
-    setTimer();   
+  setTimer();   
     setBackground("","white");
     $("li").removeClass("active");
     $(".menupie ul li:nth-child(4)").addClass("active");  
     var ayuda = ajaxrest.getContent("id=1360&token="+localStorage.token);
     $scope.titulo= ayuda[0].nombre_matrix;
     $scope.info_ayuda= ayuda[0].contenido_matrix;
+  });
+  
+  angularRoutingApp.controller('planesController', function($scope) {
+  setTimer();   
+    setBackground("","white");
+    $("li").removeClass("active");
   });   
 
   angularRoutingApp.controller('felicitacionesController', function($scope) {
