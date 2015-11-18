@@ -880,38 +880,8 @@
     alert("Lo sentimos la tienda esta cerrada en estos momentos.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.");
   }
   
-  var h_desde= zona.desde;
-  var h_hasta= zona.hasta;
-  var currentDate = new Date();
-  var today= new Date(currentDate.getFullYear(),currentDate.getMonth(),currentDate.getDate(),currentDate.getHours(),currentDate.getMinutes());
-  
-  var rango2= new Date(currentDate.getFullYear(),currentDate.getMonth(),currentDate.getDate(),12,25);
-  var rango3= new Date(currentDate.getFullYear(),currentDate.getMonth(),currentDate.getDate(),13,25);
-  var rango4= new Date(currentDate.getFullYear(),currentDate.getMonth(),currentDate.getDate(),14,25);
-  $("#reservacion option[value=0]").hide();
-  if(today.getTime() < rango2.getTime()){
-    $("#reservacion option[value=1]").hide();
-    $("#reservacion option[value=2]").prop("selected",true);
-  }
-  if(today.getTime() < rango3.getTime()){
-    $("#reservacion option[value=1],option[value=2]").hide();
-    $("#reservacion option[value=3]").prop("selected",true);
-  }
-  if(today.getTime() < rango4.getTime()){
-    $("#reservacion option[value=1],option[value=2],option[value=3]").hide();
-    $("#reservacion option[value=4]").prop("selected",true);
-  }
-  
-  if(h_desde!=null && h_desde!="" && h_hasta!=null && h_hasta!=""){
-    var d= h_desde.split(":");
-    var h= h_hasta.split(":");    
-    var desde= new Date(currentDate.getFullYear(),currentDate.getMonth(),currentDate.getDate(),d[0],d[1]);
-    var hasta= new Date(currentDate.getFullYear(),currentDate.getMonth(),currentDate.getDate(),h[0],h[1]);
-    if((desde.getTime() < today.getTime()) && (today.getTime() > hasta.getTime())){
-      $(".vrdirc").hide();
-      $(".horario").show();     
-    }
-  }
+  //Validar horarios de despachos
+  checkScheduledDelivery();
   
   var id_cliente="";
   var nombre_cliente="";
