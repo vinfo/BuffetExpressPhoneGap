@@ -306,8 +306,7 @@
             window.location = "internal.html#/compras"; 
             return false;
           }else{
-            var conf=confirm("El plato actual no esta completo.\nDesea continuar?");            
-            //if(conf)$location.path("compras");  
+            var conf=confirm("El plato actual no esta completo.\nDesea continuar?");
             if(conf)window.location = "internal.html#/compras"; 
           }         
         }else{
@@ -323,9 +322,9 @@
           }else{
             $("li").removeClass("active");
             $(".menupie ul li:nth-child(3)").addClass("active");
-            $location.path("compras");
+            window.location = "internal.html#/compras";
           }
-          window.location = "internal.html#/menu";
+          //window.location = "internal.html#/menu";
         }
       },  
 
@@ -849,7 +848,7 @@
       localStorage.setItem("plato",plato);
       localStorage.setItem("cant_R_"+plato,1);
       $("#totalDish").html(Items.getNumDish() + Items.getNumDishE());
-      $location.path("compras");
+      window.location = "internal.html#/compras";
     } 
     $(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});      
   }); 
