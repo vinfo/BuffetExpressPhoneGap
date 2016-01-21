@@ -1239,6 +1239,11 @@ for(var h=0;h<farr.length;h++){
             alert("Lo sentimos la tienda esta cerrada en estos momentos.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.");
           } */              
           /*End validar cierre de tienda*/
+            //validar Horario           
+            if($("#reservacion").val()==0){
+              flag=false;
+              alert("Debes seleccionar el horario de entrega del pedido");              
+            }          
           /*Start validar usuario registrado*/
           if(flag){             
             if(!localStorage.getItem("cuenta")){                
