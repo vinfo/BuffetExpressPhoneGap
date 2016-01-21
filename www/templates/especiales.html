@@ -46,7 +46,7 @@
   <div class="contimg"><div id="numbE_{{dish.idCat}}_{{dish.code}}" class="numb">0</div><img id="image_{{dish.code}}" ng-src="{{dish.images}}" /></div>
 </div>
 </div>
-<div class="cart_shop"><a href="internal.html#/compras"><img src="images/img_carrito.png" alt="..." /></a></div>
+<div class="cart_shop"><a href="internal.html#/compras" onClick="ga('send', 'pageview', '/confirmacion_pedido');"><img src="images/img_carrito.png" alt="..." /></a></div>
 <input id="plato" name="plato" type="hidden" value="{{plato}}" />
 <input id="datos" name="datos" type="hidden" value="" />
 <!-- fin contenido buffet -->

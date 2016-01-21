@@ -688,7 +688,7 @@
     }
     var fDish= Items.getRealDish();
 
-    var contPago='<div class="contpag" onclick="doPay(\''+fDish+'\')"><div class="cont">Confirmar pedido</div></div>';
+    var contPago='<div class="contpag" onclick="doPay(\''+fDish+'\');ga(\'send\', \'pageview\', \'/factura_virtual\');"><div class="cont">Confirmar pedido</div></div>';
     if(specials!="")$("#miscompras").append(specials);
     $("#miscompras").append(contPago);
     $("#miscompras").append('<div style="height:250px;">&nbsp;</div>'); 
@@ -1499,7 +1499,7 @@ for(var h=0;h<farr.length;h++){
     $("li").removeClass("active");
     $(".menupie ul li:nth-child(4)").addClass("active");
     $scope.minutes="N/A";  
-    $(".txt_mapa").html("Pedido sin ser asignado domiciliario");
+    $(".txt_mapa").html("Sin ordenes");
     if(localStorage.position){
       var position= JSON.parse(localStorage.position);
       $scope.Area = { Name: "Mi ubicación", Latitude: position.lat, Longitude: position.lng };
@@ -1595,9 +1595,7 @@ for(var h=0;h<farr.length;h++){
             var rest=or[0].mins - or[0].mins_r;
             if(rest>0)mins=rest;
             $(".mins").html(mins);
-            var msg="Pedido sin ser asignado domiciliario";       
-            if(mins!="N/A")msg="Min. para tu entrega";
-            $(".txt_mapa").html(msg);
+            $(".txt_mapa").html("Min. para tu entrega");
             var coord= or[0].coordinates.split(',');
             var pos= {Latitude:coord[0],Longitude:coord[1]};                    
             createMarker(pos,'Domiciliario','rastreo_domiciliario');
@@ -1606,7 +1604,11 @@ for(var h=0;h<farr.length;h++){
             var code= ajaxrest.getZone(zona.code);
             var coord= code[0].coordinates.split(",");
             var pos= {Latitude:coord[0],Longitude:coord[1]};
-            $(".txt_mapa").html("Orden en empaquetado");
+            if(localStorage.position){
+              coord= JSON.parse(localStorage.position);
+              pos= {Latitude:coord.lat,Longitude:coord.lng};
+            }
+            $(".txt_mapa").html("Notificaremos el envió de tu orden para ser rastreada");
             createMarker(pos,'Cocina','puntero_cocina');              
           }
         }

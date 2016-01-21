@@ -348,13 +348,13 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/cordova.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/C/Users/odc/Desktop/YuxicPacific/books.xml",
@@ -431,7 +431,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/plugins/cordova-plugin-google-analytics/ios/UniversalAnalyticsPlugin.m",
 		"/D/wamp/www/esevial/cea/plugins/fullcalendar/fullcalendar.js",
 		"/C/Users/odc/Downloads/GAPlugin-master/GAPlugin-master/plugin.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/cordova.js",
 		"/D/wamp/www/dyd/application/js/clientes.js",
 		"/C/Users/odc/Downloads/battatech_excelexport-master/battatech_excelexport-master/src/exampletable.html",
 		"/D/wamp/www/rolformados/docs/Plantilla-  Office_Structure_Site_Template/vinumo/css/style.css",
@@ -501,6 +500,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"txt_mapa",
+			"alert(msg",
+			"alert",
+			"\"N/A\"",
 			"alert(\"Debes seleccionar el horario de entrega del pedido\");	",
 			"> 1",
 			"shipping",
@@ -624,11 +627,7 @@
 			"mapaController",
 			"nosotrosController",
 			"ayudaController",
-			"SendPay",
-			"ico-menu",
-			"ico_menu",
-			"if(localStorage.cuenta){",
-			"En otra"
+			"SendPay"
 		],
 		"highlight": true,
 		"in_selection": false,
