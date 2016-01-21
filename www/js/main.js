@@ -1162,13 +1162,13 @@ for(var h=0;h<farr.length;h++){
   Ditem='<div class="td">'+labels+'</div><div class="td">'+valores+'</div>';
 
   $scope.platos= Ditem;
-    //var tDomicilio= localStorage.valor_domicilio * domicilio;
-    var tDomicilio= parseInt(localStorage.valor_domicilio);
-    if(totPlatos > 1)tDomicilio=0;
-    $scope.domicilio = Currency.setMoney(tDomicilio, 0, ",", ".");
-    $("#total").html(Currency.setMoney(Gtotal + tDomicilio, 0, ",", "."));
-    $("#Gtotal").val(Gtotal);
-    $("#tDomicilio").val(tDomicilio);
+  //var tDomicilio= localStorage.valor_domicilio * domicilio;
+  var tDomicilio= parseInt(localStorage.valor_domicilio);
+  //if(totPlatos > 1)tDomicilio=0; //Eliminada 19/01/2016
+  $scope.domicilio = Currency.setMoney(tDomicilio, 0, ",", ".");
+  $("#total").html(Currency.setMoney(Gtotal + tDomicilio, 0, ",", "."));
+  $("#Gtotal").val(Gtotal);
+  $("#tDomicilio").val(tDomicilio);
     //$scope.valor_plato= " Und x "+domicilio;  
     
     if($scope.bono!=""){
@@ -1357,6 +1357,8 @@ for(var h=0;h<farr.length;h++){
                       localStorage.setItem("plato",1);
                       localStorage.setItem("tipo_pago","efectivo");                                                           localStorage.removeItem("paso5");
                       accionD();
+                      //Enviar correo
+
                       $(".div_loading").fadeOut(); 
                       $('.container').animate({
                         scrollTop: $("#topmobil").offset().top
