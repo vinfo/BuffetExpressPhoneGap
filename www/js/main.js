@@ -1248,7 +1248,8 @@ for(var h=0;h<farr.length;h++){
           if(flag){             
             if(!localStorage.getItem("cuenta")){                
               localStorage.setItem("pedido",true);
-              if($("#name").val()!="" && $("#cellPhone").val()!="" && $("#email").val()!=""){
+              var vemail= validateEmail($("#email").val());
+              if($("#name").val()!="" && $("#cellPhone").val()!="" && $("#email").val()!="" && vemail){
                nombre_cliente= $("#name").val();
                $scope.nombre_cliente= nombre_cliente;
                var data= ajaxrest.getUser("email="+$("#email").val()+"&token="+localStorage.token);        
@@ -1497,8 +1498,8 @@ for(var h=0;h<farr.length;h++){
     setTimer();
     $("li").removeClass("active");
     $(".menupie ul li:nth-child(4)").addClass("active");
-    $scope.minutes="N/A";
-    $(".txt_mapa").html("Min. para tu entrega");
+    $scope.minutes="N/A";  
+    $(".txt_mapa").html("Pedido sin ser asignado domiciliario");
     if(localStorage.position){
       var position= JSON.parse(localStorage.position);
       $scope.Area = { Name: "Mi ubicación", Latitude: position.lat, Longitude: position.lng };
@@ -1594,7 +1595,9 @@ for(var h=0;h<farr.length;h++){
             var rest=or[0].mins - or[0].mins_r;
             if(rest>0)mins=rest;
             $(".mins").html(mins);
-            $(".txt_mapa").html("Min. para tu entrega");
+            var msg="Pedido sin ser asignado domiciliario";       
+            if(mins!="N/A")msg="Min. para tu entrega";
+            $(".txt_mapa").html(msg);
             var coord= or[0].coordinates.split(',');
             var pos= {Latitude:coord[0],Longitude:coord[1]};                    
             createMarker(pos,'Domiciliario','rastreo_domiciliario');

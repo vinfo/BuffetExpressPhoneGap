@@ -7,6 +7,7 @@ function startApp() {
   localStorage.setItem("banner","");
   var timer= new Date().getTime();
   localStorage.setItem("timer",timer);
+  localStorage.setItem("channel","1");
 
   if(localStorage.token==null){
     var credentials= "oauthId=326615832446388&oauthSecret=5af5f7e15ccbddfd350a921bc6f13444&contentType=application/json; charset=UTF-8";  
@@ -16,7 +17,9 @@ function startApp() {
   var lat1="";
   var lng1="";    
   var zones= JSON.parse(getZones());
-  localStorage.setItem("zona",JSON.stringify({id:2,code:'cam002',ciudad:'Medellín',domicilio:'0',desde:'',hasta:''}));
+  var ciudad_zona= ajaxrest.getZone('cam002');
+  localStorage.setItem("zona",JSON.stringify({id:2,code:'cam002',ciudad:ciudad_zona[0].ciudad,domicilio:ciudad_zona[0].domicilio,desde:ciudad_zona[0].hora_desde,hasta:ciudad_zona[0].hora_hasta}));  
+  localStorage.valor_domicilio= ciudad_zona[0].domicilio;
   localStorage.setItem("zonas",JSON.stringify(zones));
   if(zones){
     var codes=[];                  
@@ -95,6 +98,7 @@ function checkZona(id_zone,code,limits){
       }
       var ciudad_zona= ajaxrest.getZone(code);
       localStorage.setItem("zona",JSON.stringify({id:id_zone,code:code,ciudad:ciudad_zona[0].ciudad,domicilio:ciudad_zona[0].domicilio,desde:ciudad_zona[0].hora_desde,hasta:ciudad_zona[0].hora_hasta}));
+      localStorage.valor_domicilio= ciudad_zona[0].domicilio;
       localStorage.setItem("quadrant","n/a");  
       exists=1;
     }

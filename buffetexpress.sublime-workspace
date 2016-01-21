@@ -348,19 +348,21 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www"
+		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/C/Users/odc/Desktop/YuxicPacific/books.xml",
 		"/C/Users/odc/AppData/Roaming/Skype/My Skype Received Files/books.xml",
 		"/C/Users/odc/Desktop/macaddr-applet-master/macaddress-applet.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/sector.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
@@ -385,7 +387,6 @@
 		"/D/Movilidad/Puship/assets/www/config.xml",
 		"/D/Movilidad/Puship/assets/www/PushipNotification.js",
 		"/D/Movilidad/Puship/assets/www/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/sector.html",
 		"/D/Movilidad/Puship/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/index.css",
@@ -500,6 +501,11 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"alert(\"Debes seleccionar el horario de entrega del pedido\");	",
+			"> 1",
+			"shipping",
+			"if(totPlatos > 1)shipping=0;",
+			"mailg",
 			"pagoController",
 			"ga(",
 			"'descargas'",
@@ -622,14 +628,9 @@
 			"ico-menu",
 			"ico_menu",
 			"if(localStorage.cuenta){",
-			"En otra",
-			"pagoController",
-			"checkOpenZone",
-			"guia",
-			"guia.html",
-			".menupie ul li a img"
+			"En otra"
 		],
-		"highlight": false,
+		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
