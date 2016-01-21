@@ -271,14 +271,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "www/js/main.js",
-			"settings":
-			{
-				"buffer_size": 76557,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -288,9 +280,21 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "",
+		"last_filter": "Package Control: ",
 		"selected_items":
 		[
+			[
+				"Package Control: ",
+				"Package Control: Discover Packages"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
 			[
 				"Snippet: ",
 				"Snippet: getAllVars"
@@ -320,13 +324,14 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 512.0
+		"width": 416.0
 	},
 	"console":
 	{
 		"height": 343.0,
 		"history":
 		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
 			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
 			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
@@ -343,24 +348,26 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/C/Users/odc/Desktop/YuxicPacific/books.xml",
+		"/C/Users/odc/AppData/Roaming/Skype/My Skype Received Files/books.xml",
+		"/C/Users/odc/Desktop/macaddr-applet-master/macaddress-applet.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/sector.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/libs.min.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/carta.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/guia.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/especiales.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
@@ -472,10 +479,7 @@
 		"/C/Users/odc/Downloads/zerotype/zerotype/news.html",
 		"/C/Users/odc/Downloads/zerotype/zerotype/features.html",
 		"/C/Users/odc/Downloads/Ftp fingerprint@ciaeducon2.com.xml",
-		"/D/wamp/www/rolformados_puertas/js/admin/jquery.js",
-		"/D/Movilidad/BuffetExpressMensajero/www/templates/login.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/inappbrowser.js",
-		"/D/wamp/www/buffetexpress/codeigniter/app/templates/redes.html"
+		"/D/wamp/www/rolformados_puertas/js/admin/jquery.js"
 	],
 	"find":
 	{
@@ -496,6 +500,13 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"pagoController",
+			"ga(",
+			"'descargas'",
+			"var ndish= parseInt(plato) + 1; ",
+			"$location.path(\"compras\");",
+			"addDish",
+			"comprasController",
 			"pagoController",
 			"localStorage.setItem(\"zona\"",
 			"\"zona\"",
@@ -616,14 +627,7 @@
 			"checkOpenZone",
 			"guia",
 			"guia.html",
-			".menupie ul li a img",
-			".menupie ul li:nth-child(4) a img",
-			"slider",
-			".menupie ul li a img",
-			"$scope.SendPay",
-			"comprasController",
-			"Para poder",
-			"alert("
+			".menupie ul li a img"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -631,6 +635,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"window.location = \"internal.html#/compras\";",
 			"alert",
 			"$(\".mi_cuenta\").attr(\"href\",\"internal.html#/mi_cuenta\");",
 			"fondo.jpg",
@@ -679,41 +684,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "www/js/main.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 76557,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								34433,
-								34447
-							]
-						],
-						"settings":
-						{
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 16440.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -764,7 +736,7 @@
 	"project": "buffetexpress.sublime-project",
 	"replace":
 	{
-		"height": 66.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":

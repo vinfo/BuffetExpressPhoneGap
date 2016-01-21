@@ -962,16 +962,16 @@ var labels='';
 var valores='';
 var Gtotal=0;
 var plato='';
-var platos=0; 
+var platos=0;
+var contPlatos=0;
 var tipo="";
 var nDish=farr.length;
 var order=[];
 var orderdetail=[];
 var orderxitems=[];
 var shipping= localStorage.valor_domicilio;
-
 var totPlatos= Items.getNumDish() + Items.getNumDishE();
-if(totPlatos > 1)shipping=0;  
+//if(totPlatos > 1)shipping=0; /*Se elimina 19/01/2016 
 
 for(var h=0;h<farr.length;h++){   
   var item= farr[h];
@@ -1119,6 +1119,7 @@ for(var h=0;h<farr.length;h++){
           if(cantDish>0)total2=total*cantDish;
         }
         
+        contPlatos++;
         var nameDish="Plato #"+dish+" (Und x "+cantDish+")";
         if(cantDish>1)totPlatos+= (cantDish-1);
         platos= dish;
@@ -1129,7 +1130,7 @@ for(var h=0;h<farr.length;h++){
           total= parseInt(localStorage.valor_recomendado * cantDish);
           total2=total;
         }              
-        orderdetail.push({numDish:dish,qty:cantDish,price:total2,shipping:shipping,type:type});   
+        orderdetail.push({numDish:contPlatos,qty:cantDish,price:total2,shipping:shipping,type:type});   
 
         labels+='<label>'+nameDish+'</label>';
         Gtotal+=total2;
@@ -1144,6 +1145,7 @@ for(var h=0;h<farr.length;h++){
     var dish= platos;
     for(var i=0;i<especials.length;i++){
       dish++;
+      contPlatos++;
       var data= JSON.parse(localStorage.getItem(especials[i]));
       var idD=data.id;
       var nameDish= data.fname;
@@ -1151,8 +1153,8 @@ for(var h=0;h<farr.length;h++){
       var price= parseInt(data.price) * parseInt(data.cant);
       labels+='<label>'+nameDish+'</label>';      
       valores+='<label>$'+Currency.setMoney(price, 0, ",", ".")+'</label>';
-      orderdetail.push({numDish:dish,qty:data.cant,price:price,shipping:shipping,type:2});
-      orderxitems.push({idDish:dish,idItem:idD,qty:1,price:price});
+      orderdetail.push({numDish:contPlatos,qty:data.cant,price:price,shipping:shipping,type:2});
+      orderxitems.push({idDish:contPlatos,idItem:idD,qty:1,price:price});
       Gtotal+= price;
     }
   }
