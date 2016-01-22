@@ -302,13 +302,12 @@
         if(!localStorage.getItem("cant_"+tipo+"_"+plato))localStorage.setItem("cant_"+tipo+"_"+plato,1);
         if(items<3 || flag){          
           if(action=="add"){
-            //NotificationService.alert('Plato actual no esta completo!', "Alerta", "Aceptar", null);
-            window.location = "internal.html#/compras"; 
+            alert("Plato actual no esta completo!");
             return false;
           }else{
             var conf=confirm("El plato actual no esta completo.\nDesea continuar?");
-            if(conf)window.location = "internal.html#/compras"; 
-          }         
+            if(conf)window.location = "internal.html#/compras";   
+          }        
         }else{
           var ndish= parseInt(plato) + 1;       
           if(action=="add"){
@@ -688,7 +687,7 @@
     }
     var fDish= Items.getRealDish();
 
-    var contPago='<div class="contpag" onclick="doPay(\''+fDish+'\');trackevent(\Click\,\Agregar plato\');"><div class="cont">Confirmar pedido</div></div>';
+    var contPago='<div class="contpag" onclick="doPay(\''+fDish+'\');trackevent(\'Click\',\'Agregar plato\');"><div class="cont">Confirmar pedido</div></div>';
     if(specials!="")$("#miscompras").append(specials);
     $("#miscompras").append(contPago);
     $("#miscompras").append('<div style="height:250px;">&nbsp;</div>'); 
