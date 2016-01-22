@@ -24,17 +24,18 @@ if (window.jQuery) {
       if(img[1] && img[1].length>0){
         $(".menusup button.ico-menu span").css("background","url(images/linmenu.png)");
             //window.history.back();
-            var url= window.location.href.split('#/');
-            var data= url[1].split("/");
+            var pago= window.location.href.search("pago");
+            var ins= window.location.href.search("ins");
+            var edit= window.location.href.search("edit");
+            
             if(localStorage.cuenta){
               $(".mi_cuenta").attr("href","internal.html#/mi_cuenta");
-            }            
+            }     
 
-            var redir="internal.html#/carta";          
-            if(data[1]=="ins")redir= "internal.html#/menu";
-            if(data[1]=="edit")redir= "internal.html#/compras";
-            if(url[1]=="pago#topmobil")redir= "internal.html#/compras";
-            if(url[1]=="pago")redir= "internal.html#/compras";			
+            var redir="internal.html#/carta";
+            if(ins>0)redir= "internal.html#/menu";
+            if(edit>0)redir= "internal.html#/compras";
+            if(pago>0)redir= "internal.html#/compras";
             window.location = redir;
           }else{
             var position = $(".latermenu").position();

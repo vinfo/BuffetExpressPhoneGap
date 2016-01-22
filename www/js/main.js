@@ -687,7 +687,7 @@
     }
     var fDish= Items.getRealDish();
 
-    var contPago='<div class="contpag" onclick="doPay(\''+fDish+'\');trackevent(\'Click\',\'Agregar plato\');"><div class="cont">Confirmar pedido</div></div>';
+    var contPago='<div class="contpag" onclick="doPay(\''+fDish+'\');trackevent(\'Click\',\'Confirmar\');"><div class="cont">Confirmar pedido</div></div>';
     if(specials!="")$("#miscompras").append(specials);
     $("#miscompras").append(contPago);
     $("#miscompras").append('<div style="height:250px;">&nbsp;</div>'); 
