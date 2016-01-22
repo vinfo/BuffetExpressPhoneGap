@@ -54,8 +54,6 @@
     <access origin="*"/>
     <access origin="*.pushwoosh.com" />
 
-
-
     <gap:config-file platform="android" parent="/manifest">
       <supports-screens
         android:xlargeScreens="true"
