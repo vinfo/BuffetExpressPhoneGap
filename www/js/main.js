@@ -288,13 +288,7 @@
         return false;
       },
       //Adicionar nuevo plato
-      $scope.addDish = function (action,tipo) {
-        if(action=="end"){
-          analytics.trackEvent('Click', 'Finalizar Orden');
-        }else{
-          analytics.trackEvent('Click', 'Agregar plato');
-        }
-        
+      $scope.addDish = function (action,tipo) {        
         var plato= parseInt(localStorage.plato);
         var items= Items.getItems(plato);
         var checkPlato= Items.getItems(plato);        
