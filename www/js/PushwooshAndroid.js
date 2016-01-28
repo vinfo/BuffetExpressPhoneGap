@@ -24,7 +24,7 @@ function registerPushwooshAndroid() {
 
 	pushNotification.onDeviceReady({ projectid: "746109479988", appid : "825C3-92C11" });
 
-	alert("Registrar");
+	//alert("Registrar");
 	pushNotification.registerDevice(
 		function(token)
 		{
@@ -43,7 +43,7 @@ function onPushwooshAndroidInitialized(pushToken)
 	pushNotification.getPushToken(
 		function(token)
 		{
-			alert('push token: ' + token);
+			console.log('push token: ' + token);
 			//alert("Register Android");
 			console.warn('push token device: ' + token);
 			localStorage.setItem("pushtoken",token);
