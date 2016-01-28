@@ -1304,7 +1304,7 @@ for(var h=0;h<farr.length;h++){
                 coords= coord.lat+","+coord.lng;
               }             
 
-              order.push({idUser:id_cliente,coordinates:coords,quadrant:quadrant,idZone:zona.id,idCupon:Hbono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,reservacion:reservacion,gps:GPS,exit_quadrant:localStorage.exit_quadrant,cellPhone:cellPhone,status:71});
+              order.push({idUser:id_cliente,coordinates:coords,quadrant:quadrant,idZone:zona.id,idCupon:Hbono,address:direccion,type:tipo,typePay:tipoPago,num:numero,reference:referencia,reservacion:reservacion,gps:GPS,exit_quadrant:localStorage.exit_quadrant,cellPhone:cellPhone,pushtoken:localStorage.pushtoken,status:71});
               
               var checkInv= ajaxrest.checkInv(order,orderdetail,orderxitems);       
               var contI=0;

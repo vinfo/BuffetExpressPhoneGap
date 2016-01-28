@@ -8,6 +8,7 @@ function startApp() {
   var timer= new Date().getTime();
   localStorage.setItem("timer",timer);
   localStorage.setItem("channel","1");
+  cleanSession();
 
   if(localStorage.token==null){
     var credentials= "oauthId=326615832446388&oauthSecret=5af5f7e15ccbddfd350a921bc6f13444&contentType=application/json; charset=UTF-8";  
