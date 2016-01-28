@@ -1360,7 +1360,7 @@ for(var h=0;h<farr.length;h++){
                       $("#totalDish").html("0");
                       cleanSession();
                       localStorage.setItem("plato",1);
-                      localStorage.setItem("tipo_pago","efectivo");                                                         localStorage.removeItem("paso5");
+                      localStorage.setItem("tipo_pago","efectivo");                                                           localStorage.removeItem("paso5");
                       accionD();
                       //Enviar correo
 
