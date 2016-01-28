@@ -28,7 +28,7 @@ function registerPushwooshAndroid() {
 	pushNotification.registerDevice(
 		function(token)
 		{
-			//alert(token);
+			alert(token);
 			onPushwooshAndroidInitialized(token);			
 		},
 		function(status)
