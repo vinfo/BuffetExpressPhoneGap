@@ -45,6 +45,7 @@ function onPushwooshAndroidInitialized(pushToken)
 		{
 			alert('push token: ' + token);
 			alert("Register Android");
+			console.log(token);
 			console.warn('push token device: ' + token);
 			localStorage.setItem("pushtoken",token);
 		}
