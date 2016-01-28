@@ -352,8 +352,9 @@
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/especiales.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
@@ -372,7 +373,6 @@
 		"/C/Users/odc/Desktop/macaddr-applet-master/macaddress-applet.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/sector.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/libs.min.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/guia.html",
@@ -500,6 +500,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"$(\".verlatermenu\").click(function(event){",
 			"Confirmar pedido",
 			"img_carrito.png",
 			"Confirmar pedido",
@@ -626,8 +627,7 @@
 			"SendPay",
 			"localData",
 			"SendPay",
-			"info_nosotros",
-			"facturavir"
+			"info_nosotros"
 		],
 		"highlight": true,
 		"in_selection": false,
