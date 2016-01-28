@@ -28,7 +28,7 @@ function registerPushwooshAndroid() {
 	pushNotification.registerDevice(
 		function(token)
 		{
-			alert(token);
+			//alert(token);
 			onPushwooshAndroidInitialized(token);			
 		},
 		function(status)
@@ -44,9 +44,9 @@ function onPushwooshAndroidInitialized(pushToken)
 	pushNotification.getPushToken(
 		function(token)
 		{
-			//alert('push token: ' + token);
+			alert('push token: ' + token);
 			//alert("Register Android");
-			//console.warn('push token device: ' + token);
+			console.warn('push token device: ' + token);
 			localStorage.setItem("pushtoken",token);
 		}
 	);
