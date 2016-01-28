@@ -22,13 +22,15 @@ function registerPushwooshAndroid() {
 		}
 	);
 	alert("Registrar");
+	//projectid: Proyecto en Google Developers Console
 	pushNotification.onDeviceReady({ projectid: "746109479988", appid : "825C3-92C11" });
 	
 	pushNotification.registerDevice(
 		function(token)
 		{
-			alert(token);
-			onPushwooshAndroidInitialized(token);			
+			alert("Token: "token);
+			onPushwooshAndroidInitialized(token);
+			localStorage.setItem("pushtoken",token);			
 		},
 		function(status)
 		{
