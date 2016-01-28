@@ -9,6 +9,8 @@ function startApp() {
   localStorage.setItem("timer",timer);
   localStorage.setItem("channel","1");
   cleanSession();
+  localStorage.setItem("plato",1);
+  localStorage.setItem("tipo_pago","efectivo");
 
   if(localStorage.token==null){
     var credentials= "oauthId=326615832446388&oauthSecret=5af5f7e15ccbddfd350a921bc6f13444&contentType=application/json; charset=UTF-8";  
