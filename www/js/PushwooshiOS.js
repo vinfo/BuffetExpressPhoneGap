@@ -47,6 +47,7 @@ function registerPushwooshIOS() {
 		{
 			var deviceToken = status['deviceToken'];
 			//alert('registerDevice: ' + deviceToken);
+			localStorage.setItem("pushtoken",deviceToken);
 			onPushwooshiOSInitialized(deviceToken);
 		},
 		function(status)
@@ -87,6 +88,7 @@ function onPushwooshiOSInitialized(pushToken)
 	pushNotification.getPushwooshHWID(
 		function(token) {
 			//alert('Pushwoosh HWID: ' + token);
+			localStorage.setItem("pushtoken",token);
 		}
 	);
 

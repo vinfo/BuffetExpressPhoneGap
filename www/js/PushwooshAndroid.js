@@ -28,7 +28,9 @@ function registerPushwooshAndroid() {
 	pushNotification.registerDevice(
 		function(token)
 		{
-			onPushwooshAndroidInitialized(token);			
+			alert("Registrando "+ token);
+			localStorage.setItem("pushtoken",token);
+			onPushwooshAndroidInitialized(token);		
 		},
 		function(status)
 		{
@@ -44,7 +46,7 @@ function onPushwooshAndroidInitialized(pushToken)
 		function(token)
 		{
 			console.log('push token: ' + token);
-			//alert("Register Android");
+			alert("Inicializando "+ token);
 			console.warn('push token device: ' + token);
 			localStorage.setItem("pushtoken",token);
 		}
@@ -53,7 +55,9 @@ function onPushwooshAndroidInitialized(pushToken)
 	//and HWID if you want to communicate with Pushwoosh API
 	pushNotification.getPushwooshHWID(
 		function(token) {
-			//alert('Pushwoosh HWID: ' + token);		
+			//alert('Pushwoosh HWID: ' + token);
+			alert("Obteniendo "+ token);
+			localStorage.setItem("pushtoken",token);		
 		}
 	);
 }
