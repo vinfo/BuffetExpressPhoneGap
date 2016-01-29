@@ -56,8 +56,7 @@ function onPushwooshAndroidInitialized(pushToken)
 	pushNotification.getPushwooshHWID(
 		function(token) {
 			//alert('Pushwoosh HWID: ' + token);
-			alert("Obteniendo "+ token);
-			localStorage.setItem("pushtoken",token);		
+			alert("Obteniendo "+ token);	
 		}
 	);
 }

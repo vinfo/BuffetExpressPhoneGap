@@ -88,7 +88,6 @@ function onPushwooshiOSInitialized(pushToken)
 	pushNotification.getPushwooshHWID(
 		function(token) {
 			//alert('Pushwoosh HWID: ' + token);
-			localStorage.setItem("pushtoken",token);
 		}
 	);
 
