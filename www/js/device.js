@@ -49,14 +49,14 @@
         window.analytics.trackView('/login');
         window.analytics.trackView('/templates/guia');
         window.analytics.trackView('/templates/contactenos');
-        alert("Inicializa Dispositivo");
+        //alert("Inicializa Dispositivo");
         initPushwoosh();
         checkConnection();          
     }
 };
 
 function checkConnection() {
-    alert("Conexion");
+    //alert("Conexion");
     initPushwoosh();
     var state=true;
     var networkState = navigator.connection.type;
