@@ -56,6 +56,8 @@
 };
 
 function checkConnection() {
+    alert("Conexion");
+    initPushwoosh();
     var state=true;
     var networkState = navigator.connection.type;
     var states = {};
