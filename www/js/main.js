@@ -1608,7 +1608,8 @@ for(var h=0;h<farr.length;h++){
               pos= {Latitude:coord.lat,Longitude:coord.lng};
             }
             $(".txt_mapa").html("Notificaremos el envió de tu orden para ser rastreada");
-            createMarker(pos,'Cocina','puntero_cocina');              
+            createMarker(pos,'Mí ubicación','rastreo_cliente');
+            //createMarker(pos,'Cocina','puntero_cocina');           
           }
         }
       }           
