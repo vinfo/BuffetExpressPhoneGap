@@ -271,16 +271,6 @@
 	},
 	"buffers":
 	[
-		{
-			"contents": "Searching 219 files for \"$.ajax\" (case sensitive)\n\nD:\\Movilidad\\BuffetExpressPhoneGap\\www\\js\\load.js:\n   68   function getZones(){\n   69    var res=\"\";\n   70:   $.ajax({\n   71     type: 'GET',\n   72     url: localStorage.domain+'api/v1/getZones/',\n\n1 match in 1 file\n\n\nSearching 219 files for \"h_pushtoken\" (case sensitive)\n\nD:\\Movilidad\\BuffetExpressPhoneGap\\www\\templates\\ordenes.html:\n   52        	<h3 class=\"green\">Datos enviados exitosamente!</h3>\n   53          <button class=\"btn btn-info\" style=\"display:none\">Timbrar</button>\n   54:         <input type=\"hidden\" name=\"h_pushtoken\" id=\"h_pushtoken\" value=\"\" />\n   55          <button class=\"btn btn-success\">Enviar</button>\n   56        </div> \n\n2 matches in 1 file\n",
-			"settings":
-			{
-				"buffer_size": 725,
-				"line_ending": "Windows",
-				"name": "Find Results",
-				"scratch": true
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -362,11 +352,11 @@
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/ordenes.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshAndroid.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshiOS.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
@@ -694,64 +684,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 725,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										161,
-										167
-									],
-									[
-										578,
-										589
-									],
-									[
-										595,
-										606
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								371,
-								371
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"incomplete_sync": null,
-							"line_numbers": false,
-							"output_tag": 2,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 228.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
