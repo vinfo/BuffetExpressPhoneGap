@@ -271,6 +271,30 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/C/wamp/www/wisi/admin/application/js/administradores.js",
+			"settings":
+			{
+				"buffer_size": 1460,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/js/main.js",
+			"settings":
+			{
+				"buffer_size": 77207,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Dropbox/KeePass-2.19/KeePass.config.xml",
+			"settings":
+			{
+				"buffer_size": 4031,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -348,10 +372,12 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www"
+		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
 	[
+		"/C/wamp/www/wisi/admin/js/plugins/validation/jquery.validationEngine.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshAndroid.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshiOS.js",
@@ -478,8 +504,7 @@
 		"/C/Users/odc/Downloads/zerotype/zerotype/index.html",
 		"/C/Users/odc/Downloads/zerotype/zerotype/post.html",
 		"/C/Users/odc/Downloads/zerotype/zerotype/about.html",
-		"/C/Users/odc/Downloads/zerotype/zerotype/news.html",
-		"/C/Users/odc/Downloads/zerotype/zerotype/features.html"
+		"/C/Users/odc/Downloads/zerotype/zerotype/news.html"
 	],
 	"find":
 	{
@@ -684,8 +709,100 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/C/wamp/www/wisi/admin/application/js/administradores.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1460,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 365.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "www/js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 77207,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3895,
+								3895
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 67.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Dropbox/KeePass-2.19/KeePass.config.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4031,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

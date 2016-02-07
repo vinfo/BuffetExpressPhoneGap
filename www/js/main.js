@@ -1129,7 +1129,7 @@ for(var h=0;h<farr.length;h++){
           total= parseInt(localStorage.valor_recomendado * cantDish);
           total2=total;
         }              
-        orderdetail.push({numDish:contPlatos,qty:cantDish,price:total2,shipping:shipping,type:type});   
+        orderdetail.push({numDish:dish,qty:cantDish,price:total2,shipping:shipping,type:type});   
 
         labels+='<label>'+nameDish+'</label>';
         Gtotal+=total2;
