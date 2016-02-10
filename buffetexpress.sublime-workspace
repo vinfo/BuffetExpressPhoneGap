@@ -271,30 +271,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/C/wamp/www/wisi/admin/application/js/administradores.js",
-			"settings":
-			{
-				"buffer_size": 1460,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "www/js/main.js",
-			"settings":
-			{
-				"buffer_size": 77207,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Dropbox/KeePass-2.19/KeePass.config.xml",
-			"settings":
-			{
-				"buffer_size": 4031,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -372,18 +348,20 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www"
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/carta.html",
+		"/C/wamp/www/wisi/admin/application/js/administradores.js",
+		"/C/Dropbox/KeePass-2.19/KeePass.config.xml",
 		"/C/wamp/www/wisi/admin/js/plugins/validation/jquery.validationEngine.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshAndroid.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshiOS.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/ordenes.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
@@ -393,7 +371,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/especiales.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/carta.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
@@ -502,13 +479,11 @@
 		"/D/wamp/www/familymarketingOLD/modules/js/login.js",
 		"/C/Users/odc/Downloads/zerotype/zerotype/contact.html",
 		"/C/Users/odc/Downloads/zerotype/zerotype/index.html",
-		"/C/Users/odc/Downloads/zerotype/zerotype/post.html",
-		"/C/Users/odc/Downloads/zerotype/zerotype/about.html",
-		"/C/Users/odc/Downloads/zerotype/zerotype/news.html"
+		"/C/Users/odc/Downloads/zerotype/zerotype/post.html"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 36.0
 	},
 	"find_in_files":
 	{
@@ -525,6 +500,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"createMarker(pos,'Domiciliario','rastreo_domiciliario');",
+			"if(tipo==\"R\"){",
 			"registerDevice",
 			"registerPushwooshAndroid",
 			"initPushwoosh",
@@ -650,9 +627,7 @@
 			"contPago",
 			"$(\".mi_cuenta\").attr(\"href\",\"internal.html#/menu\");",
 			"SendPay",
-			"\"token\"",
-			"'token'",
-			"token"
+			"\"token\""
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -709,100 +684,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/C/wamp/www/wisi/admin/application/js/administradores.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1460,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 365.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "www/js/main.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 77207,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3895,
-								3895
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 67.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Dropbox/KeePass-2.19/KeePass.config.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4031,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"syntax": "Packages/XML/XML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
