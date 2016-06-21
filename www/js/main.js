@@ -49,6 +49,10 @@
       templateUrl : 'templates/redes.html',
       controller  : 'mainController'
     })
+    .when('/recomendar', {
+      templateUrl : 'templates/recomendar.html',
+      controller  : 'recomendarController'
+    })    
     .when('/nosotros', {
       templateUrl : 'templates/nosotros.html',
       controller  : 'nosotrosController'
@@ -1298,7 +1302,6 @@ for(var h=0;h<farr.length;h++){
             var quadrant= localStorage.quadrant;
             if(quadrant != ""){
               var coords="";
-              var flagCoord=false;
               if(localStorage.position){
                 coord= JSON.parse(localStorage.position);
                 coords= coord.lat+","+coord.lng;
@@ -1413,6 +1416,16 @@ for(var h=0;h<farr.length;h++){
 }
 /*End SendPay*/
 });
+  
+  angularRoutingApp.controller('recomendarController', function($scope) {
+    setBackground("","white");
+  var datos= localStorage.getItem("cuenta");
+  if(datos != null){
+    var data= JSON.parse(datos);
+    var dat = angular.fromJson(data);
+    $scope.qr= base_site+"REST/resources/plugins/phpqrcode/qr.php?id="+dat.id+"&email="+dat.email;
+  } 
+  });  
 
   angularRoutingApp.controller('nosotrosController', function($scope) {
     setTimer();   

@@ -271,6 +271,40 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "www/js/PushwooshAndroid.js",
+			"settings":
+			{
+				"buffer_size": 1732,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/wamp/www/cercolamb/admin/application/js/clientes.js",
+			"settings":
+			{
+				"buffer_size": 3487,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/wamp/www/esevial/cea/modules/js/bills.js",
+			"settings":
+			{
+				"buffer_size": 2075,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 446 files for \"registerPushwooshAndroid\" (case sensitive)\n\nD:\\Movilidad\\BuffetExpressPhoneGap\\www\\js\\device.js:\n  104      if(device.platform == \"Android\")\n  105      {\n  106:         registerPushwooshAndroid();\n  107      }else if(device.platform == \"iPhone\" || device.platform == \"iOS\")\n  108      {\n\nD:\\Movilidad\\BuffetExpressPhoneGap\\www\\js\\PushwooshAndroid.js:\n    1: function registerPushwooshAndroid() {\n    2  \n    3   	var pushNotification = cordova.require(\"com.pushwoosh.plugins.pushwoosh.PushNotification\");\n\n2 matches across 2 files\n",
+			"settings":
+			{
+				"buffer_size": 556,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -348,24 +382,27 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www"
+		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/C/Users/odc/Downloads/output.min.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshiOS.js",
+		"/C/wamp/www/buffet/facturacion/plugins/datatables/jquery.dataTables.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshAndroid.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/carta.html",
 		"/C/wamp/www/wisi/admin/application/js/administradores.js",
 		"/C/Dropbox/KeePass-2.19/KeePass.config.xml",
 		"/C/wamp/www/wisi/admin/js/plugins/validation/jquery.validationEngine.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshAndroid.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshiOS.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/ordenes.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/especiales.html",
@@ -477,19 +514,18 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
 		"/D/wamp/www/buffetexpress/codeigniter/app/css/style.css",
 		"/D/wamp/www/familymarketingOLD/modules/js/login.js",
-		"/C/Users/odc/Downloads/zerotype/zerotype/contact.html",
-		"/C/Users/odc/Downloads/zerotype/zerotype/index.html",
-		"/C/Users/odc/Downloads/zerotype/zerotype/post.html"
+		"/C/Users/odc/Downloads/zerotype/zerotype/contact.html"
 	],
 	"find":
 	{
-		"height": 36.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
 		"height": 93.0,
 		"where_history":
 		[
+			"D:\\Movilidad\\BuffetExpressPhoneGap",
 			"",
 			"getFullLastId",
 			""
@@ -500,6 +536,18 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"initPushwoosh",
+			"registerPushwooshAndroid",
+			"PushwooshAndroid.js",
+			"825C3-92C11",
+			"push",
+			"flagCoord",
+			"codeAddress(",
+			"coordAddress",
+			"dir2",
+			"direccion",
+			"dir2\"",
+			"pagoController",
 			"createMarker(pos,'Domiciliario','rastreo_domiciliario');",
 			"if(tipo==\"R\"){",
 			"registerDevice",
@@ -615,19 +663,7 @@
 			"getPushwooshHWID",
 			"currentdeviceid",
 			"navigator",
-			"receivedEvent",
-			"v1/authenticate/",
-			"token",
-			"Detectando zona",
-			"nombre_cliente",
-			"SendPay",
-			"var coord= JSON.parse(localStorage.coordAddress);",
-			"$(\".div_loading\").fadeIn();",
-			"referencia",
-			"contPago",
-			"$(\".mi_cuenta\").attr(\"href\",\"internal.html#/menu\");",
-			"SendPay",
-			"\"token\""
+			"receivedEvent"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -684,8 +720,150 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "www/js/PushwooshAndroid.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1732,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								835,
+								840
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/wamp/www/cercolamb/admin/application/js/clientes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3487,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/wamp/www/esevial/cea/modules/js/bills.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2075,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 556,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										194,
+										218
+									],
+									[
+										392,
+										416
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								200,
+								200
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"incomplete_sync": null,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ 	].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
 			]
 		}
 	],
