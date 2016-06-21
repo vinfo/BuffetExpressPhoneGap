@@ -1424,8 +1424,10 @@ for(var h=0;h<farr.length;h++){
     var data= JSON.parse(datos);
     var dat = angular.fromJson(data);
     $scope.qr= base_site+"REST/resources/plugins/phpqrcode/qr.php?id="+dat.id+"&email="+dat.email;
-  } 
-  });  
+  }else{
+    $(".showqr").html("<p><b>Debes estar logueado en el sistema para poder usar esta funcionalidad!</b></p>");
+  }
+  }); 
 
   angularRoutingApp.controller('nosotrosController', function($scope) {
     setTimer();   

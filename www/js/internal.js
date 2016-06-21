@@ -116,6 +116,24 @@ function hiddeMenu(){
   $(".latermenu").animate({"left":-412},200);
 }
 
+function scanear(){
+   cordova.plugins.barcodeScanner.scan(
+      function (result) {
+        var datos= localStorage.getItem("cuenta");
+        var invited=0;
+          if(datos!=null){
+            var data= JSON.parse(datos);
+            if(data.id!="")invited= data.id;
+          }        
+          var url= result.text;
+          var ref = cordova.InAppBrowser.open(url+'&invited='+invited, '_blank', 'location=yes');
+      }, 
+      function (error) {
+          $(".alert-danger").show();
+      }
+      ); 
+}
+
 function addShop(action){
   var num=$(".numero").html();
   if(action=="mas"){
