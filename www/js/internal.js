@@ -125,8 +125,9 @@ function scanear(){
             var data= JSON.parse(datos);
             if(data.id!="")invited= data.id;
           }        
-          var url= result.text;
-          var ref = cordova.InAppBrowser.open(url+'&invited='+invited, '_blank', 'location=yes');
+          var url= result.text+'&invited='+invited;
+          alert(url);
+          var ref = cordova.InAppBrowser.open(url, '_system', 'location=yes');
       }, 
       function (error) {
           $(".alert-danger").show();
