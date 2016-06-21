@@ -126,8 +126,8 @@ function scanear(){
             if(data.id!="")invited= data.id;
           }        
           var url= result.text+'&invited='+invited;
+          $(".comparte").html("Bono registrado exitosamente.<br/>Ya puedes usarlo en tu próxima orden.");
           alert(url);
-          var ref = cordova.InAppBrowser.open(url, '_system', 'location=yes');
       }, 
       function (error) {
           $(".alert-danger").show();
