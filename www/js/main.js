@@ -1424,6 +1424,9 @@ for(var h=0;h<farr.length;h++){
     var data= JSON.parse(datos);
     var dat = angular.fromJson(data);
     $scope.qr= base_site+"REST/resources/plugins/phpqrcode/qr.php?id="+dat.id+"&email="+dat.email;
+    $scope.descuento = ajaxrest.getValueTipo("149");
+    $scope.precio = ajaxrest.getValueTipo("150");
+    var precio= ajaxrest.setQR(sponsor,invited);
   }else{
     $(".showqr").html("<p><b>Debes estar logueado en el sistema para poder usar esta funcionalidad!</b></p>");
   }
@@ -1431,9 +1434,7 @@ for(var h=0;h<farr.length;h++){
 
   angularRoutingApp.controller('nosotrosController', function($scope) {
     setTimer();   
-    setBackground("","white");
-    var nosotros = ajaxrest.getContent("id=1322&token="+localStorage.token);
-    
+    setBackground("","white");   
     $scope.imagen= base_site+"imagenes/nosotros/imagen1/"+nosotros[0].img_matrix+"?rand="+rand;
     $scope.titulo= nosotros[0].nombre_matrix;
     $scope.info_nosotros= nosotros[0].contenido_matrix;
