@@ -126,7 +126,6 @@ function scanear(){
             if(data.id!="")invited= data.id;
           } 
           $(".comparte").html("Bono registrado exitosamente.<br/>Ya puedes usarlo en tu próxima orden.");
-          alert(result.text);
           ajaxrest.setQR(result.text,invited);
       }, 
       function (error) {
