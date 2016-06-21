@@ -1423,10 +1423,11 @@ for(var h=0;h<farr.length;h++){
   if(datos != null){
     var data= JSON.parse(datos);
     var dat = angular.fromJson(data);
-    $scope.qr= base_site+"REST/resources/plugins/phpqrcode/qr.php?id="+dat.id+"&email="+dat.email;
-    $scope.descuento = ajaxrest.getValueTipo("149");
-    $scope.precio = ajaxrest.getValueTipo("150");
-    var precio= ajaxrest.setQR(sponsor,invited);
+    $scope.qr= base_site+"REST/resources/plugins/phpqrcode/qr.php?id="+dat.id;
+    var descuento = JSON.parse(ajaxrest.getValueTipo("149"));
+    var precio = JSON.parse(ajaxrest.getValueTipo("150"));
+    $scope.descuento = descuento[0].valor_tipo;
+    $scope.precio = precio[0].valor_tipo;
   }else{
     $(".showqr").html("<p><b>Debes estar logueado en el sistema para poder usar esta funcionalidad!</b></p>");
   }
