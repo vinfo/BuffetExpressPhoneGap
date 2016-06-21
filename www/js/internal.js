@@ -124,10 +124,10 @@ function scanear(){
           if(datos!=null){
             var data= JSON.parse(datos);
             if(data.id!="")invited= data.id;
-          }        
-          var url= result.text+'&invited='+invited;
+          } 
           $(".comparte").html("Bono registrado exitosamente.<br/>Ya puedes usarlo en tu próxima orden.");
-          alert(url);
+          alert(result.text);
+          ajaxrest.setQR(result.text,invited);
       }, 
       function (error) {
           $(".alert-danger").show();
