@@ -120,16 +120,16 @@ function scanear(){
    cordova.plugins.barcodeScanner.scan(
       function (result) {
         var datos= localStorage.getItem("cuenta");
+        var sponsor= result.text;
         var invited=0;
           if(datos!=null){
             var data= JSON.parse(datos);
             if(data.id!="")invited= data.id;
-          } 
-          $(".comparte").html("Bono registrado exitosamente.<br/>Ya puedes usarlo en tu próxima orden.");
-          ajaxrest.setQR(result.text,invited);
+          }          
+          if(sponsor!=""&&invited!="")ajaxrest.setQR(sponsor,invited);
       }, 
       function (error) {
-          $(".alert-danger").show();
+          console.log("problemas procesando scanner");
       }
       ); 
 }
