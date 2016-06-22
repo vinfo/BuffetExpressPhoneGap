@@ -1424,8 +1424,11 @@ for(var h=0;h<farr.length;h++){
     var data= JSON.parse(datos);
     var dat = angular.fromJson(data);
     $scope.qr= base_site+"REST/resources/plugins/phpqrcode/qr.php?id="+dat.id;
-    var descuento = JSON.parse(ajaxrest.getValueTipo("149"));
+    var codigo = JSON.parse(ajaxrest.getEncrypt(dat.id));
     var precio = JSON.parse(ajaxrest.getValueTipo("150"));
+    var precio = JSON.parse(ajaxrest.getValueTipo("150"));
+    alert(JSON.stringify(codigo));
+    $scope.codigo = codigo[0];
     $scope.descuento = descuento[0].valor_tipo;
     $scope.precio = precio[0].valor_tipo;
   }else{
