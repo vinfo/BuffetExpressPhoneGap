@@ -1430,10 +1430,7 @@ for(var h=0;h<farr.length;h++){
       $scope.precio = precio[0].valor_tipo;
     }else{
       $(".showqr").html("<p><b>Debes estar logueado en el sistema para poder usar esta funcionalidad!</b></p>");
-    }
-    $scope.shareBono = function () {      
-      alert(33);
-    }    
+    }  
   }); 
 
   angularRoutingApp.controller('nosotrosController', function($scope) {
