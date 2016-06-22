@@ -1425,7 +1425,6 @@ for(var h=0;h<farr.length;h++){
       var dat = angular.fromJson(data);
       ajaxrest.createQRimage(dat.id);
       var codigo= ajaxrest.getEncryptID(dat.id);
-      alert(codigo);
       var descuento = JSON.parse(ajaxrest.getValueTipo("149"));
       var precio = JSON.parse(ajaxrest.getValueTipo("150"));
       $scope.descuento = descuento[0].valor_tipo;
