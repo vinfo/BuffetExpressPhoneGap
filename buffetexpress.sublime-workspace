@@ -272,37 +272,35 @@
 	"buffers":
 	[
 		{
-			"file": "www/js/PushwooshAndroid.js",
+			"file": "www/config.xml",
 			"settings":
 			{
-				"buffer_size": 1732,
+				"buffer_size": 6773,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/C/wamp/www/cercolamb/admin/application/js/clientes.js",
+			"file": "www/js/internal.js",
 			"settings":
 			{
-				"buffer_size": 3487,
-				"line_ending": "Windows"
+				"buffer_size": 5339,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/C/wamp/www/esevial/cea/modules/js/bills.js",
+			"file": "www/js/main.js",
 			"settings":
 			{
-				"buffer_size": 2075,
-				"line_ending": "Windows"
+				"buffer_size": 77883,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Searching 446 files for \"registerPushwooshAndroid\" (case sensitive)\n\nD:\\Movilidad\\BuffetExpressPhoneGap\\www\\js\\device.js:\n  104      if(device.platform == \"Android\")\n  105      {\n  106:         registerPushwooshAndroid();\n  107      }else if(device.platform == \"iPhone\" || device.platform == \"iOS\")\n  108      {\n\nD:\\Movilidad\\BuffetExpressPhoneGap\\www\\js\\PushwooshAndroid.js:\n    1: function registerPushwooshAndroid() {\n    2  \n    3   	var pushNotification = cordova.require(\"com.pushwoosh.plugins.pushwoosh.PushNotification\");\n\n2 matches across 2 files\n",
+			"file": "www/templates/recomendar.html",
 			"settings":
 			{
-				"buffer_size": 556,
-				"line_ending": "Windows",
-				"name": "Find Results",
-				"scratch": true
+				"buffer_size": 1036,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -383,19 +381,27 @@
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates"
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
+		"/D/Movilidad/wisi_mobil/www/assets/js/min/app.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/parkingid/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendar.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/parkingid/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshAndroid.js",
+		"/C/wamp/www/cercolamb/admin/application/js/clientes.js",
+		"/C/wamp/www/esevial/cea/modules/js/bills.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/C/Users/odc/Downloads/output.min.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshiOS.js",
 		"/C/wamp/www/buffet/facturacion/plugins/datatables/jquery.dataTables.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshAndroid.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/carta.html",
 		"/C/wamp/www/wisi/admin/application/js/administradores.js",
 		"/C/Dropbox/KeePass-2.19/KeePass.config.xml",
@@ -407,7 +413,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/especiales.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
@@ -508,13 +513,7 @@
 		"/D/wamp/www/esevial/cea/modules/js/tramits.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/js/device.js",
 		"/D/Movilidad/BuffetExpressMensajero/www/config.xml",
-		"/C/Users/odc/AppData/Roaming/npm/node_modules/learnyounode/docs/bl.html",
-		"/D/wamp/www/buffet/REST/domi/js/main.js",
-		"/D/wamp/www/buffet/REST/resources/js/functions.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/slider.html",
-		"/D/wamp/www/buffetexpress/codeigniter/app/css/style.css",
-		"/D/wamp/www/familymarketingOLD/modules/js/login.js",
-		"/C/Users/odc/Downloads/zerotype/zerotype/contact.html"
+		"/C/Users/odc/AppData/Roaming/npm/node_modules/learnyounode/docs/bl.html"
 	],
 	"find":
 	{
@@ -536,6 +535,24 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"recomendarController",
+			"ajaxrest.getValueTipo",
+			"ajaxrest.",
+			"ajaxrest.setQR(sponsor,invited);",
+			"getValueTipo",
+			"currre",
+			"number",
+			"ajaxrest",
+			"recomendarController",
+			"ajaxrest",
+			"windo",
+			"plugins",
+			"cuenta",
+			"InAppBrowser",
+			"windo",
+			"open",
+			"barcodescanner",
+			"nosotrosController",
 			"initPushwoosh",
 			"registerPushwooshAndroid",
 			"PushwooshAndroid.js",
@@ -645,25 +662,7 @@
 			"Finalizar orden",
 			"SendPay",
 			"ga(",
-			"addDish",
-			"Finalizar orden",
-			"360",
-			"360x",
-			"getValueTipo",
-			"getValueTipo/",
-			"d3apfvOzOPQmkDDmLoLOh6ZFHRrLGL642dStWZpQAq47NVZHrAGRDhjlqGkOTW2BMDaofF7IMz3VLEZddy0L",
-			"order",
-			"getNameURLWeb",
-			"successHandler",
-			"errorHandler",
-			"registerPushwooshAndroid",
-			"PushwooshAndroid",
-			"getTags",
-			"getPushToken",
-			"getPushwooshHWID",
-			"currentdeviceid",
-			"navigator",
-			"receivedEvent"
+			"addDish"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -725,19 +724,52 @@
 			[
 				{
 					"buffer": 0,
-					"file": "www/js/PushwooshAndroid.js",
+					"file": "www/config.xml",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1732,
+						"buffer_size": 6773,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								835,
-								840
+								2505,
+								2505
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "www/js/internal.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5339,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4796,
+								4801
 							]
 						],
 						"settings":
@@ -746,39 +778,11 @@
 							"remote_loading": false,
 							"synced": false,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/wamp/www/cercolamb/admin/application/js/clientes.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3487,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2023.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -786,28 +790,32 @@
 				},
 				{
 					"buffer": 2,
-					"file": "/C/wamp/www/esevial/cea/modules/js/bills.js",
+					"file": "www/js/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2075,
+						"buffer_size": 77883,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								56852,
+								56852
 							]
 						],
 						"settings":
 						{
 							"incomplete_sync": null,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": -0.0,
+						"translation.y": 25315.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -815,53 +823,35 @@
 				},
 				{
 					"buffer": 3,
+					"file": "www/templates/recomendar.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 556,
+						"buffer_size": 1036,
 						"regions":
 						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										194,
-										218
-									],
-									[
-										392,
-										416
-									]
-								],
-								"scope": ""
-							}
 						},
 						"selection":
 						[
 							[
-								200,
-								200
+								328,
+								337
 							]
 						],
 						"settings":
 						{
-							"detect_indentation": false,
 							"incomplete_sync": null,
-							"line_numbers": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([^ 	].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
