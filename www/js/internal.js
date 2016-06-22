@@ -115,7 +115,14 @@ if (window.jQuery) {
 function hiddeMenu(){
   $(".latermenu").animate({"left":-412},200);
 }
-
+function shareBono(){
+  var precio= $("#precio_bono").html();
+  var descuento= $("#descuento_bono").html();
+  var imagen= $("#img_qr").attr("src");
+  alert(imagen);
+  var codigo= $("#codigo_bono").html();
+  window.plugins.socialsharing.share('Hola,\r\nDescarga la aplicación Buffet Express y almuerza por $ '+precio+', podes armar tu plato como queras en el primer restaurante online tipo buffet.\r\nEs muy fácil entra a la app y en el menú encontraras la opción para escanear el código QR que te llego con este mensaje o ingresa el siguiente código: {{codigo}},\r\nYa que tienes tu bono por $ '+descuento+' has tu orden y paga menos.\r\nEs que poder elegir; también es rico!.', null, 'http://buffetexpress.com.co/REST/resources/images/descargala_ya.jpg', 'http://buffetexpress.com.co/'); 
+}
 function scanear(){
    cordova.plugins.barcodeScanner.scan(
       function (result) {

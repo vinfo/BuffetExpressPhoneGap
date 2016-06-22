@@ -1419,26 +1419,28 @@ for(var h=0;h<farr.length;h++){
   
   angularRoutingApp.controller('recomendarController', function($scope) {
     setBackground("","white");
-  var datos= localStorage.getItem("cuenta");
-  if(datos != null){
-    var data= JSON.parse(datos);
-    var dat = angular.fromJson(data);
-    $scope.qr= base_site+"REST/resources/plugins/phpqrcode/qr.php?id="+dat.id;
-    var codigo = JSON.parse(ajaxrest.getEncrypt(dat.id));
-    var precio = JSON.parse(ajaxrest.getValueTipo("150"));
-    var precio = JSON.parse(ajaxrest.getValueTipo("150"));
-    alert(JSON.stringify(codigo));
-    $scope.codigo = codigo[0];
-    $scope.descuento = descuento[0].valor_tipo;
-    $scope.precio = precio[0].valor_tipo;
-  }else{
-    $(".showqr").html("<p><b>Debes estar logueado en el sistema para poder usar esta funcionalidad!</b></p>");
-  }
+    var datos= localStorage.getItem("cuenta");
+    if(datos != null){
+      var data= JSON.parse(datos);
+      var dat = angular.fromJson(data);
+      $scope.qr= base_site+"REST/resources/plugins/phpqrcode/qr.php?id="+dat.id;   
+      var descuento = JSON.parse(ajaxrest.getValueTipo("149"));
+      var precio = JSON.parse(ajaxrest.getValueTipo("150"));
+      $scope.descuento = descuento[0].valor_tipo;
+      $scope.precio = precio[0].valor_tipo;
+    }else{
+      $(".showqr").html("<p><b>Debes estar logueado en el sistema para poder usar esta funcionalidad!</b></p>");
+    }
+    $scope.shareBono = function () {      
+      alert(33);
+    }    
   }); 
 
   angularRoutingApp.controller('nosotrosController', function($scope) {
     setTimer();   
-    setBackground("","white");   
+    setBackground("","white");
+    var nosotros = ajaxrest.getContent("id=1322&token="+localStorage.token);
+    var rand=Math.random();
     $scope.imagen= base_site+"imagenes/nosotros/imagen1/"+nosotros[0].img_matrix+"?rand="+rand;
     $scope.titulo= nosotros[0].nombre_matrix;
     $scope.info_nosotros= nosotros[0].contenido_matrix;
