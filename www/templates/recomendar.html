@@ -6,12 +6,16 @@
     <div class="col-md-12">
       <p>Dile a tus amigos que descarguen Buffet Express, escaneen tu código QR y obtendrán <b>$ <span id="descuento_bono">{{descuento}}</span></b> en su primera orden <b>(plato a $ <span id="precio_bono">{{precio}}</span>)</b> y tu recibirás un bono igual para tu siguiente orden.</p>
       <p class="comparte"><button class="btn" onclick="scanear();">Escanear</button>&nbsp;<button class="btn" onclick="shareBono();">Comparte</button></p>
+    <div class="bondesc"> Ingresar código de tu amigo <br>
+      <input id="bono" name="bono" value="" type="text" maxlength="25" ng-model="bono">
+      <button class="btn">Registrar</button></div>      
       <p><b>*Condiciones:</b>
       <ul>
         <li>Tu bono se te entregara cuando tu amigo realice su primera orden (notificaremos a tu celular).</li>
         <li>Se puede utilizar un solo bono por orden.</li>
         <li>Bonos no acumulables.</li>
         <li>No acumulable con otras promociones.</li>
+        <li>Tus bonos expiraran en 6 meses a partir de su fecha de creación.</li>
       </ul>
       <span id="codigo" style="display:none"></span>     
       </p>

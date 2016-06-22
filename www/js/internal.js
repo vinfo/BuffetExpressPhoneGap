@@ -120,7 +120,7 @@ function shareBono(){
   var descuento= $("#descuento_bono").html();
   var imagen= $("#img_qr").attr("src");
   var codigo= $("#codigo").html();
-  window.plugins.socialsharing.share('Hola, como estas?\r\nOhi! descárgate esta aplicación Buffet Express y almorza hoy por $ '+precio+', podes armar tu plato como queras…\r\nEs muy fácil entra a la app y en el menú dale click a comparte y gana, escanea el código QR que te llego con este mensaje o ingresa el siguiente código: '+codigo+', que te dara un bono de $ '+descuento,null,imagen, 'http://buffetexpress.co/'); 
+  window.plugins.socialsharing.share('Hola, como estas?\r\nOhi! descárgate esta aplicación Buffet Express y almorza hoy por $ '+precio+', podes armar tu plato como queras…\r\nEs muy fácil entra a la app y en el menú dale click a comparte y gana, escanea el código QR que te llego con este mensaje o ingresa el siguiente código:\r\n\r\n'+codigo+'\r\n\r\nEste te dara un bono de $ '+descuento+'.',null,imagen, 'http://buffetexpress.co/'); 
 }
 function scanear(){
    cordova.plugins.barcodeScanner.scan(
