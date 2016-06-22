@@ -1423,7 +1423,7 @@ for(var h=0;h<farr.length;h++){
     if(datos != null){
       var data= JSON.parse(datos);
       var dat = angular.fromJson(data);
-      var imgCreate= base_site+"REST/resources/plugins/phpqrcode/qr.php?id="+dat.id;
+      ajaxrest.createQRimage(dat.id);
       $scope.qr= base_site+"images/QRs/qr_"+dat.id+".png";   
       var descuento = JSON.parse(ajaxrest.getValueTipo("149"));
       var precio = JSON.parse(ajaxrest.getValueTipo("150"));
