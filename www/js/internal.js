@@ -155,6 +155,7 @@ function registerBono(){
 function registrarUser(){
    var cellPhone= $("#cellPhone").val();
    $("#password").val(cellPhone);
+   $("#password2").val(cellPhone);
    ajaxrest.setAccount('add',82);
 }
 
