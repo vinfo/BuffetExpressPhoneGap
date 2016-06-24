@@ -156,6 +156,7 @@ function registrarUser(){
    var cellPhone= $("#cellPhone").val();
    $("#password").val(cellPhone);
    $("#password2").val(cellPhone);
+   localStorage.setItem("regQR","true");
    ajaxrest.setAccount('add',82);
 }
 
