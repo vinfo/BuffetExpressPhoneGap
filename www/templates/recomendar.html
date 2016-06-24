@@ -8,14 +8,9 @@
   <div class="col-md-12 showqr">
     <h1>Comparte y Gana</h1>
 
-    <div style="text-align:center" class="login"><img src="{{qr}}" style="width:60%;" id="img_qr"></div>
-
-    <div class="col-md-12 facturavir">
-      <p>Dile a tus amigos que descarguen Buffet Express, escaneen tu código QR y obtendrán <b>$ <span id="descuento_bono">{{descuento}}</span></b> en su primera orden <b>(plato a $ <span id="precio_bono">{{precio}}</span>)</b> y tu recibirás un bono igual para tu siguiente orden.</p>
-
-
   <div class="col-md-12 logout" style="padding:10px;">
     <div class="vrdirc register">
+      <p>Registrate para obtener tu código QR y así ganar tus bonos de descuento</p>
       <label>Datos de registro</label>
       <input type="text" class="form-control" id="name" maxlength="35" placeholder="Nombre" />
       <input id="lastname" name="lastname" type="hidden" value="" />
@@ -29,6 +24,11 @@
       <div style="float:left;"><a href="login.html#/terminos">Términos</a> y <a href="login.html#/politicas">Políticas de Privacidad</a><br/><button class="btn" onclick="registrarUser();">Registrarse</button> </div>
     </div>    
   </div>      
+
+    <div style="text-align:center" class="login"><img src="{{qr}}" style="width:60%;" id="img_qr"></div>
+
+    <div class="col-md-12 facturavir">
+      <p>Dile a tus amigos que descarguen Buffet Express, escaneen tu código QR y obtendrán <b>$ <span id="descuento_bono">{{descuento}}</span></b> en su primera orden <b>(plato a $ <span id="precio_bono">{{precio}}</span>)</b> y tu recibirás un bono igual para tu siguiente orden.</p>    
 
 
       <p class="comparte login"><button class="btn" onclick="scanear();">Escanear</button>&nbsp;<button class="btn" onclick="shareBono();">Comparte</button></p>
