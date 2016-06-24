@@ -724,7 +724,7 @@
       };
       
       var cuenta = JSON.parse(localStorage.getItem('cuenta'));
-      if(cuenta.id!=""){   
+      if(localStorage.getItem('cuenta')&&cuenta.id!=""){   
         var data= ajaxrest.getUser("email="+cuenta.email+"&token="+localStorage.token); 
         var dat = angular.fromJson(data);
         $scope.email = cuenta.email;
