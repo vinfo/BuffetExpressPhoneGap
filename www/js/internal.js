@@ -132,7 +132,7 @@ function scanear(){
             var data= JSON.parse(datos);
             if(data.id!="")invited= data.id;
           }          
-          if(sponsor!=""&&invited!="")ajaxrest.setQR(sponsor,invited);
+          if(sponsor!=""&&invited!="")ajaxrest.setQR(sponsor,invited,0);
       }, 
       function (error) {
           console.log("problemas procesando scanner");
@@ -149,8 +149,7 @@ function registerBono(){
             var data= JSON.parse(datos);
             if(data.id!="")invited= data.id;        
       }
-      alert(invited);
-      //ajaxrest.setQR(sponsor,invited);
+      ajaxrest.setQR(sponsor,invited,1);
    }   
 }
 
