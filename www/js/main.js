@@ -1358,8 +1358,7 @@ for(var h=0;h<farr.length;h++){
             
             var final= sortUnique(datos);                       
             if(contI==0){     
-              var procesOrder= ajaxrest.processOrder(order,orderdetail,orderxitems);
-              alert(JSON.stringify(procesOrder));
+                      ajaxrest.processOrder(order,orderdetail,orderxitems);
                       //alert(JSON.stringify(orderdetail));
                       $(".vrdirc,.bondesc").css("display","none");                      
                       $scope.nombre_cliente= nombre_cliente;
