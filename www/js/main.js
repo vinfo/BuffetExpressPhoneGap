@@ -1430,9 +1430,9 @@ for(var h=0;h<farr.length;h++){
       $scope.descuento = descuento[0].valor_tipo;
       $scope.precio = precio[0].valor_tipo;  
       $scope.qr= base_site+"images/QRs/qr_"+dat.id+".png";
-      $(".showqr").show();
+      $(".login").show();
     }else{
-      $(".showregister").show();
+      $(".logout").show();
     }  
   }); 
 

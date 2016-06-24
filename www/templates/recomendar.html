@@ -1,28 +1,20 @@
 <!-- Capa de contenido recomendar -->
+<style>
+.login,.logout{
+  display: none;
+}
+</style>
 <div class="nosotros">
-  <div class="col-md-12 showqr" style="display:none">
+  <div class="col-md-12 showqr">
     <h1>Comparte y Gana</h1>
-    <div style="text-align:center"><img src="{{qr}}" style="width:60%;" id="img_qr"></div>
+
+    <div style="text-align:center" class="login"><img src="{{qr}}" style="width:60%;" id="img_qr"></div>
+
     <div class="col-md-12 facturavir">
       <p>Dile a tus amigos que descarguen Buffet Express, escaneen tu código QR y obtendrán <b>$ <span id="descuento_bono">{{descuento}}</span></b> en su primera orden <b>(plato a $ <span id="precio_bono">{{precio}}</span>)</b> y tu recibirás un bono igual para tu siguiente orden.</p>
-      <p class="comparte"><button class="btn" onclick="scanear();">Escanear</button>&nbsp;<button class="btn" onclick="shareBono();">Comparte</button></p>
-    <div class="bondesc"> Ingresar código de tu amigo <br>
-      <input id="bono" name="bono" value="" type="text" maxlength="25">
-      <button class="btn" onclick="registerBono();">Registrar</button></div>      
-      <p><b>*Condiciones:</b>
-      <ul style="text-align:left;width:95%;">
-        <li>Tu bono se te entregara cuando tu amigo realice su primera orden (notificaremos a tu celular).</li>
-        <li>Se puede utilizar un solo bono por orden.</li>
-        <li>Bonos no acumulables.</li>
-        <li>No acumulable con otras promociones.</li>
-        <li>Tus bonos expiraran en 6 meses a partir de su fecha de creación.</li>
-      </ul>
-      <span id="codigo" style="display:none"></span>     
-      </p>
-      <p>&nbsp;</p>
-    </div>
-  </div>
-  <div class="col-md-12 showregister" style="display:none">
+
+
+  <div class="col-md-12 logout" style="padding:10px;">
     <div class="vrdirc register">
       <label>Datos de registro</label>
       <input type="text" class="form-control" id="name" maxlength="35" placeholder="Nombre" />
@@ -36,6 +28,26 @@
       </div>
       <div style="float:left;"><a href="login.html#/terminos">Términos</a> y <a href="login.html#/politicas">Políticas de Privacidad</a><br/><button class="btn" onclick="registrarUser();">Registrarse</button> </div>
     </div>    
+  </div>      
+
+
+      <p class="comparte login"><button class="btn" onclick="scanear();">Escanear</button>&nbsp;<button class="btn" onclick="shareBono();">Comparte</button></p>
+    <div class="bondesc login"> Ingresar código de tu amigo <br>
+      <input id="bono" name="bono" value="" type="text" maxlength="25">
+      <button class="btn" onclick="registerBono();">Registrar</button></div>
+
+      <p><b>*Condiciones:</b>
+      <ul style="text-align:left;width:95%;">
+        <li>Tu bono se te entregara cuando tu amigo realice su primera orden (notificaremos a tu celular).</li>
+        <li>Se puede utilizar un solo bono por orden.</li>
+        <li>Bonos no acumulables.</li>
+        <li>No acumulable con otras promociones.</li>
+        <li>Tus bonos expiraran en 6 meses a partir de su fecha de creación.</li>
+      </ul>
+      <span id="codigo" style="display:none"></span>     
+      </p>
+      <p>&nbsp;</p>
+    </div>
   </div>
 </div>
 <!-- Fin capa de contenido nosotros sesión -->
