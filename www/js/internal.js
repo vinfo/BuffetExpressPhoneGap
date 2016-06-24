@@ -152,6 +152,16 @@ function registerBono(){
       ajaxrest.setQR(sponsor,invited,1);
    }   
 }
+function registrarUser(){
+   var name= $("#name").val();
+   var cellPhone= $("#cellPhone").val();
+   var email= $("#email").val();
+   if(name!=""&&cellPhone!=""&&email!=""){
+      ajaxrest.registrarUser(name,cellPhone,email);
+   }else{
+     alert("Todos los campos son requeridos!");
+   }  
+}
 
 function addShop(action){
   var num=$(".numero").html();
