@@ -161,7 +161,6 @@ function registrarUser(){
 }
 function getListBono(id){
   if(id!=null){
-    var data= JSON.parse(datos);
     ajaxrest.getListBonos(id);
   }   
 }
