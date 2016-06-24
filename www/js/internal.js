@@ -157,7 +157,7 @@ function registrarUser(){
    var cellPhone= $("#cellPhone").val();
    var email= $("#email").val();
    if(name!=""&&cellPhone!=""&&email!=""){
-      ajaxrest.registrarUser(name,cellPhone,email);
+      ajaxrest.setAccount('add',82);
    }else{
      alert("Todos los campos son requeridos!");
    }  
