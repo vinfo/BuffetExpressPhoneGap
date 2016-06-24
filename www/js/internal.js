@@ -159,16 +159,10 @@ function registrarUser(){
    localStorage.setItem("regQR","true");
    ajaxrest.setAccount('add',82);
 }
-function getListBono(){
-  var datos= localStorage.getItem("cuenta");
-  if(datos!=null){
+function getListBono(id){
+  if(id!=null){
     var data= JSON.parse(datos);
-    var list= ajaxrest.getListBonos(data.id);
-    if(list){
-      $.each( list, function( key, value ) {
-        alert( key + ": " + value );
-      });
-    }
+    ajaxrest.getListBonos(id);
   }   
 }
 

@@ -1439,6 +1439,7 @@ for(var h=0;h<farr.length;h++){
       var codigo= ajaxrest.getEncryptID(dat.id);
       $scope.qr= base_site+"images/QRs/qr_"+dat.id+".png";
       $(".login").show();
+      getListBono(dat.id);
     }else{
       $(".logout").show();
     }  
