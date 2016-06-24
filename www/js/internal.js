@@ -139,6 +139,20 @@ function scanear(){
       }
       ); 
 }
+function registerBono(){
+   var bono= $("#bono").val();
+   alert(bono);
+   if(bono!=""){
+      var invited=0;
+      var datos= localStorage.getItem("cuenta");
+      if(datos!=null){
+            var data= JSON.parse(datos);
+            if(data.id!="")invited= data.id;        
+      }
+      alert(invited);
+      //ajaxrest.setQR(sponsor,invited);
+   }   
+}
 
 function addShop(action){
   var num=$(".numero").html();
