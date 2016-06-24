@@ -1,6 +1,6 @@
 <!-- Capa de contenido recomendar -->
 <div class="nosotros">
-  <div class="col-md-12 showqr">
+  <div class="col-md-12 showqr" style="display:none">
     <h1>Comparte y Gana</h1>
     <div style="text-align:center"><img src="{{qr}}" style="width:60%;" id="img_qr"></div>
     <div class="col-md-12 facturavir">
@@ -21,6 +21,21 @@
       </p>
       <p>&nbsp;</p>
     </div>
+  </div>
+  <div class="col-md-12 showregister" style="display:none">
+    <div class="vrdirc register">
+      <label>Datos de registro</label>
+      <input type="text" class="form-control" id="name" maxlength="35" placeholder="Nombre" />
+      <input id="lastname" name="lastname" type="hidden" value="" />
+      <input id="password" name="password" type="hidden" value=""/>
+      <input id="password2" name="password2" type="hidden" value="" />
+      <input type="text" class="form-control" id="cellPhone" maxlength="15" placeholder="Celular (Contraseña temporal)" onblur="fMatch2(this);" onkeyup="fMatch2(this);"/>
+      <input type="email" class="form-control" id="email" maxlength="45" placeholder="Correo electrónico" />
+      <div style="float:left;width:20px;margin-right:6px;">
+        <input id="chk_terminos" name="chk_terminos" type="checkbox" value="1" checked="checked" />
+      </div>
+      <div style="float:left;"><a href="login.html#/terminos">Términos</a> y <a href="login.html#/politicas">Políticas de Privacidad</a><br/><button class="btn" onclick="registrarUser();">Registrarse</button> </div>
+    </div>    
   </div>
 </div>
 <!-- Fin capa de contenido nosotros sesión -->

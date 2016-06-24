@@ -1429,9 +1429,10 @@ for(var h=0;h<farr.length;h++){
       var precio = JSON.parse(ajaxrest.getValueTipo("150"));
       $scope.descuento = descuento[0].valor_tipo;
       $scope.precio = precio[0].valor_tipo;  
-      $scope.qr= base_site+"images/QRs/qr_"+dat.id+".png"; 
+      $scope.qr= base_site+"images/QRs/qr_"+dat.id+".png";
+      $(".showqr").show();
     }else{
-      $(".showqr").html("<p><b>Debes estar logueado en el sistema para poder usar esta funcionalidad!</b></p>");
+      $(".showregister").show();
     }  
   }); 
 
