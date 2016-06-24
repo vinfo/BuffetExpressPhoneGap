@@ -141,7 +141,6 @@ function scanear(){
 }
 function registerBono(){
    var bono= $("#bono").val();
-   alert(bono);
    if(bono!=""){
       var invited=0;
       var datos= localStorage.getItem("cuenta");
@@ -149,6 +148,7 @@ function registerBono(){
             var data= JSON.parse(datos);
             if(data.id!="")invited= data.id;        
       }
+      var sponsor=bono;
       ajaxrest.setQR(sponsor,invited,1);
    }   
 }
