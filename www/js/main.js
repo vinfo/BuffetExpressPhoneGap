@@ -267,6 +267,7 @@
       },
       $scope.closeSession = function () {       
         localStorage.removeItem("cuenta");
+        localStorage.removeItem("regQR");
         $scope.mi_cuenta="login.html";
         $location.path("internal.html");
       },    
@@ -860,7 +861,6 @@
     setTimer();
     setBackground("","white");
   //var hora= ajaxrest.getHour("token="+localStorage.token);
-  
   $(".menusup button.ico-menu span").css("background","url(images/flecha_atras.png)");
   $("li").removeClass("active");
   $(".menupie ul li:nth-child(3)").addClass("active");  
@@ -1172,7 +1172,15 @@ for(var h=0;h<farr.length;h++){
   $("#total").html(Currency.setMoney(Gtotal + tDomicilio, 0, ",", "."));
   $("#Gtotal").val(Gtotal);
   $("#tDomicilio").val(tDomicilio);
-    //$scope.valor_plato= " Und x "+domicilio;  
+    //$scope.valor_plato= " Und x "+domicilio;
+
+  var getBono= ajaxrest.getExtraBono("id_cliente="+id_cliente+"&token="+localStorage.token);
+  if(getBono){
+    var dat = angular.fromJson(getBono);
+    if(dat[0].codigo_bono!=""){
+      $scope.bono= dat[0].codigo_bono;
+    }  
+  }  
     
     if($scope.bono!=""){
       getBonus($scope.bono,Gtotal,tDomicilio);

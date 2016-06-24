@@ -159,6 +159,19 @@ function registrarUser(){
    localStorage.setItem("regQR","true");
    ajaxrest.setAccount('add',82);
 }
+function getListBono(){
+  var datos= localStorage.getItem("cuenta");
+  if(datos!=null){
+    var data= JSON.parse(datos);
+    var list= ajaxrest.getListBonos(data.id);
+    if(list){
+      $.each( list, function( key, value ) {
+        alert( key + ": " + value );
+      });
+    }
+  }   
+}
+
 
 function addShop(action){
   var num=$(".numero").html();

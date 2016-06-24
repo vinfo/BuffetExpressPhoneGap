@@ -34,6 +34,7 @@ function onSuccess(position) {
   localStorage.removeItem("pedido");
   localStorage.removeItem("horario");
   localStorage.removeItem("bebida");
+  localStorage.removeItem("regQR");
       
   lat1= position.coords.latitude;
   lng1= position.coords.longitude;   
