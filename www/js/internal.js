@@ -153,14 +153,9 @@ function registerBono(){
    }   
 }
 function registrarUser(){
-   var name= $("#name").val();
    var cellPhone= $("#cellPhone").val();
-   var email= $("#email").val();
-   if(name!=""&&cellPhone!=""&&email!=""){
-      ajaxrest.setAccount('add',82);
-   }else{
-     alert("Todos los campos son requeridos!");
-   }  
+   $("#password").val(cellPhone);
+   ajaxrest.setAccount('add',82);
 }
 
 function addShop(action){
