@@ -1,7 +1,5 @@
 function registerPushwooshAndroid() {
  	var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
- 	alert("Archivo Android ");
-
 	//set push notifications handler
 	document.addEventListener('push-notification',
 		function(event)
@@ -24,7 +22,6 @@ function registerPushwooshAndroid() {
 
 	pushNotification.onDeviceReady({ projectid: "746109479988", appid : "825C3-92C11" });
 
-	alert("Registrar");
 	pushNotification.registerDevice(
 		function(token)
 		{
@@ -41,7 +38,6 @@ function registerPushwooshAndroid() {
 
 function onPushwooshAndroidInitialized(pushToken)
 {
-	alert("Inicializando token Android "+ pushToken);	
 	var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
 	pushNotification.getPushToken(
 		function(token)

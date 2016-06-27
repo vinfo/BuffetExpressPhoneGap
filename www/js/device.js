@@ -88,8 +88,8 @@ function getDeviceProperty()
      var deviceOS  = device.platform  ;  //fetch the device operating system
      var deviceOSVersion = device.version ;  //fetch the device OS version
      localStorage.setItem("OS",deviceOS);
+     console.log("Plataforma registrada "+device.platform);
      initPushwoosh();
-     console.log("Plataforma registrada "+localStorage.OS);     
 }
 function getNameURLWeb(){
  var sPath = window.location.pathname;
@@ -97,25 +97,28 @@ function getNameURLWeb(){
  return sPage;
 }
 function initPushwoosh() {
-    alert("initPushwoosh "+device.platform);
     var pushNotification = window.plugins.pushNotification;
+    alert("initPushwoosh "+device.platform);    
+    if(localStorage.OS == "Android"){
+        registerPushwooshAndroid();
+        console.log("Register "+localStorage.OS);
+        setFirstPushReg();
+    }else if(localStorage.OS == "iPhone" || device.platform == "iOS"){
+        registerPushwooshIOS();
+        console.log("Register "+localStorage.OS);
+        setFirstPushReg();
+    }    
+}
+function setFirstPushReg(){
     pushNotification.onDeviceReady({ projectid: "746109479988", appid : "825C3-92C11" });
     pushNotification.registerDevice(
         function(status) {
             var pushToken = status;
-            alert('push token: ' + pushToken);
+            console.log('push token: ' + pushToken);
             localStorage.setItem("pushtoken",pushToken);
         },
         function(status) {
-            alert(JSON.stringify(['failed to register ', status]));
+            console.log(JSON.stringify(['failed to register ', status]));
         }
-    );    
-        
-    if(localStorage.OS == "Android"){
-        registerPushwooshAndroid();
-        console.log("Register "+localStorage.OS);
-    }else if(localStorage.OS == "iPhone" || device.platform == "iOS"){
-        registerPushwooshIOS();
-        console.log("Register "+localStorage.OS);
-    }
+    );     
 }
