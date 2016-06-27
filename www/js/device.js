@@ -112,16 +112,17 @@ function setFirstPushReg(){
     console.log("Registra primera");
     var pushNotification = window.plugins.pushNotification;
     pushNotification.onDeviceReady({ projectid: "746109479988", appid : "825C3-92C11" });
-    pushNotification.registerDevice(
+    var push= pushNotification.registerDevice(
         function(status) {
             var pushToken = status;
-            console.log('push token: ' + pushToken);
+            alert('push token: ' + pushToken);
             localStorage.setItem("pushtoken",pushToken);
+            return true;
         },
         function(status) {
             alert(JSON.stringify(['failed to register ', status]));
         }
     );
     alert("Registra segunda");
-    return true;    
+    return push;    
 }
