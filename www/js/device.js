@@ -97,8 +97,7 @@ function getNameURLWeb(){
  return sPage;
 }
 function initPushwoosh() {
-    //var pushNotification = window.plugins.pushNotification;
-    var pushNotification = cordova.require("pushwoosh-cordova-plugin.PushNotification");
+    var pushNotification = window.plugins.pushNotification;
     console.log("initPushwoosh "+device.platform);    
     if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
