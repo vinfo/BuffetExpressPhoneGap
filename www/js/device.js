@@ -97,8 +97,18 @@ function getNameURLWeb(){
  return sPage;
 }
 function initPushwoosh() {
+    alert("initPushwoosh "+device.platform);
     var pushNotification = window.plugins.pushNotification;
-    alert("initPushwoosh "+device.platform);    
+    pushNotification.registerDevice(
+        function(status) {
+            var pushToken = status;
+            alert('push token: ' + pushToken);
+        },
+        function(status) {
+            alert(JSON.stringify(['failed to register ', status]));
+        }
+    );    
+        
     if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
         console.log("Register "+localStorage.OS);
