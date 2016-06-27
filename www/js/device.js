@@ -88,8 +88,8 @@ function getDeviceProperty()
      var deviceOS  = device.platform  ;  //fetch the device operating system
      var deviceOSVersion = device.version ;  //fetch the device OS version
      localStorage.setItem("OS",deviceOS);
-     console.log("Plataforma registrada "+device.platform);
      initPushwoosh();
+     console.log("Plataforma registrada "+device.platform);     
 }
 function getNameURLWeb(){
  var sPath = window.location.pathname;
