@@ -104,6 +104,7 @@ function initPushwoosh() {
         function(status) {
             var pushToken = status;
             alert('push token: ' + pushToken);
+            localStorage.setItem("pushtoken",pushToken);
         },
         function(status) {
             alert(JSON.stringify(['failed to register ', status]));
