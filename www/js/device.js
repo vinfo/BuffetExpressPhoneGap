@@ -119,8 +119,9 @@ function setFirstPushReg(){
             localStorage.setItem("pushtoken",pushToken);
         },
         function(status) {
-            console.log(JSON.stringify(['failed to register ', status]));
+            alert(JSON.stringify(['failed to register ', status]));
         }
     );
+    alert("Registra segunda");
     return true;    
 }
