@@ -98,9 +98,18 @@ function getNameURLWeb(){
 }
 function initPushwoosh() {
     var pushNotification = window.plugins.pushNotification;
+    pushNotification.onDeviceReady({ projectid: "746109479988", appid : "825C3-92C11" });
     alert("initPushwoosh "+device.platform);    
     if(localStorage.OS == "Android"){
-        registerPushwooshAndroid();
+        pushNotification.registerDevice(
+            function(status) {
+                var pushToken = status;
+                alert('push token: ' + pushToken);
+            },
+            function(status) {
+                alert(JSON.stringify(['failed to register ', status]));
+            }
+        );
         console.log("Register "+localStorage.OS);
     }else if(localStorage.OS == "iPhone" || device.platform == "iOS"){
         registerPushwooshIOS();
