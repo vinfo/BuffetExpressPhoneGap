@@ -102,11 +102,10 @@ function initPushwoosh() {
         registerPushwooshAndroid();
         alert("Register "+localStorage.OS);
         if(!localStorage.pushtoken)setFirstPushReg();
-        }
     }else if(localStorage.OS == "iPhone" || device.platform == "iOS"){
         registerPushwooshIOS();
         console.log("Register "+localStorage.OS);
-        if(!localStorage.pushtoken)setTimeout(function(){ setFirstPushReg(); }, 2000);
+        if(!localStorage.pushtoken)setFirstPushReg();
     }    
 }
 function setFirstPushReg(){
