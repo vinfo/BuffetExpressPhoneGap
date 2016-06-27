@@ -49,8 +49,7 @@
         window.analytics.trackView('/templates/guia');
         window.analytics.trackView('/templates/contactenos');
         console.log("Inicializa Dispositivo");        
-        getDeviceProperty();
-        checkConnection();                     
+        getDeviceProperty();                            
     }
 };
 
@@ -103,10 +102,12 @@ function initPushwoosh() {
         registerPushwooshAndroid();
         console.log("Register "+localStorage.OS);
         if(!localStorage.pushtoken)setFirstPushReg();
+        checkConnection(); 
     }else if(localStorage.OS == "iPhone" || device.platform == "iOS"){
         registerPushwooshIOS();
         console.log("Register "+localStorage.OS);
         if(!localStorage.pushtoken)setFirstPushReg();
+        checkConnection(); 
     }    
 }
 function setFirstPushReg(){
@@ -124,6 +125,11 @@ function setFirstPushReg(){
             console.warn(JSON.stringify(['failed to register ', status]));
         }
     );
-    //alert("Registra segunda");
+    console.log("Registra segunda");
+    if(!localStorage.pushtoken){
+        setFirstPushReg();
+        initPushwoosh();
+    }
+    console.log("Registra tercera");
     return push;    
 }
