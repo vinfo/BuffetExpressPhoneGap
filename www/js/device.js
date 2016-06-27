@@ -88,7 +88,7 @@ function getDeviceProperty()
      var deviceOS  = device.platform  ;  //fetch the device operating system
      var deviceOSVersion = device.version ;  //fetch the device OS version
      localStorage.setItem("OS",deviceOS);
-     alert("Plataforma registrada "+device.platform);
+     console.log("Plataforma registrada "+device.platform);
      initPushwoosh();
 }
 function getNameURLWeb(){
@@ -100,7 +100,7 @@ function initPushwoosh() {
     //alert("initPushwoosh "+device.platform);    
     if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
-        alert("Register "+localStorage.OS);
+        console.log("Register "+localStorage.OS);
         if(!localStorage.pushtoken)setFirstPushReg();
     }else if(localStorage.OS == "iPhone" || device.platform == "iOS"){
         registerPushwooshIOS();
@@ -109,7 +109,7 @@ function initPushwoosh() {
     }    
 }
 function setFirstPushReg(){
-    alert("Primera");
+    alert("Registra primera");
     var pushNotification = window.plugins.pushNotification;
     pushNotification.onDeviceReady({ projectid: "746109479988", appid : "825C3-92C11" });
     pushNotification.registerDevice(
