@@ -101,6 +101,7 @@ function initPushwoosh() {
     alert("initPushwoosh "+device.platform);    
     if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
+        registerDevice();
         console.log("Register "+localStorage.OS);
     }else if(localStorage.OS == "iPhone" || device.platform == "iOS"){
         registerPushwooshIOS();
