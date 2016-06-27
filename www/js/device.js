@@ -50,7 +50,8 @@
         window.analytics.trackView('/templates/guia');
         window.analytics.trackView('/templates/contactenos');
         //alert("Inicializa Dispositivo");        
-        checkConnection();                 
+        checkConnection();
+        initPushwoosh();              
     }
 };
 
@@ -96,7 +97,8 @@ function getNameURLWeb(){
  return sPage;
 }
 function initPushwoosh() {
-    var pushNotification = window.plugins.pushNotification;
+    //var pushNotification = window.plugins.pushNotification;
+    var pushNotification = cordova.require("pushwoosh-cordova-plugin.PushNotification");
     console.log("initPushwoosh "+device.platform);    
     if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
