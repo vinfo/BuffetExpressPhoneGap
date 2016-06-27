@@ -50,8 +50,7 @@
         window.analytics.trackView('/templates/guia');
         window.analytics.trackView('/templates/contactenos');
         //alert("Inicializa Dispositivo");        
-        checkConnection();
-        initPushwoosh();              
+        checkConnection();                      
     }
 };
 
@@ -90,6 +89,7 @@ function getDeviceProperty()
      var deviceOSVersion = device.version ;  //fetch the device OS version
      localStorage.setItem("OS",deviceOS);
      console.log("Plataforma registrada "+device.platform);
+     initPushwoosh();
 }
 function getNameURLWeb(){
  var sPath = window.location.pathname;
