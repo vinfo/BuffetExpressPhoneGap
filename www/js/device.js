@@ -115,7 +115,7 @@ function setFirstPushReg(){
     var push= pushNotification.registerDevice(
         function(status) {
             var pushToken = status;
-            alert('push token: ' + pushToken);
+            console.log('push token: ' + pushToken);
             localStorage.setItem("pushtoken",pushToken);
             return true;
         },
@@ -123,6 +123,6 @@ function setFirstPushReg(){
             alert(JSON.stringify(['failed to register ', status]));
         }
     );
-    alert("Registra segunda");
+    //alert("Registra segunda");
     return push;    
 }
