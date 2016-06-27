@@ -97,7 +97,7 @@ function getNameURLWeb(){
  return sPage;
 }
 function initPushwoosh() {    
-    //alert("initPushwoosh "+device.platform);    
+    console.log("initPushwoosh "+device.platform);    
     if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
         console.log("Register "+localStorage.OS);
@@ -120,7 +120,7 @@ function setFirstPushReg(){
             return true;
         },
         function(status) {
-            alert(JSON.stringify(['failed to register ', status]));
+            console.warn(JSON.stringify(['failed to register ', status]));
         }
     );
     //alert("Registra segunda");
