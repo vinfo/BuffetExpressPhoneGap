@@ -101,11 +101,11 @@ function initPushwoosh() {
     if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
         console.log("Register "+localStorage.OS);
-        setFirstPushReg();
+        if(!localStorage.OS)setFirstPushReg();
     }else if(localStorage.OS == "iPhone" || device.platform == "iOS"){
         registerPushwooshIOS();
         console.log("Register "+localStorage.OS);
-        setFirstPushReg();
+        if(!localStorage.OS)setFirstPushReg();
     }    
 }
 function setFirstPushReg(){
