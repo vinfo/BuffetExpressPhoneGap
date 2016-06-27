@@ -96,8 +96,7 @@ function getNameURLWeb(){
  var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
  return sPage;
 }
-function initPushwoosh() {
-    var pushNotification = window.plugins.pushNotification;
+function initPushwoosh() {    
     //alert("initPushwoosh "+device.platform);    
     if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
@@ -110,6 +109,7 @@ function initPushwoosh() {
     }    
 }
 function setFirstPushReg(){
+    var pushNotification = window.plugins.pushNotification;
     pushNotification.onDeviceReady({ projectid: "746109479988", appid : "825C3-92C11" });
     pushNotification.registerDevice(
         function(status) {
