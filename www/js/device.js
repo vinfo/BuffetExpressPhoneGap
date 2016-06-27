@@ -101,7 +101,9 @@ function initPushwoosh() {
     var pushNotification = window.plugins.pushNotification;
     if(device.platform == "Android"){
         registerPushwooshAndroid();
+        console.log("Register "+device.platform);
     }else if(device.platform == "iPhone" || device.platform == "iOS"){
         registerPushwooshIOS();
+        console.log("Register "+device.platform);
     }
 }

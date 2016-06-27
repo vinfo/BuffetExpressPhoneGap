@@ -7,7 +7,7 @@ if (window.jQuery) {
       $(this).next('div').slideToggle();
       return false;
     });     
-
+    if(!localStorage.getItem("pushtoken"))initPushwoosh();
     $(window).load(function(){
       $(".menupie ul li").css({"height":$("li.carrito a img").height()});
       $(".pedidotar").css({"bottom":$("li.carrito a img").height()});
