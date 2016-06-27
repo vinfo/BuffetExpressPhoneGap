@@ -89,7 +89,7 @@ function getDeviceProperty()
      var deviceOSVersion = device.version ;  //fetch the device OS version
      localStorage.setItem("OS",deviceOS);
      initPushwoosh();
-     console.log("Plataforma registrada "+device.platform);     
+     console.log("Plataforma registrada "+localStorage.OS);     
 }
 function getNameURLWeb(){
  var sPath = window.location.pathname;
@@ -98,7 +98,7 @@ function getNameURLWeb(){
 }
 function initPushwoosh() {
     alert("initPushwoosh "+device.platform);
-    var pushNotification = window.plugins.pushNotification;
+    var pushNotification = cordova.require("pushwoosh-cordova-plugin.PushNotification");
     pushNotification.registerDevice(
         function(status) {
             var pushToken = status;
