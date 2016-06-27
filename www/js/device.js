@@ -127,7 +127,8 @@ function setFirstPushReg(){
     );
     console.log("Registra segunda");
     if(!localStorage.pushtoken){
-        initPushwoosh();
+        //initPushwoosh();
+        console.log("Registra intermedia");
     }
     console.log("Registra tercera");
     return push;    
