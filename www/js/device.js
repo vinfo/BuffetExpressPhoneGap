@@ -41,8 +41,7 @@
         //app.receivedEvent('deviceready');        
         //navigator.splashscreen.show();
         navigator.splashscreen.hide(); 
-        screen.lockOrientation('portrait-primary');
-        getDeviceProperty();
+        screen.lockOrientation('portrait-primary');        
         window.analytics.startTrackerWithId('UA-62739338-1');
         window.analytics.trackView('/index');
         window.analytics.trackView('/internal');
@@ -50,7 +49,8 @@
         window.analytics.trackView('/templates/guia');
         window.analytics.trackView('/templates/contactenos');
         //alert("Inicializa Dispositivo");        
-        checkConnection();                      
+        checkConnection();
+        getDeviceProperty();             
     }
 };
 
@@ -98,7 +98,7 @@ function getNameURLWeb(){
 }
 function initPushwoosh() {
     var pushNotification = window.plugins.pushNotification;
-    console.log("initPushwoosh "+device.platform);    
+    alert("initPushwoosh "+device.platform);    
     if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
         console.log("Register "+localStorage.OS);
