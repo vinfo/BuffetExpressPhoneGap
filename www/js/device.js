@@ -91,9 +91,6 @@ function getDeviceProperty()
      var deviceOSVersion = device.version ;  //fetch the device OS version
      localStorage.setItem("OS",deviceOS);
      initPushwoosh();
-         /* alert("Device OS: " + deviceOS); 
-          alert("Device OS Version: " + deviceOSVersion);
-          */
 }
 function getNameURLWeb(){
  var sPath = window.location.pathname;
@@ -101,7 +98,6 @@ function getNameURLWeb(){
  return sPage;
 }
 function initPushwoosh() {
-    alert("initPushwoosh");
     var pushNotification = window.plugins.pushNotification;
     if(device.platform == "Android"){
         registerPushwooshAndroid();
