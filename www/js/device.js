@@ -49,15 +49,13 @@
         window.analytics.trackView('/login');
         window.analytics.trackView('/templates/guia');
         window.analytics.trackView('/templates/contactenos');
-        //alert("Inicializa Dispositivo");
-        initPushwoosh();
+        //alert("Inicializa Dispositivo");        
         checkConnection();          
     }
 };
 
 function checkConnection() {
     //alert("Conexion");
-    initPushwoosh();
     var state=true;
     var networkState = navigator.connection.type;
     var states = {};
@@ -90,6 +88,7 @@ function getDeviceProperty()
      var deviceOS  = device.platform  ;  //fetch the device operating system
      var deviceOSVersion = device.version ;  //fetch the device OS version
      localStorage.setItem("OS",deviceOS);
+     console.log("Plataforma registrada "+device.platform);
      initPushwoosh();
 }
 function getNameURLWeb(){
@@ -100,11 +99,11 @@ function getNameURLWeb(){
 function initPushwoosh() {
     var pushNotification = window.plugins.pushNotification;
     console.log("initPushwoosh "+device.platform);    
-    if(device.platform == "Android"){
+    if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
-        console.log("Register "+device.platform);
-    }else if(device.platform == "iPhone" || device.platform == "iOS"){
+        console.log("Register "+localStorage.OS);
+    }else if(localStorage.OS == "iPhone" || device.platform == "iOS"){
         registerPushwooshIOS();
-        console.log("Register "+device.platform);
+        console.log("Register "+localStorage.OS);
     }
 }
