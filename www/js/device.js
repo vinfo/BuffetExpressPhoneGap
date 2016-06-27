@@ -102,11 +102,14 @@ function initPushwoosh() {
     if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
         console.log("Register "+localStorage.OS);
+        if(!localStorage.pushtoken)setFirstPushReg();
     }else if(localStorage.OS == "iPhone" || device.platform == "iOS"){
         registerPushwooshIOS();
         console.log("Register "+localStorage.OS);
+        if(!localStorage.pushtoken)setFirstPushReg();
     }    
 }
+
 function setFirstPushReg(){
     console.log("Registra primera");
     var pushNotification = window.plugins.pushNotification;

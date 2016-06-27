@@ -41,7 +41,6 @@ function onSuccess(position) {
   var pos= {lat:lat1,lng:lng1};
   localStorage.setItem("position",JSON.stringify(pos));
   console.log("onSuccess");
-  if(!localStorage.pushtoken)setFirstPushReg(); 
   window.location.href = 'load.html';
 }
 
@@ -59,6 +58,5 @@ function onError(error) {
   var pos= {lat:6.267791,lng:-75.581744};
   localStorage.setItem("position",JSON.stringify(pos));
   console.log("onError");
-  if(!localStorage.pushtoken)setFirstPushReg();
   window.location.href = 'sector.html';
 }
