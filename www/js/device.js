@@ -101,11 +101,11 @@ function initPushwoosh() {
     if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
         console.log("Register "+localStorage.OS);
-        setFirstPushReg();
+        if(!localStorage.pushtoken)setFirstPushReg();
     }else if(localStorage.OS == "iPhone" || device.platform == "iOS"){
         registerPushwooshIOS();
         console.log("Register "+localStorage.OS);
-        setFirstPushReg();
+        if(!localStorage.pushtoken)setFirstPushReg();
     }    
 }
 function setFirstPushReg(){
@@ -115,11 +115,11 @@ function setFirstPushReg(){
     pushNotification.registerDevice(
         function(status) {
             var pushToken = status;
-            alert('push token: ' + pushToken);
+            console.log('push token: ' + pushToken);
             localStorage.setItem("pushtoken",pushToken);
         },
         function(status) {
-            alert(JSON.stringify(['failed to register ', status]));
+            console.log(JSON.stringify(['failed to register ', status]));
         }
     );
     return true;    
