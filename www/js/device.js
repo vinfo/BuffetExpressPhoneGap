@@ -98,7 +98,7 @@ function getNameURLWeb(){
 }
 function initPushwoosh() {
     var pushNotification = window.plugins.pushNotification;
-    alert("initPushwoosh "+device.platform);    
+    //alert("initPushwoosh "+device.platform);    
     if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
         console.log("Register "+localStorage.OS);
