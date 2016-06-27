@@ -109,16 +109,17 @@ function initPushwoosh() {
     }    
 }
 function setFirstPushReg(){
+    alert("Registra primera");
     var pushNotification = window.plugins.pushNotification;
     pushNotification.onDeviceReady({ projectid: "746109479988", appid : "825C3-92C11" });
     pushNotification.registerDevice(
         function(status) {
             var pushToken = status;
-            console.log('push token: ' + pushToken);
+            alert('push token: ' + pushToken);
             localStorage.setItem("pushtoken",pushToken);
         },
         function(status) {
-            console.log(JSON.stringify(['failed to register ', status]));
+            alert(JSON.stringify(['failed to register ', status]));
         }
     );     
 }
