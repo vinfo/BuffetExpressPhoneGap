@@ -89,7 +89,8 @@ function getDeviceProperty()
 {
      var deviceOS  = device.platform  ;  //fetch the device operating system
      var deviceOSVersion = device.version ;  //fetch the device OS version
-     localStorage.setItem("OS",deviceOS); 
+     localStorage.setItem("OS",deviceOS);
+     initPushwoosh();
          /* alert("Device OS: " + deviceOS); 
           alert("Device OS Version: " + deviceOSVersion);
           */
@@ -100,12 +101,11 @@ function getNameURLWeb(){
  return sPage;
 }
 function initPushwoosh() {
+    alert("initPushwoosh");
     var pushNotification = window.plugins.pushNotification;
-    if(device.platform == "Android")
-    {
+    if(device.platform == "Android"){
         registerPushwooshAndroid();
-    }else if(device.platform == "iPhone" || device.platform == "iOS")
-    {
+    }else if(device.platform == "iPhone" || device.platform == "iOS"){
         registerPushwooshIOS();
     }
 }
