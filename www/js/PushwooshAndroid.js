@@ -24,7 +24,7 @@ function registerPushwooshAndroid() {
 
 	pushNotification.onDeviceReady({ projectid: "746109479988", appid : "825C3-92C11" });
 
-	//alert("Registrar");
+	alert("Registrar");
 	pushNotification.registerDevice(
 		function(token)
 		{
