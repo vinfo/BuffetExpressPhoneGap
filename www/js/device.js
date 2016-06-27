@@ -98,7 +98,8 @@ function getNameURLWeb(){
 }
 function initPushwoosh() {
     alert("initPushwoosh "+device.platform);
-    var pushNotification = cordova.require("pushwoosh-cordova-plugin.PushNotification");
+    var pushNotification = window.plugins.pushNotification;
+    pushNotification.onDeviceReady({ projectid: "746109479988", appid : "825C3-92C11" });
     pushNotification.registerDevice(
         function(status) {
             var pushToken = status;
