@@ -88,7 +88,7 @@ function getDeviceProperty()
      var deviceOS  = device.platform  ;  //fetch the device operating system
      var deviceOSVersion = device.version ;  //fetch the device OS version
      localStorage.setItem("OS",deviceOS);
-     console.log("Plataforma registrada "+device.platform);
+     alert("Plataforma registrada "+device.platform);
      initPushwoosh();
 }
 function getNameURLWeb(){
@@ -100,8 +100,11 @@ function initPushwoosh() {
     //alert("initPushwoosh "+device.platform);    
     if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
-        console.log("Register "+localStorage.OS);
-        if(!localStorage.pushtoken)setTimeout(function(){ setFirstPushReg(); }, 2000);
+        alert("Register "+localStorage.OS);
+        if(!localStorage.pushtoken){
+            alert("time");
+            setTimeout(function(){ setFirstPushReg(); }, 2000);
+        }
     }else if(localStorage.OS == "iPhone" || device.platform == "iOS"){
         registerPushwooshIOS();
         console.log("Register "+localStorage.OS);
