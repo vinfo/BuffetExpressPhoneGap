@@ -101,9 +101,7 @@ function initPushwoosh() {
     if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
         alert("Register "+localStorage.OS);
-        if(!localStorage.pushtoken){
-            alert("time");
-            setTimeout(function(){ setFirstPushReg(); }, 2000);
+        if(!localStorage.pushtoken)setFirstPushReg();
         }
     }else if(localStorage.OS == "iPhone" || device.platform == "iOS"){
         registerPushwooshIOS();
