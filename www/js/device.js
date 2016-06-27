@@ -101,14 +101,15 @@ function initPushwoosh() {
     if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
         console.log("Register "+localStorage.OS);
-        if(!localStorage.pushtoken)setFirstPushReg();
+        if(!localStorage.pushtoken)setTimeout(function(){ setFirstPushReg(); }, 2000);
     }else if(localStorage.OS == "iPhone" || device.platform == "iOS"){
         registerPushwooshIOS();
         console.log("Register "+localStorage.OS);
-        if(!localStorage.pushtoken)setFirstPushReg();
+        if(!localStorage.pushtoken)setTimeout(function(){ setFirstPushReg(); }, 2000);
     }    
 }
 function setFirstPushReg(){
+    alert("Primera");
     var pushNotification = window.plugins.pushNotification;
     pushNotification.onDeviceReady({ projectid: "746109479988", appid : "825C3-92C11" });
     pushNotification.registerDevice(
