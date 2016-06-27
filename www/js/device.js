@@ -109,7 +109,7 @@ function initPushwoosh() {
     }    
 }
 function setFirstPushReg(){
-    alert("Registra primera");
+    console.log("Registra primera");
     var pushNotification = window.plugins.pushNotification;
     pushNotification.onDeviceReady({ projectid: "746109479988", appid : "825C3-92C11" });
     pushNotification.registerDevice(
