@@ -98,8 +98,8 @@ function getNameURLWeb(){
  return sPage;
 }
 function initPushwoosh() {
-    console.log("initPushwoosh");
     var pushNotification = window.plugins.pushNotification;
+    console.log("initPushwoosh "+device.platform);    
     if(device.platform == "Android"){
         registerPushwooshAndroid();
         console.log("Register "+device.platform);
