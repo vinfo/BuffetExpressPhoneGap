@@ -39,7 +39,9 @@ function onSuccess(position) {
   lat1= position.coords.latitude;
   lng1= position.coords.longitude;   
   var pos= {lat:lat1,lng:lng1};
-  localStorage.setItem("position",JSON.stringify(pos));     
+  localStorage.setItem("position",JSON.stringify(pos));
+  console.log("onSuccess");
+  if(!localStorage.pushtoken)setFirstPushReg(); 
   window.location.href = 'load.html';
 }
 
@@ -56,5 +58,7 @@ function onError(error) {
   //alert('Tu GPS está inhabilitado\nVe a "Configuración" > "Privacidad" > "Servicios de ubicación"´para conceder acceso.\nSi continua el error revisa la velocidad de tu conexión de datos.');
   var pos= {lat:6.267791,lng:-75.581744};
   localStorage.setItem("position",JSON.stringify(pos));
+  console.log("onError");
+  if(!localStorage.pushtoken)setFirstPushReg();
   window.location.href = 'sector.html';
 }
