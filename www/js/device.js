@@ -42,6 +42,7 @@
         //navigator.splashscreen.show();
         navigator.splashscreen.hide(); 
         screen.lockOrientation('portrait-primary');
+        getDeviceProperty();
         window.analytics.startTrackerWithId('UA-62739338-1');
         window.analytics.trackView('/index');
         window.analytics.trackView('/internal');
@@ -49,8 +50,7 @@
         window.analytics.trackView('/templates/guia');
         window.analytics.trackView('/templates/contactenos');
         //alert("Inicializa Dispositivo");        
-        checkConnection();
-        getDeviceProperty();         
+        checkConnection();                 
     }
 };
 
@@ -88,8 +88,7 @@ function getDeviceProperty()
      var deviceOS  = device.platform  ;  //fetch the device operating system
      var deviceOSVersion = device.version ;  //fetch the device OS version
      localStorage.setItem("OS",deviceOS);
-     alert("Plataforma registrada "+device.platform);
-     initPushwoosh();
+     console.log("Plataforma registrada "+device.platform);
 }
 function getNameURLWeb(){
  var sPath = window.location.pathname;
