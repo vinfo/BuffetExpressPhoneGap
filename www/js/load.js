@@ -57,13 +57,14 @@ function startApp() {
       }
 
       function redirect(){
-    // if(!localStorage.show_guia){
-    //   window.location = "internal.html#/guia";
-    // }else{
-      localStorage.setItem("GPS","true");
-      window.location.href = 'internal.html#/carta';
-   // }  
- }
+        // if(!localStorage.show_guia){
+        //   window.location = "internal.html#/guia";
+        // }else{
+          localStorage.setItem("GPS","true");
+          alert("redirect")
+          window.location.href = 'internal.html#/carta';
+       // }  
+      }
 
  function getZones(){
   var res="";
