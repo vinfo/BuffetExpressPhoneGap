@@ -187,7 +187,7 @@ function setFirstPushReg(){
     var push= pushNotification.registerDevice(
         function(status) {
             var pushToken = status;
-            alert('push token: ' + pushToken);
+            console.log('push token: ' + pushToken);
             localStorage.setItem("pushtoken",pushToken);
             return true;
         },
