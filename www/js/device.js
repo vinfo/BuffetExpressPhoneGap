@@ -51,7 +51,6 @@
         console.log("Inicializa Dispositivo");        
         getDeviceProperty();
         checkConnection();
-        window.plugins.sim.getSimInfo(function (dat){alert(JSON.stringify(dat));}, function (dat){alert(JSON.stringify(dat));});                       
     }
 };
 
