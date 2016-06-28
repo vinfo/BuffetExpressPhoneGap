@@ -1,9 +1,5 @@
 if (window.jQuery) {  
  $(function(){
-    if(!localStorage.pushToken){
-      console.log("Internal PUSH");
-      setFirstPushReg();
-    }
     // Tamaño container
     $(".container").css({"min-height":$(document).height()});
     $('body').on('click', '#accordion h3', function(event) {
