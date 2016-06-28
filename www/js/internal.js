@@ -158,7 +158,8 @@ function registrarUser(){
    $("#password").val(cellPhone);
    $("#password2").val(cellPhone);
    localStorage.setItem("regQR","true");
-   ajaxrest.setAccount('add',82);
+   var check= ajaxrest.checkSMS();
+   //if(check)ajaxrest.setAccount('add',82);
 }
 function getListBono(id){
   if(id!=null){
