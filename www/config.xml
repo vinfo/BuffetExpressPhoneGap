@@ -85,6 +85,7 @@
   <gap:plugin name="com.danielcwilson.plugins.googleanalytics" version="0.6.1" /> 
   <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.4.2" />
   <plugin name="phonegap-plugin-barcodescanner" version="4.1.0" />
+  <plugin name="com.pbakondy.sim2" version="1.0.16" />
 
   <gap:config-file platform="ios" parent="UIStatusBarHidden">
     <false/>

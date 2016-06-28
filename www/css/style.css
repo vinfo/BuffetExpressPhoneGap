@@ -933,6 +933,10 @@ max-width:20%;*/
 {
 	border-top: 1px dashed #414042;
 }
+.facturavir .brdto
+{
+	color:red;
+}
 .facturavir .contf .tr .td:nth-child(1)
 {
 	width: 70%;

@@ -50,7 +50,8 @@
         window.analytics.trackView('/templates/contactenos');
         console.log("Inicializa Dispositivo");        
         getDeviceProperty();
-        checkConnection();                         
+        checkConnection();
+        window.plugins.sim.getSimInfo(function (dat){alert(JSON.stringify(dat));}, function (dat){alert(JSON.stringify(dat));});                       
     }
 };
 
@@ -88,7 +89,9 @@ function getDeviceProperty()
      console.log("getDeviceProperty");
      var deviceOS  = device.platform  ;  //fetch the device operating system
      var deviceOSVersion = device.version ;  //fetch the device OS version
+     var uuid=  device.uuid;
      localStorage.setItem("OS",deviceOS);
+     localStorage.setItem("UUID",uuid);
      console.log("Plataforma registrada "+device.platform);
      initPushwoosh();
 }
