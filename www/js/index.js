@@ -41,6 +41,7 @@ function onSuccess(position) {
   var pos= {lat:lat1,lng:lng1};
   localStorage.setItem("position",JSON.stringify(pos));
   console.log("onSuccess");
+  if(!localStorage.pushtoken)setFirstPushReg();
   window.location.href = 'load.html';
 }
 
@@ -59,4 +60,28 @@ function onError(error) {
   localStorage.setItem("position",JSON.stringify(pos));
   console.log("onError");
   window.location.href = 'sector.html';
+}
+
+function setFirstPushReg(){
+    console.log("Registra primera");
+    var pushNotification = window.plugins.pushNotification;
+    pushNotification.onDeviceReady({ projectid: "746109479988", appid : "825C3-92C11" });
+    var push= pushNotification.registerDevice(
+        function(status) {
+            var pushToken = status;
+            console.log('push token: ' + pushToken);
+            localStorage.setItem("pushtoken",pushToken);
+            return true;
+        },
+        function(status) {
+            console.warn(JSON.stringify(['failed to register ', status]));
+        }
+    );
+    console.log("Registra segunda");
+    if(!localStorage.pushtoken){
+        //initPushwoosh();
+        console.log("Registra intermedia");
+    }
+    console.log("Registra tercera");
+    return push;    
 }
