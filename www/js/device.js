@@ -102,34 +102,8 @@ function initPushwoosh() {
     if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
         console.log("Register "+localStorage.OS);
-        if(!localStorage.pushtoken)setFirstPushReg();
     }else if(localStorage.OS == "iPhone" || device.platform == "iOS"){
         registerPushwooshIOS();
-        console.log("Register "+localStorage.OS);
-        if(!localStorage.pushtoken)setFirstPushReg();
+        console.log("Register "+localStorage.OS);        
     }    
-}
-
-function setFirstPushReg(){
-    console.log("Registra primera");
-    var pushNotification = window.plugins.pushNotification;
-    pushNotification.onDeviceReady({ projectid: "746109479988", appid : "825C3-92C11" });
-    var push= pushNotification.registerDevice(
-        function(status) {
-            var pushToken = status;
-            console.log('push token: ' + pushToken);
-            localStorage.setItem("pushtoken",pushToken);
-            return true;
-        },
-        function(status) {
-            console.warn(JSON.stringify(['failed to register ', status]));
-        }
-    );
-    console.log("Registra segunda");
-    if(!localStorage.pushtoken){
-        //initPushwoosh();
-        console.log("Registra intermedia");
-    }
-    console.log("Registra tercera");
-    return push;    
 }
