@@ -159,13 +159,16 @@ function registrarUser(){
    $("#password2").val(cellPhone);
    localStorage.setItem("regQR","true");
    var check= ajaxrest.checkSMS();
-   localStorage.setItem("sms","0");
+   localStorage.setItem("sms","0");   
+   CreateTimer("time", "60");
+   $(".time").show();
    setTimeout(function(){
     if(localStorage.getItem("sms")=="0"){
       alert("No se recibio el mensaje SMS de verificación.\nComprueba el número de celular ingresado y vuelve intentarlo");
       $("#code").val('');
       $(".register").show();
       $(".sms").hide();
+      $(".time").hide();
     }
    }, 60000);
    smsplugin.startReception(function success(result){

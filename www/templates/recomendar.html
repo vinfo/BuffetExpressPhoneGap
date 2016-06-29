@@ -3,6 +3,10 @@
 .login,.logout,.disponibles{
   display: none;
 }
+.time{
+  display: none;
+  font-size: 10px;
+}
 </style>
 <div class="nosotros">
   <div class="col-md-12 showqr">
@@ -26,7 +30,7 @@
     <div class="vrdirc sms" style="marging-top:0;padding-top:0;display:none;">
     <label class="titleQR">Ingresar código SMS de verificación</label>
     <input type="text" class="form-control" id="code" maxlength="35" placeholder="Código SMS" />
-    <div style="float:center;"><br/><button class="btn" onclick="registrarSMS();">Validar</button></div>
+    <div style="float:center;"><span class="time">Esperando mensaje SMS para validar cuenta. <i id="time">60</i></span><br/><button class="btn" onclick="registrarSMS();">Validar</button></div>
     </div>   
   </div>      
 
