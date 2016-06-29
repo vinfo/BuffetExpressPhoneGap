@@ -275,6 +275,73 @@
 	},
 	"buffers":
 	[
+		{
+			"contents": "<!DOCTYPE html>\n<html manifest=\"cache.manifest\" ng-app=\"angularRoutingApp\">\n<head>\n  <meta charset=\"utf-8\" >\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Buffet Express - Un sano y delicioso click</title>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"bootstrap/css/bootstrap.min.css\">\n  <link rel=\"stylesheet\" href=\"owl-carousel/owl.carousel.css\">\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"css/jquery.qtip.min.css\">\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">\n</head>\n<body ng-controller='mainController'>\n  <div class=\"container\">\n    <!-- Menu -->\n    <div class=\"menusup\">\n      <button class=\"verlatermenu ico-menu\" id=\"ico_menu\"><span></span></button>\n      <div class=\"title\">Buffet Express</div>\n      <button onclick=\"window.plugins.socialsharing.share('Hola,\\r\\nAcabo de descargar la aplicación Buffet Express en mi celular.\\r\\nDescárgala es un restaurante online tipo buffet que te permite armar tu combinación favorita y recibir tu plato a domicilio.\\r\\nEs que poder elegir; también es rico!.', null, 'http://buffetexpress.com.co/REST/resources/images/descargala_ya.jpg', 'http://buffetexpress.com.co/')\" class=\"ico-lupa\"><span></span></button>\n    </div>\n    <!-- Fin menu -->\n    \n    <!-- Menu lateral -->\n    <div class=\"latermenu\">\n      <div class=\"tr\">\n        <div class=\"td\"> <a href=\"internal.html#recomendar\"><img src=\"images/comparte_y_gana.png\" alt=\"...\" title=\"...\" /></a> </div>      \n        <div class=\"td\">\n          <a ng-href=\"{{mi_cuenta}}\" class=\"mi_cuenta\"><img src=\"images/mi_cuenta.png\" alt=\"...\" title=\"...\" /></a>\n        </div>\n      </div>\n      <div class=\"tr\">\n        <div class=\"td\">\n          <a href=\"#\" ng-click=\"goTo('slider')\"><img src=\"images/ordenar.png\" alt=\"...\" title=\"...\" /></a>\n        </div>      \n        <div class=\"td\">\n          <a href=\"internal.html#/nosotros\"><img src=\"images/nosotros.png\" alt=\"...\" title=\"...\" /></a>\n        </div> \n\n      </div>\n      <div class=\"tr\">\n        <div class=\"td\">\n          <a href=\"internal.html#felicitaciones\"><img src=\"images/felicitaciones_reclamos.png\" alt=\"...\" title=\"...\" /></a>\n        </div>      \n        <div class=\"td\">\n          <a href=\"\" onclick=\"goStore()\"><img src=\"images/califiquenos.png\" alt=\"...\" title=\"...\" /></a>\n        </div>\n      </div>\n      <div class=\"tr\">\n        <div class=\"td\">\n          <a href=\"internal.html#contactenos\"><img src=\"images/contactenos.png\" alt=\"...\" title=\"...\" /></a>\n        </div>      \n        <div class=\"td\"> <a href=\"internal.html#ayuda\"><img src=\"images/ayuda.png\" alt=\"...\" title=\"...\" /></a> </div>        \n      </div>            \n      <div class=\"tr\">\n        <div class=\"td\">\n          <a href=\"internal.html#redes\"><img src=\"images/redes_sociales.png\" alt=\"...\" title=\"...\" /></a>\n        </div> \n        <div class=\"td\">\n          <a href=\"internal.html#guia\"><img src=\"images/guia_rapida.png\" alt=\"...\" title=\"...\" /></a>\n        </div>\n      </div>\n    </div>\n    <!-- fin menu lateral -->\n    <!-- Aquí inyectamos las vistas -->\n    <a name=\"topmobil\" id=\"topmobil\"></a>        \n    <div ng-view ng-mouseover=\"hiddeMenu()\"></div>       \n\n    <!-- Menu pie -->\n    <div class=\"menupie\">\n      <ul>\n        <li class=\"active\"><a href=\"#carta\"><img src=\"images/carta.png\" alt=\"...\" title=\"...\" /></a></li>\n        <li><a href=\"#menu\" ng-click=\"goMenu()\"><img src=\"images/menu.png\" alt=\"...\" title=\"...\" /></a></li>\n        <li class=\"carrito menu\"><a href=\"#compras\" onClick=\"trackevent('Click','Finalizar orden');\"><img src=\"images/mis_compras.png\" alt=\"...\" title=\"...\" /></a><span id=\"totalDish\">0</span></li>\n        <li class=\"menu\"><a href=\"#mapa\"><img src=\"images/rastrea_tu_orden.png\" alt=\"...\" title=\"...\" /></a></li>\n      </ul>\n    </div>\n    <!-- fin Menu pie --> \n  </div>\n  <input id=\"page\" name=\"page\" type=\"hidden\" value=\"{{page}}\" />\n\n  <script type=\"text/javascript\" src=\"js/jquery-1.11.1.min.js\"></script>\n  <script type=\"text/javascript\" src=\"bootstrap/js/bootstrap.min.js\"></script>\n  <script src=\"owl-carousel/owl.carousel.min.js\"></script>\n  <script src=\"http://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry&sensor=false\"></script>\n  <script src=\"http://buffetexpress.com.co/REST/resources/js/functions.js\"></script>\n  <script src=\"js/angular.min.js\"></script>\n  <script src=\"js/angular-route.js\"></script>\n  <script src=\"js/angular-sanitize.min.js\"></script>\n  <!-- <script type=\"text/javascript\" src=\"js/inappbrowser.js\"></script> -->\n  <script type=\"text/javascript\" charset=\"utf-8\" src=\"js/cordova.js\"></script>\n\n  <script src=\"js/main.js\"></script>\n  <script type=\"text/javascript\" src=\"phonegap.js\"></script>\n  <script type=\"text/javascript\" src=\"js/PushwooshAndroid.js\"></script>\n  <script type=\"text/javascript\" src=\"js/PushwooshiOS.js\"></script>   \n  <script type=\"text/javascript\" src=\"js/device.js\"></script>\n  <script type=\"text/javascript\" src=\"js/internal.js\"></script>\n  <script type=\"text/javascript\" src=\"js/jquery.qtip.min.js\"></script>\n  <script type=\"text/javascript\" src=\"js/imagesloaded.pkgd.min.js\"></script>\n  <script>\n    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\n      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n    })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');\n\n    ga('create', 'UA-62791308-1', 'auto');\n    ga('send', 'pageview');    \n  </script>    \n</body>\n</html>",
+			"file": "www/internal.html",
+			"file_size": 5557,
+			"file_write_time": 131116045022235580,
+			"settings":
+			{
+				"buffer_size": 5554,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/login.html",
+			"settings":
+			{
+				"buffer_size": 5371,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/js/internal.js",
+			"settings":
+			{
+				"buffer_size": 7500,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/templates/recomendar.html",
+			"settings":
+			{
+				"buffer_size": 3408,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/templates/pago.html",
+			"settings":
+			{
+				"buffer_size": 8642,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/css/style.css",
+			"settings":
+			{
+				"buffer_size": 33396,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/js/device.js",
+			"settings":
+			{
+				"buffer_size": 4242,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/config.xml",
+			"settings":
+			{
+				"buffer_size": 6773,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -352,10 +419,12 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www"
+		"/D/Movilidad/BuffetExpressPhoneGap/www",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates"
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendar.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
@@ -368,7 +437,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshiOS.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendar.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
@@ -505,6 +573,14 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"registrarUser",
+			"setAccount",
+			"Todos los campos",
+			"images/mi_cuenta.png",
+			"brdto",
+			"Valor bono",
+			"Dile",
+			"Bono registrado",
 			"setFirstPushReg",
 			"redirect",
 			"push token:",
@@ -624,15 +700,7 @@
 			"addDish",
 			"startTrackerWithId",
 			"trackEvent",
-			"window.analytics.trackEvent",
-			"Confirmar pedido",
-			"ga(",
-			"UA-62791308-1",
-			"txt_mapa",
-			"alert(msg",
-			"alert",
-			"\"N/A\"",
-			"alert(\"Debes seleccionar el horario de entrega del pedido\");	"
+			"window.analytics.trackEvent"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -689,8 +757,272 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "www/internal.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5554,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2991,
+								1281
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 432.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "www/login.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5371,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3323,
+								3323
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 613.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "www/js/internal.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7500,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5959,
+								5972
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2492.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "www/templates/recomendar.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3408,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1095,
+								1095
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "www/templates/pago.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8642,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1114,
+								1114
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 54.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "www/css/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 33396,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14560,
+								14560
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 16469.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "www/js/device.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2186,
+								2186
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 675.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "www/config.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6773,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4056,
+								4056
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1216.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
 			]
 		}
 	],
