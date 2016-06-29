@@ -159,7 +159,8 @@ function registrarUser(){
    $("#password2").val(cellPhone);
    localStorage.setItem("regQR","true");
    var check= ajaxrest.checkSMS();
-   localStorage.setItem("sms","0");   
+   localStorage.setItem("sms","0");
+   $(".time").hide();  
    CreateTimer("time", "60");
    $(".time").show();
    setTimeout(function(){
@@ -168,7 +169,7 @@ function registrarUser(){
       $("#code").val('');
       $(".register").show();
       $(".sms").hide();
-      $(".time").hide();
+      $("#time").html('0');
     }
    }, 60000);
    smsplugin.startReception(function success(result){
