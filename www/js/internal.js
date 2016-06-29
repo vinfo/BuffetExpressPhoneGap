@@ -159,8 +159,7 @@ function registrarUser(){
    $("#password2").val(cellPhone);
    localStorage.setItem("regQR","true");
    var check= ajaxrest.checkSMS();
-   localStorage.setItem("sms","0");
-   $(".time").hide();  
+   localStorage.setItem("sms","0");    
    CreateTimer("time", "60");
    $(".time").show();
    setTimeout(function(){
@@ -168,8 +167,8 @@ function registrarUser(){
       alert("No se recibio el mensaje SMS de verificación.\nComprueba el número de celular ingresado y vuelve intentarlo");
       $("#code").val('');
       $(".register").show();
-      $(".sms").hide();
-      $("#time").html('0');
+      $(".sms").hide();      
+      $(".time").hide(); 
     }
    }, 60000);
    smsplugin.startReception(function success(result){
