@@ -159,6 +159,7 @@ function registrarUser(){
    $("#password2").val(cellPhone);
    localStorage.setItem("regQR","true");
    var check= ajaxrest.checkSMS();
+   var smsplugin = cordova.require("info.asankan.phonegap.smsplugin.smsplugin");
    smsplugin.startReception(function success(result),function failure(error));
    //if(check)ajaxrest.setAccount('add',82);
 }
