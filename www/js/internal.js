@@ -160,10 +160,14 @@ function registrarUser(){
    localStorage.setItem("regQR","true");
    var check= ajaxrest.checkSMS();
    smsplugin.startReception(function success(result){
-     $("#code").val(result[1]);
-     ajaxrest.setAccount('add',82);
+     var res=result.split(",");
+     alert(result);
+     if(res[1]!=""){
+      $("#code").val(res[1]);
+      ajaxrest.setAccount('add',82);
+    }
   },function failure(error){
-    $("#code").val(result[1]);
+    $("#code").val('');
   });
 }
 function getListBono(id){
