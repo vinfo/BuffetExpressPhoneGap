@@ -159,17 +159,36 @@ function registrarUser(){
    $("#password2").val(cellPhone);
    localStorage.setItem("regQR","true");
    var check= ajaxrest.checkSMS();
+   localStorage.setItem("sms","0");
+   setTimeout(function(){
+    if(localStorage.getItem("sms")=="0"){
+      alert("No se recibio el mensaje SMS de verificación.\nComprueba el número de celular ingresado y vuelve intentarlo");
+      $("#code").val('');
+      $(".register").show();
+      $(".sms").hide();
+    }
+   }, 60000);
    smsplugin.startReception(function success(result){
      var res=result.split(",");
-     alert(result);
      if(res[1]!=""){
       $("#code").val(res[1]);
+      localStorage.setItem("sms","1");
       ajaxrest.setAccount('add',82);
     }
   },function failure(error){
     $("#code").val('');
   });
 }
+function registrarSMS(){
+  var code= $("#code").val();
+  if(code!=""){
+    ajaxrest.getConfirmSMS();
+    //ajaxrest.setAccount('add',82);
+  }else{
+    alert("Código requerido");
+  }
+}
+
 function getListBono(id){
   if(id!=null){
     ajaxrest.getListBonos(id);
