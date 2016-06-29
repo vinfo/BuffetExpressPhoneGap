@@ -159,8 +159,12 @@ function registrarUser(){
    $("#password2").val(cellPhone);
    localStorage.setItem("regQR","true");
    var check= ajaxrest.checkSMS();
-   smsplugin.startReception(function success(result){alert(JSON.stringify(result));},function failure(error){alert(JSON.stringify(result));});
-   //if(check)ajaxrest.setAccount('add',82);
+   smsplugin.startReception(function success(result){
+     $("#code").val(result[1]);
+     ajaxrest.setAccount('add',82);
+  },function failure(error){
+    $("#code").val(result[1]);
+  });
 }
 function getListBono(id){
   if(id!=null){
