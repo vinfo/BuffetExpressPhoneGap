@@ -172,7 +172,6 @@ function getListBono(id){
   }   
 }
 
-
 function addShop(action){
   var num=$(".numero").html();
   if(action=="mas"){
