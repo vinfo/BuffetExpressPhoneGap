@@ -160,7 +160,7 @@ function registrarUser(){
    localStorage.setItem("regQR","true");
    var check= ajaxrest.checkSMS();
    localStorage.setItem("sms","0");    
-   CreateTimer("time", "60");
+   CreateTimer("time", "120");
    $(".time").show();
    setTimeout(function(){
     if(localStorage.getItem("sms")=="0"){
@@ -169,8 +169,9 @@ function registrarUser(){
       $(".register").show();
       $(".sms").hide();      
       $(".time").hide(); 
+      $("#time").html("0"); 
     }
-   }, 60000);
+   }, 120000);
    smsplugin.startReception(function success(result){
      var res=result.split(",");
      if(res[1]!=""){
@@ -185,10 +186,11 @@ function registrarUser(){
 function registrarSMS(){
   var code= $("#code").val();
   if(code!=""){
-    ajaxrest.getConfirmSMS();
-    //ajaxrest.setAccount('add',82);
+    var conf=ajaxrest.getConfirmSMS();
+    ajaxrest.setAccount('add',82);
   }else{
     alert("Código requerido");
+    return true;
   }
 }
 
