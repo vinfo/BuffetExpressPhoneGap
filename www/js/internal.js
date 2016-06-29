@@ -186,9 +186,7 @@ function registrarUser(){
 function registrarSMS(){
   var code= $("#code").val();
   if(code!=""){
-    var conf= ajaxrest.getConfirmSMS();
-    alert(JSON.stringify(conf));
-    //if(conf!="")ajaxrest.setAccount('add',82);
+    ajaxrest.getConfirmSMS();
   }else{
     alert("Código requerido");
     return true;
