@@ -28,7 +28,7 @@
       <div style="float:left;width:20px;margin-right:6px;">
         <input id="chk_terminos" name="chk_terminos" type="checkbox" value="1" checked="checked" />
       </div>
-      <div style="float:left;"><a href="login.html#/terminos">Términos</a> y <a href="login.html#/politicas">Políticas de Privacidad</a><br/><br/><button class="btn" onclick="registrarUser();">Registrarse</button></div>
+      <div style="float:left;"><a href="login.html#/terminos">Términos</a> y <a href="login.html#/politicas">Políticas de Privacidad</a><br/><br/><button class="btn" onclick="registrarUser(1);">Registrarse</button></div>
     </div>
     <div class="vrdirc sms" style="marging-top:0;padding-top:0;display:none;">
     <label class="titleQR">Ingresar código SMS de verificación</label>
@@ -40,7 +40,7 @@
     <div class="col-md-12 facturavir validar">
       <p>Debes validar tu cuenta para recibir tu QR</p>
       <p><input type="text" class="form-control" id="celular" maxlength="15" placeholder="Celular (Contraseña temporal)" onblur="fMatch2(this);" onkeyup="fMatch2(this);"/></p>
-      <p><button class="btn" onclick="validarCuenta();">Validar Cuenta</button></p>
+      <p><button class="btn" onclick="registrarUser(2);">Validar Cuenta</button></p>
     </div>
     <div style="text-align:center" class="login"><img src="{{qr}}" style="width:60%;" id="img_qr"></div>
 

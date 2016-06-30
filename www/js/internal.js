@@ -153,8 +153,12 @@ function registerBono(){
       ajaxrest.setQR(sponsor,invited,1);
    }   
 }
-function registrarUser(){
+function registrarUser(tipo){
    var cellPhone= $("#cellPhone").val();
+   if(tipo==2){
+    cellPhone= $("#celular").val();
+    $("#cellPhone").val(cellPhone);
+  }
    $("#password").val(cellPhone);
    $("#password2").val(cellPhone);
    localStorage.setItem("regQR","true");
