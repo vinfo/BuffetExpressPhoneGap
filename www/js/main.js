@@ -1435,7 +1435,6 @@ for(var h=0;h<farr.length;h++){
     if(datos != null){
       var data= JSON.parse(datos);
       var dat = angular.fromJson(data);
-      
       if(dat.validate=="1"){
         ajaxrest.createQRimage(dat.id);
         var codigo= ajaxrest.getEncryptID(dat.id);
@@ -1444,6 +1443,7 @@ for(var h=0;h<farr.length;h++){
         getListBono(dat.id);
       }else{
         $(".login").hide();
+        $("#celular").val(dat.cellPhone);
         $(".validar").show();        
       }
     }else{
