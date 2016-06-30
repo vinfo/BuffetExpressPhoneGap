@@ -15,11 +15,6 @@
 <div class="nosotros">
   <div class="col-md-12 facturavir showqr">
     <h1>Comparte y Gana</h1>
-    <div class="col-md-12 validar">
-      <p>Debes validar tu cuenta para recibir tu QR</p>
-      <p><input type="text" class="form-control" id="celular" maxlength="15" placeholder="Celular (Contraseña temporal)" onblur="fMatch2(this);" onkeyup="fMatch2(this);"/></p>
-      <p><br/><button class="btn" onclick="validarCuenta();">Validar Cuenta</button></p>
-    </div>
   <div class="col-md-12 facturavir logout" style="padding:10px;">
     <div class="vrdirc register" style="marging-top:0; padding-top:0;">
       <span>Registrate para obtener tu código QR y así ganar tus bonos de descuento</span>
@@ -42,6 +37,11 @@
     </div>   
   </div>      
 
+    <div class="col-md-12 validar">
+      <p>Debes validar tu cuenta para recibir tu QR</p>
+      <p><input type="text" class="form-control" id="celular" maxlength="15" placeholder="Celular (Contraseña temporal)" onblur="fMatch2(this);" onkeyup="fMatch2(this);"/></p>
+      <p><br/><button class="btn" onclick="validarCuenta();">Validar Cuenta</button></p>
+    </div>
     <div style="text-align:center" class="login"><img src="{{qr}}" style="width:60%;" id="img_qr"></div>
 
     <div class="col-md-12 facturavir">
