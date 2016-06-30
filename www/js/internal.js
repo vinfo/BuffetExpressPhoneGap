@@ -203,7 +203,7 @@ function validarCuenta(){
    localStorage.setItem("sms","0");    
    CreateTimer("time", "120");
    $(".time").show();
-   setTimeout(function(){
+/*   setTimeout(function(){
     if(localStorage.getItem("sms")=="0"){
       alert("No se recibio el mensaje SMS de verificación.\nComprueba el número de celular ingresado y vuelve intentarlo");
       $("#code").val('');
@@ -225,7 +225,7 @@ function validarCuenta(){
     }
   },function failure(error){
     $("#code").val('');
-  });
+  });*/
 }
 
 function getListBono(id){
