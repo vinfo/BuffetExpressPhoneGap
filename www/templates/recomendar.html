@@ -39,9 +39,11 @@
       </div> 
     </div>
     <div class="col-md-12 facturavir validar">
-      <p>Debes validar tu cuenta para recibir tu QR</p>
-      <p><input type="text" class="form-control" id="celular" maxlength="15" placeholder="Celular (Contraseña temporal)" onblur="fMatch2(this);" onkeyup="fMatch2(this);"/></p>
-      <p><button class="btn" onclick="validarCuenta();">Validar Cuenta</button></p>
+      <div class="vrdirc">
+        <p>Debes validar tu cuenta para recibir tu QR</p>
+        <p><input type="text" class="form-control" id="celular" maxlength="15" placeholder="Celular (Contraseña temporal)" onblur="fMatch2(this);" onkeyup="fMatch2(this);"/></p>
+        <p><button class="btn" onclick="validarCuenta();">Validar Cuenta</button></p>
+      </div>
     </div>
     <div style="text-align:center" class="login"><img src="{{qr}}" style="width:60%;" id="img_qr"></div>
 

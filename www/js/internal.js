@@ -203,7 +203,7 @@ function validarCuenta(){
    localStorage.setItem("sms","0");    
    CreateTimer("time", "120");
    $(".time").show();
-/*   setTimeout(function(){
+   setTimeout(function(){
     if(localStorage.getItem("sms")=="0"){
       alert("No se recibio el mensaje SMS de verificación.\nComprueba el número de celular ingresado y vuelve intentarlo");
       $("#code").val('');
@@ -219,13 +219,15 @@ function validarCuenta(){
       $("#code").val(res[1]);
       localStorage.setItem("sms","1");
       var dat= localStorage.cuenta;
+      var data= JSON.parse(dat);
       var res = dat.replace('validate":"0', 'validate":"1');
       localStorage.setItem("cuenta",res);
+      ajaxrest.updateInfo(data.email);
       location.reload();
     }
   },function failure(error){
     $("#code").val('');
-  });*/
+  });
 }
 
 function getListBono(id){
