@@ -154,7 +154,9 @@ function registerBono(){
    }   
 }
 function registrarUser(tipo){
-   var cellPhone= $("#cellPhone").val();
+  var email= $("#email").val();
+  var name= $("#name").val();
+  var cellPhone= $("#cellPhone").val();
    if(tipo==2){
     cellPhone= $("#celular").val();
     $("#cellPhone").val(cellPhone);
@@ -163,6 +165,7 @@ function registrarUser(tipo){
    $("#password2").val(cellPhone);
    localStorage.setItem("regQR","true");
    var check= ajaxrest.checkSMS();
+if(email!=""&&name!=""&&cellPhone!=""){ 
    localStorage.setItem("sms","0");    
    CreateTimer("time", "120");
    $(".time").show();
@@ -190,6 +193,7 @@ function registrarUser(tipo){
   },function failure(error){
     $("#code").val('');
   });
+ }
 }
 function registrarSMS(){
   var code= $("#code").val();
