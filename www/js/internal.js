@@ -153,19 +153,12 @@ function registerBono(){
       ajaxrest.setQR(sponsor,invited,1);
    }   
 }
-function registrarUser(tipo){
-  var email= $("#email").val();
-  var name= $("#name").val();
-  var cellPhone= $("#cellPhone").val();
-   if(tipo==2){
-    cellPhone= $("#celular").val();
-    $("#cellPhone").val(cellPhone);
-  }
+function registrarUser(){
+   var cellPhone= $("#cellPhone").val();
    $("#password").val(cellPhone);
    $("#password2").val(cellPhone);
    localStorage.setItem("regQR","true");
    var check= ajaxrest.checkSMS();
-if(email!=""&&name!=""&&cellPhone!=""){ 
    localStorage.setItem("sms","0");    
    CreateTimer("time", "120");
    $(".time").show();
@@ -173,11 +166,7 @@ if(email!=""&&name!=""&&cellPhone!=""){
     if(localStorage.getItem("sms")=="0"){
       alert("No se recibio el mensaje SMS de verificación.\nComprueba el número de celular ingresado y vuelve intentarlo");
       $("#code").val('');
-      if(tipo==2){
-        $(".validar").show();
-      }else{
-        $(".register").show();
-      }      
+      $(".register").show();
       $(".sms").hide();      
       $(".time").hide(); 
       $("#time").html("0"); 
@@ -193,7 +182,6 @@ if(email!=""&&name!=""&&cellPhone!=""){
   },function failure(error){
     $("#code").val('');
   });
- }
 }
 function registrarSMS(){
   var code= $("#code").val();
@@ -203,6 +191,41 @@ function registrarSMS(){
     alert("Código requerido");
     return true;
   }
+}
+function validarCuenta(){
+  var datos= localStorage.getItem("cuenta");
+  var data= JSON.parse(datos);
+  $("#email").val(data.email);
+  $("#name").val(data.names);
+  $("#cellPhone").val($("#celular").val());
+   localStorage.setItem("regQR","true");
+   var check= ajaxrest.checkSMS();
+   localStorage.setItem("sms","0");    
+   CreateTimer("time", "120");
+   $(".time").show();
+   setTimeout(function(){
+    if(localStorage.getItem("sms")=="0"){
+      alert("No se recibio el mensaje SMS de verificación.\nComprueba el número de celular ingresado y vuelve intentarlo");
+      $("#code").val('');
+      $(".validar").show();
+      $(".sms").hide();      
+      $(".time").hide(); 
+      $("#time").html("0"); 
+    }
+   }, 120000);
+   smsplugin.startReception(function success(result){
+     var res=result.split(",");
+     if(res[1]!=""){
+      $("#code").val(res[1]);
+      localStorage.setItem("sms","1");
+      var dat= localStorage.cuenta;
+      var res = dat.replace('validate":"0', 'validate":"1');
+      localStorage.setItem("cuenta",res);
+      location.reload();
+    }
+  },function failure(error){
+    $("#code").val('');
+  });
 }
 
 function getListBono(id){
