@@ -1435,11 +1435,16 @@ for(var h=0;h<farr.length;h++){
     if(datos != null){
       var data= JSON.parse(datos);
       var dat = angular.fromJson(data);
-      ajaxrest.createQRimage(dat.id);
-      var codigo= ajaxrest.getEncryptID(dat.id);
-      $scope.qr= base_site+"images/QRs/qr_"+dat.id+".png";
-      $(".login").show();
-      getListBono(dat.id);
+      if(dat.validate=="1"){
+        ajaxrest.createQRimage(dat.id);
+        var codigo= ajaxrest.getEncryptID(dat.id);
+        $scope.qr= base_site+"images/QRs/qr_"+dat.id+".png";
+        $(".login").show();
+        getListBono(dat.id);
+      }else{
+        $(".login").hide();
+        $(".validar").show();        
+      }
     }else{
       $(".logout").show();
     }  
