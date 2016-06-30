@@ -1444,6 +1444,12 @@ for(var h=0;h<farr.length;h++){
       }else{
         $(".login").hide();
         $("#celular").val(dat.cellPhone);
+        $("#cellPhone").val(dat.cellPhone);
+        $("#password").val(dat.cellPhone);
+        $("#password2").val(dat.cellPhone);
+        $("#email").val(dat.email);
+        $("#name").val(dat.names);
+        $("#lastname").val('');
         $(".validar").show();        
       }
     }else{
