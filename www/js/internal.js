@@ -170,7 +170,11 @@ function registrarUser(tipo){
     if(localStorage.getItem("sms")=="0"){
       alert("No se recibio el mensaje SMS de verificación.\nComprueba el número de celular ingresado y vuelve intentarlo");
       $("#code").val('');
-      $(".register").show();
+      if(tipo==2){
+        $(".validar").show();
+      }else{
+        $(".register").show();
+      }      
       $(".sms").hide();      
       $(".time").hide(); 
       $("#time").html("0"); 
