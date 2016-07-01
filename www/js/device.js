@@ -51,7 +51,7 @@
         console.log("Inicializa Dispositivo");        
         getDeviceProperty();
         checkConnection();
-        alert("Iniciando");
+        console.log("Iniciando");
         setFirstPushReg();        
     }
 };
