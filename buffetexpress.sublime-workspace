@@ -276,27 +276,11 @@
 	"buffers":
 	[
 		{
-			"file": "www/js/main.js",
+			"file": "/C/wamp/www/angelaboteropoeta/application/js/ordenes.js",
 			"settings":
 			{
-				"buffer_size": 78751,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "www/templates/recomendar.html",
-			"settings":
-			{
-				"buffer_size": 3981,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "www/js/internal.js",
-			"settings":
-			{
-				"buffer_size": 9478,
-				"line_ending": "Unix"
+				"buffer_size": 1110,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -376,17 +360,17 @@
 	"expanded_folders":
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
-		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
+		"/D/Movilidad/BuffetExpressPhoneGap/www"
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendar.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/C/wamp/www/buffet/REST/resources/js/functions.js",
 		"/C/wamp/www/insetur.com/admin/js/jquery.currency.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendar.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
@@ -398,7 +382,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshAndroid.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshiOS.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/wisi_mobil/www/assets/js/min/app.js",
 		"/D/Movilidad/parkingid/www/js/index.js",
 		"/D/Movilidad/parkingid/www/config.xml",
@@ -530,6 +513,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"registrarSMS",
+			"cuenta",
+			"localStorage.cuenta",
 			"cuenta",
 			"registrarUser",
 			"codigo",
@@ -654,10 +640,7 @@
 			"orders",
 			"h_pushtoken",
 			"cleanSession",
-			"pushtoken",
-			"h_pushtoken",
-			"pushtoken",
-			"PushwooshAndroid.js"
+			"pushtoken"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -714,103 +697,32 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "www/js/main.js",
+					"file": "/C/wamp/www/angelaboteropoeta/application/js/ordenes.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 78751,
+						"buffer_size": 1110,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								57641,
-								57641
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 25729.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "www/templates/recomendar.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3981,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2089,
-								2096
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 324.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "www/js/internal.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9478,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7758,
-								7758
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3535.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
