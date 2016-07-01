@@ -208,6 +208,7 @@ a.btn-reset{
 {
 	top: 0px;
 	right: 0px;
+	display: none;
 }
 .menusup button.ico-lupa span
 {
