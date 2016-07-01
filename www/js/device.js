@@ -52,7 +52,6 @@
         getDeviceProperty();
         checkConnection();
         if(!localStorage.pushtoken)alert("Bienvenido a Buffet Express.\nEl primer restaurante Online tipo buffet, que hara mas sencilla tu vida");
-        setFirstPushReg();        
     }
 };
 
