@@ -24,7 +24,7 @@
         <input id="password" name="password" type="hidden" value=""/>
         <input id="password2" name="password2" type="hidden" value="" />      
         <input type="text" class="form-control" id="cellPhone" maxlength="15" placeholder="Celular (Contraseña temporal)" onblur="fMatch2(this);" onkeyup="fMatch2(this);"/>
-        <input type="email" class="form-control email" id="email" maxlength="45" placeholder="Correo electrónico" onblur="checkEmail(this);" />
+        <input type="email" class="form-control email" id="email" maxlength="45" placeholder="Correo electrónico" onblur="checkEmail(this.value);" />
         <div style="float:left;width:20px;margin-right:6px;">
           <input id="chk_terminos" name="chk_terminos" type="checkbox" value="1" checked="checked" />
         </div>
