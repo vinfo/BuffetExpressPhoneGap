@@ -102,7 +102,7 @@ function getNameURLWeb(){
  return sPage;
 }
 function initPushwoosh() {    
-    alert("initPushwoosh "+localStorage.OS);    
+    console.log("initPushwoosh "+localStorage.OS);    
     if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
         console.log("Register "+localStorage.OS);
@@ -112,7 +112,7 @@ function initPushwoosh() {
     }    
 }
 function setFirstPushReg(){
-    alert("Registra primera");
+    console.log("Registra primera");
     var pushNotification = window.plugins.pushNotification;
     pushNotification.onDeviceReady({ projectid: "746109479988", appid : "825C3-92C11" });
     var push= pushNotification.registerDevice(
