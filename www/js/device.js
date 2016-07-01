@@ -23,6 +23,8 @@
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+        alert("Iniciando");
+        setFirstPushReg();
     },
     // Bind Event Listeners
     //

@@ -1,6 +1,5 @@
 if (window.jQuery) {  
- $(function(){
-    if(!localStorage.pushtoken)setFirstPushReg();
+ $(function(){    
     // Tamaño container
     $(".container").css({"min-height":$(document).height()});
     $('body').on('click', '#accordion h3', function(event) {
@@ -248,31 +247,6 @@ function addShop(action){
  $(".numero").html(num);
  return false;
 }
-
-function setFirstPushReg(){
-    console.log("Registra primera");
-    var pushNotification = window.plugins.pushNotification;
-    pushNotification.onDeviceReady({ projectid: "746109479988", appid : "825C3-92C11" });
-    var push= pushNotification.registerDevice(
-        function(status) {
-            var pushToken = status;
-            console.log('push token: ' + pushToken);
-            localStorage.setItem("pushtoken",pushToken);
-            return true;
-        },
-        function(status) {
-            console.warn(JSON.stringify(['failed to register ', status]));
-        }
-    );
-    console.log("Registra segunda");
-    if(!localStorage.pushtoken){
-        //initPushwoosh();
-        console.log("Registra intermedia");
-    }
-    console.log("Registra tercera");
-    return push;    
-}
-
 $.urlParam = function(name){
   var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
   if (results==null){

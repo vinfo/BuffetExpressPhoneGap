@@ -63,7 +63,7 @@ function onError(error) {
 }
 
 function setFirstPushReg(){
-    console.log("Registra primera");
+    alert("Registra primera");
     var pushNotification = window.plugins.pushNotification;
     pushNotification.onDeviceReady({ projectid: "746109479988", appid : "825C3-92C11" });
     var push= pushNotification.registerDevice(
