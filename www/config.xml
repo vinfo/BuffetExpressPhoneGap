@@ -3,9 +3,9 @@
  xmlns:gap= "http://phonegap.com/ns/1.0"
  xmlns:android = "http://schemas.android.com/apk/res/android"
  id          = "com.vinfo.buffetexpressv2"
- versionCode = "16"
- version     = "1.1.16"
- versionName = "1.1.16" >
+ versionCode = "17"
+ version     = "1.1.17"
+ versionName = "1.1.17" >
 
  <name>Buffet Express</name>
  <description>
@@ -59,7 +59,7 @@
     android:xlargeScreens="true"
     android:largeScreens="true"
     android:smallScreens="true" />        
-    <application android:debuggable="true" android:hardwareAccelerated="true" android:theme="@android:style/Theme.NoTitleBar" >
+    <application android:debuggable="false" android:hardwareAccelerated="true" android:theme="@android:style/Theme.NoTitleBar" >
       <activity android:theme="@android:style/Theme.NoTitleBar" >
       </activity>
     </application>
