@@ -102,7 +102,7 @@ function getNameURLWeb(){
  return sPage;
 }
 function initPushwoosh() {    
-    console.log("initPushwoosh "+localStorage.OS);    
+    alert("initPushwoosh "+localStorage.OS);    
     if(localStorage.OS == "Android"){
         registerPushwooshAndroid();
         console.log("Register "+localStorage.OS);
