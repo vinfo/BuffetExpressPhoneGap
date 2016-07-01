@@ -1427,6 +1427,7 @@ for(var h=0;h<farr.length;h++){
   
   angularRoutingApp.controller('recomendarController', function($scope) {
     setBackground("","white");
+    $(".qtip").hide();
     var descuento = JSON.parse(ajaxrest.getValueTipo("149"));
     var precio = JSON.parse(ajaxrest.getValueTipo("150"));
     $scope.descuento = descuento[0].valor_tipo;
