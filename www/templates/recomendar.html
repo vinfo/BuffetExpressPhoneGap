@@ -28,21 +28,21 @@
         <div style="float:left;width:20px;margin-right:6px;">
           <input id="chk_terminos" name="chk_terminos" type="checkbox" value="1" checked="checked" />
         </div>
-        <div style="float:left;"><a href="login.html#/terminos">Términos</a> y <a href="login.html#/politicas">Políticas de Privacidad</a><br/><br/><button class="btn" onclick="registrarUser();">Registrarse</button></div>
+        <div style="float:left;"><a href="login.html#/terminos">Términos</a> y <a href="login.html#/politicas">Políticas de Privacidad</a><br/><br/><button class="btn btn-default" onclick="registrarUser();">Registrarse</button></div>
       </div>  
     </div> 
     <div class="col-md-12 facturavir sms" style="marging-top:0;padding-top:0;display:none;">    
       <div class="vrdirc">
         <label class="titleQR">Ingresar código SMS de verificación</label>
         <input type="text" class="form-control" id="code" name="code" maxlength="35" placeholder="Código SMS" />
-        <div style="float:center;"><span class="time">Esperando mensaje SMS para validar tú cuenta. <i id="time">60</i></span><br/><button class="btn" onclick="registrarSMS();">Validar</button></div>
+        <div style="float:center;"><span class="time">Esperando mensaje SMS para validar tú cuenta. <i id="time">60</i></span><br/><button class="btn btn-default" onclick="registrarSMS();">Validar</button></div>
       </div> 
     </div>
     <div class="col-md-12 facturavir validar">
       <div class="vrdirc">
         <p>Debes validar tu cuenta con tu número celular para generar tu código QR</p>
         <p><input type="text" class="form-control" id="celular" maxlength="15" placeholder="Celular (Contraseña temporal)" onblur="fMatch2(this);" onkeyup="fMatch2(this);"/></p>
-        <p><button class="btn" onclick="validarCuenta();">Validar Cuenta</button></p>
+        <p><button class="btn btn-default" onclick="validarCuenta();">Validar Cuenta</button></p>
       </div>
     </div>
     <div style="text-align:center" class="login"><img src="{{qr}}" style="width:60%;" id="img_qr"></div>
@@ -54,7 +54,7 @@
       <p class="comparte login"><button class="btn btn-default" onclick="scanear();">Escanear</button>&nbsp;<button class="btn btn-default" onclick="shareBono();">Comparte</button></p>
       <div class="bondesc login"> Ingresar código de tu amigo <br>
         <input id="bono" name="bono" value="" type="text" maxlength="25">
-        <button class="btn" onclick="registerBono();">Registrar</button></div>
+        <button class="btn btn-default" onclick="registerBono();">Registrar</button></div>
 
         <div class="disponibles">
           <b>Bonos disponibles</b>
