@@ -1649,7 +1649,7 @@ float: left;
 	font-size: 12px;
 }
 .botones .btn2 p{
-	padding-right: 15px;
+	padding-right:5px;
 }
 .botones .btn1{
 	background-color:#d5d5d5;
@@ -1977,6 +1977,24 @@ input[type="radio"], input[type="checkbox"] {
     position: absolute;
     top: calc(50vh / 2);
     left: calc(20vw / 2); 
+}
+.agotado{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	background:rgba(0,0,0,0.4);
+	z-index:999;
+	text-align:center;
+	color:#960001;
+	font-size:40px;
+	font-weight:bold;
+	padding-top:35%;
+}
+.cart_shop{
+	position:fixed;
+	z-index:999;
+	display:none;
 }
 @media (max-width: 532px){
 	.menusup .title
