@@ -317,7 +317,7 @@
           }
           window.location = "internal.html#/menu";
         }
-    alert("sale");
+    return;
       },  
 
       //Agregar items a X categoria en plato          
@@ -2147,4 +2147,3 @@
         return true;
       }                               
     };
-  });
