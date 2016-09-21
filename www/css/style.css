@@ -395,7 +395,7 @@ a.btn-reset{
 }
 .menuplato .col-md-6:nth-child(6)
 {
-	padding-left: 0px;
+	padding-right: 0px;
 }
 .menuplato a:nth-child(6) > img
 {
@@ -887,8 +887,8 @@ max-width:20%;*/
 .miscompras .contpag .cont
 {
 	display: inline-block;
-	background: #FDB813;
-	color: #000;
+	background: #4a9c1d;
+	color: #fff;
 	font-weight: bold;
 	font-size: 25px;
 	border:2px solid #FFFFFF;

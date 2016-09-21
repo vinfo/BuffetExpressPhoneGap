@@ -1,11 +1,46 @@
 <!-- Contenido  buffet -->
+<style>
+#footer {
+	background: #1e5799; /* Old browsers */
+	background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8', GradientType=0 ); /* IE6-9 */
+	color: white;
+	text-align: center;
+	position: fixed;
+	bottom:58px;
+	width: 100%;
+	height: 30px;
+	padding-top: 4px;
+}
+.numb{
+	position: absolute;
+    top:15%;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    font-size:50px;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+    margin: 0px auto;
+}
+.cart_shop{
+	position:fixed;
+	z-index:999;
+	display:none;
+}
+</style>
 <div class="miscompras">
-<div class="comprasitem" style="display:none"><div class="imgcont" style="width:100%;display:inline-table" ><div class="padre"><div class = "derrap"><div class="contenedor"><div class="sopa"><img src="images/plato_2.png" style="width:100%;" border="0" margin="0"/><div class="sopacont"><img ng-src="{{sopas}}" style="width:100%;" border="0" margin="0" /></div></div><div class="vaso"><img src="images/plato_3.png" style="width:100%;" border="0" margin="0"/><div class="jugo"><img ng-src="{{bebidas}}" style="width:100%;" border="0" margin="0"/></div></div><div class="plato"><img src="images/plato.png" style="width:100%;" border="0" margin="0"/><div class="arroz"><img ng-src="{{arroz}}" style="width:100%;" border="0" margin="0"/></div><div class="guarnicion"><img ng-src="{{guarnicion}}" style="width:100%;" border="0" margin="0"/></div><div class="carne"><img ng-src="{{carnes}}" style="width:100%;" border="0" margin="0"/></div></div></div></div></div></div><div class="contnn" style="width:100%;"><h3>Recomendado del Día</h3><p ng-bind-html="items"></p></p></div><div class="icodeta" style="height:32px;"><div class="back" ng-click="goTo('slider')">Volver Atras</div><div class="shop" ng-click="goPay()"><span class="currency">Comprar ${{price}}</span></div></div>
- </div>
- <div class="costoad">
+<div id="data"></div>
+
+<div class="clear" style="padding-bottom:30px;">&nbsp;</div>
+<div class="cart_shop"><a href="internal.html#/compras" onClick="ga('send', 'pageview', '/confirmacion_pedido');"><img src="images/img_carrito.png" alt="..." /></a></div>
+<div id="footer">Recuerda que el pedido minimo es de $<span id="valor_minimo"></span></div>
+<div class="costoad">
   <div class="cont">
     <h1>Detalle Recomendado del día</h1>
-    <p>No tenemos Recomendado del día disponible</p>   
-</div>
+    <p>No tenemos Recomendado del día disponible</p>
+  </div>
 </div>
 <!-- fin contenido slider buffet -->

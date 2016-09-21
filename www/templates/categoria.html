@@ -2,6 +2,7 @@
 <div class="msg"></div>
 <div class="menuplatolist">
   <div class="col-md-12" ng-repeat="dish in dishes">
+<div id="contenedor_{{dish.id}}">
    <div class="title"><img ng-src="images/{{imageCat}}.png" alt="..." title=".." /><span>{{dish.name}}</span></div>
    <div class="btnts">
      <div id="detalle_{{dish.id}}" class="detalle">
@@ -26,9 +27,13 @@
     <img src="images/lupamenu.png" alt="..." title="..." class="masdetalle btns" ng-click="detailDish(dish)" />
     <img src="images/masmenu.png" alt="..." title="..." class="vermasplato btns" ng-click="setDish(dish,'add')" />
     <input id="code_{{dish.code}}" name="code_{{dish.code}}" type="hidden" value="{{dish.id}}|{{dish.code}}|{{dish.idCat}}|{{dish.fullname}}|{{dish.price}}" />
+    <input id="cantidad_{{dish.code}}" name="cantidad_{{dish.code}}" type="hidden" value="{{dish.cantidad}}" />
   </div>
   <div class="contimg"><div id="numb_{{dish.code}}" class="numb">0</div><img id="image_{{dish.code}}" ng-src="{{dish.images}}" /></div>
+  <div id="agotado_{{dish.id}}" ng-if="dish.cantidad == 0" class="agotado">Agotado</div>
+  </div>
 </div>
+
 
 </div>
 <div class="verplato">
