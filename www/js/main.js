@@ -188,35 +188,14 @@
       $(".menupie ul li:nth-child(2)").addClass("active");
     }
     if($routeParams.activity)localStorage.activity=$routeParams.activity;
-
-    var url="";    
-    $(".imgCat").click(function(){
-     $("#imgloading").hide();
-     $("#imgloading").css({ width: this.width+'px',height: this.height+'px', top: $(this).offset().top+'px', left: $(this).offset().left+'px' });
-     $("#"+this.id).fadeTo('fast', 0);
-     if(this.id=="sopas")url="#categoria/ins/1/sopas y cremas";
-     if(this.id=="arroz")url="#categoria/ins/2/arroz";
-     if(this.id=="carnes")url="#categoria/ins/3/carnes";
-     if(this.id=="guarnicion")url="#categoria/ins/4/guarnición";
-     if(this.id=="bebidas")url="#categoria/ins/5/bebidas";
-     $("#imgloading").hide();
-     $("#imgloading").attr("src","images/"+this.id+"_load.png");
-
-     $("#imgloading").show(500,function(){
-      window.location = "internal.html"+url;
-    });
-     return false;
-   });
-
-
     var plato= 1;
     if(localStorage.plato)plato= parseInt(localStorage.plato);
-    if(localStorage.getItem("dimension")==768)$(".menuplato").css("width","82%");   
-
+    if(localStorage.getItem("dimension")==768)$(".menuplato").css("width","82%");  
+    
     if(localStorage.getItem("quadrant")==""){
       if(!localStorage.MsgZone)NotificationService.alert('Ubicación fuera de rango de despacho.\nPuede navegar la aplicación; pero no podrá ordenar pedidos.', "Alerta", "Aceptar", null);
       localStorage.setItem("MsgZone",1);
-    }
+    } 
     
     var checkPlato= Items.getItems(plato);
     var flag=false;
@@ -247,9 +226,28 @@
         $scope.bebidas= Images.setImage(plato,5);       
       }
 
-      $scope.num_dish= localStorage.plato;
+      $("#totalDish").html(getRealDish());   
 
-      $("#totalDish").html(getRealDish());
+      var url="";    
+      $(".imgCat").click(function(){
+       $("#imgloading").hide();
+       $("#imgloading").css({ width: this.width+'px',height: this.height+'px', top: $(this).offset().top+'px', left: $(this).offset().left+'px' });
+       $("#"+this.id).fadeTo('fast', 0);
+       if(this.id=="sopas")url="#categoria/ins/1/sopas y cremas";
+       if(this.id=="arroz")url="#categoria/ins/2/arroz";
+       if(this.id=="carnes")url="#categoria/ins/3/carnes";
+       if(this.id=="guarnicion")url="#categoria/ins/4/guarnición";
+       if(this.id=="bebidas")url="#categoria/ins/5/bebidas";
+       $("#imgloading").hide();
+       $("#imgloading").attr("src","images/"+this.id+"_load.png");
+
+       $("#imgloading").show(500,function(){
+        window.location = "internal.html"+url;
+      });
+       return false;
+     });  
+
+      
 
       $scope.doLogin = function() {
         ajaxrest.login(82);
@@ -296,7 +294,7 @@
         return false;
       },
       //Adicionar nuevo plato
-      $scope.addDish = function (action,tipo) {        
+      $scope.addDish = function (action,tipo) {
         var plato= parseInt(localStorage.plato);
         var items= Items.getItems(plato);
         var checkPlato= Items.getItems(plato);        
@@ -315,8 +313,7 @@
             }
           }
           flag=true;
-        } 
-        
+        }     
         if(items<3 || flag){
           if(action=="add"){        
             alert("Plato actual no esta completo!");
@@ -344,15 +341,14 @@
           }
           window.location = "internal.html#/menu";
         }
-      },  
+      },    
 
       //Agregar items a X categoria en plato          
       $scope.setDish = function (dish,action) {           
         var activity= localStorage.activity;
         var plato= localStorage.getItem("plato");
-        var checkPlato= Items.getItems(plato); 
-        var seleccionado= localStorage.seleccionado;     
-        
+        var checkPlato= Items.getItems(plato);      
+        var seleccionado= localStorage.seleccionado;
         var flag=false;
         if(Items.getTypeDish(plato)=="R"){
           plato= Items.getFullLastId()+1;
@@ -361,7 +357,7 @@
 
         var pos= Items.getPos(plato,dish.idCat);
         var fcode= $("#code_"+dish.code).val().split('|');
-
+        
         if(dish.idCat==5){
           localStorage.setItem("bebida",1);
           localStorage.removeItem("paso2");
@@ -425,6 +421,7 @@
         }
         var items=Items.getItemsxCat(plato,dish.idCat);
         var redir=true;
+        
         if(!localStorage.getItem('stop') && items>1){
           $scope.precio= Currency.setMoney(dish.price, 0, ",", ".");
           if(action=="add")$(".costoad").fadeIn();
@@ -439,7 +436,7 @@
             $scope.precio_plato= Currency.setMoney(localStorage.valor_recomendado, 0, ",", ".");
           }
           redir=false;
-        }        
+        }   
         localStorage.setItem("plato",plato);
         var items=0;var itemsB=0;
         for(var j=0;j<localStorage.length;j++){
@@ -461,11 +458,10 @@
         if(itemsB==0){
           localStorage.removeItem("cant_B_"+plato);
         }
-
         $("#totalDish").html(getRealDish());
-        if(activity=="ins" && action=="add" && cant!=0 && redir && items<=1)window.location = "internal.html#/menu";
-        //if(activity!="edit" && action=="add" && cant!=0 && redir)window.location = "internal.html#/compras";
-
+    //alert(activity+" "+redir+" "+cant+" "+action+" "+items);
+    if(activity=="ins" && action=="add" && cant!=0 && redir && items<=1)window.location = "internal.html#/menu";    
+        //if(activity!="edit" && action=="add" && cant!=0 && redir)window.location = "internal.html#/compras";    
       },
       $scope.setSpecial = function (dish,action) {
         var fcode= $("#code_"+dish.code).val().split('|');
@@ -1253,7 +1249,7 @@ for(var h=0;h<farr.length;h++){
           var title= JSON.parse(Ndata);
           var nameR="";
           if(title)nameR=" "+title.name;    
-          
+
           nameDish="Express"+nameR+" (Und x "+cantDish+")";
           //total= parseInt(localStorage.valor_recomendado * cantDish);
           //total2=total;
