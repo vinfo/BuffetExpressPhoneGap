@@ -514,8 +514,12 @@
         $("li").removeClass("active");
         $(".menupie ul li:nth-child(1)").addClass("active");
       }
-      $(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});        
-    });
+      var cantB=getRealBuffetDish();
+      $scope.num_dish= localStorage.plato;  
+    //$("#num_dish").html(cantB); 
+    if(localStorage.plato>0)$(".cart_shop").css({"bottom":+($("li.carrito a img").height()+8)+"px","left":+($(".menupie").width()-80)+"px"}).fadeIn();      
+    $(".botones,.contpag,.verplatoico,.pedidotar").css({"bottom":+$("li.carrito a img").height()+"px"});        
+  });
 
   angularRoutingApp.controller('comprasController', function($scope,Items,Currency) {
     localStorage.removeItem("seleccionado");
@@ -923,7 +927,7 @@ $(".contpag").css({"bottom":+(mheight-1)+"px"});
           }
           lista+='<div class="comprasitem">  <div class="imgcont" style="width:40%;display:inline-table" ><div class="padre"><div class = "derrap">  <div class="contenedor"><div class="plato" style="margin-left:10%;float:none;width:80%;height:100%;"><img src="images/plato.png" style="width:100%;" border="0" margin="0"/><div class="arroz"><img src="'+arroz+'" style="width:100%;" border="0" margin="0"/></div><div class="guarnicion"><img src="'+guarnicion+'" style="width:100%;" border="0" margin="0"/></div><div class="carne"><img src="'+carnes+'" style="width:100%;" border="0" margin="0"/></div><div id="numbE_'+value+'" class="numb" '+clase+'>'+plt+'</div></div></div></div></div></div>  <div class="contnn" style="width:60%;"><h4>Express '+namer+'</h4><p>'+product+'</p>  </div>  <div class="icodeta" style="height:43px;cursor:auto;"><div class="back" style="background-color:#FDB813;padding-top:9px;font-size:18px;"><span class="currency">$'+Currency.setMoney(localStorage.valor_recomendado, 0, ",", ".")+'</span></div><div class="shop" style="background-color:#DCDDDE;padding-top:0;"><img src="images/menu-menos.png" alt="..." title="..." class="masdetalle btns" onClick="goPay('+value+',\''+namer+'\',\'less\')" style="width:40px;height:40px;cursor:pointer;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/masmenu.png" alt="..." title="..." class="vermasplato btns" onClick="goPay('+value+',\''+namer+'\',\'add\')" style="width:40px;height:40px;cursor:pointer;" /></div>  </div>  </div>';        
         });
-        
+
         $("#data").html(lista);     
         $("#valor_minimo").html(Currency.setMoney(localStorage.valor_minimo, 0, ",", "."));
       }else{
@@ -1126,28 +1130,28 @@ for(var h=0;h<farr.length;h++){
           orderxitems.push({idDish:dish,idItem:idD,qty:cant,price:price});                    
           
           if(cat==1){
-      if(tipo=="R"){
-        cant= cant;
-        var ad= " <b>(extra X "+ (cant)+")</b>";           
-        extra+="- "+name+ad+"</br>";
-        total+= price * cant;           
-      }else{              
-        if(c1==0){
-          var ad="";
-          if(cant>1){
-          ad= " <b>(extra X "+ (cant - 1)+")</b>";
-          total+= price * (cant-1);
-          }
-          ppal+="- "+name+ad+"</br>";     
-        }else{
-          var ad="";
-          if(cant>=1){
-          ad= " <b>(extra X "+ (cant)+")</b>";
-          total+= price * cant; 
-          }           
-          extra+="- "+name+ad+"</br>";                
-        } 
-      }
+            if(tipo=="R"){
+              cant= cant;
+              var ad= " <b>(extra X "+ (cant)+")</b>";           
+              extra+="- "+name+ad+"</br>";
+              total+= price * cant;           
+            }else{              
+              if(c1==0){
+                var ad="";
+                if(cant>1){
+                  ad= " <b>(extra X "+ (cant - 1)+")</b>";
+                  total+= price * (cant-1);
+                }
+                ppal+="- "+name+ad+"</br>";     
+              }else{
+                var ad="";
+                if(cant>=1){
+                  ad= " <b>(extra X "+ (cant)+")</b>";
+                  total+= price * cant; 
+                }           
+                extra+="- "+name+ad+"</br>";                
+              } 
+            }
             c1++;
           }
           if(cat==2){         
@@ -1205,28 +1209,28 @@ for(var h=0;h<farr.length;h++){
             c4++;
           }
           if(cat==5){       
-      if(tipo=="R"){
-        cant= cant;
-        var ad= " <b>(extra X "+ (cant)+")</b>";           
-        extra+="- "+name+ad+"</br>";
-        total+= price * cant;       
-      }else{               
-        if(c5==0){
-          var ad="";
-          if(cant>1){
-          ad= " <b>(extra X "+ (cant - 1)+")</b>";
-          total+= price * (cant-1);
-          }
-          ppal+="- "+name+ad+"</br>";     
-        }else{
-          var ad="";
-          if(cant>=1){
-          ad= " <b>(extra X "+ (cant)+")</b>";
-          total+= price * cant; 
-          }           
-          extra+="- "+name+ad+"</br>";
-        }
-      }
+            if(tipo=="R"){
+              cant= cant;
+              var ad= " <b>(extra X "+ (cant)+")</b>";           
+              extra+="- "+name+ad+"</br>";
+              total+= price * cant;       
+            }else{               
+              if(c5==0){
+                var ad="";
+                if(cant>1){
+                  ad= " <b>(extra X "+ (cant - 1)+")</b>";
+                  total+= price * (cant-1);
+                }
+                ppal+="- "+name+ad+"</br>";     
+              }else{
+                var ad="";
+                if(cant>=1){
+                  ad= " <b>(extra X "+ (cant)+")</b>";
+                  total+= price * cant; 
+                }           
+                extra+="- "+name+ad+"</br>";
+              }
+            }
             c5++;
           }                                 
         }
@@ -1238,18 +1242,18 @@ for(var h=0;h<farr.length;h++){
           if(cantDish>0)total2=total*cantDish;
         }
         
-    contPlatos++;
+        contPlatos++;
         var nameDish= "Buffet #"+dish+" (Und x "+cantDish+")";
-    if(cantDish>1)totPlatos+= (cantDish-1);
-    platos= dish;
+        if(cantDish>1)totPlatos+= (cantDish-1);
+        platos= dish;
         var type=0;
         if(tipo=="R"){
           var type=1;
-      var Ndata= localStorage.getItem("recomendado_"+dish);
-      var title= JSON.parse(Ndata);
-      var nameR="";
-      if(title)nameR=" "+title.name;    
-      
+          var Ndata= localStorage.getItem("recomendado_"+dish);
+          var title= JSON.parse(Ndata);
+          var nameR="";
+          if(title)nameR=" "+title.name;    
+          
           nameDish="Express"+nameR+" (Und x "+cantDish+")";
           //total= parseInt(localStorage.valor_recomendado * cantDish);
           //total2=total;
