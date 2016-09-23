@@ -48,6 +48,7 @@
         window.analytics.trackView('/login');
         window.analytics.trackView('/templates/guia');
         window.analytics.trackView('/templates/contactenos');
+        window.ga.setAllowIDFACollection(true);
         console.log("Inicializa Dispositivo");        
         getDeviceProperty();
         checkConnection();
