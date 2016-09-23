@@ -276,20 +276,10 @@
 	"buffers":
 	[
 		{
-			"contents": "Searching 448 files for \"ico-lupa\" (case sensitive)\n\nD:\\Movilidad\\BuffetExpressPhoneGap\\www\\css\\style.css:\n  205  	display: inline-block;\n  206  }\n  207: .menusup button.ico-lupa\n  208  {\n  209  	top: 0px;\n  210  	right: 0px;\n  211  }\n  212: .menusup button.ico-lupa span\n  213  {\n  214  	background: url(../images/lisha.png);\n\nD:\\Movilidad\\BuffetExpressPhoneGap\\www\\internal.html:\n   16        <button class=\"verlatermenu ico-menu\" id=\"ico_menu\"><span></span></button>\n   17        <div class=\"title\">Buffet Express</div>\n   18:       <button onclick=\"window.plugins.socialsharing.share('Hola,\\r\\nAcabo de descargar la aplicación Buffet Express en mi celular.\\r\\nDescárgala es un restaurante online tipo buffet que te permite armar tu combinación favorita y recibir tu plato a domicilio.\\r\\nEs que poder elegir; también es rico!.', null, 'http://buffetexpress.com.co/REST/resources/images/descargala_ya.jpg', 'http://buffetexpress.com.co/')\" class=\"ico-lupa\"><span></span></button>\n   19      </div>\n   20      <!-- Fin menu -->\n\nD:\\Movilidad\\BuffetExpressPhoneGap\\www\\login.html:\n   14              <button class=\"verlatermenu ico-menu\" id=\"ico_menu\"><span></span></button>\n   15              <div class=\"title\">Buffet Express</div>\n   16:             <button onclick=\"window.plugins.socialsharing.share('¡Sabías que...? Se acabaron los tiempos donde comías lo que los restaurantes te quieren vender, ahora comerás lo que tu desees no lo que ellos tengan para ofrecerte.\\r\\n\\r\\nBuffet Express Online es el primer restaurante virtual tipo buffet del mundo, en esta APP podrás armar tu plato con las preparaciones que más te gusten desde tu lugar de trabajo u hogar, tiene cinco categorías (sopas, arroces, carnes, guarniciones y bebidas) en las cuales encontrarás una variedad de preparaciones para elegir las que más se adapten a tus gustos o estilo de vida.\\r\\n\\r\\nDescargala aqui! http://buffetexpress.co/nuevo/descarga/', 'Descarga Buffetexpress', 'http://buffetexpress.com.co/REST/resources/images/logo.png', 'http://buffetexpress.com.co')\" class=\"ico-lupa\"><span></span></button>\n   17          </div>\n   18          <!-- Fin menu --> \n\n4 matches across 3 files\n",
+			"file": "www/js/main.js",
 			"settings":
 			{
-				"buffer_size": 2169,
-				"line_ending": "Windows",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "www/css/style.css",
-			"settings":
-			{
-				"buffer_size": 33424,
+				"buffer_size": 85829,
 				"line_ending": "Unix"
 			}
 		}
@@ -371,32 +361,37 @@
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/css",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates"
 	],
 	"file_history":
 	[
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendar.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshAndroid.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
-		"/C/wamp/www/angelaboteropoeta/application/js/ordenes.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/carta.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/index.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshAndroid.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/ordenes.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/device.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/internal.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/index.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/internal.html",
-		"/C/wamp/www/buffet/REST/resources/js/functions.js",
-		"/C/wamp/www/insetur.com/admin/js/jquery.currency.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshiOS.js",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendar.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/config.xml",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/load.js",
+		"/C/wamp/www/angelaboteropoeta/application/js/ordenes.js",
+		"/C/wamp/www/buffet/REST/resources/js/functions.js",
+		"/C/wamp/www/insetur.com/admin/js/jquery.currency.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/load.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/login.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/PushwooshiOS.js",
 		"/D/Movilidad/wisi_mobil/www/assets/js/min/app.js",
 		"/D/Movilidad/parkingid/www/js/index.js",
 		"/D/Movilidad/parkingid/www/config.xml",
@@ -404,23 +399,17 @@
 		"/C/wamp/www/esevial/cea/modules/js/bills.js",
 		"/C/Users/odc/Downloads/output.min.js",
 		"/C/wamp/www/buffet/facturacion/plugins/datatables/jquery.dataTables.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/carta.html",
 		"/C/wamp/www/wisi/admin/application/js/administradores.js",
 		"/C/Dropbox/KeePass-2.19/KeePass.config.xml",
 		"/C/wamp/www/wisi/admin/js/plugins/validation/jquery.validationEngine.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/ordenes.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/especiales.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/menu.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/cordova.js",
 		"/C/Users/odc/Desktop/YuxicPacific/books.xml",
 		"/C/Users/odc/AppData/Roaming/Skype/My Skype Received Files/books.xml",
 		"/C/Users/odc/Desktop/macaddr-applet-master/macaddress-applet.js",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/js/sector.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/libs.min.css",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/guia.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/categoria.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/ayuda.html",
 		"/C/Users/odc/Downloads/datepicker/datepicker/js/bootstrap-datepicker.js",
 		"/C/Users/odc/Downloads/BuffetExpressPhoneGap-06d666385283dbb50d0730ac17948de1841bc4cd/BuffetExpressPhoneGap-06d666385283dbb50d0730ac17948de1841bc4cd/www/config.xml",
@@ -503,8 +492,7 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/offline.html",
 		"/C/Mi Informacion/Programacion/PHP/Plantillas WEB/Administrativas/aries-metro-style-admin-template/documentation/index.html",
 		"/D/wamp/www/realriskPhonegap/www/config.xml",
-		"/D/wamp/www/esevial/cea/modules/js/tramits.js",
-		"/D/Movilidad/BuffetExpressMensajero/www/js/device.js"
+		"/D/wamp/www/esevial/cea/modules/js/tramits.js"
 	],
 	"find":
 	{
@@ -526,6 +514,32 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"alert(\"Ex",
+			"alert(\"s",
+			"mainController",
+			"plato",
+			"num_dish",
+			"#footer",
+			".btn2",
+			"getDeviceProperty",
+			"android-build-too",
+			"Push",
+			"push",
+			"h_pushtoken",
+			"h_token",
+			"PushwooshAndroid.js",
+			"825C3-92C11",
+			"AIzaSyCLtCBMC1r7O-NtTz3Rez5deMwIyLdol3g",
+			"\"btn btn-default\"",
+			"class=\"btn\"",
+			"Escanear",
+			"\"sms\"",
+			"regQR",
+			"CreateTimer",
+			"brdto",
+			"bono",
+			"recomendarController",
+			"Debes estar logueado",
 			"ico-lupa",
 			"Hola, como",
 			"Hola como",
@@ -627,33 +641,7 @@
 			"currre",
 			"number",
 			"ajaxrest",
-			"recomendarController",
-			"ajaxrest",
-			"windo",
-			"plugins",
-			"cuenta",
-			"InAppBrowser",
-			"windo",
-			"open",
-			"barcodescanner",
-			"nosotrosController",
-			"initPushwoosh",
-			"registerPushwooshAndroid",
-			"PushwooshAndroid.js",
-			"825C3-92C11",
-			"push",
-			"flagCoord",
-			"codeAddress(",
-			"coordAddress",
-			"dir2",
-			"direccion",
-			"dir2\"",
-			"pagoController",
-			"createMarker(pos,'Domiciliario','rastreo_domiciliario');",
-			"if(tipo==\"R\"){",
-			"registerDevice",
-			"registerPushwooshAndroid",
-			"initPushwoosh"
+			"recomendarController"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -661,6 +649,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"\"btn\"",
+			"class=\"btn btn-default\"",
 			"window.location = \"internal.html#/compras\";",
 			"alert",
 			"$(\".mi_cuenta\").attr(\"href\",\"internal.html#/mi_cuenta\");",
@@ -710,83 +700,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+					"file": "www/js/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2169,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										170,
-										178
-									],
-									[
-										258,
-										266
-									],
-									[
-										950,
-										958
-									],
-									[
-										2054,
-										2062
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								168,
-								168
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"incomplete_sync": null,
-							"line_numbers": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([^ 	].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "www/css/style.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 33424,
+						"buffer_size": 85829,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3244,
-								3244
+								11074,
+								11074
 							]
 						],
 						"settings":
@@ -794,11 +725,12 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3402.0,
+						"translation.y": 5335.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -854,7 +786,7 @@
 	"project": "buffetexpress.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":

@@ -336,7 +336,7 @@
 
         var pos= Items.getPos(plato,dish.idCat);
         var fcode= $("#code_"+dish.code).val().split('|');
-        
+
         if(dish.idCat==5){
           localStorage.setItem("bebida",1);
           localStorage.removeItem("paso2");
@@ -400,7 +400,7 @@
         }
         var items=Items.getItemsxCat(plato,dish.idCat);
         var redir=true;
-        
+
         if(!localStorage.getItem('stop') && items>1){
           $scope.precio= Currency.setMoney(dish.price, 0, ",", ".");
           if(action=="add")$(".costoad").fadeIn();
@@ -433,7 +433,7 @@
           }else{
             localStorage.setItem("cant_B_"+plato,1);
           }     
-        }   
+        }
         if(itemsB==0){
           localStorage.removeItem("cant_B_"+plato);
         }
