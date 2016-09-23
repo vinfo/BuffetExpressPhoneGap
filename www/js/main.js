@@ -6,10 +6,6 @@
   var base_site="http://buffetexpress.com.co/";
   var rand= Math.floor((Math.random() * 999) + 1);
 
-
-
-  
-
   // Configuración de las rutas
   angularRoutingApp.config(function($routeProvider) {
     $routeProvider
@@ -148,6 +144,10 @@
       //alert("Apreciado cliente usted se encuentra por fuera de cobertura de nuestras cocinas, con todo el gusto te atenderemos tomando tu pedido hasta "+zona.hasta+", recuerda que si haces varias ordenes desde un mismo pedido todas llegaran al mismo tiempo y pagaras menos por tu domicilio.\nRecomienda tu zona al final de tu compra; así estaremos mas cerca de ti y no pagaras domicilio.");
       localStorage.setItem("horario","1");
     }
+    if(localStorage.img_buffet=="No")$("#img_buffet").hide();
+    if(localStorage.img_express=="No")$("#img_express").hide();
+    if(localStorage.img_cazuelas=="No")$("#img_cazuelas").hide();
+    if(localStorage.img_desayunos=="No")$("#img_desayunos").hide();    
   });  
 
   angularRoutingApp.controller('sliderController', function($scope,$location,Items) {   
