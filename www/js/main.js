@@ -4,7 +4,7 @@
   var num = localStorage.setItem("num",0);
   var base_url="http://buffetexpress.com.co/REST/";
   var base_site="http://buffetexpress.com.co/";
-  var rand= Math.floor((Math.random() * 999) + 1);
+  var rand= Math.floor((Math.random() * 999) + 1);  
 
   // Configuración de las rutas
   angularRoutingApp.config(function($routeProvider) {
