@@ -377,11 +377,9 @@
         }
         if(cant>0){         
           localStorage.setItem(name,JSON.stringify({id:fid,cant:cant,pos:pos,code:dish.code,cat:dish.idCat,fname:fname,price:price}));
-          alert("1 "+cant);
           $("#numb_"+dish.code).html(cant).fadeIn();
         }else{
           localStorage.removeItem(name);
-          alert("2 "+cant);
           $("#numb_"+dish.code).html('').fadeOut();
           var img=Images.setImage(plato,dish.idCat);
           if(dish.idCat==1){  
