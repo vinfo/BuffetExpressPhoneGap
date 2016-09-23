@@ -21,7 +21,7 @@
 			],
 			[
 				"st",
-				"style	Tag"
+				"style\tTag"
 			],
 			[
 				"fade",
@@ -41,7 +41,7 @@
 			],
 			[
 				"AL",
-				"alt	Attr"
+				"alt\tAttr"
 			],
 			[
 				"pa",
@@ -101,11 +101,11 @@
 			],
 			[
 				"op",
-				"option	Tag"
+				"option\tTag"
 			],
 			[
 				"ta",
-				"target	Attr"
+				"target\tAttr"
 			],
 			[
 				"s",
@@ -253,7 +253,7 @@
 			],
 			[
 				"on",
-				"onclick	Attr"
+				"onclick\tAttr"
 			],
 			[
 				"at",
@@ -275,14 +275,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "www/js/main.js",
-			"settings":
-			{
-				"buffer_size": 85829,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -361,10 +353,11 @@
 	[
 		"/D/Movilidad/BuffetExpressPhoneGap",
 		"/D/Movilidad/BuffetExpressPhoneGap/www",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/templates"
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js"
 	],
 	"file_history":
 	[
+		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendado.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/compras.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/css/style.css",
@@ -384,7 +377,6 @@
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/recomendar.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/cuenta.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/login.html",
-		"/D/Movilidad/BuffetExpressPhoneGap/www/js/main.js",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/login.html",
 		"/D/Movilidad/BuffetExpressPhoneGap/www/templates/pago.html",
 		"/C/wamp/www/angelaboteropoeta/application/js/ordenes.js",
@@ -514,6 +506,12 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"setNumDishes",
+			"numb_",
+			"numb'",
+			"numb\"",
+			"numb",
+			"numb_",
 			"alert(\"Ex",
 			"alert(\"s",
 			"mainController",
@@ -635,13 +633,7 @@
 			"Acabo de descargar la",
 			"recomendarController",
 			"ajaxrest.getValueTipo",
-			"ajaxrest.",
-			"ajaxrest.setQR(sponsor,invited);",
-			"getValueTipo",
-			"currre",
-			"number",
-			"ajaxrest",
-			"recomendarController"
+			"ajaxrest."
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -700,42 +692,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "www/js/main.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 85829,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								11074,
-								11074
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 5335.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
