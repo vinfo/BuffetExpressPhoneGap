@@ -842,6 +842,7 @@ $(".contpag").css({"bottom":+(mheight-1)+"px"});
     }else if(cat==4){
       $scope.imageCat="guarnicion_mini";
     }   
+    if(localStorage.seleccionado)plato=localStorage.seleccionado;
     ajaxrest.setNumDishes(plato,cat);
 
     $scope.sopa= Images.setImage(plato,1);
