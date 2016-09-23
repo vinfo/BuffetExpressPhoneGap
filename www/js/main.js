@@ -6,6 +6,10 @@
   var base_site="http://buffetexpress.com.co/";
   var rand= Math.floor((Math.random() * 999) + 1);
 
+
+
+  
+
   // Configuración de las rutas
   angularRoutingApp.config(function($routeProvider) {
     $routeProvider
