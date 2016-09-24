@@ -80,8 +80,7 @@
   <gap:plugin name="org.apache.cordova.vibration" version="0.3.13" />
   <gap:plugin name="org.apache.cordova.network-information" version="0.2.15" />
   <gap:plugin name="com.phonegap.plugin.statusbar" />
-  <gap:plugin name="com.danielcwilson.plugins.googleanalytics" version="0.6.1" /> 
-  <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.4.2" />
+  <gap:plugin name="com.danielcwilson.plugins.googleanalytics" version="0.6.1" />   
   <plugin name="phonegap-plugin-barcodescanner" version="4.1.0" />
   <plugin name="info.ivanezko.phonegap.smsplugin" spec="0.2.1" source="pgb" />
 
