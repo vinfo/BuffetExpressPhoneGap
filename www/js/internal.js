@@ -172,6 +172,7 @@ function registrarUser(){
     }
    }, 120000);
    smsplugin.startReception(function success(result){
+     alert("Recibe A "+JSON.stringify(result));
      var res=result.split(",");
      if(res[1]!=""){
       $("#code").val(res[1]);
@@ -213,6 +214,7 @@ function validarCuenta(){
     }
    }, 120000);
    smsplugin.startReception(function success(result){
+     alert("Recibe B "+JSON.stringify(result));
      var res=result.split(",");
      if(res[1]!=""){
       $("#code").val(res[1]);
