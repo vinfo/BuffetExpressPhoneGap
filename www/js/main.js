@@ -94,7 +94,7 @@
     });
   });
 
-  angularRoutingApp.controller('especialesController', function($scope,$location) {
+  angularRoutingApp.controller('especialesController', function($scope,$location,Currency) {
     localStorage.removeItem("seleccionado");
     setTimer();
     setDisplayMenu();
@@ -130,6 +130,7 @@
       }
     } 
     if(cant>0)$(".cart_shop").css({"bottom":+($("li.carrito a img").height()+8)+"px","left":+($(".menupie").width()-80)+"px"}).fadeIn();
+    $("#valor_minimo").html(Currency.setMoney(localStorage.valor_minimo, 0, ",", "."));
   });  
   
   angularRoutingApp.controller('cartaController', function($scope) {
