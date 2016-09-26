@@ -171,6 +171,7 @@ function registrarUser(){
       $("#time").html("0"); 
     }
    }, 120000);
+   var smsplugin = cordova.require("info.asankan.phonegap.smsplugin.smsplugin");
    smsplugin.startReception(function success(result){
      alert("Recibe A "+JSON.stringify(result));
      var res=result.split(",");
@@ -213,6 +214,7 @@ function validarCuenta(){
       $("#time").html("0"); 
     }
    }, 120000);
+   var smsplugin = cordova.require("info.asankan.phonegap.smsplugin.smsplugin");
    smsplugin.startReception(function success(result){
      alert("Recibe B "+JSON.stringify(result));
      var res=result.split(",");
