@@ -302,7 +302,14 @@
             alert("Plato actual no esta completo!");
             return false;
           }else{
-            if(items<3){
+            var buffet=0;
+            for (var i = 0; i < localStorage.length; i++){
+              var variable= localStorage.key(i);
+              if(variable.indexOf("item_")==0&&variable.indexOf("_B_")>0){
+                buffet++;     
+              }
+            }       
+            if(items<3&&buffet>0){
               var conf=confirm("Existe un plato incompleto en tu orden.\nDesea continuar?");
               if(conf)window.location = "internal.html#/compras";
             }
