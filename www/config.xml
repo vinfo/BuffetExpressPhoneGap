@@ -66,7 +66,7 @@
   </application>
 </gap:config-file>
 
-<plugin name="com.danielcwilson.plugins.googleanalytics" spec="0.6.1" />
+<plugin name="com.danielcwilson.plugins.googleanalytics" source="pgb" spec="0.6.1" />
 <plugin name="cordova-plugin-appavailability" spec="0.4.2" />
 <plugin name="cordova-plugin-console" spec="1.0.2" />
 <plugin name="cordova-plugin-device" spec="1.1.3" />
