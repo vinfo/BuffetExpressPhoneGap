@@ -1300,6 +1300,7 @@ for(var h=0;h<farr.length;h++){
       getBonus($scope.bono,Gtotal,tDomicilio);
     }
     setBackDefaultPay();
+    validateTotal(Gtotal + tDomicilio);//Validar el valor minimo de un pedido
 
     $scope.bonoChanged = function() {
       var bono= $scope.bono.trim();
